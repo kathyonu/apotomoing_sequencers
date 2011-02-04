@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Text:</b>
+  <%= @anagram.text %>
+</p>
+
+<p>
+  <b>Sequence created:</b>
+  <%= @anagram.sequence_created_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @anagram.description %>
+</p>
+
+<p>
+  <b>Reference:</b>
+  <%= @anagram.reference %>
+</p>
+
+
+<%= link_to 'Edit', edit_anagram_path(@anagram) %> |
+<%= link_to 'Back', anagrams_path %>

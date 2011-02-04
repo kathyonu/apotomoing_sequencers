@@ -1,5 +1,9 @@
 ApotomoingSequencers::Application.routes.draw do
 
+  resources :anagrams
+
+  resources :sequence_createds
+
   get "sequencer/index"
 
   root :to => "sequencer#index"

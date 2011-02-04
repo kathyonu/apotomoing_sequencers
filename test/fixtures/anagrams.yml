@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  text: MyString
+  sequence_created_id: 1
+  description: MyString
+  reference: MyString
+
+two:
+  text: MyString
+  sequence_created_id: 1
+  description: MyString
+  reference: MyString

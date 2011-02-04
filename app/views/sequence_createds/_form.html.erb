@@ -1,0 +1,37 @@
+<%= form_for(@sequence_created) do |f| %>
+  <% if @sequence_created.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sequence_created.errors.count, "error") %> prohibited this sequence_created from being saved:</h2>
+
+      <ul>
+      <% @sequence_created.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sequence_created %><br />
+    <%= f.text_field :sequence_created %>
+  </div>
+  <div class="field">
+    <%= f.label :sequence_creation %><br />
+    <%= f.text_field :sequence_creation %>
+  </div>
+  <div class="field">
+    <%= f.label :sequence_complete %><br />
+    <%= f.text_field :sequence_complete %>
+  </div>
+  <div class="field">
+    <%= f.label :sequence_lexigram %><br />
+    <%= f.text_field :sequence_lexigram %>
+  </div>
+  <div class="field">
+    <%= f.label :sequence_singular %><br />
+    <%= f.text_field :sequence_singular %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

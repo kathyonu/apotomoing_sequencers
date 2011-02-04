@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  sequence_created: MyString
+  sequence_creation: MyString
+  sequence_complete: MyString
+  sequence_lexigram: MyString
+  sequence_singular: MyString
+
+two:
+  sequence_created: MyString
+  sequence_creation: MyString
+  sequence_complete: MyString
+  sequence_lexigram: MyString
+  sequence_singular: MyString
