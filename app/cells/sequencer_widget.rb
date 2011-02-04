@@ -4,6 +4,7 @@ class SequencerWidget < Apotomo::Widget
     render
   end
 
+  # TODO display is not being used, can be removed
   def display
     render
   end

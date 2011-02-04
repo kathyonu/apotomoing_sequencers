@@ -1,4 +1,24 @@
-%h1
-  AnagramWidget#display_form
+= widget_div do
+  %ul
+    - for a in @anagrams
+      %li
+        = a.id
+      %li
+        = a.text
+ 
 %p
-  Find me in app/cells/anagram_widget/display_form.html.haml
+  does it work ?
+
+= form_for(@anagram :as => :anagram), :html => "data-event-url" => url_for_event(:submit) :url = "" do
+  = label_text = 'Add Anagram'
+  = text_field_tag 'anagram'
+ 
+  = submit_tag "Anagram It"
+  
+:javascript
+  var form = $("##{widget_id} form");
+ 
+  form.submit(function() {
+    $.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+    return false;
+  });

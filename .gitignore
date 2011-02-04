@@ -1,4 +1,12 @@
 .bundle
+.DS_Store
+**/.DS_Store
 db/*.sqlite3
 log/*.log
+log/.gitignore
 tmp/**/*
+tmp/*
+config/database.yml
+config/initializers/secret_token.rb
+doc/api
+doc/app

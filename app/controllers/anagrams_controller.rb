@@ -1,4 +1,10 @@
 class AnagramsController < ApplicationController
+  include Apotomo::Rails::ControllerMethods
+
+  has_widgets do |root|
+    root << widget(:anagram_widget, 'words', :display_form, :anagram => @anagram)
+  end
+
   # GET /anagrams
   # GET /anagrams.xml
   def index

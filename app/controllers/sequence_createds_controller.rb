@@ -1,4 +1,12 @@
 class SequenceCreatedsController < ApplicationController
+  include Apotomo::Rails::ControllerMethods
+
+  has_widgets do |root|
+    root << widget(:sequence_created_widget, 'creator', :display)
+  end
+
+
+
   # GET /sequence_createds
   # GET /sequence_createds.xml
   def index
