@@ -1,4 +1,6 @@
-The purpose of this application is to process any textual entry, words, names, phrases, lines in English up to 250 characters, then enter that entry into one database table, and give the entry to another widget for process its five sequences, and entering them into their database table(s).
+apotomoing_sequencers
+
+The purpose of this application is to process any textual entry, words, names, phrases, lines in English up to 250 characters, then enter that entry into one database table, and give the entry to another widget for processing its five sequences, and entering them into the database.
 
 Apotomoing_sequencers is set up right now as two widgets processing two tables, and .. by its design creates duplicate entries of the data entered into both tables, AND, by putting all five sequences generated from the data entered in the browser into one database table, this will create duplicates in the five columns of the sequence_createds table.
 
@@ -14,3 +16,22 @@ sequence_complete
 sequence_lexigram
 sequence_singular
 
+The Anagrams table is the first table and widget to get working.
+The SequenceCreateds is next.
+After we have the anagram_widget and the five sequences processing properly, we will add other entry categories.
+
+Anagrams
+HumanNames
+Phrases
+Quotes
+and others.
+
+Every new widget and table we add will always be providing their data to the sequence_created_widget for processing those five sequences into the database.
+
+We can also add additional sequence displays, such as testing an entry to see if it is a true palindrome, or simply reversing the entry, and other ways to treat the sequence of letters entered.
+
+The helper, textual.rb, is an ongoing development of regular expressions I have designed to process text in a thousand ways, converting it all to clean text, letters only, no punctuation, no numbers.  
+
+I will be adding an example of how to use the textual.rb helper in the console, hopefully with my next push to this repo.
+
+That's it for now, Kathy Onu
