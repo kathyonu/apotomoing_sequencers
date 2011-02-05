@@ -4,6 +4,7 @@ module Textual
 
   # /apotomoing_sequencers/app/helpers/textual.rb
   # this module is still being developed
+  # for usage instructions and examples see : app/doc/README_for_method-to_textual.txt
   
   def de_comma
 	foo = self.strip.downcase
@@ -11,10 +12,6 @@ module Textual
       foo.gsub!(/\s\s+/, " ")           # spaces : replaces multiple spacing with one space
   end
 
-    # String#de_space method, in console example   \ 
-    # sequence_created = "Dear $.100 Dr., please!!!  de_comma, and de_underscore_me, and de-hy-pyen me and / de.period /. me, then de   space me."  \
-    # sequence_creation = sequence_creeated.to_textual.de_comma.de_space   \
-    # RESULT "deardollarsonehundredsirpleasedecommaanddeunderscoremeanddehypyenmeanddeperiodmethendespaceme"
   def de_space
     foo = self.strip
     foo.gsub!(/\s+/, "")
@@ -472,6 +469,13 @@ module Textual
 	  foo.gsub!(/\$1\.50/, " one dollar and fifty cents ")
       foo.gsub!(/\$1\.00/, " one dollars ")
       foo.gsub!(/\$0\.50/, " fifty cents ")
+
+      foo.gsub!(/\s1810.$/, " eighteen ten ")
+      foo.gsub!(/\s1810,\s/, " eighteen ten, ")
+      foo.gsub!(/\s1810\s/, " eighteen ten ")
+      foo.gsub!(/\s1776.$/, " seventeen seventy six ")
+      foo.gsub!(/\s1776,\s/, " seventeen seventy six, ")
+      foo.gsub!(/\s1776\s/, " seventeen seventy six ")
 
       foo.gsub!(/112,483/, " one hundred and twelve thousand, four hundred eighty three ")
       foo.gsub!(/559,602\.90/, " five hundred and fifty nine thousand, six hundred two, and ninety cents ")

@@ -1,5 +1,6 @@
 # desideratus/apotomoing_sequencers    is our computer application name
 # kathyonu/apotomoing_sequencers       is the git repository name as of : 20110205
+# https://github.com/kathyonu/apotomoing_sequencers is the repository address
 
 COMMMANDS RUN TO CREATE APP : 
  each command below can be found to have been run, with results, further below.
@@ -1305,10 +1306,33 @@ will-i-am:apotomoing_sequencers William$ git commit -m "added two README files b
  create mode 100644 doc/README_for_commands_used_to_create_app.txt
 will-i-am:apotomoing_sequencers William$ 
 
+will-i-am:apotomoing_sequencers William$ git log --oneline
+46d8743 modified README files in /doc/
+9044660 added two README files before pushing to respository
+56392bd edited a few codes, before pushing to repossitory
+bffc453 developed widgets, added fixtures data, added dynamic_form plugin
+8f9f66a removed public/index.html file
+65d1f35 entered widget codes, and two helpers for processing text
+3a71fb5 generated scaffold and widgets for anagrams and sequence_createds
+b0c182e first commit, new app, gems bundled, sSequencer model generated
+will-i-am:apotomoing_sequencers William$ 
 
 4: will-i-am:apotomoing_sequencers William$ git push origin master
+Counting objects: 236, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (211/211), done.
+Writing objects: 100% (236/236), 153.27 KiB, done.
+Total 236 (delta 55), reused 0 (delta 0)
+To git@github.com:kathyonu/apotomoing_sequencers.git
+ * [new branch]      master -> master
+will-i-am:apotomoing_sequencers William$ 
+
 
 5: Go to my new repository address : http://github.com/kathyonu/apotomoing_sequencers : view results
+
+
+
+
 
 
 
