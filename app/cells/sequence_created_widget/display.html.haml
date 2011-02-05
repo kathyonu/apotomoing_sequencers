@@ -2,38 +2,40 @@
 
 %p
   %small
-    line above begins the sequence_created widget display
+    line above begins the sequence_created_widget/display.html.haml
 %p
   %small
-    The five sequences are not showing below because the sequence_created_widget's write method fired by "anagram submit" is not getting the anagram.text data to work with to produce the sequences. 
+    The five sequences are not yet firing. 
 
-%p
-  sequence_created = 
+= widget_div do
 
-= @sequence_created
+  %p
+    sequence_created = 
 
-%p
-  sequence_creation = 
+  = @sequence_created
 
-= @sequence_creation
+  %p
+    sequence_creation = 
 
-%p
-  sequence_complete = 
+  = @sequence_creation
 
-= @sequence_complete
+  %p
+    sequence_complete = 
 
-%p
-  sequence_lexigram = 
+  = @sequence_complete
 
-= @sequence_lexigram
+  %p
+    sequence_lexigram = 
 
-%p
-  sequence_singular = 
+  = @sequence_lexigram
 
-= @sequence_singular
+  %p
+    sequence_singular = 
 
-%p
-  %small
-    line below ends the display of /app/cells/sequence_created_widget/display.html.haml
+  = @sequence_singular
+
+  %p
+    %small
+      line below ends the display of /app/cells/sequence_created_widget/display.html.haml
  
 %hr
