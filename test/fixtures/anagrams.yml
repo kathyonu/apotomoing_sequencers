@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  text: MyString
+  text: testing anagram
   sequence_created_id: 1
   description: MyString
   reference: MyString
 
 two:
-  text: MyString
-  sequence_created_id: 1
+  text: anagram testings
+  sequence_created_id: 2
   description: MyString
   reference: MyString

@@ -1,20 +1,33 @@
+%hr
+
+%p
+  %small
+    line above begins the anagram_widget display
+
 = widget_div do
   %ul
-    - for a in @anagrams
+    = for a in @anagrams
       %li
         = a.id
       %li
         = a.text
- 
-%p
-  does it work ?
 
-= form_for(@anagram :as => :anagram), :html => "data-event-url" => url_for_event(:submit) :url = "" do
-  = label_text = 'Add Anagram'
-  = text_field_tag 'anagram'
+%p
+  Anagram is not yet entering data into database, nor feeding it to sequence_created
+
+= form_for @anagram, :as => :anagram, :html => {"data-event-url" => url_for_event(:submit)}, :url => "" do |f|
+  = error_messages_for :sequence_creation
+  = f.label 'Add Anagram'
+  = f.text_field 'anagram'
  
   = submit_tag "Anagram It"
   
+%p
+  %small
+    line below ends the anagram_widget display
+
+%hr
+
 :javascript
   var form = $("##{widget_id} form");
  

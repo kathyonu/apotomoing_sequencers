@@ -1,15 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  sequence_created: MyString
-  sequence_creation: MyString
-  sequence_complete: MyString
-  sequence_lexigram: MyString
-  sequence_singular: MyString
+  sequence_created: testing anagram
+  sequence_creation: testinganagram
+  sequence_complete: aaaeggimnnrstt
+  sequence_lexigram: aaaegimnrstt
+  sequence_singular: aegimnrst
 
 two:
-  sequence_created: MyString
-  sequence_creation: MyString
-  sequence_complete: MyString
-  sequence_lexigram: MyString
-  sequence_singular: MyString
+  sequence_created: anagram testings
+  sequence_creation: anagramtestings
+  sequence_complete: aaaeggimnnrsstt
+  sequence_lexigram: aaaegimnrsstt
+  sequence_singular: aegimnrst
