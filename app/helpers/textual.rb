@@ -56,14 +56,14 @@ module Textual
     foo.gsub!(/(\s+(o\.k\.,?)\s)/, " okay, ")          # replaces the O.K., with okay,  
     foo.gsub!(/(^(dr\.,?)\s+?)/, " doctor ")           # on these, shouldn't that first \s be \s+ : answer is YES, so i changed it
     foo.gsub!(/(\s+(dr\.,?)\s+?)/, " doctor ")         # on these, shouldn't that first \s be \s+ : answer is YES, so i changed it
-    foo.gsub!(/((\s+(d)\.(r)\.)\s+)/, " doctor ")       # d.r.  < replaces that with : doctor
-    foo.gsub!(/(^(apt\.?)\s+)/, "apartment ")           # apt. < replaces apt. at the beginning of line with apartment.
-    foo.gsub!(/(\s(apt\.?)\s+)/, " apartment ")         # apt. < replaces apt. apartment.
+   #foo.gsub!(/((\s+(d)\.(r)\.)\s+)/, " doctor ")      # d.r.  < replaces that with : doctor : this one is funky, not a valid abbreviation for doctor, and i don't remember how this one got here.
+    foo.gsub!(/(^(apt\.?)\s+)/, "apartment ")          # apt. < replaces apt. at the beginning of line with apartment.
+    foo.gsub!(/(\s(apt\.?)\s+)/, " apartment ")        # apt. < replaces apt. apartment.
     foo.gsub!(/(^((st)\.?)\s+?)/, "saint ")
-    foo.gsub!(/(\s+((st)\.?)\s+?)/, " saint ")          # also could be street, not saint !!!!!  how to fix that one !!!!
-    foo.gsub!(/(^((mt)\.?)\s+?)/, "mount ")
-    foo.gsub!(/(\s+mt\.\s+)/, " mount ")
-    foo.gsub!(/(\s+mt\.$)/, " mount ")
+   #foo.gsub!(/(\s+((st)\.?)\s+?)/, " saint ")         # also could be street, not saint !!!!!  how to fix that one !!!!
+    foo.gsub!(/(^((mt)\.?)\s+?)/, "mount ")            # also could be the montana state abbreviation, MT.
+   #foo.gsub!(/(\s+mt\.\s+)/, " mount ")               # there is no easy way to accurately expand MT and ST and such to their full name, as they have more than one.
+    foo.gsub!(/(\s+mt\.$)/, " montana ")
     foo.gsub!(/((\s+(a)\.(k)\.(a))\.\s+)/, " also known as ")    # aka  < replaces with  : also known as
     foo.gsub!(/((\s+(a)\.(k)\.(a))\.\s?)/, " also known as ")
     foo.gsub!(/((\s+(a)\.(k)\.(a))\s?)/, " also known as ")
@@ -157,9 +157,9 @@ module Textual
     foo.gsub!(/((\)*?\s?\(+$))/, "")       ## removes opening parenthesis at end of the line, preceded by closing parenthesis(es) and space(s), replaceing it with nothing, as it is the ending of the line
     foo.gsub!(/(^(\)*?\s?\(+))/, "")       ## removes closing parenthesis at beginning of line, followed by opening parenthesis at beginning of line, with or wtihout space in front of it, replacing all with nothing as it is the beginning of the line
    #foo.gsub!(/^(\s+?\(+))/, "")           ## removes open parenthesis at beginning of line with one or more spaces in front of it : not required to be uncommented due to the above three
-##!!!!foo.gsub!(/([\)+$])/, "")              ## removes close parenthesis(s) at end of line : a better usage than directly below
+   #foo.gsub!(/([\)+$])/, "")              ## removes close parenthesis(s) at end of line : a better usage than directly below
    #foo.gsub!(/\)$/, "")                   ## removes close parenthesis at end of line
-##!!!!foo.gsub!(/(\s+?[(]+?))/, ", ")        # removes open parenthensis preceeded by spaces and replaces with a comma and space
+   #foo.gsub!(/(\s+?[(]+?))/, ", ")        # removes open parenthensis preceeded by spaces and replaces with a comma and space
     foo.gsub!(/(\.[()])/, "\n")            # removes period open parenthesis.( and replaces with new line.
     foo.gsub!(/(\s+?[()])/, ", ")            # removes opening parenthesis preceeded by space(s) and replaces with a comma space
     foo.gsub!(/(\s*(\!+?)\s*?)/, "\n") # removes exclamation point(s) with or without spaces following, followed by hyphen(s) and space(s), replacing wtih a new line
@@ -233,30 +233,27 @@ module Textual
    #foo.gsub!(/((\s(iii)\s?))/, " three ")  # ^^ there are, and so we fix the three eyes with the pt. III or chpt. III, to part three, or chapter three, below
    #foo.gsub!(/((\s(ii)\s?))/, " two ")   # ^^^ the 'repairs, on these i's do not work. # TODO : develop the regex that will deal with the roman numerals properly.
    #foo.gsub!(/((\s(i)\s?))/, " one ")   # problem is it replaces ALL small i's with one !!!!
-
-#     I do not understand why I cannot get these to work yet.
-#     foo.gsub!(/[Á]/, "c")                # foreign character replacement
-#     foo.gsub!(/[Ç]/, "c")                # foreign character replacement
-#     foo.gsub!(/[ç]/, "c")                # foreign character replacement
-#     foo.gsub!(/[Ô]/, "i")                # foreign character replacement
-#     foo.gsub!(/[è]/, "e")                # foreign character replacement
-#     foo.gsub!(/[ï]/, "i")                # foreign character replacement
-#     foo.gsub!(/[ñ]/, "n")                # foreign character replacement
-#     foo.gsub!(/[©]/, " copyright ")      # foreign character replacement
-#     foo.gsub!(/[½]/, " one half ")       # foreign character replacement
-#     foo.gsub!(/[¾]/, " three quarters ") # foreign character replacement
-#     foo.gsub!(/[–]/, " - ")              # foreign character replacement
-#     foo.gsub!(/[~]/, " - ")              # foreign character replacement
-#     foo.gsub!(/[È]/, "e")                # foreign character replacement
-#     foo.gsub!(/[”]/, " ")                # foreign character replacement
-#     foo.gsub!(/[“]/, " ")                # foreign character replacement
-#     foo.gsub!(/[√©]/, "e")               # foreign character replacement
-#     foo.gsub!(/[…]/, ", ")               # foreign character replacement
-#     foo.gsub!(/[à]/, "a")                # foreign character replacement
-#     foo.gsub!(/[Á]/, "c")                # foreign character replacement
-#     foo.gsub(/[Á]/, "c")                 # foreign character replacement
-#     foo.gsub(/[Á]/, "c")                 # foreign character replacement
-
+# I do not understand why I cannot get these \/ to work yet.
+#   foo.gsub!(/[Á]/, "c")                # foreign character replacement
+#   foo.gsub!(/[Ç]/, "c")                # foreign character replacement
+#   foo.gsub!(/[ç]/, "c")                # foreign character replacement
+#   foo.gsub!(/[Ô]/, "i")                # foreign character replacement
+#   foo.gsub!(/[è]/, "e")                # foreign character replacement
+#   foo.gsub!(/[ï]/, "i")                # foreign character replacement
+#   foo.gsub!(/[ñ]/, "n")                # foreign character replacement
+#   foo.gsub!(/[½]/, " one half ")       # foreign character replacement
+#   foo.gsub!(/[¾]/, " three quarters ") # foreign character replacement
+#   foo.gsub!(/[–]/, " - ")              # foreign character replacement
+#   foo.gsub!(/[~]/, " - ")              # foreign character replacement
+#   foo.gsub!(/[È]/, "e")                # foreign character replacement
+#   foo.gsub!(/[”]/, " ")                # foreign character replacement
+#   foo.gsub!(/[“]/, " ")                # foreign character replacement
+#   foo.gsub!(/[√©]/, "e")               # foreign character replacement
+#   foo.gsub!(/[…]/, ", ")               # foreign character replacement
+#   foo.gsub!(/[à]/, "a")                # foreign character replacement
+#   foo.gsub!(/[Á]/, "c")                # foreign character replacement
+#   foo.gsub(/[Á]/, "c")                 # foreign character replacement
+#   foo.gsub(/[Á]/, "c")                 # foreign character replacement
     foo.gsub!(/(\$\s?(10,?000\.?)0?0?)/, " ten thousand dollars")                       # pristine 
     foo.gsub!(/(\s?(10,?000\.?)0?0?)/, " ten thousand ")                                # pristine 
     foo.gsub!(/(\$\s?(6,?000\.?)0?0?)/, " six thousand dollars")                       # pristine template
@@ -2848,19 +2845,21 @@ module Textual
     foo.gsub!(/_/, " ")                # underline       : poofed gone by space
    #foo.gsub!(/((\.[""]\s+)?/, "\n")   # period space(s) : line break on the period space is the goal : this one needs to be tested after the change to brackets and tested good
     foo.gsub!(/(\.+,)/, ", ")          # removes multiple periods in front of a comma
-    foo.gsub!(/(\.+,/, ", ")             # removes multiple periods following of a comma
+    foo.gsub!(/,\.+/, ", ")             # removes multiple periods following of a comma
    #foo.gsub!(/([.+?]\s+?)/, "\n")         # periods : removes the . that is followed by one or more spaces, replacing it with the \n
    #foo.gsub!(/((\s?[.+]?,?[\.])\s*)$/, "")   # periods, spaces, new lines : five passes to arrive at nil ! : this removes the multiple periods and spaces at the end of a line, replacing with nothing
     foo.gsub!(/\s(yr\.?)\s/, " year ")        # replaces the yr with year
-    foo.gsub!(/\s(yrs\.?)\s/, " years "       # replaces the yrs with years
-   #foo.gsub!(/\s(yo)\s/, " year old ")       # replaces the yo with year old : needs refinement, currently changes this : => " YO MY BRO, TAKE YOUR TIME" to this : foo_new = foo.to_textual_id => year old my bro, take your time, which is not correct
-    foo.gsub!(/\s(y\so)\s/, " year old ")     # replaces space Y space O space # replaces the 20 y o with year old
+    foo.gsub!(/\s(yrs\.?)\s/, " years ")       # replaces the yrs with years
+   #foo.gsub!(/\s(yo)\s/, " year old ")       # replaces the yo with year old : needs refinement, currently changes this : => " YO MY BRO, TAKE YOUR TIME" to this : foo_new = foo.to_textual => year old my bro, take your time, which is not correct
+    foo.gsub!(/(\sy\so\s)/, " year old ")     # replaces space Y space O space # replaces the 20 y o with 20 year old
     foo.gsub!(/(\s(mins)\s)/, " minutes ")    # replaces the mins with minutes
     foo.gsub!(/(\.com)/, " com ")             # removes periods in front of the .com
     foo.gsub!(/(\.org)/, " org ")             # removes periods in front of the .org
     foo.gsub!(/(\.html)/, " html ")           # removes periods in front of the .html
     foo.gsub!(/(\.shtml)/, " shtml ")         # removes periods in front of the .shtml
    #foo.gsub!(/\©/, " copyright ")            # RESEARCH how to gsub this copyright symbol ©
+   #foo.gsub!(/[©]/, " copyright ")           # TODO how to replace the copyright symbol
+
     foo.gsub!(/975/, " nine hundred and seventy five ")
     foo.gsub!(/950/, " nine hundred and fifty ")
     foo.gsub!(/920/, " nine hundred and twenty ")

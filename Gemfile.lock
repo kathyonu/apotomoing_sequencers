@@ -36,7 +36,7 @@ GEM
       rails (~> 3.0)
     arel (2.0.7)
     builder (2.1.2)
-    cells (3.5.0.beta1)
+    cells (3.5.0)
       rails (~> 3.0)
     cgi_multipart_eof_fix (2.5.0)
     daemons (1.1.0)
@@ -104,7 +104,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth (>= 4.1.1)
   apotomo (~> 1.0.0)
-  cells (>= 3.5.0.beta1)
+  cells (>= 3.5.0)
   enginex
   haml
   hooks (~> 0.1.3)
