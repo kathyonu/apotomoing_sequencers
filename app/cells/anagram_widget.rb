@@ -1,8 +1,8 @@
 class AnagramWidget < Apotomo::Widget
   responds_to_event :submit, :with => :write
     
-  # TODO anagram method and view are not being used, can be removed.
   def anagram
+    @anagram = Anagram.new
   end
 
   def display_form
@@ -16,6 +16,5 @@ class AnagramWidget < Apotomo::Widget
     @anagrams = Anagram.find:all
     update :display_form
   end
-
 
 end

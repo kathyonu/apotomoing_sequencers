@@ -32,7 +32,6 @@ class SequenceCreatedWidget < Apotomo::Widget
     @sequence_complete = sequence_created.split(//).sort.join.strip
 	@sequence_lexigram = sequence_created.split(//).sort.join.strip.reverse  # TODO complete the lexigram code, meanwhile substitute the reverse sequence as the dataum
     @sequence_singular = sequence_complete.squeeze
-
     update :display
   end
 
