@@ -72,6 +72,7 @@ module Textual
     foo.gsub!(/((\s+(a)\.(s)\.(a)\.(p)\.),\s?)/, " as soon as possible, ")
     foo.gsub!(/((\s+(a)\.(s)\.(a)\.(p)\.),?\s?)/, " as soon as possible ")
     foo.gsub!(/((\s(d)\.(c)\.)\s?)/, " dc ")
+    foo.gsub!(/(\sd\.c\.\''?s\s?)/, " dcs ")                     # D.C.'s to dcs
     foo.gsub!(/((\s+(a)\.(c)\.)\s?)/, " ac ")
     foo.gsub!(/((\s+(m)\.(d)\.)\s?)/, " md ")
     foo.gsub!(/((\s+(n)\.(y)\.)\s?)/, " ny ")
@@ -3171,6 +3172,7 @@ module Textual
     foo.gsub!(/33/, " thirty three ")
     foo.gsub!(/32/, " thirty two ")
     foo.gsub!(/31/, " thirty one ")
+    foo.gsub!(/30/, " thirty ")
     foo.gsub!(/29/, " twenty nine ")
     foo.gsub!(/28/, " twenty eight ")
     foo.gsub!(/27/, " twenty seven ")
@@ -3192,6 +3194,7 @@ module Textual
     foo.gsub!(/12/, " twelve ")
     foo.gsub!(/11/, " eleven ")
     foo.gsub!(/^11\.?\s/, " eleven, ")
+    foo.gsub!(/^10\.?\s/, " ten, ")
     foo.gsub!(/^09\.?\s/, " nine, ")
     foo.gsub!(/^08\.?\s/, " eight, ")
     foo.gsub!(/^07\.?\s/, " seven, ")

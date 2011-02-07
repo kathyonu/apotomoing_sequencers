@@ -8,9 +8,14 @@ gem 'RedCloth', '>= 4.1.1'
 
 gem 'sho-mongrel'
 
-gem 'apotomo', '~> 1.0.0', :require => 'apotomo'
+  # to used the published apotomo gem
+  # gem 'apotomo', '~> 1.0.0', :require => 'apotomo'
 
-gem 'cells', '>= 3.5.0'
+  # to use the current apotomo master from github
+gem "apotomo", :git => "git://github.com/apotonick/apotomo"
+
+  
+gem 'cells', '= 3.5.0'
   # gem "cells", :path => "/Users/William/desideratus/bookofcreations/cells"#"3.4.2"   << another app
   # gem "cells", :path => "/home/nick/projects/cells"#"3.4.2"                          << template from nick's app
   # template at http://github.com/apotonick/apotomo/blob/rails-3.0/Gemfile

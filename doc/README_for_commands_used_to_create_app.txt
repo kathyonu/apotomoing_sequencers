@@ -1277,7 +1277,7 @@ will-i-am:apotomoing_sequencers William$ git status
 #
 no changes added to commit (use "git add" and/or "git commit -a")
 will-i-am:apotomoing_sequencers William$ git add .
-will-i-am:apotomoing_sequencers William$ git commit -m "edited a few codes, before pushing to repossitory"     # TODO another commit message typo to learn how to fix !!! repossitory to repository
+will-i-am:apotomoing_sequencers William$ git commit -m "edited a few codes, before pushing to repossitory"     # cannot correct typo on repossitory, as it has been pushed : http://www.gelato.unsw.edu.au/archives/git/0702/38650.html
 [master 56392bd] edited a few codes, before pushing to repossitory
  3 files changed, 44 insertions(+), 42 deletions(-)
  rewrite app/cells/sequence_created_widget/display.html.haml (92%)
