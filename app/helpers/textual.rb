@@ -7,14 +7,16 @@ module Textual
   # for usage instructions and examples see : app/doc/README_for_method-to_textual.txt
   
   def de_comma
-    foo = self.strip.downcase
+    foo = self
     foo.gsub!(/,\s?/, " ")            # commas : replaces every comma followed by a space, or not, with one space 
     foo.gsub!(/\s\s+/, " ")           # spaces : replaces multiple spacing with one space
+	foo
   end
 
   def de_space
     foo = self.strip
     foo.gsub!(/\s+/, "")
+    foo
   end
   
   def to_textual
@@ -56,9 +58,10 @@ module Textual
     foo.gsub!(/(\s+(o\.k\.,?)\s)/, " okay, ")          # replaces the O.K., with okay,  
     foo.gsub!(/(^(dr\.,?)\s+?)/, " doctor ")           # on these, shouldn't that first \s be \s+ : answer is YES, so i changed it
     foo.gsub!(/(\s+(dr\.,?)\s+?)/, " doctor ")         # on these, shouldn't that first \s be \s+ : answer is YES, so i changed it
-   #foo.gsub!(/((\s+(d)\.(r)\.)\s+)/, " doctor ")      # d.r.  < replaces that with : doctor : this one is funky, not a valid abbreviation for doctor, and i don't remember how this one got here.
+   #foo.gsub!(/((\s+(d)\.(r)\.)\s+)/, " doctor ")      # d.r. < replaces that with : doctor : this one is funky, not a valid abbreviation for doctor, and i don't remember how this one got here.
     foo.gsub!(/(^(apt\.?)\s+)/, "apartment ")          # apt. < replaces apt. at the beginning of line with apartment.
-    foo.gsub!(/(\s(apt\.?)\s+)/, " apartment ")        # apt. < replaces apt. apartment.
+    foo.gsub!(/(\s(apt\.)\s+)/, " apartment ")         # apt. < replaces apt. with apartment.
+    foo.gsub!(/(\s(apt\.)\s?)$/, " apartment ")         # apt. < replaces apt. with apartment, at the end of the line.
     foo.gsub!(/(^((st)\.?)\s+?)/, "saint ")
    #foo.gsub!(/(\s+((st)\.?)\s+?)/, " saint ")         # also could be street, not saint !!!!!  how to fix that one !!!!
     foo.gsub!(/(^((mt)\.?)\s+?)/, "mount ")            # also could be the montana state abbreviation, MT.
@@ -161,6 +164,7 @@ module Textual
    #foo.gsub!(/([\)+$])/, "")              ## removes close parenthesis(s) at end of line : a better usage than directly below
    #foo.gsub!(/\)$/, "")                   ## removes close parenthesis at end of line
    #foo.gsub!(/(\s+?[(]+?))/, ", ")        # removes open parenthensis preceeded by spaces and replaces with a comma and space
+    foo.gsub!(/(,\()/, ", ")                # removes open parenthensis preceeded by a comma and replaces with a comma and space
     foo.gsub!(/(\.[()])/, "\n")            # removes period open parenthesis.( and replaces with new line.
     foo.gsub!(/(\s+?[()])/, ", ")            # removes opening parenthesis preceeded by space(s) and replaces with a comma space
     foo.gsub!(/(\s*(\!+?)\s*?)/, "\n") # removes exclamation point(s) with or without spaces following, followed by hyphen(s) and space(s), replacing wtih a new line
@@ -478,14 +482,16 @@ module Textual
     foo.gsub!(/\$19\.91/, " nineteen dollars and ninety one cents ")
     foo.gsub!(/\$19\.90/, " nineteen dollars and ninety cents ")
     foo.gsub!(/\$19\.89/, " nineteen dollars and eighty nine cents ")
-    foo.gsub!(/\$19\.00/, " twenty nineteen dollars ")
-    foo.gsub!(/\$18\.00/, " twenty eightteen dollars ")
-    foo.gsub!(/\$17\.00/, " twenty seventeen dollars ")
-    foo.gsub!(/\$16\.00/, " twenty sixteen dollars ")
-    foo.gsub!(/\$15\.00/, " twenty fiveteen dollars ")
-    foo.gsub!(/\$14\.00/, " twenty fourteen dollars ")
-    foo.gsub!(/\$13\.00/, " twenty thirteen dollars ")
-    foo.gsub!(/\$12\.00/, " twenty twelve dollars ")
+    foo.gsub!(/\$19\.00/, " nineteen dollars ")
+    foo.gsub!(/\$18\.00/, " eightteen dollars ")
+    foo.gsub!(/\$17\.00/, " seventeen dollars ")
+    foo.gsub!(/\$16\.00/, " sixteen dollars ")
+    foo.gsub!(/\$15\.00/, " fiveteen dollars ")
+    foo.gsub!(/\$14\.00/, " fourteen dollars ")
+    foo.gsub!(/\$14\.00/, " fourteen dollars ")
+    foo.gsub!(/\$14\.95/, " fourteen dollars and ninety five cents ")
+    foo.gsub!(/\$13\.00/, " thirteen dollars ")
+    foo.gsub!(/\$12\.00/, " twelve dollars ")
     foo.gsub!(/\$11\.50/, " eleven dollars and fifty cents ")
     foo.gsub!(/\$11\.00/, " eleven dollars ")
     foo.gsub!(/\$10\.50/, " ten dollars and fifty cents ")
@@ -2854,6 +2860,7 @@ module Textual
    #foo.gsub!(/\s(yo)\s/, " year old ")       # replaces the yo with year old : needs refinement, currently changes this : => " YO MY BRO, TAKE YOUR TIME" to this : foo_new = foo.to_textual => year old my bro, take your time, which is not correct
     foo.gsub!(/(\sy\so\s)/, " year old ")     # replaces space Y space O space # replaces the 20 y o with 20 year old
     foo.gsub!(/(\s(mins)\s)/, " minutes ")    # replaces the mins with minutes
+    foo.gsub!(/(\.+,)/, ", ")                 # removes multiple periods in front of a comma
     foo.gsub!(/(\.com)/, " com ")             # removes periods in front of the .com
     foo.gsub!(/(\.org)/, " org ")             # removes periods in front of the .org
     foo.gsub!(/(\.html)/, " html ")           # removes periods in front of the .html
