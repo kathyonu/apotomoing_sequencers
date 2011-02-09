@@ -2,7 +2,7 @@ class SequenceCreatedWidget < Apotomo::Widget
   responds_to_event :submit, :on => :anagram, :with => :write, :on => :sequence_created
 
   def sequence_created
-    @sequence_created = Anagram.new(params(:text => text.to_textual.de_comma.strip))   # this is not right yet
+    @sequence_created = Anagram.new(params(:text => :text.to_textual.de_comma.strip))   # this is not right yet
     render
   end
 
