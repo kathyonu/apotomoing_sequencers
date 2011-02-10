@@ -1,0 +1,28 @@
+this data also allows us to text the String#to_textual method.
+a word
+a day
+allows all
+to be learnt
+$1,000.00
+$2,000.00
+a 27yo man
+33cms
+33ft.
+33ft
+33 ft.
+33 ft
+33yds
+33yds.
+33 yds
+33 yds.
+1yd, . 
+1yd. 
+1yd .
+1yd 
+1yd arm.
+2yds.
+2yds
+2 yds.
+2 yds
+a word a day
+allows all to be learnt

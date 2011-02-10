@@ -15,7 +15,8 @@ require 'fiber'
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below
   def file_name
-    @file_name = ("./lib/databasers/fibered_files_input.txt")
+    @file_name = ("./lib/anagrams/anagrams_table_data.txt")
+##  @file_name = ("./lib/databasers/fibered_files_input.txt")
 ##  @file_name = ("./lib/externals/externals_table_data_input_hash.txt")
 ##	@file_name = ("./lib/20100511-test-two.txt")
 ##	@file_name = ("./lib/databasers/20100903-researches.txt")
@@ -55,14 +56,14 @@ require 'fiber'
     File.open("./lib/anagrams/anagrams_table_data.txt", "r") do |f|
       f.each_line do |line|
         anagram = line.chomp 
-#         loop do |anagram|
-#           sequence_created = anagram.to_textual 
-#           sequence_creation = anagram.to_textual.gsub(/\s/, "")
-#           sequence_complete = anagram.to_textual.split(//).sort.join("") #.strip
-#           sequence_lexigram = anagram.to_textual.split(//).sort.join("").strip.reverse
-#           sequence_singular = anagram.to_textual.split(//).sort.join("").strip.squeeze  # same as : sequence_singular = sequence_complete.squeeze
-			puts anagram.to_textual
-#          end
+         #loop do |anagram|
+         #  sequence_created = anagram.to_textual 
+         #  sequence_creation = anagram.to_textual.gsub(/\s/, "")
+         #  sequence_complete = anagram.to_textual.split(//).sort.join("") #.strip
+         #  sequence_lexigram = anagram.to_textual.split(//).sort.join("").strip.reverse # placeholder on lexigram sequence
+         #  sequence_singular = anagram.to_textual.split(//).sort.join("").strip.squeeze  # same as : sequence_singular = sequence_complete.squeeze
+        puts anagram.to_textual
+         #  end
       end
     end
   end
