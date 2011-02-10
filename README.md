@@ -1,4 +1,4 @@
-== Welcome to Ruby on Rails using Apotomo on Cells.
+## Welcome to Ruby on Rails using Apotomo on Cells.
 
 At this time, 20110208, apotomoing_sequencers is not a fully functioning application. The entire modelling is subject to change at any moment.
 
@@ -13,7 +13,7 @@ Cells 3.5.0
 The app uses sqlite3 for the database, so you have no setup to do there.
 Our in-house app will be using mysql2 in production.
 
-== apotomoing_sequencers
+## apotomoing_sequencers
  as a name, it comes from two stories of creation:
 
 apotomo is the name of a gem and plugin created by Nick Sutterer.
@@ -29,18 +29,18 @@ So, apotomoing is my creation on apotomo, so as to honor the beauty and usefulne
 
 I have Nick's permission to use the name as apotomoing, with sequencers latched on, as our github repository name.
 
-== Sequencers
- well . . that is what this app is being built for, to sequence any creation in English.
+## Sequencers
+> well . . that is what this app is being built for, to sequence any creation in English.
+>
+> Just as the sequencing of the dna displays its specific characteristics, 
+> the sequencing of the words, names, phrase, creates their unique letterings sequences.
+> And, those sequences are what we are after in this application.
+>
+> apotomoing_sequencers is built on five sequencing methods.
+> we have identified quite a few other "sequencings" that can be generated, however none are germane to our work.
+> after apotomoing_sequencers is built and tested and humming along, we will add those sequencer methods, just for fun.
 
-Just as the sequencing of the dna displays its specific characteristics, 
-the sequencing of the words, names, phrase, creates their unique letterings sequences.
-And, those sequences are what we are after in this application.
-
-apotomoing_sequencers is built on five sequencing methods.
-we have identified quite a few other "sequencings" that can be generated, however none are germane to our work.
-after apotomoing_sequencers is built and tested and humming along, we will add those sequencer methods, just for fun.
-
-== What are the five sequences we generate ? 
+## What are the five sequences we generate ? 
 
 We call them :
 
@@ -52,7 +52,7 @@ We call them :
 
 The application will prove useful to anyone who loves and works with words and has need to find or verify the sequences that create any name word or phrase.
 
-= Other sequencers we can add include :
+### Other sequencers we can add include :
 
 * sequence_reversed - abcdef => fedcba
 * sequence_randomized - abcdef => dfbaec
@@ -60,18 +60,21 @@ The application will prove useful to anyone who loves and works with words and h
 * sequence_palindrome - "doctor roctod".palindrome?
 * anagrams
 * perfect anagrams
-= An anagrams generator is available now at _http://www.wordsmith.org/
+> An anagrams generator is available now at [Wordsmith AnagramGenerator](http://www.wordsmith.org/ "Wordsmith.org AnagramGenerator")
 
-This application is Copyright Will I Am at goodworksonearth.org, held in trust.
-You are free to use this application, and make changes to it for your own use,
-provided this copyright notice remains intact.  
+> This application is Copyright Will I Am at goodworksonearth.org, held in trust.
+> You are free to use this application, and make changes to it for your own use, provided this copyright notice remains intact.  
+> 
+> kathyonu is my pen name, a Perfect Anagram of THANK YOU.
+> 
+> Ruby, Ruby on Rails, Apotomo and Cells are all registered to their owners, their copyrights protected.
 
-kathyonu is my pen name, a Perfect Anagram of THANK YOU.
+# Getting Started
 
-Ruby, Ruby on Rails, Apotomo and Cells are all registered to their owners, their copyrights protected.
+### In Terminal
 
-== Getting Started
+	_$ rails s_
 
-$ rails s   # start your server in the app
+Will start your server in the app
 
-Go to http://localhost:3000/ and you'll see the beginnings of apotomoing_sequencers.
+Go to http://localhost:3000/ to see the beginnings of apotomoing_sequencers.
