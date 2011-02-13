@@ -1,12 +1,13 @@
-Dear User, 
+File Name : README_for_method-to_textual.txt
 
 This is a short description of how to use the custom method named, String#to_textual
 
-	Also see app/doc/README_for_USAGE_of_helpers-textual-rb.txt for different examples.
-
 The String#to_textual method is in : app/helpers/textual.rb
+The processing methods, defined in : app/lib/textual-fibering-methods.rb
+The fibering methods also show in  : app/lib/textual-fibering-methods.rb
 
-EXAMPLE :
+EXAMPLES :
+
 from this ::  ".. a line /of\ text with $ signs, commas, hyphens;-: and Mr. and Mrs. abbreviations and such as etc."
 to this   ::  "a line of text with dollars signs, commas, hyphens, and mister and missus abbreviations and such as etcetera" 
 
@@ -16,7 +17,22 @@ to this   ::  "we have sent you our ten thousand dollars check to your address a
 
 METHOD DESCRIPTION : String#to_textual
 
-The String#to_textual method will work on a one word entry, one line of data up to 250 characters long, one document of any length and any number of lines of meaning ending with the period, question mark, exclamation mark, \n, and other ways of determining the end of a line, returning its results with new line breaks as appropriate to the document. And, with the  fibering methods, as shared in app/lib/textual-fibering-methods.rb, we can process one file as input and change the data with the fiber, and put the results into another file.  And, using ARGS, we could process an entire directory of files.  I have not written that method yet.  All methods in texutal-fibering-methods.rb are geared towards getting data ready to enter into our database when our app is fully functioning.  We currently have 50,000,000 processed and ready to enter.
+The String#to_textual method 
+ will work on a one word entry, 
+ one line of data up to 250 characters long, 
+ one document of any length and any number of lines 
+ of meaning ending with the period, question mark, exclamation mark, \n, 
+ and other ways of determining the end of a line, 
+ returning its results with new line breaks as appropriate to the document. 
+
+And, with the  fibering methods, as shared in app/lib/textual-fibering-methods.rb, 
+ we can process one file as input and change the data with the fiber, and put the results into another file. 
+
+And, using ARGS, we could process an entire directory of files. I have not written that method yet. 
+
+All methods in texutal-fibering-methods.rb are geared towards getting data ready 
+ to enter into our database when our app is fully functioning.  We currently have 
+ 50,000,000 lines processed and ready to enter.
 
 
 EXAMPLE in the console : 
@@ -43,3 +59,26 @@ ruby-1.9.2-p0 :018 > new = line2.to_textual
 => "we have sent you our ten thousand dollars check to your address at, one twenty three alphabet only lane, apartment three c" 
 ruby-1.9.2-p0 :019 > 
 
+
+It is that easy.
+
+You want to process an entire file ?
+
+Right now, go to your Terminal and type in : 
+
+	$ write_file
+
+This is one of the methods defined in the textual-fibering-methods.rb file.
+It will kick out all the data in the /lib/anagrams/anagrams_table_data.txt file, after processing it using String#to_textual
+Open the data file so you see the difference between that, and what appears on your screen.
+
+If you look in the textual-fibering-methods.rb file you will see the method named as : file_name
+There, you will see the /lib/anagrams/anagrams_table_data.txt is set for you.
+You can change the file_name("file_address") to process your named files. 
+You will see our many examples in the method are commented out.
+Set your file names as you wish, and comment and uncomment to choose which one file_name you use.
+Setting the file_name there, once, will provide that name to many of the methods defined in textual-fibering-methods.rb
+
+Breathe and be well,
+
+kathyonu/apotomoing_sequencers at github

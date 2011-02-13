@@ -1,8 +1,13 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
+* github.com/kathyonu/apotomoing_sequencers
 
-At this time, 20110208, apotomoing_sequencers is not a fully functioning application. The entire modelling is subject to change at any moment.
+### Note: At this time still, 20110212, apotomoing_sequencers is not a fully functioning application. 
+The entire modelling is subject to change at any moment.
 
-The essence of apotomoing_sequencers is to process any textual matter that contains punctuations, numbers, signs such as $ and other non letter symbols, and convert it all to lettered words.  An example is apt. becomes apartment; appt. becomes appointment. $100 becomes one hundred dollars.  This is effected with the String#to_textual method we have written, which draws on over 3,000 regular expressions to massage the text to pure letterings, and from that, we can generate the five sequences. See /helpers/textual.rb
+## Description:
+
+The essence of apotomoing_sequencers is to process any textual matter that contains punctuations, numbers, signs such as $ and other non-letter symbols, and convert it all to lettered words.  An example is apt. becomes apartment; appt. becomes appointment. $100 becomes one hundred dollars.  This is effected with the String#to_textual method we have written, which draws on over 3,000 regular expressions to massage the text to pure letterings, and from that, we can generate the five sequences of any English creation, be it name, word or phrase. 
+See /helpers/textual.rb
 
 Currently, we are writing this app, using 
 ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-darwin10]
@@ -16,18 +21,18 @@ Our in-house app will be using mysql2 in production.
 ## apotomoing_sequencers
  as a name, it comes from two stories of creation:
 
-apotomo is the name of a gem and plugin created by Nick Sutterer.
-apotomo harnesses the power of cells, making the fully interactive.
-_http://apotomo.de/
+*apotomo* is the name of a gem and plugin created by Nick Sutterer.
+*apotomo* harnesses the power of *cells*, making them fully interactive.
+[apotomo](http://apotomo.de/ "Apotomo")
 
-cells is the name of a gem and plugin created by Nick Sutterer.
-cells is the ideal missing component of the rails MVC stack.
-cells can be written one time, and displayed anywhere.
-_http://cells.rubyforge.org/
+*cells* is the name of a gem and plugin created by Nick Sutterer.
+*cells* is the ideal missing component of the rails MVC stack.
+*cells* can be written one time, and displayed anywhere.
+[cells](http://cells.rubyforge.org/ "Cells")
 
-So, apotomoing is my creation on apotomo, so as to honor the beauty and usefulness of apotomo and cells.
+So, *apotomoing* is my creation on *apotomo*, so as to honor the beauty and usefulness of *apotomo* and *cells*.
 
-I have Nick's permission to use the name as apotomoing, with sequencers latched on, as our github repository name.
+I have Nick's permission to use the name as *apotomoing*, with *sequencers* latched on, as our github repository name.
 
 ## Sequencers
 > well . . that is what this app is being built for, to sequence any creation in English.
@@ -36,21 +41,21 @@ I have Nick's permission to use the name as apotomoing, with sequencers latched 
 > the sequencing of the words, names, phrase, creates their unique letterings sequences.
 > And, those sequences are what we are after in this application.
 >
-> apotomoing_sequencers is built on five sequencing methods.
+> *apotomoing_sequencers* is built on five sequencing methods.
 > we have identified quite a few other "sequencings" that can be generated, however none are germane to our work.
-> after apotomoing_sequencers is built and tested and humming along, we will add those sequencer methods, just for fun.
+> after *apotomoing_sequencers* is built and tested and humming along, we will add those sequencer methods, just for fun.
 
 ## What are the five sequences we generate ? 
 
-We call them :
+If we use, peace on earth good will all, as the created phrase, then its sequences will be :
 
-1. sequence_created
-2. sequence_creation
-3. sequence_complete
-4. sequence_lexigram # at this time, we do not release the lexigram sequencer code. as a stand-in, we substitute the reversal. 
-5. sequence_singular
+1. sequence_created  : peace on earth good will all
+2. sequence_creation : peaceonearthgoodwillall
+3. sequence_complete : aaacdeeeghillllnoooprtw
+4. sequence_lexigram : acdeeghillnooprtw
+5. sequence_singular : acdeghilnoprtw
 
-The application will prove useful to anyone who loves and works with words and has need to find or verify the sequences that create any name word or phrase.
+The application will prove useful to anyone who loves and works with words and has need to find or verify the sequences that creates any name word or phrase.
 
 ### Other sequencers we can add include :
 
@@ -59,8 +64,18 @@ The application will prove useful to anyone who loves and works with words and h
 * sequence_center_randomized - abcdef => aecbdf
 * sequence_palindrome - "doctor roctod".palindrome?
 * anagrams
-* perfect anagrams
+* perfect anagrams - meanings wise, these are a leap beyond the full anagrams offered at wordsmith.org and other anagram generators.
 > An anagrams generator is available now at [Wordsmith AnagramGenerator](http://www.wordsmith.org/ "Wordsmith.org AnagramGenerator")
+
+# Getting Started
+
+## In Terminal
+
+	_$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
+	_$ cd ./apotomoing_sequencers
+	_$ rails s_
+
+After your server fires up, go to your browser : http://localhost:3000/ to see the beginnings (still) of apotomoing_sequencers.
 
 > This application is Copyright Will I Am at goodworksonearth.org, held in trust.
 > You are free to use this application, and make changes to it for your own use, provided this copyright notice remains intact.  
@@ -68,13 +83,3 @@ The application will prove useful to anyone who loves and works with words and h
 > kathyonu is my pen name, a Perfect Anagram of THANK YOU.
 > 
 > Ruby, Ruby on Rails, Apotomo and Cells are all registered to their owners, their copyrights protected.
-
-# Getting Started
-
-### In Terminal
-
-	_$ rails s_
-
-Will start your server in the app
-
-Go to http://localhost:3000/ to see the beginnings of apotomoing_sequencers.

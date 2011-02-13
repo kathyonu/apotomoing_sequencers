@@ -16,7 +16,6 @@ require 'fiber'
     # file_name allows you to name the file that conatains your data to be processed, using any method below
   def file_name
     @file_name = ("./lib/anagrams/anagrams_table_data.txt")
-##  @file_name = ("./lib/databasers/fibered_files_input.txt")
 ##  @file_name = ("./lib/externals/externals_table_data_input_hash.txt")
 ##	@file_name = ("./lib/20100511-test-two.txt")
 ##	@file_name = ("./lib/databasers/20100903-researches.txt")
@@ -177,7 +176,7 @@ require 'fiber'
     full_list = list.sort_by { |x| x.downcase }
   end
 
-    # mysql_lines processes each line of a file
+    # mysql_lines processes each line of a file,
     # from this  : begin stories
     # to this    : ('begin stories')
   def mysql_lines
@@ -188,20 +187,7 @@ require 'fiber'
     end
   end
 
-    # processes each line with to_textual method, spits it out on screen
-    # to process into another file, see doing_array fiber below
-  def write_file
-    IO.readlines(file_name) do |line| 
-      loop do
-		while line.gets
-	      line.to_textual  
-	    end
-      end
-    File.close
-    end
-  end
-
-    # TODO : add descriction to this fiber
+    # TODO : add description to this fiber
   def doing_textuals
     consumer = Fiber.new do |producer, queue|
 	 #f = open("./lib/fiber_output.txt", "a") do |f|
@@ -265,7 +251,8 @@ require 'fiber'
   def unique
    list = File.readlines(file_name)
    full_list = list.sort_by { |x| x.to_textual }
-   uniques = full_list.uniq
+   #uniques = full_list.uniq
+   uniques = full_list
    puts uniques
   end
 
@@ -288,7 +275,7 @@ require 'fiber'
 
   def array_to_uniqued
     a = File.readlines(file_name)
-	  puts a.uniq
+	puts a.uniq
   end
 
   def textuals
