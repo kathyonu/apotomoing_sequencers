@@ -72,7 +72,7 @@ The application will prove useful to anyone who loves and works with words and h
 ## In Terminal
 
 	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
-	$ cd ./apotomoing_sequencers_
+	$ cd ./apotomoing_sequencers
 	$ rails s
 
 After your server fires up, go to your browser : http://localhost:3000/ to see the beginnings (still) of apotomoing_sequencers.  
