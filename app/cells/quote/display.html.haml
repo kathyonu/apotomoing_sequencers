@@ -1,7 +1,11 @@
 %h3
   This is the Quote Cell display
 
-= @quote.text
+.quote_text
+
+  = @quote.text
+  = " - " + @quote.author.downcase
 
 %p
-  Find me in app/cells/quote/display.html.haml
+  %small
+    this first quote of the day coming to you from app/cells/quote/display.html.haml

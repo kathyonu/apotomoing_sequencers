@@ -1,14 +1,24 @@
 <div class="sequencer_index">
 
-<h1>Sequencer#index</h1>
+<h2>Sequencer#index</h2>
 
-<%= render_widget 'creator' %>
 <%= render_widget 'words' %>
+<%= render_widget 'creator' %>
+
+<div class="cellular_quote_sequencer_index">
+  <%= render_cell :quote, :display, :quote => @quote %>
+  <p>
+    <small>
+      this call to the QuoteCell is made from : app/views/sequencer/index.html.erb
+    </small>
+  </p>
+</div>
 
 <p>
   <small>
-    These two widgets have been brought to you by : app/views/sequencer/index.html.erb
-  </small>
+    <br /> These two widgets have been brought to you by : app/views/sequencer/index.html.erb
+    <br /> the sequence_created_widget, and anagram_widget with quote_cell display embedded within its display. 
+    <br />   </small>
 </p>
 
 </div>
