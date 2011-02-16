@@ -1,6 +1,10 @@
+<div class="anagrams_index">
+
 <h1>Listing anagrams</h1>
 
-<%= render_cell :quote, :display, :quote => @quote %>
+<div class="cellular_quote">
+  <%= render_cell :quote, :display, :quote => @quote %>
+</div>
 
 <table>
   <tr>
@@ -29,3 +33,5 @@
 <br />
 
 <%= link_to 'New Anagram', new_anagram_path %>
+
+</div>
