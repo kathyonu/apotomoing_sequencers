@@ -1,37 +1,46 @@
-%hr
-
-%p
-  %small
-    line above begins the anagram_widget display
-
-= widget_div do
-  %ul
-    - for a in @anagrams
-      %li 
-        = a.id
-      %li
-        = a.text
-
-%p
-  Anagram is not yet entering data into database, nor feeding it to sequence_created
-
-= form_for @anagram, :as => :anagram, :html => {"data-event-url" => url_for_event(:submit)}, :url => "" do |f|
-  = error_messages_for :sequence_creation
-  = f.label 'Add Anagram'
-  = f.text_field 'anagram'
- 
-  = submit_tag "Enter New Anagram"
+.anagram_widget_display
   
-%p
-  %small
-    line below ends the anagram_widget display
+  %hr
+  
+  %p
+    %small
+      line above begins the anagram_widget display_form
+  
+  .cellular_quote
+    = render_cell :quote, :display, :quote => @quote
 
-%hr
+  %p This is the list of anagrams in the database :
 
-:javascript
-  var form = $("##{widget_id} form");
+  = widget_div do
+    %ol
+      - for a in @anagrams
+        %li=a.id = a.text
  
-  form.submit(function() {
-    $.ajax({url: form.attr("data-event-url"), data: form.serialize()})
-    return false;
-  });
+  %p
+    Anagram is not yet entering data into database using this box.
+    <br />
+    Use http://localhost:3000/anagrams/new
+    = link_to 'New Anagram', new_anagram_path
+
+  
+  = form_for @anagram, :as => :anagram, :html => {"data-event-url" => url_for_event(:submit)}, :url => "" do |f|
+    = error_messages_for :sequence_creation
+    = f.label 'Add Anagram'
+    = f.text_field 'anagram'
+   
+    = submit_tag "Enter New Anagram"
+    
+  %p
+    %small
+      line below ends the anagram_widget display
+  
+  %hr
+  
+  :javascript
+    var form = $("##{widget_id} form");
+   
+    form.submit(function() {
+      $.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+      return false;
+    });
+  
