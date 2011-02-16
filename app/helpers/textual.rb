@@ -25,11 +25,13 @@ module Textual
     foo.gsub!(/(\Ba\.m\.$)/, " am")                     # a.m.  < replaces that with : am, at the end of the line
     foo.gsub!(/(\Ba\.m\.,\s+)/, " am, ")                # a.m., < replaces that with : am, 
     foo.gsub!(/(\Ba\.m,\s+)/, " am, ")                  # a.m,  < replaces that with : am comma space
+    foo.gsub!(/(\sa\.m\.,\s+)/, " am, ")                # a.m., < replaces that with : am, 
     foo.gsub!(/(\sa\.m,\s+)/, " am, ")                  # a.m,  < replaces that with : am comma space
     foo.gsub!(/(\s+a\.m\.\s+)/, " am ")                 # a.m.  < replaces that with : am
     foo.gsub!(/(\Bp\.m\.$)/, " pm")                     # p.m.  < replaces that with : pm at the end of the line
     foo.gsub!(/(\Bp\.m\.,\s+)/, " pm, ")                # p.m., < replaces that with : pm, 
     foo.gsub!(/(\Bp\.m,\s+)/, " pm, ")                  # p.m,  < replaces that with : pm comma space
+    foo.gsub!(/(\sp\.m\.,\s+)/, " pm, ")                # p.m., < replaces that with : pm, 
     foo.gsub!(/(\sp\.m,\s+)/, " pm, ")                  # p.m,  < replaces that with : pm comma space
     foo.gsub!(/(\s+p\.m\.\s+)/, " pm ")                 # p.m.  < replaces that with : pm
     foo.gsub!(/(^p\.s\.\s+)/, "ps ")                   # p.s.  < replaces that with : ps at beginning of line

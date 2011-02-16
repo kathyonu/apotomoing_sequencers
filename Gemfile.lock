@@ -109,7 +109,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth (>= 4.1.1)
   apotomo!
-  cells (= 3.5.0)
+  cells (>= 3.5.0)
   enginex
   haml
   hooks (~> 0.1.3)
