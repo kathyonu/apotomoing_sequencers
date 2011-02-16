@@ -1351,36 +1351,13 @@ The apotomoing_sequencers app is created, githubbed, and ready for more developm
 
 
 
-----------------------------------------------------
-A Learning Moment : args vs options in cells defined
-  from the #cells irc chat room on 20110204
-[10:59am] cowboyd: how do you distinguish options from arguments?
-[11:06am] apotonick: hey cowboyd
-[11:06am] cowboyd: yo
-[11:06am] apotonick: options vs args is easy
-[11:06am] apotonick: def my_state(args)
-[11:06am] apotonick:   options[:whatever]
-[11:11am] cowboyd: not in how you receive arguments and options at the same time, but in how you pass them
-[11:11am] apotonick: cowboyd, easy as well:
-[11:12am] apotonick: render_state(:whatever, :id => 12) will pass as args if possible
-[11:12am] apotonick: so the point is to softly deprecate #options
-[11:15am] cowboyd: will it automatically figure out the argument based on parameter name?
-[11:15am] cowboyd: i.e.
-[11:16am] cowboyd: render_state(:foo, :bar => 'baz', :bang => 'bip')
-[11:16am] cowboyd: def foo(bang,bar)
-[11:16am] cowboyd: ...
-[12:14pm] apotonick: cowboyd, render_state just passes *args to the invoked state, so it's up to you
-[12:14pm] cowboyd: ah, ok.
-[12:15pm] apotonick: cowboyd, look here: https://github.com/apotonick/cells/commit/d2d341fda42e6646317f0446eb519cb3fcee8d3c#L2R31
-[12:16pm] apotonick: they have a gem action-args for rails which does this, it's too magic in my opinion
---------------------------------------------------------------------------------------------------------
 
 
 
 
 
-
-You have reached the end of the development so far, and .. 
+You have reached the end of the development at the first push.
+ 
 At this point, the app has incomplete and or possibly wrong codes.
 That will not be true for long, as this is my first app on github,
 this app is in constant continuing development from this point on.
