@@ -1,0 +1,31 @@
+<h1>Listing quotes</h1>
+
+<table>
+  <tr>
+    <th>Text</th>
+    <th>Sequence created</th>
+    <th>Author</th>
+    <th>Lifedates</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @quotes.each do |quote| %>
+  <tr>
+    <td><%= quote.text %></td>
+    <td><%= quote.sequence_created_id %></td>
+    <td><%= quote.author %></td>
+    <td><%= quote.lifedates %></td>
+    <td><%= quote.description %></td>
+    <td><%= link_to 'Show', quote %></td>
+    <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
+    <td><%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Quote', new_quote_path %>

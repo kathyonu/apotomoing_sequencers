@@ -1,5 +1,7 @@
 ApotomoingSequencers::Application.routes.draw do
 
+  resources :quotes
+
   resources :anagrams
 
   resources :sequence_createds
