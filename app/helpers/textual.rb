@@ -76,11 +76,11 @@ module Textual
     foo.gsub!(/(^((jr)\.)\s+?)/, " junior ")
     foo.gsub!(/(^((jr)\.,?)\s+?)/, " junior, ")
     foo.gsub!(/(\s+((jr)\.)\s+?)/, " junior ")
-    foo.gsub!(/(^(o\.k\.??)\s)/, " okay\n")            # replaces the O.K.? at the beginning of the line with okay and new line 
-    foo.gsub!(/(\s+(o\.k\.[?])\s)/, " okay\n")         # replaces the O.K., with okay and new line 
-    foo.gsub!(/(^(o\.k\.,?)\s)/, " okay, ")            # replaces the O.K., at the beginning of the line with okay,  
-    foo.gsub!(/(\s+(o\.k\.,?)\s)/, " okay, ")          # replaces the O.K., with okay,  
-    foo.gsub!(/(^(dr\.,?)\s+?)/, " doctor ")           # on these, shouldn't that first \s be \s+ : answer is YES, so i changed it
+    foo.gsub!(/(^(o\.k\.?)\s)/, "okay, ")              # replaces the O.K.? at the beginning of the line with okay comma space 
+    foo.gsub!(/(\s+(o\.k\.+,?)\s)/, " okay, ")         # replaces the O.K., with okay comma space 
+    foo.gsub!(/(^(o\.k\.,?)\s)/, "okay, ")             # replaces the O.K., at the beginning of the line with okay,  
+    foo.gsub!(/(\s+(o\.k\.?,+)\s)/, " okay, ")         # replaces the O.K., with okay,  
+    foo.gsub!(/(^(dr\.,?)\s+?)/, "doctor ")            # on these, shouldn't that first \s be \s+ : answer is YES, so i changed it
     foo.gsub!(/(\s+(dr\.,?)\s+?)/, " doctor ")         # on these, shouldn't that first \s be \s+ : answer is YES, so i changed it
    #foo.gsub!(/((\s+(d)\.(r)\.)\s+)/, " doctor ")      # d.r. < replaces that with : doctor : this one is funky, not a valid abbreviation for doctor, and i don't remember how this one got here.
     foo.gsub!(/(^(apt\.?)\s+)/, "apartment ")          # apt. < replaces apt. at the beginning of line with apartment.
@@ -5045,6 +5045,8 @@ module Textual
     foo.gsub!(/&/, " and ")
     foo.gsub!(/((dept)\.*?\s+?)/, " department ")
     foo.gsub!(/\s+$/, "")                     # spaces           : removes spaces at the end of line
+    foo.gsub!(/(,\.[\""]\s?)/, "\n")          # commas           : replaces comma period quote mark space/no space, with new line
+    foo.gsub!(/,\.\s/, "\n")                  # commas           : replaces comma period space with new line
     foo.gsub!(/,+$/, "")                      # commas           : removes commas at the end of the line
     foo.gsub!(/((,+\s*)$)/, "")               # commas           : removes commas followed by space, or not, at the end of the line
     foo.gsub!(/(,+\s+?,+)/, ", ")             # comma            : removes spaces in front of comma or commas in a row, and replaces it with the one comma and one space
