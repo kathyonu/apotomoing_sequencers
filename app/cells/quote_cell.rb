@@ -1,12 +1,12 @@
 class QuoteCell < Cell::Rails
 
-  def display(args)
+  def display
     @quote = Quote.find:first
     render
   end
 
-  def display2(args)
-    @quote = Quote.find:last
+  def display2
+    @quote2 = Quote.find:last
     render
   end
 

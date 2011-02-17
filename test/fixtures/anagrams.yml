@@ -9,5 +9,5 @@ one:
 two:
   text: anagram testings
   sequence_created_id: 2
-  description: MyString
-  reference: MyString
+  description: My String
+  reference: My String

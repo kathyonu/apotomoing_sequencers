@@ -7,6 +7,6 @@ class SequenceCreatedWidgetTest < Apotomo::TestCase
   
   test "display" do
     render_widget 'me'
-    assert_select "h1"
+    assert_select "hr"
   end
 end

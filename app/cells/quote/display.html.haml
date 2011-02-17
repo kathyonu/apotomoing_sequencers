@@ -1,4 +1,4 @@
-%h3
+%h4
   This is the Quote Cell display
 
 .quote_text
@@ -6,7 +6,9 @@
   = @quote.text
   = " - " + @quote.author.downcase
 
-= link_to 'New Quote', new_quote_path
+%p
+
+= link_to 'Add a New Quote', new_quote_path
 
 %p
   %small

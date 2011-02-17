@@ -6,5 +6,9 @@ class QuoteCellTest < Cell::TestCase
     assert_select "p"
   end
   
+ test "display2" do
+    invoke :display2
+    assert_select "h3"
+  end
 
 end

@@ -5,8 +5,8 @@ class AnagramWidgetTest < Apotomo::TestCase
     root << widget(:anagram_widget, 'me')
   end
   
-  test "display" do
+  test "display_form" do
     render_widget 'me'
-    assert_select "h1"
+    assert_select "hr"
   end
 end

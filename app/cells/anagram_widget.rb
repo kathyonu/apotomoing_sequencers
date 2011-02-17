@@ -3,13 +3,14 @@ class AnagramWidget < Apotomo::Widget
     
   def anagram
     @anagram = Anagram.new
+	render
   end
 
   def display_form
     @anagrams = Anagram.find:all
     render
   end
-
+  
   def write
     @anagram = Anagram.new(params(:anagram)).save
 	@anagram = anagram.update_attributes(params(:anagram))

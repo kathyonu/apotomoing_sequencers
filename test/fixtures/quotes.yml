@@ -3,13 +3,13 @@
 one:
   text: MyString
   sequence_created_id: 1
-  author: MyString
-  lifedates: MyString
+  author: Moi
+  lifedates: Now
   description: MyString
 
 two:
-  text: MyString
-  sequence_created_id: 1
-  author: MyString
-  lifedates: MyString
-  description: MyString
+  text: My String
+  sequence_created_id: 2
+  author: Moi
+  lifedates: Then
+  description: My String

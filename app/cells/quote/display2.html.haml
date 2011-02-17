@@ -3,12 +3,14 @@
 
 .quote_text
 
-  = @quote.text
-  = " - " + @quote.author.downcase
+  = @quote2.text
+  = " - " + @quote2.author.downcase
+
+%p
 
 = link_to 'Add a New Quote', new_quote_path
 
 %p
   %small
-    this last quote of the day coming to you from app/cells/quote/display2.html.haml
+    this last quote of the day is coming to you from : app/cells/quote/display2.html.haml
 

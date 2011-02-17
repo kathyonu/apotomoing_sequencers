@@ -35,7 +35,10 @@ div.field, div.actions {
 }
 
 .cellular_quote {
-  border: 11px solid aqua;
+  border-top: 15px solid maroon;
+  border-right: 25px solid maroon;
+  border-bottom: 35px solid maroon;
+  border-left: 5px solid maroon;
   margin-bottom: 1px;
   margin-left: 20px;
   margin-right: 10px;
@@ -45,10 +48,10 @@ div.field, div.actions {
 }
 
 .cellular_quote_sequencer_index {
-  border-top: 17px solid aqua;
-  border-right: 10px solid maroon;
-  border-bottom: 17px solid aqua;
-  border-left: 10px solid maroon;
+  border-top: 17px solid maroon;
+  border-right: 12px solid maroon;
+  border-bottom: 5px solid maroon;
+  border-left: 35px solid maroon;
   margin-top: 2px;
   margin-right: 20px;
   margin-bottom: 2px;
@@ -61,9 +64,9 @@ div.field, div.actions {
 
 .quote_text {
   border-top: 17px solid teal;
-  border-right: 20px solid teal;
-  border-bottom: 17px solid teal;
-  border-left: 20px solid teal;
+  border-right: 12px solid teal;
+  border-bottom: 5px solid teal;
+  border-left: 35px solid teal;
   margin-left: 14px;
   margin-right: 24px;
   padding-top: 5px;
