@@ -1,0 +1,14 @@
+%h3
+  This is the Quote Cell display2
+
+.quote_text
+
+  = @quote.text
+  = " - " + @quote.author.downcase
+
+= link_to 'Add a New Quote', new_quote_path
+
+%p
+  %small
+    this last quote of the day coming to you from app/cells/quote/display2.html.haml
+

@@ -20,10 +20,10 @@
         %li=a.id = a.text
  
   %p
-    Anagram is not yet entering data into database using this box.
+    = link_to 'Add a New Anagram', new_anagram_path 
+    <= Use http://localhost:3000/anagrams/new
     <br />
-    Use http://localhost:3000/anagrams/new
-    = link_to 'New Anagram', new_anagram_path
+    Anagram is not yet entering data into database using this box.
 
   
   = form_for @anagram, :as => :anagram, :html => {"data-event-url" => url_for_event(:submit)}, :url => "" do |f|

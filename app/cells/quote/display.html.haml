@@ -6,6 +6,8 @@
   = @quote.text
   = " - " + @quote.author.downcase
 
+= link_to 'New Quote', new_quote_path
+
 %p
   %small
     this first quote of the day coming to you from app/cells/quote/display.html.haml
