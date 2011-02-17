@@ -1,7 +1,7 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time still, 20110212, apotomoing_sequencers is not a fully functioning application. 
+### Note: At this time still, 20110217, apotomoing_sequencers is not a fully functioning application. 
 The entire modelling is subject to change at any moment.
 
 ## Description:
@@ -13,7 +13,7 @@ Currently, we are writing this app, using
 ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-darwin10]
 Rails 3.0.4
 Apotomo 1.0.3
-Cells 3.5.0
+Cells 3.5.2
 
 The app uses sqlite3 for the database, so you have no setup to do there.
 Our in-house app will be using mysql2 in production.
@@ -25,8 +25,8 @@ Our in-house app will be using mysql2 in production.
 *apotomo* harnesses the power of *cells*, making them fully interactive.
 [apotomo](http://apotomo.de/ "Apotomo")
 
-*cells* is the name of a gem and plugin created by Nick Sutterer.
-*cells* is the ideal missing component of the rails MVC stack.
+*cells* is the name of a gem and plugin created by Nick Sutterer.  
+*cells* is the ideal missing component of the rails MVC stack.  
 *cells* can be written one time, and displayed anywhere.
 [cells](http://cells.rubyforge.org/ "Cells")
 
@@ -35,7 +35,7 @@ So, *apotomoing* is my creation on *apotomo*, so as to honor the beauty and usef
 I have Nick's permission to use the name as *apotomoing*, with *sequencers* latched on, as our github repository name.
 
 ## Sequencers
-> well . . that is what this app is being built for, to sequence any creation in English.
+> The sequencer methods are what this app is being built for, to sequence any creation in English.
 >
 > Just as the sequencing of the dna displays its specific characteristics, 
 > the sequencing of the words, names, phrase, creates their unique letterings sequences.
@@ -73,6 +73,7 @@ The application will prove useful to anyone who loves and works with words and h
 
 	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
 	$ cd ./apotomoing_sequencers
+	$ rake db:migrate
 	$ rails s
 
 After your server fires up, go to your browser : http://localhost:3000/ to see the beginnings (still) of apotomoing_sequencers.  
