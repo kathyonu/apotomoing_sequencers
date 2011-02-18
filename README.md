@@ -1,7 +1,7 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time still, 20110217, apotomoing_sequencers is not a fully functioning application. 
+### Note: At this time still, 20110218, apotomoing_sequencers is not yet a fully functioning application. 
 The entire modelling is subject to change at any moment.
 
 ## Description:
@@ -47,7 +47,7 @@ I have Nick's permission to use the name as *apotomoing*, with *sequencers* latc
 
 ## What are the five sequences we generate ? 
 
-If we use, peace on earth good will all, as the created phrase, then its sequences will be :
+If we use, *peace on earth good will all*, as the created phrase, then its sequences will be :
 
 1. sequence_created  : peace on earth good will all
 2. sequence_creation : peaceonearthgoodwillall
@@ -55,7 +55,7 @@ If we use, peace on earth good will all, as the created phrase, then its sequenc
 4. sequence_lexigram : acdeeghillnooprtw
 5. sequence_singular : acdeghilnoprtw
 
-The application will prove useful to anyone who loves and works with words and has need to find or verify the sequences that creates any name word or phrase.
+The application will prove useful to anyone who loves and works with words and has need to find or verify the sequences that creates any name word or phrase. Those search methods will be added after we have the application fully working.
 
 ### Other sequencers we can add include :
 
@@ -63,20 +63,40 @@ The application will prove useful to anyone who loves and works with words and h
 * sequence_randomized - abcdef => dfbaec
 * sequence_center_randomized - abcdef => aecbdf
 * sequence_palindrome - "doctor roctod".palindrome?
-* anagrams
+* anagrams, full or partial
 * perfect anagrams - meanings wise, these are a leap beyond the full anagrams offered at wordsmith.org and other anagram generators.
 > An anagrams generator is available now at [Wordsmith AnagramGenerator](http://www.wordsmith.org/ "Wordsmith.org AnagramGenerator")
 
+===
 # Getting Started
-
 ## In Terminal
 
-	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
-	$ cd ./apotomoing_sequencers
-	$ rake db:migrate
-	$ rails s
+>	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
+>	$ cd ./apotomoing_sequencers
+>	$ bundle install
+>	$ rake db:migrate
+>	$ rails s
 
-After your server fires up, go to your browser : http://localhost:3000/ to see the beginnings (still) of apotomoing_sequencers.  
+After your server fires up, go to your browser : 
+
+*	http://localhost:3000/quotes/new
+
+> Add your first two quotes, including the author name.
+> You will see your two quotes used almost immediately, 
+>  so make them good ones.
+
+Then go to :
+
+*	http://localhost:3000/anagrams/new
+
+> Add your first anagram, or more.  
+> One is all you need for the next step to start.
+
+Then go to :
+
+*	http://localhost:3000/
+
+===
 
 > #### This application is Copyright Will I Am at goodworksonearth.org, held in trust.
 > #### You are free to use this application, and make changes to it for your own use, provided this copyright notice remains intact.  
