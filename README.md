@@ -67,36 +67,33 @@ The application will prove useful to anyone who loves and works with words and h
 * perfect anagrams - meanings wise, these are a leap beyond the full anagrams offered at wordsmith.org and other anagram generators.
 > An anagrams generator is available now at [Wordsmith AnagramGenerator](http://www.wordsmith.org/ "Wordsmith.org AnagramGenerator")
 
-===
 # Getting Started
 ## In Terminal
 
->	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
->	$ cd ./apotomoing_sequencers
->	$ bundle install
->	$ rake db:migrate
->	$ rails s
+	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
+	$ cd ./apotomoing_sequencers
+	$ bundle install
+	$ rake db:migrate
+	$ rails s
 
 After your server fires up, go to your browser : 
 
 *	http://localhost:3000/quotes/new
 
-> Add your first two quotes, including the author name.
-> You will see your two quotes used almost immediately, 
->  so make them good ones.
+Add your first two quotes, including the author name.
+You will see your two quotes used almost immediately, so make them good ones.
 
 Then go to :
 
 *	http://localhost:3000/anagrams/new
 
-> Add your first anagram, or more.  
-> One is all you need for the next step to start.
+Add your first anagram, or more.  
+One is all you need for the next step to start.
 
 Then go to :
 
 *	http://localhost:3000/
 
-===
 
 > #### This application is Copyright Will I Am at goodworksonearth.org, held in trust.
 > #### You are free to use this application, and make changes to it for your own use, provided this copyright notice remains intact.  
