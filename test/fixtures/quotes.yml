@@ -1,15 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  text: MyString
+  text: MyFirstQuote
   sequence_created_id: 1
   author: Moi
   lifedates: Now
-  description: MyString
+  description: MyQuote
 
 two:
-  text: My String
+  text: MySecondQuote
   sequence_created_id: 2
   author: Moi
   lifedates: Then
-  description: My String
+  description: MyQuote2

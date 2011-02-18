@@ -1,10 +1,8 @@
-.anagram_widget_display
-  
-  %hr
+.anagram_widget_display_form
   
   %p
     %small
-      line above begins the anagram_widget display_form
+      here above begins the anagram_widget display_form
 
   %p 
     %small
@@ -13,19 +11,19 @@
   %p This is the list of anagrams in the database :
 
   = widget_div do
-    %ol
+    %ul
       - for a in @anagrams
-        %li=a.id = a.text
- 
+        %li=a.id
+        %li=a.text 
   %p
     = link_to 'Add a New Anagram', new_anagram_path 
-    <= Use http://localhost:3000/anagrams/new
+    <= using http://localhost:3000/anagrams/new
   
   .cellular_quote
     = render_cell :quote, :display, :quote => @quote
 
-  <br />
-  <br />
+  %br
+  %br
 
   = form_for @anagram, :as => :anagram, :html => {"data-event-url" => url_for_event(:submit)}, :url => "" do |f|
     = error_messages_for :sequence_creation
@@ -34,17 +32,17 @@
    
     = submit_tag "Enter New Anagram"
 
-    <br />
-
-    Add Anagram box is not yet entering data into database, 
-    <br />
+  Add anagram box is not yet entering data into database, 
+  %br
     &nbsp;&nbsp; nor firing the five sequences.
 
   %p
+    = link_to 'To Add a New Anagram', new_anagram_path 
+    <= using http://localhost:3000/anagrams/new
+
+  %p
     %small
-      line below ends the anagram_widget display
-  
-  %hr
+      here ends the anagram_widget display
   
   :javascript
     var form = $("##{widget_id} form");

@@ -6,7 +6,7 @@ class AnagramWidget < Apotomo::Widget
 	render
   end
 
-  def display_form
+  def display
     @anagrams = Anagram.find:all
     render
   end

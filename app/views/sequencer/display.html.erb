@@ -1,0 +1,25 @@
+<div class="sequencer_display">
+
+<h2>Sequencer#display</h2>
+
+<%= render_widget 'begin' %>
+
+<div class="cellular_quote_sequencer_display">
+  <%= render_cell :quote, :display2, :quote => @quote %>
+  </div>
+<p>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <small>
+    the call to enter the QuoteCell here is made from within : app/views/sequencer/display.html.erb
+  </small>
+</p>
+
+<p>
+  <small>
+    <br /> These two widgets have been brought to you by : app/views/sequencer/display.html.erb
+    <br /> the sequence_created_widget, and anagram_widget with quote_cell display embedded within its display. 
+    <br />
+  </small>
+</p>
+
+</div>

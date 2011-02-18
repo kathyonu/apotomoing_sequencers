@@ -6,9 +6,9 @@ ApotomoingSequencers::Application.routes.draw do
 
   resources :sequence_createds
 
-  get "sequencer/index"
+  get "sequencer/display"
 
-  root :to => "sequencer#index"
+  root :to => "sequencer#display"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
