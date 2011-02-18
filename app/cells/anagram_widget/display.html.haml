@@ -1,12 +1,12 @@
-.anagram_widget_display_form
+.anagram_widget_display
   
   %p
     %small
-      here above begins the anagram_widget display_form
+      here above begins the anagram_widget display
 
   %p 
     %small
-      &nbsp;&nbsp;&nbsp;&nbsp; the call to the above QuoteCell is made from : app/cells/anagram_widget/display_form.html.haml
+      &nbsp;&nbsp;&nbsp;&nbsp; the call to the above QuoteCell is made from : app/cells/anagram_widget/display.html.haml
 
   %p This is the list of anagrams in the database :
 
@@ -22,8 +22,7 @@
   .cellular_quote
     = render_cell :quote, :display, :quote => @quote
 
-  %br
-  %br
+  %p 
 
   = form_for @anagram, :as => :anagram, :html => {"data-event-url" => url_for_event(:submit)}, :url => "" do |f|
     = error_messages_for :sequence_creation
@@ -32,9 +31,7 @@
    
     = submit_tag "Enter New Anagram"
 
-  Add anagram box is not yet entering data into database, 
-  %br
-    &nbsp;&nbsp; nor firing the five sequences.
+  Add anagram box is not yet entering data into database, nor firing the five sequences.
 
   %p
     = link_to 'To Add a New Anagram', new_anagram_path 
