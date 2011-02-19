@@ -83,8 +83,23 @@ div.field, div.actions {
 
 .sequencer_display {
   border: 11px solid purple;
-  margin-left: 4px;
-  padding-left: 4px;
+  border-top: 44px solid purple;
+  margin-left: 6px;
+  padding-left: 6px;
+  padding-right: 4px;
+}
+
+.sequencer_widget_display {
+  border-top: 4px solid purple;
+  border-right: 4px solid purple;
+  border-bottom: 4px solid purple;
+  border-left: 4px solid purple;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 4px;
+  padding-bottom: 6px;
 }
 
 .field_with_errors {

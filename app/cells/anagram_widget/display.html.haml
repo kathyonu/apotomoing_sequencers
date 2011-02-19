@@ -2,7 +2,7 @@
   
   %p
     %small
-      here above begins the anagram_widget display
+      here begins the anagram_widget display
 
   %p 
     %small
@@ -11,9 +11,8 @@
   %p This is the list of anagrams in the database :
 
   = widget_div do
-    %ul
+    %ol
       - for a in @anagrams
-        %li=a.id
         %li=a.text 
   %p
     = link_to 'Add a New Anagram', new_anagram_path 

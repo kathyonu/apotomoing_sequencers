@@ -15,7 +15,7 @@ class AnagramWidget < Apotomo::Widget
     @anagram = Anagram.new(params(:anagram)).save
 	@anagram = anagram.update_attributes(params(:anagram))
     @anagrams = Anagram.find:all
-    update :display_form
+    update :display
   end
 
 end
