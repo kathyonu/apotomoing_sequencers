@@ -3,18 +3,9 @@
   %p
     Welcome to the <b>sequencer_widget_display</b>
 
-  = "You have #{:anagrams.size} anagrams in the anagrams table"
+  = "You have #{Anagram.count} anagrams in the anagrams table"
   %br
-  = "You have #{:quotes.size} quotes in the quotes table"
+  = "You have #{Quote.count} quotes in the quotes table"
   %br
-  = "You have #{:sequence_createds.size} createds in the sequence_createds table"
+  = "You have #{SequenceCreated.count} createds in the sequence_createds table"
   %br
-  = "You have #{:sequence_creations.size} creations in the sequence_createds table"
-  %br
-  = "You have #{:sequence_completes.size} completes in the sequence_createds table"
-  %br
-  = "You have #{:sequence_lexigrams.size} lexigrams in the sequence_createds table"
-  %br
-  = "You have #{:sequence_singulars.size} singulars in the sequence_createds table"
-  %br
-  \# TODO adjust the database, and displays, so these counts are generated.
