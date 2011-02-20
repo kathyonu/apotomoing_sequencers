@@ -91,10 +91,12 @@ module Textual
     foo.gsub!(/(^((mt)\.?)\s+?)/, "mount ")            # also could be the montana state abbreviation, MT.
    #foo.gsub!(/(\s+mt\.\s+)/, " mount ")               # there is no easy way to accurately expand MT and ST and such to their full name, as they have more than one.
     foo.gsub!(/(\s+mt\.$)/, " montana ")
-    foo.gsub!(/((\s+(a)\.(k)\.(a))\.\s+)/, " also known as ")    # aka  < replaces with  : also known as
-    foo.gsub!(/((\s+(a)\.(k)\.(a))\.\s?)/, " also known as ")
-    foo.gsub!(/((\s+(a)\.(k)\.(a))\s?)/, " also known as ")
-    foo.gsub!(/((\s+(a)\.(k)\.(a)),?\s?)/, " also known as ")
+    foo.gsub!(/(\s+(a)\.(k)\.(a)\.\s+)/, " also known as ")    # a.k.a.  < replaces with  : also known as
+    foo.gsub!(/(\s+(a)\.(k)\.(a)\.\s?)/, " also known as ")
+    foo.gsub!(/(\s+(a)\.(k)\.(a)\s?)/, " also known as ")
+    foo.gsub!(/(\s+(a)\.(k)\.(a),?\s?)/, " also known as ")
+    foo.gsub!(/(\s?(a\.k\.a\.),\s+)/, " also known as, ")
+    foo.gsub!(/(\s?(a\.k\.a\.)\s+)/, " also known as ")
     foo.gsub!(/((\s?(r)\.(s)\.(v)\.(p)\.)\s?)/, " rsvp ")
     foo.gsub!(/((\s+(a)\.(s)\.(a)\.(p)\.),\s?)/, " as soon as possible, ")
     foo.gsub!(/((\s+(a)\.(s)\.(a)\.(p)\.),?\s?)/, " as soon as possible ")
