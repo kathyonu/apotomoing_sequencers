@@ -28,7 +28,7 @@
   = form_for @anagram, :as => :anagram, :html => {"data-event-url" => url_for_event(:submit)}, :url => "" do |f|
     = error_messages_for :sequence_creation
     = f.label 'Add Anagram'
-    = f.text_field 'anagram'
+    = f.text_field 'text'
    
     = submit_tag "Enter New Anagram"
 

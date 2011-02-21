@@ -1,5 +1,5 @@
 class AnagramWidget < Apotomo::Widget
-  responds_to_event :submit, :with => :write
+  responds_to_event :submit, :from => :anagram, :with => :write
     
   def anagram
     @anagram = Anagram.new
@@ -12,7 +12,7 @@ class AnagramWidget < Apotomo::Widget
   end
   
   def write
-    @anagram = Anagram.new(params(:anagram)).save
+    @anagram = Anagram.create(params(:anagram))
 	@anagram = anagram.update_attributes(params(:anagram))
     @anagrams = Anagram.find:all
     update :display

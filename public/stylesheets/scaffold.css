@@ -108,6 +108,42 @@ div.field, div.actions {
   display: table;
 }
 
+#sequence_created_html {
+  border: 2px solid navy;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 8px;
+}
+
+#sequence_creation_html {
+  border: 2px solid navy;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 8px;
+}
+
+#sequence_complete_html {
+  border: 2px solid navy;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 8px;
+}
+
+#sequence_lexigram_html {
+  border: 2px solid navy;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 8px;
+}
+
+#sequence_singular_html {
+  border: 2px solid navy;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 8px;
+}
+
+
 #notice {
   color: green;
 }
