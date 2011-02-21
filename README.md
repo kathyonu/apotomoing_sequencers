@@ -74,26 +74,13 @@ The application will prove useful to anyone who loves and works with words and h
 	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
 	$ cd ./apotomoing_sequencers
 	$ bundle install
-	$ rake db:migrate
 	$ rails s
 
-After your server fires up, go to your browser : 
-
-*	http://localhost:3000/quotes/new
-
-Add your first two quotes, including the author name.
-You will see your two quotes used almost immediately, so make them good ones.
-
-Then go to :
-
-*	http://localhost:3000/anagrams/new
-
-Add your first anagram, or more.  
-One is all you need for the next step to start.
-
-Then go to :
+### After your server fires up, go to your browser : 
 
 *	http://localhost:3000/
+*	http://localhost:3000/quotes/new
+*	http://localhost:3000/anagrams/new
 
 
 > #### This application is Copyright Will I Am at goodworksonearth.org, held in trust.
