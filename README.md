@@ -1,7 +1,7 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time still, 20110218, apotomoing_sequencers is not yet a fully functioning application. 
+### Note: At this time still, 20110220, apotomoing_sequencers is not yet a fully functioning application. 
 The entire modelling is subject to change at any moment.
 
 ## Description:
@@ -18,7 +18,8 @@ Cells 3.5.2
 The app uses sqlite3 for the database, so you have no setup to do there.
 Our in-house app will be using mysql2 in production.
 
-## apotomoing_sequencers
+## apotomo
+### apotomoing_sequencers
  as a name, it comes from two stories of creation:
 
 *apotomo* is the name of a gem and plugin created by Nick Sutterer.

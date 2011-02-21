@@ -2,6 +2,6 @@ module ApplicationHelper
 
 # require 'Histogram'
 
-require 'Textual'
+require 'textual'
 
 end
