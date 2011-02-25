@@ -3,7 +3,6 @@ class AnagramsController < ApplicationController
 
   has_widgets do |root|
     root << widget(:anagram_widget, 'words', :display, :anagram => @anagram)
-    root << widget(:sequencer_widget, 'begin', :display)
   end
 
   # GET /anagrams

@@ -6,7 +6,6 @@ class SequenceCreatedsController < ApplicationController
   end
 
 
-
   # GET /sequence_createds
   # GET /sequence_createds.xml
   def index

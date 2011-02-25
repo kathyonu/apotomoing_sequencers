@@ -4,6 +4,26 @@
     %small
       here begins the anagram_widget display
 
+  %p
+    = link_to 'To Add a New Anagram', new_anagram_path 
+    <= using http://localhost:3000/anagrams/new
+
+  %p 
+
+  %hr
+
+  Add anagram box is not yet entering data into database, nor firing the five sequences.
+
+  = form_for @anagram, :as => :anagram, :html => {"data-event-url" => url_for_event(:submit)}, :url => "" do |f|
+    = error_messages_for :sequence_creation
+    = f.label 'Add Anagram'
+    = f.text_field 'text'
+   
+    = submit_tag "Enter New Anagram"
+
+
+  %hr
+
   %p This is the list of anagrams in the database :
 
   = widget_div do
@@ -20,25 +40,6 @@
   %p 
     %small
       &nbsp;&nbsp;&nbsp;&nbsp; the call to the above QuoteCell is made from : app/cells/anagram_widget/display.html.haml
-
-  %p 
-
-  %hr
-
-  = form_for @anagram, :as => :anagram, :html => {"data-event-url" => url_for_event(:submit)}, :url => "" do |f|
-    = error_messages_for :sequence_creation
-    = f.label 'Add Anagram'
-    = f.text_field 'text'
-   
-    = submit_tag "Enter New Anagram"
-
-  Add anagram box is not yet entering data into database, nor firing the five sequences.
-
-  %hr
-
-  %p
-    = link_to 'To Add a New Anagram', new_anagram_path 
-    <= using http://localhost:3000/anagrams/new
 
   %p
     %small

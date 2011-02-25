@@ -66,8 +66,9 @@ module Textual
     foo.gsub!(/(\s+((mz)\.),?\s+?)/, " mizz, ")
     foo.gsub!(/(^(mr\.)\s+)/, " mister ")
     foo.gsub!(/(^(mr\.),?\s+)/, " mister, ")
+    foo.gsub!(/(^\s*mr\.+[""]\s)/, " mister\n")
     foo.gsub!(/(\s+mr\.$)/, " mister")
-    foo.gsub!(/(\s+mr\.+\""?\s)/, " mister\n")
+    foo.gsub!(/(\s+mr\.+[""?]\s)/, " mister\n")
     foo.gsub!(/(\s+mr\.+)/, " mister ")
     foo.gsub!(/(,\s+mr\s+)/, ", mister ")
     foo.gsub!(/(\.\s+mr\s+)/, ". mister ")
@@ -87,6 +88,7 @@ module Textual
     foo.gsub!(/(\s(apt\.)\s+)/, " apartment ")         # apt. < replaces apt. with apartment.
     foo.gsub!(/(\s(apt\.)\s?)$/, " apartment")         # apt. < replaces apt. with apartment, at the end of the line.
     foo.gsub!(/(^((st)\.?)\s+?)/, "saint ")
+    foo.gsub!(/(\s+ave\.\s+)/, " avenue ")             # ave. < replaces ave. with avenue
    #foo.gsub!(/(\s+((st)\.?)\s+?)/, " saint ")         # also could be street, not saint !!!!!  how to fix that one !!!!
     foo.gsub!(/(^((mt)\.?)\s+?)/, "mount ")            # also could be the montana state abbreviation, MT.
    #foo.gsub!(/(\s+mt\.\s+)/, " mount ")               # there is no easy way to accurately expand MT and ST and such to their full name, as they have more than one.
@@ -187,12 +189,12 @@ module Textual
    #foo.gsub!(/((\s(vi)\s?))/, " six ")     = ixnay
    #foo.gsub!(/((\s(v)\s?))/, " five ")     = ixnay
    #foo.gsub!(/((\s(iv)\s?))/, " four ")    = ixnay, placed above the doctorly I.V.
-    foo.gsub!(/(^\t+)/, "")              # tabs : rremoves the \t at the beginning of the line
-    foo.gsub!(/(\t+$)/, "")              # tabs : removes the \t at the end of the line
-    foo.gsub!(/(\t+)/, "\s")               # tabs : replaces the \t with the space
+    foo.gsub!(/(^\t+)/, "")                 # tabs : rremoves the \t at the beginning of the line
+    foo.gsub!(/(\t+$)/, "")                 # tabs : removes the \t at the end of the line
+    foo.gsub!(/(\t+)/, "\s")                # tabs : replaces the \t with the space
     foo.gsub!(/(\!+\.?,?\s*$)/, "")          # exclamation mark(s) : removes exclamation mark(s) followed by optional space(s) at end of line
-    foo.gsub!(/(\!+\.?,?[\""]\s*)/, "\n")     # exclamation mark(s) : removes exclamation mark(s) and quote(s), replacing with new line
-    foo.gsub!(/(\!+\.?,?[\""]\s*$)/, "")        # exclamation mark(s) : removes exclamation mark(s) and quote(s) at end of line
+    foo.gsub!(/(\!+\.?,?[""]\s*)/, "\n")     # exclamation mark(s) : removes exclamation mark(s) and quote(s), replacing with new line
+    foo.gsub!(/(\!+\.?,?[""]\s*$)/, "")        # exclamation mark(s) : removes exclamation mark(s) and quote(s) at end of line
     foo.gsub!(/(\s+\!+\.?,?\s+)/, "\n")         # exclamation mark(s) : replace the replaces the space followed by exclamation mark(s) followed by a space, with a new line
     foo.gsub!(/(\s+\!+\.?,?\s+)/, "\n")         # exclamation mark(s) : replace the replaces the space followed by exclamation mark(s) followed by a space, with a new line
     foo.gsub!(/(\s+(\!+)\s+)/, "\n")            # exclamation mark(s) : replaces the space(s) preceeding exclamations mark(s) followed by space(s), with a new line
@@ -200,19 +202,20 @@ module Textual
     foo.gsub!(/(\s(\!)\s)/, "\n")               # exclamation mark(s) : replace the ! with a new line
     foo.gsub!(/(\!+\s+)/, "\n")                 # exclamation mark(s) : replace the !!! with a new line
     foo.gsub!(/(\!+?\s+)/, "\n")                # exclamation mark(s) : replace the ! with a new line
-    foo.gsub!(/(\?+\s+?[""])/, "\n")           # question mark(s) : removes question mark(s) followed by space(s), replacing with new line
+    foo.gsub!(/(\s\?+\s?$)/, "\n")              # question mark(s) : removes question mark(s) and optional space(s) at end of line
+    foo.gsub!(/(\?+\s+[""]+)/, "\n")           # question mark(s) : removes question mark(s) followed by space(s), followed by quotes, replacing with new line
     foo.gsub!(/(\?+\s+?)/, "\n")              # question mark(s) : removes question mark(s) followed by space(s), replacing with new line
-    foo.gsub!(/((\?+[""])\s*)/, "\n")        # question mark(s) : removes question mark(s) followed by double quote mark(s) and optional space(s), replacing with new line
-    foo.gsub!(/(\?+[""+]$)/, "\n")          # question mark(s) : removes question mark(s) and quote(s) at end of line
+    foo.gsub!(/((\?+[""]+)\s*)/, "\n")        # question mark(s) : removes question mark(s) followed by double quote mark(s) and optional space(s), replacing with new line
+    foo.gsub!(/(\?+[""]+$)/, "\n")          # question mark(s) : removes question mark(s) and quote(s) at end of line
     foo.gsub!(/(\s\s+)/, " ")              # spaces  : replaces multiple spacing with one space
-    foo.gsub!(/((\"+")(\'+\''))/, "\s")    # removes quote(s) and single quote(s) and replaces with one space
-    foo.gsub!(/(\'+\''+\"+\""+)/, "\s")    # removes quote(s) after space(s) and replaces with one space
-    foo.gsub!(/(\"+"\s+)/, "\s")           # removes quote(s) before space(s) and replaces with one space
-    foo.gsub!(/(\s+\"")/, "\s")            # removes space(s) and quote(s) and replaces with one space
-    foo.gsub!(/(\s+\'+')/, "\s")           # removes space(s) single quote(s) and replaces with one space                
-    foo.gsub!(/(\'+'\s)/, "\s")            # removes single quotes with spaces(s), replacing with one space
-    foo.gsub!(/(\s\'+')/, "\s")            # removes single quotes with space(s), replacing with one space
-    foo.gsub!(/(\'')/, "\s")               # removes doubled single quotes
+  #  foo.gsub!(/((\"+")(\'+\''))/, "\s")    # removes quote(s) and single quote(s) and replaces with one space
+  #  foo.gsub!(/(\'+\''+\"+\""+)/, "\s")    # removes quote(s) after space(s) and replaces with one space
+  #  foo.gsub!(/(\"+"\s+)/, "\s")           # removes quote(s) before space(s) and replaces with one space
+  #  foo.gsub!(/(\s+\"")/, "\s")            # removes space(s) and quote(s) and replaces with one space
+  #  foo.gsub!(/(\s+\'+')/, "\s")           # removes space(s) single quote(s) and replaces with one space                
+  #  foo.gsub!(/(\'+'\s)/, "\s")            # removes single quotes with spaces(s), replacing with one space
+  #  foo.gsub!(/(\s\'+')/, "\s")            # removes single quotes with space(s), replacing with one space
+  #  foo.gsub!(/(\'')/, "\s")               # removes doubled single quotes
     foo.gsub!(/(^\s?[(]+)/, "")            # removes opening parenthesis at the front of a line, with or without space(s) in front of parenthesis(es) : best usage comapared to two below
     foo.gsub!(/((\)*?\s?\(+$))/, "")       ## removes opening parenthesis at end of the line, preceded by closing parenthesis(es) and space(s), replaceing it with nothing, as it is the ending of the line
     foo.gsub!(/(^(\)*?\s?\(+))/, "")       ## removes closing parenthesis at beginning of line, followed by opening parenthesis at beginning of line, with or wtihout space in front of it, replacing all with nothing as it is the beginning of the line
@@ -391,7 +394,6 @@ module Textual
     foo.gsub!(/((\s(pt).?\s(3)\s?))/, " part three ")
     foo.gsub!(/((\s(pt).?\s(2)\s?))/, " part two ")
     foo.gsub!(/((\s(pt).?\s(1)\s?))/, " part one ")
-	
 
     foo.gsub!(/\s15[\''],?\s?11[\""]\s/, " fifteen feet eleven inches ")
     foo.gsub!(/\s15[\''],?\s?10[\""]\s/, " fifteen feet ten inches ")
@@ -637,10 +639,11 @@ module Textual
     foo.gsub!(/\s1\s?ft\.?$/, " one foot")
     foo.gsub!(/\s1\s?ft\.\s/, " one foot ")
     foo.gsub!(/\s1\s?ft\,\s/, " one foot, ")
-    foo.gsub!(/(\B(ft.?)\s)/, " feet ")               # ft. preceeded by a non-word boundary, with or without the period, 300ft becomes 300 feet
-    foo.gsub!(/(\B(ft.?)$)/, " feet")                # ft. at the end of the line, preceeded by a non-word boundary, ft. becomes feet
-    foo.gsub!(/(\s(ft.?)\s)/, " feet ")               # ft. preceeded by a space, with or without the period, 300ft becomes 300 feet
-    foo.gsub!(/(\s(ft.?)$)/, " feet")                # ft. at the end of the line, preceeded by a space, ft. becomes feet
+    foo.gsub!(/(\Wft.\s)/, " feet ")                   # ft. preceeded by a non-word boundary, with or without the period, 300ft becomes 300 feet
+    foo.gsub!(/(\W(ft\.?,?)\s)/, " feet ")             # ft. preceeded by a non-word boundary, with or without the period, 300ft becomes 300 feet
+    foo.gsub!(/(\W(ft\.?)$)/, " feet")                 # ft. at the end of the line, preceeded by a non-word boundary, ft. becomes feet
+    foo.gsub!(/(\s(ft\.?)\s)/, " feet ")               # ft. preceeded by a space, with or without the period, 300ft becomes 300 feet
+    foo.gsub!(/(\s(ft\.?)$)/, " feet")                 # ft. at the end of the line, preceeded by a space, ft. becomes feet
 
     foo.gsub!(/(\B(yds)\s)/, " yards ")
     foo.gsub!(/(\B(yds.?)\s?)/, " yards ")
@@ -1549,7 +1552,7 @@ module Textual
     foo.gsub!(/\s+?(11)\s?([""])/, " eleven inches ")
     foo.gsub!(/\s+?(11)\s?([""])/, " eleven inches ")
     foo.gsub!(/\s+?(10)\s?([""])/, " ten inches ")
-	
+
     foo.gsub!(/\s+130\.1/, " one hundred thirty point one ")
     foo.gsub!(/\s+130\.0/, " one hundred thirty point zero ")
     foo.gsub!(/\s+129\.9/, " one hundred twenty nine point nine ")
@@ -5360,7 +5363,7 @@ module Textual
     foo.gsub!(/^4\.?\s/, " four, ")
     foo.gsub!(/^3\.?\s/, " three, ")
     foo.gsub!(/^2\.?\s/, " two, ")
-    foo.gsub!(/^1\.?\s/, " one, ")            # somehow, this is being processed before the yards and yard group far above # TODOresearch why
+    foo.gsub!(/^1\.?\s/, " one, ")            # somehow, this is being processed before the yards and yard group far above # TODO research why
     foo.gsub!(/^0\.?\s/, " zero, ")
     foo.gsub!(/9/, " nine ")
     foo.gsub!(/8/, " eight ")
@@ -5376,8 +5379,8 @@ module Textual
     foo.gsub!(/&/, " and ")
     foo.gsub!(/((dept)\.*?\s+?)/, " department ")
     foo.gsub!(/\s+$/, "")                     # spaces           : removes spaces at the end of line
-    foo.gsub!(/(,\.[\""]\s?)/, "\n")          # commas           : replaces comma period quote mark space/no space, with new line
-    foo.gsub!(/,\.\s/, "\n")                  # commas           : replaces comma period space with new line
+    foo.gsub!(/(,\.[""]\s?)/, "\n")           # commas           : replaces comma period quote mark space/no space, with new line
+    foo.gsub!(/(,\.\s)/, "\n")                # commas           : replaces comma period space with new line
     foo.gsub!(/,+$/, "")                      # commas           : removes commas at the end of the line
     foo.gsub!(/((,+\s*)$)/, "")               # commas           : removes commas followed by space, or not, at the end of the line
     foo.gsub!(/(,+\s+?,+)/, ", ")             # comma            : removes spaces in front of comma or commas in a row, and replaces it with the one comma and one space
@@ -5392,7 +5395,7 @@ module Textual
     foo.gsub!(/(\s*\?+\s*)$/, "\n")           # question marks   : removes question marks at the end of line
     foo.gsub!(/(\s*\?+\s+\?*)$/, "\n")        # question marks   : removes question marks with space(s) between on the side of them, replacing with nothing
     foo.gsub!(/(\s*\?+\s*\?+)$/, "\n")        # question marks   : removes question marks with space(s) between on the side of them, replacing with nothing
-    foo.gsub!(/((\s+?),+)/, ", ")             # commas           : removes duplicate space(s) comma(s) to one comma, space
+    foo.gsub!(/(\s+,+)/, ", ")                # commas           : removes duplicate space(s) comma(s) to one comma, space
                                               # commas ^^        : this one above is sweet. it must be followed at some point by the next line : foo.gsub!(/(,,+)/, ", ")
     foo.gsub!(/(,,+)/, ", ")                  # commas           : removes duplicate commas, replacing with one comma
     foo.gsub!(/(,+?(\s*?),+?)/, ", ")         # commas           : removes comma(s) space(s) comma(s) with one comma, one space
@@ -5404,7 +5407,7 @@ module Textual
     foo.gsub!(/(\s+?,$)/, "")                 # commas           : removes commas / spaces at tend of line
     foo.gsub!(/(\s*?(,+$))/, "")              # commas           : removes commas / spaces at tend of line
     foo.gsub!(/(\s*(,)\s*$)/, "")             # commas            : removes commas / spaces at tend of line
-    foo.gsub!(/(\s[\""+]\.\s)/, "\n")         # space quotes period spacee : replaces the ( ". ) With the \n 
+    foo.gsub!(/(\s[\""]+\.\s)/, "\n")         # space quotes period spacee : replaces the ( ". ) With the \n 
 #  #foo.gsub!(/(([\.+])\""+?)/, "\n")         # period quotes mark : replaces the (.") With the \n   :: not in use due to removing quotes as first steps above.
 #  #foo.gsub!(/(((\s+?)\""+?))/, "\n")        # space quotes mark  : replaces the space quotes mark, the ( ") With the \n :: not in use due to removing quotes as first steps above.
     foo.gsub!(/\+/, " plus ")                 # plus  : replaces + sign with the word, plus
@@ -5432,11 +5435,11 @@ module Textual
                                        # ^ three passes to nil, this puppy is also solid gold, and with multiple passes, removes all duplicates of commas, with or without space preceding any comma.  solid gold, do not change
    #foo.gsub!(/(\s*,+)/, ", ")         # does the same thing ^^
     foo.gsub!(/,+/, ", ")              # commas   : this puppy is solid gold, removing any remaining duplicate commas, or more when right next to each other, with one comma. the above line and this line go together with this one being the second to run.
-    foo.gsub!(/(\)\s+?)/, ", ")        # )   : replaces the ) followed by space(s), with the comma followed by one space (, )
-    foo.gsub!(/\)/, " ")               # )   : removes all remaining close parenthesis replacing with one space.
-    foo.gsub!(/^\[/, "")               # opening bracket : this works to remove the opening bracket(s) at the beginning of a line
-    foo.gsub!(/(\s*?\[)/, ", ")        # opening bracket : this appears to work perfectly
-    foo.gsub!(/(\.*\]\s*?$)/, "\n")    # closing bracket : removes closing bracket(s) at the end of the line
+    foo.gsub!(/(\(|\)\s+)/, ", ")        # )   : replaces the close parentesis followed by space(s), with the comma followed by one space (, )
+    foo.gsub!(/\(\)/, " ")             # )   : removes all remaining close parenthesis replacing with one space.
+    foo.gsub!(/^[\[\]]/, "")           # opening bracket : this works to remove the opening bracket(s) at the beginning of a line
+    foo.gsub!(/(\s*?[\[\]])/, ", ")    # opening bracket : this appears to work perfectly
+    foo.gsub!(/(\.*\]\s*?$)/, "")      # closing bracket : removes closing bracket(s) at the end of the line
     foo.gsub!(/(\.*[\]]\s*?)/, "\n")   # closing bracket : removes closing bracket(s) that hsa an optional period before it and optional space after it
     foo.gsub!(/(\]+\""?\s*)$/, "")     # closing bracket : removes any remaining closing bracket and trailing double quote(s) and or space(s) at the end of the line, replacing with nothing
     foo.gsub!(/(\]\s*?)/, ", ")        # closing bracket : removes any remaining closing bracket and trailing space(s) with the comma and a single space
@@ -5493,8 +5496,8 @@ module Textual
 
     foo.gsub!(/((\s+)?,+)/, ", ")       # comma   : removes spaces in front of comma or commas in a row, and replaces it with the one comma and one space
     foo.gsub!(/((,+\s+)?,+)/, ", ")     # comma   : removes spaces in front of comma or commas in a row, and replaces it with the one comma and one space
-    foo.gsub!(/^,+\s*/, ", ")           # comma   : replaces multiple commas at the front of the line with nothing
-    foo.gsub!(/((^,)\s)/, "")           # comma   : removes commas from front of line
+    foo.gsub!(/^,+\s+/, "")             # comma   : replaces multiple commas at the front of the line with nothing
+    foo.gsub!(/^,\s*/, "")              # comma   : removes commas from front of line
     foo.gsub!(/((,+\s+)$)/, "")         # comma   : replaces multiple commas followed by one or more spaces with one comma, one space, at the end of the line
     foo.gsub!(/(,+\s+)/, ", ")          # comma   : replaces multiple commas followed by one or more spaces with one comma, one space
     foo.gsub!(/(\s+?\.+\s+?)/, "\n")    # period  : removes stray periods with space in front and behind it, replacing with new line
@@ -5542,7 +5545,7 @@ module Textual
     foo.gsub!(/\.+/, "\n")              # periods : removes any remaining periods anywhere in the line and replaces with one new line
     foo.gsub!(/(\s\s+)/, " ")           # spaces  : replaces multiple spacing with one space
     foo.gsub!(/(\!+\s*)$/, "")          # exclamation marks(s) : final removal of newly exposed exclamation marks at the end of line, this one doing it better than above, as it takes into account any space at the end of the line
-    foo.gsub!(/(\n\n)+?/, "\n")         # line break : replaces multiple line breaks with one line break
+    foo.gsub!(/\n\n+/, "\n")          # line break : replaces multiple line breaks with one line break
     foo
   end
   
