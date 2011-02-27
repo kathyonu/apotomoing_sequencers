@@ -112,6 +112,7 @@ module Textual
     foo.gsub!(/((\B(mm)\''s)\s)/, " millimeters ")
     foo.gsub!(/((\B(mm)\.)\s?)/, " millimeter ")
     foo.gsub!(/((\B(mm))\s)/, " millimeter ")
+    foo.gsub!(/(\Bmm,\s)/, " millimeter, ")
     foo.gsub!(/((\B(mm))\.?)$/, " millimeter")
     foo.gsub!(/((\s+(mms)\.?)\s)/, " millimeters ")
     foo.gsub!(/((\s+(mm)\.?)\s)/, " millimeter ")
@@ -123,6 +124,7 @@ module Textual
     foo.gsub!(/((\B(km)\''s)\s)/, " kilometers ")
     foo.gsub!(/((\B(km)\.)\s?)/, " kilometer ")
     foo.gsub!(/((\B(km))\s)/, " kilometer ")
+    foo.gsub!(/(\Bkm,\s)/, " kilometer, ")
     foo.gsub!(/((\B(km))\.?)$/, " kilometer")
     foo.gsub!(/((\s+(kms)\.?)\s)/, " kilometers ")
     foo.gsub!(/((\s+(km)\.?)\s)/, " kilometers ")
@@ -134,12 +136,27 @@ module Textual
     foo.gsub!(/((\B(cm)\''s)\s)/, " centimeters ")
     foo.gsub!(/((\B(cm)\.)\s?)/, " centimeter ")
     foo.gsub!(/((\B(cm))\s)/, " centimeter ")
+    foo.gsub!(/(\Bcm,\s)/, " centimeter, ")
     foo.gsub!(/((\B(cm))\.?)$/, " centimeter")
     foo.gsub!(/((\s+(cms)\.?)\s)/, " centimeters ")
     foo.gsub!(/((\s+(cm)\.)\s)/, " centimeter ")
     foo.gsub!(/((\s+(cm)\''s)\s)/, " centimeters ")
     foo.gsub!(/((\s+(cm)\.)\s?)/, " centimeter ")
     foo.gsub!(/(\s+cm\s+)/, " centimeter ")
+    foo.gsub!(/(\Bkgs\.?\s?)/, " kilograms ")
+    foo.gsub!(/(\Bkg\.\s)/, " kilogram ")
+    foo.gsub!(/(\Bkg\''s\s)/, " kilograms ")
+    foo.gsub!(/(\Bkg\.\s?)/, " kilogram ")
+    foo.gsub!(/(\Bkg\s)/, " kilogram ")
+    foo.gsub!(/(\Bkg\.\s)/, " kilogram ")
+    foo.gsub!(/(\Bkg,\s)/, " kilogram, ")
+    foo.gsub!(/(\Bkg\.?)$/, " kilogram")
+    foo.gsub!(/(\s+kgs\.\s)/, " kilograms ")
+    foo.gsub!(/(\s+kg\.\s)/, " kilogram ")
+    foo.gsub!(/(\s+kg,\s)/, " kilogram ")
+    foo.gsub!(/(\s+kg\''s\s)/, " kilograms ")
+    foo.gsub!(/(\s+kg\.\s?)/, " kilogram ")
+    foo.gsub!(/(\s+kg\s?)/, " kilogram ")
     foo.gsub!(/((\s+(u)\.(s)\.)(a)\.\s?)/, " usa ")
     foo.gsub!(/((\s+(u)\.(s)\.)\s+)/, " us ")
     foo.gsub!(/((\s+(t)\.(v)\.)\s?)/, " television ")
@@ -298,6 +315,7 @@ module Textual
    #foo.gsub!(/((\s(ii)\s?))/, " two ")   # ^^^ the 'repairs, on these i's do not work. # TODO : develop the regex that will deal with the roman numerals properly.
    #foo.gsub!(/((\s(i)\s?))/, " one ")   # problem is it replaces ALL small i's with one !!!!
 # I do not understand why I cannot get these \/ to work yet.
+#   foo.gsub!(/([\°])/, " degree ")      # degree symbol replacement : note that this works in console, but not when run as string.to_textual 
 #   foo.gsub!(/[Á]/, "c")                # foreign character replacement
 #   foo.gsub!(/[Ç]/, "c")                # foreign character replacement
 #   foo.gsub!(/[ç]/, "c")                # foreign character replacement
