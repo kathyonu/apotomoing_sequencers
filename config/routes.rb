@@ -1,12 +1,22 @@
 ApotomoingSequencers::Application.routes.draw do
 
+  resources :sequences
+
   resources :quotes
 
   resources :anagrams
 
   resources :sequence_createds
 
+  get "anagram/new"
+  
+  get "quote/new"
+
+  get "sequences/new"
+  
   get "sequencer/display"
+
+  get "sequencer/index"
 
   root :to => "sequencer#display"
 

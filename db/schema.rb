@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110216024823) do
+ActiveRecord::Schema.define(:version => 20110227185307) do
 
   create_table "anagrams", :force => true do |t|
     t.string   "text"
@@ -37,6 +37,24 @@ ActiveRecord::Schema.define(:version => 20110216024823) do
     t.string   "sequence_complete"
     t.string   "sequence_lexigram"
     t.string   "sequence_singular"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sequences", :force => true do |t|
+    t.string   "sequence_created"
+    t.string   "sequence_creation"
+    t.string   "sequence_complete"
+    t.string   "sequence_lexigram"
+    t.string   "sequence_singular"
+    t.string   "description"
+    t.string   "reference"
+    t.boolean  "anagram"
+    t.boolean  "name"
+    t.boolean  "phrase"
+    t.boolean  "sexualities"
+    t.boolean  "external"
+    t.boolean  "internal"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

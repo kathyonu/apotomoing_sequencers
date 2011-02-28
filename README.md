@@ -74,6 +74,7 @@ The application will prove useful to anyone who loves and works with words and h
 	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
 	$ cd ./apotomoing_sequencers
 	$ bundle install
+	$ rake db:migrate
 	$ rails s
 
 ### After your server fires up, go to your browser : 
@@ -81,7 +82,8 @@ The application will prove useful to anyone who loves and works with words and h
 *	http://localhost:3000/
 *	http://localhost:3000/quotes/new
 *	http://localhost:3000/anagrams/new
-
+*	http://localhost:3000/sequences/new
+#### The sequences/new address .. this will show the entire app's design in one table.  Note the duplicates.
 
 > #### This application is Copyright Will I Am at goodworksonearth.org, held in trust.
 > #### You are free to use this application, and make changes to it for your own use, provided this copyright notice remains intact.  
