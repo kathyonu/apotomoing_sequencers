@@ -1,0 +1,29 @@
+.sequence_created_widget_display
+  
+  %p
+    %small
+      Welcome to the <b>sequence_created_widget/display.html.haml</b>
+  %p
+    %small
+      The five sequences are not yet firing. 
+  
+  = widget_div do
+  
+    %p
+    = render :view => :sequence_created
+  
+    %p
+    = render :view => :sequence_creation
+  
+    %p
+    = render :view => :sequence_complete
+  
+    %p
+    = render :view => :sequence_lexigram
+  
+    %p
+    = render :view => :sequence_singular
+  
+    %p
+      %small
+        here ends the display of /app/cells/sequence_created_widget/display.html.haml

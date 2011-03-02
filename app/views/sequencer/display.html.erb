@@ -2,9 +2,9 @@
 
 <h2>Sequencer#display</h2>
 
-<%= render_widget 'begin' %>
-<%= render_widget 'creator', :sequence_created => @sequence_created %>
-<%= render_widget 'words', :anagram => @anagram %>
+<%= render_widget 'sequencer' %>
+<%= render_widget 'sequence_created' %>
+<%= render_widget 'anagram' %>
 
 <div class="cellular_quote_sequencer_display">
   <%= render_cell :quote, :display2, :quote => @quote %>

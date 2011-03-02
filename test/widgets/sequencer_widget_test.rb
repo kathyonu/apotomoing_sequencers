@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SequencerWidgetTest < Apotomo::TestCase
   has_widgets do |root|
-    root << widget(:sequencer_widget, 'me')
+    root << widget(:sequencer, 'me')
   end
   
   test "display" do

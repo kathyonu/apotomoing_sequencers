@@ -1,7 +1,7 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time still, 20110220, apotomoing_sequencers is not yet a fully functioning application. 
+### Note: At this time still, 20110301, apotomoing_sequencers is not yet a fully functioning application. 
 The entire modelling is subject to change at any moment.
 
 ## Description:
@@ -9,11 +9,11 @@ The entire modelling is subject to change at any moment.
 The essence of apotomoing_sequencers is to process any textual matter that contains punctuations, numbers, signs such as $ and other non-letter symbols, and convert it all to lettered words.  An example is apt. becomes apartment; appt. becomes appointment. $100 becomes one hundred dollars.  This is effected with the String#to_textual method we have written, which draws on over 3,000 regular expressions to massage the text to pure letterings, and from that, we can generate the five sequences of any English creation, be it name, word or phrase. 
 See /helpers/textual.rb
 
-Currently, we are writing this app, using 
+Currently, we are writing this app using 
 ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-darwin10]
-Rails 3.0.4
-Apotomo 1.0.3
-Cells 3.5.2
+Rails 3.0.5
+Apotomo 1.1.0
+Cells 3.5.4
 
 The app uses sqlite3 for the database, so you have no setup to do there.
 Our in-house app will be using mysql2 in production.
@@ -35,7 +35,7 @@ So, *apotomoing* is my creation on *apotomo*, so as to honor the beauty and usef
 
 I have Nick's permission to use the name as *apotomoing*, with *sequencers* latched on, as our github repository name.
 
-## Sequencers
+## sequencers
 > The sequencer methods are what this app is being built for, to sequence any creation in English.
 >
 > Just as the sequencing of the dna displays its specific characteristics, 
@@ -80,14 +80,15 @@ The application will prove useful to anyone who loves and works with words and h
 ### After your server fires up, go to your browser : 
 
 *	http://localhost:3000/
-*	http://localhost:3000/quotes/new
-*	http://localhost:3000/anagrams/new
-*	http://localhost:3000/sequences/new
-#### The sequences/new address .. this will show the entire app's design in one table.  Note the duplicates.
+*	http://localhost:3000/quotes/
+*	http://localhost:3000/anagrams/
+*	http://localhost:3000/sequences/
+
+#### The sequences/ address will show the entire app's design in one table.  
+#### The sequences table is a primitive setup allowing massive duplicates in the five sequences.
+#### The sequences table was added so you can see how the entire application can exist in one table.
 
 > #### This application is Copyright Will I Am at goodworksonearth.org, held in trust.
 > #### You are free to use this application, and make changes to it for your own use, provided this copyright notice remains intact.  
-> 
 > #### kathyonu is my pen name, a Perfect Anagram of THANK YOU.
-> 
 > #### Ruby, Ruby on Rails, Apotomo and Cells are all registered to their owners, their copyrights protected.

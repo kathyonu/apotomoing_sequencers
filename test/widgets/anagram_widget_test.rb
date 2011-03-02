@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AnagramWidgetTest < Apotomo::TestCase
   has_widgets do |root|
-    root << widget(:anagram_widget, 'me')
+    root << widget(:anagram, 'me')
   end
   
   test "display" do

@@ -8,7 +8,7 @@ gem 'RedCloth', '>= 4.1.1'
 
 gem 'sho-mongrel'
 
-  # to used the published apotomo gem
+  # to use the published apotomo gem
   # gem 'apotomo', '~> 1.0.0', :require => 'apotomo'
 
   # to use the current apotomo master from github

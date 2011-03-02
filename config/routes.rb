@@ -16,8 +16,6 @@ ApotomoingSequencers::Application.routes.draw do
   
   get "sequencer/display"
 
-  get "sequencer/index"
-
   root :to => "sequencer#display"
 
   # The priority is based upon order of creation:
