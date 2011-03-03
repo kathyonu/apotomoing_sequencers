@@ -1,13 +1,17 @@
 .sequencer_widget_display
 
+  %div.id
+    here begins
+    <b>app/widgets/sequencer/display.html.haml</b>
+
   %p
-    Welcome to the <b>sequencer_widget_display</b>
 
   = "You have #{Anagram.count} anagrams in the anagrams table"
   %br
   = "You have #{Quote.count} quotes in the quotes table"
   %br
   = "You have #{SequenceCreated.count} createds in the sequence_createds table"
+  %small  : this calculation is still in error
   %br
   = "You have #{Sequence.count} sequences in the sequences table" 
   
@@ -21,4 +25,8 @@
   %br
   = link_to 'New Sequence', :controller => :sequences, :action => :new
   %br
+  %br
 
+  %div.id2
+    here ends
+    <b>app/widgets/sequencer/display.html.haml</b>

@@ -1,8 +1,9 @@
 class AnagramsController < ApplicationController
   include Apotomo::Rails::ControllerMethods
 
-  has_widgets do |root|
+  has_widgets do
     root << widget(:anagram, :anagram => @anagram)
+    root << widget(:sequence_created)
   end
 
   # GET /anagrams

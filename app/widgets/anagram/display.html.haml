@@ -1,25 +1,22 @@
 .anagram_widget_display
   
-  %p
-    %small
-      here begins the anagram_widget display
-
+  %div.id
+    here begins
+    <b>app/widgets/anagram/display.html.haml</b>
 
   %hr
-
-  Add anagram box is not yet entering data into database, nor firing the five sequences.
-
-  = widget_div do
-    = form_for @anagram, :as => :anagram, :html => {"data-event-url" => url_for_event(:submit)}, :url => "" do |f|
-      = error_messages_for :sequence_creation
-      = f.label 'Add Anagram'
-      = f.text_field 'text'
-   
-      = submit_tag "Enter New Anagram"
 
   %p
     = link_to 'To Add a New Anagram', new_anagram_path 
     <= using http://localhost:3000/anagrams/new
+  %br
+    Add anagram box is not yet entering data into database, nor firing the five sequences.
+
+  = widget_div do
+    = form_tag url_for_event(:submit), :remote => true do
+      = text_field_tag 'text'
+
+      = submit_tag "Enter New Anagram"
 
   %p 
 
@@ -27,9 +24,10 @@
 
   %p This is the list of anagrams in the database :
 
-  %ol
-    - for a in @anagrams
-      %li=a.text 
+  %ul
+    = for anagram in @anagrams
+      %li
+        = anagram.text 
 
   %p
     = link_to 'Add a New Anagram', new_anagram_path 
@@ -40,17 +38,17 @@
 
   %p 
     %small
-      &nbsp;&nbsp;&nbsp;&nbsp; the call to the above QuoteCell is made from : app/cells/anagram_widget/display.html.haml
+      &nbsp;&nbsp;&nbsp;&nbsp; the call to the above QuoteCell is made from : app/widgets/anagram/display.html.haml
 
-  %p
-    %small
-      here ends the anagram_widget display
+  %div.id2
+    here ends
+    <b>app/widgets/anagram/display.html.haml</b>
+
   
   :javascript
     var form = $("##{widget_id} form");
    
-    form.submit(function() {
+    form.submit(function("data_event_url") {
       $.ajax({url: form.attr("data-event-url"), data: form.serialize()})
       return false;
     });
-  

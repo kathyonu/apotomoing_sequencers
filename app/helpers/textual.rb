@@ -224,7 +224,7 @@ module Textual
     foo.gsub!(/(\?+\s+?)/, "\n")              # question mark(s) : removes question mark(s) followed by space(s), replacing with new line
     foo.gsub!(/((\?+[""]+)\s*)/, "\n")        # question mark(s) : removes question mark(s) followed by double quote mark(s) and optional space(s), replacing with new line
     foo.gsub!(/(\?+[""]+$)/, "\n")          # question mark(s) : removes question mark(s) and quote(s) at end of line
-    foo.gsub!(/(\s\s+)/, " ")              # spaces  : replaces multiple spacing with one space
+    foo.gsub!(/(\s\s+)/, " ")               # spaces  : replaces multiple spacing with one space
   #  foo.gsub!(/((\"+")(\'+\''))/, "\s")    # removes quote(s) and single quote(s) and replaces with one space
   #  foo.gsub!(/(\'+\''+\"+\""+)/, "\s")    # removes quote(s) after space(s) and replaces with one space
   #  foo.gsub!(/(\"+"\s+)/, "\s")           # removes quote(s) before space(s) and replaces with one space
@@ -240,18 +240,19 @@ module Textual
    #foo.gsub!(/([\)+$])/, "")              ## removes close parenthesis(s) at end of line : a better usage than directly below
     foo.gsub!(/\)+$/, "")                  ## removes close parenthesis at end of line
    #foo.gsub!(/(\s+?[(]+?))/, ", ")        # removes open parenthensis preceeded by spaces and replaces with a comma and space
-    foo.gsub!(/(,\()/, ", ")                # removes open parenthensis preceeded by a comma and replaces with a comma and space
+    foo.gsub!(/(,\()/, ", ")               # removes open parenthensis preceeded by a comma and replaces with a comma and space
+    foo.gsub!(/(\.\s+?)/, "\n")            # period  : removes period space(s), replaces with new line
     foo.gsub!(/(\.[()])/, "\n")            # removes period open parenthesis.( and replaces with new line.
-    foo.gsub!(/(\s+?[()])/, ", ")            # removes opening parenthesis preceeded by space(s) and replaces with a comma space
-    foo.gsub!(/(\s*(\!+?)\s*?)/, "\n") # removes exclamation point(s) with or without spaces following, followed by hyphen(s) and space(s), replacing wtih a new line
-    foo.gsub!(/(\!+?\s*[\"\""]\s*)/, "\n")    # removes exclamation mark(s) at end of line, replacing with new line
+    foo.gsub!(/(\s+?[()])/, ", ")          # removes opening parenthesis preceeded by space(s) and replaces with a comma space
+    foo.gsub!(/(\s*(\!+?)\s*?)/, "\n")     # removes exclamation point(s) with or without spaces following, followed by hyphen(s) and space(s), replacing wtih a new line
+    foo.gsub!(/(\!+?\s*[\"\""]\s*)/, "\n") # removes exclamation mark(s) at end of line, replacing with new line
     foo.gsub!(/(\!+?\s*)$/, "\n")          # removes exclamation mark(s) at end of line, replacing with new line
    #foo.gsub!(/\!+$/, "")                  # exclamation point : removes exclamation marks at the end of line, without care about space : see next one in use : foo.gsub!(/(\!+\s*)$/, "")
    #foo.gsub!(/(\!+\s+\!*)/, "\n")         # exclamation point : removes the exclamation points(s) space(s) exclamation point, replacing with \n 
     foo.gsub!(/(-+)$/, "")                 # removes hyphens at end of line
     foo.gsub!(/^-+/, "")                   # removes hyphens at beginning of line
-    foo.gsub!(/(^(\s*[\""\'']\s*))/, "")   # removes single and double quote mark(s) at beginning of line
-    foo.gsub!(/(\s*[\-][\-]\s*)/, ", ")    # removed doubled, or more hyphens and replaces with the comma and space.
+    foo.gsub!(/(^(\s*[\""\'']\s*))/, "")    # removes single and double quote mark(s) at beginning of line
+    foo.gsub!(/(\s*[\-][\-]\s*)/, ", ")      # removed doubled, or more hyphens and replaces with the comma and space.
     foo.gsub!(/(\s+[\-][\-][\-]\s+)/, ", ")   # removes the space(s) tripled hyphen space(s), replacing with a comma and one space 
     foo.gsub!(/(\s+[\-][\-]\s+)/, ", ")      # removes the space(s) doubled hyphen space(s), replacing with a comma and one space 
     foo.gsub!(/(\s+[\-]\s+)/, ", ")         # removes the space(s) hyphen space(s), replacing with a comma and one space 
@@ -5570,4 +5571,5 @@ module Textual
   class String
     include Textual
   end
+  
 end

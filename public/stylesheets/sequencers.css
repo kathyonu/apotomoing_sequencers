@@ -1,0 +1,150 @@
+.anagrams_index {
+  border: 1px solid blue;
+  padding-left: 8px;
+  margin-right: 4px;
+}
+
+.anagram_widget_display {
+  border-top: 22px solid purple;
+  border-right: 11px solid purple;
+  border-bottom: 5px solid purple;
+  border-left: 11px solid purple;
+  margin-top: 5px;
+  margin-right: 14px;
+  margin-bottom: 5px;
+  margin-left: 14px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.cellular_quote {
+  border-top: 15px solid maroon;
+  border-right: 25px solid maroon;
+  border-bottom: 35px solid maroon;
+  border-left: 5px solid maroon;
+  margin-bottom: 1px;
+  margin-left: 20px;
+  margin-right: 10px;
+  padding-bottom: 1px;
+  padding-left: 8px;
+}
+
+.cellular_quote_sequencer_display {
+  border-top: 17px solid maroon;
+  border-right: 12px solid maroon;
+  border-bottom: 5px solid maroon;
+  border-left: 45px solid maroon;
+  margin-top: 1px;
+  margin-right: 10px;
+  margin-bottom: 1px;
+  margin-left: 80px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 22px;
+  width: 75%;
+}
+
+.id {
+  border-top: 22px solid purple;
+  border-left: 14px solid aqua;
+  border-bottom: 4px solid aqua;
+  border-right: 14px solid aqua;
+  padding-right: 5px;
+  font-size: 80%;
+  text-align: right;
+}
+
+.id2 {
+  border-top: 4px solid aqua;
+  border-left: 14px solid aqua;
+  border-bottom: 22px solid purple;
+  border-right: 14px solid aqua;
+  padding-right: 5px;
+  font-size: 80%;
+  text-align: right;
+}
+
+.quote_text {
+  border-top: 17px solid teal;
+  border-right: 12px solid teal;
+  border-bottom: 3px solid teal;
+  border-left: 40px solid teal;
+  margin-left: 30px;
+  margin-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  font-style: italic;
+}
+
+.sequence_created_widget_display {
+  border: 11px solid purple;
+  border-top: 22px solid purple;
+  border-right: 11px solid purple;
+  margin-left: 14px;
+  margin-right: 14px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.sequencer_display {
+  border: 11px solid purple;
+  border-top: 44px solid purple;
+  border-bottom: 44px solid purple;
+  margin-left: 6px;
+  padding-left: 6px;
+  padding-right: 4px;
+}
+
+.sequencer_widget_display {
+  border-top: 22px solid purple;
+  border-right: 30px solid purple;
+  border-bottom: 4px solid purple;
+  border-left: 30px solid purple;
+  margin-left: 14px;
+  margin-right: 14px;
+  margin-bottom: 5px;
+  padding-left: 6px;
+  padding-right: 4px;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#sequence_created_html {
+  border: 2px solid navy;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 8px;
+}
+
+#sequence_creation_html {
+  border: 2px solid navy;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 8px;
+}
+
+#sequence_complete_html {
+  border: 2px solid navy;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 8px;
+}
+
+#sequence_lexigram_html {
+  border: 2px solid navy;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 8px;
+}
+
+#sequence_singular_html {
+  border: 2px solid navy;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 8px;
+}
