@@ -48,7 +48,7 @@
   :javascript
     var form = $("##{widget_id} form");
    
-    form.submit(function("data_event_url") {
+    form.submit(function() {
       $.ajax({url: form.attr("data-event-url"), data: form.serialize()})
       return false;
     });
