@@ -13,7 +13,7 @@
     Add anagram box is not yet entering data into database, nor firing the five sequences.
 
   = widget_div do
-    = form_tag url_for_event(:submit), :remote => true do
+    - form_tag url_for_event(:submit), :remote => true do
       = text_field_tag 'text'
 
       = submit_tag "Enter New Anagram"
@@ -25,10 +25,9 @@
     %p
       This is the list of anagrams in the database :
 
-    %ul
-      = for anagram in @anagrams
-        %li
-          = anagram.text 
+    %ol
+      - for anagram in @anagrams
+        %li=anagram.text 
 
     %p
       = link_to 'Add a New Anagram', new_anagram_path 
