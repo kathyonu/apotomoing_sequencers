@@ -9,8 +9,8 @@ class SequenceCreatedWidget < Apotomo::Widget
     root.respond_to_event :typing, :from => :anagram, :with => :sequence_singular, :on => :sequence_created
   end
   
-  def sequence_created(anagram)
-    anagram = @anagram.text
+  def sequence_created(evt)
+    anagram = evt[:anagram.text]
     @sequence_created = anagram.to_textual.de_comma.strip   # this is not right yet
     trigger = :typing
 
@@ -42,8 +42,8 @@ class SequenceCreatedWidget < Apotomo::Widget
   end
 
   def submit(evt)
-    anagram = Anagram.find(evt[:anagram_text])
-    @sequence_created = anagram.to_textual.de_comma.strip               # some codes are not right yet, this one needs to grab the Anagram.text attribute, process it through to_textual.de_comma.strip, passing the result to @sequence_created
+    anagram = Anagram.find(evt[:id])
+    @sequence_created = (anagram.text).to_textual.de_comma.strip               # some codes are not right yet, this one needs to grab the Anagram.text attribute, process it through to_textual.de_comma.strip, passing the result to @sequence_created
     @sequence_creation = sequence_created.de_space
     @sequence_complete = sequence_created.split(//).sort.join.strip
 	@sequence_lexigram = sequence_created.split(//).sort.join.strip.reverse  # TODO complete the lexigram code, meanwhile substitute the reverse sequence as the dataum

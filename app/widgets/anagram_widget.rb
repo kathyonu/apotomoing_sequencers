@@ -19,17 +19,12 @@ class AnagramWidget < Apotomo::Widget
     render
   end
 
-  def edit
-    @anagram = Anagram.find(params[:id])
-    render :view => :edit
-  end
-  
   def submit(evt)
-    anagram = Anagram.new(:text => evt[:text], :sequence_created_id => evt[:sequence_created_id], :description => evt[:description], :reference => evt[:reference]).save
-    @anagram = anagram.update_attributes(:text => evt[:text])
+    anagram = Anagram.new(:id => evt[:id], :text => evt[:text], :sequence_created_id => evt[:sequence_created_id], :description => evt[:description], :reference => evt[:reference]).save
+    @anagram = anagram.update_attributes(:id => evt[:id], :text => evt[:text], :sequence_created_id => evt[:sequence_created_id], :description => evt[:description], :reference => evt[:reference])
 
     @anagrams = Anagram.find(:all)
-    update :view => :display
+    replace :view => :display
   end
 
 end
