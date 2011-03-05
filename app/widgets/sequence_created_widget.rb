@@ -10,7 +10,7 @@ class SequenceCreatedWidget < Apotomo::Widget
   end
   
   def sequence_created(anagram)
-    anagram = @anagram_text
+    anagram = @anagram.text
     @sequence_created = anagram.to_textual.de_comma.strip   # this is not right yet
     trigger = :typing
 
@@ -42,7 +42,7 @@ class SequenceCreatedWidget < Apotomo::Widget
   end
 
   def submit(evt)
-    anagram = Anagram.find evt(anagram_text)
+    anagram = Anagram.find(evt[:anagram_text])
     @sequence_created = anagram.to_textual.de_comma.strip               # some codes are not right yet, this one needs to grab the Anagram.text attribute, process it through to_textual.de_comma.strip, passing the result to @sequence_created
     @sequence_creation = sequence_created.de_space
     @sequence_complete = sequence_created.split(//).sort.join.strip

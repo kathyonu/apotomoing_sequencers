@@ -13,8 +13,11 @@
     Add anagram box is not yet entering data into database, nor firing the five sequences.
 
   = widget_div do
-    - form_tag url_for_event(:submit), :remote => true do
+    = form_tag url_for_event(:submit), :remote => true do
+      = text_field_tag 'id'
       = text_field_tag 'text'
+      = text_field_tag 'description'
+      = text_field_tag 'reference'
 
       = submit_tag "Enter New Anagram"
 
@@ -48,7 +51,7 @@
   :javascript
     var form = $("##{widget_id} form");
    
-    form.submit(function('submit') {
+    form.submit(function() {
       $.ajax({url: form.attr("data-event-url"), data: form.serialize()})
       return false;
     });

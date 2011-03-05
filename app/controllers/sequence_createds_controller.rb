@@ -2,11 +2,12 @@ class SequenceCreatedsController < ApplicationController
   include Apotomo::Rails::ControllerMethods
 
   has_widgets do
-    root << widget(:sequence_created)
-    root << widget(:sequence_created, :sequence_creation)
-    root << widget(:sequence_created, :sequence_complete)
-    root << widget(:sequence_created, :sequence_lexigram)
-    root << widget(:sequence_created, :sequence_singular)
+    root << widget(:sequence_created, :sequence_created => @sequence_created)
+    root << widget(:sequence_created, 'sequence_creation')
+    root << widget(:sequence_created, 'sequence_complete')
+    root << widget(:sequence_created, 'sequence_lexigram')
+    root << widget(:sequence_created, 'sequence_singular')
+    root << widget(:anagram)
   end
 
 

@@ -25,11 +25,11 @@ class AnagramWidget < Apotomo::Widget
   end
   
   def submit(evt)
-    Anagram.new(:text => evt[:text]).save
+    anagram = Anagram.new(:text => evt[:text], :sequence_created_id => evt[:sequence_created_id], :description => evt[:description], :reference => evt[:reference]).save
     @anagram = anagram.update_attributes(:text => evt[:text])
 
     @anagrams = Anagram.find(:all)
-    replace :view => :display
+    update :view => :display
   end
 
 end
