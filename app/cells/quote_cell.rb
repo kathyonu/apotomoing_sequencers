@@ -1,4 +1,5 @@
 class QuoteCell < Cell::Rails
+  helper ApplicationHelper
 
   def display
     @quote = Quote.find:first

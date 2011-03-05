@@ -1,4 +1,5 @@
 class AnagramWidget < Apotomo::Widget
+  helper ApplicationHelper
 
   after_add do
     root.respond_to_event :submit

@@ -1,4 +1,5 @@
 class SequenceCreatedWidget < Apotomo::Widget
+  helper ApplicationHelper
 
   after_add do
     root.respond_to_event :submit, :from => :anagram, :with => :submit, :on => :sequence_created

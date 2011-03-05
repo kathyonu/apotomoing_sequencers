@@ -209,6 +209,7 @@ module Textual
     foo.gsub!(/(^\t+)/, "")                 # tabs : rremoves the \t at the beginning of the line
     foo.gsub!(/(\t+$)/, "")                 # tabs : removes the \t at the end of the line
     foo.gsub!(/(\t+)/, "\s")                # tabs : replaces the \t with the space
+    foo.gsub!(/(\s+\(+\!+\)+\s+)/, "\n")    # exclamation mark(s) : removes exclamation mark(s) surrounded by parenthesis and space, replacing with new line
     foo.gsub!(/(\!+\.?,?\s*$)/, "")          # exclamation mark(s) : removes exclamation mark(s) followed by optional space(s) at end of line
     foo.gsub!(/(\!+\.?,?[""]\s*)/, "\n")     # exclamation mark(s) : removes exclamation mark(s) and quote(s), replacing with new line
     foo.gsub!(/(\!+\.?,?[""]\s*$)/, "")        # exclamation mark(s) : removes exclamation mark(s) and quote(s) at end of line

@@ -14,9 +14,13 @@
 
   = widget_div do
     = form_tag url_for_event(:submit), :remote => true do
-      = text_field_tag 'id'
+      = hidden_field_tag 'id'
+      = label_tag 'text', 'enter text'
       = text_field_tag 'text'
+      = hidden_field_tag 'sequence_created_id'
+      = label_tag 'description', 'description'
       = text_field_tag 'description'
+      = label_tag 'reference', 'reference'
       = text_field_tag 'reference'
 
       = submit_tag "Enter New Anagram"
