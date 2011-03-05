@@ -24,18 +24,12 @@ class AnagramWidget < Apotomo::Widget
     render :view => :edit
   end
   
-  def submit
-    @anagram = Anagram.new(params[:anagram])
-	  respond_to do
-        if @anagram.save
-          @anagram = Anagram.new
-        else
-          @anagram = Anagram.edit		
-        end
-      end
-	@anagram = anagram.update_attributes(params[:anagram])
-    @anagrams = Anagram.find:all
-    update :display
+  def submit(evt)
+    Anagram.new(:text => evt[:text]).save
+    @anagram = anagram.update_attributes(:text => evt[:text])
+
+    @anagrams = Anagram.find(:all)
+    replace :view => :display
   end
 
 end
