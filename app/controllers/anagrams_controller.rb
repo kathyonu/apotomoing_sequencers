@@ -4,6 +4,7 @@ class AnagramsController < ApplicationController
   has_widgets do
     root << widget(:anagram, :anagram => @anagram)
     root << widget(:sequence_created)
+    root.respond_to_event :submit, :from => :anagram, :with => :submit, :on => :anagram
   end
 
   # GET /anagrams

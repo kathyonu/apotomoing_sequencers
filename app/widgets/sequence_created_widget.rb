@@ -3,6 +3,11 @@ class SequenceCreatedWidget < Apotomo::Widget
 
   after_add do
     root.respond_to_event :submit, :from => :anagram, :with => :submit, :on => :sequence_created
+    root.respond_to_event :submit, :from => :anagram, :with => :sequence_created, :on => :sequence_created
+    root.respond_to_event :submit, :from => :anagram, :with => :sequence_creaton, :on => :sequence_created
+    root.respond_to_event :submit, :from => :anagram, :with => :sequence_complete, :on => :sequence_created
+    root.respond_to_event :submit, :from => :anagram, :with => :sequence_lexigram, :on => :sequence_created
+    root.respond_to_event :submit, :from => :anagram, :with => :sequence_singular, :on => :sequence_created
     root.respond_to_event :typing, :from => :anagram, :with => :sequence_created, :on => :sequence_created
     root.respond_to_event :typing, :from => :anagram, :with => :sequence_creation, :on => :sequence_created
     root.respond_to_event :typing, :from => :anagram, :with => :sequence_complete, :on => :sequence_created
@@ -13,33 +18,32 @@ class SequenceCreatedWidget < Apotomo::Widget
   def sequence_created(evt)
     anagram = evt[:anagram.text]
     @sequence_created = anagram.to_textual.de_comma.strip   # this is not right yet
-    trigger = :typing
 
-    render :view => :sequence_created
+    render :sequence_created
   end
 
   def sequence_creation(sequence_created)
     @sequence_creation = sequence_created.de_space
 
-    render :view => :sequence_creation
+    render :sequence_creation
   end
 
   def sequence_complete(sequence_created)
     @sequence_complete = sequence_created.split(//).sort.join.strip
 
-    render :view => sequence_complete
+    render :sequence_complete
   end
 
   def sequence_lexigram(sequence_created)
 	@sequence_lexigram = sequence_created.split(//).sort.join.strip.reverse  # TODO complete the Lexigram code, meanwhile substitute the reverse sequence as the dataum
 
-    render :view => sequence_lexigram
+    render :sequence_lexigram
   end
 
   def sequence_singular(sequence_complete)
     @sequence_singular = sequence_complete.squeeze
 
-    render :view => sequence_singular
+    render :sequence_singular
   end
 
   def submit(evt)
