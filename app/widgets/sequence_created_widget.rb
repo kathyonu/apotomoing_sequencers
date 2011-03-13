@@ -1,7 +1,7 @@
 class SequenceCreatedWidget < Apotomo::Widget
   helper ApplicationHelper
 
-  after_add do
+  after_add do |root|
     root.respond_to_event :submit, :from => :anagram, :with => :submit, :on => :sequence_created
     root.respond_to_event :submit, :from => :anagram, :with => :sequence_created, :on => :sequence_created
     root.respond_to_event :submit, :from => :anagram, :with => :sequence_creaton, :on => :sequence_created
@@ -16,7 +16,7 @@ class SequenceCreatedWidget < Apotomo::Widget
   end
   
   def sequence_created(evt)
-    anagram = evt[:anagram.text]
+    anagram = Anagram.find evt[:anagram.text]
     @sequence_created = anagram.to_textual.de_comma.strip   # this is not right yet
 
     render :sequence_created

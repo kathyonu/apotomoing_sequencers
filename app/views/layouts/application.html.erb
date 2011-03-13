@@ -2,14 +2,19 @@
 <html>
 <head>
   <title>ApotomoingSequencers</title>
-  <%= stylesheet_link_tag "scaffold" %>
+  <%= javascript_include_tag "jquery-1.4.4.min" %>
+  <%= javascript_include_tag "jquery-ui-1.8.10.custom.min" %>
+  <%= stylesheet_link_tag "ui-lightness/jquery-ui-1.8.10.custom" %>
+  <%= stylesheet_link_tag "creations" %>
   <%= stylesheet_link_tag "sequencers" %>
-  <%= javascript_include_tag "js/jquery-1.4.4.min" %>
-  <%= javascript_include_tag "js/jquery-ui-1.8.10.custom.min" %>
-  <script type="text/javascript"></script>
   <%= csrf_meta_tag %>
+  <%= javascript_tag "jQuery.noConflict();var $j = jQuery;" %>
 </head>
 <body>
+
+<input type="text" name="date" id="date" /> This unmarked date box is proof jQuery is working, click inside the box.
+
+  <script>$j('#date').datepicker();</script>
 
 <%= yield %>
 

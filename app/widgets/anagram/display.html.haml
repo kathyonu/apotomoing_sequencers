@@ -9,13 +9,11 @@
   %p
     = link_to 'To Add a New Anagram', new_anagram_path 
     <= using http://localhost:3000/anagrams/new
-
   %p
     Add anagram box is not yet entering data into database, nor firing the five sequences.
 
   = widget_div do
     = form_tag url_for_event(:submit), :remote => true do
-      = hidden_field_tag 'id'
       = label_tag 'text', 'enter text'
       = text_field_tag 'text'
       = hidden_field_tag 'sequence_created_id'
@@ -25,8 +23,6 @@
       = text_field_tag 'reference'
 
       = submit_tag "Enter New Anagram"
-
-    %p 
 
     %hr
 
@@ -54,9 +50,9 @@
 
   
   :javascript
-    var form = $("##{widget_id} form");
+    var form = $j("##{widget_id} form");
    
     form.submit(function() {
-      $.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+      $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
       return false;
     });

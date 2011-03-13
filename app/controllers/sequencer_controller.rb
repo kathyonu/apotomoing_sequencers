@@ -3,8 +3,8 @@ class SequencerController < ApplicationController
 
   has_widgets do |root|
     root << widget(:sequencer)
-    root << widget(:sequence_created)
-    root << widget(:anagram)
+    root << widget(:sequence_created, :sequence_created => @sequence_created)
+    root << widget(:anagram, :anagram => @anagram)
   end
 
   def display
