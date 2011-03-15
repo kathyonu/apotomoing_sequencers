@@ -1,35 +1,37 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time still, 20110313, apotomoing_sequencers is not yet a fully functioning application. 
-The entire modelling is subject to change at any moment.
+### Note: At this time still, 20110315, apotomoing_sequencers is not yet a fully functioning application, and the entire modelling is subject to change at any moment.
 
 ## Description:
 
-The essence of apotomoing_sequencers is to process any textual matter that contains punctuations, numbers, signs such as $ and other non-letter symbols, and convert it all to lettered words.  An example is apt. becomes apartment; appt. becomes appointment. $100 becomes one hundred dollars.  This is effected with the String#to_textual method we have written, which draws on over 3,000 regular expressions to massage the text to pure letterings, and from that, we can generate the five sequences of any English creation, be it name, word or phrase. 
-See /helpers/textual.rb
+The essence of apotomoing_sequencers is to process any textual matter that contains punctuations, numbers, signs such as $ and other non-letter symbols, and convert it all to lettered words.  An example is apt. becomes apartment; appt. becomes appointment. $100 becomes one hundred dollars.  This is effected with the String#to_textual method we have written, which draws on over 5,500 regular expressions to massage the text to pure letterings, and from that, we can generate the five sequences of any English creation, be it name, word or phrase. 
 
-Currently, we are writing this app using 
-ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-darwin10]
-Rails 3.0.5
-Apotomo 1.1.0
-Cells 3.5.4
+The regular expressions file empowering the String#to_textual method is here : app/helpers/textual.rb
+
+Currently, we are writing this app using the Snow Leopard iMac with : 
+## [ruby](http://rubyforge.org/ "Ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-darwin10]")
+## [rails](http://rubyforge.org/projects/rails/ "Rails 3.0.5")
+## [apotomo](http://apotomo.de/ "Apotomo 1.1.0")
+## [cells](http://cells.rubyforge.org/ "Cells 3.5.4")
 
 The app uses sqlite3 for the database, so you have no setup to do there.
-Our in-house app will be using mysql2 in production.
+## [sqlite3](http://www.sqlite.org/quickstart.html "SQLite")
 
-## apotomo
+Our in-house app will be using mysql2 in production.
+## [mysql2](http://rubygems.org/gems/mysql2 "mysql2")
+
 ### apotomoing_sequencers
  as a name, it comes from two stories of creation:
 
+## [apotomo](http://apotomo.de/ "apotomo")
 *apotomo* is the name of a gem and plugin created by Nick Sutterer.
 *apotomo* harnesses the power of *cells*, making them fully interactive.
-[apotomo](http://apotomo.de/ "Apotomo")
 
+## [cells](http://cells.rubyforge.org/ "cells")
 *cells* is the name of a gem and plugin created by Nick Sutterer.  
 *cells* is the ideal missing component of the rails MVC stack.  
-*cells* can be written one time, and displayed anywhere.
-[cells](http://cells.rubyforge.org/ "Cells")
+*cells* can be written one time, and displayed anywhere with one line of code.
 
 So, *apotomoing* is my creation on *apotomo*, so as to honor the beauty and usefulness of *apotomo* and *cells*.
 
@@ -83,7 +85,7 @@ The application will prove useful to anyone who loves and works with words and h
 *	http://localhost:3000/anagrams/
 *	http://localhost:3000/sequences/
 
-#### The sequences/ address will show the entire app's design in one table.  
+#### The sequences address will show the entire app's design in one table.  
 #### The sequences table is a primitive setup allowing massive duplicates in the five sequences.
 #### The sequences table was added so you can see how the entire application can exist in one table.
 

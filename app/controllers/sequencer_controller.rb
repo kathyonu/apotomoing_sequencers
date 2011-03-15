@@ -5,11 +5,11 @@ class SequencerController < ApplicationController
     root << widget(:sequencer)
     root << widget(:sequence_created, :sequence_created => @sequence_created)
     root << widget(:anagram, :anagram => @anagram)
-    root.respond_to_event :submit, :from => :sequencer, :with => :submit, :on => :anagram
+    root.respond_to_event :submit, :from => :anagram, :with => :submit, :on => :anagram
 
   end
 
   def display
   end
-  
+
 end
