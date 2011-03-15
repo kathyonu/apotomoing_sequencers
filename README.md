@@ -10,34 +10,31 @@ The essence of apotomoing_sequencers is to process any textual matter that conta
 The regular expressions file empowering the String#to_textual method is here : app/helpers/textual.rb
 
 Currently, we are writing this app using the Snow Leopard iMac with : 
-## [ruby](http://rubyforge.org/ "Ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-darwin10]")
-## [rails](http://rubyforge.org/projects/rails/ "Rails 3.0.5")
-## [apotomo](http://apotomo.de/ "Apotomo 1.1.0")
-## [cells](http://cells.rubyforge.org/ "Cells 3.5.4")
-
+### [ruby](http://rubyforge.org/ "Ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-darwin10]")
+### [rails](http://rubyforge.org/projects/rails/ "Rails 3.0.5")
+### [apotomo](http://apotomo.de/ "Apotomo 1.1.0")
+### [cells](http://cells.rubyforge.org/ "Cells 3.5.4")
+### [sqlite3](http://www.sqlite.org/quickstart.html "SQLite")
 The app uses sqlite3 for the database, so you have no setup to do there.
-## [sqlite3](http://www.sqlite.org/quickstart.html "SQLite")
-
+### [mysql2](http://rubygems.org/gems/mysql2 "mysql2")
 Our in-house app will be using mysql2 in production.
-## [mysql2](http://rubygems.org/gems/mysql2 "mysql2")
-
 ### apotomoing_sequencers
- as a name, it comes from two stories of creation:
+As a name, it comes from two stories of creation:
 
-## [apotomo](http://apotomo.de/ "apotomo")
-*apotomo* is the name of a gem and plugin created by Nick Sutterer.
-*apotomo* harnesses the power of *cells*, making them fully interactive.
+### [apotomo](http://apotomo.de/ "apotomo")
+*_apotomo_* is the name of a gem and plugin created by Nick Sutterer.
+*_apotomo_* harnesses the power of *cells*, making them fully interactive.
 
-## [cells](http://cells.rubyforge.org/ "cells")
-*cells* is the name of a gem and plugin created by Nick Sutterer.  
-*cells* is the ideal missing component of the rails MVC stack.  
-*cells* can be written one time, and displayed anywhere with one line of code.
+### [cells](http://cells.rubyforge.org/ "cells")
+*_cells_* is the name of a gem and plugin created by Nick Sutterer.  
+*_cells_* is the ideal missing component of the rails MVC stack.  
+*_cells_* can be written one time, and displayed anywhere with one line of code.
 
 So, *apotomoing* is my creation on *apotomo*, so as to honor the beauty and usefulness of *apotomo* and *cells*.
 
 I have Nick's permission to use the name as *apotomoing*, with *sequencers* latched on, as our github repository name.
 
-## sequencers
+### sequencers
 > The sequencer methods are what this app is being built for, to sequence any creation in English.
 >
 > Just as the sequencing of the dna displays its specific characteristics, 
