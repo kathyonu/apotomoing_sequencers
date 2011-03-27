@@ -12,7 +12,7 @@ ApotomoingSequencers::Application.routes.draw do
   
   get "quote/new"
 
-  get "sequences/new"
+  get "sequence/new"
   
   get "sequencer/display"
 
