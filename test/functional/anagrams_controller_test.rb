@@ -18,7 +18,7 @@ class AnagramsControllerTest < ActionController::TestCase
 
   test "should create anagram" do
     assert_difference('Anagram.count') do
-      post :create, :anagram => @anagram.attributes
+      post :create, :anagram => { }
     end
 
     assert_redirected_to anagram_path(assigns(:anagram))

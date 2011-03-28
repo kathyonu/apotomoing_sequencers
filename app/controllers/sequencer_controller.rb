@@ -6,7 +6,6 @@ class SequencerController < ApplicationController
     root << widget(:sequence_created, :sequence_created => @sequence_created)
     root << widget(:anagram, :anagram => @anagram)
     root.respond_to_event :submit, :from => :anagram, :with => :submit, :on => :anagram
-
   end
 
   def display
