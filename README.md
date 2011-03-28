@@ -1,7 +1,10 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time still, 20110315, apotomoing_sequencers is not yet a fully functioning application, and the entire modelling is subject to change at any moment.
+#### Note: At this time still, 20110328
+##### apotomoing_sequencers is not yet fully functioning.
+##### At this time, one cell displays twice with different data,
+##### and the anagram widget dances its user input into the database.
 
 # Getting Started
 ## In your Terminal
@@ -31,8 +34,8 @@ The regular expressions file empowering the String#to_textual method is here : a
 Currently, we are writing this app using the Snow Leopard iMac with : 
 ### [ruby](http://rubyforge.org/ "Ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-darwin10]")
 ### [rails](http://rubyforge.org/projects/rails/ "Rails 3.0.5")
-### [apotomo](http://apotomo.de/ "Apotomo 1.1.0")
-### [cells](http://cells.rubyforge.org/ "Cells 3.5.4")
+### [apotomo](http://apotomo.de/ "Apotomo 1.1.1")
+### [cells](http://cells.rubyforge.org/ "Cells 3.5.6")
 ### [sqlite3](http://www.sqlite.org/quickstart.html "SQLite")
 The app uses sqlite3 for the database, so you have no setup to do there.
 ### [mysql2](http://rubygems.org/gems/mysql2 "mysql2")
