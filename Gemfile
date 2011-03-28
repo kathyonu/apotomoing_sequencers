@@ -15,9 +15,6 @@ gem 'sho-mongrel'
 gem "apotomo", :git => "git://github.com/apotonick/apotomo"
 
 gem 'cells', '>= 3.5.0'
-  # gem "cells", :path => "/Users/William/desideratus/bookofcreations/cells"#"3.4.2"   << another app
-  # gem "cells", :path => "/home/nick/projects/cells"#"3.4.2"                          << template from nick's app
-  # template at http://github.com/apotonick/apotomo/blob/rails-3.0/Gemfile
 
 gem 'onfire'
 
