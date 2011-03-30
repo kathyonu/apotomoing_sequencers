@@ -4,6 +4,7 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Text</th>
     <th>Description</th>
     <th>Reference</th>
@@ -14,6 +15,7 @@
 
 <% @anagrams.each do |anagram| %>
   <tr>
+    <td><%= anagram.id %></td>
     <td><%= anagram.text %></td>
     <td><%= anagram.description %></td>
     <td><%= anagram.reference %></td>
