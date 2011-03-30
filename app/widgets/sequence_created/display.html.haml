@@ -3,21 +3,37 @@
   %div.id1
     = "here begins"
     <b>app/widgets/sequence_created/display.html.haml</b>
+    %br
+    %small
+    rendered by : app/widgets/sequence_created/sequence_created.html.haml
+    %br
+    %small
+    app/widgets/sequence_created/sequence_creation.html.haml
+    %br
+    %small
+    app/widgets/sequence_created/sequence_complete.html.haml
+    %br
+    %small
+    app/widgets/sequence_created/sequence_lexigram.html.haml
+    %br
+    %small
+    app/widgets/sequence_created/sequence_singular.html.haml
 
   %p
     %small
       The five sequences are not yet firing. 
   
   = widget_div do
-    = render :view => :sequence_created
-    %br
+    = render :view => :sequence_created 
+
     = render :view => :sequence_creation
-    %br
+
     = render :view => :sequence_complete
-    %br
+
     = render :view => :sequence_lexigram
-    %br
+
     = render :view => :sequence_singular
+    %br
 
     %div.id2
       here ends the display of 
