@@ -1,7 +1,7 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-#### Note: At this time still, 20110328
+#### Note: At this time still, 20110330
 ##### apotomoing_sequencers is not yet fully functioning.
 ##### At this time, one cell displays twice with different data,
 ##### and the anagram widget dances its user input into the database.
