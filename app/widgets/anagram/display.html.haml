@@ -32,12 +32,12 @@
       "#{url_for_event(:submit)}"
 
     %p
-      This is the list of anagrams in the database :
+      These are the last ten anagrams entered into the database :
 
-    %ol
+    %ul
       - for anagram in @anagrams
         %li=anagram.text
- 
+
   %p
   %small
     = link_to 'Another non-widget way to Add a New Anagram', new_anagram_path 
