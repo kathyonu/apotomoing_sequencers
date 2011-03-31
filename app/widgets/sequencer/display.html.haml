@@ -2,8 +2,8 @@
 
   %div.id1
     here begins
-    <b>app/widgets/sequencer/display.html.haml</b>
-    <br>
+    %b
+      app/widgets/sequencer/display.html.haml
 
   %p
 
@@ -27,8 +27,15 @@
   %br
   = link_to 'New Sequence', :controller => :sequences, :action => :new
   %br
+  %small
+    ^^^ These three links use CRUD methods in app/controllers/views
   %br
+  %small
+    \\/ Use the anagram widget boxes below to enter a new anagram
+ 
+  %p
 
   %div.id2
-    here ends
-    <b>app/widgets/sequencer/display.html.haml</b>
+    here ends 
+    %b
+      app/widgets/sequencer/display.html.haml

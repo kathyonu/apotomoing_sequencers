@@ -21,21 +21,28 @@
     %small
       app/widgets/sequence_created/sequence_singular.html.haml
 
-  %p
+    %p
     %small
-      The five sequences are not yet firing, from the submit on anagram. 
+      The five sequences are not yet firing, from the submit on Enter New Anagram below. 
   
   = widget_div do
     = render :view => :sequence_created 
-
     = render :view => :sequence_creation
-
     = render :view => :sequence_complete
-
     = render :view => :sequence_lexigram
-
     = render :view => :sequence_singular
+
     %br
+
+    %hr
+
+    %small
+      This widget's generated name is : 
+    %b
+      "#{widget_id}"
+    %br
+    %small
+      This widget's generated submit url is : "#{url_for_event(:submit)}"
 
     %div.id2
       here ends the display of 

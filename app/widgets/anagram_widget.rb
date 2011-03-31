@@ -1,7 +1,7 @@
 class AnagramWidget < Apotomo::Widget
   helper ApplicationHelper
 
-  responds_to_event :submit, :from => :sequencer, :with => :submit, :on => :anagram
+  responds_to_event :submit, :from => :anagram, :with => :submit, :on => :anagram
 
 #  after_add do
 #    root.respond_to_event :submit, :from => :sequencer, :with => :submit, :on => :anagram
@@ -18,7 +18,7 @@ class AnagramWidget < Apotomo::Widget
   end
 
   def display
-    @anagrams = Anagram.find:all
+    @anagrams = Anagram.find(:all)
     render
   end
 
@@ -26,7 +26,9 @@ class AnagramWidget < Apotomo::Widget
     anagram = Anagram.new(:id => evt[:id], :sequence_created_id => evt[:sequence_created_id], :text => evt[:text], :description => evt[:description], :reference => evt[:reference]).save
 
     @anagrams = Anagram.find(:all)
-    update :view => :display
+    trigger :newSequenceCreated
+	
+	update :view => :display
   end
 
 end
