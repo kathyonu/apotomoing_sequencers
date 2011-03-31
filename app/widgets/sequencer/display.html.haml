@@ -2,8 +2,8 @@
 
   %div.id1
     here begins
-    <b>app/widgets/sequencer/display.html.haml</b>
-    <br>
+    %b
+      app/widgets/sequencer/display.html.haml
 
   %p
 
@@ -12,23 +12,23 @@
   = "You have #{Quote.count} quotes in the quotes table"
   %br
   = "You have #{SequenceCreated.count} createds in the sequence_createds table"
-  %small  : this calculation is still in error
+  %small  : this calculation is anagrams + quotes = sequence_createds
   %br
   = "You have #{Sequence.count} sequences in the sequences table" 
   
   %p
     Your available links are :
-
   = "To Root < You are here"  
-  %br 
+  %br
   = link_to 'New Anagram', :controller => :anagrams, :action => :new
   %br
   = link_to 'New Quote', :controller => :quotes, :action => :new
   %br
   = link_to 'New Sequence', :controller => :sequences, :action => :new
-  %br
-  %br
+
+  %p
 
   %div.id2
     here ends
-    <b>app/widgets/sequencer/display.html.haml</b>
+    %b
+      app/widgets/sequencer/display.html.haml

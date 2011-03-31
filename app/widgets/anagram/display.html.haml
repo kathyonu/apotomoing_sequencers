@@ -2,7 +2,8 @@
   
   %div.id1
     here begins
-    <b>app/widgets/anagram/display.html.haml</b>
+    %b
+      app/widgets/anagram/display.html.haml
 
   %hr
 
@@ -19,41 +20,44 @@
       = text_field_tag 'reference'
 
       = submit_tag "Enter New Anagram"
-    %hr
 
-    %small
-      This widget's generated name is : 
+  %hr
+
+  %p
+    These are the last ten anagrams entered into the database :
+
+  %ul
+    - for anagram in @anagrams
+      %li=anagram.text
+
+  %p
+  %small
+    This widget's generated name is : 
     %b
       "#{widget_id}"
-    %br
-    %small
-      This widget's generated submit url is :
+  %br
+  %small
+    This widget's generated submit url is :
     %b
       "#{url_for_event(:submit)}"
 
-    %p
-      This is the list of anagrams in the database :
-
-    %ol
-      - for anagram in @anagrams
-        %li=anagram.text
- 
   %p
   %small
     = link_to 'Another non-widget way to Add a New Anagram', new_anagram_path 
     <= using normal controller/view : http://localhost:3000/anagrams/new
-    %br
+  
+  %p
 
     .cellular_quote
       = render_cell :quote, :display, :quote => @quote
 
-    %p 
-      %small
-        &nbsp;&nbsp;&nbsp;&nbsp; the call to the above QuoteCell is made from : app/widgets/anagram/display.html.haml
+  %p 
+  %small
+    &nbsp;&nbsp;&nbsp;&nbsp; the call to the above QuoteCell is made from : app/widgets/anagram/display.html.haml
 
-    %div.id2
-      here ends
-      <b>app/widgets/anagram/display.html.haml</b>
+  %div.id2
+    here ends
+    %b app/widgets/anagram/display.html.haml
 
   // Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
   :javascript

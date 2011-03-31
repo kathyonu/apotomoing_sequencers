@@ -2,8 +2,10 @@
   
   %div.id1
     = "here begins"
-    <b>app/widgets/sequence_created/display.html.haml</b>
-    %br
+    %b
+      app/widgets/sequence_created/display.html.haml
+
+    %p
     %small
       the five sequences below are rendered by : 
     %br
@@ -22,8 +24,8 @@
       app/widgets/sequence_created/sequence_singular.html.haml
 
   %p
-    %small
-      The five sequences are not yet firing, from the submit on anagram. 
+  %small
+    The five sequences are not yet firing, from the submit on anagram. 
   
   = widget_div do
     = render :view => :sequence_created 
@@ -35,8 +37,10 @@
     = render :view => :sequence_lexigram
 
     = render :view => :sequence_singular
-    %br
 
-    %div.id2
-      here ends the display of 
-      <b>app/widgets/sequence_created/display.html.haml</b>
+  %p
+
+  %div.id2
+    here ends the display of 
+    %b
+      app/widgets/sequence_created/display.html.haml
