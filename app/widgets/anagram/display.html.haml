@@ -7,16 +7,11 @@
   %hr
 
   %p
-  %small
-    = link_to 'Another non-widget way to Add a New Anagram', new_anagram_path 
-    <= using normal controller/view : http://localhost:3000/anagrams/new
-
-  %p
-    Add anagram widget box is now entering data into database, but not yet refreshing, nor firing the five sequences.
+    These add anagram widget boxes are now entering data into database, but not yet refreshing, nor firing the five sequences.
 
   = widget_div do
     = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
-      = label_tag 'text', 'enter text'
+      = label_tag 'text', 'enter anagram text'
       = text_field_tag 'text'
       = label_tag 'description', 'description'
       = text_field_tag 'description'
@@ -27,12 +22,12 @@
     %hr
 
     %small
-      This widget name is : 
+      This widget's generated name is : 
     %b
       "#{widget_id}"
     %br
     %small
-      This widget submit url is :
+      This widget's generated submit url is :
     %b
       "#{url_for_event(:submit)}"
 
@@ -47,6 +42,7 @@
   %small
     = link_to 'Another non-widget way to Add a New Anagram', new_anagram_path 
     <= using normal controller/view : http://localhost:3000/anagrams/new
+    %br
 
     .cellular_quote
       = render_cell :quote, :display, :quote => @quote

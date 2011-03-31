@@ -5,23 +5,25 @@
     <b>app/widgets/sequence_created/display.html.haml</b>
     %br
     %small
-    rendered by : app/widgets/sequence_created/sequence_created.html.haml
+      the five sequences below are rendered by : 
+    %br
+      app/widgets/sequence_created/sequence_created.html.haml
     %br
     %small
-    app/widgets/sequence_created/sequence_creation.html.haml
+      app/widgets/sequence_created/sequence_creation.html.haml
     %br
     %small
-    app/widgets/sequence_created/sequence_complete.html.haml
+      app/widgets/sequence_created/sequence_complete.html.haml
     %br
     %small
-    app/widgets/sequence_created/sequence_lexigram.html.haml
+      app/widgets/sequence_created/sequence_lexigram.html.haml
     %br
     %small
-    app/widgets/sequence_created/sequence_singular.html.haml
+      app/widgets/sequence_created/sequence_singular.html.haml
 
   %p
     %small
-      The five sequences are not yet firing. 
+      The five sequences are not yet firing, from the submit on anagram. 
   
   = widget_div do
     = render :view => :sequence_created 
