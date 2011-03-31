@@ -1,10 +1,12 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-#### Note: At this time still, 20110330
+#### Note: At this time still, 20110331
 ##### apotomoing_sequencers is not yet fully functioning.
-##### At this time, one cell displays twice with different data,
+##### Currently, the quote cell displays twice with different quotes,
 ##### and the anagram widget dances its user input into the database.
+##### I believe the next step is to create the form for sequence_created widget.
+##### Then, automatically filling in the form's five sequences from the anagram.text data.
 
 # Getting Started
 ## In your Terminal
