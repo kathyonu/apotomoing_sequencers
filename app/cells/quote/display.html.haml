@@ -1,5 +1,4 @@
-%h4
-  This is the Quote Cell display
+%b First Quote Cell display
 
 .quote_text
 
@@ -8,10 +7,11 @@
 
 %p
   = link_to 'Add a New Quote', new_quote_path
-
-%br
-  this uses app/views/quotes/new.html.erb
+  %br
+  %small
+    this link uses scaffolded CRUD to add new quote.
+  %br ^^^ : app/views/quotes/new.html.erb
 
 %p
 %small
-  this first quote of the day coming to you from app/cells/quote/display.html.haml
+  First Quote Cell display is coming to you from app/cells/quote/display.html.haml

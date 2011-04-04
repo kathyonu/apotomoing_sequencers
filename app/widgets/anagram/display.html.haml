@@ -43,17 +43,20 @@
     = link_to 'Another non-widget way to Add a New Anagram', new_anagram_path 
     <= using normal controller/view : http://localhost:3000/anagrams/new
     %br
-
+    %br
+  
     .cellular_quote
       = render_cell :quote, :display, :quote => @quote
 
-    %p 
-      %small
-        &nbsp;&nbsp;&nbsp;&nbsp; the call to the above QuoteCell is made from : app/widgets/anagram/display.html.haml
+    %br
+    %small
+      &nbsp;&nbsp;&nbsp;&nbsp; the call to display the Last Quote Cell display2 comes from from : app/widgets/anagram/display.html.haml
+    %br
 
     %div.id2
       here ends
-      <b>app/widgets/anagram/display.html.haml</b>
+      %b
+        app/widgets/anagram/display.html.haml
 
   // Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
   :javascript

@@ -14,6 +14,8 @@ ApotomoingSequencers::Application.routes.draw do
 
   get "sequence/new"
   
+  #get "sequencer/cells-cheatsheets"
+  
   root :to => "sequencer#display"
 
   # The priority is based upon order of creation:
