@@ -1,19 +1,20 @@
-%h3
-  This is the Quote Cell display2
+%p
+%b
+  = "Last Quote cell display2"
 
 .quote_text
 
   = @quote2.text
-  = " - " + @quote2.author.downcase
+  = " - " + "#{@quote2.author.downcase}"
 
 %p
-
 = link_to 'Add a New Quote', new_quote_path
 
 %br
-  this uses app/views/quotes/new.html.erb
+%small
+  = "this link uses app/views/quotes/new.html.erb"
 
 %p
 %small
-  this last quote of the day is coming to you from : app/cells/quote/display2.html.haml
+  = "Last Quote cell coming to you from : app/cells/quote/display2.html.haml"
 

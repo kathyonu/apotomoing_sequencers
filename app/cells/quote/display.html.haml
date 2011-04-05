@@ -1,18 +1,19 @@
-%h4
-  This is the Quote Cell display
+%p
+%b
+  = "First Quote Cell display"
 
 .quote_text
 
   = @quote.text
-  = " - " + @quote.author.downcase
+  = " - " + "#{@quote.author.downcase}"
 
 %p
-
 = link_to 'Add a New Quote', new_quote_path
 
 %br
-  this uses app/views/quotes/new.html.erb
+%small
+  = "this link uses app/views/quotes/new.html.erb"
 
 %p
 %small
-  this first quote of the day coming to you from app/cells/quote/display.html.haml
+  = "First Quote cell coming to you from : app/cells/quote/display.html.haml"

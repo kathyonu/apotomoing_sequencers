@@ -1,9 +1,9 @@
 .sequencer_widget_display
 
   %div.id1
-    here begins
+    = "here begins "
     %b
-      app/widgets/sequencer/display.html.haml
+      = "app/widgets/sequencer/display.html.haml"
 
   %p
 
@@ -17,7 +17,7 @@
   = "You have #{Sequence.count} sequences in the sequences table" 
   
   %p
-    Your available links are :
+    = "Your available links are :"
   = "To Root < You are here"  
   %br
   = link_to 'New Anagram', :controller => :anagrams, :action => :new
@@ -29,6 +29,6 @@
   %p
 
   %div.id2
-    here ends
+    = "here ends "
     %b
-      app/widgets/sequencer/display.html.haml
+      = "app/widgets/sequencer/display.html.haml"

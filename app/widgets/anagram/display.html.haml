@@ -1,14 +1,14 @@
 .anagram_widget_display
   
   %div.id1
-    here begins
+    = "here begins "
     %b
-      app/widgets/anagram/display.html.haml
+      = "app/widgets/anagram/display.html.haml"
 
   %hr
 
   %p
-    These add anagram widget boxes are now entering data into database, but not yet refreshing, nor firing the five sequences.
+    = "These add anagram widget boxes are now entering data into database, but not yet refreshing, nor firing the five sequences."
 
   = widget_div do
     = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
@@ -24,7 +24,7 @@
   %hr
 
   %p
-    These are the last ten anagrams entered into the database :
+    = "These are the last ten anagrams entered into the database :"
 
   %ul
     - for anagram in @anagrams
@@ -32,19 +32,19 @@
 
   %p
   %small
-    This widget's generated name is : 
+    = "This widget's generated name is : "
     %b
       "#{widget_id}"
   %br
   %small
-    This widget's generated submit url is :
+    = "This widget's generated submit url will be : "
     %b
       "#{url_for_event(:submit)}"
 
   %p
   %small
     = link_to 'Another non-widget way to Add a New Anagram', new_anagram_path 
-    <= using normal controller/view : http://localhost:3000/anagrams/new
+    = "<= using normal controller/view : http://localhost:3000/anagrams/new"
   
   %p
 
@@ -53,11 +53,12 @@
 
   %p 
   %small
-    &nbsp;&nbsp;&nbsp;&nbsp; the call to the above QuoteCell is made from : app/widgets/anagram/display.html.haml
+    = "&nbsp;&nbsp;&nbsp;&nbsp; the call to the above QuoteCell is made from : app/widgets/anagram/display.html.haml"
 
   %div.id2
-    here ends
-    %b app/widgets/anagram/display.html.haml
+    = "here ends "
+    %b
+      = "app/widgets/anagram/display.html.haml"
 
   // Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
   :javascript
