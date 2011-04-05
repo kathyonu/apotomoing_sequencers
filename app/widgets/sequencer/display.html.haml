@@ -1,23 +1,22 @@
 .sequencer_widget_display
 
   %div.id1
-    here begins
-    %b
-      app/widgets/sequencer/display.html.haml
+    = "here begins"
+  %b
+    = "app/widgets/sequencer/display.html.haml"
 
   %p
-
-  = "You have #{Anagram.count} anagrams in the anagrams table"
+    = "You have #{Anagram.count} anagrams in the anagrams table"
   %br
-  = "You have #{Quote.count} quotes in the quotes table"
+    = "You have #{Quote.count} quotes in the quotes table"
   %br
-  = "You have #{SequenceCreated.count} createds in the sequence_createds table"
+    = "You have #{SequenceCreated.count} createds in the sequence_createds table"
   %small  : this calculation is still in error
   %br
-  = "You have #{Sequence.count} sequences in the sequences table" 
+    = "You have #{Sequence.count} sequences in the sequences table" 
   
   %p
-    Your available links are :
+    = "Your available links are :"
 
   = "To Root < You are here"  
   %br 

@@ -1,30 +1,32 @@
 .sequence_created_widget_display
-  
   %div.id1
     = "here begins"
-    <b>app/widgets/sequence_created/display.html.haml</b>
+    %b
+      = "app/widgets/sequence_created/display.html.haml"
     %br
     %small
-      the five sequences below are rendered by : 
-    %br
-      app/widgets/sequence_created/sequence_created.html.haml
+      = "the five sequences below are rendered by :" 
     %br
     %small
-      app/widgets/sequence_created/sequence_creation.html.haml
+      = "app/widgets/sequence_created/sequence_created.html.haml"
     %br
     %small
-      app/widgets/sequence_created/sequence_complete.html.haml
+      = "app/widgets/sequence_created/sequence_creation.html.haml"
     %br
     %small
-      app/widgets/sequence_created/sequence_lexigram.html.haml
+      = "app/widgets/sequence_created/sequence_complete.html.haml"
     %br
     %small
-      app/widgets/sequence_created/sequence_singular.html.haml
+      = "app/widgets/sequence_created/sequence_lexigram.html.haml"
+    %br
+    %small
+      = "app/widgets/sequence_created/sequence_singular.html.haml"
+    %br
+    %small
+      = "The five sequences are not yet firing from the submit on Enter New Anagram below."
 
-    %p
-    %small
-      The five sequences are not yet firing, from the submit on Enter New Anagram below. 
-  
+  %p
+
   = widget_div do
     = render :view => :sequence_created 
     = render :view => :sequence_creation
@@ -32,18 +34,19 @@
     = render :view => :sequence_lexigram
     = render :view => :sequence_singular
 
-    %br
+  %hr
 
-    %hr
+  %small
+    This widget's generated name is : 
+  %b
+    "#{widget_id}" :
+  %small
+    = "form and its submit has not yet been created in this widget."
 
-    %small
-      This widget's generated name is : 
-    %b
-      "#{widget_id}"
-    %br
-    %small
-      This widget's generated submit url is : "#{url_for_event(:submit)}"
+  %br
+  %small
+    This widget's generated submit url is : "#{url_for_event(:submit)}"
 
-    %div.id2
-      here ends the display of 
-      <b>app/widgets/sequence_created/display.html.haml</b>
+  %div.id2
+    here ends the display of 
+    %b app/widgets/sequence_created/display.html.haml

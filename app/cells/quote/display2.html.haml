@@ -7,13 +7,12 @@
   = " - " + @quote2.author.downcase
 
 %p
-
-= link_to 'Add a New Quote', new_quote_path
+  = link_to 'Add a New Quote', new_quote_path
 %br
 %small
-  this link uses scaffolded CRUD methods : app/views/quotes/new.html.erb
+  = "this link uses scaffolded CRUD methods : app/views/quotes/new.html.erb"
 
 %p
 %small
-  Last Quote Cell display2 is coming to you from : app/cells/quote/display2.html.haml
+  = "Last Quote Cell display2 is coming to you from : app/cells/quote/display2.html.haml"
 
