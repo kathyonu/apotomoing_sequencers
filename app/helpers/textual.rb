@@ -34,6 +34,7 @@ module Textual
     foo.gsub!(/(\sp\.m\.,\s+)/, " pm, ")                # p.m., < replaces that with : pm, 
     foo.gsub!(/(\sp\.m,\s+)/, " pm, ")                  # p.m,  < replaces that with : pm comma space
     foo.gsub!(/(\s+p\.m\.\s+)/, " pm ")                 # p.m.  < replaces that with : pm
+    foo.gsub!(/(\s+p\.e\.\s+)/, " physical education ") # p.e.  < replaces that with : physical education
     foo.gsub!(/(^p\.s\.\s+)/, "ps ")                   # p.s.  < replaces that with : ps at beginning of line
     foo.gsub!(/(^ps\.\s+)/, "ps ")                     # ps.  < replaces that with : ps at beginning of line
     foo.gsub!(/(^ps:\s+)/, "ps ")                      # ps:  < replaces that with : ps at beginning of line
