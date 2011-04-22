@@ -2,10 +2,9 @@
 
   %div.id1
     = "here begins"
-  %b
-    = "app/widgets/sequencer/display.html.haml"
-
-  %p
+    %b
+      = "app/widgets/sequencer/display.html.haml"
+  %br
     = "You have #{Anagram.count} anagrams in the anagrams table"
   %br
     = "You have #{Quote.count} quotes in the quotes table"
@@ -17,24 +16,22 @@
   
   %p
     = "Your available links are :"
-
-  = "To Root < You are here"  
+  %br
+    = "To Root < You are here"  
   %br 
-  = link_to 'New Anagram', :controller => :anagrams, :action => :new
+    = link_to 'New Anagram', :controller => :anagrams, :action => :new
   %br
-  = link_to 'New Quote', :controller => :quotes, :action => :new
+    = link_to 'New Quote', :controller => :quotes, :action => :new
   %br
-  = link_to 'New Sequence', :controller => :sequences, :action => :new
-  %br
-  %small
-    ^^^ These three links use CRUD methods in app/controllers/views
+    = link_to 'New Sequence', :controller => :sequences, :action => :new
   %br
   %small
-    \\/ Use the anagram widget boxes below to enter a new anagram
+    = "^^^ These three links use CRUD methods in app/controllers/views"
+  %br
+  %small
+    = "\\/ Use the anagram widget boxes below to enter a new anagram"
  
-  %p
-
   %div.id2
-    here ends 
+    = "here ends" 
     %b
-      app/widgets/sequencer/display.html.haml
+      = "app/widgets/sequencer/display.html.haml"

@@ -1,52 +1,72 @@
 .sequence_created_widget_display
-  %div.id1
-    = "here begins"
-    %b
-      = "app/widgets/sequence_created/display.html.haml"
+
+  .id1 
+    here begins
+    %b app/widgets/sequence_created/display.html.haml
     %br
-    %small
-      = "the five sequences below are rendered by :" 
+    %small the five sequences below are rendered by : 
     %br
-    %small
-      = "app/widgets/sequence_created/sequence_created.html.haml"
+    %small app/widgets/sequence_created/sequence_created.html.haml
     %br
-    %small
-      = "app/widgets/sequence_created/sequence_creation.html.haml"
+    %small app/widgets/sequence_created/sequence_creation.html.haml
     %br
-    %small
-      = "app/widgets/sequence_created/sequence_complete.html.haml"
+    %small app/widgets/sequence_created/sequence_complete.html.haml
     %br
-    %small
-      = "app/widgets/sequence_created/sequence_lexigram.html.haml"
+    %small app/widgets/sequence_created/sequence_lexigram.html.haml
     %br
-    %small
-      = "app/widgets/sequence_created/sequence_singular.html.haml"
+    %small app/widgets/sequence_created/sequence_singular.html.haml
     %br
-    %small
-      = "The five sequences are not yet firing from the submit on Enter New Anagram below."
 
   %p
 
+  %small These five sequences are not yet firing from the submit on 
+  %strong Enter New Anagram
+  %small below.
+
   = widget_div do
-    = render :view => :sequence_created 
-    = render :view => :sequence_creation
-    = render :view => :sequence_complete
-    = render :view => :sequence_lexigram
-    = render :view => :sequence_singular
+    = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
+      %br
+      = label_tag 'sequence_created', 'sequence_created'
+      = text_field_tag 'sequence_created'
+      %br
+      = label_tag 'sequence_creation', 'sequence_creation'
+      = text_field_tag 'sequence_creation'
+      %br
+      = label_tag 'sequence_complete', 'sequence_complete'
+      = text_field_tag 'sequence_complete'
+      %br
+      = label_tag 'sequence_lexigram', 'sequence_lexigram'
+      = text_field_tag 'sequence_lexigram'
+      %br
+      = label_tag 'sequence_singular', 'sequence_singular'
+      = text_field_tag 'sequence_singular'
+      %br
+      %br
+      = submit_tag "This Submit tag will be fired automatically upon Anagram Submit"
+
+      %br
 
   %hr
 
-  %small
-    This widget's generated name is : 
-  %b
-    "#{widget_id}" :
-  %small
-    = "form and its submit has not yet been created in this widget."
+  %small This widget's generated name is :
+  %b= "#{widget_id} :"
+
+  %small= "form and its submit has not yet been created in this widget."
 
   %br
   %small
-    This widget's generated submit url is : "#{url_for_event(:submit)}"
+    = "This widget's generated submit url is : " + "#{url_for_event(:submit)}"
 
   %div.id2
-    here ends the display of 
+    here ends the display of  
     %b app/widgets/sequence_created/display.html.haml
+
+  // Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
+
+  :javascript
+    var form = $j("##{widget_id} form");
+   
+    form.submit(function() {
+      $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+      return false;
+    });

@@ -15,7 +15,9 @@ require 'fiber'
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below
   def file_name
-    @file_name = ("./lib/anagrams/anagrams_table_data.txt")
+    @file_name = ("../../Documents/20110421-research_textualed.txt")
+##    @file_name = ("../../Documents/20110421-research.txt")
+##  @file_name = ("./lib/anagrams/anagrams_table_data.txt")
 ##  @file_name = ("./lib/externals/externals_table_data_input_hash.txt")
 ##	@file_name = ("./lib/20100511-test-two.txt")
 ##	@file_name = ("./lib/databasers/20100903-researches.txt")
@@ -160,8 +162,7 @@ require 'fiber'
 	end
   end
 
-    # by_line_length method is not working for some reason # TODO fix by_line_length method
-    ## my favorite as it allows me to make sure all line lengths are less than 255 characters, visually, on the screen
+    # by_line_length method read a file and show all lines that is equal or longer than 250 characters
   def by_line_length
     a = File.readlines(file_name)
     while b = a.shift
