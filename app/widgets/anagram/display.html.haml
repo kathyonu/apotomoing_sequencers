@@ -1,14 +1,12 @@
 .anagram_widget_display
   
   %div.id1
-    = "here begins "
-    %b
-      = "app/widgets/anagram/display.html.haml"
+    here begins
+    %b app/widgets/anagram/display.html.haml
 
   %hr
 
-  %p
-    = "These add anagram widget boxes are now entering data into database, but not yet refreshing, nor firing the five sequences."
+  %p These add an anagram boxes are widget powered, and are now entering data into database, but not yet refreshing, nor firing the five sequences.
 
   = widget_div do
     = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
@@ -21,46 +19,56 @@
 
       = submit_tag "Enter New Anagram"
 
+  %p
+
   %hr
 
   %p
-    = "These are the last ten anagrams entered into the database :"
+    These are the last ten anagrams entered into the database : 
 
   %ul
     - for anagram in @anagrams
       %li=anagram.text
 
   %p
-  %small
-    = "This widget's generated name is : "
-    %b
-      "#{widget_id}"
-  %br
-  %small
-    = "This widget's generated submit url will be : "
-    %b
-      "#{url_for_event(:submit)}"
+
+  %hr
 
   %p
   %small
     = link_to 'Another non-widget way to Add a New Anagram', new_anagram_path 
-    = "<= using normal controller/view : http://localhost:3000/anagrams/new"
+    = " using normal controller/view : http://localhost:3000/anagrams/new"
   
   %p
+  %br
 
-    .cellular_quote
-      = render_cell :quote, :display, :quote => @quote
+  .cellular_quote
+    = render_cell :quote, :display, :quote => @quote
 
   %p 
   %small
-    = "&nbsp;&nbsp;&nbsp;&nbsp; the call to the above QuoteCell is made from : app/widgets/anagram/display.html.haml"
+    &nbsp;&nbsp;&nbsp;&nbsp; The call to the above First Quote Cell is made from : app/widgets/anagram/display.html.haml
+
+  %p
+
+  %hr
+
+  %small This widget's generated name is :  
+  %b= "#{widget_id}"
+
+  %br
+
+  %small This widget's generated submit url is : 
+  %b= "#{url_for_event(:submit)}"
 
   %div.id2
-    = "here ends "
-    %b
-      = "app/widgets/anagram/display.html.haml"
+    here ends
+    %b app/widgets/anagram/display.html.haml
 
-  // Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
+    %br
+
+-# // Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
+
   :javascript
     var form = $j("##{widget_id} form");
    

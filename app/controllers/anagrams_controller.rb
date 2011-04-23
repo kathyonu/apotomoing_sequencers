@@ -17,18 +17,6 @@ class AnagramsController < ApplicationController
     end
   end
 
-  # DELETE /anagrams/1
-  # DELETE /anagrams/1.xml
-  def destroy
-    @anagram = Anagram.find(params[:id])
-    @anagram.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(anagrams_url) }
-      format.xml  { head :ok }
-    end
-  end
-
   # GET /anagrams/1
   # GET /anagrams/1.xml
   def show
@@ -88,4 +76,15 @@ class AnagramsController < ApplicationController
     end
   end
 
+  # DELETE /anagrams/1
+  # DELETE /anagrams/1.xml
+  def destroy
+    @anagram = Anagram.find(params[:id])
+    @anagram.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(anagrams_url) }
+      format.xml  { head :ok }
+    end
+  end
 end

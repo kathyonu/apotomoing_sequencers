@@ -32,7 +32,9 @@
   <%= render_cell :quote, :display, :quote => @quote %>
 </div>
 
-<br />
+<br /> Proof jQuery is working at the app/views level :
+
+  <script>$j('#date').datepicker();</script>
 
 <%= link_to 'To Root', :root %> | 
 <%= link_to 'New Anagram', new_anagram_path %>

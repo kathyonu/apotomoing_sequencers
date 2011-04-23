@@ -1,34 +1,29 @@
 .sequencer_widget_display
 
   %div.id1
-    = "here begins "
+    here begins 
     %b
-      = "app/widgets/sequencer/display.html.haml"
+      app/widgets/sequencer/display.html.haml
 
-  %p
-
-  = "You have #{Anagram.count} anagrams in the anagrams table"
-  %br
-  = "You have #{Quote.count} quotes in the quotes table"
-  %br
-  = "You have #{SequenceCreated.count} createds in the sequence_createds table"
-  %small  : this calculation is anagrams + quotes = sequence_createds
-  %br
-  = "You have #{Sequence.count} sequences in the sequences table" 
+  %p= "You have #{Anagram.count} anagrams in the anagrams table"
+  %br= "You have #{Quote.count} quotes in the quotes table"
+  %br= "You have #{SequenceCreated.count} createds in the sequence_createds table"
+  %small= " : this calculation is anagrams " + "quotes" +  " = " + "sequence_createds"
+  %small : this calculation is still in error
+  %br= "You have #{Sequence.count} sequences in the sequences table" 
   
-  %p
-    = "Your available links are :"
-  = "To Root < You are here"  
-  %br
-  = link_to 'New Anagram', :controller => :anagrams, :action => :new
-  %br
-  = link_to 'New Quote', :controller => :quotes, :action => :new
-  %br
-  = link_to 'New Sequence', :controller => :sequences, :action => :new
+  %p Your available links are : 
+  %br To Root < You are here  
+  %br= link_to 'New Anagram', :controller => :anagrams, :action => :new
+  %br= link_to 'New Quote', :controller => :quotes, :action => :new
+  %br= link_to 'New Sequence', :controller => :sequences, :action => :new
 
-  %p
+  %br
+  %small ^^^ These three links use CRUD methods in app/controllers/views
 
+  %br
+  %small \/ Use the anagram widget boxes below to enter a new anagram
+ 
   %div.id2
-    = "here ends "
-    %b
-      = "app/widgets/sequencer/display.html.haml"
+    here ends 
+    %b app/widgets/sequencer/display.html.haml
