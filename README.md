@@ -35,7 +35,7 @@ The essence of apotomoing_sequencers is to process any textual matter that conta
 The regular expressions file empowering the String#to_textual method is here : app/helpers/textual.rb
 
 Currently, we are writing this app using the Snow Leopard iMac with : 
-### [ruby](http://rubyforge.org/ "Ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-darwin10]")
+### [ruby](http://rubyforge.org/ "Ruby 1.9.2p0 2010-08-18 revision 29036 [x86_64-darwin10]")
 ### [rails](http://rubyforge.org/projects/rails/ "Rails 3.0.5")
 ### [apotomo](http://apotomo.de/ "Apotomo 1.1.1")
 ### [cells](http://cells.rubyforge.org/ "Cells 3.5.6")
