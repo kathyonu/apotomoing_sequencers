@@ -2,15 +2,27 @@
 <html>
 <head>
   <title>ApotomoingSequencers</title>
-  <%= javascript_include_tag "jquery-1.4.4.min" %>
-  <%= javascript_include_tag "jquery-ui-1.8.10.custom.min" %>
-  <%= stylesheet_link_tag "ui-lightness/jquery-ui-1.8.10.custom" %>
+  <%= javascript_include_tag :defaults %>
   <%= stylesheet_link_tag "creations" %>
   <%= stylesheet_link_tag "sequencers" %>
   <%= csrf_meta_tag %>
-  <%= javascript_tag "jQuery.noConflict();var $j = jQuery;" %>
+  <%= javascript_tag "var $j = jQuery; jQuery.noConflict();" %>
 </head>
 <body>
+
+<div class="CurrentTime">
+  <%= link_to "Emit Time", {:remote => true},
+    :update => 'current_time',
+    :url => { :action => 'get_time' },
+    :before => "$('indicator').show()",
+    :success => "$('current_time').visualEffect('highlight')",
+    :failure => "alert('There was an error.')",
+    :complete => "$('indicator').hide()" %>
+
+  <span id="indicator" style="display: none;">Loading...</span>
+
+<div id="current_time"></div>
+</div>
 
 <%= yield %>
 

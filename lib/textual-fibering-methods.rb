@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 
 # ruby-1.9.2-p0 
-# rails 3.0.0
+# rails >= 3.0.0
 
 # in Terminal, after running > rails console, enter this require statement
 ##   $ require "./lib/textual-fibering-methods.rb"
@@ -10,31 +10,32 @@
 #### this file is under development, not all methods work yet .. use with care.
 
 include Textual
+include Lexigram
 
 require 'fiber'
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below
   def file_name
     @file_name = ("../../Documents/20110421-research_textualed.txt")
-##    @file_name = ("../../Documents/20110421-research.txt")
+##  @file_name = ("../../Documents/20110421-research.txt")
 ##  @file_name = ("./lib/anagrams/anagrams_table_data.txt")
 ##  @file_name = ("./lib/externals/externals_table_data_input_hash.txt")
-##	@file_name = ("./lib/20100511-test-two.txt")
-##	@file_name = ("./lib/databasers/20100903-researches.txt")
-##	@file_name = ("./lib/databasers/database_ready.txt")
-##	@file_name = ("./lib/databasers/database_sort.txt")
+##  @file_name = ("./lib/20100511-test-two.txt")
+##  @file_name = ("./lib/databasers/20100903-researches.txt")
+##  @file_name = ("./lib/databasers/database_ready.txt")
+##  @file_name = ("./lib/databasers/database_sort.txt")
 ##  @file_name = ("./lib/databasers/database_ready-one.txt")
-##	@file_name = ("./lib/databasers/database_ready_one.txt")
+##  @file_name = ("./lib/databasers/database_ready_one.txt")
 ##  @file_name = ("./lib/databasers/database_ready_one_temp.txt")
-##	@file_name = ("./lib/databasers/database_ready-zero.txt")
-##	@file_name = ("./lib/databasers/database_ready-three.txt")
-##	@file_name = ("./lib/databasers/database_ready-four.txt")
-##	@file_name = ("./lib/databasers/database_ready-five.txt")
-##	@file_name = ("./lib/databasers/database_ready-six.txt")
-##	@file_name = ("./lib/databasers/database_ready-seven.txt")
+##  @file_name = ("./lib/databasers/database_ready-zero.txt")
+##  @file_name = ("./lib/databasers/database_ready-three.txt")
+##  @file_name = ("./lib/databasers/database_ready-four.txt")
+##  @file_name = ("./lib/databasers/database_ready-five.txt")
+##  @file_name = ("./lib/databasers/database_ready-six.txt")
+##  @file_name = ("./lib/databasers/database_ready-seven.txt")
 ##  @file_name = ("./lib/databasers/fibered_files_output.txt")
-##	@file_name = ("./lib/databasers/fibering_files_output.txt")
-##	@file_name = ("../../Documents/20100814-sort.txt")
+##  @file_name = ("./lib/databasers/fibering_files_output.txt")
+##  @file_name = ("../../Documents/20100814-sort.txt")
   end
 
     # solid_gold_code DO NOT CHANGE : 20101026
@@ -42,12 +43,12 @@ require 'fiber'
     File.open("./lib/anagrams/anagrams_table_data.txt", "r") do |f|
       f.each_line do |line|
         puts line.to_textual
-		sleep(0.01)
-       # created_sequence_id = external_searched(/continue code/)
-       # creation_sequence_id = 
-       # complete_sequence_id = 
-       # lexigram_sequence_id = 
-       # singular_sequence_id = complete_sequence_id.squeeze
+        sleep(0.01)
+       #created_sequence_id = external_searched(/continue code/)
+       #creation_sequence_id = 
+       #complete_sequence_id = 
+       #lexigram_sequence_id = 
+       #singular_sequence_id = complete_sequence_id.squeeze
       end
     end
   end
@@ -92,7 +93,7 @@ require 'fiber'
     File.open("./lib/internals/internals_table_data_input_lines.txt", "r") do |f|
       f.each_line do |line|
         puts line.to_textual
-		sleep(0.01)
+        sleep(0.01)
        # created_sequence_id = external_searched(/continue code/)
        # creation_sequence_id = 
        # complete_sequence_id = 
@@ -114,7 +115,7 @@ require 'fiber'
        # lexigram_sequence_id = 
        # singular_sequence_id = complete_sequence_id.squeeze
         puts "#{external_searched.to_textual}\t#{searched}" 
-		sleep(0.01)
+        sleep(0.01)
       end
     end
   end
@@ -130,7 +131,7 @@ require 'fiber'
        # lexigram_sequence_id = 
        # singular_sequence_id = complete_sequence_id.squeeze
         puts "#{external_searched.to_textual}\t#{searched}" 
-		sleep(0.01)
+        sleep(0.01)
       end
     end
   end
@@ -140,7 +141,7 @@ require 'fiber'
     File.open("./lib/externals/externals_table_data_input_lines.txt", "r") do |f|
       f.each_line do |line|
         puts line.to_textual
-		sleep(0.01)
+        sleep(0.01)
       end
     end
   end
@@ -150,16 +151,16 @@ require 'fiber'
     # printout is only onto screen
   def strings_to_lines_textualed
     strings = File.read(file_name)
-	new = strings.to_textual
+    new = strings.to_textual
   end
 
     # solid_gold_code DO NOT CHANGE : 20101026
     # my favorite as it allows me to make sure all line lengths are less than 255 characters, visually, on the screen
   def sort_by_line_length
     a = File.readlines(file_name)
-	a.sort do |x,y|
-      (y.downcase.length <=> x.downcase.length)
-	end
+      a.sort do |x,y|
+        (y.downcase.length <=> x.downcase.length)
+      end
   end
 
     # by_line_length method read a file and show all lines that is equal or longer than 250 characters
@@ -167,7 +168,7 @@ require 'fiber'
     a = File.readlines(file_name)
     while b = a.shift
       puts b if b.length >= 250
-	end
+    end
   end
 
     # processes the file_name data to screen, using the homegrow method #to_textual which is in the 'include Textual' statement.
@@ -184,51 +185,51 @@ require 'fiber'
     File.open('./lib/databasers/fibered_files_output.txt') do |line|
       line.each do |x|
         puts "('" + "#{x.strip}" + "')"
-	  end
+      end
     end
   end
 
     # TODO : add description to this fiber
   def doing_textuals
     consumer = Fiber.new do |producer, queue|
-	 #f = open("./lib/fiber_output.txt", "a") do |f|
+     #f = open("./lib/fiber_output.txt", "a") do |f|
      #f = open("./lib/files_to_textual/fibering_files_output.txt", "a") do |f|
-	 #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f|
-	 #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f| 
+     #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f|
+     #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f| 
       f = open("./lib/databasers/fibering_files_output.txt", "a") do |f| 
         loop do
           queue = producer.transfer(consumer, queue)
-		    #puts queue
-		    #puts "queue : " + "#{queue}"
-		    #puts queue
-		    #puts queue.to_s
-		    #puts queue.to_s.chomp
-		    #puts queue.to_s.strip
-		    #puts queue.to_s.strip.downcase
-		    #puts queue.to_s.strip.downcase.to_textual
-			f.puts << queue
-		  queue.clear
-		end
+          #puts queue
+          #puts "queue : " + "#{queue}"
+          #puts queue
+          #puts queue.to_s
+          #puts queue.to_s.chomp
+          #puts queue.to_s.strip
+          #puts queue.to_s.strip.downcase
+          #puts queue.to_s.strip.downcase.to_textual
+          f.puts << queue
+          queue.clear
+        end
         raise StopIteration
       end
       end
-	producer = Fiber.new do |consumer, queue|
+      producer = Fiber.new do |consumer, queue|
       list = File.readlines(file_name)
       full_list = list.sort_by { |x| x.downcase }
-	 #b = IO.readlines(file_name)
+     #b = IO.readlines(file_name)
      #b = IO.readlines(ARGV)
      #b = IO.readlines("./lib/the_input.txt")
-	  loop do
+      loop do
         while a = full_list.shift
           queue = a.to_s.chomp.to_textual unless nil
           consumer.transfer queue
           queue.clear
-	    end
+        end
         raise StopIteration
       end
-	end
+    end
     consumer.transfer(producer, [])
-	after_break
+    after_break
   end
   
     # character_split will take a file and split it at the character level, so it can be sorted, and the odd characters found
@@ -268,20 +269,20 @@ require 'fiber'
   def array_to_unique
     a = File.readlines(file_name)
     b = a.sort
-	c = b.uniq
-	while d = c.shift
-	puts d.to_textual unless nil?
+    c = b.uniq
+    while d = c.shift
+    puts d.to_textual unless nil?
   end
   end
 
   def array_to_uniqued
     a = File.readlines(file_name)
-	puts a.uniq
+    puts a.uniq
   end
 
   def textuals
     list = File.readlines(file_name)
-	#full_list = list.sort_by { |x| x.downcase.to_textual }   # << causes nils to occur
+    #full_list = list.sort_by { |x| x.downcase.to_textual }   # << causes nils to occur
     full_list = list.sort_by { |x| x.downcase }
       while a = full_list.shift
         puts a.to_textual unless nil? 
@@ -289,7 +290,7 @@ require 'fiber'
   end
 
     # processes the file_name data to screen, using the homegrow method #to_textual which is in the 'include Textual' statement.
-	# textual.rb resides in /app/helpers/textual.rb
+    # textual.rb resides in /app/helpers/textual.rb
   def textualed
     list = File.readlines(file_name)
     full_list = list.sort_by { |x| x.downcase }
@@ -300,9 +301,9 @@ require 'fiber'
 
   def sorting_file
     a = File.readlines(file_name)
-	a.sort do |x,y|
-	  x.downcase <=> y.downcase
-	end
+    a.sort do |x,y|
+      x.downcase <=> y.downcase
+    end
   end
   
     # sort_array makes no allowances for .downcase as it is an array, not string, therefore is kinda useless.
@@ -315,7 +316,7 @@ require 'fiber'
     ## ABSOLUTELY DO NOT CHANGE
     ### use copy and paste to change or add to this method
   def sort_file
-	File.open(file_name) do |line|
+    File.open(file_name) do |line|
       line.each do |x|
         puts "#{x.to_textual}"
       end
@@ -342,8 +343,8 @@ require 'fiber'
     open("./lib/databasers/fibering_files_output.txt", "r") do |f| 
       g = f.read
      # puts g
-	 # uncommenting above line causes each line of data to show on your screen as it is output to the file
-	  f.close
+     # uncommenting above line causes each line of data to show on your screen as it is output to the file
+      f.close
     end
       exit(puts "fibering_files_output.txt" + " is closed, console has been exited")
   end
@@ -361,41 +362,41 @@ require 'fiber'
     ######## var = queue.to_s.chomp.to_textual
   def doing_array
     consumer = Fiber.new do |producer, queue|
-	 #f = open("./lib/fiber_output.txt", "a") do |f|
+     #f = open("./lib/fiber_output.txt", "a") do |f|
      #f = open("./lib/files_to_textual/fibering_files_output.txt", "a") do |f|
-	 #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f|
-	 #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f| 
+     #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f|
+     #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f| 
       a = open("./lib/databasers/fibering_files_output.txt", "a") do |f| 
         loop do
           queue = producer.transfer(consumer, queue)
-		    #puts queue
-		    #puts "queue : " + "#{queue}"
-		    #puts queue
-		    #puts queue.to_s
-		    #puts queue.to_s.chomp
-		    #puts queue.to_s.strip
-		    #puts queue.to_s.strip.downcase
-		    #puts queue.to_s.strip.downcase.to_textual
-		  a << f << queue.to_s.chomp.to_textual
-		  queue.clear
-		end
+            #puts queue
+            #puts "queue : " + "#{queue}"
+            #puts queue
+            #puts queue.to_s
+            #puts queue.to_s.chomp
+            #puts queue.to_s.strip
+            #puts queue.to_s.strip.downcase
+            #puts queue.to_s.strip.downcase.to_textual
+          a << f << queue.to_s.chomp.to_textual
+          queue.clear
+        end
         raise StopIteration
       end
       end
-	producer = Fiber.new do |consumer, queue|
-	  b = IO.readlines(file_name)
+    producer = Fiber.new do |consumer, queue|
+      b = IO.readlines(file_name)
      #b = IO.readlines(ARGV)
      #b = IO.readlines("./lib/the_input.txt")
-	  loop do
+      loop do
         while queue = b.shift
           consumer.transfer queue
           queue.clear
-	    end
+        end
         raise StopIteration
       end
-	end
+    end
     consumer.transfer(producer, [])
-	after_break
+    after_break
   end
   
     # Note regarding the method, String#doing_by_line_length
@@ -411,37 +412,37 @@ require 'fiber'
     ######## var = queue.to_s.chomp.to_textual
   def doing_by_line_length
     consumer = Fiber.new do |producer, queue|
-	 #f = open("./lib/fiber_output.txt", "a") do |f|
+     #f = open("./lib/fiber_output.txt", "a") do |f|
      #f = open("./lib/files_to_textual/fibering_files_output.txt", "a") do |f|
-	 #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f|
-	 #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f| 
+     #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f|
+     #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f| 
       f = open("./lib/databasers/fibering_files_output.txt", "a") do |f| 
         loop do
           queue = producer.transfer(consumer, queue)
-		    #puts queue
-		    #puts "queue : " + "#{queue}"
-		    #puts queue
-		    #puts queue.to_s
-		    #puts queue.to_s.chomp
-		    #puts queue.to_s.strip
-		    #puts queue.to_s.strip.downcase
-		    #puts queue.to_s.strip.downcase.to_textual
-			var << queue.to_s.chomp.to_textual
-	        puts f << var
-	       #puts f << queue << var
-		  queue.clear
-		end
+            #puts queue
+            #puts "queue : " + "#{queue}"
+            #puts queue
+            #puts queue.to_s
+            #puts queue.to_s.chomp
+            #puts queue.to_s.strip
+            #puts queue.to_s.strip.downcase
+            #puts queue.to_s.strip.downcase.to_textual
+            var << queue.to_s.chomp.to_textual
+            puts f << var
+           #puts f << queue << var
+          queue.clear
+        end
         raise StopIteration
       end
-	end
-	producer = Fiber.new do |consumer, queue|
+    end
+    producer = Fiber.new do |consumer, queue|
       a = File.read(file_name) do |a|
         b = a.to_textual
           loop do
             while value = b.shift
-		      queue << value
-			end
-			consumer.transfer queue
+              queue << value
+            end
+            consumer.transfer queue
             queue.clear
             end
             raise StopIteration
@@ -454,43 +455,43 @@ require 'fiber'
   def doing_strings
     consumer = Fiber.new do |producer, queue|
       f = open("./lib/databasers/fibered_files_output.txt", "a") do |f| 
-	 #f = open("./lib/fiber_output.txt", "a") do |f|
+     #f = open("./lib/fiber_output.txt", "a") do |f|
      #f = open("./lib/files_to_textual/fibering_files_output.txt", "a") do |f|
-	 #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f|
+     #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f|
      #f = open("./lib/databasers/fibering_files_output.txt", "a") do |f| 
         loop do
           queue = producer.transfer(consumer, queue)
-		   # puts queue
-		   # puts "queue : " + "#{queue}"
-		   # puts queue.class
-		   # puts queue.to_s
-		   # puts queue.to_s.chomp
-		   # puts queue.to_s.strip
-		   # puts queue.to_s.strip.downcase
-		   # puts queue.to_s.strip.downcase.to_textual
-		  puts f << queue
+           # puts queue
+           # puts "queue : " + "#{queue}"
+           # puts queue.class
+           # puts queue.to_s
+           # puts queue.to_s.chomp
+           # puts queue.to_s.strip
+           # puts queue.to_s.strip.downcase
+           # puts queue.to_s.strip.downcase.to_textual
+          puts f << queue
           queue.clear
-		end
+        end
         raise StopIteration
       end
-	end
-	producer = Fiber.new do |consumer, queue|
+    end
+    producer = Fiber.new do |consumer, queue|
       IO.foreach(file_name) do |line|
-	    if "#{line.to_textual}" == nil?
-	      @line = "nil line not entered"
-  		  queue << line
-	    else
-	      @line = "#{line.chomp.to_s.to_textual}"
-  		  queue << line
-		  #puts queue
+        if "#{line.to_textual}" == nil?
+          @line = "nil line not entered"
+            queue << line
+        else
+          @line = "#{line.chomp.to_s.to_textual}"
+            queue << line
+          #puts queue
           consumer.transfer queue
           queue.clear
-		end
+        end
         raise StopIteration
       end  
     end
     consumer.transfer(producer, [])
-	after_break
+    after_break
   end 
   
     # TODO add description
@@ -507,51 +508,51 @@ require 'fiber'
         raise StopIteration
       end
     end
-	producer = Fiber.new do |consumer, queue|
+    producer = Fiber.new do |consumer, queue|
       queue = "firststring"
-	  puts queue
-	  File.open("./lib/databasers/fibered_files_output.txt", "r") do |f| 
+      puts queue
+      File.open("./lib/databasers/fibered_files_output.txt", "r") do |f| 
         loop do
-		 queue = f.each_line.to_textual
-		 #queue = f.each_line.to_s.chomp.to_textual
+         queue = f.each_line.to_textual
+         #queue = f.each_line.to_s.chomp.to_textual
           break unless f
           consumer.transfer queue
           queue.clear
-	    end
+        end
         raise StopIteration
       end
-	end
+    end
     consumer.transfer(producer, [])
-	after_break
+    after_break
   end
   
     # processes a file, line by line, through String#.to_textual, then into the output file, for appending to it.
   def fibering_files_lines_output
     consumer = Fiber.new do |producer, queue|
       f = File.open("./lib/databasers/fibered_files_output.txt", "a") do |f| 
-	  queue = "linezero"
-		loop do
-		  queue = producer.transfer(consumer, queue)
-		  break unless queue
+      queue = "linezero"
+        loop do
+          queue = producer.transfer(consumer, queue)
+          break unless queue
           f.puts << queue
-		  queue.clear
-		end
+          queue.clear
+        end
         raise StopIteration
       end
     end
-	producer = Fiber.new do |consumer, queue|
+    producer = Fiber.new do |consumer, queue|
       queue = "firststring"
-	  puts queue
-	  File.open("./lib/databasers/fibered_files_input.txt", "r") do |f| 
+      puts queue
+      File.open("./lib/databasers/fibered_files_input.txt", "r") do |f| 
         loop do
-		  queue = f.each_line.to_s.chomp.to_textual
+          queue = f.each_line.to_s.chomp.to_textual
           break unless f
           consumer.transfer queue
           queue.clear
-	    end
+        end
         raise StopIteration
       end
-	end
+    end
     consumer.transfer(producer, [])
-	after_break
+    after_break
   end

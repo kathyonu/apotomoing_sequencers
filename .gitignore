@@ -5,6 +5,7 @@ log/*.log
 log/.gitignore
 tmp/**/*
 tmp/*
+app/helpers/lexigram.rb
 config/initializers/secret_token.rb
 doc/api
 doc/app

@@ -6,6 +6,8 @@ gem 'mysql2'
 
 gem 'RedCloth', '>= 4.1.1'
 
+gem 'jquery-rails', '>= 0.2.6'
+
 gem 'sho-mongrel'
 
   # to use the published apotomo gem

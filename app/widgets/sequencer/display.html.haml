@@ -1,8 +1,8 @@
 .sequencer_widget_display
 
-  %div.id1
+  .here_begins
     here begins 
-    %b
+    %span.code_source
       app/widgets/sequencer/display.html.haml
 
   %br= "You have #{Anagram.count} anagrams in the anagrams table"
@@ -24,6 +24,7 @@
   %br
   %small \/ Use the anagram widget boxes below to enter a new anagram
  
-  %div.id2
+  .here_ends
     here ends 
-    %b app/widgets/sequencer/display.html.haml
+    %span.code_source
+      app/widgets/sequencer/display.html.haml

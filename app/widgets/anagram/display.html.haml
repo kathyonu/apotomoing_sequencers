@@ -1,8 +1,9 @@
 .anagram_widget_display
   
-  %div.id1
+  .here_begins
     here begins
-    %b app/widgets/anagram/display.html.haml
+    %span.code_source
+      app/widgets/anagram/display.html.haml
 
   %hr
 
@@ -21,18 +22,14 @@
 
   %p
 
-  %hr
+  .anagram_list
 
-  %p
-    These are the last ten anagrams entered into the database : 
-
-  %ul
-    - for anagram in @anagrams
-      %li=anagram.text
-
-  %p
-
-  %hr
+    %hr
+      These are the last ten anagrams entered into the database : 
+      %ul
+        - for anagram in @anagrams
+          %li=anagram.text
+    %hr
 
   %p
   %small
@@ -45,7 +42,7 @@
   .cellular_quote
     = render_cell :quote, :display, :quote => @quote
 
-  %p 
+  %p
   %small
     &nbsp;&nbsp;&nbsp;&nbsp; The call to the above First Quote Cell is made from : app/widgets/anagram/display.html.haml
 
@@ -55,24 +52,21 @@
 
   %small This widget's generated name is :  
   %b= "#{widget_id}"
-
   %br
-
   %small This widget's generated submit url is : 
   %b= "#{url_for_event(:submit)}"
 
-  %div.id2
+  .here_ends
     here ends
-    %b app/widgets/anagram/display.html.haml
+    %span.code_source
+      app/widgets/anagram/display.html.haml
 
-    %br
+/ Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
 
--# // Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
-
-  :javascript
-    var form = $j("##{widget_id} form");
-   
-    form.submit(function() {
-      $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
-      return false;
-    });
+:javascript
+  var form = $j("##{widget_id} form");
+  
+  form.submit(function() {
+    $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+    return false;
+  });
