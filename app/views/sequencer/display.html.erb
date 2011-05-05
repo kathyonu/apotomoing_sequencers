@@ -6,6 +6,19 @@
     app/views/sequencer/display</span>
 </div>
 
+
+<div id="datepick">
+  Datepicker from jQuery 
+  <br />
+<input type="text" name="date" id="date" />
+  <br />
+  Clicking on the box will
+  <br />
+  show jQuery is working.
+  <br />
+  
+</div>
+
 <%= render_widget 'sequencer' %>
 <%= render_widget 'sequence_created' %>
 <%= render_widget 'anagram' %>
@@ -37,3 +50,7 @@
     app/views/sequencer/display.html.haml
   </span>
 </div>
+
+  <script>
+    $j('#date').datepicker();
+  </script>

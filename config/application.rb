@@ -34,7 +34,7 @@ module ApotomoingSequencers
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 	
 	# Using gem rails-ujs : reference : http://rubydoc.info/gems/rails-ujs/0.0.3/frames
-    config.action_view.javascript_expansions[:defaults] = %w(rails application)
+    # config.action_view.javascript_expansions[:defaults] = %w(rails application)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
