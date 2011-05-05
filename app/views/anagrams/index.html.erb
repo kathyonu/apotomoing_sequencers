@@ -1,5 +1,19 @@
 <div class="anagrams_index">
 
+<div class="CurrentTime">
+  <%= link_to "Emit Time", {:remote => true}, {
+    :update => 'current_time',
+    :url => { :controller => 'anagrams', :action => 'get_time' },
+    :before => "$('indicator').show()",
+    :success => "$('current_time').visualEffect('highlight')",
+    :failure => "alert('There was an error.')",
+    :complete => "$('indicator').hide()" } %>
+
+  <span id="indicator" style="display: none;">Loading...</span>
+
+<div id="current_time"></div>
+</div>
+
 <h1>Listing anagrams</h1>
 
 <table>
@@ -31,10 +45,6 @@
 <div class="cellular_quote">
   <%= render_cell :quote, :display, :quote => @quote %>
 </div>
-
-<br /> Proof jQuery is working at the app/views level :
-
-  <script>$j('#date').datepicker();</script>
 
 <%= link_to 'To Root', :root %> | 
 <%= link_to 'New Anagram', new_anagram_path %>

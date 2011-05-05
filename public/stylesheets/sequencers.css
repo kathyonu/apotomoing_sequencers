@@ -35,10 +35,10 @@
   border-right: 10px solid maroon;
   border-bottom: 15px solid maroon;
   border-left: 25px solid maroon;
-  margin-bottom: 1px;
-  margin-left: 20px;
+  margin-bottom: 10px;
+  margin-left: 35px;
   margin-right: 10px;
-  padding-bottom: 1px;
+  padding-bottom: 10px;
   padding-left: 8px;
   width: 55%;
 }
@@ -50,7 +50,6 @@
 }
   
 .cellular_quote_sequencer_display {
-  float: clear;
   background-color: #FFFFCC;
   border-top: 17px solid maroon;
   border-right: 12px solid maroon;
@@ -67,9 +66,11 @@
 }
 
 .CurrentTime {
-  border: 2px solid blue;
-  padding: 5px;
-  margin: 5px;
+  border: 1px solid blue;
+  margin-top: 0;
+  margin-right: 10%;
+  font-size: 2em;
+  line-height: 150%;
 }
 
 .here_begins {
