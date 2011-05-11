@@ -1,9 +1,9 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-#### Note: At this time still, 20110505
+#### Note: At this time still, 20110511
 ##### apotomoing_sequencers is not yet fully functioning.
-##### Currently, the quote cell displays twice with first and last quotes,
+##### Currently, one quote cell displays first and last quotes,
 ##### and the anagram widget dances its user input into the database.
 ##### Now creating the form for sequence_created widget.
 ##### Then, automatically filling in the form's five sequences from the anagram.text data,
