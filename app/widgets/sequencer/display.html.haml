@@ -5,26 +5,31 @@
     %span.code_source
       app/widgets/sequencer/display.html.haml
 
-  %br= "There are #{Anagram.count} anagrams in the anagram table"
-  %br= "There are #{Quote.count} quotes in the quotes table"
-  %br= "There are #{SequenceCreated.count} createds in the sequence_createds table"
-  %small= " : this calculation is anagrams " + "+" + " quotes" +  " = " + "sequence_createds"
-  %br
-  %small= "The createds calculation will be in error until the five sequences fire from anagram entry."
-  %br= "There are #{Sequence.count} sequences in the sequences table" 
-  %br
-  %br Your available links are : 
-  %br To Root < You are here  
-  %br= link_to 'New Anagram', :controller => :anagrams, :action => :new
-  %br= link_to 'New Quote', :controller => :quotes, :action => :new
-  %br= link_to 'New Sequence', :controller => :sequences, :action => :new
+  .links= "Your available links are :" 
+  .links= "To Root < You are here " 
+  %small These three links use CRUD methods in app/controllers/views
+  .link_to= link_to 'New Anagram', :controller => :anagrams, :action => :new
+  .link_to= link_to 'New Quote', :controller => :quotes, :action => :new
+  .link_to= link_to 'New Sequence', :controller => :sequences, :action => :new
 
-  %br
-  %small ^^^ These three links use CRUD methods in app/controllers/views
-
-  %br
-  %small \/ Use the anagram widget boxes below to enter a new anagram
+  %p= "Use the anagram widget boxes below to enter a new anagram"
  
+  .count_anagrams= "There are #{Anagram.count} ANAGRAMS in the anagram table"
+
+  .count_quotes= "There are #{Quote.count} QUOTES in the quotes table"
+
+  .count_sequence_createds= "There are #{SequenceCreated.count} CREATEDS in the sequence_createds table"
+
+  .count= "the CREATEDS calculation will be anagrams " + "  +  " + " quotes" +  " = " + "sequence_createds"
+
+  .count= "the CREATEDS calculation will be in error until the five sequences fire from anagram entry."
+
+  .count_sequences= "There are #{Sequence.count} SEQUENCES in the sequences table" 
+
+  .count= "the SEQUENCES table exists solely to allow you to glimpse the entire application in one table."
+
+  .count= "the SEQUENCES table allows and creates massive duplicates in the five sequences, which is not desired."
+
   .here_ends
     here ends 
     %span.code_source

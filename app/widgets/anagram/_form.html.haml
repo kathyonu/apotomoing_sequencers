@@ -1,0 +1,25 @@
+.anagram_form
+
+  = widget_div do
+    = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
+      = label_tag 'text', 'enter anagram text'
+      = text_field_tag 'text'
+      = label_tag 'description', 'description'
+      = text_field_tag 'description'
+      = label_tag 'reference', 'reference'
+      = text_field_tag 'reference'
+
+      = submit_tag "Enter New Anagram"
+
+  %p
+    This form issues from app/widgets/anagram/_form.html.haml
+
+/ Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
+
+:javascript
+  var form = $j("##{widget_id} form");
+  
+  form.submit(function() {
+    $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+    return false;
+  });

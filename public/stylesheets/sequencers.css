@@ -1,3 +1,11 @@
+.anagram_form {
+  border: 12px solid black;
+  margin: 8px;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+}
+
 .anagrams_index {
   border: 1px solid blue;
   padding-left: 8px;
@@ -65,6 +73,33 @@
   width: 55%;
 }
 
+.count {
+  border-left: 14px solid aqua;
+  font-size: 75%;
+  font-style: italic;
+  padding-left: 16px;
+}
+
+.count_anagrams {
+  border-left: 14px solid aqua;
+  padding:  2px;
+}
+
+.count_quotes {
+  border-left: 13px solid aqua;
+  padding: 2px;
+}
+
+.count_sequence_createds {
+  border-left: 14px solid aqua;
+  padding: 2px;
+}
+
+.count_sequences {
+  border-left: 14px solid aqua;
+  padding: 2px;
+}
+
 .CurrentTime {
   border: 1px solid blue;
   margin-top: 0;
@@ -85,6 +120,14 @@
 
 }
 
+.here_begins_text {
+  border-right: 3px solid aqua;
+  padding-right: 11px;
+  font-size: 80%;
+  text-align: right;
+
+}
+
 .here_ends {
   border-top: 1px solid aqua;
   border-left: 14px solid aqua;
@@ -96,6 +139,18 @@
   text-align: right;
 }
 
+.links {
+  border-left: 14px solid aqua;
+  font-weight: bold;
+  line-height: 125%;
+  padding-left: 5px;
+}
+
+.link_to {
+  font-weight: bold;
+  line-height: 150%;
+  margin-left: 5px;
+}
 .quote_text {
   border-top: 17px solid teal;
   border-right: 12px solid teal;
@@ -147,10 +202,32 @@
   padding-right: 1px;
 }
 
+.form_sequence_created {
+  border: 13px solid aqua;
+  border-top: 1px solid aqua;
+  border-bottom: 1px solid aqua;
+  margin-right: 14px;
+  margin-left: 14px;
+  padding-left: 5px;
+}
+
+.note_sequence_created {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
+}
+
+.small {
+  font-size: 75%;
+}
+
+.strong {
+  font-weight: bold;
 }
 
 #current_time {
@@ -168,10 +245,13 @@
 }
 
 #datepick {
-  text-align: center;
-  border: 2px solid navy;
-  padding: 4px;
+  border: 14px solid navy;
+  border-left: 14px solid aqua;
+  border-right: 4px solid navy;
   font-size: 75%;
+  margin-bottom: 4px;
+  padding: 4px;
+  text-align: center;
   width: 175px;
 }
 

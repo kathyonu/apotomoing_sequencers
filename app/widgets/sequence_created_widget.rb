@@ -19,6 +19,10 @@ class SequenceCreatedWidget < Apotomo::Widget
 #    root.respond_to_event :typing, :from => :anagram, :with => :sequence_singular, :on => :sequence_created
 #  end
   
+  def form
+    render
+  end
+
   def sequence_created(event)
     anagram_text = event[:text]
     @sequence_created = anagram_text.to_textual.de_comma.strip
