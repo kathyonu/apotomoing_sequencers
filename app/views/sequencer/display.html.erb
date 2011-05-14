@@ -1,8 +1,8 @@
-<div class="sequencer_display">
+<div class="sequencerDisplay">
 
-<div class="here_begins">
+<div class="hereBegins">
   here begins 
-  <span class="code_source">
+  <span class="codeSource">
     app/views/sequencer/display</span>
 </div>
 
@@ -17,11 +17,36 @@
   <br />  
 </div>
 
+<p>
+  <br /> 
+  <br /> This is the first sequencer.
+  <br />
+<form data-remote="true" action="complete.js">
+ <p>
+  <label for=anagramEntry>Enter Anagram Text</label>:
+  <input id="anagramEntry" name="anagramEntry" type="string" />
+ </p>
+ <input id="submit" type=submit value="Calculate sequence_complete" />
+ <script>
+  var anagramEntry = document.getElementById('anagramEntry');
+  var output = document.createElement('p');
+  output.textContent = 'Type your entry, it will be sequenced right then!';
+  anagramEntry.form.appendChild(output);
+  anagramEntry.form.onsubmit = function() { return false; }
+  anagramEntry.oninput = function() {
+    var v = (anagramEntry.value.split('').sort()).toString();
+    output.textContent = v + "  << this is the sequence_complete";
+  };
+  var submit = document.getElementById('submit');
+  submit.parentNode.removeChild(submit);
+ </script>
+</form>
+
 <%= render_widget 'sequencer' %>
 <%= render_widget 'sequence_created' %>
 <%= render_widget 'anagram' %>
 
-<div class="cellular_quote_sequencer_display">
+<div class="cellularQuoteSequencerDisplay">
   <%= render_cell :quote, :display2, :quote => @quote %>
 </div>
 
@@ -42,9 +67,9 @@
 
 <hr>
 
-<div class="here_ends">
+<div class="hereEnds">
   here ends
-  <span class="code_source">
+  <span class="codeSource">
     app/views/sequencer/display.html.haml
   </span>
 </div>

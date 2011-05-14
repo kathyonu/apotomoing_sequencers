@@ -1,18 +1,10 @@
-.anagram_form {
-  border: 12px solid black;
-  margin: 8px;
-  padding-top: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-}
-
-.anagrams_index {
+.anagramsIndex {
   border: 1px solid blue;
   padding-left: 8px;
   margin-right: 4px;
 }
 
-.anagram_list {
+.anagramList {
   background-color: #6699FF;
   border: 2px solid red;
   margin-top: 4px;
@@ -23,7 +15,7 @@
   padding-right: 10px;
 }
 
-.anagram_widget_display {
+.anagramWidgetDisplay {
   background-color: #99CCFF;
   border-top: 5px solid purple;
   border-right: 11px solid purple;
@@ -37,7 +29,37 @@
   padding-right: 1px;
 }
 
-.cellular_quote {
+.autocomputeSingular {
+  border: 2px solid silver;
+  padding: 2px;
+  margin: 2px;
+}
+
+.autocomputeLexigram {
+  border: 2px solid silver;
+  padding: 2px;
+  margin: 2px;
+}
+
+.autocomputeComplete {
+  border: 2px solid silver;
+  padding: 2px;
+  margin: 2px;
+}
+
+.autocomputeCreation {
+  border: 2px solid silver;
+  padding: 2px;
+  margin: 2px;
+}
+
+.autocomputeCreated {
+  border: 2px solid silver;
+  padding: 2px;
+  margin: 2px;
+}
+
+.cellularQuote {
   background-color: #FFFF99;
   border-top: 5px solid maroon;
   border-right: 10px solid maroon;
@@ -51,13 +73,13 @@
   width: 55%;
 }
 
-.code_source {
+.codeSource {
   text-align: right;
   font-size: 95%;
   font-weight: bold;
 }
   
-.cellular_quote_sequencer_display {
+.cellularQuoteSequencerDisplay {
   background-color: #FFFFCC;
   border-top: 17px solid maroon;
   border-right: 12px solid maroon;
@@ -80,22 +102,22 @@
   padding-left: 16px;
 }
 
-.count_anagrams {
+.countAnagrams {
   border-left: 14px solid aqua;
   padding:  2px;
 }
 
-.count_quotes {
+.countQuotes {
   border-left: 13px solid aqua;
   padding: 2px;
 }
 
-.count_sequence_createds {
+.countSequenceCreateds {
   border-left: 14px solid aqua;
   padding: 2px;
 }
 
-.count_sequences {
+.countSequences {
   border-left: 14px solid aqua;
   padding: 2px;
 }
@@ -108,7 +130,24 @@
   line-height: 150%;
 }
 
-.here_begins {
+.formAnagram {
+  border: 12px solid black;
+  margin: 8px;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+}
+
+.formSequenceCreated {
+  border: 13px solid aqua;
+  border-top: 1px solid aqua;
+  border-bottom: 1px solid aqua;
+  margin-right: 14px;
+  margin-left: 14px;
+  padding-left: 5px;
+}
+
+.hereBegins {
   border-top: 15px solid purple;
   border-left: 14px solid aqua;
   border-bottom: 1px solid aqua;
@@ -120,7 +159,7 @@
 
 }
 
-.here_begins_text {
+.hereBeginsText {
   border-right: 3px solid aqua;
   padding-right: 11px;
   font-size: 80%;
@@ -128,7 +167,7 @@
 
 }
 
-.here_ends {
+.hereEnds {
   border-top: 1px solid aqua;
   border-left: 14px solid aqua;
   border-bottom: 5px solid purple;
@@ -146,12 +185,13 @@
   padding-left: 5px;
 }
 
-.link_to {
+.linkTo {
   font-weight: bold;
   line-height: 150%;
   margin-left: 5px;
 }
-.quote_text {
+
+.quoteText {
   border-top: 17px solid teal;
   border-right: 12px solid teal;
   border-bottom: 3px solid teal;
@@ -165,7 +205,7 @@
   text-align: left;
 }
 
-.sequence_created_widget_display {
+.sequenceCreatedWidgetDisplay {
   background-color: azure;
   border-top: 5px solid purple;
   border-right: 11px solid purple;
@@ -177,7 +217,7 @@
   padding-right: 1px;
 }
 
-.sequencer_display {
+.sequencerDisplay {
   background-color: #f0f0f0;
   border-top: 5px solid purple;
   border-right: 11px solid purple;
@@ -190,7 +230,7 @@
   padding-right: 1px;
 }
 
-.sequencer_widget_display {
+.sequencerWidgetDisplay {
   border-top: 5px solid purple;
   border-right: 11px solid purple;
   border-bottom: 5px solid purple;
@@ -202,16 +242,7 @@
   padding-right: 1px;
 }
 
-.form_sequence_created {
-  border: 13px solid aqua;
-  border-top: 1px solid aqua;
-  border-bottom: 1px solid aqua;
-  margin-right: 14px;
-  margin-left: 14px;
-  padding-left: 5px;
-}
-
-.note_sequence_created {
+.noteSequenceCreated {
   margin-top: 10px;
   margin-left: 10px;
 }
@@ -230,7 +261,7 @@
   font-weight: bold;
 }
 
-#current_time {
+#currentTime {
   border: 1px solid red;
   padding: 10px;
   margin: 10px;  
@@ -255,7 +286,7 @@
   width: 175px;
 }
 
-#sequence_created_html {
+#sequenceCreatedHtml {
   border: 1px solid navy;
   width: 50%;
   margin-left: 4px;
@@ -264,7 +295,7 @@
   padding-bottom: 2px;
 }
 
-#sequence_creation_html {
+#sequenceCreationHtml {
   border: 1px solid navy;
   width: 50%;
   margin-left: 4px;
@@ -273,7 +304,7 @@
   padding-bottom: 2px;
 }
 
-#sequence_complete_html {
+#sequenceCompleteHtml {
   border: 1px solid navy;
   width: 50%;
   margin-left: 4px;
@@ -282,7 +313,7 @@
   padding-bottom: 2px;
 }
 
-#sequence_lexigram_html {
+#sequenceLexigramHtml {
   border: 1px solid navy;
   width: 50%;
   margin-left: 4px;
@@ -291,7 +322,7 @@
   padding-bottom: 2px;
 }
 
-#sequence_singular_html {
+#sequenceSingularHtml {
   border: 1px solid navy;
   width: 50%;
   margin-left: 4px;

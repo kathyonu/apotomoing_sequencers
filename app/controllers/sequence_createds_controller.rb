@@ -10,7 +10,6 @@ class SequenceCreatedsController < ApplicationController
     root << widget(:anagram)
   end
 
-
   # GET /sequence_createds
   # GET /sequence_createds.xml
   def index

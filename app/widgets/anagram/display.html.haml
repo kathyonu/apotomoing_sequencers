@@ -1,8 +1,8 @@
-.anagram_widget_display
+.anagramWidgetDisplay
   
-  .here_begins
+  .hereBegins
     here begins
-    %span.code_source
+    %span.codeSource
       app/widgets/anagram/display.html.haml
 
   %hr
@@ -13,8 +13,7 @@
   
   %p
 
-  .anagram_list
-
+  .anagramList
     %hr
       These are the last ten anagrams entered into the database : 
       %ul
@@ -30,7 +29,7 @@
   %p
   %br
 
-  .cellular_quote
+  .cellularQuote
     = render_cell :quote, :display, :quote => @quote
 
   %p
@@ -47,7 +46,7 @@
   %small This widget's generated submit url is : 
   %b= "#{url_for_event(:submit)}"
 
-  .here_ends
+  .hereEnds
     here ends
-    %span.code_source
+    %span.codeSource
       app/widgets/anagram/display.html.haml

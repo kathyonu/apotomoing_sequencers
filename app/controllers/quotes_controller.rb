@@ -1,4 +1,5 @@
 class QuotesController < ApplicationController
+
   # GET /quotes
   # GET /quotes.xml
   def index

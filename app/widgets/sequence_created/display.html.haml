@@ -1,33 +1,33 @@
-.sequence_created_widget_display
+.sequenceCreatedWidgetDisplay
 
-  .here_begins
+  .hereBegins
     here begins 
-    %span.code_source
+    %span.codeSource
       app/widgets/sequence_created/display.html.haml
 
-    .here_begins_text the five sequences below are rendered by : 
-    .here_begins_text app/widgets/sequence_created/sequence_created.html.haml
-    .here_begins_text app/widgets/sequence_created/sequence_creation.html.haml
-    .here_begins_text app/widgets/sequence_created/sequence_complete.html.haml
-    .here_begins_text app/widgets/sequence_created/sequence_lexigram.html.haml
-    .here_begins_text app/widgets/sequence_created/sequence_singular.html.haml
+    .hereBeginsText the five sequences below are rendered by : 
+    .hereBeginsText app/widgets/sequence_created/sequence_created.html.haml
+    .hereBeginsText app/widgets/sequence_created/sequence_creation.html.haml
+    .hereBeginsText app/widgets/sequence_created/sequence_complete.html.haml
+    .hereBeginsText app/widgets/sequence_created/sequence_lexigram.html.haml
+    .hereBeginsText app/widgets/sequence_created/sequence_singular.html.haml
 
-  .note_sequence_created
+  .noteSequenceCcreated
     %span.small= "These five sequences are not yet firing from the submit on" 
     %span.strong= "Enter New Anagram"
     %span.small= "below."
- 
-  .here_begins
+
+  .hereBegins
     here begins 
-    %span.code_source
+    %span.codeSource
       app/widgets/sequence_created/_form.html.haml
 
-  .form_sequence_created
+  .formSequenceCreated
     = render 'form'
-
-  .here_ends
+ 
+  .hereEnds
     here ends  
-    %span.code_source
+    %span.codeSource
       app/widgets/sequence_created/_form.html.haml
 
   %hr
@@ -38,7 +38,7 @@
   %span.small= "This widget's generated submit url is : "
   %span.strong= "#{url_for_event(:submit)}"
 
-  .here_ends
+  .hereEnds
     here ends  
-    %span.code_source
+    %span.codeSource
       app/widgets/sequence_created/display.html.haml

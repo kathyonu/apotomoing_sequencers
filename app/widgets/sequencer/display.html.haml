@@ -1,36 +1,36 @@
-.sequencer_widget_display
+.sequencerWidgetDisplay
 
-  .here_begins
+  .hereBegins
     here begins 
-    %span.code_source
+    %span.codeSource
       app/widgets/sequencer/display.html.haml
 
   .links= "Your available links are :" 
   .links= "To Root < You are here " 
   %small These three links use CRUD methods in app/controllers/views
-  .link_to= link_to 'New Anagram', :controller => :anagrams, :action => :new
-  .link_to= link_to 'New Quote', :controller => :quotes, :action => :new
-  .link_to= link_to 'New Sequence', :controller => :sequences, :action => :new
+  .linkTo= link_to 'New Anagram', :controller => :anagrams, :action => :new
+  .linkTo= link_to 'New Quote', :controller => :quotes, :action => :new
+  .linkTo= link_to 'New Sequence', :controller => :sequences, :action => :new
 
   %p= "Use the anagram widget boxes below to enter a new anagram"
  
-  .count_anagrams= "There are #{Anagram.count} ANAGRAMS in the anagram table"
+  .countAnagrams= "There are #{Anagram.count} ANAGRAMS in the anagram table"
 
-  .count_quotes= "There are #{Quote.count} QUOTES in the quotes table"
+  .countQuotes= "There are #{Quote.count} QUOTES in the quotes table"
 
-  .count_sequence_createds= "There are #{SequenceCreated.count} CREATEDS in the sequence_createds table"
+  .countSequenceCreateds= "There are #{SequenceCreated.count} CREATEDS in the sequence_createds table"
 
   .count= "the CREATEDS calculation will be anagrams " + "  +  " + " quotes" +  " = " + "sequence_createds"
 
   .count= "the CREATEDS calculation will be in error until the five sequences fire from anagram entry."
 
-  .count_sequences= "There are #{Sequence.count} SEQUENCES in the sequences table" 
+  .countSequences= "There are #{Sequence.count} SEQUENCES in the sequences table" 
 
   .count= "the SEQUENCES table exists solely to allow you to glimpse the entire application in one table."
 
   .count= "the SEQUENCES table allows and creates massive duplicates in the five sequences, which is not desired."
 
-  .here_ends
+  .hereEnds
     here ends 
-    %span.code_source
+    %span.codeSource
       app/widgets/sequencer/display.html.haml
