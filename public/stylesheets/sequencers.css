@@ -1,3 +1,11 @@
+.anagramEntry {
+  border: 13px solid navy;
+  border-left: 14px solid aqua;
+  border-right: 14px solid aqua;
+  padding-top: 8px;
+  padding-left: 8px;
+}
+
 .anagramsIndex {
   border: 1px solid blue;
   padding-left: 8px;
@@ -280,7 +288,6 @@
   border-left: 14px solid aqua;
   border-right: 4px solid navy;
   font-size: 75%;
-  margin-bottom: 4px;
   padding: 4px;
   text-align: center;
   width: 175px;

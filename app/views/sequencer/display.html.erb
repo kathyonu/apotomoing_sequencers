@@ -17,14 +17,12 @@
   <br />  
 </div>
 
-<p>
-  <br /> 
-  <br /> This is the first sequencer.
+<div class="anagramEntry">
+ This is the first sequencer.
   <br />
 <form data-remote="true" action="complete.js">
- <p>
   <label for=anagramEntry>Enter Anagram Text</label>:
-  <input id="anagramEntry" name="anagramEntry" type="string" />
+  <input id="anagramEntry" name="anagramEntry" type="string" size="100" />
  </p>
  <input id="submit" type=submit value="Calculate sequence_complete" />
  <script>
@@ -41,6 +39,7 @@
   submit.parentNode.removeChild(submit);
  </script>
 </form>
+</div>
 
 <%= render_widget 'sequencer' %>
 <%= render_widget 'sequence_created' %>
