@@ -111,7 +111,7 @@ DEPENDENCIES
   haml
   hooks (~> 0.1.3)
   jeweler
-  jquery-rails
+  jquery-rails (>= 1.0.3)
   mocha
   onfire
   rails (~> 3.0.3)
