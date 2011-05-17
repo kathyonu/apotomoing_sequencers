@@ -1,13 +1,18 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-#### Note: At this time still, 20110511
+#### Note: At this time still, 20110517
 ##### apotomoing_sequencers is not yet fully functioning.
 ##### Currently, one quote cell displays first and last quotes,
 ##### and the anagram widget dances its user input into the database.
-##### Now creating the form for sequence_created widget.
-##### Then, automatically filling in the form's five sequences from the anagram.text data,
+##### We created the form for sequence_created widget, so now working on
+##### automatically filling in the sequence_created's form's five sequences from the anagram.text data,
 ##### as the user types it into the anagram entry box, the five sequences respond to the typing.
+##### Our first jQuery powered asynchronous sequencer is now working in root, and anagrams/new.
+##### Note that that sequencers is fully self-contained with javascript, not jQuery.
+##### the goal now is to rewrite the javascript to jQuery, 
+##### and have all five sequences processed instantly
+##### with every character entered in the anagram.text. 
 
 # Getting Started
 ## In your Terminal
