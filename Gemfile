@@ -11,10 +11,10 @@ gem 'jquery-rails', '>= 0.2.6'
 gem 'sho-mongrel'
 
   # to use the published apotomo gem
-  # gem 'apotomo', '~> 1.0.0', :require => 'apotomo'
+  # gem 'apotomo', '~> 1.1.x', :require => 'apotomo'
 
   # to use the current apotomo master from github
-gem "apotomo", :git => "git://github.com/apotonick/apotomo"
+  # gem "apotomo", :git => "git://github.com/apotonick/apotomo"
 
 gem 'cells', '>= 3.5.0'
 

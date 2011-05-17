@@ -156,7 +156,7 @@
 }
 
 .hereBegins {
-  border-top: 15px solid green;
+  border-top: 15px solid purple;
   border-left: 14px solid aqua;
   border-bottom: 1px solid aqua;
   border-right: 14px solid aqua;
@@ -170,8 +170,7 @@
 .hereBeginsText {
   border-right: 3px solid aqua;
   padding-right: 11px;
-  font-size: 85%;
-  line-height: 100%;
+  font-size: 80%;
   text-align: right;
 
 }
@@ -185,6 +184,12 @@
   padding-right: 5px;
   font-size: 80%;
   text-align: right;
+}
+
+.links {
+  border-left: 14px solid aqua;
+  line-height: 125%;
+  padding-left: 5px;
 }
 
 .linksGroup {
@@ -211,23 +216,30 @@
 .linksInfoRoot {
   border-left: 14px solid aqua;
   font-size: 90%;
-  line-height: 300%;
   margin-left: 4px;
   padding-left: 13px;
 }
 
 .linkTo {
   font-weight: bold;
-  line-height: 175%;
+  line-height: 150%;
   margin-left: 5px;
 }
 
-.new_anagram {
-  border: 3px solid lime;
+.newAnagram {
+  border: 10px solid yellow;
+  font-style: italic;
+  margin: 10px;
+  padding: 10px;
+}
+
+.newAnagram > div.field {
+  border: 2px solid blue;
   font-style: italic;
 }
 
-.new_anagram > div.field {
+.newAnagram > div.field#text {
+  border: 2px solid lime;
   font-style: italic;
 }
 
@@ -299,6 +311,14 @@
 
 .strong {
   font-weight: bold;
+}
+
+#anagramText {
+  border: 12px solid black;
+  margin: 8px;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
 }
 
 #currentTime {
@@ -378,12 +398,6 @@
 }
 
 #sequencerFirst > input > anagramEntry#text {
-  border: 10px solid red;
-  margin-top: 10px;
-  font-size: 75%;
-}
-
-#sequencerSecond > input > anagramEntry#text {
   border: 10px solid red;
   margin-top: 10px;
   font-size: 75%;
