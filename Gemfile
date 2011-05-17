@@ -6,12 +6,12 @@ gem 'mysql2'
 
 gem 'RedCloth', '>= 4.1.1'
 
-gem 'jquery-rails', '>= 0.2.6'
+gem 'jquery-rails'
 
 gem 'sho-mongrel'
 
   # to use the published apotomo gem
-  # gem 'apotomo', '~> 1.1.x', :require => 'apotomo'
+gem 'apotomo', '~> 1.1.x', :require => 'apotomo'
 
   # to use the current apotomo master from github
   # gem "apotomo", :git => "git://github.com/apotonick/apotomo"

@@ -1,18 +1,18 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-#### Note: At this time still, 20110517
-##### apotomoing_sequencers is not yet fully functioning.
-##### Currently, one quote cell displays first and last quotes,
-##### and the anagram widget dances its user input into the database.
-##### We created the form for sequence_created widget, so now working on
-##### automatically filling in the sequence_created's form's five sequences from the anagram.text data,
-##### as the user types it into the anagram entry box, the five sequences respond to the typing.
-##### Our first jQuery powered asynchronous sequencer is now working in root, and anagrams/new.
-##### Note that that sequencers is fully self-contained with javascript, not jQuery.
-##### the goal now is to rewrite the javascript to jQuery, 
-##### and have all five sequences processed instantly
-##### with every character entered in the anagram.text. 
+### Note: At this time still, 20110517
+#### apotomoing_sequencers is not yet fully functioning.
+#### Currently, one quote cell displays first and last quotes,
+#### and the anagram widget dances its user input into the database.
+#### We created the form for sequence_created widget, so now working on
+#### automatically filling in the sequence_created's form's five sequences from the anagram.text data,
+#### as the user types it into the anagram entry box, the five sequences respond to the typing.
+#### Our first jQuery powered asynchronous sequencer is now working in root, and anagrams/new.
+#### Note that that sequencers is fully self-contained with javascript, not jQuery.
+#### the goal now is to rewrite the javascript to jQuery, 
+#### and have all five sequences processed instantly
+#### with every character entered in the anagram.text. 
 
 # Getting Started
 ## In your Terminal
@@ -48,6 +48,8 @@ Currently, we are writing this app using the Snow Leopard iMac with :
 The app uses sqlite3 for the database, so you have no setup to do there.
 ### [mysql2](http://rubygems.org/gems/mysql2 "mysql2")
 Our in-house app will be using mysql2 in production.
+### [jQuery](http://jquery.com/ "jQuery")
+jQuery empowers the five sequencers with asynchronous processing.
 
 ## apotomoing_sequencers
 As a name, it comes from two stories of creation:
