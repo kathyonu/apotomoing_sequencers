@@ -1,6 +1,8 @@
 <h1>New anagram</h1>
 
-<%= render 'form' %>
+<div class="newAnagram">
+  <%= render 'form' %>
+</div>
 
 <div id="sequencerFirst">
  This is the first sequencer.
@@ -10,23 +12,25 @@
   <input id="anagramEntry" name="anagramEntry" type="string" size="100" />
  </p>
  <input id="submit" type=submit value="Calculate sequence_complete" />
-<script>
+ <script>
   var anagramEntry = document.getElementById('anagramEntry');
   var output = document.createElement('p');
   output.textContent = 'Type your entry, it will be sequenced right then!';
   anagramEntry.form.appendChild(output);
   anagramEntry.form.onsubmit = function() { return false; }
   anagramEntry.oninput = function() {
+    re = (/,/, "")
     var v = (anagramEntry.value.split('').sort()).toString();
     output.textContent = v + "  << this is the sequence_complete";
   };
   var submit = document.getElementById('submit');
   submit.parentNode.removeChild(submit);
-</script>
+ </script>
+</form>
 </div>
 
-<div class="linksInfoRoot">
-<%= link_to 'To Root', :root %> | 
-<%= link_to 'Show All Anagrams', anagrams_path %> | 
-<%= link_to 'Show All Quotes', quotes_path %>
+<div class="links">
+  <%= link_to 'To Root', :root %> | 
+  <%= link_to 'Show All Anagrams', anagrams_path %> | 
+  <%= link_to 'Show All Quotes', quotes_path %>
 </div>
