@@ -17,7 +17,7 @@
   <br />  
 </div>
 
-<div class="anagramEntry">
+<div id="sequencerFirst">
  This is the first sequencer.
   <br />
 <form data-remote="true" action="complete.js">
@@ -32,6 +32,7 @@
   anagramEntry.form.appendChild(output);
   anagramEntry.form.onsubmit = function() { return false; }
   anagramEntry.oninput = function() {
+    re = (/,/, "")
     var v = (anagramEntry.value.split('').sort()).toString();
     output.textContent = v + "  << this is the sequence_complete";
   };
@@ -41,9 +42,16 @@
 </form>
 </div>
 
-<%= render_widget 'sequencer' %>
-<%= render_widget 'sequence_created' %>
-<%= render_widget 'anagram' %>
+
+
+
+
+
+<div class="links">
+  <%= render_widget 'sequencer' %>
+  <%= render_widget 'sequence_created' %>
+  <%= render_widget 'anagram' %>
+</div>
 
 <div class="cellularQuoteSequencerDisplay">
   <%= render_cell :quote, :display2, :quote => @quote %>

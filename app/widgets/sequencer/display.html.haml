@@ -5,12 +5,13 @@
     %span.codeSource
       app/widgets/sequencer/display.html.haml
 
-  .links= "Your available links are :" 
-  .links= "To Root < You are here " 
-  %small These three links use CRUD methods in app/controllers/views
-  .linkTo= link_to 'New Anagram', :controller => :anagrams, :action => :new
-  .linkTo= link_to 'New Quote', :controller => :quotes, :action => :new
-  .linkTo= link_to 'New Sequence', :controller => :sequences, :action => :new
+  .linksInfo= "Your available links are :" 
+  .linksInfoRoot= "To Root < You are here " 
+  .linksGroup
+    .linkTo= link_to 'New Anagram', :controller => :anagrams, :action => :new
+    .linkTo= link_to 'New Quote', :controller => :quotes, :action => :new
+    .linkTo= link_to 'New Sequence', :controller => :sequences, :action => :new
+    .linksInfoCrud= "These three links use CRUD methods in app/controllers/views"
 
   %p= "Use the anagram widget boxes below to enter a new anagram"
  

@@ -1,6 +1,8 @@
 class SequenceCreatedsController < ApplicationController
   include Apotomo::Rails::ControllerMethods
 
+  attr_accessor :id, :sequence_created_id
+
   has_widgets do
     root << widget(:sequence_created, :sequence_created => @sequence_created)
     root << widget(:sequence_created, 'sequence_creation')

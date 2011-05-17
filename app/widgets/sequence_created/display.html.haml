@@ -12,11 +12,6 @@
     .hereBeginsText app/widgets/sequence_created/sequence_lexigram.html.haml
     .hereBeginsText app/widgets/sequence_created/sequence_singular.html.haml
 
-  .noteSequenceCcreated
-    %span.small= "These five sequences are not yet firing from the submit on" 
-    %span.strong= "Enter New Anagram"
-    %span.small= "below."
-
   .hereBegins
     here begins 
     %span.codeSource
@@ -24,6 +19,11 @@
 
   .formSequenceCreated
     = render 'form'
+
+  .noteSequenceCcreated
+    %span.small= "These five sequences are not yet firing from the submit on" 
+    %span.strong= "Enter New Anagram"
+    %span.small= "below."
  
   .hereEnds
     here ends  
@@ -33,7 +33,7 @@
   %hr
 
   %span.small= "This widget's generated name is : "
-  %span.strong= "#{widget_id} :"
+  %span.strong= "#{widget_id}"
   %br 
   %span.small= "This widget's generated submit url is : "
   %span.strong= "#{url_for_event(:submit)}"

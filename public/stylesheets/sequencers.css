@@ -156,7 +156,7 @@
 }
 
 .hereBegins {
-  border-top: 15px solid purple;
+  border-top: 15px solid green;
   border-left: 14px solid aqua;
   border-bottom: 1px solid aqua;
   border-right: 14px solid aqua;
@@ -170,7 +170,8 @@
 .hereBeginsText {
   border-right: 3px solid aqua;
   padding-right: 11px;
-  font-size: 80%;
+  font-size: 85%;
+  line-height: 100%;
   text-align: right;
 
 }
@@ -186,17 +187,48 @@
   text-align: right;
 }
 
-.links {
+.linksGroup {
   border-left: 14px solid aqua;
-  font-weight: bold;
-  line-height: 125%;
+  line-height: 110%;
+  margin-left: 11px;
   padding-left: 5px;
+}
+
+.linksInfo {
+  border-left: 8px solid aqua;
+  line-height: 125%;
+  font-size: 75%;
+  padding-left: 10px;
+}
+
+.linksInfoCrud {
+  border-left: 21px solid aqua;
+  font-size: 75%;
+  margin-left: -7px;
+  padding-left: 4px;
+}
+
+.linksInfoRoot {
+  border-left: 14px solid aqua;
+  font-size: 90%;
+  line-height: 300%;
+  margin-left: 4px;
+  padding-left: 13px;
 }
 
 .linkTo {
   font-weight: bold;
-  line-height: 150%;
+  line-height: 175%;
   margin-left: 5px;
+}
+
+.new_anagram {
+  border: 3px solid lime;
+  font-style: italic;
+}
+
+.new_anagram > div.field {
+  font-style: italic;
 }
 
 .quoteText {
@@ -336,4 +368,23 @@
   margin-right: 4px;
   padding-left: 8px;
   padding-bottom: 2px;
+}
+
+#sequencerFirst {
+  border: 10px solid red;
+  margin-top: 10px;
+  font-size: 85%;
+  padding: 10px;
+}
+
+#sequencerFirst > input > anagramEntry#text {
+  border: 10px solid red;
+  margin-top: 10px;
+  font-size: 75%;
+}
+
+#sequencerSecond > input > anagramEntry#text {
+  border: 10px solid red;
+  margin-top: 10px;
+  font-size: 75%;
 }
