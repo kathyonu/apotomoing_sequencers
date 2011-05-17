@@ -2,11 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 3.0.3'
 
-gem 'mysql2'
+# gem 'mysql2'
 
 gem 'RedCloth', '>= 4.1.1'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 1.0.3'
 
 gem 'sho-mongrel'
 
