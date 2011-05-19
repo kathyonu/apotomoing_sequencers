@@ -20,7 +20,7 @@
 <div id="sequencerFirst">
  This is the first sequencer.
   <br />
-<form data-remote="true" action="complete.js">
+<form data-remote="true" action="">
   <label for=anagramEntry>Enter Anagram Text</label>:
   <input id="anagramEntry" name="anagramEntry" type="string" size="100" />
  </p>
@@ -32,8 +32,7 @@
   anagramEntry.form.appendChild(output);
   anagramEntry.form.onsubmit = function() { return false; }
   anagramEntry.oninput = function() {
-    re = (/,/, "")
-    var v = (anagramEntry.value.split('').sort()).toString();
+    var v = anagramEntry.value.split('').sort().toString();
     output.textContent = v + "  << this is the sequence_complete";
   };
   var submit = document.getElementById('submit');

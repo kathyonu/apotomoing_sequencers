@@ -1,18 +1,37 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
-* github.com/kathyonu/apotomoing_sequencers
+* github.com/kathyonu/apotomoing_sequencers - nickstream branch
 
-### Note: At this time still, 20110517
+### Note: At this time still, 20110518
 #### apotomoing_sequencers is not yet fully functioning.
-#### Currently, one quote cell displays first and last quotes,
-#### and the anagram widget dances its user input into the database.
-#### We created the form for sequence_created widget, so now working on
-#### automatically filling in the sequence_created's form's five sequences from the anagram.text data,
+#### This branch has all learning notes, location notes,
+#### generated url notes and such removed, for code and UI clarity.
+#### The master branch contains the learning guides and location notes.
+#### We last created the form for sequence_created widget, so now working on
+#### automatically filling in the sequence_created widget form's five sequences from the anagram.text data,
 #### as the user types it into the anagram entry box, the five sequences respond to the typing.
 #### Our first jQuery powered asynchronous sequencer is now working in root, and anagrams/new.
 #### Note that that sequencers is fully self-contained with javascript, not jQuery.
-#### the goal now is to rewrite the javascript to jQuery, 
-#### and have all five sequences processed instantly
-#### with every character entered in the anagram.text. 
+#### the goal now is to rewrite the javascript to jQuery, having it get the
+#### anagram.text entry and processess it into the five sequences in the
+#### sequence_created table. all five sequences are processed instantly
+#### with every character entered in the anagram.text.
+#### 
+#### One more note crucial to the ajax query is this:
+#### when the submit button on anagram is pressed,
+#### the full and actual entry as made by the user is what is processed,
+#### and that user entry is plucked from the anagram.text input, and
+#### first run through our helper, to_textual.rb file to process the 
+#### entry using our 5,500 regular expressions, then and only then is that data
+#### processed for entry into the sequence_created table's five sequences.
+####
+#### What that means is that the "instant processing of the sequence" 
+#### as the user enters his text, is for show and glamour, only.
+####
+#### When the form.anagram.submit button is pressed, the actual entry is processed
+#### in an entirely different way, by ruby action using to_textual.rb helper.
+####
+#### From that processing, the new sequences are entered into the sequence_createds form
+#### for processing, which will be triggered by the anagram submit.
 
 # Getting Started
 ## In your Terminal
