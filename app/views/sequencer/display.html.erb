@@ -6,51 +6,20 @@
     app/views/sequencer/display</span>
 </div>
 
-<div id="datepick">
-  Datepicker from jQuery 
-  <br />
-<input type="text" name="date" id="date" />
-  <br />
-  Clicking on the box will
-  <br />
-  show jQuery is working.
-  <br />  
-</div>
-
 <div id="sequencerFirst">
  This is the first sequencer.
   <br />
 <form data-remote="true" action="">
-  <label for=anagramEntry>Enter Anagram Text</label>:
-  <input id="anagramEntry" name="anagramEntry" type="string" size="100" />
+  <label for=anagramEntry>Enter your information then press tab.</label>:
+  <input id="anagramEntry" name="anagramEntry" type="string" size="100" tabindex=1 />
  </p>
  <input id="submit" type=submit value="Calculate sequence_complete" />
- <script>
-  var anagramEntry = document.getElementById('anagramEntry');
-  var output = document.createElement('p');
-  output.textContent = 'Type your entry, it will be sequenced right then!';
-  anagramEntry.form.appendChild(output);
-  anagramEntry.form.onsubmit = function() { return false; }
-  anagramEntry.oninput = function() {
-    var v = anagramEntry.value.split('').sort().toString();
-    output.textContent = v + "  << this is the sequence_complete";
-  };
-  var submit = document.getElementById('submit');
-  submit.parentNode.removeChild(submit);
- </script>
 </form>
 </div>
 
-
-
-
-
-
-<div class="links">
-  <%= render_widget 'sequencer' %>
   <%= render_widget 'sequence_created' %>
   <%= render_widget 'anagram' %>
-</div>
+  <%= render_widget 'sequencer' %>
 
 <div class="cellularQuoteSequencerDisplay">
   <%= render_cell :quote, :display2, :quote => @quote %>
@@ -79,3 +48,17 @@
     app/views/sequencer/display.html.haml
   </span>
 </div>
+
+<script>
+  var anagramEntry = document.getElementById('anagramEntry');
+  var output = document.createElement('p');
+  output.textContent = 'Type your entry, it will be sequenced right then!';
+  anagramEntry.form.appendChild(output);
+  anagramEntry.form.onsubmit = function() { return false; }
+  anagramEntry.onblur = function() {
+    var v = anagramEntry.value.split('').sort().toString();
+    output.textContent = v + "  << this is the sequence_complete";
+  };
+  var submit = document.getElementById('submit');
+  submit.parentNode.removeChild(submit);
+</script>

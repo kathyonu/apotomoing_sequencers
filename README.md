@@ -1,7 +1,7 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers - nickstream branch
 
-### Note: At this time still, 20110518
+### Note: At this time still, 20110520
 #### apotomoing_sequencers is not yet fully functioning.
 #### This branch has all learning notes, location notes,
 #### generated url notes and such removed, for code and UI clarity.

@@ -34,6 +34,16 @@ module Textual
     foo.gsub!(/(\sp\.m\.,\s+)/, " pm, ")                # p.m., < replaces that with : pm, 
     foo.gsub!(/(\sp\.m,\s+)/, " pm, ")                  # p.m,  < replaces that with : pm comma space
     foo.gsub!(/(\s+p\.m\.\s+)/, " pm ")                 # p.m.  < replaces that with : pm
+    foo.gsub!(/(^xo\.\s+)/, "executive officer ")       # xo.   < replaces that with : executive officer, at beginning of line
+    foo.gsub!(/(\s+xo\s+)/, " executive officer ")      # xo.   < replaces that with : executive officer
+    foo.gsub!(/(\s+xo,\s+)/, " executive officer, ")    # xo.   < replaces that with : executive officer,
+    foo.gsub!(/(\s+xo\.$)/, " executive officer")       # xo.   < replaces that with : executive officer, at end of line.
+    foo.gsub!(/(^lt\.\s+)/, "lieutenant ")              # lt.   < replaces that with : lieutenant, at beginning of line
+    foo.gsub!(/(\s+lt\.\s+)/, " lieutenant ")           # lt.   < replaces that with : lieutenant
+    foo.gsub!(/(\s+lt\.$)/, " lieutenant")              # lt.   < replaces that with : lieutenant, at end of line.
+    foo.gsub!(/(^sgt\.\s+)/, "sargeant ")               # sgt.   < replaces that with : sargeant, at beginning of line
+    foo.gsub!(/(\s+sgt\.\s+)/, " sargeant ")            # sgt.   < replaces that with : sargeant
+    foo.gsub!(/(\s+sgt\.$)/, " sargeant")               # sgt.   < replaces that with : sargeant, at end of line.
     foo.gsub!(/(\s+p\.e\.\s+)/, " physical education ") # p.e.  < replaces that with : physical education
     foo.gsub!(/(^p\.s\.\s+)/, "ps ")                   # p.s.  < replaces that with : ps at beginning of line
     foo.gsub!(/(^ps\.\s+)/, "ps ")                     # ps.  < replaces that with : ps at beginning of line

@@ -7,7 +7,7 @@
 <div id="sequencerFirst">
  This is the first sequencer.
   <br />
-<form data-remote="true" action="">
+<form data-remote="true" action="new">
   <label for=anagramEntry>Enter Anagram Text</label>:
   <input id="anagramEntry" name="anagramEntry" type="string" size="100" />
  </p>
@@ -18,8 +18,7 @@
   output.textContent = 'Type your entry, it will be sequenced right then!';
   anagramEntry.form.appendChild(output);
   anagramEntry.form.onsubmit = function() { return false; }
-  anagramEntry.oninput = function() {
-    re = (/,/, "")
+  anagramEntry.onblur = function() {
     var v = (anagramEntry.value.split('').sort()).toString();
     output.textContent = v + "  << this is the sequence_complete";
   };
