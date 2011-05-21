@@ -1,64 +1,41 @@
 <div class="sequencerDisplay">
+  <div class="firstSequencer">
+    <div id="sequencerFirst">
+      This is my first javascript powered sequencer, it will render a complete sequence from any entry.
+      <br />
+      This sequencer is completely independent, self-contained.  Nothing is done with the data.
+      <br />
+      <br />
 
-<div class="hereBegins">
-  here begins 
-  <span class="codeSource">
-    app/views/sequencer/display</span>
-</div>
-
-<div id="sequencerFirst">
- This is the first sequencer.
-  <br />
 <form data-remote="true" action="">
-  <label for=anagramEntry>Enter your information then press tab.</label>:
+  <label for=anagramEntry>Enter your information then press tab</label>:
   <input id="anagramEntry" name="anagramEntry" type="string" size="100" tabindex=1 />
- </p>
- <input id="submit" type=submit value="Calculate sequence_complete" />
-</form>
-</div>
-
-  <%= render_widget 'sequence_created' %>
-  <%= render_widget 'anagram' %>
-  <%= render_widget 'sequencer' %>
-
-<div class="cellularQuoteSequencerDisplay">
-  <%= render_cell :quote, :display2, :quote => @quote %>
-</div>
-
-<p>
-  <small>
-    The call to enter the Quote Cell here is made from within : app/views/sequencer/display.html.erb
-  </small>
-</p>
-
-<p>
-  <small>
-    <br /> These three widgets have been brought to you by : app/views/sequencer/display.html.erb
-    <br /> The sequencer_widget, the sequence_created_widget, and the anagram_widget
-    <br /> The two quotes are from the same quote_cell, using two states and their cell views. 
-    <br /> The same quote_cell displays first, and last quotes in two different ways, embedded in two widget displays.
-  </small>
-</p>
-
-<hr>
-
-<div class="hereEnds">
-  here ends
-  <span class="codeSource">
-    app/views/sequencer/display.html.haml
-  </span>
-</div>
-
+  <input id="submit" type=submit value="Calculate sequence_complete" />
 <script>
   var anagramEntry = document.getElementById('anagramEntry');
   var output = document.createElement('p');
-  output.textContent = 'Type your entry, it will be sequenced right then!';
+  output.textContent = 'Results will show after you press tab.';
   anagramEntry.form.appendChild(output);
   anagramEntry.form.onsubmit = function() { return false; }
   anagramEntry.onblur = function() {
     var v = anagramEntry.value.split('').sort().toString();
-    output.textContent = v + "  << this is the sequence_complete";
+    output.textContent = v + " << this is the sequence_complete";
   };
   var submit = document.getElementById('submit');
   submit.parentNode.removeChild(submit);
 </script>
+</form>
+</div>
+
+<blockquote>
+  The above example shows one entry, one processing.
+    <br />
+    <br />
+  In the real thing below, we will grab the anagram text entry with javascript and then
+    <br />
+  process it five ways, then enter those five results into the sequence_createds form below.
+</blockquote>
+ 
+  <%= render_widget 'sequence_created' %>
+  <%= render_widget 'anagram' %>
+  <%= render_widget 'sequencer' %>

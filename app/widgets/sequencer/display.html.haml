@@ -13,8 +13,6 @@
     .linkTo= link_to 'New Sequence', :controller => :sequences, :action => :new
     .linksInfoCrud= "These three links use CRUD methods in app/controllers/views"
 
-  %p= "Use the anagram widget boxes below to enter a new anagram"
- 
   .countAnagrams= "There are #{Anagram.count} ANAGRAMS in the anagram table"
 
   .countQuotes= "There are #{Quote.count} QUOTES in the quotes table"

@@ -9,15 +9,7 @@
       = label_tag 'reference', 'reference'
       = text_field_tag 'reference'
 
-      = submit_tag "Enter New Anagram"
-
-  %p.small This form issues from app/widgets/anagram/_form.html.haml
-
-  %small This widget's generated name is :  
-  %b= "#{widget_id}"
-  %br
-  %small This widget's generated submit url is : 
-  %b= "#{url_for_event(:submit)}"
+      = submit_tag "Submit Anagram"
 
 / Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
 

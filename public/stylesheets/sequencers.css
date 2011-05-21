@@ -263,8 +263,9 @@
   border-right: 11px solid purple;
   border-bottom: 5px solid purple;
   border-left: 11px solid purple;
-  margin-left: 14px;
-  margin-right: 14px;
+  margin-right: 24px;
+  margin-bottom: 15px;
+  margin-left: 24px;
   padding-left: 1px;
   padding-right: 1px;
 }
@@ -345,6 +346,10 @@
   width: 175px;
 }
 
+#sequenceCreated {
+  border: 2px solid yellow;
+}
+
 #sequenceCreatedHtml {
   border: 1px solid navy;
   width: 50%;
@@ -395,6 +400,7 @@
   margin-top: 10px;
   font-size: 85%;
   padding: 10px;
+  width: 50%;
 }
 
 #sequencerFirst > input > anagramEntry#text {

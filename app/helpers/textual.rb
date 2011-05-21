@@ -34,6 +34,18 @@ module Textual
     foo.gsub!(/(\sp\.m\.,\s+)/, " pm, ")                # p.m., < replaces that with : pm, 
     foo.gsub!(/(\sp\.m,\s+)/, " pm, ")                  # p.m,  < replaces that with : pm comma space
     foo.gsub!(/(\s+p\.m\.\s+)/, " pm ")                 # p.m.  < replaces that with : pm
+   #these below are not working for some reason in console
+   #foo.gsub(/^(i\.e\.,)\s/, "id est, ")                  # i.e., < replaces that at beginning of line with : id est
+   #foo.gsub(/^(i\.e\.)\s/, "id est ")                    # i.e.  < replaces that at beginning of line with : id est
+   #foo.gsub(/\s(i\.e\.),?$/, " id est")                  # i.e.  < replaces that and i.e., at end of line with : id est
+   #foo.gsub(/\s(i\.e\.),?\s/, " id est ")                # i.e.  < replaces that with : id est : if there is a comma, it is removed
+    foo.gsub!(/(\s+p\.e\.\s+)/, " physical education ") # p.e.  < replaces that with : physical education
+    foo.gsub!(/(^p\.s\.\s+)/, "ps ")                    # p.s.  < replaces that with : ps at beginning of line
+    foo.gsub!(/(^ps\.\s+)/, "ps ")                      # ps.  < replaces that with : ps at beginning of line
+    foo.gsub!(/(^ps:\s+)/, "ps ")                       # ps:  < replaces that with : ps at beginning of line
+    foo.gsub!(/(^ps;\s+)/, "ps ")                       # ps;  < replaces that with : ps at beginning of line
+    foo.gsub!(/((\s?(p)\.(s)\.)\s+)/, " ps ")           # p.s.  < replaces that with : ps
+    foo.gsub!(/((\s?(p)\.(s)\.)\s+)/, " ps ")           # p.s.  < replaces that with : ps
     foo.gsub!(/(^xo\.\s+)/, "executive officer ")       # xo.   < replaces that with : executive officer, at beginning of line
     foo.gsub!(/(\s+xo\s+)/, " executive officer ")      # xo.   < replaces that with : executive officer
     foo.gsub!(/(\s+xo,\s+)/, " executive officer, ")    # xo.   < replaces that with : executive officer,
@@ -44,13 +56,6 @@ module Textual
     foo.gsub!(/(^sgt\.\s+)/, "sargeant ")               # sgt.   < replaces that with : sargeant, at beginning of line
     foo.gsub!(/(\s+sgt\.\s+)/, " sargeant ")            # sgt.   < replaces that with : sargeant
     foo.gsub!(/(\s+sgt\.$)/, " sargeant")               # sgt.   < replaces that with : sargeant, at end of line.
-    foo.gsub!(/(\s+p\.e\.\s+)/, " physical education ") # p.e.  < replaces that with : physical education
-    foo.gsub!(/(^p\.s\.\s+)/, "ps ")                   # p.s.  < replaces that with : ps at beginning of line
-    foo.gsub!(/(^ps\.\s+)/, "ps ")                     # ps.  < replaces that with : ps at beginning of line
-    foo.gsub!(/(^ps:\s+)/, "ps ")                      # ps:  < replaces that with : ps at beginning of line
-    foo.gsub!(/(^ps;\s+)/, "ps ")                      # ps;  < replaces that with : ps at beginning of line
-    foo.gsub!(/((\s?(p)\.(s)\.)\s+)/, " ps ")           # p.s.  < replaces that with : ps
-    foo.gsub!(/((\s?(p)\.(s)\.)\s+)/, " ps ")           # p.s.  < replaces that with : ps
     foo.gsub!(/(\s+etc\.$)/, " etcetera ")
     foo.gsub!(/(\s+(etc\.,)\s)/, " etcetera, ")
     foo.gsub!(/(\s+(etc,)\s)/, " etcetera, ")

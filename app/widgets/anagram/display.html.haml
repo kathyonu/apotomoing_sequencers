@@ -1,52 +1,10 @@
 .anagramWidgetDisplay
+
+  = render 'anagram/form'
   
-  .hereBegins
-    here begins
-    %span.codeSource
-      app/widgets/anagram/display.html.haml
-
-  %hr
-
-  %p These add an anagram boxes are widget powered, and are now entering data into database, but not yet refreshing, nor firing the five sequences.
-
-  = render 'form'
-
-  %p
-
   .anagramList
-    These are the last ten anagrams entered into the database : 
+    %p="These are the last ten anagrams entered into the database : "
+
     %ul
       - for anagram in @anagrams
         %li=anagram.text
-
-  %hr
-
-  %p
-  %small
-    = link_to 'Another non-widget way to Add a New Anagram', new_anagram_path 
-    = " using normal controller/view : http://localhost:3000/anagrams/new"
-  
-  %p
-  %br
-
-  .cellularQuote
-    = render_cell :quote, :display, :quote => @quote
-
-  %p
-  %small
-    &nbsp;&nbsp;&nbsp;&nbsp; The call to the above First Quote Cell is made from : app/widgets/anagram/display.html.haml
-
-  %p
-
-  %hr
-
-  %small This widget's generated name is :  
-  %b= "#{widget_id}"
-  %br
-  %small This widget's generated submit url is : 
-  %b= "#{url_for_event(:submit)}"
-
-  .hereEnds
-    here ends
-    %span.codeSource
-      app/widgets/anagram/display.html.haml

@@ -1,8 +1,6 @@
 class AnagramWidget < Apotomo::Widget
   helper ApplicationHelper
 
-  responds_to_event :submit, :from => :anagram, :with => :submit, :on => :anagram
-
   #after_add do
     #root.respond_to_event :submit, :from => :sequencer, :with => :submit, :on => :anagram
     #root.respond_to_event :typing, :from => :anagram, :with => :sequence_created, :on => :sequence_created    # to be added in

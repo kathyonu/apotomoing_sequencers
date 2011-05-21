@@ -1,0 +1,6 @@
+.anagramList
+  %p="These are the last ten anagrams entered into the database : "
+
+  %ul
+    - for anagram in @anagrams
+      %li=anagram.text

@@ -6,6 +6,10 @@ class AnagramsController < ApplicationController
     root << widget(:sequence_created, :anagram => @anagram)
   end
 
+  def list
+    render
+  end
+  
   # GET /anagrams
   # GET /anagrams.xml
   def index
