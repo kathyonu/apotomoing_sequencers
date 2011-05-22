@@ -1,5 +1,8 @@
-$j(document).ready(function() {
-  $j().get('#sequenceCreatedSequenceCreated').value() {
+//converting javascript to jQuery :
+// not finished
+
+$(document).ready(function() {
+  .get('#sequenceCreatedSequenceCreated').value() {
     var sequenceCreated = this.value();
     var output = $('sequenceCreatedSequenceComplete').text();
     output.textContent = 'Type your entry, it will be sequenced right then!';
@@ -12,4 +15,4 @@ $j(document).ready(function() {
     var submit = document.getElementById('submit');
     submit.parentNode.removeChild(submit);
     };
-  };
+  });
