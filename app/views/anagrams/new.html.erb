@@ -4,27 +4,35 @@
   <%= render 'form' %>
 </div>
 
-<div id="sequencerFirst" class="firstSequencer">
- This is the first sequencer.
-  <br />
-<form data-remote="true" action="new">
-  <label for=anagramEntry>Enter Anagram Text</label>:
-  <input id="anagramEntry" name="anagramEntry" type="string" size="100" />
- </p>
- <input id="submit" type=submit value="Calculate sequence_complete" />
- <script>
+<div class="sequencerDisplay">
+    This is my first javascript powered sequencer.
+    <br />
+    It will render a complete sequence from any entry.
+    <br />
+    It is completely independent, self-contained.
+    <br />
+    Nothing is done with the data.
+    <br />
+    <br />
+  <div id="sequencerFirst" class="firstSequencer">
+
+<form data-remote="true" action="">
+  <label for=anagramEntry>Enter your information then press tab</label>:
+  <input id="anagramEntry" name="anagramEntry" type="string" size="100" tabindex=1 />
+  <input id="submit" type=submit value="Calculate sequence_complete" />
+<script>
   var anagramEntry = document.getElementById('anagramEntry');
   var output = document.createElement('p');
-  output.textContent = 'Type your entry, it will be sequenced right then!';
+  output.textContent = 'Results will show after you press tab.';
   anagramEntry.form.appendChild(output);
   anagramEntry.form.onsubmit = function() { return false; }
   anagramEntry.onblur = function() {
-    var v = (anagramEntry.value.split('').sort()).toString();
-    output.textContent = v + "  << this is the sequence_complete";
+    var v = anagramEntry.value.split('').sort().toString();
+    output.textContent = v + " << this is the sequence_complete";
   };
   var submit = document.getElementById('submit');
   submit.parentNode.removeChild(submit);
- </script>
+</script>
 </form>
 </div>
 

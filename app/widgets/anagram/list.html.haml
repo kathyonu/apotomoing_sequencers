@@ -1,13 +1,14 @@
 <input type='submit' id='anagramListOpen' value='Open Anagram List' />
 
-.anagramList#anagramListDisplay
-  %p="These are the last ten anagrams entered into the database : "
+#anagramListDisplay
 
-  %ul
-    - for anagram in @anagrams
-      %li=anagram.text
+  .anagramList
 
-<div class="tmpButtons">
-<input type='submit' id='anagramListClose' value='Close Anagram Widget' />
-</div>
-</div>
+    %blockquote="The last ten anagrams entered into the database : "
+
+    %ul
+      - for anagram in @anagrams
+        %li=anagram.text
+  
+    <input type='submit' id='anagramListClose' class='tmpButtons' value='Close Anagram List' />
+ 

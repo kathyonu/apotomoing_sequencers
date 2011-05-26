@@ -1,14 +1,9 @@
 class AnagramWidget < Apotomo::Widget
   helper ApplicationHelper
 
-  #after_add do
-    #root.respond_to_event :submit, :from => :sequencer, :with => :submit, :on => :anagram
-    #root.respond_to_event :typing, :from => :anagram, :with => :sequence_created, :on => :sequence_created    # to be added in
-    #root.respond_to_event :typing, :from => :anagram, :with => :sequence_creation, :on => :sequence_created
-    #root.respond_to_event :typing, :from => :anagram, :with => :sequence_complete, :on => :sequence_created
-    #root.respond_to_event :typing, :from => :anagram, :with => :sequence_lexigram, :on => :sequence_created
-    #root.respond_to_event :typing, :from => :anagram, :with => :sequence_singular, :on => :sequence_created
-  # end
+  after_add do
+    root.respond_to_event :submit, :from => :sequencer, :with => :submit, :on => :anagram, :passing => :root
+  end
   
   def anagram
     @anagram = Anagram.new
@@ -26,6 +21,10 @@ class AnagramWidget < Apotomo::Widget
     render
   end
 
+  def list
+    render
+  end
+  
   def submit(event)
     anagram = Anagram.new(:id => event[:id], :sequence_created_id => event[:sequence_created_id], :text => event[:text], :description => event[:description], :reference => event[:reference]).save
     @anagrams = Anagram.find(:all)

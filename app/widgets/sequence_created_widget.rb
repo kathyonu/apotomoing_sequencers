@@ -42,7 +42,7 @@ class SequenceCreatedWidget < Apotomo::Widget
     render :view => :sequence_complete
   end
 
-  # TODO complete the Lexigram code, meanwhile substitute the reverse sequence as the dataum
+  # TODO complete the lexigram algorithm to code, meanwhile substitute the reverse sequence as the dataum
   def sequence_lexigram(sequence_created)
     @sequence_lexigram = sequence_created.split(//).sort.join.strip.reverse
 
@@ -55,14 +55,15 @@ class SequenceCreatedWidget < Apotomo::Widget
     render :view => :sequence_singular
   end
 
+  # TODO complete the lexigram algorithm to code, meanwhile substitute the reverse sequence as the dataum
   def submit(event)
     anagram = Anagram.find(event[:id])
 	anagram_text = event[:text]
     @sequence_created = anagram_text.to_textual.de_comma.strip 
 	@sequence_creation = sequence_created.de_space
     @sequence_complete = sequence_created.split(//).sort.join.strip
-	@sequence_lexigram = sequence_created.split(//).sort.join.strip.reverse  # TODO complete the lexigram code, meanwhile substitute the reverse sequence as the dataum
-    @sequence_singular = sequence_complete.squeeze
+	@sequence_lexigram = sequence_created.split(//).sort.join.strip.reverse
+	@sequence_singular = sequence_complete.squeeze
 
     update :display
   end
@@ -73,7 +74,7 @@ class SequenceCreatedWidget < Apotomo::Widget
   end
   
   def display
+
     render
   end
-
 end

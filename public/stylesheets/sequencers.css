@@ -1,3 +1,11 @@
+input #anagramText {
+  border: 12px solid blue;
+  margin: 8px;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+}
+
 .anagramEntry {
   border: 13px solid navy;
   border-left: 14px solid aqua;
@@ -19,6 +27,7 @@
   margin-right: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
+  padding-top: 7px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -29,7 +38,7 @@
   border-right: 11px solid purple;
   border-bottom: 5px solid purple;
   border-left: 11px solid purple;
-  margin-top: 5px;
+  margin-top: 25px;
   margin-right: 14px;
   margin-bottom: 5px;
   margin-left: 14px;
@@ -37,6 +46,9 @@
   padding-right: 1px;
 }
 
+.apotomo {
+  border: 2px solid grey;
+}
 .autocomputeSingular {
   border: 2px solid silver;
   padding: 2px;
@@ -83,7 +95,7 @@
 
 .codeSource {
   text-align: right;
-  font-size: 95%;
+  font-size: 110%;
   font-weight: bold;
 }
   
@@ -139,11 +151,36 @@
 }
 
 .formAnagram {
-  border: 12px solid black;
+  border: 2px solid black;
   margin: 8px;
-  padding-top: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
+  margin-top: 15px;
+  padding: 5px;
+  padding-top: 15px;
+}
+
+.formAnagram #text {
+  border: 3px solid black;
+  background-color: pink;
+  margin: 8px;
+  margin-bottom: 1px;
+  padding: 5px;
+  padding-bottom: 1px;
+}
+
+.formAnagram #description {
+  border: 1px solid black;
+  margin: 8px;
+  margin-bottom: 1px;
+  padding: 5px;
+  padding-bottom: 1px;
+}
+
+.formAnagram #reference {
+  border: 1px solid black;
+  margin: 8px;
+  margin-bottom: 15px;
+  padding: 5px;
+  padding-bottom: 1px;
 }
 
 .formSequenceCreated {
@@ -153,6 +190,13 @@
   margin-right: 14px;
   margin-left: 14px;
   padding-left: 5px;
+}
+
+.formSequenceCreated input {
+  border: 3px solid black;
+  background-color: pink;
+  margin: 8px;
+  padding: 5px;
 }
 
 .hereBegins {
@@ -186,6 +230,15 @@
   text-align: right;
 }
 
+.kathyonu {
+  border: 2px solid violet;
+  border-bottom: 10px solid violet;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  text-align: center;
+}
+
 .links {
   border-left: 14px solid aqua;
   line-height: 125%;
@@ -202,7 +255,7 @@
 .linksInfo {
   border-left: 8px solid aqua;
   line-height: 125%;
-  font-size: 75%;
+  font-size: 85%;
   padding-left: 10px;
 }
 
@@ -216,6 +269,7 @@
 .linksInfoRoot {
   border-left: 14px solid aqua;
   font-size: 90%;
+  font-weight: bold;
   margin-left: 4px;
   padding-left: 13px;
 }
@@ -276,11 +330,12 @@
   border-right: 11px solid purple;
   border-bottom: 5px solid purple;
   border-left: 11px solid purple;
+  font-size: 90%;
   margin-left: 14px;
   margin-right: 14px;
   margin-bottom: 5px;
-  padding-left: 1px;
-  padding-right: 1px;
+  padding: 10px;
+  width: 80%;
 }
 
 .noteSequenceCreated {
@@ -302,34 +357,42 @@
   font-weight: bold;
 }
 
+.submit {
+  border: 2px solid teal;
+}
+
+.textFound {
+  border: 4px dotted yellow;
+}
+
 .tmpButtons {
   bottom: 5px;
   right: 5px;
 }
 
+.formAnagram#anagram > input {
+  border: 2px solid red;
+}
+
 #anagramListClose {
-  border: 3px solid blue;
+  position: relative;
+  margin-left: -49px;
+  bottom: 249px;
 }
 
 #anagramListOpen {
-  border: 3px solid blue;
-}
-
-#anagramText {
-  border: 12px solid black;
-  margin: 8px;
-  padding-top: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
+  position: relative;
+  top: 17px;
+  left: -18px;
 }
 
 #anagramListDisplay {
   display: none;
-  position: absolute;
-  bottom: 50%;
-  top: 50%;
-  width: 500px;
-  height: 300px;
+  position: relative;
+  top: -10px;
+  left: 14px;
+  padding-top: 4px;
+  width: 95%;
 }
 
 #currentTime {
@@ -405,42 +468,46 @@
   padding-bottom: 2px;
 }
 
-#sequencerWidgetOpen {
-  display: none;
-  position: absolute;
-  bottom: 50%;
-  top: 50%;
-  width: 500px;
-  height: 300px;
-}
-
 #sequencerFirst {
-  border: 10px solid red;
+  border: 2px solid olive;
   margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
   font-size: 85%;
   padding: 10px;
   width: 50%;
 }
 
 #sequencerClose {
-  border: 3px solid blue;
+  position: absolute;
+  left: -46px;
+  bottom: 291px;
 }
 
 #sequencerOpen {
-  border: 3px solid blue;
+  position: relative;
+  top: 16px;
+  left: -6px;
+  margin-bottom: 3px;
+  margin-left: 15px;
+  text-align: center;
 }
 
 #sequencerWidgetDisplay {
   display: none;
+  position: relative;
+  top: 15px;
+  left: 30px;
+  background: ivory;
   border-top: 5px solid purple;
   border-right: 11px solid purple;
   border-bottom: 5px solid purple;
   border-left: 11px solid purple;
   margin-left: 14px;
-  margin-right: 14px;
-  margin-bottom: 5px;
-  padding-left: 1px;
-  padding-right: 1px;
+  margin-right: 44px;
+  margin-bottom: 25px;
+  padding: 15px;
+  padding-top: 5px;
 }
 
 #sequencerFirst > input > anagramEntry#text {

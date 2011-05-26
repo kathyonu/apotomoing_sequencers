@@ -3,25 +3,23 @@
   = widget_div do
     = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
       %br
-      = label_tag 'sequence_created', 'sequence_created'
       = text_field_tag 'sequence_created'
+      = label_tag 'sequence_created', 'sequence_created'
       %br
-      = label_tag 'sequence_creation', 'sequence_creation'
       = text_field_tag 'sequence_creation'
+      = label_tag 'sequence_creation', 'sequence_creation'
       %br
-      = label_tag 'sequence_complete', 'sequence_complete'
       = text_field_tag 'sequence_complete'
+      = label_tag 'sequence_complete', 'sequence_complete'
       %br
-      = label_tag 'sequence_lexigram', 'sequence_lexigram'
       = text_field_tag 'sequence_lexigram'
+      = label_tag 'sequence_lexigram', 'sequence_lexigram'
       %br
-      = label_tag 'sequence_singular', 'sequence_singular'
       = text_field_tag 'sequence_singular'
+      = label_tag 'sequence_singular', 'sequence_singular'
       %br
       %br
       = submit_tag "This sequence_created Submit tag will be hidden, and  fired automatically upon the Anagram Submit"
- 
--#  // Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
 
 :javascript
   var form = $("##{widget_id} form");

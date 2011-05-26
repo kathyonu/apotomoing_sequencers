@@ -1,8 +1,8 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time still, 20110521
-#### apotomoing_sequencers is not yet fully functioning.
+### Note: At this time still, 20110524
+#### apotomoing_sequencers is almost fully functioning.
 #### To see the last educational development commit, see :
 [educational](https://github.com/kathyonu/apotomoing_sequencers/commit/d4b1cbde46fd32c89a02414fee4c59a78b1c1b92 "apotomoing_sequencers, educational")
 ##### This commit has all learning notes, location notes, generated url notes and such still showing.
@@ -23,7 +23,7 @@
 
 *	http://localhost:3000/             <= :root, empowered with cells and widgets
 *	http://localhost:3000/quotes/      <= scaffolded CRUD, no widgets nor cells
-*	http://localhost:3000/anagrams/    <= scaffolded CRUD, no widgets nor cells
+*	http://localhost:3000/anagrams/new <= scaffolded CRUD, no widgets nor cells, one javascript sequencer for display of principle
 *	http://localhost:3000/sequences/   <= scaffolded CRUD, no widgets nor cells
 
 #### The sequences address will show the entire app's design in one table.  
