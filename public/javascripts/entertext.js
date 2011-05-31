@@ -1,8 +1,8 @@
 $(document).ready(
   function() {
-    $('#text').bind({
+    $('#anagramText').bind({
       focusin: function(event) {
-        $('#text').css('backgroundColor', 'white')
+        $('#anagramText').css('backgroundColor', 'white')
       }
     });
   }
@@ -10,9 +10,9 @@ $(document).ready(
 
 $(document).ready(
   function() {
-    $('#text').bind({
+    $('#anagramText').bind({
       focusout: function(event) {
-        $('#text').css('backgroundColor', 'pink')
+        $('#anagramText').css('backgroundColor', 'pink')
       }
     });
   }
@@ -20,8 +20,9 @@ $(document).ready(
 
 $(document).ready(
   function() {
-    $('#text').bind({
+    $('#anagramText').bind({
       focusin: function(event) {
+        $('.formSequenceCreated #sequence_text').css('backgroundColor', 'white'),
         $('.formSequenceCreated #sequence_creation').css('backgroundColor', 'white'),
         $('.formSequenceCreated #sequence_complete').css('backgroundColor', 'white'),
         $('.formSequenceCreated #sequence_lexigram').css('backgroundColor', 'white'),
@@ -33,8 +34,9 @@ $(document).ready(
 
 $(document).ready(
   function() {
-    $('#text').bind({
+    $('#anagramText').bind({
       focusout: function(event) {
+        $('.formSequenceCreated #sequence_text').css('backgroundColor', 'pink'),
         $('.formSequenceCreated #sequence_creation').css('backgroundColor', 'pink'),
         $('.formSequenceCreated #sequence_complete').css('backgroundColor', 'pink'),
         $('.formSequenceCreated #sequence_lexigram').css('backgroundColor', 'pink'),

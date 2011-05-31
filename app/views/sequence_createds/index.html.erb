@@ -14,7 +14,7 @@
 
 <% @sequence_createds.each do |sequence_created| %>
   <tr>
-    <td><%= sequence_created.sequence_created %></td>
+    <td><%= sequence_created.sequence_text %></td>
     <td><%= sequence_created.sequence_creation %></td>
     <td><%= sequence_created.sequence_complete %></td>
     <td><%= sequence_created.sequence_lexigram %></td>
@@ -26,7 +26,7 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'To Root', :root %> | 
-<%= link_to 'New Sequence created', new_sequence_created_path %>
+<div class="links">
+  <%= link_to 'To Root', :root %> | 
+  <%= link_to 'New Sequence created', new_sequence_created_path %>
+</div>

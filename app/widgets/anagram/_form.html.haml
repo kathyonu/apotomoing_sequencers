@@ -2,8 +2,8 @@
 
   = widget_div do
     = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
-      = text_field_tag 'text'
-      = label_tag 'text', 'enter anagram text'
+      = text_field_tag 'anagramText'
+      = label_tag 'anagramText', 'enter anagram text'
       %br
       = text_field_tag 'description'
       = label_tag 'description', 'description'
@@ -13,12 +13,10 @@
       %br 
       = submit_tag "Submit Anagram"
 
-= render :state => 'list'
-
-:javascript
-  var form = $("##{widget_id} form");
+  :javascript
+    var form = $("##{widget_id} form");
   
-  form.submit(function() {
-    $.ajax({url: form.attr("data-event-url"), data: form.serialize()})
-    return false;
-  });
+    form.submit(function() {
+      $.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+      return false;
+    };

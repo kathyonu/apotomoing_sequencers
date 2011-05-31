@@ -5,7 +5,7 @@
 <table>
   <tr>
     <th>ID</th>
-    <th>Text</th>
+    <th>Anagram Text</th>
     <th>Description</th>
     <th>Reference</th>
     <th></th>
@@ -16,7 +16,7 @@
 <% @anagrams.each do |anagram| %>
   <tr>
     <td><%= anagram.id %></td>
-    <td><%= anagram.text %></td>
+    <td><%= anagram.anagram_text %></td>
     <td><%= anagram.description %></td>
     <td><%= anagram.reference %></td>
     <td><%= link_to 'Show', anagram %></td>
@@ -32,7 +32,9 @@
   <%= render_cell :quote, :display, :quote => @quote %>
 </div>
 
+<div class="links">
 <%= link_to 'To Root', :root %> | 
 <%= link_to 'New Anagram', new_anagram_path %>
+</div>
 
 </div>

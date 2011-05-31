@@ -1,5 +1,4 @@
 class SequencerController < ApplicationController
-  include Apotomo::Rails::ControllerMethods
 
   has_widgets do |root|
     root << widget(:sequencer)
@@ -8,7 +7,7 @@ class SequencerController < ApplicationController
     root.respond_to_event :submit, :from => :anagram, :with => :submit, :on => :anagram, :passing => :root
     root.respond_to_event :submit, :from => :anagram, :with => :submit, :on => :sequence_created
   end
-
+  
   def display
   end
 

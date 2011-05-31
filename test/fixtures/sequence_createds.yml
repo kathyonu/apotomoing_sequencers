@@ -1,14 +1,14 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  sequence_created: testing anagram
+  sequence_text: testing anagram
   sequence_creation: testinganagram
   sequence_complete: aaaeggimnnrstt
   sequence_lexigram: aaaegimnrstt
   sequence_singular: aegimnrst
 
 two:
-  sequence_created: anagram testings
+  sequence_text: anagram testings
   sequence_creation: anagramtestings
   sequence_complete: aaaeggimnnrsstt
   sequence_lexigram: aaaegimnrsstt

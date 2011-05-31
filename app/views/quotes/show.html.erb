@@ -20,6 +20,8 @@
   <%= @quote.description %>
 </p>
 
-<%= link_to 'To Root', :root %> | 
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>
+<div class="links">
+  <%= link_to 'To Root', :root %> | 
+  <%= link_to 'Edit', edit_quote_path(@quote) %> |
+  <%= link_to 'Back', quotes_path %>
+</div>

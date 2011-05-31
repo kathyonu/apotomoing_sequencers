@@ -34,6 +34,16 @@ module Textual
     foo.gsub!(/(\sp\.m\.,\s+)/, " pm, ")                # p.m., < replaces that with : pm, 
     foo.gsub!(/(\sp\.m,\s+)/, " pm, ")                  # p.m,  < replaces that with : pm comma space
     foo.gsub!(/(\s+p\.m\.\s+)/, " pm ")                 # p.m.  < replaces that with : pm
+    foo.gsub!(/(\s+c\.p\.a\.\s+)/, " certified public accountant ")  # c.p.a.  < replaces that with : certified public accountant
+    foo.gsub!(/(\s+c\.p\.a\.$)/, " certified public accountant")  # c.p.a.  < replaces that with : certified public accountant at end of line
+    foo.gsub!(/(^l\.a\.\s+)/, "los angeles ")           # l.a.  < replaces that with : los angeles at beginning of line
+    foo.gsub!(/^l\.a\.,\s+/, "los angeles, ")           # l.a.  < replaces that with : los angeles at beginning of line
+    foo.gsub!(/(^la\.)/, "los angeles ")                # la.   < replaces that with : los angeles at beginning of line
+    foo.gsub!(/(^la:\s+)/, "los angeles ")              # la:   < replaces that with : los angeles at beginning of line
+    foo.gsub!(/(^la;\s+)/, "los angeles ")              # la;   < replaces that with : los angeles at beginning of line
+    foo.gsub!(/\s+l\.a\.\s+/, " los angeles ")          # l.a.  < replaces that with : los angeles
+    foo.gsub!(/\s+l\.a\.,\s+/, " los angeles, ")        # l.a., < replaces that with : los angeles,
+    foo.gsub!(/(\sla\.)$/, " los angeles")                # la.   < replaces that with : los angeles at beginning of line
    #these below are not working for some reason in console
    #foo.gsub(/^(i\.e\.,)\s/, "id est, ")                  # i.e., < replaces that at beginning of line with : id est
    #foo.gsub(/^(i\.e\.)\s/, "id est ")                    # i.e.  < replaces that at beginning of line with : id est

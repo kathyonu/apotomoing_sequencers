@@ -3,13 +3,12 @@ class AnagramsController < ApplicationController
 
   has_widgets do |root|
     root << widget(:anagram, :anagram => @anagram)
-    root << widget(:sequence_created, :anagram => @anagram)
   end
   
   # GET /anagrams
   # GET /anagrams.xml
   def index
-    @anagrams = Anagram.all
+    @anagrams = Anagram.order("id DESC")
 
     respond_to do |format|
       format.html # index.html.erb

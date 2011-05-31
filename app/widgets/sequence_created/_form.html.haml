@@ -3,8 +3,8 @@
   = widget_div do
     = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
       %br
-      = text_field_tag 'sequence_created'
-      = label_tag 'sequence_created', 'sequence_created'
+      = text_field_tag 'sequence_text'
+      = label_tag 'sequence_text', 'sequence_text'
       %br
       = text_field_tag 'sequence_creation'
       = label_tag 'sequence_creation', 'sequence_creation'
@@ -25,6 +25,6 @@
   var form = $("##{widget_id} form");
    
   form.submit(function() {
-    $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+    $.ajax({url: form.attr("data-event-url"), data: form.serialize()})
     return false;
   });

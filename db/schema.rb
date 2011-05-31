@@ -10,10 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110227185307) do
+ActiveRecord::Schema.define(:version => 20110531040221) do
 
   create_table "anagrams", :force => true do |t|
-    t.string   "text"
+    t.string   "anagram_text"
     t.integer  "sequence_created_id"
     t.string   "description"
     t.string   "reference"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20110227185307) do
   end
 
   create_table "sequence_createds", :force => true do |t|
-    t.string   "sequence_created"
+    t.string   "sequence_text"
     t.string   "sequence_creation"
     t.string   "sequence_complete"
     t.string   "sequence_lexigram"

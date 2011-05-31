@@ -2,7 +2,7 @@
 
 <p>
   <b>Sequence created:</b>
-  <%= @sequence_created.sequence_created %>
+  <%= @sequence_created.text %>
 </p>
 
 <p>
@@ -25,6 +25,8 @@
   <%= @sequence_created.sequence_singular %>
 </p>
 
-<%= link_to 'To Root', :root %> | 
-<%= link_to 'Edit', edit_sequence_created_path(@sequence_created) %> |
-<%= link_to 'Back', sequence_createds_path %>
+<div class="links">
+  <%= link_to 'To Root', :root %> | 
+  <%= link_to 'Edit', edit_sequence_created_path(@sequence_created) %> |
+  <%= link_to 'Back', sequence_createds_path %>
+</div>

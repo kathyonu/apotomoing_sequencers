@@ -1,7 +1,7 @@
-input #anagramText {
+.anagram input #anagramText {
   border: 12px solid blue;
   margin: 8px;
-  padding-top: 4px;
+  padding-top: 24px;
   padding-right: 4px;
   padding-left: 5px;
 }
@@ -86,7 +86,7 @@ input #anagramText {
   border-bottom: 15px solid maroon;
   border-left: 25px solid maroon;
   margin-bottom: 10px;
-  margin-left: 35px;
+  margin-left: 55px;
   margin-right: 10px;
   padding-bottom: 10px;
   padding-left: 8px;
@@ -158,8 +158,7 @@ input #anagramText {
   padding-top: 15px;
 }
 
-.formAnagram #text {
-  border: 3px solid black;
+.formAnagram #anagramText {
   background-color: pink;
   margin: 8px;
   margin-bottom: 1px;
@@ -173,6 +172,7 @@ input #anagramText {
   margin-bottom: 1px;
   padding: 5px;
   padding-bottom: 1px;
+  margin-left: 45px;
 }
 
 .formAnagram #reference {
@@ -181,6 +181,7 @@ input #anagramText {
   margin-bottom: 15px;
   padding: 5px;
   padding-bottom: 1px;
+  margin-left: 45px;
 }
 
 .formSequenceCreated {
@@ -242,7 +243,11 @@ input #anagramText {
 .links {
   border-left: 14px solid aqua;
   line-height: 125%;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-left: 10px;
   padding-left: 5px;
+  padding-bottom: 5px;
 }
 
 .linksGroup {
@@ -370,14 +375,14 @@ input #anagramText {
   right: 5px;
 }
 
-.formAnagram#anagram > input {
+.formAnagram input#anagramText {
   border: 2px solid red;
 }
 
 #anagramListClose {
   position: relative;
-  margin-left: -49px;
-  bottom: 249px;
+  margin-left: -45px;
+  bottom: 252px;
 }
 
 #anagramListOpen {
@@ -419,8 +424,8 @@ input #anagramText {
   width: 175px;
 }
 
-#sequenceCreated {
-  border: 2px solid yellow;
+#sequenceText {
+  border: 10px solid yellow;
 }
 
 #sequenceCreatedHtml {
@@ -478,10 +483,21 @@ input #anagramText {
   width: 50%;
 }
 
+
+#sequencerSecond {
+  border: 2px solid olive;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  font-size: 85%;
+  padding: 10px;
+  width: 50%;
+}
+
 #sequencerClose {
   position: absolute;
   left: -46px;
-  bottom: 291px;
+  bottom: 290px;
 }
 
 #sequencerOpen {
@@ -510,7 +526,7 @@ input #anagramText {
   padding-top: 5px;
 }
 
-#sequencerFirst > input > anagramEntry#text {
+#sequencerFirst > input > anagramEntry#anagram_text {
   border: 10px solid red;
   margin-top: 10px;
   font-size: 75%;
