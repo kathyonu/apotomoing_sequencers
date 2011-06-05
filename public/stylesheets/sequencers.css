@@ -1,11 +1,3 @@
-.anagram input #anagramText {
-  border: 12px solid blue;
-  margin: 8px;
-  padding-top: 24px;
-  padding-right: 4px;
-  padding-left: 5px;
-}
-
 .anagramEntry {
   border: 13px solid navy;
   border-left: 14px solid aqua;
@@ -158,7 +150,8 @@
   padding-top: 15px;
 }
 
-.formAnagram #anagramText {
+.formAnagram #anagram form input#anagram_text {
+  border: 2px solid red;
   background-color: pink;
   margin: 8px;
   margin-bottom: 1px;
@@ -166,8 +159,8 @@
   padding-bottom: 1px;
 }
 
-.formAnagram #description {
-  border: 1px solid black;
+.formAnagram #anagram form input#description {
+  border: 2px solid red;
   margin: 8px;
   margin-bottom: 1px;
   padding: 5px;
@@ -175,8 +168,8 @@
   margin-left: 45px;
 }
 
-.formAnagram #reference {
-  border: 1px solid black;
+.formAnagram #anagram form input#reference {
+  border: 2px solid red;
   margin: 8px;
   margin-bottom: 15px;
   padding: 5px;
@@ -234,6 +227,7 @@
 .kathyonu {
   border: 2px solid violet;
   border-bottom: 10px solid violet;
+  padding-top: 8px;
   margin-right: 15px;
   margin-bottom: 15px;
   margin-left: 15px;
@@ -375,14 +369,10 @@
   right: 5px;
 }
 
-.formAnagram input#anagramText {
-  border: 2px solid red;
-}
-
 #anagramListClose {
   position: relative;
-  margin-left: -45px;
-  bottom: 252px;
+  margin-left: -48px;
+  bottom: 249px;
 }
 
 #anagramListOpen {
@@ -425,10 +415,10 @@
 }
 
 #sequenceText {
-  border: 10px solid yellow;
+  border: 3px solid red;
 }
 
-#sequenceCreatedHtml {
+#sequenceTextHtml {
   border: 1px solid navy;
   width: 50%;
   margin-left: 4px;
@@ -497,7 +487,7 @@
 #sequencerClose {
   position: absolute;
   left: -46px;
-  bottom: 290px;
+  bottom: 292px;
 }
 
 #sequencerOpen {

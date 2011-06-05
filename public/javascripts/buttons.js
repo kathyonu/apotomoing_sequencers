@@ -1,6 +1,6 @@
-$(document).ready(
+$j(document).ready(
   function() {
-    $('#anagram > form > submit').button({
+    $j('#anagram > form > submit').button({
       icons: { primary: 'ui-icon-gear' }
     });
   });

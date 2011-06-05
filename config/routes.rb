@@ -8,15 +8,13 @@ ApotomoingSequencers::Application.routes.draw do
 
   resources :sequence_createds
 
-  get "anagram/new"
-  
-  get "quote/new"
+  #get "quote#new"
 
-  get "sequence/new"
+  get "sequencer/display"
   
-  #get "sequencer/cells-cheatsheets"
+  #get "sequencer#cells-cheatsheets"
   
-  root :to => "sequencer#display"
+  root :to => "dashboard#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

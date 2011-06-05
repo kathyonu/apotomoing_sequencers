@@ -1,10 +1,10 @@
 //converting javascript to jQuery :
 // not finished
 
-$(document).ready(function() {
+$j(document).ready(function() {
   .get('#sequenceCreatedSequenceCreated').value() {
     var sequenceCreated = this.value();
-    var output = $('sequenceCreatedSequenceComplete').text();
+    var output = $j('sequenceCreatedSequenceComplete').text();
     output.textContent = 'Type your entry, it will be sequenced right then!';
     sequenceCreated.form.appendChild(output);
     sequenceCreated.form.onsubmit = function() { return false; }
@@ -16,3 +16,7 @@ $(document).ready(function() {
     submit.parentNode.removeChild(submit);
     };
   });
+
+// the call
+  
+  <!--<%= javascript_include_tag "complete.js" %>-->

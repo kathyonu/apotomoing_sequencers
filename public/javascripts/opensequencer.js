@@ -1,14 +1,14 @@
-$(document).ready(
+$j(document).ready(
   function() {
-    $('input#sequencerOpen').click(
+    $j('input#sequencerOpen').click(
       function($e) {
-        $('#sequencerWidgetDisplay').show('fast');
+        $j('#sequencerWidgetDisplay').show('fast');
       }
     );
     
-    $('input#sequencerClose').click(
+    $j('input#sequencerClose').click(
       function($e) {
-        $('#sequencerWidgetDisplay').hide('5000');
+        $j('#sequencerWidgetDisplay').hide('5000');
       }
     );
   }

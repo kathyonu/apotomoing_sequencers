@@ -1,36 +1,28 @@
 <div class="anagramsIndex">
 
-<h1>Listing anagrams</h1>
+  <h1>Listing anagrams</h1>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Anagram Text</th>
-    <th>Description</th>
-    <th>Reference</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table>
+    <tr>
+      <th>Anagram Text</th>
+      <th>Description</th>
+      <th>Reference</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @anagrams.each do |anagram| %>
-  <tr>
-    <td><%= anagram.id %></td>
-    <td><%= anagram.anagram_text %></td>
-    <td><%= anagram.description %></td>
-    <td><%= anagram.reference %></td>
-    <td><%= link_to 'Show', anagram %></td>
-    <td><%= link_to 'Edit', edit_anagram_path(anagram) %></td>
-    <td><%= link_to "Destroy", anagram, :method => :delete, :confirm => "Are you sure" %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<div class="cellularQuote">
-  <%= render_cell :quote, :display, :quote => @quote %>
-</div>
+  <% @anagrams.each do |anagram| %>
+    <tr>
+      <td><%= anagram.anagram_text %></td>
+      <td><%= anagram.description %></td>
+      <td><%= anagram.reference %></td>
+      <td><%= link_to 'Show', anagram %></td>
+      <td><%= link_to 'Edit', edit_anagram_path(anagram) %></td>
+      <td><%= link_to "Destroy", anagram, :method => :delete, :confirm => "Are you sure" %></td>
+    </tr>
+  <% end %>
+  </table>
 
 <div class="links">
 <%= link_to 'To Root', :root %> | 

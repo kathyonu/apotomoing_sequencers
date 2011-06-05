@@ -18,11 +18,19 @@ class SequenceCreatedsControllerTest < ActionController::TestCase
 
   test "should create sequence_created" do
     assert_difference('SequenceCreated.count') do
-      post :create, :sequence_created => @sequence_created.attributes
+      post :create, :sequence_created => { }
     end
 
     assert_redirected_to sequence_created_path(assigns(:sequence_created))
   end
+
+#  test "should create sequence_created" do
+#    assert_difference('SequenceCreated.count') do
+#      post :create, :sequence_created => @sequence_created.attributes
+#    end
+
+#    assert_redirected_to sequence_created_path(assigns(:sequence_created))
+#  end
 
   test "should show sequence_created" do
     get :show, :id => @sequence_created.to_param

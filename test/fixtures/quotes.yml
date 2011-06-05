@@ -2,14 +2,12 @@
 
 one:
   text: MyFirstQuote
-  sequence_created_id: 1
   author: Moi
   lifedates: Now
   description: MyQuote
 
 two:
   text: MySecondQuote
-  sequence_created_id: 2
   author: Moi
   lifedates: Then
   description: MyQuote2

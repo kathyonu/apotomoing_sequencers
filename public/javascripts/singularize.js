@@ -1,3 +1,3 @@
-$(document).ready(function() {
-  $.ajax('.anagram#text');
+$j(document).ready(function() {
+  $j.ajax('.anagram#text');
  });
