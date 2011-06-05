@@ -14,9 +14,9 @@
 -# // Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
 
 :javascript
-  var form = $j("##{widget_id} form[0]");
-  
-  form.submit(function() {
-    $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+  var form0 = $j("##{widget_id} form[0]");
+
+  form0.submit(function() {
+    $j.ajax({url: form0.attr("data-event-url"), data: form0.serialize()})
     return false;
   });
