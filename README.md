@@ -1,7 +1,7 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time still, 20110524
+### Note: At this time still, 20110605
 #### apotomoing_sequencers is almost fully functioning.
 #### To see the last educational development commit, see :
 [educational](https://github.com/kathyonu/apotomoing_sequencers/commit/d4b1cbde46fd32c89a02414fee4c59a78b1c1b92 "apotomoing_sequencers, educational")
@@ -22,9 +22,9 @@
 ### After your server fires up, go to your browser : 
 
 *	http://localhost:3000/             <= :root, empowered with cells and widgets
-*	http://localhost:3000/quotes/      <= scaffolded CRUD, no widgets nor cells
-*	http://localhost:3000/anagrams/new <= scaffolded CRUD, no widgets nor cells, one javascript sequencer for display of principle
-*	http://localhost:3000/sequences/   <= scaffolded CRUD, no widgets nor cells
+*	http://localhost:3000/quotes/new      <= scaffolded CRUD, no widgets nor cells, first javascript sequencer for display of principle.
+*	http://localhost:3000/anagrams/new <= scaffolded CRUD, no widgets nor cells, second javascript sequencer for display of principle.
+*	http://localhost:3000/sequences/   <= scaffolded CRUD, no widgets nor cells, with jQuery Datepicker working as proof of working.
 
 #### The sequences address will show the entire app's design in one table.  
 #### The sequences table is a primitive setup allowing massive duplicates in the five sequences.
