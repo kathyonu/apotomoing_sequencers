@@ -1,10 +1,10 @@
 $j(document).ready(
   function() {
-    $j('formanagram#anagram form #anagram_text').bind(
-      'onblur',
+    $j('.formanagram#anagram form #anagram_text').bind(
+      'onblur', 
       function() {
         var anagramText = this.value();
-        var output = $j('formSequenceCreated#sequenceCreated form #sequence_text').text();
+        var output = $j('.formSequenceCreated#sequenceCreated form #sequence_text').text();
         // output.textContent = 'Type your entry, it will be sequenced right then!';
         // sequenceCreated.form.appendChild(output);
         anagramText.form.onsubmit = function() { return false; }
@@ -17,7 +17,7 @@ $j(document).ready(
       },
       function() {
         var anagramText = this.value();
-        var output = $j('formSequenceCreated#sequenceCreated form #sequence_creation').text();
+        var output = $j('.formSequenceCreated#sequenceCreated form #sequence_creation').text();
         // output.textContent = 'Type your entry, it will be sequenced right then!';
         anagramText.form.onsubmit = function() { return false; }
           function() {
@@ -29,7 +29,7 @@ $j(document).ready(
       },
       function() {
         var anagramText = this.value();
-        var output = $j('formSequenceCreated#sequenceCreated form #sequence_complete').text();
+        var output = $j('.formSequenceCreated#sequenceCreated form #sequence_complete').text();
         // output.textContent = 'Type your entry, it will be sequenced right then!';
         anagramText.form.onsubmit = function() { return false; }
           function() {
@@ -41,7 +41,7 @@ $j(document).ready(
       },
       function() {
         var anagramText = this.value();
-        var output = $j('formSequenceCreated#sequenceCreated form #sequence_lexigram').text();
+        var output = $j('.formSequenceCreated#sequenceCreated form #sequence_lexigram').text();
         // output.textContent = 'Type your entry, it will be sequenced right then!';
         anagramText.form.onsubmit = function() { return false; }
           function() {
@@ -53,7 +53,7 @@ $j(document).ready(
       },
       function() {
         var anagramText = this.value();
-        var output = $j('formSequenceCreated#sequenceCreated form #sequence_singular').text();
+        var output = $j('.formSequenceCreated#sequenceCreated form #sequence_singular').text();
         // output.textContent = 'Type your entry, it will be sequenced right then!';
         anagramText.form.onsubmit = function() { return false; }
           function() {

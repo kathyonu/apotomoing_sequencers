@@ -18,7 +18,6 @@
   margin-top: 4px;
   margin-right: 10px;
   margin-bottom: 4px;
-  margin-left: 10px;
   padding-top: 7px;
   padding-left: 10px;
   padding-right: 10px;
@@ -373,9 +372,9 @@
 
 #anagramListClose {
   position: relative;
-  margin-left: -49px;
-  bottom: 283px;
-  width: 130%;
+  margin-left: -25px;
+  bottom: 265px;
+  width: 97%;
 }
 
 #anagramListOpen {
@@ -388,10 +387,10 @@
 #anagramListDisplay {
   display: none;
   position: relative;
-  top: 6px;
-  left: 8px;
+  top: 8px;
+  left: -10px;
   padding-top: 4px;
-  width: 95%;
+  width: 150%;
 }
 
 #currentTime {

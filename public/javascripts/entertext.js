@@ -3,6 +3,8 @@ $j(document).ready(
     $j('#anagram form #anagram_text').bind({
       focusin: function(event) {
         $j('#anagram form #anagram_text').css('backgroundColor', 'white')
+        $j('#anagramListDisplay').hide('slow');
+        $j('.sequenceCreatedWidgetDisplay').show('fast');
       }
     });
   }
