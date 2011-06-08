@@ -2,7 +2,7 @@ class AnagramWidget < Apotomo::Widget
   helper ApplicationHelper
 
   responds_to_event :submit, :from => :anagram, :with => :submit, :on => :anagram, :passing => :root
-  responds_to_event :newAnagram, :with => :update
+  responds_to_event :newSequenceCreated, :with => :update, :on => :anagram, :passing => :root
 
   def anagram
     @anagram = Anagram.new
@@ -25,16 +25,15 @@ class AnagramWidget < Apotomo::Widget
   end
   
   def submit(evt)
-    anagram = Anagram.new(:anagram_text => evt[:anagram_text], :description => evt[:description], :reference => evt[:reference]).save
-    #@anagram.update_attributes(evt[:anagram])
-
-	@anagrams = Anagram.find(:all)
-    #anagram = Anagram.new(:id => evt[:id], :text => evt[:text], :sequence_created_id => evt[:sequence_created_id], :description => evt[:description], :reference => evt[:reference]).save
-    trigger :newAnagram
-
-    update :state => :display
+    @anagram = Anagram.new(:anagram_text => evt[:anagram_text], :description => evt[:description], :referencer => evt[:reference]).save
+   #@anagram = Anagram.new
+     if @anagram.save
+   # if @anagram.update_attributes(evt[:anagram])
+      replace :state => :display
+    else
+      replace :view => :display
+    end
   end
-
 
   def update(evt)
 

@@ -2,8 +2,8 @@
 
   = widget_div do
     = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
-      = text_field_tag 'sequenceText'
-      = label_tag 'sequenceText', 'sequenceText'
+      = text_field_tag 'sequence_text'
+      = label_tag 'sequence_text', 'sequence_text'
       = text_field_tag 'sequence_creation'
       = label_tag 'sequence_creation', 'sequence_creation'
       = text_field_tag 'sequence_complete'
@@ -15,12 +15,10 @@
 
       = submit_tag "This sequence_created Submit tag will be hidden, and  fired automatically upon the Anagram Submit"
 
--#  // Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
-
 :javascript
-  var form1 = $j("##{widget_id} form[1]");
+    var form = $j("##{widget_id} form");
    
-  form1.submit(function() {
-    $j.ajax({url: form1.attr("data-event-url"), data: form1.serialize()})
-    return false;
-  });
+    form.submit(function() {
+        $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+        return false;
+    });

@@ -1,14 +1,16 @@
 $j(document).ready(
   function() {
     $j('input#anagramListOpen').click(
-      function($e) {
+      function($je) {
         $j('#anagramListDisplay').show('fast');
+        $j('.sequenceCreatedWidgetDisplay').hide('slow');
       }
     );
     
     $j('input#anagramListClose').click(
-      function($e) {
-        $j('#anagramListDisplay').hide('10000');
+      function($je) {
+        $j('#anagramListDisplay').hide('slow');
+        $j('.sequenceCreatedWidgetDisplay').show('fast');
       }
     );
   }

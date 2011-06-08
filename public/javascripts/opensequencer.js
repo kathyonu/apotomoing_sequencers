@@ -1,15 +1,22 @@
 $j(document).ready(
   function() {
     $j('input#sequencerOpen').click(
-      function($e) {
-        $j('#sequencerWidgetDisplay').show('fast');
-      }
-    );
+      function($je) {
+      var anagramdisplay = $j('#anagramListDisplay');
+        if (anagramdisplay.is(':visible')) {
+          anagramdisplay.hide(),
+          $j('#sequencerWidgetDisplay').slideDown();
+        }
+        else
+        {
+          $j('#sequencerWidgetDisplay').slideDown();
+        }
+      });
     
     $j('input#sequencerClose').click(
-      function($e) {
-        $j('#sequencerWidgetDisplay').hide('5000');
+      function($je) {
+        $j('#sequencerWidgetDisplay').slideUp();
+        $j('.sequenceCreatedWidgetDisplay').show();
       }
     );
-  }
-);
+  }); 

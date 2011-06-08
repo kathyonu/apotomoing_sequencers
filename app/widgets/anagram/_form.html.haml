@@ -1,7 +1,8 @@
 .formAnagram
 
   = widget_div do
-    = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
+    = form_tag "",
+      "data-event-url" => url_for_event(:submit), :remote => true do
       = text_field_tag 'anagram_text' 
       = label_tag 'anagram_text', 'Enter Anagram Text'
       = text_field_tag 'description'
@@ -11,12 +12,22 @@
 
       = submit_tag "Submit Anagram"
 
--# // Using jQuery via $j(. . .) Reference is app/views/layouts/application.html.erb
-
 :javascript
-  var form0 = $j("##{widget_id} form[0]");
+  var anagramdisplay = $j('#anagramListDisplay');
 
-  form0.submit(function() {
-    $j.ajax({url: form0.attr("data-event-url"), data: form0.serialize()})
+    function() {
+      if (anagramdisplay.is(':visible')) {
+        anagramdisplay.hide()
+      }
+      else
+      {
+        anagramdisplay.hide();
+      }
+    };
+
+  var form = $j("##{widget_id} form");
+
+  form.submit(function() {
+    $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
     return false;
   });
