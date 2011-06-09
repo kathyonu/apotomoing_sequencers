@@ -35,6 +35,7 @@ $j(document).ready(
     $j('#anagram form #anagram_text').bind({
       focusin: function(event) {
         $j('#anagramListDisplay').hide(),
+        $j('#sequencerWidgetDisplay').hide(),
         $j('.sequenceCreatedWidgetDisplay').show();
       }
     });
@@ -46,6 +47,7 @@ $j(document).ready(
     $j('#anagram form #description').bind({
       focusin: function(event) {
         $j('#anagramListDisplay').hide(),
+        $j('#sequencerWidgetDisplay').hide(),
         $j('.sequenceCreatedWidgetDisplay').show();
       }
     });
@@ -57,6 +59,7 @@ $j(document).ready(
     $j('#anagram form #reference').bind({
       focusin: function(event) {
         $j('#anagramListDisplay').hide(),
+        $j('#sequencerWidgetDisplay').hide(),
         $j('.sequenceCreatedWidgetDisplay').show();
       }
     });
@@ -68,6 +71,7 @@ $j(document).ready(
     $j('#anagram > form > input#anagramSubmit').bind({
       click: function() {
         $j('#anagramListDisplay').hide(),
+        $j('#sequencerWidgetDisplay').hide(),
         $j('.sequenceCreatedWidgetDisplay').show();
     }});
   }
