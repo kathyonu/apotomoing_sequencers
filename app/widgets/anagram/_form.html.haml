@@ -10,24 +10,13 @@
       = text_field_tag 'reference'
       = label_tag 'reference', 'reference'
 
-      = submit_tag "Submit Anagram"
+      = submit_tag "Submit_Anagram", {:id => :anagramSubmit}
 
 :javascript
-  var anagramdisplay = $j('#anagramListDisplay');
+  
+  var anagramForm = $j("##{widget_id} form");
 
-    function() {
-      if (anagramdisplay.is(':visible')) {
-        anagramdisplay.hide()
-      }
-      else
-      {
-        anagramdisplay.hide();
-      }
-    };
-
-  var form = $j("##{widget_id} form");
-
-  form.submit(function() {
-    $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+  anagramForm.submit(function() {
+    $j.ajax({url: anagramForm.attr("data-event-url"), data: anagramForm.serialize()})
     return false;
   });

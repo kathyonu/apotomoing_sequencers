@@ -25,10 +25,8 @@ class AnagramWidget < Apotomo::Widget
   end
   
   def submit(evt)
-    @anagram = Anagram.new(:anagram_text => evt[:anagram_text], :description => evt[:description], :reference => evt[:reference]).save
-   #@anagram = Anagram.new
-     if anagram
-   # if @anagram.update_attributes(evt[:anagram])
+    @anagram = Anagram.new(:anagram_text => evt[:anagram_text], :description => evt[:description], :reference => evt[:reference])
+    if @anagram.update_attributes(evt[:anagram])
       replace :state => :display
     else
       replace :view => :display

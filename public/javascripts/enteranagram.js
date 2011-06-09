@@ -1,7 +1,7 @@
 // from in the -form.html.haml
   :javascript
     $j().ready(function() {
-        $j('formAnagram#anagram form').bind(function($je) {
+        $j('.formAnagram#anagram form').bind(function($je) {
             var form = $j("##widget_id form:");
   
             form.submit(function() {
@@ -20,7 +20,7 @@
 // enteranagram.js
 $j(document).ready(
   function() {
-    $j('formAnagram#anagram form[0]').bind(
+    $j('.formAnagram#anagram form[0]').bind(
       function($je) {
         var form = $j("##anagram form:");
 

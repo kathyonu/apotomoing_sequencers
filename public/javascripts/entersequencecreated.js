@@ -3,7 +3,7 @@
 :javascript
   $j(document).ready(
     function() {
-      $j('formSequenceCreated form[1]').bind(
+      $j('.formSequenceCreated form[1]').bind(
         function($je) {
           var form = $j("##sequence_created form");
   
@@ -23,7 +23,7 @@
 // the entersequencecreated.js
 $j(document).ready(
   function() {
-    $j('formSequenceCreated form[1]').bind(
+    $j('.formSequenceCreated form[1]').bind(
       function($je) {
         var form = $j("##sequence_created form");
 

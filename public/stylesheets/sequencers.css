@@ -527,3 +527,8 @@
   margin-top: 10px;
   font-size: 75%;
 }
+
+#anagramSubmit {
+  border: 4px solid blue;
+  margin-left: 20px;
+}
