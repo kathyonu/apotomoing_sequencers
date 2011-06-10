@@ -7,7 +7,7 @@ class SequenceCreatedsController < ApplicationController
     root << widget(:sequence_created, 'sequence_complete')
     root << widget(:sequence_created, 'sequence_lexigram')
     root << widget(:sequence_created, 'sequence_singular')
-	root << widget(:anagram)
+    root << widget(:anagram)
   end
 
   # GET /sequence_createds

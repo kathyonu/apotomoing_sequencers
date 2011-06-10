@@ -13,12 +13,12 @@
       = text_field_tag 'sequence_singular'
       = label_tag 'sequence_singular', 'sequence_singular'
 
-      = submit_tag "This sequence_created Submit tag will be hidden, and  fired automatically upon the Anagram Submit"
+      = submit_tag "Submit Sequences"
 
 :javascript
-    var form = $j("##{widget_id} form");
-   
-    form.submit(function() {
-        $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
-        return false;
-    });
+  var sequencesform = $j("##{widget_id} form");
+
+  sequencesform.submit(function() {
+    $j.ajax({url: sequencesform.attr("data-event-url"), data: sequencesform.serialize()})
+    return false;
+  });

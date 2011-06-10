@@ -1,7 +1,7 @@
 class SequenceCreatedWidget < Apotomo::Widget
   helper ApplicationHelper
   
-  responds_to_event :newSequenceCreated, :with => :update, :passing => :root
+  #responds_to_event :newSequenceCreated, :with => :update, :passing => :root
   responds_to_event :submit, :from => :sequence_created, :with => :submit, :on => :anagram
   responds_to_event :submit
 
@@ -51,12 +51,12 @@ class SequenceCreatedWidget < Apotomo::Widget
 	lexigram_sequence = text_sequence.split(//).sort.join.strip.reverse
     singular_sequence = complete_sequence.squeeze
     @sequence_created = sequence_created.update_attributes(
-	  :sequence_text => text_sequence,
-	  :sequence_creation => complete_sequence, 
-	  :sequence_commplete => complete_sequence, 
-	  :sequence_lexigram => lexigram_sequence, 
-	  :sequence_singular => singular_sequence
-	  )
+    :sequence_text => text_sequence,
+    :sequence_creation => complete_sequence, 
+    :sequence_commplete => complete_sequence, 
+    :sequence_lexigram => lexigram_sequence, 
+    :sequence_singular => singular_sequence
+    )
     trigger :sequence_text
 	trigger :sequence_creation
     trigger :sequence_complete

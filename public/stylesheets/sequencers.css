@@ -15,12 +15,17 @@
 .anagramList {
   background-color: #6699FF;
   border: 2px solid red;
-  margin-top: 4px;
+  margin-top: 5px;
   margin-right: 10px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
+  margin-bottom: 10px;
   padding-top: 7px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.anagramList ul li {
+  line-height: 22px;
 }
 
 .anagramWidgetDisplay {
@@ -30,9 +35,9 @@
   border-bottom: 5px solid purple;
   border-left: 11px solid purple;
   margin-top: 20px;
-  margin-right: 14px;
+  margin-right: 10px;
   margin-bottom: 5px;
-  margin-left: 14px;
+  margin-left: 10px;
   padding-left: 1px;
   padding-right: 1px;
 }
@@ -40,6 +45,7 @@
 .apotomo {
   border: 2px solid grey;
 }
+
 .autocomputeSingular {
   border: 2px solid silver;
   padding: 2px;
@@ -180,8 +186,6 @@
   border: 13px solid aqua;
   border-top: 1px solid aqua;
   border-bottom: 1px solid aqua;
-  margin-right: 14px;
-  margin-left: 14px;
   padding-left: 5px;
 }
 
@@ -221,17 +225,6 @@
   padding-right: 5px;
   font-size: 80%;
   text-align: right;
-}
-
-.kathyonu {
-  border: 2px solid violet;
-  border-bottom: 10px solid violet;
-  padding-top: 24px;
-  padding-bottom: 9px;
-  margin-right: 15px;
-  margin-bottom: 115px;
-  margin-left: 15px;
-  text-align: center;
 }
 
 .links {
@@ -317,9 +310,9 @@
   border-right: 11px solid purple;
   border-bottom: 5px solid purple;
   border-left: 11px solid purple;
-  margin-right: 24px;
+  margin-right: 10px;
   margin-bottom: 15px;
-  margin-left: 24px;
+  margin-left: 10px;
   padding-left: 1px;
   padding-right: 1px;
 }
@@ -373,8 +366,8 @@
 #anagramListClose {
   position: relative;
   margin-left: -25px;
-  bottom: 265px;
-  width: 97%;
+  bottom: 304px;
+  width: 81%;
 }
 
 #anagramListOpen {
@@ -387,10 +380,10 @@
 #anagramListDisplay {
   display: none;
   position: relative;
-  top: 8px;
+  top: 6px;
   left: -10px;
   padding-top: 4px;
-  width: 150%;
+  width: 180%;
 }
 
 #currentTime {
@@ -488,20 +481,22 @@
 }
 
 #sequencerClose {
-  position: absolute;
-  left: -6px;
-  bottom: -32px;
-  width: 77%;
+  position: relative;
+  left: -27px;
+  bottom: -12px;
+  width: 112%;
+  z-index: 16;
 }
 
 #sequencerOpen {
-  position: relative;
-  top: 21px;
-  left: -6px;
+  position: absolute;
+  bottom: 88px;
+  left: -5px;
   margin-bottom: 3px;
-  margin-left: 16px;
+  margin-left: 45px;
   text-align: center;
-  width: 96%;
+  width: 460px;
+  z-index: 14;
 }
 
 #sequencerWidgetDisplay {
@@ -515,9 +510,11 @@
   border-bottom: 5px solid purple;
   border-left: 11px solid purple;
   margin-right: 44px;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   margin-left: 14px;
   padding: 11px;
+  padding-top: 1px;
+  padding-bottom: 1px;
   text-align: left;
   width: 550px;
 }
@@ -526,6 +523,21 @@
   border: 10px solid red;
   margin-top: 10px;
   font-size: 75%;
+}
+
+#kathyonu {
+  position: absolute;
+  bottom: 7px;
+  left: 25px;
+  border: 2px solid violet;
+  border-bottom: 10px solid violet;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  margin-left: 45px;
+  text-align: center;
+  width: 400px;
 }
 
 #anagramSubmit {

@@ -2,15 +2,15 @@ $j(document).ready(
   function() {
     $j('input#anagramListOpen').click(
       function($je) {
-        $j('#anagramListDisplay').show('fast');
-        $j('.sequenceCreatedWidgetDisplay').hide('slow');
+        $j('#anagramListDisplay').show();
+        $j('.sequenceCreatedWidgetDisplay').hide();
       }
     );
     
     $j('input#anagramListClose').click(
       function($je) {
-        $j('#anagramListDisplay').hide('slow');
-        $j('.sequenceCreatedWidgetDisplay').show('fast');
+        $j('#anagramListDisplay').hide();
+        $j('.sequenceCreatedWidgetDisplay').show();
       }
     );
   }
