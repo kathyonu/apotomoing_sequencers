@@ -3,9 +3,8 @@ $j(document).ready(
     $j('input#sequencerOpen').click(
       function($je) {
         $j('#anagramListDisplay').hide(),
-        $j('#sequencerWidgetDisplay').show(),
-        $j('#sequencerWidgetDisplay').show(),
-        $j('.sequenceCreatedWidgetDisplay').hide();
+        $j('#sequenceCreatedWidgetDisplay').show(),
+        $j('#sequencerWidgetDisplay').show();  /* to keep distance below bottom of display for the open sequencer widget button */
       }
     );
   });

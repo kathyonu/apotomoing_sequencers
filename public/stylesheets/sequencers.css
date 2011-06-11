@@ -18,14 +18,14 @@
   margin-top: 5px;
   margin-right: 10px;
   margin-bottom: 5px;
-  margin-bottom: 10px;
-  padding-top: 7px;
+  margin-bottom: 5px;
+  padding-top: 4px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .anagramList ul li {
-  line-height: 22px;
+  line-height: 21px;
 }
 
 .anagramWidgetDisplay {
@@ -152,7 +152,6 @@
   margin-top: 8px;
   padding: 7px;
   padding-top: 5px;
-  padding-bottom: 7px;
 }
 
 .formAnagram #anagram form input#anagram_text {
@@ -187,10 +186,12 @@
   border-top: 1px solid aqua;
   border-bottom: 2px solid aqua;
   padding: 5px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 .formSequenceCreated input {
-  border: 2px solid black;
+  border: 1px solid black;
   background-color: pink;
   margin: 8px;
   padding: 5px;
@@ -360,7 +361,7 @@
 #anagramListClose {
   position: relative;
   margin-left: -25px;
-  bottom: 304px;
+  bottom: 291px;
   width: 66%;
 }
 
@@ -374,9 +375,9 @@
 #anagramListDisplay {
   display: none;
   position: relative;
-  top: 6px;
+  top: 5px;
   left: -10px;
-  padding-top: 4px;
+  padding-top: 3px;
   width: 180%;
 }
 
@@ -477,14 +478,14 @@
 #sequencerClose {
   position: relative;
   left: -29px;
-  bottom: -21px;
+  bottom: -24px;
   width: 112%;
   z-index: 16;
 }
 
 #sequencerOpen {
   position: absolute;
-  top: 527px;
+  top: 510px;
   left: -5px;
   margin-bottom: 3px;
   margin-left: 45px;
@@ -496,7 +497,7 @@
 #sequencerWidgetDisplay {
   display: none;
   position: absolute;
-  top: 200px;
+  top: 179px;
   left: 30px;
   background: ivory;
   border-top: 5px solid purple;
@@ -521,21 +522,27 @@
 }
 
 #kathyonu {
-  position: absolute;
-  top: 540px;
-  left: 25px;
+  position: relative;
+  bottom: -20px;
+  left: 10px;
   border: 2px solid violet;
   border-bottom: 10px solid violet;
   padding-top: 11px;
   padding-bottom: 9px;
   margin-right: 15px;
   margin-bottom: 15px;
-  margin-left: 45px;
+  margin-left: 11px;
   text-align: center;
   width: 400px;
+  z-index: 80
 }
 
 #anagram > form > input#submit {
   border: 4px solid blue;
-  margin-left: 20px;
+  margin-left: 222px;
+}
+
+#sequenceCreated > form > input#submit {
+  border: 4px solid blue;
+  margin-left: 100px;
 }

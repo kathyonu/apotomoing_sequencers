@@ -1,7 +1,7 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time still, 20110610
+### Note: At this time still, 20110611
 #### apotomoing_sequencers is almost fully functioning.
 #### To see the last educational development commit, see :
 [educational](https://github.com/kathyonu/apotomoing_sequencers/commit/d4b1cbde46fd32c89a02414fee4c59a78b1c1b92 "apotomoing_sequencers, educational")

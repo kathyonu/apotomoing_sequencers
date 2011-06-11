@@ -13,7 +13,7 @@
       = text_field_tag 'sequence_singular'
       = label_tag 'sequence_singular', 'sequence_singular'
 
-      = submit_tag "Submit Sequences"
+      = submit_tag "Submit Sequences", { :id => "submit" }
 
 :javascript
   var sequencesform = $j("##{widget_id} form");
