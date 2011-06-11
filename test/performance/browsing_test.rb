@@ -5,5 +5,6 @@ require 'rails/performance_test_help'
 class BrowsingTest < ActionDispatch::PerformanceTest
   def test_homepage
     get '/'
+    assert_select "#kathyonu"
   end
 end

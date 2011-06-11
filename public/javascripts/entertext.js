@@ -57,11 +57,11 @@ $j(document).ready(
 
 $j(document).ready(
   function() {
-    $j('#anagram > form > input#anagramSubmit').bind({
-      click: function(event) {
+    $j('#anagram > form > input#submit').click(
+      function($je) {
         $j('#anagramListDisplay').hide(),
-        $j('.sequenceCreatedWidgetDisplay').show(),
-        $j('#sequencerWidgetDisplay').hide();
-    }});
+        $j('#sequencerWidgetDisplay').hide(),
+        $j('.sequenceCreatedWidgetDisplay').show();
+    });
   }
 );

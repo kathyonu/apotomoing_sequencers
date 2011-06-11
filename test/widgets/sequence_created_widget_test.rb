@@ -13,7 +13,7 @@ class SequenceCreatedWidgetTest < Apotomo::TestCase
 
   test "form" do
     render_widget 'me'
-    assert_select "formSequenceCreated#sequence_created form"
+    assert_select ".formSequenceCreated"
     assert_select "form"
     assert_select "input#sequence_text"
     assert_select "input#sequence_creation"

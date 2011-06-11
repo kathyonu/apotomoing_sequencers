@@ -16,6 +16,5 @@ class SequencerWidgetTest < Apotomo::TestCase
     assert_select ".countSequences"
     assert_select ".tmpButtons"
     assert_select "#sequencerClose"
-    assert_select ".kathyonu"
   end
 end
