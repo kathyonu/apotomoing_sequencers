@@ -1,9 +1,12 @@
+
+  <%= javascript_include_tag "singularize.js" %>
+
 $j(document).ready(
   function() {
     $j('.formanagram#anagram form input#anagram_text').bind(
       'onblur', 
       function() {
-        var anagramText = this.value();
+        var anagramText = $j.this.value();
         var output = $j('.formSequenceCreated#sequenceCreated form input#sequence_text').text();
         // output.textContent = 'Type your entry, it will be sequenced right then!';
         // sequenceCreated.form.appendChild(output);

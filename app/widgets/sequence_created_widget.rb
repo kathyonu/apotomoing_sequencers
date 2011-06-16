@@ -64,12 +64,12 @@ class SequenceCreatedWidget < Apotomo::Widget
 	trigger :sequence_singular
     trigger :newSequenceCreated
 
-    replace :state => :display
+    refresh_render :state => :display
   end
 
   def update(evt)
 
-    replace :state => :display
+    refresh_render :state => :display
   end
   
   def display

@@ -60,7 +60,7 @@ $j(document).ready(
     $j('#anagram > form > input#submit').click(
       function($je) {
         $j('#anagramListDisplay').hide(),
-        $j('#sequencerWidgetDisplay').show(),
+        $j('#sequencerWidgetDisplay').hide(),
         $j('.sequenceCreatedWidgetDisplay').show(),
         $j('#kathyonu').show();
     });

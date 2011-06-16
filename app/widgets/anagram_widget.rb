@@ -29,13 +29,13 @@ class AnagramWidget < Apotomo::Widget
     if @anagram.update_attributes(evt[:anagram])
       replace :state => :display
     else
-      replace :view => :display
+      refresh_render :view => :display
     end
   end
 
   def update(evt)
 
-    replace :state => :display
+    refresh_render :state => :display
   end
   
 end

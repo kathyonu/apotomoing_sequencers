@@ -1,39 +1,29 @@
 .anagramEntry {
-  border: 13px solid navy;
-  border-left: 14px solid aqua;
-  border-right: 14px solid aqua;
   padding-top: 8px;
   padding-left: 8px;
 }
 
 .anagramsIndex {
-  border: 1px solid blue;
   padding-left: 8px;
   margin-right: 4px;
 }
 
 .anagramList {
-  background-color: #6699FF;
-  border: 2px solid red;
-  margin-top: 5px;
+  margin-top: 2px;
   margin-right: 10px;
   margin-bottom: 5px;
-  margin-bottom: 5px;
-  padding-top: 4px;
-  padding-left: 10px;
+  margin-left: 5px;
+  padding-top: 5px;
   padding-right: 10px;
+  padding-left: 10px;
 }
 
 .anagramList ul li {
   line-height: 21px;
+  margin: 1px;
 }
 
 .anagramWidgetDisplay {
-  background-color: #99CCFF;
-  border-top: 5px solid purple;
-  border-right: 11px solid purple;
-  border-bottom: 5px solid purple;
-  border-left: 11px solid purple;
   margin-top: 20px;
   margin-right: 10px;
   margin-bottom: 5px;
@@ -42,46 +32,32 @@
   padding-right: 1px;
 }
 
-.apotomo {
-  border: 2px solid grey;
-}
-
 .autocomputeSingular {
-  border: 2px solid silver;
   padding: 2px;
   margin: 2px;
 }
 
 .autocomputeLexigram {
-  border: 2px solid silver;
   padding: 2px;
   margin: 2px;
 }
 
 .autocomputeComplete {
-  border: 2px solid silver;
   padding: 2px;
   margin: 2px;
 }
 
 .autocomputeCreation {
-  border: 2px solid silver;
   padding: 2px;
   margin: 2px;
 }
 
 .autocomputeCreated {
-  border: 2px solid silver;
   padding: 2px;
   margin: 2px;
 }
 
 .cellularQuote {
-  background-color: #FFFF99;
-  border-top: 5px solid maroon;
-  border-right: 10px solid maroon;
-  border-bottom: 15px solid maroon;
-  border-left: 25px solid maroon;
   margin-bottom: 10px;
   margin-left: 55px;
   margin-right: 10px;
@@ -97,11 +73,6 @@
 }
   
 .cellularQuoteSequencerDisplay {
-  background-color: #FFFFCC;
-  border-top: 17px solid maroon;
-  border-right: 12px solid maroon;
-  border-bottom: 5px solid maroon;
-  border-left: 2px solid maroon;
   margin-top: 10px;
   margin-right: 10px;
   margin-bottom: 1px;
@@ -139,7 +110,6 @@
 }
 
 .CurrentTime {
-  border: 1px solid blue;
   margin-top: 0;
   margin-right: 10%;
   font-size: 2em;
@@ -147,7 +117,6 @@
 }
 
 .formAnagram {
-  border: 1px solid black;
   margin: 4px;
   margin-top: 8px;
   padding: 7px;
@@ -155,8 +124,6 @@
 }
 
 .formAnagram #anagram form input#anagram_text {
-  border: 2px solid red;
-  background-color: pink;
   margin: 8px;
   margin-bottom: 1px;
   padding: 5px;
@@ -164,7 +131,6 @@
 }
 
 .formAnagram #anagram form input#description {
-  border: 2px solid red;
   margin: 8px;
   margin-bottom: 1px;
   padding: 5px;
@@ -173,7 +139,6 @@
 }
 
 .formAnagram #anagram form input#reference {
-  border: 2px solid red;
   margin: 8px;
   margin-bottom: 7px;
   padding: 5px;
@@ -182,26 +147,17 @@
 }
 
 .formSequenceCreated {
-  border: 13px solid aqua;
-  border-top: 1px solid aqua;
-  border-bottom: 2px solid aqua;
   padding: 5px;
   padding-top: 15px;
   padding-bottom: 10px;
 }
 
 .formSequenceCreated input {
-  border: 1px solid black;
-  background-color: pink;
   margin: 8px;
   padding: 5px;
 }
 
 .hereBegins {
-  border-top: 15px solid purple;
-  border-left: 14px solid aqua;
-  border-bottom: 1px solid aqua;
-  border-right: 14px solid aqua;
   padding-right: 5px;
   padding-bottom: 5px;
   font-size: 80%;
@@ -210,7 +166,6 @@
 }
 
 .hereBeginsText {
-  border-right: 3px solid aqua;
   padding-right: 11px;
   font-size: 80%;
   text-align: right;
@@ -218,10 +173,6 @@
 }
 
 .hereEnds {
-  border-top: 1px solid aqua;
-  border-left: 14px solid aqua;
-  border-bottom: 5px solid purple;
-  border-right: 14px solid aqua;
   padding-top: 5px;
   padding-right: 5px;
   font-size: 80%;
@@ -229,7 +180,6 @@
 }
 
 .links {
-  border-left: 14px solid aqua;
   line-height: 125%;
   margin-top: 15px;
   margin-bottom: 10px;
@@ -239,14 +189,12 @@
 }
 
 .linksGroup {
-  border-left: 14px solid aqua;
   line-height: 110%;
   margin-left: 16px;
   padding-left: 5px;
 }
 
 .linksInfo {
-  border-left: 16px solid aqua;
   font-size: 110%;
   margin-top: 4px;
   padding-top: 5px;
@@ -261,7 +209,6 @@
 }
 
 .linksInfoRoot {
-  border-left: 14px solid aqua;
   font-size: 90%;
   font-weight: bold;
   margin-left: 7px;
@@ -275,27 +222,20 @@
 }
 
 .newAnagram {
-  border: 10px solid yellow;
   font-style: italic;
   margin: 10px;
   padding: 10px;
 }
 
 .newAnagram > div.field {
-  border: 2px solid blue;
   font-style: italic;
 }
 
 .newAnagram > div.field#text {
-  border: 2px solid lime;
   font-style: italic;
 }
 
 .quoteText {
-  border-top: 17px solid teal;
-  border-right: 12px solid teal;
-  border-bottom: 3px solid teal;
-  border-left: 40px solid teal;
   margin-left: 30px;
   margin-right: 10px;
   padding-top: 2px;
@@ -306,28 +246,20 @@
 }
 
 .sequenceCreatedWidgetDisplay {
-  background-color: azure;
-  border-top: 5px solid purple;
-  border-right: 11px solid purple;
-  border-bottom: 5px solid purple;
-  border-left: 11px solid purple;
   margin-right: 10px;
   margin-bottom: 15px;
   margin-left: 10px;
+  z-index: 12;
 }
 
-.sequencerDisplay {
-  background-color: #f0f0f0;
-  border-top: 5px solid purple;
-  border-right: 11px solid purple;
-  border-bottom: 5px solid purple;
-  border-left: 11px solid purple;
+.sequencerWidgetDisplay {
   font-size: 90%;
   margin-left: 14px;
   margin-right: 14px;
   margin-bottom: 5px;
   padding: 10px;
   width: 80%;
+  z-index: 21;
 }
 
 .noteSequenceCreated {
@@ -337,7 +269,6 @@
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
   display: table;
 }
 
@@ -349,10 +280,6 @@
   font-weight: bold;
 }
 
-.textFound {
-  border: 4px dotted yellow;
-}
-
 .tmpButtons {
   bottom: 5px;
   right: 5px;
@@ -361,7 +288,7 @@
 #anagramListClose {
   position: relative;
   margin-left: -25px;
-  bottom: 291px;
+  bottom: 292px;
   width: 66%;
 }
 
@@ -375,14 +302,13 @@
 #anagramListDisplay {
   display: none;
   position: relative;
-  top: 5px;
+  top: 2px;
   left: -10px;
-  padding-top: 3px;
+  padding-top: 1px;
   width: 180%;
 }
 
 #currentTime {
-  border: 1px solid red;
   padding: 10px;
   margin: 10px;  
   font-size: 2em;
@@ -396,9 +322,6 @@
 }
 
 #datepick {
-  border: 14px solid navy;
-  border-left: 14px solid aqua;
-  border-right: 4px solid navy;
   font-size: 75%;
   padding: 4px;
   text-align: center;
@@ -406,11 +329,9 @@
 }
 
 #sequence_text {
-  border: 3px solid red;
 }
 
 #sequenceTextHtml {
-  border: 1px solid navy;
   width: 50%;
   margin-left: 4px;
   margin-right: 4px;
@@ -419,7 +340,6 @@
 }
 
 #sequenceCreationHtml {
-  border: 1px solid navy;
   width: 50%;
   margin-left: 4px;
   margin-right: 4px;
@@ -428,7 +348,6 @@
 }
 
 #sequenceCompleteHtml {
-  border: 1px solid navy;
   width: 50%;
   margin-left: 4px;
   margin-right: 4px;
@@ -437,7 +356,6 @@
 }
 
 #sequenceLexigramHtml {
-  border: 1px solid navy;
   width: 50%;
   margin-left: 4px;
   margin-right: 4px;
@@ -446,7 +364,6 @@
 }
 
 #sequenceSingularHtml {
-  border: 1px solid navy;
   width: 50%;
   margin-left: 4px;
   margin-right: 4px;
@@ -455,7 +372,6 @@
 }
 
 #sequencerFirst {
-  border: 2px solid olive;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
@@ -477,8 +393,8 @@
 
 #sequencerClose {
   position: relative;
-  left: -29px;
-  bottom: -24px;
+  left: -33px;
+  bottom: -23px;
   width: 112%;
   z-index: 16;
 }
@@ -486,7 +402,7 @@
 #sequencerOpen {
   position: absolute;
   top: 510px;
-  left: -5px;
+  left: -2px;
   margin-bottom: 3px;
   margin-left: 45px;
   text-align: center;
@@ -499,24 +415,18 @@
   position: absolute;
   top: 179px;
   left: 30px;
-  background: ivory;
-  border-top: 5px solid purple;
-  border-right: 49px solid purple;
-  border-bottom: 5px solid purple;
-  border-left: 11px solid purple;
   margin-right: 44px;
   margin-bottom: 5px;
-  margin-left: 14px;
+  margin-left: 25px;
   padding: 11px;
   padding-top: 1px;
   padding-bottom: 1px;
   text-align: left;
   width: 550px;
-  z-index: 14;
+  z-index: 70;
 }
 
 #sequencerFirst > input > anagramEntry#anagram_text {
-  border: 10px solid red;
   margin-top: 10px;
   font-size: 75%;
 }
@@ -525,8 +435,6 @@
   position: relative;
   bottom: -20px;
   left: 10px;
-  border: 2px solid violet;
-  border-bottom: 10px solid violet;
   padding-top: 11px;
   padding-bottom: 9px;
   margin-right: 15px;
@@ -534,15 +442,13 @@
   margin-left: 11px;
   text-align: center;
   width: 400px;
-  z-index: 80
+  z-index: 80;
 }
 
 #anagram > form > input#submit {
-  border: 4px solid blue;
   margin-left: 222px;
 }
 
 #sequenceCreated > form > input#submit {
-  border: 4px solid blue;
   margin-left: 100px;
 }
