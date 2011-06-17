@@ -1,14 +1,16 @@
 $j(document).ready(
   function() {
-    $j('#anagram form input#anagram_text').bind({
+    $j('forms[0]input#anagram_text').bind({
       focusout: function(event) {
         var firstText = $j('#anagram form input#anagram_text').text();
-        $j('.formSequenceCreated#sequence_created form input#sequence_text').text('here i am');
-        $j('.formSequenceCreated#sequence_created form input#sequence_creation').text('hereiam');
-        $j('.formSequenceCreated#sequence_created form input#sequence_complete').text('aeehimr');
-        $j('.formSequenceCreated#sequence_created form input#sequence_lexigram').text('aeehimr');
-        $j('.formSequenceCreated#sequence_created form input#sequence_singular').text(firstText);
+        $j('forms[1] input#sequence_text').text('here i am');
+        $j('forms[1] input#sequence_creation').text('hereiam');
+        $j('forms[1] input#sequence_complete').text('aeehimr');
+        $j('forms[1] input#sequence_lexigram').text('aeehimr');
+        $j('forms[1] input#sequence_singular').text(firstText);
       }
     });
   }
 );
+
+

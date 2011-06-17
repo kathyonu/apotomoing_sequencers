@@ -14,13 +14,13 @@ module Textual
   end
 
   def de_space
-    foo = self.strip
+    foo = self
     foo.gsub!(/\s+/, "")
     foo
   end
   
   def to_textual
-    foo = self.strip.downcase
+    foo = self.downcase
     foo.gsub!(/%/, " percent ")                         # % : replaces the percent sign with the text
     foo.gsub!(/(\Ba\.m\.$)/, " am")                     # a.m.  < replaces that with : am, at the end of the line
     foo.gsub!(/(\Ba\.m\.,\s+)/, " am, ")                # a.m., < replaces that with : am, 

@@ -5,7 +5,7 @@
 
 # in Terminal, after running > rails console, enter this require statement
 ##   $ require "./lib/textual-fibering-methods.rb"
-###  this Textual module is located in /apotomoing_sequencers/app/helpers/textual.rb
+###  the Textual module included below is located in /apotomoing_sequencers/app/helpers/textual.rb
 #### for the fibering methods to work, you must require the Fiber library, as shown below.
 #### this file is under development, not all methods work yet .. use with care.
 
@@ -17,25 +17,6 @@ require 'fiber'
     # file_name allows you to name the file that conatains your data to be processed, using any method below
   def file_name
     @file_name = ("../../Documents/20110421-research_textualed.txt")
-##  @file_name = ("../../Documents/20110421-research.txt")
-##  @file_name = ("./lib/anagrams/anagrams_table_data.txt")
-##  @file_name = ("./lib/externals/externals_table_data_input_hash.txt")
-##  @file_name = ("./lib/20100511-test-two.txt")
-##  @file_name = ("./lib/databasers/20100903-researches.txt")
-##  @file_name = ("./lib/databasers/database_ready.txt")
-##  @file_name = ("./lib/databasers/database_sort.txt")
-##  @file_name = ("./lib/databasers/database_ready-one.txt")
-##  @file_name = ("./lib/databasers/database_ready_one.txt")
-##  @file_name = ("./lib/databasers/database_ready_one_temp.txt")
-##  @file_name = ("./lib/databasers/database_ready-zero.txt")
-##  @file_name = ("./lib/databasers/database_ready-three.txt")
-##  @file_name = ("./lib/databasers/database_ready-four.txt")
-##  @file_name = ("./lib/databasers/database_ready-five.txt")
-##  @file_name = ("./lib/databasers/database_ready-six.txt")
-##  @file_name = ("./lib/databasers/database_ready-seven.txt")
-##  @file_name = ("./lib/databasers/fibered_files_output.txt")
-##  @file_name = ("./lib/databasers/fibering_files_output.txt")
-##  @file_name = ("../../Documents/20100814-sort.txt")
   end
 
     # solid_gold_code DO NOT CHANGE : 20101026
