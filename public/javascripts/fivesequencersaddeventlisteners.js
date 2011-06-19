@@ -12,6 +12,7 @@ $j(document).ready(
         var sequenceText = document.getElementById('sequence_text');
         var output = document.createElement('p');
         output.textContent = 'results show after you tab out';
+        
         sequenceText.form.appendChild(output);
         $j('input#sequencerOpen').hide();
         $j('p').show();
@@ -21,18 +22,18 @@ $j(document).ready(
         anagramText.form.onsubmit = function() { return false; }
         //  alert("AlertFour : " + output + "+" + output.textContent)
           if (anagramText != "") {
+            //alert("AlertFive, Your anagramText is " + anagramText)
             var v = anagramText.value.split('').sort().toString();
-            output.textContent = v
-            //  alert("AlertFive, Your sequence is " + v)
+            output.textContent = v + " < your complete sequence";
+            $j('input#description').focus()
+            //  alert("AlertSix, Your sequence is " + v)
             //$j('p').hide();
             //$j('input#sequencerOpen').show();
-            $j('input#description').focus();          
-         }
-         else {
-           alert("Please enter your anagram")
-         }
-         var submit = document.getElementById('submit');
-         submit.parentNode.removeChild(submit);
-       }
+          {
+          else
+          {
+              $j('input#anagram_text').focus('Enter_Your_Data')
+          }
+        }
     )
   });
