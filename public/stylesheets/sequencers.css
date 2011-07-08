@@ -404,9 +404,9 @@
 }
 
 #sequencerOpen {
-  position: absolute;
-  top: 510px;
-  left: -2px;
+  position: relative;
+  bottom: 27px;
+  left: -48px;
   margin-bottom: 3px;
   margin-left: 45px;
   text-align: center;
@@ -435,9 +435,9 @@
   font-size: 75%;
 }
 
-#kathyonu {
+.kathyonu {
   position: relative;
-  bottom: -20px;
+  bottom: 32px;
   left: 10px;
   padding-top: 11px;
   padding-bottom: 9px;
@@ -445,8 +445,22 @@
   margin-bottom: 15px;
   margin-left: 11px;
   text-align: center;
-  width: 400px;
+  width: 405px;
   z-index: 80;
+}
+
+.kathyuno {
+  position: relative;
+  bottom: 15px;
+  left: 10px;
+  padding-top: 11px;
+  padding-bottom: 9px;
+  margin-right: 11px;
+  margin-bottom: 15px;
+  margin-left: 11px;
+  text-align: center;
+  width: 405px;
+  z-index: 11;
 }
 
 #anagram > form > input#submit {

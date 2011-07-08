@@ -44,6 +44,7 @@ $j(document).ready(
           //  $j('#anagram form input#submit').show();
           $j('input#anagramListOpen').hide();
           $j('input#sequencerOpen').hide();
+          $j('#kathyonu').removeClass('kathyonu').addClass('kathyuno');
           var text = anagramtext.value.toString();
           //  alert("v = " + v)                                              //= v = a,d,f,s
           ////output.textContent = v + " < your complete sequence";
