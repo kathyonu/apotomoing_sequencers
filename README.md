@@ -1,15 +1,20 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time, 20110617
-#### apotomoing_sequencers is almost fully functioning.
+### Note: At this time, 20110708
+#### apotomoing_sequencers is closer than ever fully functioning.
 #### To see the last fully educational development commit, see :
 [educational](https://github.com/kathyonu/apotomoing_sequencers/commit/d4b1cbde46fd32c89a02414fee4c59a78b1c1b92 "apotomoing_sequencers, educational")
-##### This commit has all learning notes, location notes, generated url notes and such still showing.
+##### That commit has all learning notes, location notes, generated url notes and such still showing.
 
 #### All future commits will be removing educational materials and displays,
 ##### leaving only the code required to process the users one data entry into 
 ##### the five sequences, then entering that processed data into the database.
+
+#### On 20110708 we achieved the first success in taking data from anagram widget's form entry,
+##### and processing the raw entry with jQuery/javascript, then entering that result into the 
+##### sequence_created's widget's form input entry prior to either being submitted.
+##### So, this means we now have the first of five sequence processors processing.
 
 # Getting Started
 ## In your Terminal
@@ -21,8 +26,8 @@
 
 ### After your server fires up, go to your browser : 
 
-*	http://localhost:3000/             <= :root, empowered with cells and widgets
-*	http://localhost:3000/quotes/new      <= scaffolded CRUD, no widgets nor cells, first javascript sequencer for display of principle.
+*	http://localhost:3000/             <= :root, empowered with cells and widgets, now processing user_entry into sequence_text.
+*	http://localhost:3000/quotes/new   <= scaffolded CRUD, no widgets nor cells, first javascript sequencer for display of principle.
 *	http://localhost:3000/anagrams/new <= scaffolded CRUD, no widgets nor cells, second javascript sequencer for display of principle.
 *	http://localhost:3000/sequences/   <= scaffolded CRUD, no widgets nor cells, with jQuery Datepicker working as proof of working.
 
