@@ -1,11 +1,6 @@
 // 20110623 version
-// 20110620 version 
-// 20110619 version < you are here
-
-// currently not in use
-// this is the call in application.html.erb
-
-  <%= javascript_include_tag "fivesequencersaddeventlisteners.js" %>
+// 20110620 version < you are here 
+// 20110619 version
 
 $j(document).ready(
   function() {
@@ -17,14 +12,12 @@ $j(document).ready(
        }
     ).bind(
       'focusout',function(event) {
-        var anagramText = document.getElementById('anagram_text');
-          alert("anagramText = " + anagramText)                    //= [object HTMLInputElement]
-        var anagramTextText = anagramText.nodeValue;
-          alert("anagramTextText = " + anagramTextText)           // = [object HTMLInputElement]
-        var output = document.createElement('p');
-        output.textContent = "results show after you tab out";
+        var anagramtext = document.getElementById('anagram_text');
+        var input = anagramtext.value();
+        var output = document.createElement('sequence_textual');
+        var entry = document.createTextNode('test');
         var sequenceCreated = document.getElementById('#sequence_created > form > input#sequence_text');
-          if (sequenceCreated !== null) { 
+          if (sequenceCreated != null) { 
             sequenceCreated.form.appendChild(output);
           }
           else
@@ -33,12 +26,14 @@ $j(document).ready(
           }
         $j('input#sequencerOpen').hide();
         $j('p').show();
-        //  alert("AlertThree : " + output + " = " + output.textContent)
+          alert("AlertZero2 : unprocessed input = " + input)
+          alert("AlertZero3 : unprocessed output = " + output)
+          alert("AlertThree : " + output + " = " + output.textContent)
         anagramText.form.onsubmit = function() { return false; }
         //  alert("AlertOne : anagramText = " + anagramText)
         //  alert("AlertTwo : anagramText value = " + anagramText.value)
         //  alert("AlertFour : " + output + "+" + output.textContent)
-          if (anagramText !== "") {
+          if (anagramText != "") {
             //alert("AlertFive, Your anagramText is " + anagramText)
             var v = anagramText.value.split('').sort().toString();
             output.textContent = v + " < your complete sequence";

@@ -1,4 +1,7 @@
-// this is showing only the singular sequencer at this time, and it is placing it in a P element, for the time being
+// 20110623 version < you are here, it now works as of 20110630
+// 20110620 version 
+// 20110619 version
+
 $j(document).ready(
   function() {
     $j('form[0] > input#anagram_text').bind(
@@ -21,27 +24,26 @@ $j(document).ready(
           anagramText.form.appendChild(output)
           anagramText.form.onsubmit = function() {return false;}
           var anagramText = this.value;
-            //alert("anagramText = " + anagramText)                     //= asdf
-            //alert("output = " + output)                               //= [object HTMLParagraphElement]
-            //alert("output.textContent = " + output.textContent)       //= test to create text
-            //alert("output.nodeName = " + output.nodeName)             //= P
-            //alert("output.nodeType = " + output.nodeType)             //= 1
+            //alert("anagramText = " + anagramText)                   //= asdf
+            //alert("output = " + output)                             //= [object HTMLParagraphElement]
+            //alert("output.textContent = " + output.textContent)     //= test to create text
+            //alert("output.nodeName = " + output.nodeName)           //= P
+            //alert("output.nodeType = " + output.nodeType)           //= 1
             //alert("output.nodeValue = " + output.nodeValue + " < should be null at this point")
-            //alert("output.nodeValue = " + output.nodeValue)           //= null
-          var sequencetext = $j('input#sequence_text');
-            //alert("sequencetext = " + sequencetext)                     //= [object Object]
-            //alert("sequencetext.val() = " + sequencetext.val())           //= nothing
-            //alert("sequencetext.nodeValue = " + sequencetext.nodeValue)   //= undefined, as it should be
-            //alert("sequencetext.input = " + sequencetext.input)           //= undefined, as it should be
+            //alert("output.nodeValue = " + output.nodeValue)         //= null
+          var sequenceText = $j('input #sequence_text');
+            //alert("sequenceCreates = " + sequenceCreates)             //= [object Object]
+            //alert("sequenceCreates = " + sequenceCreates.val())       //= undefined, as it should be
+            //alert("sequenceCreates = " + sequenceCreates.nodeValue)   //= undefined, as it should be
+            //alert("sequenceCreates = " + sequenceCreates.input)       //= undefined, as it should be
         $j('input#sequencerOpen').hide();
         $j('input#anagramListOpen').hide();
-        $j('#anagram > form > input#submit').hide();
         $j('p').show();
-            //alert("what was anagramText = " + this.value)             //= asdf
-            //alert("what was anagramText value = " + this.value)       //= asdf
-            //alert("your anagramText is " + this.value)                //= asdf
+            //alert("what was anagramText = " + this.value)               //= asdf
+            //alert("what was anagramText value = " + this.value)         //= asdf
+            //alert("your anagramText is " + this.value)                  //= asdf
         var v = anagramText.split('').sort().toString();
-          output.textContent = v + " < your complete sequence";         //= a,d,f,s  < your complete sequence
+          output.textContent = v + " < your complete sequence";       //= a,d,f,s  < your complete sequence
             //alert("AlertThree : " + output + " = " + output.textContent)
           $j('input > #sequence_text').text(output.textContent = v)
           $j('input#description').focus();
@@ -52,7 +54,6 @@ $j(document).ready(
           $j('input#anagram_text').focus('Enter_Your_Data');
           $j('input#sequencerOpen').show();
         }
-      var submit = document.getElementById('submit');
-      submit.parentNode.removeChild(submit);
-    });
+      }
+    )
   });

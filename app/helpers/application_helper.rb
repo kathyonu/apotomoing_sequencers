@@ -1,6 +1,7 @@
 module ApplicationHelper
 
-require 'textual'
+include Textual
+
 require './lib/textual-fibering-methods.rb'
 
   # GET TIME  /apotomoing_sequencers/app/helpers/application_helper.rb

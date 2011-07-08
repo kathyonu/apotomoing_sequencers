@@ -49,6 +49,7 @@ module Textual
    #foo.gsub(/^(i\.e\.)\s/, "id est ")                    # i.e.  < replaces that at beginning of line with : id est
    #foo.gsub(/\s(i\.e\.),?$/, " id est")                  # i.e.  < replaces that and i.e., at end of line with : id est
    #foo.gsub(/\s(i\.e\.),?\s/, " id est ")                # i.e.  < replaces that with : id est : if there is a comma, it is removed
+    foo.gsub!(/(\s+no\.\s+)/, " number ")                 # no.   < replaces that with : number
     foo.gsub!(/(\s+p\.e\.\s+)/, " physical education ") # p.e.  < replaces that with : physical education
     foo.gsub!(/(^p\.s\.\s+)/, "ps ")                    # p.s.  < replaces that with : ps at beginning of line
     foo.gsub!(/(^ps\.\s+)/, "ps ")                      # ps.  < replaces that with : ps at beginning of line

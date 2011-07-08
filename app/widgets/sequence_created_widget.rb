@@ -2,8 +2,12 @@ class SequenceCreatedWidget < Apotomo::Widget
   helper ApplicationHelper
   
   #responds_to_event :newSequenceCreated, :with => :update, :passing => :root
-  responds_to_event :submit, :from => :sequence_created, :with => :submit, :on => :anagram
+  #responds_to_event :submit, :from => :sequence_created, :with => :submit, :on => :anagram
   responds_to_event :submit
+
+  def display
+    render
+  end
 
   def form
     render
@@ -64,16 +68,12 @@ class SequenceCreatedWidget < Apotomo::Widget
 	trigger :sequence_singular
     trigger :newSequenceCreated
 
-    refresh_render :state => :display
+    replace :state => :display
   end
 
   def update(evt)
 
-    refresh_render :state => :display
+    replace :state => :display
   end
   
-  def display
-
-    render
-  end
 end

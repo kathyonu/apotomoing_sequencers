@@ -9,14 +9,14 @@
 }
 
 .anagramList {
-  background-color: ivory;
+  background-color: #FFFDDA;
   border-top: 2px solid red;
   border-right: 2px solid red;
   border-bottom: 2px solid red;
 }
 
 .anagramList ul li {
-  background-color: ivory;
+  background-color: #FFFDDA;
 }
 
 .anagramWidgetDisplay {
@@ -28,7 +28,7 @@
 }
 
 .apotomo {
-  border: 2px solid grey;
+  border: 2px solid #959595;
 }
 
 .autocomputeSingular {
@@ -72,23 +72,23 @@
 }
 
 .count {
-  background-color: ivory;
+  background-color: #FFFDDA;
 }
 
 .countAnagrams {
-  background-color: ivory;
+  background-color: #FFFDDA;
 }
 
 .countQuotes {
-  background-color: ivory;
+  background-color: #FFFDDA;
 }
 
 .countSequenceCreateds {
-  background-color: ivory;
+  background-color: #FFFDDA;
 }
 
 .countSequences {
-  background-color: ivory;
+  background-color: #FFFDDA;
 }
 
 .CurrentTime {
@@ -101,7 +101,7 @@
 
 .formAnagram #anagram form input#anagram_text {
   border: 2px solid red;
-  background-color: pink;
+  background-color: #F9C8D8;
 }
 
 .formAnagram #anagram form input#description {
@@ -120,7 +120,7 @@
 
 .formSequenceCreated input {
   border: 1px solid black;
-  background-color: pink;
+  background-color: #F9C8D8;
 }
 
 .hereBegins {
@@ -162,7 +162,7 @@
 }
 
 .linkTo {
-  background-color: ivory;
+  background-color: #FFFDDA;
 }
 
 .newAnagram {
@@ -185,7 +185,7 @@
 }
 
 .sequenceCreatedWidgetDisplay {
-  background-color: ivory;
+  background-color: #FFFDDA;
   border-top: 5px solid purple;
   border-right: 11px solid purple;
   border-bottom: 5px solid purple;
@@ -201,7 +201,7 @@
 }
 
 .noteSequenceCreated {
-  background-color: pink;
+  background-color: #F9C8D8;
 }
 
 .field_with_errors {
@@ -223,7 +223,7 @@
 }
 
 #sequence_text {
-  border: 3px solid red;
+  border: 1px solid red;
 }
 
 #sequenceTextHtml {
@@ -250,13 +250,12 @@
   border: 2px solid olive;
 }
 
-
 #sequencerSecond {
   border: 2px solid olive;
 }
 
 #sequencerWidgetDisplay {
-  background: ivory;
+  background: #FFFDDA;
   border-top: 5px solid purple;
   border-right: 49px solid purple;
   border-bottom: 5px solid purple;
@@ -268,8 +267,8 @@
 }
 
 #kathyonu {
-  border: 2px solid violet;
-  border-bottom: 10px solid violet;
+  border: 2px solid #AA99C5;
+  border-bottom: 10px solid #AA99C5;
 }
 
 #anagram > form > input#submit {

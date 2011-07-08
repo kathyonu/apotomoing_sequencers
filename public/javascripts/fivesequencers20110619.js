@@ -2,11 +2,6 @@
 // 20110620 version 
 // 20110619 version < you are here
 
-// currently not in use
-// this is the call in application.html.erb
-
-  <%= javascript_include_tag "fivesequencersaddeventlisteners.js" %>
-
 $j(document).ready(
   function() {
     $j('form[0] > input#anagram_text').bind(
@@ -18,9 +13,6 @@ $j(document).ready(
     ).bind(
       'focusout',function(event) {
         var anagramText = document.getElementById('anagram_text');
-          alert("anagramText = " + anagramText)                    //= [object HTMLInputElement]
-        var anagramTextText = anagramText.nodeValue;
-          alert("anagramTextText = " + anagramTextText)           // = [object HTMLInputElement]
         var output = document.createElement('p');
         output.textContent = "results show after you tab out";
         var sequenceCreated = document.getElementById('#sequence_created > form > input#sequence_text');
