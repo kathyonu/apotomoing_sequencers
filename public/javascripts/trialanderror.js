@@ -19,51 +19,25 @@ $j(document).ready(
       'focusout',function(event) {
         if (this.value !== '') {
           var userentry = (this.value)
-          //  alert("userEntry = " + (this.value))                         //= asdf
-          //alert("this.value = " + (this.value))
-          var anagramtext = document.getElementById('anagram_text');       // same as userentry variable
-          //  alert("anagramtext = " + anagramtext.value)                  //= asdf
-          //  alert("anagramtext.nodeName = " + anagramtext.nodeName)       //= INPUT
-          //  alert("anagramtext.nodeValue = " + anagramtext.value)         //= asdf
-          var output = document.createElement('p');
-          //  alert("output = " + output)                                   //= [object HTMLParagraphElement]
-          //  alert("output.nodeName = " + output.nodeName)                 //= P
-          //  alert("output.nodeType = " + output.nodeType)                 //= 1
-          //  alert("output.nodeValue = " + output.nodeValue)               //= null  as it should be
-          ////output.textContent = 'results show after you tab out';
-          //  alert("output.textContent = " + output.textContent)           //= results show after you tab out
-          //  alert("output.nodeName = " + output.nodeName)                 //= P
-          //  alert("output.nodeType = " + output.nodeType)                 //= 1
-          //  alert("output.nodeValue = " + output.nodeValue + " < should be null at this point")  //= null < should be null at this point
-          //  alert("output = " + output)                                  //= [object HTMLParagraphElement]
-          //  alert("output.textContent = " + output.textContent)          //= results show after you tab out
+          var anagramtext = document.getElementById('anagram_text'); 
           anagramtext.form.onsubmit = function() { return false; }
-          //  alert("anagramtext = " + anagramtext)                        //= [object HTMLInputElement]
-          //  alert("AlertTwo : anagramtext.value = " + anagramtext.value) //= asdf
           $j('#anagram form input#submit').hide();
-          //  $j('#anagram form input#submit').show();
           $j('input#anagramListOpen').hide();
           $j('input#sequencerOpen').hide();
-          $j('#kathyonu').removeClass('kathyonu').addClass('kathyuno');
+          $j('#kathyonu').removeClass('explain');
+          $j('#kathyonu').addClass('eplains');
           var text = anagramtext.value.toString();
-          //  alert("v = " + v)                                              //= v = a,d,f,s
-          ////output.textContent = v + " < your complete sequence";
           $j('form[0] > input#sequence_text').val(text);
-          //  alert("Your sequence sent to sequence_text is " + $j('form[0] > input#sequence_text').val())  //= AlertSix, Your sequence is a,d,f,s
           var creation = anagramtext.value.toString();
-          //  alert("v = " + v)    
           $j('form[0] > input#sequence_creation').val(creation);
-          var complete = anagramtext.value.split('').sort().toString();
-          //  alert("v = " + v)    
+          var complete = anagramtext.value.split('').sort().join('');    //  aaddffss    < it has on leading white space that needs to be stripped.
           $j('form[0] > input#sequence_complete').val(complete);
           var lexigrammic = anagramtext.value.split('').sort();
-          var lexigram = $j.unique(lexigrammic) ;
-          //  alert("v = " + v)    
-          $j('form[0] > input#sequence_lexigram').val(lexigram);
+          var lexigrams = $j.unique(lexigrammic);
+          $j('form[0] > input#sequence_lexigram').val(lexigrams);         // s,f,d,a     < not the finished code
           var singles = anagramtext.value.split('').sort();
           var singular = $j.unique(singles);
-          //  alert("v = " + v)   
-          $j('form[0] > input#sequence_singular').val(singular);
+          $j('form[0] > input#sequence_singular').val(singular);          // s,f,d,a     < not the finished code
           $j('input#description').focus();
         }
         else
