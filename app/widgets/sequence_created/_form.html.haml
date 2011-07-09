@@ -14,8 +14,9 @@
       = label_tag 'sequence_lexigram', 'sequence_lexigram'
       = text_field_tag 'sequence_singular'
       = label_tag 'sequence_singular', 'sequence_singular'
+      .submitsequences 
 
-      = submit_tag "Submit Sequences", { :id => "submit" }
+      = submit_tag "Submit Sequences", { :id => "submit", :class => "sequencesubmit" }
 
 :javascript
   var sequencesform = $j("##{widget_id} form");

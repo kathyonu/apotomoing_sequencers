@@ -2,7 +2,7 @@ $j(document).ready(
   function() {
     $j('#anagram form input#anagram_text').bind({
       focusin: function(event) {
-        $j('#anagram form #anagram_text').css('backgroundColor', 'white'),
+        $j('#anagram form input#anagram_text').css('backgroundColor', 'white'),
         $j('#anagramListDisplay').hide(),
         $j('#sequencerWidgetDisplay').hide(),
         $j('.sequenceCreatedWidgetDisplay').show(),
@@ -55,6 +55,8 @@ $j(document).ready(
   }
 );
 
+// this code below is no longer required as we hide the anagram submit button entirely..
+//  submitting it after the sequence_created form completes.
 $j(document).ready(
   function() {
     $j('#anagram > form > input#submit').click(

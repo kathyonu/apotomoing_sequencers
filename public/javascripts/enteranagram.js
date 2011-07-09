@@ -1,4 +1,6 @@
 // from in the _form.html.haml
+// this file is not in use
+
   :javascript
     $j().ready(function() {
         $j('.formAnagram#anagram form').bind(function($je) {

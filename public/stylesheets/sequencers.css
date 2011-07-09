@@ -276,6 +276,15 @@
   display: table;
 }
 
+.sequencesubmit {
+  font-size: 1.3em;
+  padding-left: 45px;
+}
+
+.submitsequence {
+  font-size: 1.1em;
+}
+
 .small {
   font-size: 75%;
 }
@@ -334,6 +343,7 @@
 
 #sequence_text {
 }
+
 
 #sequenceTextHtml {
   width: 50%;
@@ -472,12 +482,4 @@
   text-align: center;
   width: 405px;
   z-index: 11;
-}
-
-#anagram > form > input#submit {
-  margin-left: 222px;
-}
-
-#sequenceCreated > form > input#submit {
-  margin-left: 100px;
 }
