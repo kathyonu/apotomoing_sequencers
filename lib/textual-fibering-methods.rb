@@ -10,7 +10,8 @@
 #### this file is under development, not all methods work yet .. use with care.
 
 include Textual
-include Lexigram
+
+# include Lexigram
 
 require 'fiber'
 
