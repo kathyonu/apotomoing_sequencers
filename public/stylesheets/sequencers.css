@@ -291,7 +291,7 @@
 
 #anagramListClose {
   position: relative;
-  top: 19px;
+  bottom: 290px;
   margin-left: -25px;
   width: 66%;
 }
@@ -396,7 +396,7 @@
 
 #sequencerClose {
   position: absolute;
-  bottom: 55px;
+  bottom: -22px;
   left: -37px;
   width: 112%;
   z-index: 16;
@@ -416,7 +416,7 @@
 #sequencerWidgetDisplay {
   display: none;
   position: absolute;
-  top: 150px;
+  top: 161px;
   left: 30px;
   margin-right: 44px;
   margin-bottom: 5px;
