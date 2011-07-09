@@ -1,58 +1,42 @@
-// this is showing only the singular sequencer at this time, and it is placing it in a P element, for the time being
+// this file affects app/widgets/anagram/_form.html.haml
+// this file affects app/widgets/sequence_created/_form.html.haml
+
 $j(document).ready(
   function() {
     $j('form[0] > input#anagram_text').bind(
       'focusin',function(event) {
          if (this.value == 'Enter_Your_Data') {
-           (this.value = '');
+           (this.value = '')
          }
        }
     ).bind(
       'focusout',function(event) {
         if (this.value !== '') {
-            //alert("the event value = " + this.value)                  //= asdf
-          var input = this.value
-            //alert("input = " + input)                                 //= asdf
-          var input2 = document.getElementById('anagram_text');
-            //alert("input2 = " + input2.value)                         //= asdf
-          var output = document.createElement('p');
-          output.textContent = 'test to create text';
-          anagramText = document.getElementById("anagram_text")
-          anagramText.form.appendChild(output)
-          anagramText.form.onsubmit = function() {return false;}
-          var anagramText = this.value;
-            //alert("anagramText = " + anagramText)                     //= asdf
-            //alert("output = " + output)                               //= [object HTMLParagraphElement]
-            //alert("output.textContent = " + output.textContent)       //= test to create text
-            //alert("output.nodeName = " + output.nodeName)             //= P
-            //alert("output.nodeType = " + output.nodeType)             //= 1
-            //alert("output.nodeValue = " + output.nodeValue + " < should be null at this point")
-            //alert("output.nodeValue = " + output.nodeValue)           //= null
-          var sequencetext = $j('input#sequence_text');
-            //alert("sequencetext = " + sequencetext)                     //= [object Object]
-            //alert("sequencetext.val() = " + sequencetext.val())           //= nothing
-            //alert("sequencetext.nodeValue = " + sequencetext.nodeValue)   //= undefined, as it should be
-            //alert("sequencetext.input = " + sequencetext.input)           //= undefined, as it should be
-        $j('input#sequencerOpen').hide();
-        $j('input#anagramListOpen').hide();
-        $j('#anagram > form > input#submit').hide();
-        $j('p').show();
-            //alert("what was anagramText = " + this.value)             //= asdf
-            //alert("what was anagramText value = " + this.value)       //= asdf
-            //alert("your anagramText is " + this.value)                //= asdf
-        var v = anagramText.split('').sort().toString();
-          output.textContent = v + " < your complete sequence";         //= a,d,f,s  < your complete sequence
-            //alert("AlertThree : " + output + " = " + output.textContent)
-          $j('input > #sequence_text').text(output.textContent = v)
+          var userentry = (this.value)
+          var anagramtext = document.getElementById('anagram_text'); 
+          anagramtext.form.onsubmit = function() { return false; }
+          $j('#anagram form input#submit').hide();
+          $j('input#anagramListOpen').hide();
+          $j('input#sequencerOpen').hide();
+          $j('p').removeClass('explain');
+          $j('p').addClass('explains');
+          var text = anagramtext.value.toString();
+          $j('form[0] > input#sequence_text').val(text);
+          var creation = anagramtext.value.toString();
+          $j('form[0] > input#sequence_creation').val(creation);
+          var complete = anagramtext.value.split('').sort().join('');    //  aaddffss    < it has on leading white space that needs to be stripped.
+          $j('form[0] > input#sequence_complete').val(complete);
+          var lexigrammic = anagramtext.value.split('').sort();
+          var lexigrams = $j.unique(lexigrammic);
+          $j('form[0] > input#sequence_lexigram').val(lexigrams);         // s,f,d,a     < not the finished code
+          var singles = anagramtext.value.split('').sort();
+          var singular = $j.unique(singles);
+          $j('form[0] > input#sequence_singular').val(singular);          // s,f,d,a     < not the finished code
           $j('input#description').focus();
-            //alert("AlertSix, Your sequence is " + v)                  //= a,d,f,s
         }
         else
         {
-          $j('input#anagram_text').focus('Enter_Your_Data');
-          $j('input#sequencerOpen').show();
+          $j('form[0] > input#anagram_text').val("Please Enter Your Data");
         }
-      var submit = document.getElementById('submit');
-      submit.parentNode.removeChild(submit);
+      })
     });
-  });

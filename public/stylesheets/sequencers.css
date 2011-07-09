@@ -439,12 +439,14 @@
 }
 
 .explains {
+  display: block;
   text-align: left;
   margin-left: 14px;
   font-size: 80%;
+  z-index: 100;
 }
 
-.kathyonu {
+#kathyonu {
   position: relative;
   bottom: 32px;
   left: 10px;

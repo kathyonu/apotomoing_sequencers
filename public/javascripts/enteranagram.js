@@ -1,4 +1,4 @@
-// from in the -form.html.haml
+// from in the _form.html.haml
   :javascript
     $j().ready(function() {
         $j('.formAnagram#anagram form').bind(function($je) {

@@ -1,4 +1,5 @@
 // from the _form for sequence_created
+// not fully working as of 20110709
 
 :javascript
   $j(document).ready(

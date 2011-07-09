@@ -1,6 +1,6 @@
 // this file name is app/public/javascript/userentrysequencer.js
 // this file affects app/views/sequences/new.html.erb
-// this js file is not yet fully functional code, for that, see trialanderror.js this commit
+// this js file is not yet fully functional code, for that, see fivesequencersbind.js for more developed code to emulate
 
 $j(document).ready(
   function() {
