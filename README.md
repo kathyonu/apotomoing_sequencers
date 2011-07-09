@@ -1,7 +1,7 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time, 20110708
+### Note: At this time, 20110709
 #### apotomoing_sequencers is closer than ever fully functioning.
 #### To see the last fully educational development commit, see :
 [educational](https://github.com/kathyonu/apotomoing_sequencers/commit/d4b1cbde46fd32c89a02414fee4c59a78b1c1b92 "apotomoing_sequencers, educational")
@@ -14,7 +14,9 @@
 #### On 20110708 we achieved the first success in taking data from anagram widget's form entry,
 ##### and processing the raw entry with jQuery/javascript, then entering that result into the 
 ##### sequence_created's widget's form input entry prior to either being submitted.
-##### So, this means we now have the first of five sequence processors processing.
+##### We now have the five sequence processors processing.
+##### Next steps are, submitting the sequence_created form to the database using ajax, and
+##### Secondly, after-success, submit the anagram form.  A two for one submission.
 
 # Getting Started
 ## In your Terminal
@@ -26,7 +28,8 @@
 
 ### After your server fires up, go to your browser : 
 
-*	http://localhost:3000/             <= :root, empowered with cells and widgets, now processing user_entry into sequence_text.
+*	http://localhost:3000/             <= from here, click or tab to Enter Your Data box, enter your data, tab to the next entry window, watch what happens.
+*	http://localhost:3000/             <= :root, empowered with cells and widgets, now processing user_entry into the five sequences.
 *	http://localhost:3000/quotes/new   <= scaffolded CRUD, no widgets nor cells, first javascript sequencer for display of principle.
 *	http://localhost:3000/anagrams/new <= scaffolded CRUD, no widgets nor cells, second javascript sequencer for display of principle.
 *	http://localhost:3000/sequences/   <= scaffolded CRUD, no widgets nor cells, with jQuery Datepicker working as proof of working.
