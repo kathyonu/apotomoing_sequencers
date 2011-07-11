@@ -1,2 +1,0 @@
-See fibering methods in 
-app/lib/textual-fibering-methods.rb for how this file is used.
