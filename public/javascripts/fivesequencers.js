@@ -22,16 +22,15 @@ $j(document).ready(
           $j('p').addClass('explains');
           var text = anagramtext.value.toString();
           $j('form[0] > input#sequence_text').val(text);
-          var creation = anagramtext.value.toString();
-          $j('form[0] > input#sequence_creation').val(creation);
-          var complete = anagramtext.value.split('').sort().join('');    //  aaddffss    < it has on leading white space that needs to be stripped.
+          var $jcreation = anagramtext.value.toString();
+          $j('form[0] > input#sequence_creation').val(($jcreation.toString().replace(/\s/g,'')));
+          var complete = anagramtext.value.split('').sort().join('').trim();
           $j('form[0] > input#sequence_complete').val(complete);
-          var lexigrammic = anagramtext.value.split('').sort();
-          var lexigrams = $j.unique(lexigrammic);
-          $j('form[0] > input#sequence_lexigram').val(lexigrams);         // s,f,d,a     < not the finished code
-          var singles = anagramtext.value.split('').sort();
-          var singular = $j.unique(singles);
-          $j('form[0] > input#sequence_singular').val(singular);          // s,f,d,a     < not the finished code
+          var lexigrams = anagramtext.value.split('').sort().reverse().join('').trim();
+          $j('form[0] > input#sequence_lexigram').val(lexigrams);
+          var $jsingulars = lexigrams.split('').sort(); 
+          var $jsingular = $j.unique($jsingulars).reverse();
+          $j('form[0] > input#sequence_singular').val(($jsingular.toString().replace(/,/g,'')));
           $j('input#description').focus();
         }
         else
