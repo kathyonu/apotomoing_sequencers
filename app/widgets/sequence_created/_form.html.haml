@@ -18,9 +18,9 @@
       = label_tag 'submit', ' submit not yet working '
 
 :javascript
-  var sequencesform = $j("##{widget_id} form");
+  var formb = $j("##{widget_id} form");
 
-  sequencesform.submit(function() {
-    $j.ajax({url: sequencesform.attr("data-event-url"), data: sequencesform.serialize()})
+  formb.submit(function() {
+    $j.ajax({url: formb.attr("data-event-url"), data: formb.serialize()})
     return false;
   });

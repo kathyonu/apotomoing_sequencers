@@ -47,28 +47,13 @@ class SequenceCreatedWidget < Apotomo::Widget
 
   # TODO complete the lexigram algorithm to code, meanwhile substitute the reverse sequence as the dataum
   def submit(evt)
-    anagram = Anagram.new(evt[:id])           # or :   anagram = Anagram.find(evt[:id])
-	anagram_text = anagram.anagram_text
-    text_sequence = anagram_text.to_textual.de_comma.strip 
-	creation_sequence = text_sequence.de_space
-    complete_sequence = text_sequence.split(//).sort.join.strip
-	lexigram_sequence = text_sequence.split(//).sort.join.strip.reverse
-    singular_sequence = complete_sequence.squeeze
-    @sequence_created = sequence_created.update_attributes(
-    :sequence_text => text_sequence,
-    :sequence_creation => complete_sequence, 
-    :sequence_commplete => complete_sequence, 
-    :sequence_lexigram => lexigram_sequence, 
-    :sequence_singular => singular_sequence
-    )
-    trigger :sequence_text
-	trigger :sequence_creation
-    trigger :sequence_complete
-    trigger :sequence_lexigram
-	trigger :sequence_singular
-    trigger :newSequenceCreated
-
-    replace :state => :display
+    #@sequence_created = SequenceCreated.new(evt[:id]).save           # or anagram = Anagram.find(evt[:id])
+	@sequence_created = SequenceCreated.new(:sequence_text => evt[:sequence_text], :sequence_creation => evt[:sequence_creation], :sequence_complete => evt[:sequence_complete], :sequence_lexigram => evt[:sequence_lexigram], :sequence_singular => evt[:sequence_singular])
+    if @sequence_created.update_attributes(evt[:sequence_created])
+      replace :state => :display
+    else
+      render :view => :display
+    end
   end
 
   def update(evt)

@@ -2,9 +2,10 @@ $j(document).ready(
   function() {
     $j('input#sequencerOpen').click(
       function($je) {
-        $j('.sequenceCreatedWidgetDisplay').show();
+        $j('#sequencerWidgetDisplay').show();
         $j('#anagramListDisplay').hide();
-        $j('#sequencerWidgetDisplay').show();  /* to keep distance below bottom of display for the open sequencer widget button */
+        $j('input#anagramListOpen').hide();
+        $j('input#sequencerOpen').hide();
       }
     );
   });
@@ -15,6 +16,9 @@ $j(document).ready(
       function($je) {
         $j('.sequenceCreatedWidgetDisplay').show();
         $j('#sequencerWidgetDisplay').hide();
+        $j('input#anagramListOpen').show();
+        $j('input#sequencerOpen').show();
+        $j('#kathyonu').show();
       }
     );
   });

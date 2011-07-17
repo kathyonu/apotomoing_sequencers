@@ -2,7 +2,7 @@ class AnagramWidget < Apotomo::Widget
   helper ApplicationHelper
 
   #responds_to_event :submit, :from => :anagram, :with => :submit, :on => :anagram, :passing => :root
-  responds_to_event :newSequenceCreated, :with => :update, :on => :anagram, :passing => :root
+  #responds_to_event :newSequenceCreated, :with => :update, :on => :anagram, :passing => :root
 
   def anagram
     @anagram = Anagram.new

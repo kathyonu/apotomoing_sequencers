@@ -2,6 +2,7 @@ $j(document).ready(
   function() {
     $j('input#anagramListOpen').click(
       function($je) {
+        $j('input#anagramListClose').show();
         $j('#anagramListDisplay').show(),
         $j('.sequenceCreatedWidgetDisplay').hide();
       }

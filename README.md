@@ -1,11 +1,11 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time, 20110714
-#### apotomoing_sequencers now has five sequencer sequencing.
+### Note: At this time, 20110716
+#### apotomoing_sequencers now has five sequencers sequencing.
 #### To see the last fully educational development commit, see :
 [educational](https://github.com/kathyonu/apotomoing_sequencers/commit/d4b1cbde46fd32c89a02414fee4c59a78b1c1b92 "apotomoing_sequencers, educational")
-##### That commit has all learning notes, location notes, generated url notes and such still showing.
+##### That commit has all learning notes, location notes, generated url notes and such still showing as an older version, not fully working.
 
 #### All future commits will be removing educational materials and displays,
 ##### leaving only the code required to process the users one data entry into 
@@ -104,6 +104,7 @@ Those search methods will be added after we have the application fully working.
 * sequence_palindrome - "doctor roctod".palindrome?
 * anagrams, full or partial
 * perfect anagrams - meanings wise, these are a leap beyond the full anagrams offered at wordsmith.org and other anagram generators.
+
 > An anagrams generator is available now at [Wordsmith AnagramGenerator](http://www.wordsmith.org/ "Wordsmith.org AnagramGenerator")
 
 > #### This application is Copyright Will I Am at goodworksonearth.org, held in trust.
