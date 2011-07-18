@@ -52,7 +52,8 @@ class SequenceCreatedWidget < Apotomo::Widget
     if @sequence_created.update_attributes(evt[:sequence_created])
       replace :state => :display
     else
-      render :view => :display
+      replace :state => :display
+	 #render :view => :display
     end
   end
 

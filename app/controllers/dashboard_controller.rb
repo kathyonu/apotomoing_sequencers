@@ -5,7 +5,7 @@ class DashboardController < ApplicationController
     root << widget(:anagram)
     root << widget(:sequence_created)
     root << widget(:sequencer)
-    root.respond_to_event :submit, :from => :sequence_created, :with => :submit, :on => :sequence_created, :passing => :root
+    #root.respond_to_event :submit, :from => :sequence_created, :with => :submit, :on => :sequence_created, :passing => :root
   end
  
   def index
