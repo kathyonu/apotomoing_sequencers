@@ -5,10 +5,13 @@ $j(document).ready(
   function() {
     $j('form[0] > input#anagram_text').bind(
       'focusin',function(event) {
-         if (this.value == 'Enter_Your_Data') {
-           (this.value = '')
-         }
-       }
+        if (this.value == 'Enter_Your_Data') {
+          (this.value = '')
+        }
+        if (this.value == 'Please Enter Your Data') {
+            (this.value = '')
+        }
+      }
     ).bind(
       'focusout',function(event) {
         if (this.value !== '') {
@@ -35,7 +38,12 @@ $j(document).ready(
         }
         else
         {
-          $j('form[0] > input#anagram_text').val("Please Enter Your Data");
+          $j('form[0] > input#anagram_text').val('Please Enter Your Data');
+          $j('#sequence_created form input#sequence_text').val("");
+          $j('#sequence_created form input#sequence_creation').val("");
+          $j('#sequence_created form input#sequence_complete').val("");
+          $j('#sequence_created form input#sequence_lexigram').val("");
+          $j('#sequence_created form input#sequence_singular').val("");
         }
       })
     });

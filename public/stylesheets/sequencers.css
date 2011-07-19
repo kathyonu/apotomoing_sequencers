@@ -3,17 +3,18 @@
   padding-left: 8px;
 }
 
-.anagramsIndex {
+.anagramsIndex table {
   padding-left: 8px;
   margin-right: 4px;
+  width: 1200px;
 }
 
 .anagramList {
-  margin-top: 1px;
-  margin-right: 10px;
+  margin-top: 5px;
+  margin-right: 5px;
   margin-bottom: 1px;
   margin-left: 5px;
-  padding-top: 1px;
+  padding-top: 7px;
   padding-right: 10px;
   padding-left: 10px;
 }
@@ -24,7 +25,7 @@
 }
 
 .anagramWidgetDisplay {
-  margin-top: 20px;
+  margin-top: 15px;
   margin-right: 10px;
   margin-bottom: 5px;
   margin-left: 10px;
@@ -90,21 +91,26 @@
   padding-left: 16px;
 }
 
-.countAnagrams {
+#countAnagrams {
+  margin-left: 50px;
   margin-bottom: 3px;
   padding:  2px;
 }
 
-.countQuotes {
+#countQuotes {
+  margin-left: 50px;
   margin-bottom: 3px;
   padding: 2px;
 }
 
-.countSequenceCreateds {
+#countSequenceCreateds {
+  margin-left: 50px;
+  margin-bottom: 3px;
   padding: 2px;
 }
 
-.countSequences {
+#countSequences {
+  margin-left: 50px;
   margin-bottom: 3px;
   padding: 2px;
 }
@@ -217,7 +223,7 @@
 
 .linkTo {
   font-weight: bold;
-  line-height: 150%;
+  line-height: 140%;
   margin-left: 5px;
 }
 
@@ -300,7 +306,7 @@
 
 #anagramListClose {
   position: relative;
-  top: -290px;
+  top: -297px;
   margin-left: -25px;
   width: 66%;
 }
@@ -335,7 +341,10 @@
 }
 
 #datepick {
+  position: relative;
+  bottom: -47px;
   font-size: 75%;
+  margin-left: 403px;
   padding: 4px;
   text-align: center;
   width: 175px;
@@ -397,7 +406,7 @@
   margin-left: 10px;
   font-size: 85%;
   padding: 10px;
-  width: 50%;
+  width: 55%;
 }
 
 #sequencerSecond {
@@ -432,7 +441,7 @@
 #sequencerWidgetDisplay {
   display: none;
   position: absolute;
-  top: 185px;
+  top: 183px;
   left: 30px;
   margin-right: 44px;
   margin-bottom: 5px;
@@ -475,4 +484,18 @@
   text-align: center;
   width: 405px;
   z-index: 10;
+}
+
+.kathyonu {
+  position: relative;
+  bottom: -6px;
+  left: -11px;
+  font-size: 85%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: center;
+  width: 420px;
+  z-index: 11;
 }

@@ -1,29 +1,15 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time, 20110718
+### Note: At this time, 20110719
 #### apotomoing_sequencers now has five sequencers sequencing.
-#### this means when you enter your text into the anagram widget,
-#### when you tab or click out of the entry box, the five sequencers
+
+#### This means when you enter your text into the anagram widget,
+#### when you tab or click out of the entry box, the five sequences
 #### will be generated and entered into the sequence_created widget,
-#### without page change.
+#### without page change, using jQuery, javascript and AJAX.
 
-#### To see the last fully educational development commit, see :
-[educational](https://github.com/kathyonu/apotomoing_sequencers/commit/d4b1cbde46fd32c89a02414fee4c59a78b1c1b92 "apotomoing_sequencers, educational")
-##### That commit has all learning notes, location notes, generated url notes and such still showing as an older version, not fully working.
-##### All future commits will be removing educational materials and displays,
-##### leaving only the code required to process the users one data entry into 
-##### the five sequences, then entering that processed data into the database.
-
-#### These operating codes are now a reality in this application.
-
-#### On 20110714 we now have the five sequence processors processing.
-##### Next steps are, submitting the sequence_created form to the database using ajax, and
-##### Secondly, after-success, submit the anagram form.  A two for one submission.
-
-#### On 20110708 we achieved the first success in taking data from anagram widget's form entry,
-##### and processing the raw entry with jQuery/javascript, then entering that result into the 
-##### sequence_created's widget's form input entry prior to either being submitted.
+#### See app/doc/README_FOR_APP, for some development history milestones.
 
 # Getting Started
 ## In your Terminal

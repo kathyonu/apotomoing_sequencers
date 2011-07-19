@@ -6,6 +6,8 @@ $j(document).ready(
         $j('#anagramListDisplay').hide();
         $j('input#anagramListOpen').hide();
         $j('input#sequencerOpen').hide();
+        $j('#kathyonu').hide();
+        $j('.kathyonu').show();
       }
     );
   });
@@ -18,6 +20,7 @@ $j(document).ready(
         $j('#sequencerWidgetDisplay').hide();
         $j('input#anagramListOpen').show();
         $j('input#sequencerOpen').show();
+        $j('.kathyonu').hide();
         $j('#kathyonu').show();
       }
     );

@@ -5,26 +5,28 @@
   .linksInfo Your available links are : 
   .linksInfoRoot= "To Root < You are here " 
   .linksGroup
-    .linkTo= link_to 'New Anagram', :controller => :anagrams, :action => :new
-    .linkTo= link_to 'New Quote', :controller => :quotes, :action => :new
-    .linkTo= link_to 'New Sequence', :controller => :sequences, :action => :new
-    .linksInfoCrud These three links use CRUD methods in app/controllers/views
+    .linkTo= link_to 'Anagrams', :controller => :anagrams, :action => :index
+    .linkTo= link_to 'Quotes', :controller => :quotes, :action => :index
+    .linkTo= link_to 'Sequences', :controller => :sequences, :action => :index
+    .linkTo= link_to 'SequenceCreateds', :controller => :sequence_createds, :action => :index
 
-  .countAnagrams= "There are #{Anagram.count} ANAGRAMS in the anagram table"
+    %p
 
-  .countQuotes= "There are #{Quote.count} QUOTES in the quotes table"
+    #countAnagrams= "ANAGRAMS #{Anagram.count}"
 
-  .countSequenceCreateds= "There are #{SequenceCreated.count} CREATEDS in the sequence_createds table"
+    #countQuotes= "QUOTES #{Quote.count}"
 
-  .count= "the CREATEDS calculation will be anagrams " + "  +  " + " quotes" +  " = " + "sequence_createds"
+    #countSequences= "SEQUENCES #{Sequence.count}" 
 
-  .count the CREATEDS calculation will be in error until the five sequences fire from anagram entry.
+    #countSequenceCreateds= "SEQUENCE_CREATEDS #{SequenceCreated.count}"
 
-  .countSequences= "There are #{Sequence.count} SEQUENCES in the sequences table" 
+    %p
 
   .count the SEQUENCES table exists solely to allow you to glimpse the entire application in one table.
 
   .count the SEQUENCES table allows and creates massive duplicates in the five sequences, which is not desired.
+
+  .kathyonu apotomoing_sequencers is a <a href="http://www.goodworksonearth.org/board.html">kathy_onu</a> creation
 
   .tmpButtons
 

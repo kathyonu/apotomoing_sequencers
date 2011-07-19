@@ -1,9 +1,9 @@
 body { 
   background-color: #fff; color: #333;
-  width: 450px;
   margin-top: 25px;
   margin-bottom: 30px;
   margin-left: 45px;
+  width: 450px;
 }
 
 body, p, ol, ul, td {

@@ -4,10 +4,6 @@
   border-right: 14px solid aqua;
 }
 
-.anagramsIndex {
-  border: 1px solid blue;
-}
-
 .anagramList {
   background-color: #FFFDDA;
   border-top: 2px solid red;
@@ -284,6 +280,12 @@
 }
 
 #kathyonu {
-  border: 2px solid #AA99C5;
+  border-right: 2px solid #AA99C5;
   border-bottom: 10px solid #AA99C5;
+  border-left: 2px solid #AA99C5;
+}
+
+.kathyonu {
+  border-right: 78px solid purple;
+  border-left: 78px solid purple;
 }
