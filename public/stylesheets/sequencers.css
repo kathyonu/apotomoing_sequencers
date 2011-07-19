@@ -459,18 +459,6 @@
   font-size: 75%;
 }
 
-.explain {
-  display: none;
-}
-
-.explains {
-  display: block;
-  text-align: left;
-  margin-left: 14px;
-  font-size: 80%;
-  z-index: 100;
-}
-
 #kathyonu {
   position: relative;
   bottom: 33px;

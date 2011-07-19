@@ -1,6 +1,7 @@
 // this file name is app/public/javascript/userentrysequencer.js
 // this file affects app/views/sequences/new.html.erb
-// this js file is not yet fully functional code, for that, see fivesequencersbind.js for more developed code to emulate
+// this js file is not yet fully functional code
+// to see working code, see fivesequencers.js which processes the first five sequences from user entry.
 
 $j(document).ready(
   function() {

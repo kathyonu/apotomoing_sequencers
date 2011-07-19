@@ -1,6 +1,6 @@
 // from the _form for sequence_created
 // not fully working as of 20110709
-// this file is not in us
+// this file is not in use
 
 
 :javascript

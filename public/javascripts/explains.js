@@ -1,3 +1,30 @@
+// the jQuery
+
+          $j('p').removeClass('explain');
+          $j('p').addClass('explains');
+          
+          
+          
+// the sequencers.css
+
+
+.explain {
+  display: none;
+}
+
+.explains {
+  display: block;
+  text-align: left;
+  margin-left: 14px;
+  font-size: 80%;
+  z-index: 90;
+}
+
+
+
+
+// usage, from fivesequencers.js as shown below
+--------------------------------
 // this file affects app/widgets/anagram/_form.html.haml
 // this file affects app/widgets/sequence_created/_form.html.haml
 
