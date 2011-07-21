@@ -1,14 +1,16 @@
 // this js prevents the computed sequences from being changed by user
+// this file affects the sequence_created widget
+//
 
 $j(document).ready(
   function() {
-    $j('.formSequenceCreated input#sequence_text').bind({
+    $j('#sequence_created form input#sequence_text').bind({
       focusin: function(event) {
-        $j('.formSequenceCreated input#sequence_text').blur(),
-        $j('.formSequenceCreated input#sequence_creation').blur(),
-        $j('.formSequenceCreated input#sequence_complete').blur(),
-        $j('.formSequenceCreated input#sequence_lexigram').blur(),
-        $j('.formSequenceCreated input#sequence_singular').blur(),
+        $j('#sequence_created form input#sequence_text').blur(),
+        $j('#sequence_created form input#sequence_creation').blur(),
+        $j('#sequence_created form input#sequence_complete').blur(),
+        $j('#sequence_created form input#sequence_lexigram').blur(),
+        $j('#sequence_created form input#sequence_singular').blur(),
         $j('#sequence_created form input#submit').removeClass('.sequencesubmit'),
         $j('#sequence_created form input#submit').addClass('.submitsequence'),
         $j('#sequence_created form input#submit').focus();
@@ -19,13 +21,13 @@ $j(document).ready(
 
 $j(document).ready(
   function() {
-    $j('.formSequenceCreated input#sequence_creation').bind({
+    $j('#sequence_created form input#sequence_creation').bind({
       focusin: function(event) {
-        $j('.formSequenceCreated input#sequence_text').blur(),
-        $j('.formSequenceCreated input#sequence_creation').blur(),
-        $j('.formSequenceCreated input#sequence_complete').blur(),
-        $j('.formSequenceCreated input#sequence_lexigram').blur(),
-        $j('.formSequenceCreated input#sequence_singular').blur(),
+        $j('#sequence_created form input#sequence_text').blur(),
+        $j('#sequence_created form input#sequence_creation').blur(),
+        $j('#sequence_created form input#sequence_complete').blur(),
+        $j('#sequence_created form input#sequence_lexigram').blur(),
+        $j('#sequence_created form input#sequence_singular').blur(),
         $j('#sequence_created form input#submit').removeClass('.sequencesubmit'),
         $j('#sequence_created form input#submit').addClass('.submitsequence'),
         $j('#sequence_created form input#submit').focus();
@@ -35,13 +37,13 @@ $j(document).ready(
   
 $j(document).ready(
   function() {
-    $j('.formSequenceCreated input#sequence_complete').bind({
+    $j('#sequence_created form input#sequence_complete').bind({
       focusin: function(event) {
-        $j('.formSequenceCreated input#sequence_text').blur(),
-        $j('.formSequenceCreated input#sequence_creation').blur(),
-        $j('.formSequenceCreated input#sequence_complete').blur(),
-        $j('.formSequenceCreated input#sequence_lexigram').blur(),
-        $j('.formSequenceCreated input#sequence_singular').blur(),
+        $j('#sequence_created form input#sequence_text').blur(),
+        $j('#sequence_created form input#sequence_creation').blur(),
+        $j('#sequence_created form input#sequence_complete').blur(),
+        $j('#sequence_created form input#sequence_lexigram').blur(),
+        $j('#sequence_created form input#sequence_singular').blur(),
         $j('#sequence_created form input#submit').removeClass('.sequencesubmit'),
         $j('#sequence_created form input#submit').addClass('.submitsequence'),
         $j('#sequence_created form input#submit').focus();
@@ -51,13 +53,13 @@ $j(document).ready(
   
 $j(document).ready(
   function() {
-    $j('.formSequenceCreated input#sequence_lexigram').bind({
+    $j('#sequence_created form input#sequence_lexigram').bind({
       focusin: function(event) {
-        $j('.formSequenceCreated input#sequence_text').blur(),
-        $j('.formSequenceCreated input#sequence_creation').blur(),
-        $j('.formSequenceCreated input#sequence_complete').blur(),
-        $j('.formSequenceCreated input#sequence_lexigram').blur(),
-        $j('.formSequenceCreated input#sequence_singular').blur(),
+        $j('#sequence_created form input#sequence_text').blur(),
+        $j('#sequence_created form input#sequence_creation').blur(),
+        $j('#sequence_created form input#sequence_complete').blur(),
+        $j('#sequence_created form input#sequence_lexigram').blur(),
+        $j('#sequence_created form input#sequence_singular').blur(),
         $j('#sequence_created form input#submit').removeClass('.sequencesubmit'),
         $j('#sequence_created form input#submit').addClass('.submitsequence'),
         $j('#sequence_created form input#submit').focus();
@@ -67,13 +69,13 @@ $j(document).ready(
   
 $j(document).ready(
   function() {
-    $j('.formSequenceCreated input#sequence_singular').bind({
+    $j('#sequence_created form input#sequence_singular').bind({
       focusin: function(event) {
-        $j('.formSequenceCreated input#sequence_text').blur(),
-        $j('.formSequenceCreated input#sequence_creation').blur(),
-        $j('.formSequenceCreated input#sequence_complete').blur(),
-        $j('.formSequenceCreated input#sequence_lexigram').blur(),
-        $j('.formSequenceCreated input#sequence_singular').blur(),
+        $j('#sequence_created form input#sequence_text').blur(),
+        $j('#sequence_created form input#sequence_creation').blur(),
+        $j('#sequence_created form input#sequence_complete').blur(),
+        $j('#sequence_created form input#sequence_lexigram').blur(),
+        $j('#sequence_created form input#sequence_singular').blur(),
         $j('#sequence_created form input#submit').removeClass('.sequencesubmit'),
         $j('#sequence_created form input#submit').addClass('.submitsequence'),
         $j('#sequence_created form input#submit').focus();
@@ -85,11 +87,11 @@ $j(document).ready(
   function() {
     $j('#sequence_created form input#submit').bind({
       focusin: function(event) {
-        $j('.formSequenceCreated input#sequence_text').blur(),
-        $j('.formSequenceCreated input#sequence_creation').blur(),
-        $j('.formSequenceCreated input#sequence_complete').blur(),
-        $j('.formSequenceCreated input#sequence_lexigram').blur(),
-        $j('.formSequenceCreated input#sequence_singular').blur(),
+        $j('#sequence_created form input#sequence_text').blur(),
+        $j('#sequence_created form input#sequence_creation').blur(),
+        $j('#sequence_created form input#sequence_complete').blur(),
+        $j('#sequence_created form input#sequence_lexigram').blur(),
+        $j('#sequence_created form input#sequence_singular').blur(),
         $j('#sequence_created form input#submit').removeClass('.sequencesubmit'),
         $j('#sequence_created form input#submit').addClass('.submitsequence');
       }

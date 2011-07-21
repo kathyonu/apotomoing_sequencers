@@ -15,6 +15,7 @@
     <th>Sexuality</th>
     <th>ExternalSearch</th>
     <th>InternalSearch</th>
+    <th>Created Date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -35,6 +36,7 @@
     <td><%= sequence.sexualities %></td>
     <td><%= sequence.external %></td>
     <td><%= sequence.internal %></td>
+    <td><%= sequence.created_at.strftime("%Y%m%d%H%M:%S:seconds") %></td>
     <td><%= link_to 'Show', sequence %></td>
     <td><%= link_to 'Edit', edit_sequence_path(sequence) %></td>
     <td><%= link_to 'Destroy', sequence, :confirm => 'Are you sure?', :method => :delete %></td>

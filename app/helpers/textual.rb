@@ -113,7 +113,10 @@ module Textual
     foo.gsub!(/(^(o\.k\.,?)\s)/, "okay, ")             # replaces the O.K., at the beginning of the line with okay,  
     foo.gsub!(/(\s+(o\.k\.?,+)\s)/, " okay, ")         # replaces the O.K., with okay,  
     foo.gsub!(/(^(dr\.,?)\s+?)/, "doctor ")            # on these, shouldn't that first \s be \s+ : answer is YES, so i changed it
-    foo.gsub!(/(\s+(dr\.,?)\s+?)/, " doctor ")         # on these, shouldn't that first \s be \s+ : answer is YES, so i changed it
+    foo.gsub!(/(\s+(dr\.['']s)\s+)/, " doctors ")      # replaces dr.'s with doctors
+    foo.gsub!(/(\s+(dr['']s)\s+?)/, " doctors ")       # erplaces dr's with doctors 
+    foo.gsub!(/(\s+(dr\.?)\s+?)/, " doctor ")          # replaces dr. with doctor
+    foo.gsub!(/(\s+(dr\,)\s+?)/, " doctors ")          # replaces dr, with doctor
    #foo.gsub!(/((\s+(d)\.(r)\.)\s+)/, " doctor ")      # d.r. < replaces that with : doctor : this one is funky, not a valid abbreviation for doctor, and i don't remember how this one got here.
     foo.gsub!(/(^(apt\.?)\s+)/, "apartment ")          # apt. < replaces apt. at the beginning of line with apartment.
     foo.gsub!(/(\s(apt\.)\s+)/, " apartment ")         # apt. < replaces apt. with apartment.

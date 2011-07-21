@@ -1,9 +1,9 @@
 class SequenceCreatedWidget < Apotomo::Widget
   helper ApplicationHelper
   
-  #responds_to_event :newSequenceCreated, :with => :update, :passing => :root
-  #responds_to_event :submit, :from => :sequence_created, :with => :submit, :on => :anagram
   responds_to_event :submit
+  responds_to_event :newSequenceCreated, :with => :update, :passing => :root
+  #responds_to_event :submit, :from => :sequence_created, :with => :submit, :on => :anagram
 
   def display
     render
@@ -50,10 +50,7 @@ class SequenceCreatedWidget < Apotomo::Widget
     #@sequence_created = SequenceCreated.new(evt[:id]).save           # or anagram = Anagram.find(evt[:id])
 	@sequence_created = SequenceCreated.new(:sequence_text => evt[:sequence_text], :sequence_creation => evt[:sequence_creation], :sequence_complete => evt[:sequence_complete], :sequence_lexigram => evt[:sequence_lexigram], :sequence_singular => evt[:sequence_singular])
     if @sequence_created.update_attributes(evt[:sequence_created])
-      replace :state => :display
-    else
-      replace :state => :display
-	 #render :view => :display
+      trigger :newSequenceCreated
     end
   end
 

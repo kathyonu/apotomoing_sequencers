@@ -1,3 +1,5 @@
+// see app/public/javascript/sequencenewsequencers.js.js
+// this is not a working file
 // this file name is app/public/javascript/userentrysequencer.js
 // this file affects app/views/sequences/new.html.erb
 // this js file is not yet fully functional code

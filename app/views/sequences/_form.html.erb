@@ -1,3 +1,5 @@
+<!--this file is affected by userentrysequencer.js -->
+
 <%= form_for(@sequence) do |f| %>
   <% if @sequence.errors.any? %>
     <div id="error_explanation">
@@ -13,31 +15,31 @@
 
   <div class="field">
     <%= f.label :sequence_text %><br />
-    <%= f.text_field :sequence_text %>
+    <%= f.text_field :sequence_text, :size => 222 %>
   </div>
   <div class="field">
     <%= f.label :sequence_creation %><br />
-    <%= f.text_field :sequence_creation %>
+    <%= f.text_field :sequence_creation, :size => 255 %>
   </div>
   <div class="field">
     <%= f.label :sequence_complete %><br />
-    <%= f.text_field :sequence_complete %>
+    <%= f.text_field :sequence_complete, :size => 255 %>
   </div>
   <div class="field">
     <%= f.label :sequence_lexigram %><br />
-    <%= f.text_field :sequence_lexigram %>
+    <%= f.text_field :sequence_lexigram, :size => 255 %>
   </div>
   <div class="field">
     <%= f.label :sequence_singular %><br />
-    <%= f.text_field :sequence_singular %>
+    <%= f.text_field :sequence_singular, :size => 26 %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :size => 255 %>
   </div>
   <div class="field">
     <%= f.label :reference %><br />
-    <%= f.text_field :reference %>
+    <%= f.text_field :reference, :size => 255 %>
   </div>
   <div class="field">
     <%= f.label :anagram %><br />

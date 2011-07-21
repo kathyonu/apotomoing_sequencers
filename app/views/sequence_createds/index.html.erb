@@ -1,5 +1,7 @@
 <h1>Listing sequence_createds</h1>
 
+<div id="sequence_createds_index">
+
 <table>
   <tr>
     <th>Sequence text</th>
@@ -7,6 +9,7 @@
     <th>Sequence complete</th>
     <th>Sequence lexigram</th>
     <th>Sequence singular</th>
+    <th>Created Date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,12 +22,15 @@
     <td><%= sequence_created.sequence_complete %></td>
     <td><%= sequence_created.sequence_lexigram %></td>
     <td><%= sequence_created.sequence_singular %></td>
+    <td><%= sequence_created.created_at.strftime("%Y%m%d%H%M:%S:seconds") %></td>
     <td><%= link_to 'Show', sequence_created %></td>
     <td><%= link_to 'Edit', edit_sequence_created_path(sequence_created) %></td>
     <td><%= link_to 'Destroy', sequence_created, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
+
+</div>
 
 <div class="links">
   <%= link_to 'To Root', :root %>
