@@ -188,6 +188,11 @@
   border-left: 11px solid purple;
 }
 
+
+#sequenceEdit {
+  border: 2px solid yellow;
+}
+
 .sequencesubmit {
   border: 2px solid yellow;
   background-color: yellow;

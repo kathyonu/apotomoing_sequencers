@@ -22,7 +22,7 @@ $j(document).ready(
     sequence_text.textContent = v + " << this is the sequence_complete";
     //dataset.textContent = v + " << this is the sequence_complete";
     //output.textContent = v + " << this is the sequence_complete";
-  };
+    };
   var submit = document.getElementById('submit');
   submit.parentNode.removeChild(submit);
   });

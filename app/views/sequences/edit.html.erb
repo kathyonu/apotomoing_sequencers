@@ -1,10 +1,21 @@
-<h1>Editing sequence</h1>
+<h1>Editing Sequence</h1>
 
-<%= render 'form' %>
+<div id="sequence_edit">
+  <div class="sequenceDisplay">
+    <div id="sequencerSequence" class="sequenceSequencer">
+         <label for=sequenceEntry>Enter your data</label>:
+         <input id="sequenceEntry" name="sequenceEntry" type="string" value="Enter_Your_Data" size="100" tabindex=1 />
+       </form>
+    </div>
+  </div>
+</div>
+<div class="editSequence">
+  <%= render 'form' %>
+</div>
 
 <div class="links">
   <%= link_to 'To Root', :root %> | 
   <%= link_to 'Show This Sequence', @sequence %> |
   <%= link_to 'All Sequences', sequences_path %> |
-  <%= link_to 'All SequenceCreateds', sequence_createds_path %>
+  <%= link_to 'New Sequence', new_sequence_path %>
 </div>

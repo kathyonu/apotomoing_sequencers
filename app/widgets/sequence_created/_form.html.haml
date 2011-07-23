@@ -16,11 +16,3 @@
 
       = submit_tag "Submit Sequences", { :id => "submit", :class => "sequencesubmit" }
       = label_tag 'submit', " not refreshing page yet"
-
-:javascript
-  var form = $j("##{widget_id} form");
-
-  form.submit(function() {
-    $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
-    return false;
-  });
