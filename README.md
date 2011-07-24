@@ -1,10 +1,10 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time, 20110719
-#### apotomoing_sequencers now has five sequencers sequencing.
+### Note: At this time, 20110724
+#### apotomoing_sequencers now has five sequencers sequencing in several places in the app.
 
-#### This means when you enter your text into the anagram widget,
+#### This means after you enter your text into the entry box,
 #### when you tab or click out of the entry box, the five sequences
 #### will be generated and entered into the sequence_created widget,
 #### without page change, using jQuery, javascript and AJAX.
@@ -25,7 +25,9 @@
 *	http://localhost:3000/             <= :root, empowered with cells and widgets, now processing user_entry into the five sequences.
 *	http://localhost:3000/quotes/new   <= scaffolded CRUD, no widgets nor cells, first javascript sequencer for display of principle.
 *	http://localhost:3000/anagrams/new <= scaffolded CRUD, no widgets nor cells, second javascript sequencer for display of principle.
-*	http://localhost:3000/sequences/   <= scaffolded CRUD, no widgets nor cells, with jQuery Datepicker working as proof of working.
+*	http://localhost:3000/sequences/   <= now sequencing the five sequences from your text entry, with jQuery.
+*	http://localhost:3000/sequences/new <= five sequencers working
+*	http://localhost:3000/sequences/edit <= five sequencers working
 
 #### The sequences address will show the entire app's design in one table.  
 #### The sequences table is a primitive setup allowing massive duplicates in the five sequences.
@@ -39,7 +41,7 @@ The regular expressions file empowering the String#to_textual method is here : a
 
 Currently, we are writing this app using the Snow Leopard iMac with : 
 ### [ruby](http://rubyforge.org/ "Ruby 1.9.2p0 2010-08-18 revision 29036 [x86_64-darwin10]")
-### [rails](http://rubyforge.org/projects/rails/ "Rails 3.0.5")
+### [rails](http://rubyforge.org/projects/rails/ "Rails 3.0.5, up through $ails 3.0.9")
 ### [apotomo](http://apotomo.de/ "Apotomo 1.1.1")
 ### [cells](http://cells.rubyforge.org/ "Cells 3.5.6")
 ### [sqlite3](http://www.sqlite.org/quickstart.html "SQLite")
@@ -48,6 +50,8 @@ The app uses sqlite3 for the database, so you have no setup to do there.
 Our in-house app will be using mysql2 in production.
 ### [jQuery](http://jquery.com/ "jQuery")
 jQuery empowers the five sequencers with asynchronous processing.
+### See : app/public/javascript/sequencenewsequencers.js : affects the widgets
+### See : app/public/javascript/fivesequencers.js : affects sequences/new and sequences/edit
 
 ## apotomoing_sequencers
 As a name, it comes from two stories of creation:
