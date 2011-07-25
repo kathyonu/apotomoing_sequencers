@@ -116,7 +116,7 @@ DEPENDENCIES
   jquery-rails (>= 1.0.3)
   mocha
   onfire
-  rails (~> 3.0.3)
+  rails (~> 3.0.x)
   rails-ujs (~> 0.0.3)
   sho-mongrel
   shoulda

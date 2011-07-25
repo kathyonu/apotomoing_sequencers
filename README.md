@@ -29,9 +29,9 @@
 *	http://localhost:3000/sequences/new <= five sequencers working
 *	http://localhost:3000/sequences/edit <= five sequencers working
 
-> The sequences address will show the entire app's design in one table.  
-> The sequences table is a primitive setup allowing massive duplicates in the five sequences.
-> The sequences table was added so you can see how the entire application can exist in one table.
+> The sequences address will show the entire app's design in one table. 
+> The sequences table is a primitive setup allowing massive duplicates in the five sequences. 
+> The sequences table was added so you can see how the entire application can exist in one table. 
 
 ## Description:
 
@@ -50,8 +50,8 @@ The app uses sqlite3 for the database, so you have no setup to do there.
 Our in-house app will be using mysql2 in production.
 ### [jQuery](http://jquery.com/ "jQuery")
 jQuery empowers the five sequencers with asynchronous processing.
-### See : app/public/javascript/sequencenewsequencers.js : affects the widgets
-### See : app/public/javascript/fivesequencers.js : affects sequences/new and sequences/edit
+#### See : app/public/javascript/sequencenewsequencers.js : affects the widgets
+#### See : app/public/javascript/fivesequencers.js : affects sequences/new and sequences/edit
 
 ## apotomoing_sequencers
 As a name, it comes from two stories of creation:
