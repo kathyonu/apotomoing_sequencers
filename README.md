@@ -1,7 +1,7 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time, 20110724
+### Note: At this time, 20110725
 #### apotomoing_sequencers now has five sequencers sequencing in several places in the app.
 
 #### This means after you enter your text into the entry box,
