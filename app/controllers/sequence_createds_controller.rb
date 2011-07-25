@@ -32,21 +32,7 @@ class SequenceCreatedsController < ApplicationController
     end
   end
 
-  # GET /sequence_createds/new
-  # GET /sequence_createds/new.xml
-  def new
-    @sequence_created = SequenceCreated.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @sequence_created }
-    end
-  end
-
-  # GET /sequence_createds/1/edit
-  def edit
-    @sequence_created = SequenceCreated.find(params[:id])
-  end
+  private
 
   # POST /sequence_createds
   # POST /sequence_createds.xml
@@ -90,5 +76,21 @@ class SequenceCreatedsController < ApplicationController
       format.html { redirect_to(sequence_createds_url) }
       format.xml  { head :ok }
     end
+  end
+
+  # GET /sequence_createds/new
+  # GET /sequence_createds/new.xml
+  def new
+    @sequence_created = SequenceCreated.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @sequence_created }
+    end
+  end
+
+  # GET /sequence_createds/1/edit
+  def edit
+    @sequence_created = SequenceCreated.find(params[:id])
   end
 end
