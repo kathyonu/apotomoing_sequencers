@@ -35,7 +35,7 @@ GEM
       onfire (~> 0.2.0)
     arel (2.0.10)
     builder (2.1.2)
-    cells (3.6.3)
+    cells (3.6.4)
       actionpack (~> 3.0)
       railties (~> 3.0)
     cgi_multipart_eof_fix (2.5.0)
@@ -81,6 +81,7 @@ GEM
       activesupport (= 3.0.9)
       bundler (~> 1.0)
       railties (= 3.0.9)
+    rails-ujs (0.0.3)
     railties (3.0.9)
       actionpack (= 3.0.9)
       activesupport (= 3.0.9)
@@ -116,6 +117,7 @@ DEPENDENCIES
   mocha
   onfire
   rails (~> 3.0.3)
+  rails-ujs (~> 0.0.3)
   sho-mongrel
   shoulda
   sqlite3-ruby (= 1.2.5)

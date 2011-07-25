@@ -8,6 +8,8 @@ gem 'RedCloth', '>= 4.1.1'
 
 gem 'jquery-rails', '>= 1.0.3'
 
+gem "rails-ujs", "~> 0.0.3"
+
 gem 'sho-mongrel'
 
   # to use the published apotomo gem

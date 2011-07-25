@@ -2,14 +2,14 @@
 * github.com/kathyonu/apotomoing_sequencers
 
 ### Note: At this time, 20110725
-#### apotomoing_sequencers now has five sequencers sequencing in several places in the app.
+> apotomoing_sequencers now has five sequencers sequencing in several places in the app.
 
-#### This means after you enter your text into the entry box,
-#### when you tab or click out of the entry box, the five sequences
-#### will be generated and entered into the sequence_created widget,
-#### without page change, using jQuery, javascript and AJAX.
+> This means after you enter your text into the entry box,
+> when you tab or click out of the entry box, the five sequences
+> will be generated and entered into the sequence_created widget,
+> without page change, using jQuery, javascript and AJAX.
 
-#### See app/doc/README_FOR_APP, for some development history milestones.
+> See app/doc/README_FOR_APP, for some development history milestones.
 
 # Getting Started
 ## In your Terminal
@@ -29,9 +29,9 @@
 *	http://localhost:3000/sequences/new <= five sequencers working
 *	http://localhost:3000/sequences/edit <= five sequencers working
 
-#### The sequences address will show the entire app's design in one table.  
-#### The sequences table is a primitive setup allowing massive duplicates in the five sequences.
-#### The sequences table was added so you can see how the entire application can exist in one table.
+> The sequences address will show the entire app's design in one table.  
+> The sequences table is a primitive setup allowing massive duplicates in the five sequences.
+> The sequences table was added so you can see how the entire application can exist in one table.
 
 ## Description:
 

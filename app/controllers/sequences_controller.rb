@@ -20,6 +20,8 @@ class SequencesController < ApplicationController
       format.xml  { render :xml => @sequence }
     end
   end
+  
+  private
 
   # GET /sequences/new
   # GET /sequences/new.xml
