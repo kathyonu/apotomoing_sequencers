@@ -1,5 +1,6 @@
 // this file name is app/public/javascript/sequencenewsequencers.js
 // this file affects app/views/sequences/new.html.erb
+// this file affects app/views/sequences/edit.html.erb
 
 $j(document).ready(
   function() {

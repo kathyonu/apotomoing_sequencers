@@ -1,3 +1,4 @@
+// this file name is app/public/javascript/fivesequencers.js
 // this file affects app/widgets/anagram/_form.html.haml
 // this file affects app/widgets/sequence_created/_form.html.haml
 
