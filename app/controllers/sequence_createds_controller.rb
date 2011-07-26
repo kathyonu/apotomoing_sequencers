@@ -32,8 +32,6 @@ class SequenceCreatedsController < ApplicationController
     end
   end
 
-  private
-
   # POST /sequence_createds
   # POST /sequence_createds.xml
   def create

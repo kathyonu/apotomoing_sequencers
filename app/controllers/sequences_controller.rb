@@ -21,8 +21,6 @@ class SequencesController < ApplicationController
     end
   end
   
-  private
-
   # GET /sequences/new
   # GET /sequences/new.xml
   def new
