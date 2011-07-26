@@ -1,13 +1,13 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time, 20110725
+### Note: At this time, 20110726
 > apotomoing_sequencers now has five sequencers sequencing in several places in the app.
 
 > This means after you enter your text into the entry box,
 > when you tab or click out of the entry box, the five sequences
 > will be generated and entered into the sequence_created widget,
-> without page change, using jQuery, javascript and AJAX.
+> without page change, using javascript with jQuery.
 
 > See app/doc/README_FOR_APP, for some development history milestones.
 
