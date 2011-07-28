@@ -19,7 +19,7 @@ $j(document).ready(
           var userentry = (this.value)
           var anagramtext = document.getElementById('anagram_text'); 
           anagramtext.form.onsubmit = function() { return false; }
-          $j('#anagram form input#submit').hide();
+          $j('#anagram > form[0] > input#submit').show();
           $j('input#anagramListOpen').hide();
           $j('input#sequencerOpen').hide();
           $j('p').removeClass('explain');

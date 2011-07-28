@@ -2,7 +2,7 @@ class SequenceCreatedWidget < Apotomo::Widget
   helper ApplicationHelper
   
   responds_to_event :submit
-  responds_to_event :newSequenceCreated, :with => :update, :passing => :root
+ #responds_to_event :newSequenceCreated, :with => :update, :passing => :root
  #responds_to_event :submit, :from => :sequence_created, :with => :submit, :on => :sequence_created, :passing => :root
  #responds_to_event :submit, :from => :sequence_created, :with => :submit, :on => :anagram
 

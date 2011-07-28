@@ -59,7 +59,8 @@ $j(document).ready(
 //  submitting it after the sequence_created form completes.
 $j(document).ready(
   function() {
-    $j('#anagram > form > input#submit').click(
+    $j('#anagram > form[0] > input#submit').click(
+    //$j('#anagram > form > input#submit').click(
       function($je) {
         $j('#anagramListDisplay').hide(),
         $j('#sequencerWidgetDisplay').hide(),
