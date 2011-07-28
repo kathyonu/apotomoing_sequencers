@@ -3,7 +3,7 @@
   = widget_div do
     = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
       = text_field_tag 'sequence_text'
-      = label_tag 'sequence_text', 'your text sequence'
+      = label_tag 'sequence_textual', 'your text sequence'
       = text_field_tag 'sequence_creation'
       = label_tag 'sequence_creation', 'creation sequence'
       = text_field_tag 'sequence_complete'
@@ -16,3 +16,12 @@
 
       = submit_tag "Submit Sequences", { :id => "submit", :class => "sequencesubmit" }
       = label_tag 'submit', " not refreshing page yet"
+
+:javascript
+  
+  var form = $j("##{widget_id} form");
+
+  form.submit(function() {
+    $j.ajax({url: form.attr("data-event-url"), data: form.serialize()})
+    return false;
+  });

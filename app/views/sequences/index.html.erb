@@ -23,7 +23,7 @@
 
 <% @sequences.each do |sequence| %>
   <tr>
-    <td><%= sequence.created_at.strftime("%Y%m%d%H%M:%S:seconds") %></td>
+    <td><%= sequence.created_at.strftime("%Y%m%d%H%M:%S") %></td>
     <td><%= sequence.sequence_text %></td>
     <td><%= sequence.sequence_creation %></td>
     <td><%= sequence.sequence_complete %></td>

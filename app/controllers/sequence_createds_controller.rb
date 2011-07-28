@@ -8,6 +8,7 @@ class SequenceCreatedsController < ApplicationController
     root << widget(:sequence_created, 'sequence_lexigram')
     root << widget(:sequence_created, 'sequence_singular')
     root << widget(:anagram)
+   #root.respond_to_event :submit, :from => :sequence_created, :with => :submit, :on => :sequence_created, :passing => :root
   end
 
   # GET /sequence_createds
