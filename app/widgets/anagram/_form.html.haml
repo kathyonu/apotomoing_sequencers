@@ -13,3 +13,11 @@
       
       .linkTo#reset= link_to 'Reset Page', :root
 
+:javascript
+  
+  var form1 = $j("##{widget_id} form");
+
+  form1.submit(function() {
+    $j.ajax({url: form1.attr("data-event-url"), data: form1.serialize()})
+    return false;
+  });
