@@ -2,11 +2,11 @@
 
   = widget_div do
     = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
-      = text_field_tag 'anagram_text', 'Enter_Your_Data', :size => '30', :maxlength => '250'
+      = text_field_tag 'anagram_text', 'Enter_Your_Data', :size => '30', :maxlength => '150'
       = label_tag 'anagram_text', 'Enter Anagram'
-      = text_field_tag 'description', '', :size => '30', :maxlength => '250'
+      = text_field_tag 'description', '', :size => '30', :maxlength => '150'
       = label_tag 'description', 'description'
-      = text_field_tag 'reference', '', :size => '30', :maxlength => '250'
+      = text_field_tag 'reference', '', :size => '30', :maxlength => '150'
       = label_tag 'reference', 'reference'
 
       = submit_tag "Submit Anagram", { :id => "submit" }
@@ -15,9 +15,9 @@
 
 :javascript
   
-  var form1 = $j("##{widget_id} form");
+  var forma = $j("#anagram form");
 
-  form1.submit(function() {
-    $j.ajax({url: form1.attr("data-event-url"), data: form1.serialize()})
+  forma.submit(function() {
+    $j.ajax({url: forma.attr("data-event-url"), data: forma.serialize()})
     return false;
   });
