@@ -15,13 +15,20 @@ test:
   pool: 5
   timeout: 5000
 
+# Production Instruction : using mysql2
+# adjust your username and password below
+# use File - Save_As to save the file as : database.yml
+# don't forget to run rake on the db in the production environment.
+# you also have to have created a database in mysql as named below.
+# or you can change any or all of this to your own needs.
 production:
   adapter: mysql2
   database: apotomoing_sequencers_production
   encoding: utf8
-  username: root
-  password: "a_leap_too"
+  username: "your_name_here"
+  password: "your_password_here"
   socket: /tmp/mysql.sock
   pool: 5
-  host: 127.0.0.1
+  host: 127.0.0.1    # one or the other
+ #host: localhost    # one or the other
   timeout: 5000
