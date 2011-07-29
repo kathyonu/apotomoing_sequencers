@@ -1,4 +1,4 @@
-// still working on this one
+// resets the forms in the anagram and sequence_created widgets
 
 $j(document).ready(
   function() {
