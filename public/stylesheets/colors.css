@@ -5,18 +5,18 @@
 }
 
 .anagramList {
-  background-color: #FFFDDA;
+  background: #FFFDDA;
   border-top: 2px solid red;
   border-right: 2px solid red;
   border-bottom: 2px solid red;
 }
 
 .anagramList ul li {
-  background-color: #FFFDDA;
+  background: #FFFDDA;
 }
 
 .anagramWidgetDisplay {
-  background-color: #99CCFF;
+  background: #99CCFF;
   border-top: 5px solid purple;
   border-right: 11px solid purple;
   border-bottom: 5px solid purple;
@@ -48,7 +48,7 @@
 }
 
 .cellularQuote {
-  background-color: #FFFF99;
+  background: #FFFF99;
   border-top: 5px solid maroon;
   border-right: 10px solid maroon;
   border-bottom: 15px solid maroon;
@@ -56,11 +56,11 @@
 }
 
 .codeSource {
-  background-color: yellow;
+  background: yellow;
 }
   
 .cellularQuoteSequencerDisplay {
-  background-color: #FFFFCC;
+  background: #FFFFCC;
   border-top: 17px solid maroon;
   border-right: 12px solid maroon;
   border-bottom: 5px solid maroon;
@@ -68,23 +68,23 @@
 }
 
 .count {
-  background-color: #FFFDDA;
+  background: #FFFDDA;
 }
 
 .countAnagrams {
-  background-color: #FFFDDA;
+  background: #FFFDDA;
 }
 
 .countQuotes {
-  background-color: #FFFDDA;
+  background: #FFFDDA;
 }
 
 .countSequenceCreateds {
-  background-color: #FFFDDA;
+  background: #FFFDDA;
 }
 
 .countSequences {
-  background-color: #FFFDDA;
+  background: #FFFDDA;
 }
 
 .CurrentTime {
@@ -95,9 +95,9 @@
   border: 1px solid black;
 }
 
-.formAnagram #anagram form input#anagram_text {
+.formAnagram #anagram form input#anagramText {
   border: 2px solid red;
-  background-color: #F9C8D8;
+  background: #F9C8D8;
 }
 
 .formAnagram #anagram form input#description {
@@ -116,7 +116,7 @@
 
 .formSequenceCreated input {
   border: 1px solid black;
-  background-color: #F9C8D8;
+  background: #F9C8D8;
 }
 
 .hereBegins {
@@ -150,7 +150,7 @@
 }
 
 .linksInfoCrud {
-  background-color: #FFFF00;
+  background: #FFFF00;
 }
 
 .linksInfoRoot {
@@ -158,18 +158,18 @@
 }
 
 .linkTo {
-  background-color: #FFFDDA;
+  background: #FFFDDA;
 }
 
 .newAnagram {
   border: 10px solid yellow;
 }
 
-.newAnagram > div.field {
+.newAnagram > .field {
   border: 2px solid blue;
 }
 
-.newAnagram > div.field#text {
+.newAnagram > .field#text {
   border: 2px solid lime;
 }
 
@@ -181,7 +181,7 @@
 }
 
 .sequenceCreatedWidgetDisplay {
-  background-color: #FFFDDA;
+  background: #FFFDDA;
   border-top: 5px solid purple;
   border-right: 11px solid purple;
   border-bottom: 5px solid purple;
@@ -195,18 +195,18 @@
 
 .sequencesubmit {
   border: 2px solid yellow;
-  background-color: yellow;
+  background: yellow;
   color: black;
 }
 
 .submitsequence {
   border: 2px solid red;  
-  background-color: yellow;
+  background: yellow;
   color: black;
 }
 
 .sequencerWidgetDisplay {
-  background-color: white;
+  background: white;
   border-top: 5px solid purple;
   border-right: 11px solid purple;
   border-bottom: 5px solid purple;
@@ -214,11 +214,11 @@
 }
 
 .noteSequenceCreated {
-  background-color: #F9C8D8;
+  background: #F9C8D8;
 }
 
-.field_with_errors {
-  background-color: red;
+.fieldWithErrors {
+  background: red;
 }
 
 .textFound {
@@ -236,11 +236,11 @@
 }
 
 #reset {
-  background-color: #99CCFF;
+  background: #99CCFF;
   color: purple;
 }
 
-#sequence_text {
+#sequenceText {
   border: 1px solid red;
 }
 
@@ -280,7 +280,7 @@
   border-left: 11px solid purple;
 }
 
-#sequencerFirst > input > anagramEntry#anagram_text {
+#sequencerFirst > input > anagramEntry#anagramText {
   border: 10px solid red;
 }
 

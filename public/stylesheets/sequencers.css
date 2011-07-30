@@ -118,7 +118,7 @@
 .CurrentTime {
   margin-top: 0;
   margin-right: 10%;
-  font-size: 2em;
+  font-size: 140%;
   line-height: 150%;
 }
 
@@ -129,7 +129,7 @@
   padding-top: 5px;
 }
 
-.formAnagram #anagram form input#anagram_text {
+.formAnagram #anagram form input#anagramText {
   margin: 8px;
   margin-bottom: 1px;
   padding: 5px;
@@ -285,18 +285,18 @@
   margin-left: 10px;
 }
 
-.field_with_errors {
+.fieldWithErrors {
   padding: 2px;
   display: table;
 }
 
 .sequencesubmit {
-  font-size: 1.3em;
+  font-size: 130%;
   padding-left: 45px;
 }
 
 .submitsequence {
-  font-size: 1.1em;
+  font-size: 110%;
 }
 
 .small {
@@ -338,7 +338,7 @@
 #currentTime {
   padding: 10px;
   margin: 10px;  
-  font-size: 2em;
+  font-size: 140%;
   line-height: 150%;
 }
 
@@ -365,11 +365,11 @@
   text-align: right;
 }
 
-#sequence_text {
+#sequenceText {
   border: 2px solid blue;
 }
 
-#sequence_createds_index {
+#sequenceCreatedsIndex {
   width: 1400px;
 }
 
@@ -467,7 +467,7 @@
   z-index: 70;
 }
 
-#sequencerFirst > input > anagramEntry#anagram_text {
+#sequencerFirst > input > anagramEntry#anagramText {
   margin-top: 10px;
   font-size: 75%;
 }
