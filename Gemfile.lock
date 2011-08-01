@@ -66,6 +66,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     mocha (0.9.12)
+    mysql2 (0.3.6)
     onfire (0.2.0)
     polyglot (0.3.1)
     rack (1.2.3)
@@ -115,6 +116,7 @@ DEPENDENCIES
   jeweler
   jquery-rails (>= 1.0.3)
   mocha
+  mysql2 (~> 0.2.x)
   onfire
   rails (~> 3.0.x)
   rails-ujs (~> 0.0.3)
