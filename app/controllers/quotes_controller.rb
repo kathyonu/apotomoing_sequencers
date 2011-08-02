@@ -3,7 +3,7 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.xml
   def index
-    @quotes = Quote.all
+    @quotes = Quote.order("id DESC")
 
     respond_to do |format|
       format.html # index.html.erb

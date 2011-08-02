@@ -2,7 +2,7 @@ class SequencesController < ApplicationController
   # GET /sequences
   # GET /sequences.xml
   def index
-    @sequences = Sequence.find:all
+    @sequences = Sequence.order("id DESC")
 
     respond_to do |format|
       format.html # index.html.erb
