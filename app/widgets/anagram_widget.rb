@@ -10,7 +10,7 @@ class AnagramWidget < Apotomo::Widget
   end
 
   def display
-    @anagrams = Anagram.order("id DESC limit(10)")
+    @anagrams = Anagram.find:all
 
     render
   end

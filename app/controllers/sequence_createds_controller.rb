@@ -13,7 +13,7 @@ class SequenceCreatedsController < ApplicationController
   # GET /sequence_createds
   # GET /sequence_createds.xml
   def index
-    @sequence_createds = SequenceCreated.order("id DESC limit(1000)")
+    @sequence_createds = SequenceCreated.find:all
 
     respond_to do |format|
       format.html # index.html.erb

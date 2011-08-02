@@ -9,7 +9,7 @@ class AnagramsController < ApplicationController
   # GET /anagrams
   # GET /anagrams.xml
   def index
-    @anagrams = Anagram.order("id DESC limit(10)")
+    @anagrams = Anagram.find:all
 
     respond_to do |format|
       format.html # index.html.erb
