@@ -2,7 +2,10 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 3.0.x'
 
-gem 'mysql2', '~> 0.2.x'
+# gem 'mysql'
+
+# gem 'mysql2', '~> 0.2.7'
+gem 'mysql2', '< 0.3'
 
 gem 'RedCloth', '>= 4.1.1'
 

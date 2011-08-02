@@ -3,6 +3,7 @@
 **/.DS_Store
 log/*.log
 log/.gitignore
+mysql/*
 tmp/**/*
 tmp/*
 app/helpers/lexigram.rb
