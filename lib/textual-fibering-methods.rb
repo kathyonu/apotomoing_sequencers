@@ -17,12 +17,17 @@ require 'fiber'
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below
   def file_name
-    @file_name = ("../../Documents/20110421-research_textualed.txt")
+    @file_name = ("tmp/insert_anagrams.txt")
+   #@file_name = ("tmp/insert_externals.txt")
+   #file_name = ("tmp/insert_internals.txt")
+   #@file_name = ("../../Documents/20110421-research_textualed.txt")
   end
 
     # solid_gold_code DO NOT CHANGE : 20101026
   def process_anagrams_lines
-    File.open("./lib/anagrams/anagrams_table_data.txt", "r") do |f|
+    File.open("tmp/insert_anagrams.txt", "r") do |f|
+   #File.open(file_name, "r") do |f|
+   #File.open("./lib/anagrams/anagrams_table_data.txt", "r") do |f|
       f.each_line do |line|
         puts line.to_textual
         sleep(0.01)
@@ -37,7 +42,9 @@ require 'fiber'
 
     # unproven as yet
   def processing_anagrams
-    File.open("./lib/anagrams/anagrams_table_data.txt", "r") do |f|
+    File.open("tmp/insert_anagrams.txt", "r") do |f|
+   #File.open(file_name, "r") do |f|
+   #File.open("./lib/anagrams/anagrams_table_data.txt", "r") do |f|
       f.each_line do |line|
         anagram = line.chomp 
          #loop do |anagram|
@@ -54,25 +61,32 @@ require 'fiber'
 
     # solid_gold_code DO NOT CHANGE : 20101026
   def process_internals_hash
-    File.open("./lib/internals/internals_table_data_input_hash.txt", "r") do |f|
+    File.open("tmp/insert_internals.txt", "r") do |f|
+   #File.open(file_name, "r") do |f|
+   #File.open("./lib/internals/internals_table_data_input_hash.txt", "r") do |f|
    #File.open("./lib/internals/internals_table_data.lines.txt", "r") do |f|
       f.each_line do |line|
-        internal_searched, searched = line.chomp.split("\t")   # HASH usage
-       # puts line.to_textual   # LINES usage
-       # created_sequence_id = external_searched(/continue code/)
-       # creation_sequence_id = 
-       # complete_sequence_id = 
-       # lexigram_sequence_id = 
-       # singular_sequence_id = complete_sequence_id.squeeze
-        puts "#{internal_searched.to_textual}\t#{searched}" 
-       # sleep(0.1)
+	  unless nil
+        internal_searched, searched = line.split("\t")
+          sequence_text = internal_searched.to_textual
+          sequence_creation = sequence_text.de_comma.de_space
+          sequence_complete = sequence_creation.split(//).sort.join('').strip
+          sequence_lexigram = sequence_complete.reverse      # until the lexigram code is complete, i replace it with a simple reverse
+          sequence_singular = sequence_complete.squeeze
+          description = "internal search"
+          reference = searched.strip
+          internal = 1
+          puts "#{internal_searched.to_textual}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{internal}"
+	      end
+		 #sleep(1)
+        end
       end
-    end
   end
 
     # solid_gold_code DO NOT CHANGE : 20101026
   def process_internals_lines
-    File.open("./lib/internals/internals_table_data_input_lines.txt", "r") do |f|
+    File.open(file_name, "r") do |f|
+   #File.open("./lib/internals/internals_table_data_input_lines.txt", "r") do |f|
       f.each_line do |line|
         puts line.to_textual
         sleep(0.01)
@@ -164,7 +178,8 @@ require 'fiber'
     # from this  : begin stories
     # to this    : ('begin stories')
   def mysql_lines
-    File.open('./lib/databasers/fibered_files_output.txt') do |line|
+    File.open(file_name, "r") do |line|
+   #File.open('./lib/databasers/fibered_files_output.txt') do |line|
       line.each do |x|
         puts "('" + "#{x.strip}" + "')"
       end
@@ -176,9 +191,8 @@ require 'fiber'
     consumer = Fiber.new do |producer, queue|
      #f = open("./lib/fiber_output.txt", "a") do |f|
      #f = open("./lib/files_to_textual/fibering_files_output.txt", "a") do |f|
-     #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f|
-     #f = open("./lib/databasers/fibered_files_output.txt", "a") do |f| 
-      f = open("./lib/databasers/fibering_files_output.txt", "a") do |f| 
+     #f = open("./lib/databasers/fibering_files_output.txt", "a") do |f| 
+      f = open("./lib/databasers/fibered_files_output.txt", "a") do |f|
         loop do
           queue = producer.transfer(consumer, queue)
           #puts queue
@@ -196,14 +210,15 @@ require 'fiber'
       end
       end
       producer = Fiber.new do |consumer, queue|
-      list = File.readlines(file_name)
+	 #list = File.readlines(file_name)
+      list = File.readlines("./lib/anagrams/anagrams_table_data.txt")
       full_list = list.sort_by { |x| x.downcase }
      #b = IO.readlines(file_name)
      #b = IO.readlines(ARGV)
      #b = IO.readlines("./lib/the_input.txt")
       loop do
         while a = full_list.shift
-          queue = a.to_s.chomp.to_textual unless nil
+          queue = a.to_textual unless nil
           consumer.transfer queue
           queue.clear
         end

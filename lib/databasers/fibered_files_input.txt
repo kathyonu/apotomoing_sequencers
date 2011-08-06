@@ -73,14 +73,14 @@ You want to process an entire file ?
 
 Right now, go to your Terminal and type in : 
 
-	$ write_file
+	$ strings_to_lines_textualed
 
 This is one of the methods defined in the textual-fibering-methods.rb file.
-It will kick out all the data in the /lib/anagrams/anagrams_table_data.txt file, after processing it using String#to_textual
+It will kick out all the data in the file defined by the file_name method, and its variable, after processing it using String#to_textual
 Open the data file so you see the difference between that, and what appears on your screen.
 
 If you look in the textual-fibering-methods.rb file you will see the method named as : file_name
-There, you will see the /lib/anagrams/anagrams_table_data.txt is set for you.
+There, you will see the choices of files available to process, and one is set for you.
 You can change the file_name("file_address") to process your named files. 
 You will see our many examples in the method are commented out.
 Set your file names as you wish, and comment and uncomment to choose which one file_name you use.
