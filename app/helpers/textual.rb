@@ -5472,8 +5472,7 @@ module Textual
     foo.gsub!(/(^,+\s)/, "")                  # commas           : removes commas at the beginning of the line
     foo.gsub!(/(^,+)/, "")                    # commas           : removes commas at the beginning of the line
     foo.gsub!(/(,+)$/, "")                    # commas           : removes commas at the end of the line
-    foo.gsub!(/(\s*?(,$))/, "")               # commas           : removes commas / spaces at tend of line
-    foo.gsub!(/(\s+?,$)/, "")                 # commas           : removes commas / spaces at tend of line
+    foo.gsub!(/(\s*?,$)/, "")                 # commas           : removes commas / spaces at tend of line
     foo.gsub!(/(\s*?(,+$))/, "")              # commas           : removes commas / spaces at tend of line
     foo.gsub!(/(\s*(,)\s*$)/, "")             # commas            : removes commas / spaces at tend of line
     foo.gsub!(/(\s[\""]+\.\s)/, "\n")         # space quotes period spacee : replaces the ( ". ) With the \n 
@@ -5525,14 +5524,14 @@ module Textual
    #foo.gsub!(/\\/, " back slash ")    # backward slash  : if uncommented, will replace backslashes with the text, back slash
    #foo.gsub!(/(\\)+?/, " ")           # backward slash  : test this one agaist the next one, is there a difference showing in way on the outputs ?
     foo.gsub!(/\\+?/, " ")             # backward slash  : they simply disappear, replaced by space
-    foo.gsub!(/\s?:$/, "")             # colon           : replaces the colon, with or without space preceeding it, at the end of the line, with nothing
+    foo.gsub!(/\s*:$/, "")             # colon           : replaces the colon, with or without space preceeding it, at the end of the line, with nothing
     foo.gsub!(/\s+(::)\s+/, ", ")      # colon           : removes double colons with space on each side till none remain : any resulting doubling of comma space is dealt with later
     foo.gsub!(/\s+(:)\s+/, ", ")       # colon           : removes single colons with speace on each side till none remain : any resulting doubling of comma space is dealt with later
     foo.gsub!(/::/, ", ")              # colon           : this is essentially a duplicate of  foo.gsub!(/\s?(::)\s?/, ", ")  as shown in second line above, sans the space requirement
     foo.gsub!(/:/, ", ")               # colon           : replaces all colons with comma space
-    foo.gsub!(/(\s?;)$/, "")           # semicolon       : replaces the colon, with or without space preceeding it, at the end of the line, with nothing
-    foo.gsub!(/\s?;\s+/, ", ")         # semicolon       : all semicolons followed by space, replaced by comma space 
-    foo.gsub!(/(;)\s?/, ", ")          # semicolon       : all semicolons replaced by comma space
+    foo.gsub!(/(\s*;)$/, "")           # semicolon       : replaces the colon, with or without space preceeding it, at the end of the line, with nothing
+    foo.gsub!(/\s*;\s+/, ", ")         # semicolon       : all semicolons followed by space, replaced by comma space 
+    foo.gsub!(/(;)\s*/, ", ")          # semicolon       : all semicolons replaced by comma space
     foo.gsub!(/</, " ")                # left arrow      : poofed gone by space
     foo.gsub!(/>/, " ")                # right arrow     : poofed gone by space
     foo.gsub!(/`/, " ")                # back tic        : poofed gone by space
@@ -5600,17 +5599,16 @@ module Textual
     foo.gsub!(/^[\'']/, "")             # single quotes : removes single quote(s) before beginning of line
     foo.gsub!(/[\""$]/, "")             # double quotes : removes double quote(s) before end of line
     foo.gsub!(/[\''$]/, "")             # single quotes : removes single quote(s) before end of line
-    foo.gsub!(/[\""]/, "\s")            # double quotes : removes final stray double quote(s), replacing with one space
-    foo.gsub!(/[\'']/, "")              # single quotes : removes final stray single quote(s), replacing with one space
+    foo.gsub!(/[\""]/, " ")             # double quotes : removes final stray double quote(s), replacing with one space
+    foo.gsub!(/[\'']/, "")              # single quotes : removes final stray single quote(s), replacing with no space
     foo.gsub!(/(\(+?\s*?\)+?$)/, "")    ## removes opening parenthesis at end of the line AGAIN, preceded by closing parenthesis(es) and space(s), replaceing it with nothing, repeacted from far above, as a final cleanup
     foo.gsub!(/(^\)*?\s?\(+)/, "")      # removes closing parenthesis at beginning of line AGAIN, followed by opening parenthesis at beginning of line, with or wtihout space in front of it, repeated from far above, as a final cleanup
-    foo.gsub!(/(\s*?(,$))/, "")         # commas : removes commas / spaces at end of line, AGAIN
-    foo.gsub!(/(\s+?(,$))/, "")         # commas : removes commas / spaces at tend of line, AGAIN
-    foo.gsub!(/(\s*?(,+)\s*?$)/, "")    # commas : removes commas / spaces at tend of line, AGAIN
+    foo.gsub!(/(\s+,+\s+$)/, "")        # commas : removes commas / spaces at tend of line, AGAIN
+    foo.gsub!(/(\s*,+$)/, "")           # commas : removes commas / spaces at end of line, AGAIN
     foo.gsub!(/^\s+/, "")               # spaces  : removes spaces at the beginning of the line
     foo.gsub!(/\s+$/, "")               # spaces  : removes spaces at the end of the line
     foo.gsub!(/\.+$/, "")               # period  : removes periods at the end of the line
-    foo.gsub!(/(\.\s+?)/, "\n")         # period  : removes period space(s), replaces with new line
+    foo.gsub!(/(\.\s+)/, "\n")          # period  : removes period space(s), replaces with new line
     foo.gsub!(/\.+/, "\n")              # periods : removes any remaining periods anywhere in the line and replaces with one new line
     foo.gsub!(/(\s\s+)/, " ")           # spaces  : replaces multiple spacing with one space
     foo.gsub!(/(\!+\s*)$/, "")          # exclamation marks(s) : final removal of newly exposed exclamation marks at the end of line, this one doing it better than above, as it takes into account any space at the end of the line

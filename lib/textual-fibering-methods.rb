@@ -10,17 +10,18 @@
 #### this file is under development, not all methods work yet .. use with care.
 
 include Textual
+include Lexigram
 
-# include Lexigram
-
+require 'histogram'
 require 'fiber'
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below
   def file_name
-    @file_name = ("tmp/insert_anagrams.txt")
-   #@file_name = ("tmp/insert_externals.txt")
+   #file_name = ("tmp/insert_anagrams.txt")
+   #file_name = ("tmp/insert_externals.txt")
    #file_name = ("tmp/insert_internals.txt")
-   #@file_name = ("../../Documents/20110421-research_textualed.txt")
+   #file_name = ("../../Documents/20110421-research_textualed.txt")
+    file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
   end
 
     # solid_gold_code DO NOT CHANGE : 20101026
@@ -133,14 +134,78 @@ require 'fiber'
   end
 
     # solid_gold_code DO NOT CHANGE : 20101026
+
   def process_externals_lines
-    File.open("./lib/externals/externals_table_data_input_lines.txt", "r") do |f|
+    File.open(file_name, "r") do |f|
+    #File.open("./lib/externals/externals_table_data_input_lines.txt", "r") do |f|
       f.each_line do |line|
         puts line.to_textual
         sleep(0.01)
       end
     end
   end
+
+
+
+
+
+
+
+
+
+  def process_sex
+    open(file_name) do |f|
+      f.each_line do |line|
+        sequence_text = line
+        sequence_creation = line.de_comma.de_space
+        puts "#{sequence_text}\t#{sequence_creation}"
+        sleep(1)
+	  end
+    end
+  end
+
+
+
+
+
+
+
+
+
+
+    # solid_gold_code DO NOT CHANGE : 20110810
+  def process_sexualities
+    open(file_name, "r") do |f|
+      f.each_line do |line|
+        sequence_text = line.de_comma
+        sequence_creation = sequence_text.to_s.de_comma.de_space
+        sequence_complete = sequence_creation.split(//).sort.join('').strip
+        sequence_lexigram = sequence_complete.reverse      # until the lexigram code is complete, i replace it with a simple reverse
+        sequence_singular = sequence_complete.squeeze
+        description = "sexual lines"
+        reference = "literotica"
+        sexualities = 1
+        p "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{sexualities}"
+      end
+      sleep(1)
+    end
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     # solid_gold_code DO NOT CHANGE : 20101026
     # processes raw text in the #file_name method (see above) to new lines cleansed of all punctuations and such.
