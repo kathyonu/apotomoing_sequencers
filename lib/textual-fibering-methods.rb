@@ -10,7 +10,8 @@
 #### this file is under development, not all methods work yet .. use with care.
 
 include Textual
-include Lexigram
+
+#include Lexigram
 
 require 'histogram'
 require 'fiber'
@@ -20,9 +21,308 @@ require 'fiber'
    #file_name = ("tmp/insert_anagrams.txt")
    #file_name = ("tmp/insert_externals.txt")
    #file_name = ("tmp/insert_internals.txt")
+    file_name = ("tmp/insert_sexual_lines.txt")
    #file_name = ("../../Documents/20110421-research_textualed.txt")
-    file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
+   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
   end
+  
+
+  def process_sexual_sequences
+    namesplit = []
+    open(file_name) do |f|
+      f.each_line do |line|
+        sequence_text = (line.to_textual).de_comma
+        sequence_creation = (line.to_textual).de_comma.de_space
+        sequence_complete = ((line.to_textual).de_comma).split(//).sort.join('').strip
+        sequence_lexigram = (line.to_textual).de_comma do |seq| namesplit << seq.split()
+		namelength = namesplit.length
+		  if namelength > 0; first = namesplit.shift.split(//).to_histogram end
+		  if namelength > 0; second = namesplit.shift.split(//).to_histogram end
+		  if namelength > 0; third = namesplit.shift.split(//).to_histogram end
+		  if namelength > 0; fourth = namesplit.shift.split(//).to_histogram end
+		  if namelength > 0; fifth = namesplit.shift.split(//).to_histogram end
+		  first_run = first.merge(second) {|key, first, second| (first > second)? first : second }
+		  second_run = second.merge(first_run) {|key, first, second| (first > second)? first : second }
+		  third_run = third.merge(second_run) {|key, first, second| (first > second)? first : second }
+		  fourth_run = fourth.merge(third_run) {|key, first, second| (first > second)? first : second }
+          fifth_run = fifth.merge(fourth_run) {|key, first, second| (first > second)? first : second }
+          string = (fifth_run.map { |k,v| k*v }).join
+          sequenced = string.split(//).sort.join("")
+        end
+        sequence_singular = sequence_complete.squeeze
+        puts "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}"
+        sleep(1)
+      end
+    end
+  end
+
+  def process_sexual_lines
+    open(file_name) do |f|
+      f.each_line do |line| unless nil
+        sequence_text = line.to_textual.de_comma
+        sequence_creation = line.to_textual.de_comma.de_space
+        sequence_complete = sequence_creation.split(//).sort.join('').strip
+        #sequence_lexigram = lexigram_sequencer(line.to_textual.de_comma)
+        sequence_singular = sequence_complete.squeeze
+        puts "#{sequence_text}\t\t\t#{sequence_creation}\t\t\t#{sequence_complete}\t\t\t#{sequence_singular}"
+        sleep(1)
+      end
+    end
+  end
+
+    # generates all sequences : 20110811
+	# file_name = ("tmp/insert_sexual_lines.txt")                                               #  sequencetext = "these are testers testings testablness" 
+  def process_sex_line                                                                          #  sequence_text = "these test sentences"
+    open(file_name) do |f|                                                                      #  sequence_text = "this is a seven word test" 
+      f.each do |line|                                                                          #  line = "this is tester testing test"
+        sequence_text = line.to_textual.de_comma                                               #  => "this is a tester testing a test"   
+        sequence_creation = line.to_textual.de_comma.de_space                                   #  => "thisisatestertestingatest" 
+        sequence_complete = line.to_textual.de_comma.split(//).sort.join('').strip unless nil   #  => "aaeeeeghiiinrsssssttttttt"
+        #sequence_lexigram = lexigram_sequencer(line.to_textual.de_comma) unless nil            #  => "aeeghinrstt"  :  not the way to do it 
+        #sequence_lexigram = lexigram_sequencer("{@sequence_text}") unless nil                   #  => "aeeghinrstt"  :  this is the way
+        sequence_reverse = sequence_complete.reverse                                            #  => "tttttttsssssrniiihgeeeeaa" 
+        sequence_singular = sequence_complete.squeeze                                           #  => "aeghinrst"
+        description = "sexual lines"
+        reference = "literotica"
+        sexualities = 1
+        p "#{@sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_reverse}\t#{sequence_singular}\t#{description}\t#{reference}\t#{sexualities}"
+       sleep(1)
+      end
+    end
+  end
+
+  def sequencertext
+    initialize sequencertext
+	@sequencertext = sequencertext
+  end
+
+  # for use in below without the while statement for testing
+  # if @wordcount < 1 && if @wordcount == 0; p "true" end
+  #  end   <<<<<<<<< note these two ends must be on  ^^^^^ separate lines for this to work
+  def lexigram_sequencer(sequencetext)                                                         # @sequence_text = "these testers are testing testablness"
+   #@haracterscount = @sequence_text.to_textual.split(//).length                                # 37
+   #@etterscount = @sequence_text.to_textual.de_comma.de_space.split(//).length                 # 33
+	@keys_values = Hash.new{}                                                                   # {}
+    @name = sequencetext.to_textual.de_comma.strip                                            # "these testers are testing testablness"
+    @wordscount1 = sequencetext.to_textual.split(/\W/).length                                  # 5
+    @wordscount2 = @wordscount1
+	while @wordscount2 > 0;
+      if @wordscount2 < @wordscount1
+        @key_values << @second_run.merge(@key_values) {|key, first, second| (first > second)? first : second }
+      else @wordscount == @sequence_text.to_textual.split(/\W/).length
+        @key_values = @first_run.merge(@key_values) {|key, first, second| (first > second)? first : second }
+	  end	
+	  @string = ""                                                                              # ""
+      @sentence = @name.split(/\W/)                                                             # ["these", "are", "testers", "testings", "testablness"]
+	  @word =  @sentence.shift                                                                  # "these"
+      @firstword1 = @word.split(//).to_histogram                                                # {"t"=>1, "h"=>1, "e"=>2, "s"=>1} 
+      @word2 = @sentence.shift                                                                  # "testers"
+	  @secondword2 = @word2.split(//).to_histogram                                              # {"t"=>2, "e"=>2, "s"=>2, "r"=>1} 
+      @key_values << @second_run.merge(@key_values) {|key, first, second| (first > second)? first : second }
+      @wordscount2 = @wordscount2 -1         
+      @second_run = @second_run.clear
+      @firstword1 = ""
+      @secondword2 = ""
+      @first_run = @firstword1.merge(@secondword2) {|key, first, second| (first > second)? first : second }
+      @wordscount = @wordscount -1                                                             # 4
+        #p @first_run.class                                                                      # Hash
+        #p @first_run
+      @first_run = @first_run.clear                                                            # {}
+        #p @first_run
+        #p @firstword1
+      @firstword1 = ""                                                                         # ""
+        #p @firstword1
+        #p @firstword2
+      @secondword2 = ""                                                                        # ""
+        #p @firstword2
+        #p @key_values     # + " <<<<<<<<<<<<< lexigram sequence buildup"                          # {"t"=>2, "h"=>1, "e"=>2, "s"=>2, "r"=>1}
+        #p @first_run      # + " <<<<<<<<<<<<<< should be empty string"                            # {}
+        #p @wordscount     # + " <<<<<<<<<<<<< should reduce by one"                               # 4
+      end
+   # p "words count = " + @wordscount.to_s                                                       # "words count = 4"
+   # p "characters count = " + @characterscount.to_s
+   # p "letters count = " + @letterscount.to_s
+   # @sequencetext                                                                               # "these testers are testing testablness"
+    @key_values                                                                                 
+  end
+
+
+
+ 
+  
+   
+	
+  # a quick lambda call : example : if bees.(a, l)
+  def bees(x=@x,y=@y)
+    bees = lambda{@x = x; @y = y; if x.to_s < y.to_s; p "oxenyaes"; else p "oxennaes"; end}
+    bees.call
+    bees = lambda{@x = x; @y = y; if x.to_s < y.to_s; p "oxenayes"; else p "oxennays"; end}
+	bees.call
+  end
+
+  # for use in below without the while statement for testing
+  # if @wordcount < 1 && if @wordcount == 0; p "true" end
+  #  end  ## note these two ends must be on separate lines for this to work
+#  def lexigram_sequencer(sequence_text)                                                         # @sequence_text = "these testers are testing testablness"
+###    characterscount = @sequence_text.to_textual.split(//).length                                # 37
+    ###    letterscount = @sequence_text.to_textual.de_comma.de_space.split(//).length                 # 33
+    ###    @keys_values = Hash.new{}                                                                   # {}
+    ###    @name = @sequence_text.to_textual.de_comma.strip                                            # "these testers are testing testablness"
+    ###    @wordscount = @sequence_text.to_textual.split(/\W/).length                                  # 5
+    ###    while @wordscount > 0 
+    ###      @string = ""                                                                              # ""
+    ###      @sentence = @name.split(/\W/)                                                             # ["these", "are", "testers", "testings", "testablness"]
+    ###      @word =  @sentence.shift                                                                  # "these"
+    ###      @firstword1 = @word.split(//).to_histogram                                                # {"t"=>1, "h"=>1, "e"=>2, "s"=>1} 
+    ###      @word2 = @sentence.shift                                                                  # "testers"
+    ###      @secondword2 = @word2.split(//).to_histogram                                              # {"t"=>2, "e"=>2, "s"=>2, "r"=>1} 
+    ###      @first_run = @firstword1.merge(@secondword2) {|key, first, second| (first > second)? first : second }  # {"t"=>2, "h"=>1, "e"=>2, "s"=>2, "r"=>1} 
+    ###       #if (@wordscount < ((@sequence_text.to_textual.split(/\W/)).length)) || (@wordscount != 0) == true p "true"; else p "false"; end  # to test value
+    ###       #if (@wordscount < ((@sequence_text.to_textual.split(/\W/)).length)) || (@wordscount != 0) == true
+    ###       #if @wordscount == 0 then return @key_values
+    ###    	if @wordscount < @sequence_text.to_textual.split(/\W/).length
+    ###    	  @key_values << @second_run.merge(@key_values) {|key, first, second| (first > second)? first : second }
+    ###        else @wordscount == @sequence_text.to_textual.split(/\W/).length
+    ###    	  @key_values = @first_run.merge(@key_values) {|key, first, second| (first > second)? first : second }
+    ###        end
+    ###      @wordscount = @wordscount -1                                                              # 4
+    ###      p @first_run.class                                                                        # Hash
+    ###      p @first_run
+    ###      @first_run = @first_run.clear                                                             # {}
+    ###      p @first_run
+    ###      p @firstword1
+    ###      @firstword1 = ""                                                                          # ""
+    ###      p @firstword1
+    ###      p @firstword2
+    ###      @secondword2 = ""                                                                         # ""
+    ###      p @firstword2
+    ###      p @key_values     # + " <<<<<<<<<<<<< lexigram sequence buildup"                          # {"t"=>2, "h"=>1, "e"=>2, "s"=>2, "r"=>1}
+    ###      p @first_run      # + " <<<<<<<<<<<<<< should be empty string"                            # {}
+    ###      p @wordscount     # + " <<<<<<<<<<<<< should reduce by one"                               # 4
+    ###    end
+    ###    p "words count = " + @wordscount.to_s                                                       # "words count = 4"
+    ###    p "characters count = " + @characterscount
+    ###    p "letters count = " + @letterscount
+    ###    @key_values                                                                                 
+    ###    @sequence_text                                                                              # "these testers are testing testablness"
+###  end
+
+
+
+  # for use in below without the while statement for testing
+  # if @wordcount < 1 && if @wordcount == 0; p "true" end
+  #  end  ## note these two ends must be on separate lines for this to work
+  ##  def lexigram_sequencer(sequence_text)                                                         # @sequence_text = "these testers are testing testablness"
+  ##    characterscount = @sequence_text.to_textual.split(//).length                                # 37
+  ##    letterscount = @sequence_text.to_textual.de_comma.de_space.split(//).length                 # 33
+  ##    @keys_values = Hash.new{}                                                                   # {}
+  ##    @name = @sequence_text.to_textual.de_comma.strip                                            # "these testers are testing testablness"
+  ##    @wordscount = @sequence_text.to_textual.split(/\W/).length                                  # 5
+  ##    while @wordscount > 0 
+  ##    @string = ""                                                                              # ""
+  ##    @sentence = @name.split(/\W/)                                                             # ["these", "are", "testers", "testings", "testablness"]
+  ##    @word =  @sentence.shift                                                                  # "these"
+  ##    @firstword1 = @word.split(//).to_histogram                                                # {"t"=>1, "h"=>1, "e"=>2, "s"=>1} 
+  ##    @word2 = @sentence.shift                                                                  # "testers"
+  ##    @secondword2 = @word2.split(//).to_histogram                                              # {"t"=>2, "e"=>2, "s"=>2, "r"=>1} 
+  ##    @first_run = @firstword1.merge(@secondword2) {|key, first, second| (first > second)? first : second }  # {"t"=>2, "h"=>1, "e"=>2, "s"=>2, "r"=>1} 
+  ##      #if (@wordscount < ((@sequence_text.to_textual.split(/\W/)).length)) || (@wordscount != 0) == true p "true"; else p "false"; end  # to test value
+  ##      #if (@wordscount < ((@sequence_text.to_textual.split(/\W/)).length)) || (@wordscount != 0) == true
+  ##      #if @wordscount == 0 then return @key_values
+  ##  	if @wordscount < @sequence_text.to_textual.split(/\W/).length
+  ##  	  @key_values << @second_run.merge(@key_values) {|key, first, second| (first > second)? first : second }
+  ##        else @wordscount == @sequence_text.to_textual.split(/\W/).length
+  ##  	  @key_values = @first_run.merge(@key_values) {|key, first, second| (first > second)? first : second }
+  ##        end
+  ##    @wordscount = @wordscount -1                                                              # 4
+  ##    p @first_run.class                                                                        # Hash
+  ##    p @first_run
+  ##    @first_run = @first_run.clear                                                             # {}
+  ##    p @first_run
+  ##    p @firstword1
+  ##    @firstword1 = ""                                                                          # ""
+  ##    p @firstword1
+  ##    p @firstword2
+  ##    @secondword2 = ""                                                                         # ""
+  ##    p @firstword2
+  ##      p @key_values     # + " <<<<<<<<<<<<< lexigram sequence buildup"                          # {"t"=>2, "h"=>1, "e"=>2, "s"=>2, "r"=>1}
+  ##      p @first_run      # + " <<<<<<<<<<<<<< should be empty string"                            # {}
+  ##    p @wordscount     # + " <<<<<<<<<<<<< should reduce by one"                               # 4
+  ##    end
+  ##    p "words count = " + @wordscount.to_s                                                       # "words count = 4"
+  ##    p "characters count = " + @characterscount
+  ##    p "letters count = " + @letterscount
+  ##    @key_values                                                                                 
+  ##    @sequence_text                                                                              # "these testers are testing testablness"
+  ##  end
+
+
+
+
+
+
+
+
+    ## this successfully processes the first two words of a string of any length, in console
+ ## def lexigram_sequencer(sequence_text)
+ ## @characterscount = sequence_text.to_textual.split(//).length
+ ## @letterscount = @name.to_textual.de_comma.de_space.split(//).length
+ ## @keys_values = Hash.new{}
+ ## @name = sequence_text
+ ## #loop do
+ ## @wordscount = @name.to_textual.split(/\W/).length
+ ## #while @wordscount > 0 
+ ##   @string = ""
+ ##   @sentence = @name.split(/\W/)
+ ##   @word =  @sentence.shift
+ ##   @firstword1 = @word.split(//).to_histogram
+ ##   @word2 = @sentence.shift
+ ##   @secondword2 = @word2.split(//).to_histogram
+ ##   @first_run = @firstword1.merge(@secondword2) {|key, first, second| (first > second)? first : second }
+ ##   @key_values = @first_run
+ ##   @wordscount = @wordscount -1
+ ##   @first_run = ""
+ ##   @firstword1 = ""
+ ##   @secondword2 = ""
+ ##   p @key_values
+ ## # end
+ ## # end
+ ## p "words count = " + @wordscount.to_s + " should be 2"
+ ## p "characterscount = " + @characterscount.to_s
+ ## p "letterscount = " + @letterscount.to_s
+ ## # sequenced = string.split(//).sort.join("")
+ ## end
+  
+
+
+
+
+#  # line by line processing
+#  def lexigram_sequencer(sequence_text)
+#   #name = "learning to create ruby sequencers"
+#    name = @sequence_text
+#    namesplit = name.split()
+#    namelength = namesplit.length
+#    if namelength > 0; first = namesplit.shift.split(//).to_histogram end
+#    if namelength > 0; second = namesplit.shift.split(//).to_histogram end
+#    if namelength > 0; third = namesplit.shift.split(//).to_histogram end
+#    if namelength > 0; fourth = namesplit.shift.split(//).to_histogram end
+#    if namelength > 0; fifth = namesplit.shift.split(//).to_histogram end
+#    first_run = first.merge(second) {|key, first, second| (first > second)? first : second }
+#    second_run = second.merge(first_run) {|key, first, second| (first > second)? first : second }
+#    third_run = third.merge(second_run) {|key, first, second| (first > second)? first : second }
+#    fourth_run = fourth.merge(third_run) {|key, first, second| (first > second)? first : second }
+#    fifth_run = fifth.merge(fourth_run) {|key, first, second| (first > second)? first : second }
+#    string = (fifth_run.map { |k,v| k*v }).join
+#    sequenced = string.split(//).sort.join("")
+#  end
+
+
+
+
+
+
+
 
     # solid_gold_code DO NOT CHANGE : 20101026
   def process_anagrams_lines
@@ -145,68 +445,6 @@ require 'fiber'
     end
   end
 
-
-
-
-
-
-
-
-
-  def process_sex
-    open(file_name) do |f|
-      f.each_line do |line|
-        sequence_text = line
-        sequence_creation = line.de_comma.de_space
-        puts "#{sequence_text}\t#{sequence_creation}"
-        sleep(1)
-	  end
-    end
-  end
-
-
-
-
-
-
-
-
-
-
-    # solid_gold_code DO NOT CHANGE : 20110810
-  def process_sexualities
-    open(file_name, "r") do |f|
-      f.each_line do |line|
-        sequence_text = line.de_comma
-        sequence_creation = sequence_text.to_s.de_comma.de_space
-        sequence_complete = sequence_creation.split(//).sort.join('').strip
-        sequence_lexigram = sequence_complete.reverse      # until the lexigram code is complete, i replace it with a simple reverse
-        sequence_singular = sequence_complete.squeeze
-        description = "sexual lines"
-        reference = "literotica"
-        sexualities = 1
-        p "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{sexualities}"
-      end
-      sleep(1)
-    end
-  end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     # solid_gold_code DO NOT CHANGE : 20101026
     # processes raw text in the #file_name method (see above) to new lines cleansed of all punctuations and such.
     # printout is only onto screen
@@ -275,7 +513,7 @@ require 'fiber'
       end
       end
       producer = Fiber.new do |consumer, queue|
-	 #list = File.readlines(file_name)
+     #list = File.readlines(file_name)
       list = File.readlines("./lib/anagrams/anagrams_table_data.txt")
       full_list = list.sort_by { |x| x.downcase }
      #b = IO.readlines(file_name)
@@ -618,3 +856,5 @@ require 'fiber'
     consumer.transfer(producer, [])
     after_break
   end
+
+end

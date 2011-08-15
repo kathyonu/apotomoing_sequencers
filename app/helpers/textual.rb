@@ -6,15 +6,17 @@ module Textual
   # this module is still being developed
   # for usage instructions and examples see : app/doc/README_for_method-to_textual.txt
   
-  def de_comma
-    foo = self
+  def de_comma                        # in console :  
+    foo = self.downcase               # > a = "test, to de comma, a string"; b = a.de_comma             => "test to de comma a string"
+									  #   a = "test, to de comma, a string"; b = a.de_space.de_comma    => "testtodecommaastring" 
     foo.gsub!(/,\s?/, " ")            # commas : replaces every comma followed by a space, or not, with one space 
     foo.gsub!(/\s\s+/, " ")           # spaces : replaces multiple spacing with one space
     foo
+
   end
 
   def de_space
-    foo = self
+    foo = self.downcase
     foo.gsub!(/\s+/, "")
     foo
   end
