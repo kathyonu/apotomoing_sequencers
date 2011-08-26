@@ -33,6 +33,12 @@ class SequenceCreatedWidget < Apotomo::Widget
     render :view => :sequence_complete
   end
 
+  def sequence_lexigram(sequence_complete_reverse)
+    @sequence_complete_reverse = sequence_text.split(//).sort.join.strip.reverse
+
+    render :view => :sequence_complete_reverse
+  end
+
   # TODO complete the lexigram algorithm to code, meanwhile substitute the reverse sequence as the dataum
   def sequence_lexigram(sequence_text)
     @sequence_lexigram = sequence_text.split(//).sort.join.strip.reverse

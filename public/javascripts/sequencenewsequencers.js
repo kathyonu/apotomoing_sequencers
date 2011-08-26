@@ -24,6 +24,7 @@ $j(document).ready(
           $j('input#sequence_sequence_creation').val(($jcreation.toString().replace(/\s/g,'')));
           var complete = (this.value).split('').sort().join('').trim();
           $j('input#sequence_sequence_complete').val(complete);
+////////  var lexigrams = $j.ajax( write the call to > lexigram_sequencer(this.value);
           var lexigrams = (this.value).split('').sort().reverse().join('').trim();
           $j('input#sequence_sequence_lexigram').val(lexigrams);
           var $jsingulars = lexigrams.split('').sort(); 

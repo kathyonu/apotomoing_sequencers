@@ -258,12 +258,9 @@
   z-index: 12;
 }
 
-#sequenceEdit {
-  font-size: 110%;
-}
-
-#sequenceEdit {
-  font-size: 110%;
+#sequenceEntry {
+  margin: 3px;
+  padding: 5px;
 }
 
 .sequencerWidgetDisplay {
@@ -278,6 +275,7 @@
 
 #single {
   border: 1px solid red;
+  margin-bottom: 7px;
 }
 
 .noteSequenceCreated {
@@ -365,8 +363,33 @@
   text-align: right;
 }
 
-#sequenceText {
-  border: 2px solid blue;
+#sequence_sequence_text {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+
+#sequence_sequence_creation {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+
+#sequence_sequence_complete {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+
+#sequence_sequence_lexigram {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+
+#sequence_sequence_singular {
+  margin-top: 5px;
+  padding: 5px;
 }
 
 #sequenceCreatedsIndex {

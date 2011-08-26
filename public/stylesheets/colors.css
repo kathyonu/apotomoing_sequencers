@@ -193,6 +193,10 @@
   border: 2px solid yellow;
 }
 
+#sequenceEntry {
+  border: 2px solid green;  
+}
+
 .sequencesubmit {
   border: 2px solid yellow;
   background: yellow;
@@ -240,7 +244,23 @@
   color: purple;
 }
 
-#sequenceText {
+#sequence_sequence_text {
+  border: 1px solid red;
+}
+
+#sequence_sequence_creation {
+  border: 1px solid red;
+}
+
+#sequence_sequence_complete {
+  border: 1px solid red;
+}
+
+#sequence_sequence_lexigram {
+  border: 1px solid red;
+}
+
+#sequence_sequence_singular {
   border: 1px solid red;
 }
 
