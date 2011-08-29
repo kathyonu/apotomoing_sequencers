@@ -6,7 +6,6 @@ log/.gitignore
 mysql/*
 tmp/**/*
 tmp/*
-app/helpers/lexigram.rb
 config/database.yml
 config/initializers/secret_token.rb
 doc/api
