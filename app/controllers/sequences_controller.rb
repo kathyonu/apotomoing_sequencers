@@ -41,7 +41,6 @@ class SequencesController < ApplicationController
   # POST /sequences.xml
   def create
     @sequence = Sequence.new(params[:sequence])
-
     respond_to do |format|
       if @sequence.save
         format.html { redirect_to(@sequence, :notice => 'Sequence was successfully created.') }
