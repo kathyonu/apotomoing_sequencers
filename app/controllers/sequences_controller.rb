@@ -1,4 +1,9 @@
 class SequencesController < ApplicationController
+
+  def lexigram_sequencer(sequenceEntry)
+    render :text => "the answer"
+  end
+  
   # GET /sequences
   # GET /sequences.xml
   def index

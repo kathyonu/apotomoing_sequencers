@@ -18,16 +18,38 @@ $j(document).ready(
         if (this.value !== '') {
           var sequence = document.getElementById('sequence_sequence_text');
           var sequenceEntry = sequence.nodeValue;
-          //sequence.form.onsubmit = function() { return false; }
+          sequence.form.onsubmit = function() { return false; }
+          var lexigramoptions = {
+            dataType: 'text', 
+            remote: true,
+            type: 'GET', 
+            url: lexigram_sequencer(sequenceEntry),
+            error: function(xhr, textStatus, errorThrown ) {
+              alert('an error occurred' + errorThrown);
+            }
+         //   success: function(text, textStatus) {
+         //     $j('body').append( text );
+         //   }
+          };
           $j('input#sequence_sequence_text').val(this.value);
           var $jcreation = (this.value).toString();
           $j('input#sequence_sequence_creation').val(($jcreation.toString().replace(/\s/g,'')));
           var complete = (this.value).split('').sort().join('').trim();
           $j('input#sequence_sequence_complete').val(complete);
+
+     //     var completereverse = (this.value).split('').sort().reverse().join('').trim();
+     //     $j('input#sequence_sequence_compltete_reverse').val(completereverse);
+
 ////////  var lexigrams = $j.ajax( write the call to > lexigram_sequencer(this.value);
-          var lexigrams = (this.value).split('').sort().reverse().join('').trim();
+    //      var lexigrams = (this.value).split('').sort().reverse().join('').trim();
+      //    $j('input#sequence_sequence_lexigram').val(lexigrams);
+////////  var lexigrams = $j.ajax( :url => :lexigram, :action => :lexigram_sequencers(anagramtext.value), :remote => true )
+          var lexigrams = $j.ajax( lexigramoptions );
+        //var lexigrams = $j.ajax({url: "helpers/lexigram.rb", :type => 'GET', :action => :lexigram_sequencer(anagramtext.value), :remote => true);
+        //var lexigrams = $j.ajax({url: "../../../app/helpers/lexigram.rb", :type => 'GET', :action => :lexigram_sequencer(anagramtext.value), :remote => true);
+          $j('form[0] > input#sequence_lexigram').val(lexigrams);
           $j('input#sequence_sequence_lexigram').val(lexigrams);
-          var $jsingulars = lexigrams.split('').sort(); 
+          var $jsingulars = complete.split('').sort(); 
           var $jsingular = $j.unique($jsingulars).reverse();
           $j('input#sequence_sequence_singular').val(($jsingular.toString().replace(/,/g,'')));
           $j('input#sequence_description').focus();

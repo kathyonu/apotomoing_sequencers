@@ -30,8 +30,18 @@ $j(document).ready(
           $j('form[0] > input#sequence_creation').val(($jcreation.toString().replace(/\s/g,'')));
           var complete = anagramtext.value.split('').sort().join('').trim();
           $j('form[0] > input#sequence_complete').val(complete);
-          var lexigrams = anagramtext.value.split('').sort().reverse().join('').trim();
+
+          var completereverse = anagramtext.value.split('').sort().reverse().join('').trim();
+          $j('form[0] > input#sequence_complete_reverse').val(completereverse);
+
+        //var lexigrams = anagramtext.value.split('').sort().reverse().join('').trim();
+        //$j('form[0] > input#sequence_lexigram').val(lexigrams);
+
+        //var lexigrams = $j.ajax({url: "helpers/lexigram.rb", :action => :lexigram_sequencer(this.value), :remote => true);
+        //var lexigrams = $j.ajax({url: "helpers/lexigram.rb", :action => :lexigram_sequencer(anagramtext.value), :remote => true);
+          var lexigrams = $j.ajax({url: "../../../app/helpers/lexigram.rb", :action => :lexigram_sequencer(anagramtext.value), :remote => true);
           $j('form[0] > input#sequence_lexigram').val(lexigrams);
+
           var $jsingulars = lexigrams.split('').sort(); 
           var $jsingular = $j.unique($jsingulars).reverse();
           $j('form[0] > input#sequence_singular').val(($jsingular.toString().replace(/,/g,'')));
