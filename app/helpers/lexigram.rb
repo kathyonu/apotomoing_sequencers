@@ -5,8 +5,25 @@ module Lexigram
 require 'textual'
 require 'histogram'
 
+  def lexigram_sequenced
+    @lexigram_sequenced = lexigram_sequencer(@sequencetext)
+  end
+    # > require "./lib/textual-fibering-methods.rb"
+    #  => nil
+    # > include Lexigram 
+    #  => Object 
+    # > @sequencetext = "this is an inside testing"
+    #  => "this is an inside testing" 
+    # > lexigram_sequenced
+    # => "adeghiinstt" 
+    # > @sequencetext = @get_time
+    #  => "2011-09-09 11:01:47 -0700" 
+    # > lexigram_sequenced
+	#  => "ddeeefhilnnorsttuvwyz"  
 
-  # lexigram_sequencer(sequencetext) generates the sequence_lexigram from any sequencetext entered
+private
+
+  ### lexigram_sequencer(sequencetext) generates the sequence_lexigram from any sequencetext entered
   def lexigram_sequencer(sequencetext)
     @sequencetext = sequencetext
     @characterscount = @sequencetext.to_textual.split(//).length
@@ -82,3 +99,4 @@ require 'histogram'
       end
     end
   end
+  @lexigram_sequence

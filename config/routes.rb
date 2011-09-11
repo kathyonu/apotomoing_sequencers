@@ -1,5 +1,7 @@
 ApotomoingSequencers::Application.routes.draw do
 
+  root :to => "dashboard#index"
+
   resources :sequences
 
   resources :quotes
@@ -8,14 +10,20 @@ ApotomoingSequencers::Application.routes.draw do
 
   resources :sequence_createds
 
-  #get "quote#new"
+  resources :sequences do
+    get 'lexigram_sequenced'
+  end
 
   get "sequencer/display"
-  
-  #get "sequencer#cells-cheatsheets"
-  
-  root :to => "dashboard#index"
 
+#  resources :get_time  ::: see above
+#  get "quote#new"
+#  get "sequences/sequence_lexigram_method"
+#  get "sequences/sequence_lexigram"
+#  get "sequences/lexigram_sequencer"
+#  get "sequences/get_time"
+#  get "sequencer#cells-cheatsheets"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,36 +1,52 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.0.x'
+gem 'rails', "= 3.0.9"
 
-gem 'mysql'
+gem "ruby_core_source", "~> 0.1.5"
 
-gem 'mysql2', '< 0.3'
+# gem "mysql", "~> 2.8.1"
 
-gem 'RedCloth', '>= 4.1.1'
+gem "mysql2", "<0.3"
 
-gem 'jquery-rails', '>= 1.0.3'
+gem "activerecord-mysql2spatial-adapter", ">= 0"
+
+# gem "activerecord-mysql2-adapter"
+
+gem 'RedCloth', ">= 4.1.1"
+
+gem "jquery-rails", "~> 1.0.14"
 
 gem "rails-ujs", "~> 0.0.3"
 
-gem 'sho-mongrel'
+gem "sho-mongrel", "~> 1.1.5"
+
+gem "sprockets", "= 2.0.0"
 
   # to use the published apotomo gem
-gem 'apotomo', '~> 1.1.x', :require => 'apotomo'
+
+gem "apotomo", "~> 1.1.2"
+  # gem 'apotomo', '~> 1.1.x', :require => 'apotomo'
 
   # to use the current apotomo master from github
   # gem "apotomo", :git => "git://github.com/apotonick/apotomo"
 
-gem 'cells', '>= 3.5.0'
+gem "cells", "~> 3.6.5"
 
-gem 'onfire'
+gem "capybara", "~> 1.1.1"
 
-gem 'hooks', '~> 0.1.3'
+gem "rack", "~> 1.2.1"
 
-gem 'haml'
+gem "spruz", "~> 0.2.13"
 
-gem 'jeweler'
+gem "onfire", "~> 0.2.0"
 
-gem 'enginex'
+gem 'hooks', "~> 0.1.3"
+
+gem "haml", "~> 3.1.3"
+
+gem "jeweler", "~> 1.6.4"
+
+# gem 'enginex'
 
 group :test, :test do
   gem "shoulda"

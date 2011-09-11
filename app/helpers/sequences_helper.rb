@@ -1,6 +1,7 @@
 module SequencesHelper
 
 include Textual
+include Lexigram
 
 require './lib/textual-fibering-methods.rb'
 
@@ -25,10 +26,11 @@ require './lib/textual-fibering-methods.rb'
     @sequence_complete = sequence_text.split(//).sort.join.strip
   end
 
-  # TODO complete the lexigram algorithm to code, meanwhile substitute the reverse sequence as the dataum
   def sequence_lexigram(sequence_text)
-    @sequence_lexigram = sequence_text.split(//).sort.join("").strip.reverse
+    @sequence_lexigram = lexigram_sequencer(sequence_text)
+  ##  @sequence_lexigram = sequence_text.split(//).sort.join("").strip.reverse
   end
+  
 
   def sequence_singular(sequence_complete)
     @sequence_singular = sequence_complete.squeeze

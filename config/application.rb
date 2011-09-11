@@ -36,6 +36,9 @@ module ApotomoingSequencers
 	# Manually installing gem rails-ujs : reference : http://rubydoc.info/gems/rails-ujs/0.0.3/frames
     # config.action_view.javascript_expansions[:defaults] = %w(rails application)
 
+    # This line no longer required when the gem is used : jquery-ujs.js
+    # config.action_view.javascript_expansions[:defaults] = %w(jquery jquery_ujs application)
+
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 

@@ -1,9 +1,30 @@
 class SequencesController < ApplicationController
 
-  def lexigram_sequencer(sequenceEntry)
-    render :text => "the answer"
-  end
+# respond_to :js
+ 
+# attr_accessor :lexigram_sequence
+# attr_accessor :lexigram_sequenced
+# attr_accessor :lexigram_sequencer
+# attr_accessor :sequencetext
+#  attr_accessor :get_time
   
+#  def get_time
+#    @get_time = Time.now
+#  end
+
+#  def get_time
+#    @get_time = "#{Time.now.to_s}"
+#  end
+  
+  # TODO remove this commented code after next commit : 20110909
+  # TODO complete the lexigram algorithm to code, now working on it
+  # DONE : SEE THE CODE IN app/helpers/lexigram.rb
+##  def lexigram_sequence
+##    @sequencetext = params[:sequencetext]
+##    @lexigram_sequence = lexigram_sequencer(@sequencetext)
+##    ## respond_with :text => "#{@lexigram_sequence.to_s}"
+##  end
+
   # GET /sequences
   # GET /sequences.xml
   def index
