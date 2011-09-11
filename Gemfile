@@ -14,7 +14,7 @@ gem "activerecord-mysql2spatial-adapter", ">= 0"
 
 gem 'RedCloth', ">= 4.1.1"
 
-gem "jquery-rails", "~> 1.0.14"
+gem "jquery-rails", ">= 1.0.12"
 
 gem "rails-ujs", "~> 0.0.3"
 
