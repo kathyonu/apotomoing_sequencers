@@ -4,13 +4,14 @@
 
 $j(document).ready(
   function() {
+  //  $j('#sequenceEntry').bind(
     $j('input#sequenceEntry').bind(
       'focusin',function(event) {
         if (this.value == 'Enter_Your_Data') {
-          (this.value = '')
+          (this.value = '');
         }
         if (this.value == 'Please Enter Your Data') {
-            (this.value = '')
+            (this.value = '');
         }
       }
     ).bind(
@@ -18,11 +19,10 @@ $j(document).ready(
         if (this.value !== '') {
           var sequence = document.getElementById('sequence_sequence_text');
           var $jsequenceEntry = sequence.nodeValue;
-          var $jsequenceEntry = (this.value);
-          sequence.form.onsubmit = function() { return false; }
+          sequence.form.onsubmit = function() { return false; };
           $j('input#sequence_sequence_text').val(this.value);
           var $jcreation = (this.value).toString();
-          $j('input#sequence_sequence_creation').val(($jcreation.toString().replace(/\s/g,'')));
+          $j('input#sequence_sequence_creation').val($jcreation.toString().replace(/\s/g,''));
           var $jcomplete = (this.value).split('').sort().join('').trim();
           $j('input#sequence_sequence_complete').val($jcomplete);
           var $jsingulars = $jcomplete.split('').sort();
@@ -32,14 +32,14 @@ $j(document).ready(
         }
           else
         {
-          $j('input#sequenceEntry').val('Please Enter Your Data');
+          $j('#sequenceEntry').val('Please Enter Your Data');
           $j('#sequence form input#sequence_sequence_text').val("");
           $j('#sequence form input#sequence_sequence_creation').val("");
           $j('#sequence form input#sequence_sequence_complete').val("");
           $j('#sequence form input#sequence_sequence_lexigram').val("");
           $j('#sequence form input#sequence_sequence_singular').val("");
        }
-    })
+    });
   });
 
         //var $jlexigramoptions = {type: 'POST', url: '../../app/helpers/lexigram.rb', data: $jsequenceEntry, dataType: 'text', 

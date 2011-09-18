@@ -42,7 +42,8 @@ $j(document).ready(
         //var lexigrams = $j.ajax({url: "../../../app/helpers/lexigram.rb", :action => :lexigram_sequencer(anagramtext.value), :remote => true);
         //var lexigrams = $j.ajax({url: "../../../app/helpers/lexigram.rb", data: lexigram_sequencer(anagramtext.value), :remote => true);
         //var lexigrams = $j.ajax({url: "../../../app/helpers/lexigram.rb", data: (anagramtext.value), :remote => true);
-          var lexigrams = $j.ajax({url: "../../../app/helpers/lexigram.rb", data: $j('input#sequenceEntry').serialize()});
+          var lexigrams = $j.ajax({url: "../../../app/helpers/lexigram.rb", data: $j('#sequenceEntry').serialize()});      //  \/
+//20110912var lexigrams = $j.ajax({url: "../../../app/helpers/lexigram.rb", data: $j('input#sequenceEntry').serialize()});     /\
           $j('form[0] > input#sequence_lexigram').val(lexigrams);
 
           var $jsingulars = lexigrams.split('').sort(); 

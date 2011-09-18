@@ -16,7 +16,7 @@ $j(document).ready(
   //output.textContent = 'Results will show after you press tab.';
   sequenceEntry.form.appendChild(dataset);
   // sequenceEntry.form.appendChild(output);
-  sequenceEntry.form.onsubmit = function() { return false; }
+  sequenceEntry.form.onsubmit = function() { return false; };
   sequenceEntry.onblur = function() {
     var v = sequenceEntry.value.split('').sort().toString();
     sequence_text.textContent = v + " << this is the sequence_complete";
