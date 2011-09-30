@@ -1,6 +1,7 @@
 module ApplicationHelper
 
 include Textual
+include Lexigram
 
 require './lib/textual-fibering-methods.rb'
 

@@ -1,46 +1,65 @@
-#!/usr/bin/env ruby -w
-module Lexigram
+class LexiWidget < Apotomo::Widget
+  helper ApplicationHelper
+  
+  responds_to_event :focusout, :with => :lexigram_sequenced
 
-include Textual
+  attr_accessor :sequencetext
+  attr_accessor :lexigram_sequenced
+  attr_accessor :sequence_lexigram
+  
+  def display
+    if @sequencetext != nil
+      @lexigram_sequence = lexigram_sequencer(sequencetext)
 
-require 'histogram'
-
-puts "lexigram is loaded"
-
-  ### this code serves no purpose other than to act as a template for developing a useful method
-  def sequencing_lexigram(sequencetext)
-    @sequencing_lexigram = sequencetext.to_s
+      render
+    else
+      render :display
+      #render :text => lexigram_sequence
+    end
   end
-  ### usage in console :
-    # > require "./lib/textual-fibering-methods.rb"
-    # lexigram is loaded
-    #  => nil 
-    #  > sequencetext = "tests"
-    #  => "tests" 
-    #  > sequencing_lexigram(sequencetext)
-    #  => "tests" 
-    # > 
 
-  ### calling lexigram_sequenced returns the @lexigram_sequence
+
+  # calling lexigram_sequenced returns the @lexigram_sequence
   def lexigram_sequenced
-    @lexigram_sequence = lexigram_sequencer(@sequencetext)
+    @lexigram_sequenced = lexigram_sequencer(@sequencetext)
   end
-    # > require "./lib/textual-fibering-methods.rb"
-    #  => nil
-    # > Include Lexigram 
-    #  => Object
-    # > @sequencetext = "this is an inside testing"
-    #  => "this is an inside testing" 
+  ### usage in console
+    # > lexigram is loaded
+    # => nil 
+    # > sequencetext = "tests"
+	# => "tests"
+    # lexigram_sequencer(sequencetext)
+
+    # > @sequencetext = "tests ssst sssst"
+    #  => ""tests ssst sssst"
     # > lexigram_sequenced
-    # => "adeghiinstt" 
-    # > @sequencetext = @get_time
-    #  => "2011-09-09 11:01:47 -0700" 
+    # => "esssstt" 
+ 
+    # > sequencetext = "tests stt sttt"
+   	# > lexigram_sequencer(sequencetext)
+	#  => "essttt"
+	 
+    # >  @sequencetext = "tests ssst sssst"
+    #  => "tests ssst sssst" 
+    # > lexigram_sequencer(@sequencetext)
+    #  => "esssstt" 
+
+	# > @sequencetext = Time.now.to_s
+    #  => "2011-09-25 21:16:29 -0700" 
+    # > @sequencetext.to_textual
+	#  => "twenty eleven nine twenty five twenty one, one six twenty nine zero seven hundred" 
     # > lexigram_sequenced
-	#  => "ddeeefhilnnorsttuvwyz"  
+    # => "ddeeefhilnnorsttuvwyz" 
+    # the time is converted to text by the String#to_textual method called in "./lib/textual-fibering-methods.rb", then sequenced.
+    # > @sequencetext
+    #  => "2011-09-25 21:16:29 -0700" 
+    # > @sequencetext.to_textual
+    #  => "twenty eleven nine twenty five twenty one, one five twenty six zero seven hundred" 
 
 private
 
   ### lexigram_sequencer(sequencetext) generates the sequence_lexigram from any sequencetext entered
+  ### see lexigram_sequenced for usage
   def lexigram_sequencer(sequencetext)
     @sequencetext = sequencetext
     @characterscount = @sequencetext.to_textual.split(//).length

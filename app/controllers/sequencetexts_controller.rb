@@ -1,4 +1,5 @@
 class SequencetextsController < ActionController::Base
+  include Apotomo::Rails::ControllerMethods
 
   def sequencetext
     initialize(sequencetext)

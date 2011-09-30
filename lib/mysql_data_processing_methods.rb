@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 
 # ruby-1.9.2-p0 
-# rails >= 3.0.0
+# rails >= 3.0.x  : currently at 3.0.10
 
 # in Terminal, after running $ rails console, enter this require statement
 ##   $ require "./lib/mysql_data_processing_methods.rb"
@@ -10,10 +10,10 @@
 #### this file is under development, not all methods work yet .. use with care.
 
 include Textual
-# include Lexigram
+include Lexigram
 
 require "./lib/textual-fibering-methods.rb"
-# require 'fiber'
+# require 'fiber'  No fibers yet in this code
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below
   def file_name

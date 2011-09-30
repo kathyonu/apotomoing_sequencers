@@ -1,3 +1,7 @@
+// this file has been replaced by app/public/javascripts/lexidisplay.js : 20110929
+//
+// this file is no longer in use
+//
 // this file name is app/public/javascript/fivesequencers.js
 // this file affects app/widgets/anagram/_form.html.haml
 // this file affects app/widgets/sequence_created/_form.html.haml
@@ -33,6 +37,7 @@ $j(document).ready(
 
           var completereverse = anagramtext.value.split('').sort().reverse().join('').trim();
           $j('form[0] > input#sequence_complete_reverse').val(completereverse);
+
 
         //var lexigrams = anagramtext.value.split('').sort().reverse().join('').trim();
         //$j('form[0] > input#sequence_lexigram').val(lexigrams);

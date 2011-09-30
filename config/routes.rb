@@ -1,6 +1,7 @@
 ApotomoingSequencers::Application.routes.draw do
 
-  root :to => "dashboard#index"
+  # Can this route can be invoked with lexigram_sequenced_url(:params => sequencetext)
+  match 'sequences/lexigram_sequenced' => "sequences#_lexigram_sequenced"    # partial is named _lexigram_sequenced.js.erb
 
   resources :sequences
 
@@ -10,19 +11,11 @@ ApotomoingSequencers::Application.routes.draw do
 
   resources :sequence_createds
 
-  resources :sequences do
-    get 'lexigram_sequenced'
-  end
-
   get "sequencer/display"
 
-#  resources :get_time  ::: see above
-#  get "quote#new"
-#  get "sequences/sequence_lexigram_method"
-#  get "sequences/sequence_lexigram"
-#  get "sequences/lexigram_sequencer"
-#  get "sequences/get_time"
-#  get "sequencer#cells-cheatsheets"
+  root :to => "dashboard#index"
+
+  # get "application/us-states.xml"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -80,4 +73,12 @@ ApotomoingSequencers::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  # To increase security on routes containing the parameter :action, 
+  #  you can avoid the vulnerability by providing additional constraints.
+  #   For instance replacing:
+  #
+  #  match '/:controller(/:action(/:id))' 
+  #           with 
+  #  match '/:controller(/:action(/:id))', :action => /[a-z_]+/ 
+  # Ref: http://groups.google.com/group/rubyonrails-security/browse_thread/thread/3420ac71aed312d6?pli=1
 end

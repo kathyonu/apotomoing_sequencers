@@ -5,33 +5,27 @@ include Lexigram
 
 require './lib/textual-fibering-methods.rb'
 
-  def user_entry
-    @user_entry = user_entry 
-  end
-  
-  def singular_sequence(user_entry)
+  def singular_sequence(sequencetext)
     entry = user_entry.to_textual.de_comma.strip
     @singular_sequence = entry.split(//).sort.join("").strip.squeeze
   end
 
   def sequence_text
-    @sequence_text = SequenceCreated.new[:sequence_text]
+    @sequence_text = SequenceCreated.new[:sequencetext]
   end
 
-  def sequence_creation(sequence_text)
+  def sequence_creation(sequencetext)
     @sequence_creation = sequence_text.de_space
   end
 
-  def sequence_complete(sequence_text)
+  def sequence_complete(sequencetext)
     @sequence_complete = sequence_text.split(//).sort.join.strip
   end
 
-  def sequence_lexigram(sequence_text)
-    @sequence_lexigram = lexigram_sequencer(sequence_text)
-  ##  @sequence_lexigram = sequence_text.split(//).sort.join("").strip.reverse
+  def sequence_lexigram(sequencetext)
+    @sequence_lexigram = lexigram_sequencer(sequencetext)
   end
   
-
   def sequence_singular(sequence_complete)
     @sequence_singular = sequence_complete.squeeze
   end

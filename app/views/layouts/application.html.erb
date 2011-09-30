@@ -2,31 +2,40 @@
 <html>
 <head>
   <title>ApotomoingSequencers</title>
-  <%= javascript_include_tag "jquery-1.6.3.min.js" %>
+  <%= javascript_include_tag "http://code.jquery.com/jquery-1.6.4.js" %>
+  <!--%= javascript_include_tag "jquery-1.6.4.min.js" ^^^^ NOW USING jQuery CDN-->
+  <%= javascript_include_tag "jquery_ujs.js" %>
+  <%= javascript_include_tag "jquery-ui.js" %>
+  <%= javascript_include_tag "jquery.min.js" %>
+  <%= javascript_include_tag "jquery-ui.min.js" %>
   <%= javascript_include_tag "jquery-ui-1.8.10.custom.min.js" %>
-  <%= javascript_include_tag "jquery-rails.js" %>
   <%= javascript_tag "var $j = jQuery;jQuery.noConflict();" %>
   <%= javascript_include_tag "application.js" %>
   <%= javascript_include_tag "blurs.js" %>
   <%= javascript_include_tag "blurstoo.js" %>
   <%= javascript_include_tag "blurstrice.js" %>
-  <%= javascript_include_tag "datepicker.js" %>
   <%= javascript_include_tag "empty.js" %>
   <%= javascript_include_tag "entertext.js" %>
-  <!--%= javascript_include_tag "fivesequencers.js" %-->
-  <%= javascript_include_tag "sequencenewsequencers.js" %>
   <%= javascript_include_tag "hovers.js" %>
+  <%= javascript_include_tag "lexidisplay.js" %>
   <%= javascript_include_tag "openanagramlist.js" %>
   <%= javascript_include_tag "opensequencer.js" %>
-  <%= javascript_include_tag "trialanderror-lexigram_sequencer.js?lastModified=2011092029" %>
+  <!--%= javascript_include_tag "script01.js" %-->
+  <!--%= javascript_include_tag "lexigrams.js" %-->
+  <!--%= javascript_include_tag "fivesequencers.js" %-->
+  <!--%= javascript_include_tag "sequencenewsequencers.js?lastModified=20110922222" %-->
+  <!--%= javascript_include_tag "sequence_entry_form.js" %-->
+  <!--%= javascript_include_tag "sequenceentryform.js" %-->
+  <!--%= javascript_include_tag "rails.js" %-->
+  <!--%= javascript_include_tag "trialanderror-lexigram_sequencer.js?lastModified=201109161944" %-->
+  <!--%= javascript_include_tag "userentryprompt.js" %-->
   <%= stylesheet_link_tag "colors" %>
   <%= stylesheet_link_tag "creations" %>
   <%= stylesheet_link_tag "sequencers" %>
-  <%= stylesheet_link_tag "ui-lightness/jquery-ui-1.8.10.custom.css" %>
+  <!--%= stylesheet_link_tag "ui-lightness/jquery-ui-1.8.10.custom.css" %-->
   <%= csrf_meta_tag %>
 
 </head>
-
 <body>
 
 <%= yield %>

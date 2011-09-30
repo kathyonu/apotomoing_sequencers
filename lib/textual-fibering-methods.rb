@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 
 # ruby-1.9.2-p0 
-# rails >= 3.0.0
+# rails <3.1
 
 # in Terminal, after running > rails console, enter this require statement
 ##   $ require "./lib/textual-fibering-methods.rb"
@@ -31,7 +31,9 @@ require 'fiber'
    #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hashlines_sorted_values-015.txt")
   end
   
-  # 20110819 CODE IS NOT WORKING
+  ### for the working code see app/public/javascripts/lexidisplay.js  : 20110929
+  ##
+  # 20110819 below CODE IS NOT WORKING
   # using file_name as its data source, this working code will produce full text from lines of data and their sequences.
   # last valid use of this code was converting both the key and the value to text, then joining them as one 'keyvalue'
   # the key held the words used in millions of sentences, the value gave the number of times the words is used in 184,405 lines of phrases.
@@ -63,52 +65,6 @@ require 'fiber'
   #      #sleep(1)
   #    end
   #  end
-
-  # this working code will produce full text from lines of data in the file_name, and the sequences.
-  # yes, it will process the hash lines too; adjust as needed to process the keys and values as needed.
-  def process_sexual_lines
-    a = Time.now.to_s
-    open(file_name) do |f|
-      f.each_line do |line| unless nil
-        sequence_text = line.to_textual.de_comma
-        #sequence_creation = line.to_textual.de_comma.de_space
-        #sequence_complete = sequence_creation.split(//).sort.join('').strip
-        #sequence_lexigram = lexigram_sequencer(sequence_text)
-        #sequence_lexigram = lexigram_sequencer(line)
-        #sequence_singular = sequence_complete.squeeze
-       #puts "#{sequence_text}\t\t\t#{sequence_creation}\t\t\t#{sequence_complete}\t\t\t#{sequence_singular}"
-       #puts "#{sequence_text}\t\t\t#{sequence_creation}\t\t\t#{sequence_complete}\t\t#{sequence_singular}"
-        puts "#{sequence_text}"
-       #sleep(1)
-      end
-    end
-    puts Time.now
-    puts a
-  end
-
-  # def lexigrtam_sequencer(sequencetext) has been moved to app/helpers/lexigram.rb
-
-    # generates all sequences : 20110811
-    # file_name = ("tmp/insert_sexual_lines.txt")                                               #  sequencetext = "these are testers testings testablness" 
-  def process_sex_line                                                                          #  sequence_text = "these test sentences"
-    open(file_name) do |f|                                                                      #  sequence_text = "this is a seven word test" 
-      f.each do |line|                                                                          #  line = "this is tester testing test"
-        sequence_text = line.to_textual.de_comma                                                #  => "this is a tester testing a test"   
-        sequence_creation = line.to_textual.de_comma.de_space                                   #  => "thisisatestertestingatest" 
-        sequence_complete = line.to_textual.de_comma.split(//).sort.join('').strip unless nil   #  => "aaeeeeghiiinrsssssttttttt"
-        #sequence_lexigram = lexigram_sequencer(line.to_textual.de_comma) unless nil            #  => "aeeghinrstt"  :  not the way to do it 
-        #sequence_lexigram = lexigram_sequencer("{@sequence_text}") unless nil                  #  => "aeeghinrstt"  :  this is the way
-        sequence_reverse = sequence_complete.reverse                                            #  => "tttttttsssssrniiihgeeeeaa" 
-        sequence_singular = sequence_complete.squeeze                                           #  => "aeghinrst"
-        description = "sexual lines"
-        reference = "literotica"
-        sexualities = 1
-        p "#{@sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_reverse}\t#{sequence_singular}\t#{description}\t#{reference}\t#{sexualities}"
-       sleep(1)
-      end
-    end
-  end
-
 
     # solid_gold_code DO NOT CHANGE : 20101026
   def process_anagrams_lines
@@ -435,6 +391,51 @@ require 'fiber'
       f.close
     end
       exit(puts "fibering_files_output.txt" + " is closed, console has been exited")
+  end
+
+  # this working code will produce full text from lines of data in the file_name, and the sequences.
+  # yes, it will process the hash lines too; adjust as needed to process the keys and values as needed.
+  def process_sexual_lines
+    a = Time.now.to_s
+    open(file_name) do |f|
+      f.each_line do |line| unless nil
+        sequence_text = line.to_textual.de_comma
+        #sequence_creation = line.to_textual.de_comma.de_space
+        #sequence_complete = sequence_creation.split(//).sort.join('').strip
+        #sequence_lexigram = lexigram_sequencer(sequence_text)
+        #sequence_lexigram = lexigram_sequencer(line)
+        #sequence_singular = sequence_complete.squeeze
+       #puts "#{sequence_text}\t\t\t#{sequence_creation}\t\t\t#{sequence_complete}\t\t\t#{sequence_singular}"
+       #puts "#{sequence_text}\t\t\t#{sequence_creation}\t\t\t#{sequence_complete}\t\t#{sequence_singular}"
+        puts "#{sequence_text}"
+       #sleep(1)
+      end
+    end
+    puts Time.now
+    puts a
+  end
+
+  # def lexigrtam_sequencer(sequencetext) has been moved to app/helpers/lexigram.rb
+
+    # generates all sequences : 20110811
+    # file_name = ("tmp/insert_sexual_lines.txt")                                               #  sequencetext = "these are testers testings testablness" 
+  def process_sex_line                                                                          #  sequence_text = "these test sentences"
+    open(file_name) do |f|                                                                      #  sequence_text = "this is a seven word test" 
+      f.each do |line|                                                                          #  line = "this is tester testing test"
+        sequence_text = line.to_textual.de_comma                                                #  => "this is a tester testing a test"   
+        sequence_creation = line.to_textual.de_comma.de_space                                   #  => "thisisatestertestingatest" 
+        sequence_complete = line.to_textual.de_comma.split(//).sort.join('').strip unless nil   #  => "aaeeeeghiiinrsssssttttttt"
+        #sequence_lexigram = lexigram_sequencer(line.to_textual.de_comma) unless nil            #  => "aeeghinrstt"  :  not the way to do it 
+        #sequence_lexigram = lexigram_sequencer("{@sequence_text}") unless nil                  #  => "aeeghinrstt"  :  this is the way
+        sequence_reverse = sequence_complete.reverse                                            #  => "tttttttsssssrniiihgeeeeaa" 
+        sequence_singular = sequence_complete.squeeze                                           #  => "aeghinrst"
+        description = "sexual lines"
+        reference = "literotica"
+        sexualities = 1
+        p "#{@sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_reverse}\t#{sequence_singular}\t#{description}\t#{reference}\t#{sexualities}"
+       sleep(1)
+      end
+    end
   end
 
     # Note regarding the method, String#doing_array

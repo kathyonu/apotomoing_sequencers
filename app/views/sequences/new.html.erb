@@ -1,33 +1,15 @@
-<!-- this file is affected by sequencenewsequencers.js-->
+<!-- this file is affected by lexidisplay.js -->
 
 <div class="links">
   <%= link_to 'To Root', :root %> | 
   <%= link_to 'Show All Sequences', sequences_path %>
 </div>
 
-<div id="time">Now</div>
-
-<p>Current Time Not : <%= "#{@get_time}" %> </p>
-<p>Current Time Not : <!--%= "#{get_time}" %--> </p>
-<p>Current Time Not : <%= @get_time %> </p>
-<p>Current Time Not :  @get_time </p>
-<p>Current Time Not :  @get_time </p>
-<p>Current Time Not :  get_time </p>
-<p>Current Time Not :  "#{@get_time}" </p>
-<p>Current Time Not :  "#{get_time}" </p>
-<p>Current Time Not : <!--%= get_time %--> </p>
-<p>Current Time Not : <!--%= "#{get_time}" %--> </p>
-<p>Current Time Not : <%= "#{@get_time}" %> </p>
+<p>Current Time is <%= "#{Time.now.to_s}" %></p>
 
 <h1>New Sequence</h1>
 
-<div id="single">
-  <div class="sequenceDisplay">
-    <div id="sequencerSequence" class="sequenceSequencer">
-       <input id="sequenceEntry" name="sequenceEntry" data-remote='true', data-sequenceEntry='value', type="string" value="Enter_Your_Data" size="100" tabindex=1 />
-    </div>
-  </div>
-</div>
+<%= render_widget 'lexi' %>
 
 <div class="newSequence">
   <%= render 'form' %>

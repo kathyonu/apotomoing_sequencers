@@ -1,11 +1,19 @@
+// this file has been replaced by app/public/javascripts/lexidisplay.js : 20110929
+//
+// this file is no longer in use
 // this file name is app/public/javascript/sequencenewsequencers.js
 // this file affects app/views/sequences/new.html.erb
 // this file affects app/views/sequences/edit.html.erb
 
+// solid gold code, passes jshint rules
+
+// set up this variable if running in console
+// var $jsequencetext = "test";
+
 $j(document).ready(
   function() {
-  //  $j('#sequenceEntry').bind(
-    $j('input#sequenceEntry').bind(
+//  $j('#sequenceEntry').bind(
+    $j('input#sequencetext').bind(
       'focusin',function(event) {
         if (this.value == 'Enter_Your_Data') {
           (this.value = '');
@@ -17,14 +25,18 @@ $j(document).ready(
     ).bind(
       'focusout',function(event) {
         if (this.value !== '') {
-          var sequence = document.getElementById('sequence_sequence_text');
-          var $jsequenceEntry = sequence.nodeValue;
+          var sequence = document.getElementById('sequencetext');             // sequence.name => "sequence_text" // sequence.value => "aasdf asdf asdf"
+        //var sequence = document.getElementById('sequence_sequence_text');   // sequence.name => "sequence[sequence_text]"
+          var $jsequencetext = sequence.value;                                // => "asdf asdf asdf"
+        //var $jsequencetext = sequence.nodeValue;                            // => returns null !!!  : discoverd this error on 20110925
           sequence.form.onsubmit = function() { return false; };
           $j('input#sequence_sequence_text').val(this.value);
           var $jcreation = (this.value).toString();
           $j('input#sequence_sequence_creation').val($jcreation.toString().replace(/\s/g,''));
           var $jcomplete = (this.value).split('').sort().join('').trim();
           $j('input#sequence_sequence_complete').val($jcomplete);
+//        $j.ajax({url:"/lexigram_sequenced",type:"post",data:$j("#lexi > form").first(0).serialize(),success:function(data){alert(data)}});   // returns [17:32:36.514] POST http://localhost:3000/lexigram_sequenced [HTTP/1.1 404 Not Found 22ms]
+       // $.ajax({url:"/lexigram_sequenced",type:"post",data:$("form").get(0).serialize(),success:function(data){alert(data)}})    // from Eviltwin on irc #jquery
           var $jsingulars = $jcomplete.split('').sort();
           var $jsingular = $j.unique($jsingulars).reverse();
           $j('input#sequence_sequence_singular').val(($jsingular.toString().replace(/,/g,'')));
@@ -32,7 +44,7 @@ $j(document).ready(
         }
           else
         {
-          $j('#sequenceEntry').val('Please Enter Your Data');
+          $j('#sequencetext').val('Please Enter Your Data');
           $j('#sequence form input#sequence_sequence_text').val("");
           $j('#sequence form input#sequence_sequence_creation').val("");
           $j('#sequence form input#sequence_sequence_complete').val("");
@@ -41,54 +53,3 @@ $j(document).ready(
        }
     });
   });
-
-        //var $jlexigramoptions = {type: 'POST', url: '../../app/helpers/lexigram.rb', data: $jsequenceEntry, dataType: 'text', 
-//          var $jlexigramoptions = $j.ajax({
-//            type: 'GET', 
-//           url: 'sequence_lexigram',
-       //   url: '../../app/helpers/lexigram/sequence_lexigram',
-//            data: $jsequenceEntry, 
-      //    data: 'sequencetext'=> $jsequenceEntry, 
-      //    data: { 'sequencetext'=> $jsequenceEntry }, 
-//            dataType: 'text', 
-      // 1        error: function(xhrResponse) {
-      // 1        alert('Failed tranaction');
-      // 1      },
-      // 2     error: function(xhr, textStatus, errorThrown ) {
-      // 2     alert('an error occurred : here\'s the info\n\n' + 'xhr =  ' + xhr + '\textStatus = ' + textStatus + '\nerrorThrown =  ' +  errorThrown);},
-//          error: function(evt, xhr, status, error) {
-//            alert('an error occurred : here\'s the info\n\n' 
-//            + 'evt = ' 
-//            + evt 
-//            + '\nxhr =  ' 
-//            + xhr 
-//            + '\nstatus = ' 
-//            + xhr.status 
-//            + '\nerror =  ' 
-//            +  xhr.error
-//            );
-//            },
-      // 3    alert('an error occurred : here\'s the info\n\n' + 'xhr =  ' + xhr + '\nStatus = ' + status + '\nError =  ' +  error);},
-      // 3      xhr =  error
-      // 3      Status = undefined
-      // 3      Error =  undefined
-//            success: function(text, textStatus) {$j('body').append(text)},
-           // success: function(xhrResponse) { alert('Completed tranaction');},
-           // success: function(text, textStatus) {$j('input#sequence_sequence_lexigram').val(text);},
-           //   alert('function text = ' + text + '\ntextStatus = ' + textStatus);
-//        });
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-          //     var completereverse = (this.value).split('').sort().reverse().join('').trim();
-          //     $j('input#sequence_sequence_compltete_reverse').val(completereverse);
-//        $j.post('<%= sequence_lexigram_path %>'), function(data) {
-  //        $j('input#sequence_sequence_lexigram').text(data);
-    //    };
-////////  var lexigrams = $j.ajax( write the call to > lexigram_sequencer(this.value);
-  //      var lexigrams = (this.value).split('').sort().reverse().join('').trim();
-   //     $j('input#sequence_sequence_lexigram').val(lexigrams);
-////////  var lexigrams = $j.ajax( :url => :lexigram, :action => :lexigram_sequencers(anagramtext.value), :remote => true )
-    //    var lexigrams = $j.ajax({url: "helpers/lexigram.rb", :type => 'GET', :action => :lexigram_sequencer(anagramtext.value), :remote => true);
-     //   var lexigrams = $j.ajax({url: "../../../app/helpers/lexigram.rb", :type => 'GET', :action => :lexigram_sequencer(anagramtext.value), :remote => true);
-   ///////var $lexigrams = $j.ajax( $jlexigramoptions );
-      //  $j('input#sequence_sequence_lexigram').val($jlexigramoptions.responseText);   // same thing : $j('form[0] > input#sequence_lexigram').val(lexigrams);

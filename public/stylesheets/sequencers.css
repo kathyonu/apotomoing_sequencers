@@ -258,10 +258,12 @@
   z-index: 12;
 }
 
+/* replaced by new name, #sequencetext
 #sequenceEntry {
   margin: 3px;
   padding: 5px;
 }
+*/
 
 .sequencerWidgetDisplay {
   font-size: 90%;
@@ -354,6 +356,17 @@
   padding: 4px;
   text-align: center;
   width: 175px;
+}
+
+#lexi > form > input#sequencetext {
+  margin-bottom: 30px;
+  border-bottom: 4px solid #000;
+  line-height: 120%;
+  font-size: 120%;
+}
+
+#lexi > form > input#submit {
+  display: none;
 }
 
 #reset {
