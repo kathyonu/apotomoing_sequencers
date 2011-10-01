@@ -18,12 +18,14 @@
 // this command in Terminal will begin the Ruby Console, then set it up for use with javascript :
 // $ cd ./apotomoing_sequences
 // $ rails c -s  
+// now in console;
 // > require "./lib/textual-fibering-methods.rb"
 // > :javascript
-// >   var $j = jQuery;jQuery.noConflict();
-// >   var $jsequencetext = "test";
+// > var $j = jQuery;jQuery.noConflict();
+// > var $jsequencetext = "test";
 //
-// Now various parts of this code below can be run in the Ruby Console for testing changes
+// Now various parts of this code below can be run in the Ruby Console for testing changes 
+//  using the jQuery console and the localhost browswer
 
 $j(document).ready(
   function() {

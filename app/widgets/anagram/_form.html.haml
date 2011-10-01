@@ -13,11 +13,3 @@
       
       .linkTo#reset= link_to 'Reset Page', :root
 
-:javascript
-  
-  var forma = $j("#anagram form");
-
-  forma.submit(function() {
-    $j.ajax({url: forma.attr("data-event-url"), data: forma.serialize()})
-    return false;
-  });

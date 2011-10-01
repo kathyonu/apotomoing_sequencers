@@ -8,8 +8,7 @@ class LexiWidgetTest < Apotomo::TestCase
   test "display" do
     render_widget 'me'
     assert_select ".formLexi"
-    assert_select "#lexi"
-    assert_select "form[0]"
+    assert_select "form"
     assert_select "#sequencetext"
     assert_select "#submit"
   end

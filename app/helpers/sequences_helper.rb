@@ -1,9 +1,8 @@
 module SequencesHelper
 
-include Textual
-include Lexigram
-
-require './lib/textual-fibering-methods.rb'
+require './lib/sequencerings/lexigram.rb'
+require './lib/sequencerings/textual.rb'
+require './lib/sequencerings/textual-fibering-methods.rb'
 
   def singular_sequence(sequencetext)
     entry = user_entry.to_textual.de_comma.strip

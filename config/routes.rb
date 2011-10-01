@@ -1,7 +1,9 @@
 ApotomoingSequencers::Application.routes.draw do
 
   # Can this route can be invoked with lexigram_sequenced_url(:params => sequencetext)
-  match 'sequences/lexigram_sequenced' => "sequences#_lexigram_sequenced"    # partial is named _lexigram_sequenced.js.erb
+  match 'sequences/lexigram_sequenced' => "sequences#_lexigram_sequenced"                 # partial is named _lexigram_sequenced.js.erb
+
+  match 'sequence_createds/lexibram_sequenced' => "sequence_createds#_lexigram_sequenced" # partial is named _lexigram_sequenced.js.erb
 
   resources :sequences
 

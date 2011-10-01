@@ -1,5 +1,11 @@
 class SequenceCreatedsController < ApplicationController
   include Apotomo::Rails::ControllerMethods
+  
+#  attr_accessible :id, :sequence_text, :sequence_creation, :sequence_complete, :sequence_lexigram, :sequence_singular
+
+  require './lib/sequencerings/lexigram.rb'
+  require './lib/sequencerings/textual.rb'
+  require './lib/sequencerings/textual-fibering-methods.rb'
 
   has_widgets do |root|
     root << widget(:sequence_created, :sequence_created => @sequence_created)

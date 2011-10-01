@@ -1,6 +1,7 @@
 // this file has been replaced by app/public/javascripts/lexidisplay.js : 20110929
 //
 // this file is no longer in use
+//
 // this file name is app/public/javascript/sequencenewsequencers.js
 // this file affects app/views/sequences/new.html.erb
 // this file affects app/views/sequences/edit.html.erb

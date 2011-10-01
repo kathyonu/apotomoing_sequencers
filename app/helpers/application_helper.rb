@@ -1,9 +1,8 @@
 module ApplicationHelper
 
-include Textual
-include Lexigram
-
-require './lib/textual-fibering-methods.rb'
+require './lib/sequencerings/lexigram.rb'
+require './lib/sequencerings/textual.rb'
+require './lib/sequencerings/textual-fibering-methods.rb'
 
   # GET TIME  /apotomoing_sequencers/app/helpers/application_helper.rb
   # ajaxing time

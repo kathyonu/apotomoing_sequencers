@@ -1,18 +1,11 @@
 class SequencesController < ApplicationController
   include Apotomo::Rails::ControllerMethods
 
-  respond_to :js
-  
-  attr_accessor :sequencetext
-  attr_accessor :lexigram_sequence
-  attr_accessor :lexigram_sequenced
-  attr_accessor :lexigram_sequencer
-  attr_accessor :sequence_lexigram
-  
+  attr_accessible :id, :sequence_text, :sequence_creation, :sequence_complete, :sequence_lexigram, :sequence_singular, :description, :reference, :anagram, :name, :phrase, :sexualities, :external, :internal
+
   has_widgets do |root|
     root << widget(:lexi)
   end
-
  
   # GET /sequences
   # GET /sequences.xml
