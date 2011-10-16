@@ -24,7 +24,7 @@ gem "sprockets", "= 2.0.0"
 
   # to use the published apotomo gem
 
-gem "apotomo", "~> 1.1.2"
+gem "apotomo", "~> 1.2.x"
   # gem 'apotomo', '~> 1.1.x', :require => 'apotomo'
 
   # to use the current apotomo master from github
@@ -40,7 +40,7 @@ gem "spruz", "~> 0.2.13"
 
 gem "onfire", "~> 0.2.0"
 
-gem 'hooks', "~> 0.1.3"
+gem 'hooks', "~> 0.2.0"
 
 gem "haml", "~> 3.1.3"
 
