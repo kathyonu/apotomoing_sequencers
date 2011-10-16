@@ -1,12 +1,6 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
+
   protect_from_forgery
 
-  ### not in use
-  def script01
-  end
-  
-  ### not in use
-  def gAddress
-  end
-  
 end
