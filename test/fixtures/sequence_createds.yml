@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  id: 1
   sequence_text: testing anagram
   sequence_creation: testinganagram
   sequence_complete: aaaeggimnnrstt
@@ -8,6 +9,7 @@ one:
   sequence_singular: aegimnrst
 
 two:
+  id: 2
   sequence_text: anagram testings
   sequence_creation: anagramtestings
   sequence_complete: aaaeggimnnrsstt

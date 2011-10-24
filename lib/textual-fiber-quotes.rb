@@ -5,9 +5,12 @@
 ## Run in Terminal in your app directory, $ rails c -s     : this will run the console in the sandbox, all changes will be rolled back on exit.
 ## Run in the console, this require statement > require "./lib/textual-fiber-quotes.rb"
 
-include Textual
+  require './lib/sequencerings/lexigram.rb'
+  require './lib/sequencerings/textual.rb'
+  require './lib/sequencerings/textualfibers.rb'
+  require 'fiber'
 
-require 'fiber'
+puts "textual-fiber-quotes.rb loaded"
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below
   def file_name

@@ -1,8 +1,10 @@
 class SequencetextsController < ActionController::Base
-  include Apotomo::Rails::ControllerMethods
-
-  attr_accessible :sequencetext
+  include ApplicationHelper
   
+  include Textual
+  
+  attr_accessor :sequencetext
+
   def sequencetext
     initialize(sequencetext)
       @sequencetext = sequencetext

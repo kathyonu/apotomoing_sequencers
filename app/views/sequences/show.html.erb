@@ -65,6 +65,11 @@
   <%= @sequence.internal %>
 </p>
 
+<p>
+  <b>Created at:</b>
+  <%= @sequence.created_at %>
+</p>
+
 <div class="links">
   <%= link_to 'To Root', :root %> | 
   <%= link_to 'Edit', edit_sequence_path(@sequence) %> |

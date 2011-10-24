@@ -1,8 +1,5 @@
-class SequenceLexigramController < ActionController::Base
-
-  require './lib/sequencerings/lexigram.rb'
-  require './lib/sequencerings/textual.rb'
-  require './lib/sequencerings/textual-fibering-methods.rb'
+ class SequenceLexigramController < ActionController::Base
+  include ApplicationHelper
 
   def sequence_lexigram
     initialize(sequence_lexigram)
@@ -21,6 +18,12 @@ class SequenceLexigramController < ActionController::Base
       @lexigram_sequenced = lexigram_sequenced
       @lexigram_sequenced= ()
   end
+
+
+#  def lexigram_sequencer(sequencetext)
+#    initialize(lexigram_sequencer)
+#      lexigram_sequencer(sequencetext) = lexigram_sequencer(@sequencetext)
+#  end
 
 
 end

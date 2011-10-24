@@ -1,5 +1,5 @@
 class GetTimeController < ActionController::Base
-  helper ApplicationHelper
+#  helper ApplicationHelper
 
   def show
     @get_time = "#{Time.now.to_s}"

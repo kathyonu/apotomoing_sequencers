@@ -1,10 +1,10 @@
 require 'test_helper'
 
 class SequenceTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
+
   test "form" do
-    assert "form > input#newSequence"
-    assert "form"
+    assert "form > input#sequence_sequence_text"
 	assert "input#sequence_sequence_text"
+    assert "#error_explanation"
   end
 end

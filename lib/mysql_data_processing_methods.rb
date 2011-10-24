@@ -5,14 +5,15 @@
 
 # in Terminal, after running $ rails console, enter this require statement
 ##   $ require "./lib/mysql_data_processing_methods.rb"
-###  the Textual module included below is located in /apotomoing_sequencers/app/helpers/textual.rb
-#### for any fibering methods to work, you must require the Fiber library, as shown below.
+### for any fibering methods to work, you must require the Fiber library, as shown below.
 #### this file is under development, not all methods work yet .. use with care.
 
-include Textual
-include Lexigram
+#  require 'lexigram'
+#  require 'textual'
+#  require './lib/sequencerings/textualfibers.rb'
+#### these above shouldn't be needed 
+#### test that when i need this again
 
-require "./lib/textual-fibering-methods.rb"
 # require 'fiber'  No fibers yet in this code
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below

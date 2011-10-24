@@ -1,19 +1,17 @@
 #!/usr/bin/env ruby -w
 
 # ruby-1.9.2-p0 
-# rails >= 3.0.0
+# rails >= 3.0.10
 
 # in Terminal, after running > rails console, enter this require statement
 #\   $ rails c -s           :: abbreviation for $ rails console -sandbox
 ##\  > require "./lib/mysql_data_processing_methods_hashes.rb"
-###\  the Textual module included below is located in /apotomoing_sequencers/app/helpers/textual.rb
-####\ for any fibering methods to work, you must require the Fiber library, as shown below.
-#####\ this file is under development, not all methods work yet .. use with care.
+###\ for any fibering methods to work, you must require the Fiber library, as shown below.
+####\ this file is under development, not all methods work yet .. use with care.
 
-include Textual
-# include Lexigram
-
-require "./lib/textual-fibering-methods.rb"
+  require 'lexigram'
+  require 'textual'
+  
 # require 'fiber'
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below

@@ -1,11 +1,8 @@
 class SequenceCreatedsController < ApplicationController
   include Apotomo::Rails::ControllerMethods
-  
-#  attr_accessible :id, :sequence_text, :sequence_creation, :sequence_complete, :sequence_lexigram, :sequence_singular
+  include ApplicationHelper
 
-  require './lib/sequencerings/lexigram.rb'
-  require './lib/sequencerings/textual.rb'
-  require './lib/sequencerings/textual-fibering-methods.rb'
+  #TODO set up the _lexigram_sequenced action and view for this controller in cahoots with the anagrams widget
 
   has_widgets do |root|
     root << widget(:sequence_created, :sequence_created => @sequence_created)
@@ -24,7 +21,7 @@ class SequenceCreatedsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @sequence_createds }
-    end
+   end
   end
 
   # GET /sequence_createds/1
@@ -52,6 +49,22 @@ class SequenceCreatedsController < ApplicationController
         format.xml  { render :xml => @sequence_created.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  # GET /sequence_createds/new
+  # GET /sequence_createds/new.xml
+  def new
+    @sequence_created = SequenceCreated.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @sequence_created }
+    end
+  end
+
+  # GET /sequence_createds/1/edit
+  def edit
+    @sequence_created = SequenceCreated.find(params[:id])
   end
 
   # PUT /sequence_createds/1
@@ -82,19 +95,4 @@ class SequenceCreatedsController < ApplicationController
     end
   end
 
-  # GET /sequence_createds/new
-  # GET /sequence_createds/new.xml
-  def new
-    @sequence_created = SequenceCreated.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @sequence_created }
-    end
-  end
-
-  # GET /sequence_createds/1/edit
-  def edit
-    @sequence_created = SequenceCreated.find(params[:id])
-  end
 end

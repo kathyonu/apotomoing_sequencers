@@ -1,0 +1,272 @@
+"<%= "#{lexigram_sequencer(params[:sequencetext])}" %>"
+
+
+"<%= escape_javascript( @lexigram_sequenced ) %>"
+"<%= escape_javascript( @lexigram_sequenced ) %>"	: data is "" in the alert, and nothing in the box
+
+
+"<%= escape_javascript( lexigram_sequencer(:sequencetext.to_s )) %>"		: (undefined method `to_textual' for "sequencetext":String):
+										  1: "<%= escape_javascript( lexigram_sequencer(:sequencetext.to_s )) %>"
+
+
+"<%= escape_javascript( lexigram_sequencer(:sequencetext.to_textual )) %>"	: (undefined method `to_textual' for :sequencetext:Symbol):
+										  1: "<%= escape_javascript( lexigram_sequencer(:sequencetext.to_textual )) %>"
+
+"<%= escape_javascript( "#{lexigram_sequencer(params[:sequencetext])}" ) %>"	: this is it, after we get Textual going into the lexigram_sequencer method !!!!
+"<%= escape_javascript( "#{lexigram_sequencer(params[:sequencetext])}" ) %>"	: TOP DOG, IT HAS THE DATA, AND STOPS AT LACK OF THE String#to_textual method
+"<%= escape_javascript( "#{lexigram_sequencer(params[:sequencetext])}" ) %>"	: (undefined method `to_textual' for "asdf asd ":String):
+										  1: "<%= escape_javascript( "#{lexigram_sequencer(params[:sequencetext])}" ) %>"
+"<%= escape_javascript( lexigram_sequencer(params[:sequencetext]) ) %>"		: (undefined method `to_textual' for "asdf asdf ":String):
+										  1: "<%= escape_javascript( lexigram_sequencer(params[:sequencetext]) ) %>"
+
+
+
+
+"<%= escape_javascript( "#{lexigram_sequencer(:sequencetext)}" ) %>"	" (undefined method `to_textual' for "sequencetext":String):
+
+
+"<%= escape_javascript( "#{lexigram_sequencer(sequencetext)}" ) %>"	: ActionView::Template::Error (undefined method `to_textual' for "":String):
+"<%= escape_javascript( "#{lexigram_sequencer(:sequencetext)}" ) %>"
+"<%= escape_javascript( "#{lexigram_sequencer(:sequencetext)}" ) %>"	: ActionView::Template::Error (undefined method `to_textual' for "sequencetext":String):
+"<%= escape_javascript( "#{lexigram_sequenced}" ) %>"	: data answer shows error of undefined method, to_tetual for "":string
+"<%= escape_javascript( "#{@lexigram_sequenced}" ) %>"	: data answer shows as ""
+"<%= escape_javascript( "#{lexigram_sequenced}" ) %>"	: data answer shows error of undefined method, to_tetual for "":string
+"<%= escape_javascript( lexigram_sequenced ) %>"    : sends no data! ActionView::Template::Error (undefined method `to_textual' for "":String):   <<\
+"<%= escape_javascript( lexigram_sequenced ) %>"    : not prommising, stops because .to_textual method is not available to lexigram_sequencer, but ^^
+
+<%= lexigram_sequence %>	: acts like it works but puts nothing into box, the data alert fires with no data showing
+
+
+"<%= escape_javascript( "#{lexigram_sequencer(sequencetext)}" ) %>"	: undefined method `to_textual' for "":String):
+"<%= escape_javascript( "#{lexigram_sequencer()}" ) %>"
+"<%= escape_javascript( "#{@lexigram_sequencer(sequencetext)}" ) %>"	:  syntax error, unexpected '(', expecting '}'
+
+
+
+<%= "#{@lexigram_sequencer(:sequencetext)}" %>
+<%= "#{@lexigram_sequenced}" %>
+
+
+
+
+"<%= escape_javascript( "#{lexigram_sequencer(:sequencetext)}" ) %>"
+"<%= escape_javascript( "#{lexigram_sequencer(:sequencetext)}" ) %>"
+"<%= escape_javascript(render( "#{lexigram_sequencer(:sequencetext)}" )) %>"
+"<%= escape_javascript(render( lexigram_sequencer(:sequencetext) )) %>"
+"<%= escape_javascript(render( lexigram_sequencer(:sequencetext) )) %>"
+
+
+"<%= escape_javascript( "#{@lexigram_sequence}" ) %>" : that provides just the blank double quote in the lexigram box !!!
+"<%= escape_javascript( "#{@lexigram_sequence}" ) %>" : that provides just the blank double quote in the lexigram box !!!
+						      : that means the code is processing, and disappearing, answer wise.  it is not getting the answer.
+<%= escape_javascript( "#{@lexigram_sequenced}" ) %> : where's the data ? it does not return.
+<%= escape_javascript( "#{@lexigram_sequenced}" ) %> : MORE TOP DOGGER RIGHT NOW : reason is it sends the data, the below does not
+"<%= escape_javascript( "#{lexigram_sequenced}" ) %>"
+<%= escape_javascript( "#{lexigram_sequenced}" ) %>  : TOP DOG RIGHT NOW : 20111019 : reason is it causes server to run through the methods
+<%= escape_javascript( "#{lexigram_sequenced}" ) %>  : TOP DOG RIGHT NOW : 20111019 : reason is it causes server to run through the methods
+SERVER RESPONSE  : 
+  Processing by SequencesController#_lexigram_sequenced as JS
+  Parameters: {"sequencetext"=>"sadf asdf ", "_"=>"1319044535679"}
+Rendered sequences/_lexigram_sequenced.js.erb (0.8ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `to_textual' for "":String):        <<<<<<<<< see those empty "" that's the missing data.
+    1: <%= escape_javascript( "#{lexigram_sequenced}" ) %>
+  app/helpers/lexigram.rb:51:in `lexigram_sequencer'       < SECOND METHOD HIT AND RUN UNTIL LINE 51 .. IT CANNOT SEE THE String.to_textual method 
+  app/helpers/lexigram.rb:24:in `lexigram_sequenced'       < FIRST METHOD HIT AND RUN
+  app/views/sequences/_lexigram_sequenced\
+    .js.erb:1:in `_app_views_sequences__lexigram_sequenced_js_erb\
+    __1532328401518313186_2183025980_3286969954598752812'
+
+
+
+
+
+
+
+<%= escape_javascript(render( "#{lexigram_sequencer(:sequencetext)}" )) %> : provides error in sequence_lexigram box
+<%= escape_javascript(render( "#{lexigram_sequencer(:sequencetext)}" )) %>
+<%= escape_javascript( "#{@lexigram_sequenced}" ) %> : acts like it works server wise, yet data alert returns nothing.
+<%= escape_javascript(lexigram_sequence) %> 	     : everything seems to work, including alerts, but not data is passed back to browser.
+
+
+=== \/ 20111017 \/ ======================================================
+var $jlexiseq = <%= escape_javascript( @lexigram_sequence ) %>
+$j("input#sequence_sequence_lexigram").val($jlexiseq);
+	data is var $jlexiseq = $j("input#sequence_sequence_lexigram").val($jlexiseq);
+
+<%= escape_javascript( lexigram_sequence = @lexigram_sequence ) %>
+$j("input#sequence_sequence_lexigram").val(lexigram_sequence);
+$j("input#sequence_sequence_lexigram").val(<%= escape_javascript( @lexigram_sequence ) %>);
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= escape_javascript(lexigram_sequenced) %>				: this brings in the error text into the sequence lexigram box.
+<%= escape_javascript(lexigram_sequenced) %>				: now it brings in ActionView::Template::Error (undefined method `to_textual' for "":String):
+                                                                        : but nothing shows in the sequence_lexigram box
+
+
+
+
+
+<%= escape_javascript( lexigram_sequencer ) %>
+
+
+<%= escape_javascript( @lexigram_sequenced ) %> : this shows the server to be fully happy and working to return result, but no result
+<%= escape_javascript( @lexigram_sequence  ) %> : this shows the server to be fully happy and working to return result, but no result
+<%= escape_javascript( "#{@lexigram_sequenced}" ) %> : this shows the server to be fully happy and working to return result, but no result : 20111016
+<%= escape_javascript( lexigram_sequencer ) %>	: appears to work, but no answer provided in sequence_lexigram box
+<%= escape_javascript( lexigram_sequencer ) %>	: appears to work, but no answer provided in sequence_lexigram box
+<%= escape_javascript( lexigram_sequencer ) %>	: appears to work, but no answer provided in sequence_lexigram box
+<%= escape_javascript( "#{@lexigram_sequencer}" ) %> : same thing, and still no answer in the sequence_lexigram box
+<%= escape_javascript( "#{@lexigram_sequenced}" ) %> : same
+
+/\ the problem seems to be the actual methods are not getting hit by the server.
+
+
+
+
+
+<%= escape_javascript( render(@lexigram_sequenced) ) %>		: this puts the error text inside the sequence_lexigram box
+<%= escape_javascript( render(@lexigram_sequence) ) %>		: this puts the error text inside the sequence_lexigram box
+<%= escape_javascript( render(@lexigram_sequence) ) %>		: and shows : ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+
+
+<%= escape_javascript( "#{sequence.lexigram_sequence}" ) %>	: this puts the error text inside the sequence_lexigram box
+<%= escape_javascript( "#{@sequence.lexigram_sequence}" ) %>	: this puts the error text inside the sequence_lexigram box
+
+
+<%= escape_javascript( "#{lexigram_sequence}" ) %>		: this puts the error text inside the sequence_lexigram box
+<%= escape_javascript( "#{@lexigram_sequence}" ) %>		: this doesn't
+
+
+
+
+
+
+
+
+
+
+
+
+
+\/ these cause error show below the codes \/
+
+
+<%= escape_javascript(@Lexigram.lexigram_sequenced) %>
+<%= escape_javascript(Lexigram.lexigram_sequenced) %>
+
+the above cause this error :
+	ActionView::Template::Error (undefined method `lexigram_sequenced' for Lexigram:Module):
+	1: <%= escape_javascript(Lexigram.lexigram_sequenced) %>
+	app/views/sequences/_lexigram_sequenced.js.erb:1:in `_app_views_sequences__lexigram_sequenced_js_erb__2873960963050356473_2186372900_669823861875001345'
+
+
+<%= escape_javascript(@Lexigram.lexigram_sequenced) %>
+<%= escape_javascript(@Lexigram.lexigram_sequenced) %>
+
+
+<%= escape_javascript(Lexigram.lexigram_sequenced) %>
+<%= escape_javascript(Lexigram.lexigram_sequencer(params[:sequencetext])) %>
+
+<%= escape_javascript( "#{lexigram_sequenced}" ) %>                             : same \/ 
+<%= escape_javascript( "#{lexigram_sequenced}" ) %>				: this brings in the error text into the sequence lexigram box.
+<%= escape_javascript( "#{lexigram_sequenced}" ) %>				: this brings in the error text into the sequence lexigram box.
+<%= escape_javascript( "#{lexigram_sequence}" ) %>				: this brings nothing into the sequence lexigram box.
+<%= escape_javascript( "#{@lexigram_sequence}" ) %>				: this brings nothing into the sequence lexigram box.
+<%= escape_javascript( "#{@lexigram_sequence}" ) %>				: this brings nothing into the sequence lexigram box.
+<%= escape_javascript( "#{@lexigram_sequenced}" ) %>				: this brings nothing into the sequence lexigram box.
+<%= escape_javascript( "#{lexigram_sequencer(params[:sequencetext])}" ) %>	: this brings in the error text into the sequence lexigram box.
+    : and, both are bringing in this error
+	ActionView::Template::Error (undefined method `to_textual' for "asdf asdf ":String):
+        1: <%= escape_javascript( "#{lexigram_sequencer(params[:sequencetext])}" ) %>
+           app/helpers/lexigram.rb:39:in `lexigram_sequencer'
+           app/views/sequences/_lexigram_sequenced.js.erb:1:in `_app_views_sequences__lexigram_sequenced_js_erb___2930245115744030236_2167970460_1301380633915113733'
+
+
+
+
+
+
+<%= escape_javascript( require 'lexigram', "#{lexigram_sequenced}" ) %> : caused the ActionView::Template::Error (undefined local variable or method `lexigram_sequenced' 
+<%= escape_javascript( require 'lexigram', "#{@lexigram_sequence}" ) %>
+<%= escape_javascript( require 'lexigram', "#{@lexigram_sequenced}" ) %>: caused the ActionView::Template::Error (wrong number of arguments(2 for 1)):
+<%= escape_javascript( include Lexigram, "#{lexigram_sequenced}" ) %> 	: caused the ActionView::Template::Error (undefined method `include' error
+
+
+
+
+<%= escape_javascript(lexigram_sequenced) %>				: this brings in the error text into the sequence lexigram box.
+
+<%= escape_javascript(lexigram_sequenced) %>				: now it brings in ActionView::Template::Error (undefined method `to_textual' for "":String):
+                                                                        : but nothing shows in the sequence_lexigram box
+
+<%= escape_javascript( lexigram_sequencer(:sequencetext) ) %>		: this brings in the error text into the sequence lexigram box.
+<%= escape_javascript( @lexigram_sequencer(:sequencetext) ) %>		: this brings in the error text into the sequence lexigram box.
+<%= escape_javascript(lexigram_sequencer(params[:sequencetext])) %>	: this brings in the error text into the sequence lexigram box.
+<%= escape_javascript(lexigram_sequencer(params[:sequencetext])) %>	: this brings in the error text into the sequence lexigram box.
+
+
+
+
+
+
+
+
+<%= escape_javascript(lexigram_sequenced) %>  : ActionView::Template::Error (undefined method `to_textual' for nil:NilClass):
+					    1: <%= escape_javascript(lexigram_sequenced) %>
+						  app/helpers/lexigram.rb:39:in `lexigram_sequencer'
+						  app/helpers/lexigram.rb:21:in `lexigram_sequenced'
+						  app/views/sequences/_lexigram_sequenced.js.erb
+                                                  1:in`_app_views_sequences__lexigram_sequenced_js_erb___2930245115744030236_2181468900_1301380633915113733'
+
+
+
+
+
+
+
+
+
+
+
+<%= escape_javascript( include Lexigram, "#{lexigram_sequencer(params[:sequencetext])}" ) %>
+<%= escape_javascript( "#{lexigram_sequencer(params[:sequencetext])}" ) %>
+<%= escape_javascript( "#{@lexigram_sequence}" ) %>
+<%= escape_javascript( "#{@lexigram_sequenced}" ) %>
+<%= escape_javascript( "#{@lexigram_sequenced}" ) %>
+<%= escape_javascript( "#{@lexigram_sequenced}" ) %>
+escape_javascript(<%= @lexigram_sequenced %>)
+<%= escape_javascript(@lexigram_sequenced) %>
+<%= escape_javascript(@lexigram_sequenced) %>
+<%= escape_javascript(:lexigram_sequenced) %>   ActionView::Template::Error (undefined method `gsub' for :lexigram_sequenced:Symbol):
+<%= escape_javascript(render(@lexigram_sequence)) %>
+<%= escape_javascript(render(:lexigram_sequenced)) %>
+<%= escape_javascript( "#{lexigram_sequencer(params[:sequencetext])}" ) %>
+<%= escape_javascript( "#{lexigram_sequenced(params[:sequencetext])}" ) %>
+<%= escape_javascript( "#{@lexigram_sequenced}" ) %>
+<%= escape_javascript( "#{@lexigram_sequenced}" ) %>
+<%= escape_javascript( "#{@lexigram_sequence}" ) %>
+<%= escape_javascript( "#{lexigram_sequenced}" ) %>
+<%= escape_javascript( "#{lexigram_sequenced}" ) %>
+<%= escape_javascript( "#{@lexigram_sequence}" ) %>
+<%= escape_javascript( "#{@lexigram_sequence}" ) %>
+<%= escape_javascript( "#{lexigram_sequence}" ) %>
+<%= escape_javascript(@lexigram_sequenced) %>    nope
+<%= escape_javascript(:lexigram_sequenced) %>    nope
+<%= escape_javascript(lexigram_sequenced) %>     nope
+<%= escape_javascript(lexigram_sequenced) %>     nope
+<%= escape_javascript(lexigram_sequenced(params[:sequencetext])) %>  wrong # args, 1 for 0
+<%= escape_javascript(lexigram_sequenced(params[:sequencetext])) %>        "  "
+<%= escape_javascript(lexigram_sequencer(params[:sequencetext])) %>

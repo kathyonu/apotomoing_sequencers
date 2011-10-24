@@ -1,7 +1,0 @@
-.formLexi
-  = widget_div do
-    = form_tag "/sequences/lexigram_sequenced", "data-event-url" => url_for_event(:focusout), :remote => true do
-      = text_field_tag 'sequencetext', 'Enter name, word or phrase here', :size => '30', :maxlength => '150'
-      = label_tag 'sequencetext', 'then TAB out'
-
-      = submit_tag "Sequence It", { :id => "submit" }

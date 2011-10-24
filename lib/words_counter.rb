@@ -1,21 +1,17 @@
 #!/usr/bin/env ruby -w
 
 # ruby-1.9.2-p0 
-# rails >= 3.0.9
+# rails = 3.0.10
 
 # in Terminal, after running > rails console, enter this require statement
 ##   $ require "./lib/words_counter.rb"
-###  the Textual module included below is located in /apotomoing_sequencers/app/helpers/textual.rb
-#### for any fibering methods to work, you must require the Fiber library, as shown below.
+### for any fibering methods to work, you must require the Fiber library, as shown below.
 #### this file is under development, not all methods work yet .. use with care.
 
-include Textual
-
-# include Lexigram
-
-# require "./lib/textual-fibering-methods.rb"
-
-require 'fiber'
+  require './lib/sequencerings/lexigram.rb'
+  require './lib/sequencerings/textual.rb'
+  require './lib/sequencerings/textualfibers.rb'
+  require 'fiber'
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below
   def file_name

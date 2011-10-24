@@ -3,10 +3,7 @@
 ##  AN ORIGNIAL MASTER, DO NOT CHANGE ONE IOTA.
 ##  FILE NAME : /desideratus/apotomoing_sequencers/app/lib/textual-fiber-methods.rb   < mysqlbranch : 20110805
 ## Run in Terminal in your app directory, $ rails c -s     : this will run the console in the sandbox, all changes will be rolled back on exit.
-## Run in the console, this require statement > require "./lib/textual-fiber-methods.rb"
-
-require "./lib/textual-ruby-one-nine_fibered.rb"    # in original, consummates !
-require "./lib/textual-fibering-methods.rb"         # in apotomoing_sequencers
+## Run in the console, this require statement > require "./lib/sequencerings/textual-fiber-methods.rb"
 
 include IRB
 include Textual

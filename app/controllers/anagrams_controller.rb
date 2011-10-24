@@ -1,9 +1,10 @@
 class AnagramsController < ApplicationController
   include Apotomo::Rails::ControllerMethods
+  include ApplicationHelper
 
-  require './lib/sequencerings/lexigram.rb'
-  require './lib/sequencerings/textual.rb'
-  require './lib/sequencerings/textual-fibering-methods.rb'
+  respond_to :js
+
+  #TODO set up the _lexigram_sequenced action and view for this controller and sequence_createds using jquery
 
   has_widgets do |root|
     root << widget(:anagram, :anagram => @anagram)

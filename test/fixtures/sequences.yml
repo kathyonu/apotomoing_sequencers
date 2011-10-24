@@ -1,12 +1,12 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  id: 270000
-  sequence_text: JulyEighth
-  sequence_creation: julyeighth
-  sequence_complete: eghhijltuy
-  sequence_lexigram: eghhijltuy
-  sequence_singular: eghijltuy
+  id: 1
+  sequence_text: twoone
+  sequence_creation: twoone
+  sequence_complete: enootw
+  sequence_lexigram: enotw
+  sequence_singular: enotw
   description: testing
   reference: tester
   anagram: true
@@ -17,8 +17,8 @@ one:
   internal: false
 
 two:
-  id: 2500000
-  sequence_text: one too
+  id: 2
+  sequence_text: onetoo
   sequence_creation: onetoo
   sequence_complete: enooot
   sequence_lexigram: enoot

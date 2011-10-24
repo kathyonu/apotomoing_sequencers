@@ -3,13 +3,13 @@
 // Note: this file is called specifically, not through the defaults call.
 // see app/views/layouts/application.html.erb
 
-// this function affects the lexi widget
+// this function affects views/sequencs/new.html.erb
 $j(document).ready(
   function() {
-    $j('#lexi form input#submit').hide();
+    $j('form input#submit').hide();
   });
 
-// this function affects the anagram widget
+// this function affects the anagram widget, which works with sequence_createds widget
 $j(document).ready(
   function() {
     $j('#anagram form input#submit').hide();

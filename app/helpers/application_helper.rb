@@ -1,59 +1,37 @@
 module ApplicationHelper
 
-  require 'textual'
-  require 'lexigram'
-  require 'histogram'
+  include Histogram
+  include Textual
+  include Lexigram
+  
+  puts "included histogram, textual and lexigram modules, in that order, using application/helper"
 
-#  include Lexigram
-#  include Textual
-#  include Histogram
-# require 'textual'
-# require 'lexigram'
-# require 'histogram'
-# require 'histogram'
-# require 'lexigram.rb'
-# require 'textual.rb'
-# require './app/helpers/histogram.rb'
-# require './app/helpers/histogram.rb'
-# include Lexigram
-# include Textual
-# include Textual
-# include Textual
-# include Textual  : should be included by the include Lexigram call above, and it proves to be so :
-#  require './app/helpers/histogram.rb'
-#  require './app/helpers/lexigram.rb'
-#  require './app/helpers/lexigram.rb'
-#  require './app/helpers/lexigram.rb'
-#  require './app/helpers/textual.rb'
-#  require './app/helpers/textual.rb'
-#  require './app/helpers/textual.rb'
-#  require './app/helpers/textual.rb' # should be called by include Lexigram above
+  puts "application helper has been loaded directly by application controller"
 
-
-
-#  require './lib/sequencerings/textualfibers.rb' # for use in console
-
-
-
-  #  will-i-am:apotomoing_sequencers William$ rails c -s
+  ### usage :
+  # will-i-am:apotomoing_sequencers William$ rails c -s
   #    Loading development environment in sandbox (Rails 3.0.10)
   #    Any modifications you make will be rolled back on exit
-  #    > include ApplicationHelper
-  #    Textual Module has been directly loaded from textual.rb
-  #    Histogram Module has been directly loaded
-  #    application helper is loaded directly
-  #     => Object 
-  #    > @sequencetext = "testst"
-  #     => "testst" 
-  #    > lexigram_sequenced
-  #     => "essttt" 
-  
-### this 'puts' command below is for use in the console only
-## comment the puts out and you will know when this is loaded
- puts "application helper has been loaded directly by application controller"
+  # > include ApplicationHelper
+  #    Histogram Module is loaded
+  #    Textual Module is loaded
+  #    Lexigram Module has included Histogram and Textual modules
+  #    included histogram, textual and lexigram modules, in that order, using application/helper
+  #    application helper has been loaded directly by application controller
+  #  => Object 
+  # > @sequencetextb = "the lexigram_sequencer, rocks" 
+  #  => "the lexigram_sequencer rocks" 
+  # > lexigram_sequenced
+      ### at line 43 sequencetext is tainted ? false
+      ### at line 45 the result of sequencetext.to_textual : the lexigram sequencer, rocks
+      ### at line 47 the result of sequencetext.to_textual.de_comma : the lexigram sequencer rocks
+      ### at line 49 the result of sequencetext.to_textual.de_comma.de_space : thelexigramsequencerrocks
+      ### at line 51 the @ characterscount : @sequencetextualed.split(//).length : 29
+      ### at line 54 the @ letters variable count : @sequencetextualed.de_comma.de_space.split(//).length 25
+  #  => "aceeeghiklmnoqrstux" 
 
   # GET TIME  /apotomoing_sequencers/app/helpers/application_helper.rb
-  # ajaxing time
+  # ajaxing time  : old code
 #  def get_time
 #    sleep(0.9)
 #    render :text => "  Time Item .. " + "#{Time.now.to_s} "

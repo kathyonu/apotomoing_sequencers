@@ -1,11 +1,13 @@
 class SequenceCreatedWidget < Apotomo::Widget
   helper ApplicationHelper
   
-  responds_to_event :submit
+ #responds_to_event :submit
  #responds_to_event :newSequenceCreated, :with => :update, :passing => :root
  #responds_to_event :submit, :from => :sequence_created, :with => :submit, :on => :sequence_created, :passing => :root
  #responds_to_event :submit, :from => :sequence_created, :with => :submit, :on => :anagram
 
+ #TODO this file needs cleanup
+ 
   def display
     render
   end
@@ -14,6 +16,7 @@ class SequenceCreatedWidget < Apotomo::Widget
     render
   end
 
+  ### #TODO this needs to be converted for ajax to run, not apotomo
   def sequence_text(evt)
     anagram_text_entry = evt[:anagram_text]
     @sequence_text = anagram_text_entry.to_textual.de_comma.strip
@@ -33,18 +36,18 @@ class SequenceCreatedWidget < Apotomo::Widget
     render :view => :sequence_complete
   end
 
-  def sequence_lexigram(sequence_complete_reverse)
-    @sequence_complete_reverse = sequence_text.split(//).sort.join.strip.reverse
+#  def sequence_lexigram(sequence_complete_reverse)
+#    @sequence_complete_reverse = sequence_text.split(//).sort.join.strip.reverse
 
-    render :view => :sequence_complete_reverse
-  end
+#    render :view => :sequence_complete_reverse
+#  end
 
   # TODO complete the lexigram algorithm to code, meanwhile substitute the reverse sequence as the dataum
-  def sequence_lexigram(sequence_text)
-    @sequence_lexigram = sequence_text.split(//).sort.join.strip.reverse
-
-    render :view => :sequence_lexigram
-  end
+#  def lexigram_sequencer(sequencetext)
+#    @sequence_lexigram = lexigram_sequencer(sequencetext)
+#
+#    render :view => :sequence_lexigram
+#  end
 
   def sequence_singular(sequence_complete)
     @sequence_singular = sequence_complete.squeeze

@@ -1,12 +1,11 @@
 class SequencesController < ApplicationController
-  include Apotomo::Rails::ControllerMethods
+  include ApplicationHelper
+  
+  attr_accessor :sequencetext
+  attr_accessor :lexigram_sequenced
+  
+  respond_to :js
 
-  attr_accessible :id, :sequence_text, :sequence_creation, :sequence_complete, :sequence_lexigram, :sequence_singular, :description, :reference, :anagram, :name, :phrase, :sexualities, :external, :internal
-
-  has_widgets do |root|
-    root << widget(:lexi)
-  end
- 
   # GET /sequences
   # GET /sequences.xml
   def index
@@ -87,4 +86,5 @@ class SequencesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end

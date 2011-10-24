@@ -9,7 +9,12 @@
 
 <h1>New Sequence</h1>
 
-<%= render_widget 'lexi' %>
+<div class="field">
+  <%= form_tag "sequencetext", :remote => true %>
+  <%= text_field_tag "sequencetext" %>
+
+  <%= submit_tag "Submit Sequence", { :id => "submit" } %>
+</div>
 
 <div class="newSequence">
   <%= render 'form' %>
