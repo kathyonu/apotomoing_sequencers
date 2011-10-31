@@ -1,6 +1,6 @@
 <!--this file is affected by public/javascripts/lexidisplay.js -->
 
-<%= form_for(@sequence) do |f| %>
+<%= form_for(@sequence, :remote => true ) do |f| %>
   <% if @sequence.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@sequence.errors.count, "error") %> prohibited this sequence from being saved:</h2>
@@ -15,15 +15,15 @@
 
   <div class="field">
     <%= f.label :sequence_text %><br />
-    <%= f.text_field :sequence_text, :size => 222 %>
+    <%= f.text_field :sequence_text, :readOnly => true, :size => 222 %>
   </div>
   <div class="field">
     <%= f.label :sequence_creation %><br />
-    <%= f.text_field :sequence_creation, :size => 255 %>
+    <%= f.text_field :sequence_creation, :readOnly => true, :size => 255 %>
   </div>
   <div class="field">
     <%= f.label :sequence_complete %><br />
-    <%= f.text_field :sequence_complete, :size => 255 %>
+    <%= f.text_field :sequence_complete, :readOnly => true, :size => 255 %>
   </div>
   <!--div class="field"-->
   <!--%= f.label :sequence_complete_reverse %><br /-->
@@ -31,11 +31,11 @@
   <!--/div-->
   <div class="field">
     <%= f.label :sequence_lexigram %><br />
-    <%= f.text_field :sequence_lexigram, :size => 255 %>
+    <%= f.text_field :sequence_lexigram, :readOnly => true, :size => 255 %>
   </div>
   <div class="field">
     <%= f.label :sequence_singular %><br />
-    <%= f.text_field :sequence_singular, :size => 26 %>
+    <%= f.text_field :sequence_singular, :readOnly => true, :size => 26 %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
@@ -55,7 +55,7 @@
   </div>
   <div class="field">
     <%= f.label :phrase %><br />
-    <%= f.check_box :phrase %>
+    <%= f.check_box :phrase, :checked => true %>
   </div>
   <div class="field">
     <%= f.label :sexualities %><br />
@@ -70,6 +70,6 @@
     <%= f.check_box :internal %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :id => 'sequences_submit' %>
   </div>
 <% end %>

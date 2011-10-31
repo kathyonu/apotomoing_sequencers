@@ -1,16 +1,23 @@
 ApotomoingSequencers::Application.routes.draw do
 
-  # Can this route can be invoked with lexigram_sequenced_url(:params => sequencetext)
+  match 'sequences/text_sequenced' => "sequences#_text_sequenced"
+
+  match 'sequences/creation_sequenced' => "sequences#_creation_sequenced"
+
+  match 'sequences/complete_sequenced' => "sequences#_complete_sequenced"
+
   match 'sequences/lexigram_sequenced' => "sequences#_lexigram_sequenced"
+
+  match 'sequences/singular_sequenced' => "sequences#_singular_sequenced"
   
   match 'sequence_createds/lexigram_sequenced' => "sequence_createds#_lexigram_sequenced"
 
   resources :sequences
 
+  resources :sequencetexts
+
   resources :quotes
 
-# resources :sequencetext
-  
   resources :anagrams
 
   resources :sequence_createds
@@ -18,7 +25,7 @@ ApotomoingSequencers::Application.routes.draw do
   get "sequencer/display"
 
   root :to => "dashboard#index"
-
+    
   # get "application/us-states.xml"
   
   # The priority is based upon order of creation:

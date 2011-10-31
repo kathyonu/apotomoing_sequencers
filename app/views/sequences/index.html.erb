@@ -7,7 +7,7 @@
 
 <table>
   <tr>
-   <th>Created</th>
+    <th>Created</th>
     <th>Creation</th>
     <th>Complete</th>
     <th>Lexigram</th>
@@ -20,7 +20,7 @@
     <th>Sexuality</th>
     <th>ExternalSearch</th>
     <th>InternalSearch</th>
-    <!--th>Created Date</th-->
+    <th>Created Date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -28,7 +28,7 @@
 
 <% @sequences.each do |sequence| %>
   <tr>
-   <td><%= sequence.sequence_text %></td>
+    <td><%= sequence.sequence_text %></td>
     <td><%= sequence.sequence_creation %></td>
     <td><%= sequence.sequence_complete %></td>
     <td><%= sequence.sequence_lexigram %></td>
@@ -41,8 +41,8 @@
     <td><%= sequence.sexualities %></td>
     <td><%= sequence.external %></td>
     <td><%= sequence.internal %></td>
-    <!--td><%= sequence.created_at %></td-->
-   <td><%= link_to 'Show', sequence %></td>
+    <td><%= sequence.created_at %></td>
+    <td><%= link_to 'Show', sequence %></td>
     <td><%= link_to 'Edit', edit_sequence_path(sequence) %></td>
     <td><%= link_to 'Destroy', sequence, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

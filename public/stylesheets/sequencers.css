@@ -358,14 +358,17 @@
   width: 175px;
 }
 
-#lexi > form > input#sequencetext {
-  margin-bottom: 30px;
+input#sequencetext {
+  margin-bottom: 15px;
+  margin-left: 15px;
+  padding-left: 5px;
   border-bottom: 4px solid #000;
   line-height: 120%;
   font-size: 120%;
+  width: 800px;
 }
 
-#lexi > form > input#submit {
+form#sequences > input#submit {
   display: none;
 }
 

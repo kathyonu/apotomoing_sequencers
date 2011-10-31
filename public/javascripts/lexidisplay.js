@@ -40,63 +40,129 @@
 
 // jQuery.noConflict();
 // var $j = jQuery;
-// var $jsequencetext = "test";
-  
-//$j(document).ready(
-//  function() {
-//    $j('#lexi > form > input#submit').hide();
-//  });
+// var  $jsequencetext = "test";
+
+// this function sets the initial data in the sequencetext box in views/sequences/new.html.erb
+$j(document).ready(
+  function() {
+    $j('input#sequencetext').val("Tab in, enter name, word or phrase here, then tab out", "");
+  });
+
+// this function affects views/sequencs/new.html.erb by hiding the sequencetext form submit button
+$j(document).ready(
+  function() {
+    $j('#sequencetext_submit').hide();
+  });
 
 $j(document).ready(
   function() {
 //  $j('#lexi > form > input#sequencetext').bind(
     $j('#sequencetext').bind(
       'focusin',function(event) {
-        if (this.value === 'Enter name, word or phrase here') {
+        if (this.value === 'Tab in, enter name, word or phrase here, then tab out') {
           (this.value = '');
         }
         if (this.value === 'Please Enter Your Data') {
-            (this.value = '');
+          (this.value = '');
         }
       }
     ).bind(
       'focusout',function(event) {
-        if (this.value !== '') {
-          var sequence = document.getElementById('sequencetext');
-          var sequencetext = sequence.value;
-          var newsequence = document.getElementById('sequence_sequence_text');
+        if (this.value === 'Tab in, enter name, word or phrase here, then tab out') {
+          (this.value = 'Please Enter Your Data');
+        }
+        else if (this.value === 'Please Enter Your Data') {
+          (this.value = 'Last chance to enter the data grasshopper');
+        }
+        else if (this.value !== '') {
+          var newsequence = document.getElementById('sequencetext');
+          var sequencetext = newsequence.value;
           newsequence.form.onsubmit = function() { return false; };
-          $j('input#sequence_sequence_text').val(this.value);
-          var $jcreation = (this.value).toString();
-          $j('input#sequence_sequence_creation').val($jcreation.toString().replace(/\s/g,''));
-          var $jcomplete = (this.value).split('').sort().join('').trim();
-          $j('input#sequence_sequence_complete').val($jcomplete);
-          var $jsingulars = $jcomplete.split('').sort();
-          var $jsingular = $j.unique($jsingulars).reverse();
-          $j('input#sequence_sequence_singular').val(($jsingular.toString().replace(/,/g,'')));
-          var $jsequencetext = $j('#sequencetext').serialize();
-          var $jreturn_value = $j.ajax({
+          var $jsequencetext = $j('input#sequencetext').serialize();
+
+//        these are the original javascript sequencers, now replaced with the ajax calls to process the sequencings with Ruby
+//        $j('input#sequence_sequence_text').val(this.value);  # pure js, no ruby
+//        var $jcreation = (this.value).toString();
+//        $j('input#sequence_sequence_creation').val($jcreation.toString().replace(/\s/g,''));
+//        var $jcomplete = (this.value).split('').sort().join('').trim();  # pure js, no ruby
+//        $j('input#sequence_sequence_complete').val($jcomplete);  # pure js, no ruby
+//        var $jsingulars = $jcomplete.split('').sort();  # pure js, no ruby
+//        var $jsingular = $j.unique($jsingulars).reverse();  # pure js, no ruby
+//        $j('input#sequence_sequence_singular').val(($jsingular.toString().replace(/,/g,'')));  # pure js, no ruby
+          
+//          $j.ajax.setup({
+  //          type: "GET", 
+    //        data: $jsequencetext,
+      //      async: false,
+        //    dataType: 'script',
+          //  });
+         
+          var $jtext_return_value = $j.ajax({
+            type: "GET", 
+            url: "http://localhost:3000/sequences/text_sequenced", 
+            data: $jsequencetext,
+            async: false,
+            dataType: 'script',
+            success: function(data) {
+            alert(data);
+              }
+            }).responseText;
+          $j("input#sequence_sequence_text").val($jtext_return_value);
+          var $jlexi_return_value = $j.ajax({
             type: "GET", 
             url: "http://localhost:3000/sequences/lexigram_sequenced", 
             data: $jsequencetext,
             async: false,
             dataType: 'script',
             success: function(data) {
-              alert(data);
-              },
-            async: false}).responseText;
-          $j("input#sequence_sequence_lexigram").val($jreturn_value);
-          $j('input#sequence_sequence_singular').val(($jsingular.toString().replace(/,/g,'')));
+            alert(data);
+              }
+            }).responseText;
+          $j("input#sequence_sequence_lexigram").val($jlexi_return_value);
+          var $jcreation_return_value = $j.ajax({
+            type: "GET", 
+            url: "http://localhost:3000/sequences/creation_sequenced", 
+            data: $jsequencetext,
+            async: false,
+            dataType: 'script',
+            success: function(data) {
+            alert(data);
+              }
+            }).responseText;
+          $j("input#sequence_sequence_creation").val($jcreation_return_value);
+          var $jcomplete_return_value = $j.ajax({
+            type: "GET", 
+            url: "http://localhost:3000/sequences/complete_sequenced", 
+            data: $jsequencetext,
+            async: false,
+            dataType: 'script',
+            success: function(data) {
+            alert(data);
+              }
+            }).responseText;
+          $j("input#sequence_sequence_complete").val($jcomplete_return_value);
+          var $jsingular_return_value = $j.ajax({
+            type: "GET", 
+            url: "http://localhost:3000/sequences/singular_sequenced", 
+            data: $jsequencetext,
+            async: false,
+            dataType: 'script',
+            success: function(data) {
+            alert(data);
+              }
+            }).responseText;
+          $j("input#sequence_sequence_singular").val($jsingular_return_value);
           $j('input#sequence_description').focus();
-        }
+          }
           else
-        {
-          $j('#sequencetext').val('Please Enter Your Data');
-          $j('#sequence form input#sequence_sequence_text').val("");
-          $j('#sequence form input#sequence_sequence_creation').val("");
-          $j('#sequence form input#sequence_sequence_complete').val("");
-          $j('#sequence form input#sequence_sequence_lexigram').val("");
-          $j('#sequence form input#sequence_sequence_singular').val("");
-        }
-    });
+          {
+          $j('input#sequencetext').val('Please Enter Your Data');
+          $j('input#sequence_sequence_text').val("");
+          $j('input#sequence_sequence_creation').val("");
+          $j('input#sequence_sequence_complete').val("");
+          $j('input#sequence_sequence_lexigram').val("");
+          $j('input#sequence_sequence_singular').val("");
+          }
+        })
   });
+  

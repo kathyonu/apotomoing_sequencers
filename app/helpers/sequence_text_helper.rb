@@ -1,0 +1,2 @@
+module SequenceTextHelper
+end

@@ -1,0 +1,2 @@
+module SequenceSingularHelper
+end

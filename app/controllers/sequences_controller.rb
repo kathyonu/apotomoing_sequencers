@@ -2,9 +2,18 @@ class SequencesController < ApplicationController
   include ApplicationHelper
   
   attr_accessor :sequencetext
+  attr_accessor :text_sequenced
+  attr_accessor :creation_sequenced
+  attr_accessor :complete_sequenced
   attr_accessor :lexigram_sequenced
+  attr_accessor :singular_sequenced
   
-  respond_to :js
+#  respond_to :js
+  
+  # defining each
+  def each
+    each { |x| print x }
+  end
 
   # GET /sequences
   # GET /sequences.xml
@@ -52,6 +61,8 @@ class SequencesController < ApplicationController
       if @sequence.save
         format.html { redirect_to(@sequence, :notice => 'Sequence was successfully created.') }
         format.xml  { render :xml => @sequence, :status => :created, :location => @sequence }
+        format.js   { render :js => @sequence, :status => :created, :location => @sequence }
+       # format.js   { redirect_to(@sequence, :notice => 'Sequence was successfully created.') }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @sequence.errors, :status => :unprocessable_entity }
