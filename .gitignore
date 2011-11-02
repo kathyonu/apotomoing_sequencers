@@ -7,7 +7,6 @@ mysql/*
 tmp/**/*
 tmp/*
 config/database.yml
-config/initializers/secret_token.rb
-public/javascripts/archives-js/
+public/javascripts/archives-js/*
 doc/api
 doc/app
