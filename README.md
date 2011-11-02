@@ -1,57 +1,52 @@
 ## Welcome to Ruby on Rails using Apotomo on Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: At this time, 20110728
-> apotomoing_sequencers now has five sequencers sequencing in several places in the app.
-
-> This means after you enter your text into the entry box,
+### Note: This is the 1st push of the mysql branch.
+> Go to http://localhost:3000/sequences/new.
+> After you enter your text into the entry box,
 > when you tab or click out of the entry box, the five sequences
-> will be generated and entered into the sequence_created widget,
+> will be generated and entered into the sequence form,
 > without page change, using javascript with jQuery.
 
-> See app/doc/README_FOR_APP, for some development history milestones.
+> See app/doc/README_FOR_APP, for some older development history milestones.
 
 # Getting Started
 ## In your Terminal
 
 	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
 	$ cd ./apotomoing_sequencers
+	Copy the config/database-example.yml file as config/database.yml
+        Adjust that file as necessary to your needs, then run ..
 	$ bundle install
+	$ rake db
 	$ rails s
 
 ### After your server fires up, go to your browser : 
 
-*	http://localhost:3000/             <= from here, click or tab to Enter Your Data box, enter your data, tab to the next entry window, watch what happens.
-*	http://localhost:3000/             <= :root, empowered with cells and widgets, now processing user_entry into the five sequences.
-*	http://localhost:3000/quotes/new   <= scaffolded CRUD, no widgets nor cells, first javascript sequencer for display of principle.
-*	http://localhost:3000/anagrams/new <= scaffolded CRUD, no widgets nor cells, second javascript sequencer for display of principle.
-*	http://localhost:3000/sequences/   <= now sequencing the five sequences from your text entry, with jQuery.
-*	http://localhost:3000/sequences/new <= five sequencers working
-*	http://localhost:3000/sequences/edit <= five sequencers working
+*	http://localhost:3000/sequences/new     <= five sequencers now processing with Ruby, via jQuery ajax calls.
 
-> The sequences address will show the entire app's design in one table. 
+> The sequences/new address will show the entire app's design in one table. 
 > The sequences table is a primitive setup allowing massive duplicates in the five sequences. 
 > The sequences table was added so you can see how the entire application can exist in one table. 
+> At this time, the widgets at root are not fully functioning, only the sequences/new address is fully working.
 
 ## Description:
 
 The essence of apotomoing_sequencers is to process any textual matter that contains punctuations, numbers, signs such as $ and other non-letter symbols, and convert it all to lettered words.  An example is apt. becomes apartment; appt. becomes appointment. $100 becomes one hundred dollars.  This is effected with the String#to_textual method we have written, which draws on over 5,500 regular expressions to massage the text to pure letterings, and from that, we can generate the five sequences of any English creation, be it name, word or phrase. 
 
-The regular expressions file empowering the String#to_textual method is here : app/helpers/textual.rb
+The regular expressions file empowering the String#to_textual method is here : lib/textual.rb
 
 Currently, we are writing this app using the Snow Leopard iMac with : 
 ### [ruby](http://rubyforge.org/ "Ruby 1.9.2p0 2010-08-18 revision 29036 [x86_64-darwin10]")
-### [rails](http://rubyforge.org/projects/rails/ "Rails 3.0.5, up through $ails 3.0.9")
-### [apotomo](http://apotomo.de/ "Apotomo 1.1.1")
+### [rails](http://rubyforge.org/projects/rails/ "Rails 3.0.5, up through Rails 3.0.10")
+### [apotomo](http://apotomo.de/ "Apotomo 1.2.0")
 ### [cells](http://cells.rubyforge.org/ "Cells 3.5.6")
 ### [sqlite3](http://www.sqlite.org/quickstart.html "SQLite")
-The app uses sqlite3 for the database, so you have no setup to do there.
 ### [mysql2](http://rubygems.org/gems/mysql2 "mysql2")
 Our in-house app will be using mysql2 in production.
 ### [jQuery](http://jquery.com/ "jQuery")
-jQuery empowers the five sequencers with asynchronous processing.
-#### See : app/public/javascript/sequencenewsequencers.js : affects the widgets
-#### See : app/public/javascript/fivesequencers.js : affects sequences/new and sequences/edit
+jQuery empowers the five sequencers with asynchronous processing, calling on Ruby to process the String.to_textual regular expressions.
+#### See : app/public/javascript/lexidisplay.js : affects app/sequences/new and /_form
 
 ## apotomoing_sequencers
 As a name, it comes from two stories of creation:
