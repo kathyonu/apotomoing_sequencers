@@ -10,10 +10,11 @@
 <h1>New Sequence</h1>
 
 <div class="field">
-  <%= form_tag @sequence, :remote => true %>
+  <%= form_tag "" do %>
   <%= text_field_tag "sequencetext" %>
 
-  <%= submit_tag "Submit Sequence", { :id => "sequencetext_submit" } %>
+  <%= submit_tag "Submit Sequence", :id => 'sequencetext_submit', :name => 'sequencetext_submit' %>
+  <% end %>
 </div>
 
 <div class="newSequence">

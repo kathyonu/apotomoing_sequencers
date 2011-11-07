@@ -8,13 +8,8 @@ class SequencesController < ApplicationController
   attr_accessor :lexigram_sequenced
   attr_accessor :singular_sequenced
   
-#  respond_to :js
+  respond_to :html, :js
   
-  # defining each
-  def each
-    each { |x| print x }
-  end
-
   # GET /sequences
   # GET /sequences.xml
   def index
@@ -59,10 +54,44 @@ class SequencesController < ApplicationController
     @sequence = Sequence.new(params[:sequence])
     respond_to do |format|
       if @sequence.save
-        format.html { redirect_to(@sequence, :notice => 'Sequence was successfully created.') }
+        puts "\n Your seuqence id is #{@sequence.id}"  # console and development use
+        format.html { redirect_to(@sequence, :id => @sequence.id, :notice => "Your entry was successfully created to the database as ..") }       # THIS WORKS
+       #format.html { respond_with(@sequence, :status => :created, :location => @sequence, :notice => "Your entry was successfully created to the database as ..") }                           # THIS WORKS
+       #format.html { redirect_to(@sequence, :id => @sequence.id, :notice => "Your entry was successfully created to the database as ..") }
+       #format.html { redirect_to(:action => "show", :id => @sequence.id, :notice => 'Sequence was successfully updated.') }
+       #format.html # { redirect_to(:action => :show, :id => @sequence.id, :status => :created, :notice => 'Sequence was successfully created.') }
         format.xml  { render :xml => @sequence, :status => :created, :location => @sequence }
-        format.js   { render :js => @sequence, :status => :created, :location => @sequence }
-       # format.js   { redirect_to(@sequence, :notice => 'Sequence was successfully created.') }
+       # format.js  # { redirect_to(:action => "show", :id => @sequence.id) }
+                    # appears to do all properly per server 
+                    # except : Processing by SequencesController#show as JS          < why JS ? 
+                    # except : Page does not refresh with show, after processing, yet it is rendered per server
+
+### \/  almost works
+#       format.js   { redirect_to(:action => "show", :id => @sequence.id and return ) }  # this works / appears to do all properly per server, but, page does not refresh with show
+        #format.js   { redirect_to sequence_url(@sequence) }           # this appears to do all properly, but, page does not refresh with show
+#       format.js   { redirect_to sequence_url(@sequence, :status => :created )}
+ #      format.js   { redirect_to(request.env["HTTP_REFERER"]) }
+  #     format.js   { redirect_to :action => "show", :id => "#{@sequence.id}"}
+   #    format.js   { redirect_to(:action=>"create", :controller=>"sequences") }
+    #   format.js   { redirect_to(@sequence, :id => "#{@sequence.id}", :notice => 'Sequence was successfully created.' )}
+     #  format.js   { redirect_to(:action=>"show", :id => "#{@sequence.id}", :notice => 'Sequence was successfully created.' )}
+      ##format.js { redirect_to(@sequence, :status => :created, :location => @sequence, :notice => 'Sequence was successfully created.') and return }
+     ###format.js { redirect_to(@sequence, :status => :created, :location => @sequence, :notice => 'Sequence was successfully created.') and return }
+
+
+       #format.js   { render :js => @sequence, :status => :created, :location => @sequence }
+       #format.js {  render :action => 'show.html.erb', :id => "#{@sequence.id}", :layout => 'true' } and return
+       #format.js { ( redirect_to(@sequence, :action => 'show.html.erb', :layout => 'true', :notice => 'Sequence was successfully created.') ) }
+       #format.js   { render :html => @sequence, :status => :created, :location => @sequence }
+       #format.js   { render :js => @sequence, :status => :created, :location => @sequence }
+       #format.js   { redirect_to(@sequence, :notice => 'Sequence was successfully created.') }
+       #format.js { format.html { redirect_to(@sequence, :notice => 'Sequence was successfully created.') } }
+      ##format.js { ( redirect_to(@sequence, :action => 'show', :id => params[:id], :layout => 'true', :notice => 'Sequence was successfully created.') ) }
+       #format.js { ( render :action => 'show.html.erb', :id => params[:id], :notice => 'Sequence was successfully created.') }
+       #format.js {  render :action => 'show', :id => "#{@sequence.id}", :layouts => 'true' } and return
+       #format.js { redirect_to("/sequences/show/" => @sequence, :notice => 'Sequence was successfully created.') }
+       #format.js { redirect_to(:display => "show", :status => :created, :location => @sequence, :notice => 'Sequence was successfully created.') }
+       #format.js { redirect_to(@sequence, :location => @sequence, :notice => 'Sequence was successfully created.') }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @sequence.errors, :status => :unprocessable_entity }

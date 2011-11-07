@@ -1,6 +1,10 @@
 <!--this file is affected by public/javascripts/lexidisplay.js -->
 
-<%= form_for(@sequence, :remote => true ) do |f| %>
+<%= form_for @sequence do |f| %>
+<!--%= form_for(@sequence, :format => :html, :dataType => :html, :status => :created, :remote => true ) do |f| %-->
+<!--%= form_for(Sequence.new, :format => :html, :remote => true ) do |f| %--><!--does not work-->
+<!--%= form_for(@sequence, :action=>"create", :remote => true ) do |f| %--><!--appears to work, but-->
+<!--%= form_for(@sequence, {:action=>"create", :controller=>"sequences", :type =>"html", :remote => true }) do |f| %-->
   <% if @sequence.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@sequence.errors.count, "error") %> prohibited this sequence from being saved:</h2>
@@ -55,7 +59,7 @@
   </div>
   <div class="field">
     <%= f.label :phrase %><br />
-    <%= f.check_box :phrase, :checked => true %>
+    <%= f.check_box :phrase, :checked => 'checked' %>
   </div>
   <div class="field">
     <%= f.label :sexualities %><br />
@@ -70,6 +74,6 @@
     <%= f.check_box :internal %>
   </div>
   <div class="actions">
-    <%= f.submit :id => 'sequences_submit' %>
+    <%= f.submit :id => 'sequence_submit', :name => 'sequence_submit' %>
   </div>
 <% end %>
