@@ -19,17 +19,20 @@ module Textualfibers
 # rails <3.1
 
 # in Terminal, after running $ rails c -s   : this will open rails console in the sandbox, then enter this require statement
-##   $ require "./lib/sequencerings/textualfibers.rb"
+##   > require './lib/sequencerings/textualfibers.rb'
+
 #### for the fibering methods to work, you must require the Fiber library, as shown below.
 #### this file is under development, not all methods work yet .. use with care.
-    # file_name allows you to name the file that conatains your data to be processed, using any method below
+
+    # file_name allows you to name the file that conatains your data to be processed, using any appropriate method below
   def file_name
-   #file_name = ("tmp/insert_anagrams.txt")
+   #file_name = ("lib/anagrams/anagrams_table_data.txt")
+    file_name = ("tmp/insert_anagrams.txt")
    #file_name = ("tmp/insert_externals.txt")
    #file_name = ("tmp/insert_internals.txt")
    #file_name = ("tmp/insert_internals_hash.txt")
    #file_name = ("tmp/insert_sexual_lines.txt")
-    file_name = ("tmp/insert_word_list.txt")
+   #file_name = ("tmp/insert_word_list.txt")
    #file_name = ("../../Documents/20110421-research_textualed.txt")
    #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
    #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hash-015.txt")
@@ -199,6 +202,7 @@ module Textualfibers
     # printout is only onto screen
   def strings_to_lines_textualed
     strings = File.read(file_name)
+	strings.extend Textual
     new = strings.to_textual
   end
 

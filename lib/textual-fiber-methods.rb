@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby -w
 
-##  AN ORIGNIAL MASTER, DO NOT CHANGE ONE IOTA.
+##  AN ORIGNIAL MASTER, DO NOT CHANGE ONE IOTA. This demonstrates the power of the fiber.
 ##  FILE NAME : /desideratus/apotomoing_sequencers/app/lib/textual-fiber-methods.rb   < mysqlbranch : 20110805
 ## Run in Terminal in your app directory, $ rails c -s     : this will run the console in the sandbox, all changes will be rolled back on exit.
-## Run in the console, this require statement > require "./lib/sequencerings/textual-fiber-methods.rb"
+## Run in the console, this require statement.
+## > require "./lib/sequencerings/textual-fiber-methods.rb"
 
 include IRB
 include Textual
