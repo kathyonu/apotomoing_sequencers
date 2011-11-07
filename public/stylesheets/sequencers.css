@@ -314,14 +314,14 @@
 
 #anagramListClose {
   position: relative;
-  top: -122px;
+  top: -275px;
   margin-left: -26px;
   width: 66%;
 }
 
 #anagramListOpen {
   position: relative;
-  top: 17px;
+  top: 22px;
   left: 18px;
   width: 91%;
 }
@@ -493,7 +493,7 @@ form#sequences > input#submit {
 #sequencerWidgetDisplay {
   display: none;
   position: absolute;
-  top: 183px;
+  top: 165px;
   left: 30px;
   margin-right: 44px;
   margin-bottom: 5px;
