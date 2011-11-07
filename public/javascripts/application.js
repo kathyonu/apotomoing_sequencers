@@ -1,5 +1,11 @@
 // called from app/views/layouts/application.html.erb
 
+// this function affects the anagram widget, which works with sequence_createds widget
+$j(document).ready(
+  function() {
+    $j('#anagram form input#submit').hide();
+  });
+
 // this function affects views/sequencs/new.html.erb by hiding the sequencetext form submit button
 $j(document).ready(
   function() {

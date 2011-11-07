@@ -6,7 +6,7 @@
 // 20111102 \/
 // passes JSLint, and in the console fires the submit and the show page returns.
 
-// passes JSHint : 20111106
+// passes JSHint : 20111106:07
 $j(document).ready(
   function() {
     var $jsequencetextSubmit = document.getElementById('sequencetext');
@@ -49,22 +49,24 @@ $j(document).ready(
     
   //      if (this.value !== 'Please Enter Your Data') {
 //      submit.form.submit();
-        $jsubmit.form.click = function() {
+        $jsubmit.form.click(function() {
           if ($j('sequence_sequence_text').val() === "Please Enter Your Data") {
-            $j('input#sequencetext').val("");
             $j('input#sequencetext').focus();
+            $j('input#sequencetext').val("");
             }
-          if ($jsequence_text !== "") {
+          else if ($jsequence_text !== "") {
             $jsubmit.form.submit();
             }
-          if ($jsequence_text === "") {
+          else ($jsequence_text === "") {
             $j('input#sequencetext').focus();
             }
 //      submit.parentNode.removeChild(submit);
 //      $jsequencesSubmit.form.submit(); 
 //      $j('form#new_sequence input#sequence_submit').submit();
 //      #TODO research : do these two submit codes do the same ?
-  });
+        }
+      );
+    });
   // in the jQuery console while at localhost:3000/sequences/new : 
   // > document.forms.sequencetext           //  > [10:34:50.537] [object HTMLFormElement]
   // > document.forms.sequencetext.action    //  > [10:22:55.973] "http://localhost:3000/sequences"
