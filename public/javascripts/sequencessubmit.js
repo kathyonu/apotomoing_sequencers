@@ -57,7 +57,7 @@ $j(document).ready(
           else if ($jsequence_text !== "") {
             $jsubmit.form.submit();
             }
-          else ($jsequence_text === "") {
+          else if ($jsequence_text === "") {
             $j('input#sequencetext').focus();
             }
 //      submit.parentNode.removeChild(submit);
