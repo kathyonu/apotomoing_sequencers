@@ -12,16 +12,10 @@ $j(document).ready(
     $j('input#sequencetext_submit').hide();
   });
   
-// this function sets the initial data in the sequencetext box in views/sequences/new.html.erb
-$j(document).ready(
-  function() {
-    $j('input#sequencetext').val("Tab in, enter name, word or phrase here, then tab out", "");
-  });
-
 $j(document).ready(
   function() {
     var $jabba = $j('input#sequencetext').val();
-    var $jbaab = "Tab in, enter name, word or phrase here, then tab out";
+    var $jbaab = "";
     if ($jabba === $jbaab) { 
       $j('input#sequencetext').fadeTo(500, 0.3).delay(100).end();
       $j('input#sequencetext').val("");

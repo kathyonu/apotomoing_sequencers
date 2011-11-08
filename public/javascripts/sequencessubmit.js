@@ -54,13 +54,13 @@ $j(document).ready(
             $j('input#sequencetext').focus();
             $j('input#sequencetext').val("");
             }
-          else if ($jsequence_text !== "") {
-            $jsubmit.form.submit();
-            }
           else if ($jsequence_text === "") {
             $j('input#sequencetext').focus();
             }
-//      submit.parentNode.removeChild(submit);
+          else ($jsequence_text !== "") {
+            $jsubmit.form.submit();
+            }
+          //      submit.parentNode.removeChild(submit);
 //      $jsequencesSubmit.form.submit(); 
 //      $j('form#new_sequence input#sequence_submit').submit();
 //      #TODO research : do these two submit codes do the same ?

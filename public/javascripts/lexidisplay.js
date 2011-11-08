@@ -1,6 +1,6 @@
 //  this file name is app/public/javascript/lexidisplay.js
 //  this file affects this file: app/sequence/views/new.html.erb
-//  this code passes JSHint : 20111105:06
+//  this code passes JSHint : 20111105:06:07
 
 //  this code below uses : app/views/sequences/_text_sequenced.js.erb in the ajax url call
 //  this code below uses : app/views/sequences/_creation_sequenced.js.erb in the ajax url call
@@ -49,9 +49,11 @@ $j(document).ready(
   function() {
     $j('#sequencetext').bind(
       'focusin',function(event) {
-        if ($j('sequencetext').val() == "Please Enter Your Data")
+        if ($j('sequencetext').val() === "Please Enter Your Data") {
           $j('#sequencetext').val("");
+          }
         else
+          {
         $j('#sequencetest').focus();
 //    $j('#sequencetext').bind(
 //      'focusin',function(event) {
@@ -60,7 +62,7 @@ $j(document).ready(
 //        }
 //        if (this.value === 'Please Enter Your Data') {
 //          (this.value = '');
-//        }
+          }
       }
     ).bind(
       'focusout',function(event) {
