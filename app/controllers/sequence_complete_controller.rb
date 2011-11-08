@@ -11,12 +11,6 @@ class SequenceCompleteController < ApplicationController
       @sequence_complete= ()
   end
 
-#  def complete_sequence
-#    initialize(complete_sequence)
-#      @complete_sequence = complete_sequence
-#      @complete_sequence= ()
-#  end
-
   def complete_sequenced
     initialize(complete_sequenced)
       @complete_sequenced = complete_sequenced
