@@ -2,13 +2,12 @@
 * github.com/kathyonu/apotomoing_sequencers
 
 ### Note: This is the 1st push of the mysql branch.
-> Go to http://localhost:3000/sequences/new.
+> After you run the Getting Started instructions below, 
+> In your browser, go to http://localhost:3000/sequences/new
 > After you enter your text into the entry box,
 > when you tab or click out of the entry box, the five sequences
 > will be generated and entered into the sequence form,
 > without page change, using javascript with jQuery.
-
-> See app/doc/README_FOR_APP, for some older development history milestones.
 
 # Getting Started
 ## In your Terminal

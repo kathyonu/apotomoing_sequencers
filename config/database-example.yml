@@ -10,8 +10,15 @@ defaults: &defaults
   host: 127.0.0.1          # one or the other will work
 
 development:
+  adapter: sqlite3
+  encoding: utf8
+  username: root or username      # change 
+  password: "your password"       # change
+ #socket: /tmp/mysql.sock         # uncomment if you use mysql adapter
+  pool: 5
+ #host: localhost
+  host: 127.0.0.1          # one or the other will work 
   reconnect: false
-  adapter: mysql
   database: sequencers_development
   timeout: 5000
 
