@@ -1,14 +1,14 @@
 <h1>Editing Sequence</h1>
 
-<div id="sequence_edit">
-  <div class="sequenceDisplay">
-    <div id="sequencerSequence" class="sequenceSequencer">
-         <label for=sequenceEntry>Enter your data</label>:
-         <input id="sequenceEntry" name="sequenceEntry" type="string" value="Enter_Your_Data" size="100" tabindex=1 />
-       </form>
-    </div>
-  </div>
+<div class="field">
+  <%= form_tag "" do %>
+  <%= text_field_tag "sequencetext" %><br />
+  <span id="sequencetextnote">Enter data, then tab out</span>
+
+  <%= submit_tag "Submit Sequence", :id => 'sequencetext_submit', :name => 'sequencetext_submit' %> <!--hidden-->
+  <% end %>
 </div>
+
 <div class="editSequence">
   <%= render 'form' %>
 </div>
