@@ -3,11 +3,11 @@
 <div class="links">
   <%= link_to 'To Root', :root %> | 
   <%= link_to 'Show All Sequences', sequences_path %>
+  <p id="time">Current Time is <%= "#{Time.now.to_s}" %></p>
 </div>
 
-<p>Current Time is <%= "#{Time.now.to_s}" %></p>
 
-<h1>New Sequence</h1>
+<div id="new_sequence_box">New Sequence</div>
 
 <div class="field">
   <%= form_tag "" do %>

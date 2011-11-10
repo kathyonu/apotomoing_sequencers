@@ -275,6 +275,12 @@
   z-index: 21;
 }
 
+#new_sequence_box {
+  font-size: 120%;
+  margin-bottom: 5px;
+  margin-left: 16px;
+}
+
 #sequencetextnote {
   position: relative;
   top: -14px;
@@ -289,6 +295,12 @@
 #single {
   border: 1px solid red;
   margin-bottom: 7px;
+}
+
+#time {
+  position: relative;
+  top: 5px;
+  margin-left: 35px;
 }
 
 .noteSequenceCreated {
