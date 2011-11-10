@@ -24,7 +24,7 @@ $j(document).ready(
       $jsubmit.form.submit = function() { return false; };
       $j('input#sequencetext').focus();
       }
-    else if ($j('#sequence_sequence_text').val() === "Please Enter Your Data") {
+    else if ($j('#sequencetext').val() === "Please Enter Your Data") {
       $jsubmit.form = function() { return false; };
       $j('input#sequencetext').fadeTo(700, 0.2);
       $j('input#sequencetext').fadeTo(400, 1.0);

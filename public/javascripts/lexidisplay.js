@@ -49,7 +49,7 @@ $j(document).ready(
   function() {
     $j('#sequencetext').bind(
       'focusin',function(event) {
-        if ($j('sequencetext').val() === "Please Enter Your Data") {
+        if ($j('#sequencetext').val() === "Please Enter Your Data") {
           $j('#sequencetext').val("");
           }
         else
