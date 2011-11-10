@@ -275,6 +275,17 @@
   z-index: 21;
 }
 
+#sequencetextnote {
+  position: relative;
+  top: -14px;
+  margin-left: 15px;
+  font-size: 80%;       
+}
+
+#sequencetext_submit {
+  display: none;
+}
+
 #single {
   border: 1px solid red;
   margin-bottom: 7px;
