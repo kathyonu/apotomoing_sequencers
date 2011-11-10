@@ -12,7 +12,7 @@ $j(document).ready(
   
 $j(document).ready(
   $j('input#sequence_submit').bind(
-   'click submit',function(event) {
+   'submit',function(event) {
     var $jsequence_text = $j('input#sequence_sequence_text').val();
     var $jsequenceSubmit = document.getElementById('sequence_submit');
     var $jsubmit = document.getElementById('sequence_sequence_text');
