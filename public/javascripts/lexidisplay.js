@@ -77,8 +77,9 @@ $j(document).ready(
           if (this.value !== "Please Enter Your Data") {
             var $jnewsequence = document.getElementById('sequencetext');
             var $jsequencetext = $j('input#sequencetext').serialize();
-          
-////////  $jnewsequence.form.onsubmit = function() { return false; };
+            var $jsequenceSubmit = document.getElementById('sequence_submit');
+            $jnewsequence.form.onsubmit = function() { return false; };
+            $jsequenceSubmit.form.submit = function() { return false; };
 ///////   ^^ commenting this out, is what got the program going again !!!
 //////   ^^^ commenting it out, allowed the new_sequence form to submit !!
 /////   ^^^^^ I don't understand why that is : 20111106
