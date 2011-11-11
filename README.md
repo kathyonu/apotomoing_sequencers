@@ -23,7 +23,7 @@
 ### After your server fires up, go to your browser : 
 
 *	http://localhost:3000/sequences/new     <= five sequencers now processing with Ruby, via jQuery ajax calls.
-
+*       http://localhost:3000/                  <= root address, is not fully functioning yet.  Use the above address.
 > The sequences/new address will show the entire app's design in one table. 
 > The sequences table is a primitive setup allowing massive duplicates in the five sequences. 
 > The sequences table was added so you can see how the entire application can exist in one table. 
@@ -39,13 +39,14 @@ Currently, we are writing this app using the Snow Leopard iMac with :
 ### [ruby](http://rubyforge.org/ "Ruby 1.9.2p0 2010-08-18 revision 29036 [x86_64-darwin10]")
 ### [rails](http://rubyforge.org/projects/rails/ "Rails 3.0.5, up through Rails 3.0.10")
 ### [apotomo](http://apotomo.de/ "Apotomo 1.2.0")
-### [cells](http://cells.rubyforge.org/ "Cells 3.5.6")
+### [cells](http://cells.rubyforge.org/ "Cells 3.6.7")
 ### [sqlite3](http://www.sqlite.org/quickstart.html "SQLite")
 ### [mysql2](http://rubygems.org/gems/mysql2 "mysql2")
-Our in-house app will be using mysql2 in production.
+Our in-house app is now using mysql2 in production and development.
 ### [jQuery](http://jquery.com/ "jQuery")
 jQuery empowers the five sequencers with asynchronous processing, calling on Ruby to process the String.to_textual regular expressions.
-#### See : app/public/javascript/lexidisplay.js : affects app/sequences/new and /_form
+#### See : app/public/javascript/lexidisplay.js     : affects app/views/sequences/new and /_form
+#### See : app/public/javascript/sequencessubmit.js : affects app/views/sequences/new and /_form
 
 ## apotomoing_sequencers
 As a name, it comes from two stories of creation:
@@ -58,9 +59,7 @@ As a name, it comes from two stories of creation:
 *_cells_* is the name of a gem and plugin created by Nick Sutterer.  
 *_cells_* is the ideal missing component of the rails MVC stack.  
 *_cells_* can be written one time, and displayed anywhere with one line of code.
-
 So, *apotomoing* is my creation on *apotomo*, so as to honor the beauty and usefulness of *apotomo* and *cells*.
-
 I have Nick's permission to use the name as *apotomoing*, with *sequencers* latched on, as our github repository name.
 
 ### sequencers
@@ -71,8 +70,8 @@ I have Nick's permission to use the name as *apotomoing*, with *sequencers* latc
 > And, those sequences are what we are after in this application.
 >
 > *apotomoing_sequencers* is built on five sequencing methods.
-> we have identified quite a few other "sequencings" that can be generated, however none are germane to our work.
-> after *apotomoing_sequencers* is built and tested and humming along, we will add those sequencer methods, just for fun.
+> We have identified quite a few other "sequencings" that can be generated, however none are germane to our work.
+> After *apotomoing_sequencers* is built and tested and humming along, we will add those sequencer methods, just for fun.
 
 ## What are the five sequences we generate ? 
 
