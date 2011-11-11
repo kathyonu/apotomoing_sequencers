@@ -3,28 +3,26 @@
 <head>
   <title>ApotomoingSequencers</title>
   <!--%= javascript_include_tag "http://code.jquery.com/jquery-1.6.4.js" % in production online-->
-  <%= javascript_include_tag "jquery-1.6.4.min.js" %>
-  <%= javascript_include_tag "jquery_ujs.js" %>
-  <%= javascript_include_tag "jquery-ui.js" %>
-  <%= javascript_include_tag "jquery.min.js" %>
-  <%= javascript_include_tag "jquery-ui.min.js" %>
-  <%= javascript_include_tag "jquery-ui-1.8.10.custom.min.js" %>
-  <%= javascript_tag "var $j = jQuery;jQuery.noConflict();" %>
-  <%= javascript_include_tag "application.js" %>
-  <%= javascript_include_tag "blurs.js" %>
-  <%= javascript_include_tag "empty.js" %>
-  <%= javascript_include_tag "entertext.js" %>
-  <%= javascript_include_tag "hovers.js" %>
-  <%= javascript_include_tag "lexidisplay.js" %>
-  <%= javascript_include_tag "openanagramlist.js" %>
-  <%= javascript_include_tag "opensequencer.js" %>
-  <%= javascript_include_tag "sequencessubmit.js" %>
-  <%= stylesheet_link_tag "colors" %>
-  <%= stylesheet_link_tag "creations" %>
-  <%= stylesheet_link_tag "sequencers" %>
-  <%= stylesheet_link_tag "ui-lightness/jquery-ui-1.8.10.custom.css" %>
-  <%= csrf_meta_tag %>
-
+  <%= javascript_include_tag "jquery-1.6.4.min.js", :cache => true %>
+  <%= javascript_include_tag "jquery_ujs.js", :cache => true %>
+  <%= javascript_include_tag "jquery-ui.js", :cache => true %>
+  <%= javascript_include_tag "jquery.min.js", :cache => true %>
+  <%= javascript_include_tag "jquery-ui.min.js", :cache => true %>
+  <%= javascript_include_tag "jquery-ui-1.8.10.custom.min.js", :cache => true %>
+  <%= javascript_tag "jQuery.noConflict();var $j = jQuery;" %>
+  <%= javascript_include_tag "application.js", :cache => true %>
+  <%= javascript_include_tag "blurs.js", :cache => true %>
+  <%= javascript_include_tag "empty.js", :cache => true %>
+  <%= javascript_include_tag "entertext.js", :cache => true %>
+  <%= javascript_include_tag "hovers.js", :cache => true %>
+  <%= javascript_include_tag "lexidisplay.js", :cache => true %>
+  <%= javascript_include_tag "openanagramlist.js", :cache => true %>
+  <%= javascript_include_tag "opensequencer.js", :cache => true %>
+  <%= javascript_include_tag "sequencessubmit.js", :cache => true %>
+  <%= stylesheet_link_tag "colors", :cache => true %>
+  <%= stylesheet_link_tag "creations", :cache => true %>
+  <%= stylesheet_link_tag "sequencers", :cache => true %>
+  <%= stylesheet_link_tag "ui-lightness/jquery-ui-1.8.10.custom.css", :cache => true %>
 </head>
 <body>
 
