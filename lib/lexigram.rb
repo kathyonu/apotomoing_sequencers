@@ -35,19 +35,19 @@ module Lexigram
   def lexigram_sequencer(sequencetext)
     @sequencetext = sequencetext
     @sequencetext.extend Textual
-    puts "at line 37 sequencetext is tainted ? " + sequencetext.tainted?.to_s  # => :false
+    #puts "at line 37 sequencetext is tainted ? " + sequencetext.tainted?.to_s  # => :false
     @sequencetextualed = @sequencetext.to_textual
     @sequencetextualed.extend Textual
-    puts "at line 40 the result of sequencetext.to_textual : " + "#{@sequencetextualed}"
+    #puts "at line 40 the result of sequencetext.to_textual : " + "#{@sequencetextualed}"
     @sequencetextdecommaed = @sequencetextualed.de_comma
     @sequencetextdecommaed.extend Textual
-    puts "at line 43 the result of sequencetext.to_textual.de_comma : " + "#{@sequencetextdecommaed}"
+    #puts "at line 43 the result of sequencetext.to_textual.de_comma : " + "#{@sequencetextdecommaed}"
     @sequencetextdespaced = @sequencetextdecommaed.de_space
-    puts "at line 45 the result of @sequencetextdecommaed.de_space : " + "#{@sequencetextdespaced}"
+    #puts "at line 45 the result of @sequencetextdecommaed.de_space : " + "#{@sequencetextdespaced}"
     @characterscount = @sequencetextualed.split(//).length
-    puts "at line 47 the @ characterscount : @sequencetextualed.split(//).length : " + "#{@characterscount}"
+    #puts "at line 47 the @ characterscount : @sequencetextualed.split(//).length : " + "#{@characterscount}"
     @letters = @sequencetextualed.de_comma.gsub(/\s+/, "").split(//).length
-    puts "at line 49 the @ letters variable count : @sequencetextualed.de_comma.de_space.split(//).length " + "#{@letters}"
+    #puts "at line 49 the @ letters variable count : @sequencetextualed.de_comma.de_space.split(//).length " + "#{@letters}"
     wordscountbase = @sequencetextualed.split(/\W/).length
     @wordscounter = wordscountbase
     @lexigram_array = Array.new(0)
@@ -91,9 +91,9 @@ module Lexigram
       @wordscounter -= 1
       @keys_valuea = @worda.split(//)
       @keys_valuea.extend Histogram
-      puts "at line 71, @ keys_value1 are " + "#{@keys_value1}"
+      #puts "at line 71, @ keys_value1 are " + "#{@keys_value1}"
       @keys_valuesa = @keys_valuea.to_histogram
-      puts "at line 74, @keys_valuesa are " + "#{@keys_valuesa}"
+      #puts "at line 74, @keys_valuesa are " + "#{@keys_valuesa}"
       @lexigram_letters_array = @keys_valuesa.collect do | k, v | "#{k}" * v end
       @lexigram_letters = @lexigram_letters_array.join
       @lexigram_sequence = @lexigram_letters.split(//).sort.join.strip
@@ -107,7 +107,7 @@ module Lexigram
       @wordscounter -= 1
       @keys_valueaa = @wordaa.split(//)
       @keys_valueaa.extend Histogram
-      puts "at line 97, @keys_valueaa are " + "#{@keys_valueaa}"
+      #puts "at line 97, @keys_valueaa are " + "#{@keys_valueaa}"
       @keys_valuesaa = @keys_valueaa.to_histogram
       @lexigram_array = @keys_valuesaa.collect do | k, v | "#{k}" * v end
       @lexigram_letters = @lexigram_array.join

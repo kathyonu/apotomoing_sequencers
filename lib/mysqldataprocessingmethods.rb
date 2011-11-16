@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby -w
+module Mysqldataprocessingmethods
 
 # ruby-1.9.2-p0 
 # rails >= 3.0.x  : currently at 3.0.10
@@ -40,9 +41,43 @@
   end
 
 
-  def list_it
-    y = string.downcase.scan(/[\w'']+/)
-	w = lambda y.each {|x| p x.to_textual; }                   # use w.call
+    # sorts the file, using downcase
+  def sorting_file
+    a = File.readlines(file_name)
+    a.sort do |x,y|
+      x.downcase <=> y.downcase
+    end
   end
+
+  # simple output of lines of a file 
+  def do_it_lines
+    open(file_name).each {|x| p x; }
+  end
+  
+  # string to words in array
+  def words_from_string(string)                                # string = "this is a five worder"
+    string.downcase.scan(/[\w'']+/)                            # => ["this", "is", "a", "five", "worder"]
+  end
+
+  # string processed through String#to_textual then scanned    # note the 5 in the string becomes a five
+  def list_it(string)                                          # string = "this is a 5 worder"
+    string.to_textual.scan(/[\w'']+/)                          # => ["this", "is", "a", "five", "worder"]
+  end                                            # a tiny example of the power of the to_textual method
  
- 
+  def run_file
+    IO.foreach("./lib/the_input.txt") { |line| puts line.to_textual } 
+  end
+
+  def write_file
+    open("./lib/the_output.txt", "a") do |f|
+      IO.foreach("./lib/the_input.txt") do |line|
+	    if line =~ line.empty?
+		break
+		else
+		new_line = line.to_textual_id do |puts|
+          puts(f << "#{new_line}")
+          end 
+		end
+      end
+    end
+  end

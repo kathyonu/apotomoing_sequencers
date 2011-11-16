@@ -1,36 +1,48 @@
 #!/usr/bin/env ruby -w
 module Textualfibers
  
+ #include ApplicationHelper  # uncomment for use in conole
   include Histogram
   include Textual
   include Lexigram
 
   require 'fiber'
 
+# DESCRIPTION : many methods to process text from files, line by line
+## through the String#to_textual method, and
+### through the five sequencers using the ie. lexigram_sequencer(sequencetext)
+#### through the mysql pre-processing for entry into database
+##### example : "./lib/mysql_data_processing_sexualities.rb" : adult only material
+###### example : "./lib/mysql_data_processing_anagrams.rb"   : our English words table, the English lexicon of words, sequenced
+###### example : "./lib/mysql_data_processing_names.rb"      : our English names table, the English lexicon of names, 
+###### example : "./lib/mysql_data_processing_phrases.rb"    : our English phrases table, say it in English ? it is a phrase
+
+# USAGE : in Terminal, after running $ rails c -s            : this opens rails console in the sandbox
+## then enter this require statement :
+###   require './lib/sequencerings/textualfibers.rb'
+
+# for the fibering methods to work, you must require the Fiber library, as shown above.
+# this file is under development, not all methods work yet .. use with care.
+
 # this puts below is for use in console, not development, nor production
 # uncomment puts to show on console this module is loaded.
   puts "Textualfibers has been directly included"
 
-#  require 'textual'
-#  require 'lexigram'
-#  require 'histogram'
-
 # ruby-1.9.2-p0 
 # rails <3.1
 
-# in Terminal, after running $ rails c -s   : this will open rails console in the sandbox, then enter this require statement
-##   > require './lib/sequencerings/textualfibers.rb'
+# the method named  lexigram_sequencer(sequencetext) has been moved to : lib/lexigram.rb
+# the method bamed  process_sex_line has been moved to                 : lib/mysql_data_processing_sexualities.rb
+# the fiber named   doing_sexual_lines, has been moved to              : lib/mysql_data_processing_sexualities.rb
+# the method named  process_internals_hash                             : lib/mysql_data_processing_internals.rb
 
-#### for the fibering methods to work, you must require the Fiber library, as shown below.
-#### this file is under development, not all methods work yet .. use with care.
-
-    # file_name allows you to name the file that conatains your data to be processed, using any appropriate method below
+    # file_name method allows you to name the file that conatains your data to be processed, using any appropriate method below
   def file_name
-   #file_name = ("lib/anagrams/anagrams_table_data.txt")
-    file_name = ("tmp/insert_anagrams.txt")
-   #file_name = ("tmp/insert_externals.txt")
+    file_name = ("tmp/insert_externals.txt")
    #file_name = ("tmp/insert_internals.txt")
-   #file_name = ("tmp/insert_internals_hash.txt")
+   #file_name = ("./tmp/insert_internals_hash.txt")
+   #file_name = ("lib/anagrams/anagrams_table_data.txt")
+   #file_name = ("tmp/insert_anagrams.txt")
    #file_name = ("tmp/insert_sexual_lines.txt")
    #file_name = ("tmp/insert_word_list.txt")
    #file_name = ("../../Documents/20110421-research_textualed.txt")
@@ -41,9 +53,10 @@ module Textualfibers
    #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hashlines_sorted_values-015.txt")
   end
   
-  ### for the working code see app/public/javascripts/lexidisplay.js  : 20110929
-  ##
-  # 20110819 below CODE IS NOT WORKING
+  # for the working code see app/public/javascripts/lexidisplay.js  : 20110929
+  ## i leave this here for my own historical reasons : 20111113
+  ###
+  #### 20110819 below CODE IS NOT WORKING
   # using file_name as its data source, this working code will produce full text from lines of data and their sequences.
   # last valid use of this code was converting both the key and the value to text, then joining them as one 'keyvalue'
   # the key held the words used in millions of sentences, the value gave the number of times the words is used in 184,405 lines of phrases.
@@ -75,6 +88,7 @@ module Textualfibers
   #      #sleep(1)
   #    end
   #  end
+  ## same goes for much of this code commented out : i leave it for historical reasons : 20111113
 
     # solid_gold_code DO NOT CHANGE : 20101026
   def process_anagrams_lines
@@ -112,46 +126,7 @@ module Textualfibers
     end
   end
 
-    # solid_gold_code DO NOT CHANGE : 20101026
-  def process_internals_hash
-    File.open("tmp/insert_internals.txt", "r") do |f|
-   #File.open(file_name, "r") do |f|
-   #File.open("./lib/internals/internals_table_data_input_hash.txt", "r") do |f|
-   #File.open("./lib/internals/internals_table_data.lines.txt", "r") do |f|
-      f.each_line do |line|
-        unless nil
-        internal_searched, searched = line.split("\t")
-          sequence_text = internal_searched.to_textual
-          sequence_creation = sequence_text.de_comma.de_space
-          sequence_complete = sequence_creation.split(//).sort.join('').strip
-          sequence_lexigram = sequence_complete.reverse      # until the lexigram code is complete, i replace it with a simple reverse
-          sequence_singular = sequence_complete.squeeze
-          description = "internal search"
-          reference = searched.strip
-          internal = 1
-          puts "#{internal_searched.to_textual}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{internal}"
-          end
-          #sleep(1)
-        end
-      end
-  end
-
-    # solid_gold_code DO NOT CHANGE : 20101026
-  def process_internals_lines
-    File.open(file_name, "r") do |f|
-   #File.open("./lib/internals/internals_table_data_input_lines.txt", "r") do |f|
-      f.each_line do |line|
-        puts line.to_textual
-        sleep(0.01)
-       # created_sequence_id = external_searched(/continue code/)
-       # creation_sequence_id = 
-       # complete_sequence_id = 
-       # lexigram_sequence_id = 
-       # singular_sequence_id = complete_sequence_id.squeeze
-      end
-    end
-  end
-
+ 
     # solid_gold_code DO NOT CHANGE : 20101026
   def process_externals
     File.open("./lib/externals/externals_table_data_input_hash.txt", "r") do |f|
@@ -202,7 +177,7 @@ module Textualfibers
     # printout is only onto screen
   def strings_to_lines_textualed
     strings = File.read(file_name)
-	strings.extend Textual
+    strings.extend Textual
     new = strings.to_textual
   end
 
@@ -210,9 +185,9 @@ module Textualfibers
     # my favorite as it allows me to make sure all line lengths are less than 255 characters, visually, on the screen
   def sort_by_line_length
     a = File.readlines(file_name)
-      a.sort do |x,y|
-        (y.downcase.length <=> x.downcase.length)
-      end
+    a.sort do |x,y|
+      (y.downcase.length <=> x.downcase.length)
+    end
   end
 
     # by_line_length method read a file and show all lines that is equal or longer than 250 characters
@@ -242,45 +217,35 @@ module Textualfibers
     end
   end
 
-    # TODO : add description to this fiber
+    # TODO : add description to this fiber : lib/mysql_data_processing_externals.rb for how this is used : 20111114
   def doing_textuals
     consumer = Fiber.new do |producer, queue|
-     #f = open("./lib/fiber_output.txt", "a") do |f|
-     #f = open("./lib/files_to_textual/fibering_files_output.txt", "a") do |f|
-     #f = open("./lib/databasers/fibering_files_output.txt", "a") do |f| 
-      f = open("./lib/databasers/fibered_files_output.txt", "a") do |f|
+      f = open("./tmp/insert_internals.txt", "a") do |f| 
         loop do
           queue = producer.transfer(consumer, queue)
-          #puts queue
-          #puts "queue : " + "#{queue}"
-          #puts queue
-          #puts queue.to_s
-          #puts queue.to_s.chomp
-          #puts queue.to_s.strip
-          #puts queue.to_s.strip.downcase
-          #puts queue.to_s.strip.downcase.to_textual
           f.puts << queue
           queue.clear
         end
         raise StopIteration
       end
       end
-      producer = Fiber.new do |consumer, queue|
-     #list = File.readlines(file_name)
-      list = File.readlines("./lib/anagrams/anagrams_table_data.txt")
-      full_list = list.sort_by { |x| x.downcase }
-     #b = IO.readlines(file_name)
-     #b = IO.readlines(ARGV)
-     #b = IO.readlines("./lib/the_input.txt")
-      loop do
-        while a = full_list.shift
-          queue = a.to_textual unless nil
-          consumer.transfer queue
-          queue.clear
+    producer = Fiber.new do |consumer, queue|
+        list = File.readlines(file_name)
+        list = File.readlines("./lib/anagrams/anagrams_table_data.txt")
+       #list = File.readlines("./lib/anagrams/anagrams_table_data.txt")
+        full_list = list.sort_by { |x| x.downcase }
+       #b = IO.readlines(file_name)
+       #b = IO.readlines(ARGV)
+       #b = IO.readlines("./lib/the_input.txt")
+        loop do
+          while a = full_list.shift
+            queue = a.to_textual unless nil
+            consumer.transfer queue
+            queue.clear
+          end
+          raise StopIteration
         end
-        raise StopIteration
       end
-    end
     consumer.transfer(producer, [])
     after_break
   end
@@ -294,27 +259,18 @@ module Textualfibers
   end  
   
     # test this puppy, make sure it works
-  def uniquely
-   full_string = File.read(file_name)
-   full_list = full_string.to_textual
-   sort_list = full_list.sort
-   uniq_list = sort_list.uniq
-   render 
-  end
-  
-    # test this puppy, make sure it works
   def unique
    list = File.readlines(file_name)
    full_list = list.sort_by { |x| x.to_textual }
    #uniques = full_list.uniq
-   uniques = full_list
+   uniques = full_list.uniq
    puts uniques
   end
 
     # sorts the file_name, it does not unique it
   def un_unique
    list = File.readlines(file_name)
-   full_list = list.sort_by { |x| x.downcase }
+   full_list = list.sort_by { |x| x }
    full_list.uniq
   end
 
@@ -342,13 +298,13 @@ module Textualfibers
      end
   end
 
-    # processes the file_name data to screen, using the homegrow method #to_textual which is in the 'include Textual' statement.
-    # textual.rb resides in /app/helpers/textual.rb
+    # processes the file_name data to screen, using the homegrown method #to_textual which is in the 'include Textual' statement.
+    # textual.rb resides in /lib/textual.rb
   def textualed
     list = File.readlines(file_name)
     full_list = list.sort_by { |x| x.downcase }
       while a = full_list.shift
-        puts a.to_textual unless nil? 
+        puts a unless nil? 
      end
   end  
 
@@ -404,51 +360,6 @@ module Textualfibers
       exit(puts "fibering_files_output.txt" + " is closed, console has been exited")
   end
 
-  # this working code will produce full text from lines of data in the file_name, and the sequences.
-  # yes, it will process the hash lines too; adjust as needed to process the keys and values as needed.
-  def process_sexual_lines
-    a = Time.now.to_s
-    open(file_name) do |f|
-      f.each_line do |line| unless nil
-        sequence_text = line.to_textual.de_comma
-        #sequence_creation = line.to_textual.de_comma.de_space
-        #sequence_complete = sequence_creation.split(//).sort.join('').strip
-        #sequence_lexigram = lexigram_sequencer(sequence_text)
-        #sequence_lexigram = lexigram_sequencer(line)
-        #sequence_singular = sequence_complete.squeeze
-       #puts "#{sequence_text}\t\t\t#{sequence_creation}\t\t\t#{sequence_complete}\t\t\t#{sequence_singular}"
-       #puts "#{sequence_text}\t\t\t#{sequence_creation}\t\t\t#{sequence_complete}\t\t#{sequence_singular}"
-        puts "#{sequence_text}"
-       #sleep(1)
-      end
-    end
-    puts Time.now
-    puts a
-  end
-
-  # def lexigrtam_sequencer(sequencetext) has been moved to app/helpers/lexigram.rb
-
-    # generates all sequences : 20110811
-    # file_name = ("tmp/insert_sexual_lines.txt")                                               #  sequencetext = "these are testers testings testablness" 
-  def process_sex_line                                                                          #  sequence_text = "these test sentences"
-    open(file_name) do |f|                                                                      #  sequence_text = "this is a seven word test" 
-      f.each do |line|                                                                          #  line = "this is tester testing test"
-        sequence_text = line.to_textual.de_comma                                                #  => "this is a tester testing a test"   
-        sequence_creation = line.to_textual.de_comma.de_space                                   #  => "thisisatestertestingatest" 
-        sequence_complete = line.to_textual.de_comma.split(//).sort.join('').strip unless nil   #  => "aaeeeeghiiinrsssssttttttt"
-        #sequence_lexigram = lexigram_sequencer(line.to_textual.de_comma) unless nil            #  => "aeeghinrstt"  :  not the way to do it 
-        #sequence_lexigram = lexigram_sequencer("{@sequence_text}") unless nil                  #  => "aeeghinrstt"  :  this is the way
-        sequence_reverse = sequence_complete.reverse                                            #  => "tttttttsssssrniiihgeeeeaa" 
-        sequence_singular = sequence_complete.squeeze                                           #  => "aeghinrst"
-        description = "sexual lines"
-        reference = "literotica"
-        sexualities = 1
-        p "#{@sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_reverse}\t#{sequence_singular}\t#{description}\t#{reference}\t#{sexualities}"
-       sleep(1)
-      end
-    end
-  end
-
     # Note regarding the method, String#doing_array
     # in doing_array we attach the String#to_textual method to process the line with textual.rb
     # the doing_array method is run as a one word command at the console
@@ -484,7 +395,8 @@ module Textualfibers
       end
     end
     producer = Fiber.new do |consumer, queue|
-      b = IO.readlines(file_name)
+      b = IO.readlines("./lib/databasers/fibered_files_input.txt")
+     #b = IO.readlines(file_name)
      #b = IO.readlines(ARGV)
      #b = IO.readlines("./lib/the_input.txt")
       loop do
@@ -576,8 +488,10 @@ module Textualfibers
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach(file_name) do |line|
-        if "#{line.to_textual}" == nil?
+      IO.foreach("./lib/databasers/fibered_files_input.txt") do |line|
+      queue = ""
+      puts queue
+	    if "#{line.to_textual}" == nil?
           @line = "nil line not entered"
             queue << line
         else
@@ -626,10 +540,13 @@ module Textualfibers
     after_break
   end
   
-    # processes a file, line by line, through String#.to_textual, then into the output file, for appending to it.
+    # processes a file, line by line, through String#.to_textual, generating the five sequences, then into the output file, for appending to it.
   def fibering_files_lines_output
+#    include ApplicationHelper                        # uncomment for console use
+#    require './lib/sequencerings/textualfibers.rb'   # uncomment for console use
+#    include Textualfibers                            # uncomment for console use
     consumer = Fiber.new do |producer, queue|
-      f = File.open("./lib/databasers/fibered_files_output.txt", "a") do |f| 
+      f = File.open("./lib/databasers/fibered_files_output.txt", "a") do |f|
       queue = "linezero"
         loop do
           queue = producer.transfer(consumer, queue)
@@ -643,9 +560,24 @@ module Textualfibers
     producer = Fiber.new do |consumer, queue|
       queue = "firststring"
       puts queue
-      File.open("./lib/databasers/fibered_files_input.txt", "r") do |f| 
-        loop do
-          queue = f.each_line.to_s.chomp.to_textual
+      open("./tmp/insert_sexual_lines.txt", "r") do |f|
+     #open("./tmp/insert_sexual_lines-02.txt", "r") do |f|
+     #open("./lib/databasers/fibered_files_input.txt", "r") do |f|
+        f.each do |line|
+          sequence_text = line.to_textual.de_comma   
+          sequence_creation = sequence_text.to_textual.de_comma.de_space
+          sequence_complete = sequence_text.to_textual.de_comma.split(//).sort.join('').strip unless nil
+          sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
+          sequence_singular = sequence_complete.squeeze
+          description = "sexual materials"
+          reference = "literotica"
+          anagram = 0
+          name = 0
+          phrase = 0
+          sexualities = 1
+          external = 0
+          internal = 0
+          queue = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}"
           break unless f
           consumer.transfer queue
           queue.clear
@@ -656,5 +588,5 @@ module Textualfibers
     consumer.transfer(producer, [])
     after_break
   end
-end
+  
 end
