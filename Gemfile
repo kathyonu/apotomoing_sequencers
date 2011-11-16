@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', "~> 3.0.10"
+gem 'rails', "<3.1"
 
 gem "ruby_core_source", "~> 0.1.5"
 
@@ -46,7 +46,7 @@ gem "haml", "~> 3.1.3"
 
 gem "jeweler", "~> 1.6.4"
 
-# gem 'enginex'
+gem "vlad", "~> 2.2.3"
 
 group :test, :test do
   gem "shoulda"

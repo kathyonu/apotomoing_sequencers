@@ -1,5 +1,9 @@
-# mysql2
-defaults: &defaults
+# mysql2 in development and production
+
+development:
+  reconnect: false
+  database: sequencers_development
+  timeout: 5000
   adapter: mysql2
   encoding: utf8
   username: root
@@ -7,25 +11,32 @@ defaults: &defaults
   socket: /tmp/mysql.sock
   pool: 5
   host: localhost
- #host: 127.0.0.1
-
-development:
-  reconnect: false
-  database: sequencers_development
-  timeout: 5000
-  <<: *defaults
+ #host: 127.0.0.1:3000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  reconnect: false
   database: sequencers_test
   timeout: 5000
-  <<: *defaults
+  adapter: sqlite3
+  encoding: utf8
+  username: root
+  password: "a_leap_too"
+ #socket: /tmp/mysql.sock
+  pool: 5
+  host: localhost
+ #host: 127.0.0.1:3000
 
 production:
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password: "a_leap_too"
   reconnect: false
   database: sequencers_production
   timeout: 5000
-  <<: *defaults
+  socket: /tmp/mysql.sock
+  pool: 5
+  host: localhost
+ #host: 127.0.0.1:3000
