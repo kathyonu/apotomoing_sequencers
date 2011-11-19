@@ -1,3 +1,12 @@
+a { color: #000; } 
+a:hover { color: #fff; background:#000; } 
+a:visited { color: #666; } 
+body { background: #fff; color: #333; margin-top: 25px; margin-bottom: 30px; margin-left: 45px; width: 450px; } 
+body, p, ol, ul, td { font-family: verdana, arial, helvetica, sans-serif; font-size: 13px; line-height: 18px; } 
+div.field, div.actions { margin-bottom: 10px; } 
+form#sequences > input#submit { display: none; } 
+input#sequencetext { margin-bottom: 15px; margin-left: 15px; padding-left: 5px; border-bottom: 4px solid #000; line-height: 120%; font-size: 120%; width: 800px; } 
+pre { background: #eee; padding: 10px; font-size: 11px; } 
 #anagramListClose { position: relative; top: -275px; margin-left: -26px; width: 66%; } 
 #anagramListDisplay { display: none; position: relative; top: 2px; left: -10px; padding-top: 1px; width: 180%; } 
 #anagramListOpen { position: relative; top: 22px; left: 18px; width: 91%; } 
@@ -28,10 +37,10 @@
 #sequence_sequence_lexigram { border: 1px solid red; margin-top: 5px; padding: 5px; } 
 #sequence_sequence_singular { border: 1px solid red; margin-top: 5px; padding: 5px; } 
 #sequence_sequence_text { border: 1px solid red; margin-top: 5px; padding: 5px; } 
-#sequencerClose { position: absolute; bottom: -24px; left: -30px; width: 117%; z-index: 16; } 
-#sequencerFirst > input > anagramEntry#anagramText { border: 10px solid red; margin-top: 10px; font-size: 75%; } 
-#sequencerFirst { border: 2px solid olive; margin-top: 10px; margin-bottom: 10px; margin-left: 10px; font-size: 85%; padding: 10px; width: 55%; } 
 #sequencerOpen { position: relative; bottom: 21px; left: -50px; margin-bottom: 3px; margin-left: 45px; text-align: center; width: 460px; z-index: 13; } 
+#sequencerClose { position: absolute; bottom: -24px; left: -30px; width: 117%; z-index: 16; } 
+#sequencerFirst { border: 2px solid olive; margin-top: 10px; margin-bottom: 10px; margin-left: 10px; font-size: 85%; padding: 10px; width: 55%; } 
+#sequencerFirst > input > anagramEntry#anagramText { border: 10px solid red; margin-top: 10px; font-size: 75%; } 
 #sequencerSecond { border: 2px solid olive; margin-top: 10px; margin-bottom: 10px; margin-left: 30px; font-size: 85%; padding: 10px; width: 50%; } 
 #sequencerWidgetDisplay { background: #FFFDDA; border-top: 5px solid purple; border-right: 49px solid purple; border-bottom: 5px solid purple; border-left: 11px solid purple; display: none; position: absolute; top: 165px; left: 30px; margin-right: 44px; margin-bottom: 5px; margin-left: 25px; padding: 11px; padding-top: 1px; padding-bottom: 1px; text-align: left; width: 550px; z-index: 70; } 
 #sequencetext_submit { display: none; } 
@@ -90,12 +99,3 @@
 .submitsequence { border: 2px solid red; background: yellow; color: black; font-size: 110%; } 
 .textFound { border: 4px dotted yellow; } 
 .tmpButtons { bottom: 5px; right: 5px; } 
-a { color: #000; } 
-a:hover { color: #fff; background:#000; } 
-a:visited { color: #666; } 
-body { background: #fff; color: #333; margin-top: 25px; margin-bottom: 30px; margin-left: 45px; width: 450px; } 
-body, p, ol, ul, td { font-family: verdana, arial, helvetica, sans-serif; font-size: 13px; line-height: 18px; } 
-div.field, div.actions { margin-bottom: 10px; } 
-form#sequences > input#submit { display: none; } 
-input#sequencetext { margin-bottom: 15px; margin-left: 15px; padding-left: 5px; border-bottom: 4px solid #000; line-height: 120%; font-size: 120%; width: 800px; } 
-pre { background: #eee; padding: 10px; font-size: 11px; } 
