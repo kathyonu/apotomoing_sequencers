@@ -2,15 +2,15 @@
 
   = widget_div do
     = form_tag "", "data-event-url" => url_for_event(:submit), :remote => true do
-      = text_field_tag 'sequence_text'
+      = text_field_tag 'sequence_text', :readonly => 'readonly'
       = label_tag 'sequence_textual', 'your text sequence'
-      = text_field_tag 'sequence_creation'
+      = text_field_tag 'sequence_creation', :readonly => 'readonly'
       = label_tag 'sequence_creation', 'creation sequence'
-      = text_field_tag 'sequence_complete'
+      = text_field_tag 'sequence_complete', :readonly => 'readonly'
       = label_tag 'sequence_complete', 'complete sequence'
-      = text_field_tag 'sequence_lexigram'
+      = text_field_tag 'sequence_lexigram', :readonly => 'readonly'
       = label_tag 'sequence_lexigram', 'lexigram sequence'
-      = text_field_tag 'sequence_singular'
+      = text_field_tag 'sequence_singular', :readonly => 'readonly'
       = label_tag 'sequence_singular', 'singular sequence'
       .submitsequences 
 
