@@ -1,3 +1,5 @@
+// NOT entered into all.js : 20111119
+
 // still working on this one
 
 $j(document).ready(

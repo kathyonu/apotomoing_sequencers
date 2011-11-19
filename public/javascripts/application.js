@@ -1,4 +1,4 @@
-// called from app/views/layouts/application.html.erb
+// entered into all.js on 20111119
 
 // this function affects the anagram widget, which works with sequence_createds widget
 $j(document).ready(

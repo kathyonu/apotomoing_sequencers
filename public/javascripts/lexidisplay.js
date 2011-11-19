@@ -1,3 +1,5 @@
+//  entered into all.js on 20111119
+//
 //  this file name is app/public/javascript/lexidisplay.js
 //  this file affects this file: app/sequence/views/new.html.erb
 //  this code passes JSHint : 20111105:06:07

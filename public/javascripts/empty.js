@@ -1,3 +1,5 @@
+//  entered into all.js on 20111119
+//
 // resets the forms in the anagram and sequence_created widgets
 
 $j(document).ready(

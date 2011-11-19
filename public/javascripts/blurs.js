@@ -1,7 +1,18 @@
+// NOT entered into all.js : 20111119
+
 // this js prevents the computed sequences from being changed by user
 // this file affects the sequence_created widget
 //
 // these blurs can be replaced with the :readOnly attribute on the form input text elements, as used in sequences
+//     ^^^^^^^
+// DONE ON 20111119 : this js no longer needed
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
 
 $j(document).ready(
   function() {

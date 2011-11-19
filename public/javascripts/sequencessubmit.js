@@ -1,3 +1,5 @@
+//  entered into all.js on 20111119
+
 // submission of new_sequences, 
 // while ignoring the sequencetext form. 
 // the sequencetext form is NOT submitted,

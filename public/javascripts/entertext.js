@@ -1,3 +1,6 @@
+//  entered into all.js on 20111119
+//
+
 $j(document).ready(
   function() {
     $j('#anagram form input#anagram_text').bind({
@@ -57,15 +60,15 @@ $j(document).ready(
 
 // this code below is no longer required as we hide the anagram submit button entirely..
 //  submitting it after the sequence_created form completes.
-$j(document).ready(
-  function() {
-    $j('#anagram > form[0] > input#submit').click(
-    //$j('#anagram > form > input#submit').click(
-      function($je) {
-        $j('#anagramListDisplay').hide();
-        $j('#sequencerWidgetDisplay').hide();
-        $j('.sequenceCreatedWidgetDisplay').show();
-        $j('#kathyonu').show();
-    });
-  }
-);
+// $j(document).ready(
+//  function() {
+//    $j('#anagram > form[0] > input#submit').click(
+//    //$j('#anagram > form > input#submit').click(
+//      function($je) {
+//        $j('#anagramListDisplay').hide();
+//        $j('#sequencerWidgetDisplay').hide();
+//        $j('.sequenceCreatedWidgetDisplay').show();
+//        $j('#kathyonu').show();
+//    });
+//  }
+//);

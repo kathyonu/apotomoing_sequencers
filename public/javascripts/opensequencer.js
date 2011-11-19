@@ -1,3 +1,5 @@
+//  entered into all.js on 20111119
+
 $j(document).ready(
   function() {
     $j('input#sequencerOpen').click(
