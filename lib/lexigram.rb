@@ -64,6 +64,7 @@ module Lexigram
     @lexigram_hashccc = Hash.new{0}
     @lexigram_hash_holder1 = Hash.new{0}
     @lexigram_hash_holder2 = Hash.new{0}
+    @lexigram_letterscount = ""
     @keys_valuea = Array.new(0)
     @keys_valueaa = Array.new(0)
     @keys_valuesa = Hash.new{0}
@@ -143,6 +144,7 @@ module Lexigram
         @keys_valuesaaa = @lexigram_hashaaa.merge(@lexigram_hashbbb) do | key, first, second | (first > second)? first : second end
         @lexigram_hash_holder1 = @keys_valuesaaa
         @lexigram_sequence = @lexigram_hash_holder1.collect do | k, v | "#{k}" * v end.sort.join.strip
+        @lexigram_sequence
         loop do
           @wordccc = ""
           @wordccc = @words.shift unless nil
@@ -166,11 +168,10 @@ module Lexigram
           else
             @lexigram_sequence
           end
-          end
         end
       end
+    end
   end
-# @lexigram_sequence
   
   class Array
     include Histogram

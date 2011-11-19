@@ -17,19 +17,15 @@ module Complete
   def complete_sequencer(sequencetext)
     @sequencetext = sequencetext
     @sequencetext.extend Textual
-    puts "at line 20 is @sequencetext is tainted ? " + @sequencetext.tainted?.to_s   # => :false
+    #puts "at line 20 is @sequencetext is tainted ? " + @sequencetext.tainted?.to_s   # => :false
     @sequencetextualed = @sequencetext.to_textual
     @sequencetextualed.extend Textual
-    puts "at line 23 the result of @sequencetext.to_textual : " + "#{@sequencetextualed}"
+    #puts "at line 23 the result of @sequencetext.to_textual : " + "#{@sequencetextualed}"
     @sequencetextdecommaed = @sequencetextualed.de_comma
     @sequencetextdecommaed.extend Textual
-    puts "at line 26 the result of @sequencetext.to_textual.de_comma : " + "#{@sequencetextdecommaed}"
+    #puts "at line 26 the result of @sequencetext.to_textual.de_comma : " + "#{@sequencetextdecommaed}"
     @sequencetextdespaced = @sequencetextualed.de_comma.gsub(/\s+/, "")
-    puts "at line 28 the result of @sequencetext.to_textual.de_comma.de_space : " + "#{@sequencetextdespaced}"
-    @characterscount = @sequencetextualed.split(//).length
-    puts "at line 30 the @ characterscount : @sequencetextualed.split(//).length : " + "#{@characterscount}"
-    @letters = @sequencetextualed.de_comma.split(//).join.strip.length
-    puts "at line 32 the @ letters variable count : @sequencetextualed.de_comma.de_space.split(//).length " + "#{@letters}"
+    #puts "at line 28 the result of @sequencetext.to_textual.de_comma.de_space : " + "#{@sequencetextdespaced}"
     @complete_sequence = ""
     @complete_sequence = @sequencetextdecommaed.split(//).sort().join.strip
     if (@complete_sequence.to_s) == ("") then

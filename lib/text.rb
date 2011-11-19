@@ -13,7 +13,7 @@ module Text
     @text_sequenced = text_sequencer(sequencetext)
   end
 
-  ### complete_sequencer(sequencetext) generates the sequence_complete from any sequencetext entered
+  ### complete_sequencer(sequencetext) generates the sequence_complete from any sequencetext entered, and its letter-count
   def text_sequencer(sequencetext)
     @sequencetext = sequencetext
 	@sequencetext.extend Textual
@@ -27,13 +27,9 @@ module Text
 	#puts "at line 26 the result of @sequencetext.to_textual.de_comma : " + "#{@sequencetextdecommaed}"
 	@sequencetextdespaced = @sequencetextualed.de_comma.gsub(/\s+/, "")
     #puts "at line 28 the result of @sequencetext.to_textual.de_comma.de_space : " + "#{@sequencetextdespaced}"
-    @characterscount = @sequencetextualed.split(//).length
-    #puts "at line 30 the @ characterscount : @sequencetextualed.split(//).length : " + "#{@characterscount}"
-    @letters = @sequencetextualed.de_comma.split(//).join.strip.length
-	#puts "at line 32 the @ letters variable count : @sequencetextualed.de_comma.de_space.split(//).length " + "#{@letters}"
 	@text_sequence = ""
 	@text_sequence = @sequencetextualed.de_comma
-    #puts "at line 36 the @ text_sequence variable is : " + @text_sequence
+    #puts "at line 32 the @ text_sequence variable is : " + @text_sequence
     if (@text_sequence.to_s) == ("") then
       @text_sequence = "no letters remain after processing the sequence_text of your entry, please try again"
     else
