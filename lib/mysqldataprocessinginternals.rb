@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 module Mysqldataprocessinginternals
  
- #include ApplicationHelper  # uncomment for use in conole
+  include ApplicationHelper  # uncomment for use in console
   include Histogram
   include Textual
   include Lexigram
@@ -15,7 +15,8 @@ module Mysqldataprocessinginternals
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below that calls for it
   def file_name
-    file_name = ("tmp/insert_internals_hash.txt")
+    file_name = ("tmp/database_dones/insert_internals.txt")
+   #file_name = ("tmp/insert_internals_hash.txt")
    #file_name = ("tmp/insert_sexual_lines.txt")
    #file_name = ("../../Documents/20110731-research.txt")
    #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
@@ -40,8 +41,10 @@ module Mysqldataprocessinginternals
 	### ready for entry into the database using the mysql LOAD command
 	#### see the after_break method below for mysql load instructions
   def doing_internal_lines
-   consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/insert_internals.txt", "a") do |f| 
+    consumer = Fiber.new do |producer, queue|
+      f = open("./tmp/database_dones/insert_internals_lines-mysql-01.txt", "a") do |f| 
+     #f = open("./tmp/insert_internals_hash.txt", "a") do |f| 
+     #f = open("./tmp/database_dones/insert_internals_hash.txt", "a") do |f| 
          loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -51,13 +54,14 @@ module Mysqldataprocessinginternals
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/insert_internals_hash.txt") do |line| 
+      IO.foreach("./tmp/database_dones/insert_internals_hash.txt") do |line| 
+     #IO.foreach("./tmp/insert_internals_hash.txt") do |line| 
      #IO.foreach("./lib/databasers/fibered_files_input.txt") do |line|
      #IO.foreach("./lib/databasers/fibered_files_input.txt") do |line|
      #IO.foreach("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt") do |line|
      #IO.foreach("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-012.txt") do |line|
-        queue = ""
-        puts queue
+      queue = ""
+      puts queue
       internal_searched, searched = line.split("\t")
       internal_search = internal_searched.to_textual
       sequence_text = internal_search.to_textual.de_comma unless nil
@@ -75,7 +79,7 @@ module Mysqldataprocessinginternals
       internal = 1
       line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}\n"
       queue << line
-        break unless line
+      break unless line
       consumer.transfer queue
       queue.clear
       end
@@ -92,12 +96,12 @@ module Mysqldataprocessinginternals
     #    mysql> use sequencers_production
 	#    mysql> LOAD DATA LOCAL INFILE './tmp/insert_internals.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at);
   def after_break
-    open("./tmp/insert_internals.txt", "r") do |f| 
+    open("./tmp/database_dones/insert_internals_lines-mysql-01.txt", "r") do |f| 
     g = f.read
    #puts g    # uncommenting this line line causes each line of data to show on your screen as it is output to the file
     f.close
    end
-    exit(puts "Processing is complete >> ./tmp/insert_internals.txt << is closed, console has been exited")
+    exit(puts "Processing is complete >> ./tmp/database_dones/insert_internals_lines-mysql-01.txt << is closed, console has been exited")
   end
 
     # SOLID_GOLD_CODE DO NOT CHANGE : 20101026
@@ -126,6 +130,36 @@ module Mysqldataprocessinginternals
       end
       end
     end
+
+  def plucking_text_and_date_from_internals
+    consumer = Fiber.new do |producer, queue|
+      f = open("./tmp/database_dones/insert_internals_hash.txt", "a") do |f| 
+        loop do
+          queue = producer.transfer(consumer, queue)
+          puts f << queue
+          queue.clear
+        end
+        raise StopIteration
+      end
+    end
+    producer = Fiber.new do |consumer, queue|
+      IO.foreach("./tmp/database_dones/insert_internals_lines-mysql-01.txt") do |line| 
+        queue = ""
+        puts queue
+        internal_searched, internal_creation, internal_complete, internal_lexigram, internal_singular, description, reference, anagram, name, phrase, sexualities, internal, external, created_at = line.split("\t")
+        sequence_text = internal_searched.to_textual.de_comma unless nil
+        reference = reference.to_s.strip
+        line = "#{sequence_text}\t#{reference}\n"
+        queue << line
+        break unless line
+        consumer.transfer queue
+        queue.clear
+      end
+      raise StopIteration
+    end  
+    consumer.transfer(producer, [])
+    after_break
+  end
 
     # sorts the file, using downcase
   def sorting_file

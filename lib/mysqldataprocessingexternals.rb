@@ -44,6 +44,7 @@ module Mysqldataprocessingexternals
       f = open("./tmp/insert_externals_hash.txt", "a") do |f| 
          loop do
           queue = producer.transfer(consumer, queue)
+          queue = producer.transfer(consumer, queue)
           puts f << queue
           queue.clear
         end
@@ -122,9 +123,10 @@ module Mysqldataprocessingexternals
 	### entry into the database using the mysql LOAD command
 	#### see the after_break method below for mysql load instructions
   def doing_external_lines
-   consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/insert_externals_hash.txt", "a") do |f| 
-         loop do
+    consumer = Fiber.new do |producer, queue|
+     #f = open("./tmp/insert_externals_hash.txt", "a") do |f| 
+      f = open("./tmp/database_dones/insert_internals_lines-mysql-01.txt", "a") do |f| 
+        loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
           queue.clear
@@ -133,33 +135,29 @@ module Mysqldataprocessingexternals
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/insert_externals.txt") do |line| 
-     #IO.foreach("./lib/databasers/fibered_files_input.txt") do |line|
-     #IO.foreach("./lib/databasers/fibered_files_input.txt") do |line|
-     #IO.foreach("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt") do |line|
-     #IO.foreach("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-012.txt") do |line|
+      IO.foreach("./tmp/insert_externals_hash.txt") do |line| 
         queue = ""
         puts queue
-      external_searched, searched = line.split("\t")
-      external_search = external_searched.to_textual unless nil
-      sequence_text = external_search.to_textual.de_comma unless nil
-      sequence_creation = sequence_text.de_comma.de_space unless nil
-      sequence_complete = sequence_creation.split(//).sort.join('') unless nil
-      sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
-      sequence_singular = sequence_complete.squeeze unless nil
-      description = "external search"
-      reference = searched.to_s.strip
-      anagram = 0
-      name = 0
-      phrase = 0
-      sexualities = 0
-      external = 1
-      internal = 0
-      line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}\n"
-      queue << line
-        break unless line
-      consumer.transfer queue
-      queue.clear
+        external_searched, searched = line.split("\t")
+        external_search = external_searched.to_textual unless nil
+        sequence_text = external_search.to_textual.de_comma unless nil
+        sequence_creation = sequence_text.de_comma.de_space unless nil
+        sequence_complete = sequence_creation.split(//).sort.join('') unless nil
+        sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
+        sequence_singular = sequence_complete.squeeze unless nil
+        description = "external search"
+        reference = searched.to_s.strip
+        anagram = 0
+        name = 0
+        phrase = 0
+        sexualities = 0
+        external = 1
+        internal = 0
+        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}\n"
+        queue << line
+		break unless line
+        consumer.transfer queue
+        queue.clear
       end
       raise StopIteration
     end  
@@ -168,7 +166,7 @@ module Mysqldataprocessingexternals
   end
 
     # SOLID_GOLD_CODE DO NOT CHANGE : 20101026
-	# this code was fully completed : 20111112
+    # this code was fully completed : 20111112
     # outsputs to screen : processes externals hashes
   def process_externals_hash
     open(file_name) do |f|
@@ -213,16 +211,46 @@ module Mysqldataprocessingexternals
           external_search = external_searched.to_textual
           search_time = searched.to_s.strip
           loop do
-              a = "#{external_search}\t#{search_time}"
-              queue << a unless nil
-              break unless line
-              consumer.transfer queue
-              queue.clear
-            end
-            raise StopIteration
+            a = "#{external_search}\t#{search_time}"
+            queue << a unless nil
+            break unless line
+            consumer.transfer queue
+            queue.clear
+          end
+          raise StopIteration
         end
       end
     end
+    consumer.transfer(producer, [])
+    after_break
+  end
+
+  def plucking_text_and_date_from_externals
+    consumer = Fiber.new do |producer, queue|
+      f = open("./tmp/database_dones/insert_externals_hash.txt", "a") do |f| 
+        loop do
+          queue = producer.transfer(consumer, queue)
+          puts f << queue
+          queue.clear
+        end
+        raise StopIteration
+      end
+    end
+    producer = Fiber.new do |consumer, queue|
+      IO.foreach("./tmp/database_dones/insert_externals_hash_sorted.txt") do |line| 
+        queue = ""
+        puts queue
+        external_searched, external_creation, external_complete, external_lexigram, external_singular, description, reference, anagram, name, phrase, sexualities, internal, external, created_at = line.split("\t")
+        sequence_text = external_searched.to_textual.de_comma unless nil
+        reference = reference.to_s.strip
+        line = "#{sequence_text}\t#{reference}\n"
+        queue << line
+        break unless line
+      consumer.transfer queue
+      queue.clear
+      end
+      raise StopIteration
+    end  
     consumer.transfer(producer, [])
     after_break
   end
