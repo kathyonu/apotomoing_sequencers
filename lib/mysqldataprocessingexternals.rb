@@ -153,7 +153,8 @@ module Mysqldataprocessingexternals
         sexualities = 0
         external = 1
         internal = 0
-        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}\n"
+        created_at = "2011-11-23 10:00:00"
+        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\n"
         queue << line
 		break unless line
         consumer.transfer queue

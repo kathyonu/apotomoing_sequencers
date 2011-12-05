@@ -14,59 +14,59 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :sequence_text %><br />
-    <%= f.text_field :sequence_text, :readonly => true, :size => 222 %>
+    <%= f.label :sequence_text %>    
+    <%= f.text_field :sequence_text, :readonly => true, :size => 40 %>
   </div>
   <div class="field">
-    <%= f.label :sequence_creation %><br />
-    <%= f.text_field :sequence_creation, :readOnly => true, :size => 255 %>
+    <%= f.label :sequence_creation %>
+    <%= f.text_field :sequence_creation, :readOnly => true, :size => 35 %>
   </div>
   <div class="field">
-    <%= f.label :sequence_complete %><br />
-    <%= f.text_field :sequence_complete, :readOnly => true, :size => 255 %>
+    <%= f.label :sequence_complete %>
+    <%= f.text_field :sequence_complete, :readOnly => true, :size => 30 %>
   </div>
   <!--div class="field"-->
   <!--%= f.label :sequence_complete_reverse %><br /-->
-  <!--%= f.text_field :sequence_complete_reverse, :size => 255 %-->
+  <!--%= f.text_field :sequence_complete_reverse, :size => 35 %-->
   <!--/div-->
   <div class="field">
-    <%= f.label :sequence_lexigram %><br />
-    <%= f.text_field :sequence_lexigram, :readOnly => true, :size => 255 %>
+    <%= f.label :sequence_lexigram %>
+    <%= f.text_field :sequence_lexigram, :readOnly => true, :size => 26 %>
   </div>
   <div class="field">
-    <%= f.label :sequence_singular %><br />
+    <%= f.label :sequence_singular %>
     <%= f.text_field :sequence_singular, :readOnly => true, :size => 26 %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description, :size => 255 %>
+    <%= f.label :description %>
+    <%= f.text_field :description, :size => 100 %>
   </div>
   <div class="field">
-    <%= f.label :reference %><br />
-    <%= f.text_field :reference, :size => 255 %>
+    <%= f.label :reference %>
+    <%= f.text_field :reference, :size => 100 %>
   </div>
   <div class="field">
-    <%= f.label :anagram %><br />
+    <%= f.label :anagram %>
     <%= f.check_box :anagram %>
   </div>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.check_box :name %>
   </div>
   <div class="field">
-    <%= f.label :phrase %><br />
+    <%= f.label :phrase %>
     <%= f.check_box :phrase, :checked => 'checked' %>
   </div>
   <div class="field">
-    <%= f.label :sexualities %><br />
+    <%= f.label :sexualities %>
     <%= f.check_box :sexualities %>
   </div>
   <div class="field">
-    <%= f.label :external %><br />
+    <%= f.label :external %>
     <%= f.check_box :external %>
   </div>
   <div class="field">
-    <%= f.label :internal %><br />
+    <%= f.label :internal %>
     <%= f.check_box :internal %>
   </div>
   <div class="actions">

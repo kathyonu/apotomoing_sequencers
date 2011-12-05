@@ -8,14 +8,14 @@ module Mysqldataprocessinganagrams
 
   require 'fiber'
 
-# USAGE : the require statement in console, then the method command
-##      > require "./lib/mysqldataprocessinganagrams.rb"
-###     > doing_anagram_lines
-#### that command runs the fiber shown below
+  # USAGE : the require statement in console, then the method command
+  ##      > require "./lib/mysqldataprocessinganagrams.rb"
+  ###     > doing_anagram_lines
+  #### that command runs the fiber shown below
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below that calls for it
   def file_name
-    file_name = ("tmp/insert_anagrams_hash.txt")
+    file_name = ("tmp/insert_anagrams.txt")
    #file_name = ("tmp/insert_sexual_lines.txt")
    #file_name = ("../../Documents/20110731-research.txt")
    #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
@@ -39,7 +39,7 @@ module Mysqldataprocessinganagrams
     ## outputing the processed data into another file
   def doing_anagram_hash
    consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/insert_anagrams.txt", "a") do |f| 
+      f = open("./tmp/insert_anagrams_hash.txt", "a") do |f| 
          loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -49,9 +49,9 @@ module Mysqldataprocessinganagrams
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/insert_anagrams_hash.txt") do |line| 
-        queue = ""
-        puts queue
+      IO.foreach("./tmp/insert_anagrams.txt") do |line| 
+      queue = ""
+      puts queue
       anagram_sequence, anagram = line.split("\t")
       @anagram = anagram.to_textual
       line = "#{anagram}\n"
@@ -94,7 +94,7 @@ module Mysqldataprocessinganagrams
         anagram = text.to_textual
         sequence_text = anagram.to_textual.de_comma unless nil
         sequence_creation = sequence_text.de_comma.de_space unless nil
-        sequence_complete = sequence_creation.split(//).sort.join('') unless nil
+        sequence_complete = sequence_creation.split(//).sort.join('').strip unless nil
         sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
         sequence_singular = sequence_complete.squeeze unless nil
         description = "English"
@@ -105,9 +105,10 @@ module Mysqldataprocessinganagrams
         sexualities = 0
         external = 0
         internal = 0
-        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}\n"
+        created_at = "2011-11-23 10:00:00"
+        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\n"
         queue << line
-          break unless line
+        break unless line
         consumer.transfer queue
         queue.clear
       end

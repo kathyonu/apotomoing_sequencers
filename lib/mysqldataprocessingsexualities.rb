@@ -15,19 +15,27 @@ module Mysqldataprocessingsexualities
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below that calls for it
   def file_name
-    file_name = ("tmp/insert_sexual_lines.txt")
+    file_name = ("./tmp/database_doings/doing_sexualities/insert_sexual_lines-03.txt")
    #file_name = ("../../Documents/20110731-research.txt")
    #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
    #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hash-015.txt")
    #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hashlines-015.txt")
   end
 
+    # after_break is used at end of fiber method doing_sexual_lines to end process, and save the file addended to
+	# to load the data produced by the fiber above use these commands in mysql console :
+	# in Terminal $ cd ./desideratus/apotomoing_sequencers
+	#    $ mysql
+    #    mysql> use sequencers_production
+	#    mysql> LOAD DATA LOCAL INFILE './tmp/mega_files/995mb_sexual_lines/sequenced_sexual_linesai.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at);
   def after_break
-    open("./tmp/insert_sexual_lines.txt", "r") do |f| 
+   #open(file_name, "r") do |f| 
+    open("./tmp/mega_files/995mb_sexual_lines/sequenced_sexual_linesai.txt", "r") do |f| 
     g = f.read
     # puts g    # uncommenting this line line causes each line of data to show on your screen as it is output to the file
     f.close
-    exit(puts "Processing is complete >> ./tmp/insert_sexual_lines.txt << is closed, console has been exited")
+   #exit(puts "Processing is complete >> ./tmp/mega_files/995mb_sexual_lines/sequenced_sexual_linesai.txt << is closed, console has been exited")
+    exit(puts "Processing is complete >> ./tmp/database_doings/doing_sexualities/insert_sexual_lines-03.txt << is closed, console has been exited")
     end
   end
   
@@ -37,7 +45,7 @@ module Mysqldataprocessingsexualities
 	### ready for entry into the database using the mysql LOAD command
   def doing_sexual_lines
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/insert_sexual_lines.txt", "a") do |f| 
+      f = open("./tmp/database_doings/doing_sexualities/mysql_history_001.txt", "a") do |f| 
          loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -47,33 +55,34 @@ module Mysqldataprocessingsexualities
       end
     end
     producer = Fiber.new do |consumer, queue|
-     #IO.foreach("./lib/databasers/fibered_files_input.txt") do |line|
-      IO.foreach("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt") do |line|
+      IO.foreach("./tmp/database_doings/doing_sexualities/sexualities_sorted.txt") do |line|
+     #IO.foreach("./tmp/mega_files/995mb_sexual_lines/mysql_database_ready-015-decommaed-uniqued.txt") do |line|
+     #IO.foreach("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt") do |line|
      #IO.foreach("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-012.txt") do |line|
         queue = ""
         puts queue
         sequence_text = line.to_textual.de_comma
-          sequence_creation = sequence_text.to_textual.de_comma.de_space unless nil
-          sequence_complete = sequence_text.to_textual.de_comma.split(//).sort.join('').strip unless nil
-          sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
-          sequence_singular = sequence_complete.squeeze unless nil
-          description = "sexual materials"
-          reference = "literotica"
-          anagram = 0
-          name = 0
-          phrase = 0
-          sexualities = 1
-          external = 0
-          internal = 0
-          line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}\n"
-          queue << line
-          break unless line
-          consumer.transfer queue
-          queue.clear
+        sequence_creation = sequence_text.de_space unless nil
+        sequence_complete = sequence_text.split(//).sort.join('').strip unless nil
+        sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
+        sequence_singular = sequence_complete.squeeze unless nil
+        description = "sexual materials"
+        reference = "literotica"
+        anagram = 0
+        name = 0
+        phrase = 0
+        sexualities = 1
+        external = 0
+        internal = 0
+        created_at = "2011-11-29 11:11:00"
+        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\n"
+        queue << line
+        break unless line
+        consumer.transfer queue
+        queue.clear
       end
       raise StopIteration
     end  
-#    end
     consumer.transfer(producer, [])
     after_break
   end
@@ -85,7 +94,7 @@ module Mysqldataprocessingsexualities
 
 
     # SOLID GOLD CODE : do not change : 20111111
-    # generates all sequences         : 20110811
+    # generates all sequences         : 20111111
 	# now including the lexigram      : 20111111
     # file_name = ("tmp/insert_sexual_lines-01.txt") 
     # file_name = ("tmp/insert_sexual_lines-02.txt")
@@ -111,11 +120,10 @@ module Mysqldataprocessingsexualities
     end
   end
 
-    # this method sorts any sized file
-    # processing the result into a second file
-  def doing_externals_file_decomma
+    # this method processes the result into a second file
+  def doing_sexualities_file_decomma
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/mega_files/995mb_sexual_lines/mysql_database_ready-015-decommaed.txt", "a") do |f| 
+      f = open("./tmp/database_doings/doing_sexualities/mysql_history_001.txt", "a") do |f| 
          loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -125,10 +133,11 @@ module Mysqldataprocessingsexualities
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/mega_files/995mb_sexual_lines/mysql_database_ready-015.txt") do |line| 
+      IO.foreach("./tmp/database_doings/doing_sexualities/sexualities_sorted.txt") do |line| 
         queue = ""
         puts queue
-        sequence_text = line.to_textual.de_comma
+       #sequence_text = line.to_textual.de_comma
+        sequence_text = line.to_textual
         queue << "#{sequence_text}\n"
         break unless line
         consumer.transfer queue
@@ -140,16 +149,47 @@ module Mysqldataprocessingsexualities
     after_break
   end
 
+    # doing_extract_data processes the hash line by line, extracting only the sequence_text, processing it into another file
+  def doing_extract_data
+    consumer = Fiber.new do |producer, queue|
+      f = open("./tmp/mega_files/320mb_sexual_lines/extracted_data.txt", "a") do |f| 
+         loop do
+          queue = producer.transfer(consumer, queue)
+          puts f << queue
+          queue.clear
+        end
+        raise StopIteration
+      end
+    end
+    producer = Fiber.new do |consumer, queue|
+      IO.foreach("./tmp/mega_files/320mb_sexual_lines/insert_sexual_lines.txt") do |line| 
+        queue = ""
+        puts queue
+        sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at = line.split("\t")
+        extracted_data = sequence_text.to_textual
+        queue << "#{extracted_data}\n"
+        break unless line
+        consumer.transfer queue
+        queue.clear
+      end
+      raise StopIteration
+    end  
+    consumer.transfer(producer, [])
+    after_break
+  end
+
+
+
     # needs to be tested : 20111116
     # this method sorts and uniques any sized file
 	# processing the result into a second file
   def doing_sexualities_file_sort_and_unique
-    a = File.readlines("./tmp/mega_files/995mb_sexual_lines/mysql_database_ready-015-decommaed.txt")
+    a = File.readlines("./tmp/database_doings/doing_sexualities/sexualities_sorted.txt")
     @megadeta = a.sort do |x,y|
       x.downcase <=> y.downcase
     end
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/mega_files/995mb_sexual_lines/mysql_database_ready-015-decommaed-sorted.txt", "a") do |f| 
+      f = open("./tmp/database_doings/doing_sexualities/mysql_history_001.txt", "a") do |f| 
         loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -171,6 +211,11 @@ module Mysqldataprocessingsexualities
     consumer.transfer(producer, [])
     after_break
   end
+
+
+
+
+
 
     # this method reads file in one gulp then runs the sort and then the uniq on it
     # this method outputs to screen

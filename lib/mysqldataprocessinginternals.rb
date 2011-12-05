@@ -15,7 +15,7 @@ module Mysqldataprocessinginternals
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below that calls for it
   def file_name
-    file_name = ("tmp/database_dones/insert_internals.txt")
+    file_name = ("tmp/database_dones/dones_internals/insert_internals-01.txt")
    #file_name = ("tmp/insert_internals_hash.txt")
    #file_name = ("tmp/insert_sexual_lines.txt")
    #file_name = ("../../Documents/20110731-research.txt")
@@ -36,16 +36,14 @@ module Mysqldataprocessinginternals
   end
 
     # fiber : doing_internal_lines : solid gold : 20111114
-	# this method processes the internal searches hash file, line by line
-	## outputing the processed data into another file
-	### ready for entry into the database using the mysql LOAD command
-	#### see the after_break method below for mysql load instructions
+    # this method processes the internal searches hash file, line by line
+    ## outputing the processed data into another file
+    ### ready for entry into the database using the mysql LOAD command
+    #### see the after_break method below for mysql load instructions
   def doing_internal_lines
-    consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/database_dones/insert_internals_lines-mysql-01.txt", "a") do |f| 
-     #f = open("./tmp/insert_internals_hash.txt", "a") do |f| 
-     #f = open("./tmp/database_dones/insert_internals_hash.txt", "a") do |f| 
-         loop do
+  consumer = Fiber.new do |producer, queue|
+      f = open("./tmp/database_dones/done_internals/insert_internals_lines-mysql-singular-sorted-uniqued-01.txt", "a") do |f| 
+        loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
           queue.clear
@@ -54,19 +52,14 @@ module Mysqldataprocessinginternals
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/database_dones/insert_internals_hash.txt") do |line| 
-     #IO.foreach("./tmp/insert_internals_hash.txt") do |line| 
-     #IO.foreach("./lib/databasers/fibered_files_input.txt") do |line|
-     #IO.foreach("./lib/databasers/fibered_files_input.txt") do |line|
-     #IO.foreach("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt") do |line|
-     #IO.foreach("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-012.txt") do |line|
+      IO.foreach("./tmp/database_dones/done_internals/insert_internals-01.txt") do |line| 
       queue = ""
       puts queue
       internal_searched, searched = line.split("\t")
       internal_search = internal_searched.to_textual
       sequence_text = internal_search.to_textual.de_comma unless nil
       sequence_creation = sequence_text.de_comma.de_space unless nil
-      sequence_complete = sequence_creation.split(//).sort.join('') unless nil
+      sequence_complete = sequence_creation.split(//).sort().join('').strip unless nil
       sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
       sequence_singular = sequence_complete.squeeze unless nil
       description = "internal search"
@@ -77,7 +70,8 @@ module Mysqldataprocessinginternals
       sexualities = 0
       external = 0
       internal = 1
-      line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}\n"
+      created_at = "2011-11-29 11:11:00"
+      line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\n"
       queue << line
       break unless line
       consumer.transfer queue
@@ -94,9 +88,10 @@ module Mysqldataprocessinginternals
 	# in Terminal $ cd ./desideratus/apotomoing_sequencers
 	#    $ mysql
     #    mysql> use sequencers_production
-	#    mysql> LOAD DATA LOCAL INFILE './tmp/insert_internals.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at);
+	#    mysql> LOAD DATA LOCAL INFILE './tmp/database_dones/done_internals/insert_internals_lines-mysql-singular-sorted-uniqued-01.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at);
   def after_break
-    open("./tmp/database_dones/insert_internals_lines-mysql-01.txt", "r") do |f| 
+    open("./tmp/database_dones/done_internals/insert_internals_lines-mysql-singular-sorted-uniqued-01.txt", "r") do |f| 
+   #open("./tmp/database_dones/done_internals/insert_internals_lines-mysql-01.txt", "r") do |f| 
     g = f.read
    #puts g    # uncommenting this line line causes each line of data to show on your screen as it is output to the file
     f.close
@@ -115,7 +110,7 @@ module Mysqldataprocessinginternals
       internal_search = internal_searched.to_textual
       sequence_text = internal_search.to_textual.de_comma unless nil
       sequence_creation = sequence_text.de_comma.de_space unless nil
-      sequence_complete = sequence_creation.split(//).sort.join('') unless nil
+      sequence_complete = sequence_creation.split(//).sort.join('').strip unless nil
       sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
       sequence_singular = sequence_complete.squeeze unless nil
       description = "internal search"
