@@ -7,14 +7,14 @@
 </div>
 
 
-<div id="new_sequence_box">New Sequence</div>
+<div id="new_sequence_box">New Sequence
+  <div class="field">
+    <%= form_tag "" do %>
+    <%= text_field_tag "sequencetext" %>
 
-<div class="field">
-  <%= form_tag "" do %>
-  <%= text_field_tag "sequencetext" %><br />
-
-  <%= submit_tag "Submit Sequence", :id => 'sequencetext_submit', :name => 'sequencetext_submit' %> <!--hidden-->
-  <% end %>
+    <%= submit_tag "Submit Sequence", :id => 'sequencetext_submit', :name => 'sequencetext_submit' %> <!--hidden by jquery-->
+    <% end %>
+  </div>
 </div>
 
 <div class="newSequence">
