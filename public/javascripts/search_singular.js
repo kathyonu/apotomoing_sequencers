@@ -18,24 +18,16 @@ $j(document).ready(  function() {
               var $jsequencetext = $j('input#sequencetext').serialize();
               var $jsequenceSubmit = document.getElementById('sequence_submit');
               $jnewsequence.form.onsubmit = function() { return false; };
-              var $jsearch_text_return_value = $j.ajax({
-                type: "GET",    url: "http://localhost:3000/sequences/search_text",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j("#search_text").val($jsearch_text_return_value);
-                
-              var $jsearch_lexi_return_value = $j.ajax({
-                type: "GET",    url: "http://localhost:3000/sequences/search_lexigram",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j("#search_lexigram").val($jsearch_lexi_return_value);
-
-              var $jsearch_creation_return_value = $j.ajax({
-                type: "GET",    url: "http://localhost:3000/sequences/search_creation",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j("#search_creation").val($jsearch_creation_return_value);
-
-              var $jsearch_complete_return_value = $j.ajax({
-                type: "GET",    url: "http://localhost:3000/sequences/search_complete",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j("#search_complete").val($jsearch_complete_return_value);
-
               var $jsearch_singular_return_value = $j.ajax({
-                type: "GET",    url: "http://localhost:3000/sequencessearch_/singular",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                type: "GET",
+                url: "http://localhost:3000/sequences/search_singular",
+                data: $jsequencetext,
+                async: false,
+                dataType: 'script',
+                success: function(data) {
+                  alert(data);
+                  }
+                }).responseText;
                 $j("#search_singular").val($jsearch_singular_return_value);
             }
           }

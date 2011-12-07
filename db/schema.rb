@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110629000007) do
+ActiveRecord::Schema.define(:version => 20111206002442) do
 
   create_table "anagrams", :force => true do |t|
     t.string   "anagram_text"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20110629000007) do
     t.boolean  "internal"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "lense",             :limit => 75
   end
 
 end

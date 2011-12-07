@@ -25,6 +25,11 @@ module Searchsingular
       @singular_sequence = "no letters remain after processing, please try another entry"
     else
       @singular_sequences = Sequence.find_by_name("sequence_singular limit 10 ")
+      results = Sequence.where(:sequence_singular => "#{@singular_sequence}")
+      results = @singular_sequences = Sequence.find_all_by_name("sequence_singular => @singular_sequence limit=100 ") 
+      results = @singular_sequences = Sequence.find_all_by_name("conditions: sequence_singular='abc' limit=100 ") # not accurate
+      results = @singular_sequences = Sequence.find_all_by_name("sequence_singular limit=100 ") # works
+    
      #@singular_sequences = Sequence.find_all_by_name(@singular_sequence)  # finds all
      #@singular_sequences = Sequence.find_by_sql("select * from sequences conditions where sequence_singular like '%elov%' limit 10 ")
      #@singular_sequences = Sequence.find_by_sql("select * from sequences conditions where sequence_singular like '%asdf%' limit 100 ")
