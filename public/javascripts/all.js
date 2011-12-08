@@ -12591,7 +12591,7 @@ $j(document).ready(  function() {
               var $jsingular_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/singular_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
                 $j("input#sequence_sequence_singular").val($jsingular_return_value);
-                $j('input#sequence_description').focus();
+                $j('input#sequence_lense').focus();
             }
           }
           else
@@ -12602,16 +12602,50 @@ $j(document).ready(  function() {
             $j('input#sequence_sequence_complete').val("");
             $j('input#sequence_sequence_lexigram').val("");
             $j('input#sequence_sequence_singular').val("");
+            $j('input#sequence_lense').val("");
           }
     });
   });
     
 
-// $j(document).ready(  function() {    $j('input#anagramListOpen').click(    function($je) {    $j('input#anagramListClose').show();    $j('#anagramListDisplay').show();    $j('.sequenceCreatedWidgetDisplay').hide();    }    );    $j('input#anagramListClose').click(    function($je) {    $j('#anagramListDisplay').hide();    $j('.sequenceCreatedWidgetDisplay').show();    }    );    });
+$j(document).ready(  function() {
+       $j('input#anagramListOpen').click(
+       function($je) {
+       $j('input#anagramListClose').show();
+       $j('#anagramListDisplay').show();
+       $j('.sequenceCreatedWidgetDisplay').hide();
+       }
+       );
+       $j('input#anagramListClose').click(
+       function($je) {
+       $j('#anagramListDisplay').hide();
+       $j('.sequenceCreatedWidgetDisplay').show();
+       }
+       );
+       });
 
-// $j(document).ready(  function() {    $j('input#sequencerOpen').click(    function($je) {    $j('#sequencerWidgetDisplay').show();    $j('#anagramListDisplay').hide();    $j('input#anagramListOpen').hide();    $j('input#sequencerOpen').hide();    $j('#kathyonu').hide();    $j('.kathyonu').show();    }    ); });
+$j(document).ready(  function() {
+       $j('input#sequencerOpen').click(
+       function($je) {
+       $j('#sequencerWidgetDisplay').show();
+       $j('#anagramListDisplay').hide();
+       $j('input#anagramListOpen').hide();
+       $j('input#sequencerOpen').hide();
+       $j('#kathyonu').hide();
+       $j('.kathyonu').show();
+       }
+       ); });
 
-// $j(document).ready(  function() {    $j('input#sequencerClose').click(function($je) {    $j('.sequenceCreatedWidgetDisplay').show();    $j('#sequencerWidgetDisplay').hide();    $j('input#anagramListOpen').show();    $j('input#sequencerOpen').show();    $j('.kathyonu').hide();    $j('#kathyonu').show();    })    });
+$j(document).ready(  function() {
+       $j('input#sequencerClose').click(function($je) {
+       $j('.sequenceCreatedWidgetDisplay').show();
+       $j('#sequencerWidgetDisplay').hide();
+       $j('input#anagramListOpen').show();
+       $j('input#sequencerOpen').show();
+       $j('.kathyonu').hide();
+       $j('#kathyonu').show();
+       })
+       });
 
 $j(document).ready(
   $j('input#sequence_submit').bind(
@@ -12649,9 +12683,163 @@ $j(document).ready(
   })
 );
   
-$j(document).ready(  function() {    $j('#anagram form input#anagram_text').bind({    focusin:function(event) {    $j('#anagram form input#anagram_text').css('backgroundColor', 'white');    $j('#anagramListDisplay').hide();    $j('#sequencerWidgetDisplay').hide();    $j('.sequenceCreatedWidgetDisplay').show();    $j('.formSequenceCreated input#sequence_text').css('backgroundColor', 'white');    $j('.formSequenceCreated input#sequence_creation').css('backgroundColor', 'white');    $j('.formSequenceCreated input#sequence_complete').css('backgroundColor', 'white');    $j('.formSequenceCreated input#sequence_lexigram').css('backgroundColor', 'white');    $j('.formSequenceCreated input#sequence_singular').css('backgroundColor',   'white');    }    });    });
-$j(document).ready(  function() {    $j('#anagram form input#anagram_text').bind({    focusout:function(event) {    $j('#anagram form input#anagram_text').css('backgroundColor', 'pink');    $j('.formSequenceCreated input#sequence_text').css('backgroundColor', 'pink');    $j('.formSequenceCreated input#sequence_creation').css('backgroundColor', 'pink');    $j('.formSequenceCreated input#sequence_complete').css('backgroundColor', 'pink');    $j('.formSequenceCreated input#sequence_lexigram').css('backgroundColor', 'pink');    $j('.formSequenceCreated input#sequence_singular').css('backgroundColor', 'pink');    }    });    });
-$j(document).ready(  function() {    $j('#anagram form input#description').bind({    focusin:function(event) {    $j('#anagramListDisplay').hide();    $j('#sequencerWidgetDisplay').hide();    $j('.sequenceCreatedWidgetDisplay').show();    }    });    });
-$j(document).ready(  function() {    $j('#anagram form input#reference').bind({    focusin:function(event) {    $j('#anagramListDisplay').hide();    $j('#sequencerWidgetDisplay').hide();    $j('.sequenceCreatedWidgetDisplay').show();    }    });    });
-$j(document).ready(  function() {    $j('#reset').bind(    'click',function(event) {    $j('#anagram form input#anagram_text').empty();    $j('#anagram form input#description').empty();    $j('#anagram form input#reference').empty();    $j('#sequence_created form input#sequence_text').empty();    $j('#sequence_created form input#sequence_creation').empty();    $j('#sequence_created form input#sequence_complete').empty();    $j('#sequence_created form input#sequence_lexigram').empty();    $j('#sequence_created form input#sequence_singular').empty();    }    );  });
+$j(document).ready(
+  function() {
+    $j('#anagram form input#anagram_text').bind({
+     focusin:function(event) {
+       $j('#anagram form input#anagram_text').css('backgroundColor', 'white');
+       $j('#anagramListDisplay').hide();
+       $j('#sequencerWidgetDisplay').hide();
+       $j('.sequenceCreatedWidgetDisplay').show();
+       $j('.formSequenceCreated input#sequence_text').css('backgroundColor', 'white');
+       $j('.formSequenceCreated input#sequence_creation').css('backgroundColor', 'white');
+       $j('.formSequenceCreated input#sequence_complete').css('backgroundColor', 'white');
+       $j('.formSequenceCreated input#sequence_lexigram').css('backgroundColor', 'white');
+       $j('.formSequenceCreated input#sequence_singular').css('backgroundColor', 'white');
+       }
+       });
+       });
+   
+$j(document).ready(  function() {
+       $j('#anagram form input#anagram_text').bind({
+       focusout:function(event) {
+       $j('#anagram form input#anagram_text').css('backgroundColor', 'pink');
+       $j('.formSequenceCreated input#sequence_text').css('backgroundColor', 'pink');
+       $j('.formSequenceCreated input#sequence_creation').css('backgroundColor', 'pink');
+       $j('.formSequenceCreated input#sequence_complete').css('backgroundColor', 'pink');
+       $j('.formSequenceCreated input#sequence_lexigram').css('backgroundColor', 'pink');
+       $j('.formSequenceCreated input#sequence_singular').css('backgroundColor', 'pink');
+       }
+       });
+       });
+$j(document).ready(  function() {
+       $j('#anagram form input#description').bind({
+       focusin:function(event) {
+       $j('#anagramListDisplay').hide();
+       $j('#sequencerWidgetDisplay').hide();
+       $j('.sequenceCreatedWidgetDisplay').show();
+       }
+       });
+       });
+$j(document).ready(  function() {
+       $j('#anagram form input#reference').bind({
+       focusin:function(event) {
+       $j('#anagramListDisplay').hide();
+       $j('#sequencerWidgetDisplay').hide();
+       $j('.sequenceCreatedWidgetDisplay').show();
+       }
+       });
+       });
+$j(document).ready(  function() {
+       $j('#reset').bind(
+       'click',function(event) {
+       $j('#anagram form input#anagram_text').empty();
+       $j('#anagram form input#description').empty();
+       $j('#anagram form input#reference').empty();
+       $j('#sequence_created form input#sequence_text').empty();
+       $j('#sequence_created form input#sequence_creation').empty();
+       $j('#sequence_created form input#sequence_complete').empty();
+       $j('#sequence_created form input#sequence_lexigram').empty();
+       $j('#sequence_created form input#sequence_singular').empty();
+       }
+       );
+       });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$j(document).ready(  function() {
+    $j('input#anagram_text').bind(
+      'focusin',function(event) {    
+        if ($j('input#anagram_text').val() === "Enter data, then tab out") {
+        $j('input#anagram_text').val("");
+      }
+      else  if ($j('input#anagram_text').val() === "Please Enter Your Data") {
+        $j('input#anagram_text').val("");
+      }
+      else
+      {
+      $j('#anagram_text').focus();    }    }    )
+      .bind(
+        'focusout',function(event) {
+          if (this.value !== '') {
+            if (this.value !== "Enter data, then tab out") {
+              var $jnewsequence = document.getElementById('anagram_text');
+              var $jsequencetext = $j('input#anagram_text').serialize();
+              var $jsequenceSubmit = document.getElementById('sequence_submit');
+              $jnewsequence.form.onsubmit = function() { return false; };
+              $jsequenceSubmit.form.submit = function() { return false; };
+              var $jtext_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/text_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_text").val($jtext_return_value);
+                
+              var $jlexi_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/lexigram_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_lexigram").val($jlexi_return_value);
+
+              var $jcreation_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/creation_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_creation").val($jcreation_return_value);
+
+              var $jcomplete_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/complete_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_complete").val($jcomplete_return_value);
+
+              var $jsingular_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/singular_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_singular").val($jsingular_return_value);
+                $j('input#sequence_lense').focus();
+            }
+          }
+          else
+          {
+            $j('input#anagram_text').val('Please Enter Your Data');
+            $j('input#sequence_text').val("");
+            $j('input#sequence_creation').val("");
+            $j('input#sequence_complete').val("");
+            $j('input#sequence_lexigram').val("");
+            $j('input#sequence_singular').val("");
+            $j('input#sequence_lense').val("");
+          }
+    });
+  });
+
+
 

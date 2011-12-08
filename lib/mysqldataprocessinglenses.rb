@@ -56,7 +56,7 @@ module Mysqldataprocessinglenses
         sequence_complete = sequence_text.split(//).sort.join('').strip unless nil
         sequence_lexigram = lexigram_sequencer(line.to_textual.de_comma) unless nil
         sequence_singular = sequence_complete.squeeze unless nil
-        description = "star arts lines"
+        description = "americans star art"
         reference = "americans"
         anagram = 0
         name = 0

@@ -5,7 +5,7 @@ body { background: #fff; color: #333; margin-top: 25px; margin-bottom: 30px; mar
 body, p, ol, ul, td { font-family: verdana, arial, helvetica, sans-serif; font-size: 13px; line-height: 18px; }
 div.field, div.actions { margin-bottom: 10px; }
 form#sequences > input#submit { display: none; }
-input#sequencetext { display: inline; margin-bottom: 15px; margin-left: 13px; padding-left: 5px; border-bottom: 4px solid #000; border-left: 3px solid #000; line-height: 120%; font-size: 120%; width: 800px; }
+input#sequencetext { margin-bottom: 11px; margin-left: 2px; padding-left: 5px; border-bottom: 4px solid #000; border-left: 3px solid #000; line-height: 120%; font-size: 110%; width: 430px; }
 pre { background: #eee; padding: 10px; font-size: 11px; }
 #anagramListClose { position: relative; top: -275px; margin-left: -26px; width: 66%; }
 #anagramListDisplay { display: none; position: relative; top: 2px; left: -10px; padding-top: 1px; width: 180%; }
@@ -20,8 +20,8 @@ pre { background: #eee; padding: 10px; font-size: 11px; }
 #errorExplanation h2 { text-align: left; font-weight: bold; padding: 5px 5px 5px 15px; font-size: 12px; margin: -7px; margin-bottom: 0px; background: #c00; color: #fff; }
 #errorExplanation ul li { font-size: 12px; list-style: square; }
 #errorExplanation { width: 450px; border: 2px solid red; padding: 7px; padding-bottom: 0; margin-bottom: 20px; background: #f0f0f0; }
-#kathyonu { border-right: 78px solid purple; border-left: 78px solid purple; position: relative; top: 1px; left: -11px; padding-top: 3px; padding-bottom: 1px; margin-top: 5px; margin-bottom: 1px;  text-align: center; width: 420px; z-index: 11; font-size: 85%; }
-#new_sequence_box { font-size: 120%; margin-top: -11px; margin-bottom: 5px; margin-left: 11px; }
+#kathyonu { border-right: 78px solid purple; border-left: 78px solid purple; position: relative; top: -5px; left: 8px; padding-top: 3px; padding-bottom: 1px; margin-bottom: 1px;  text-align: center; width: 300px; z-index: 11; font-size: 80%; }
+#new_sequence_box { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
 #notice { color: green; }
 #reset { background: #99CCFF; color: purple; font-size: 80%; margin-right: 10px; padding-right: 10px; text-align: right; }
 #sequenceCompleteHtml { border: 1px solid navy; width: 50%; margin-left: 4px; margin-right: 4px; padding-left: 8px; padding-bottom: 2px; }
@@ -32,11 +32,12 @@ pre { background: #eee; padding: 10px; font-size: 11px; }
 #sequenceLexigramHtml { border: 1px solid navy; width: 50%; margin-left: 4px; margin-right: 4px; padding-left: 8px; padding-bottom: 2px; }
 #sequenceSingularHtml { border: 1px solid navy; width: 50%; margin-left: 4px; margin-right: 4px; padding-left: 8px; padding-bottom: 2px; }
 #sequenceTextHtml { border: 1px solid navy; width: 50%; margin-left: 4px; margin-right: 4px; padding-left: 8px; padding-bottom: 2px; }
-#sequence_sequence_complete { border: 1px solid red; margin-top: 5px; padding: 5px; }
-#sequence_sequence_creation { border: 1px solid red; margin-top: 5px; padding: 5px; }
-#sequence_sequence_lexigram { border: 1px solid red; margin-top: 5px; padding: 5px; }
-#sequence_sequence_singular { border: 1px solid red; margin-top: 5px; padding: 5px; }
-#sequence_sequence_text { border: 1px solid red; margin-top: 5px; padding: 5px; }
+#sequence_sequence_complete { border-top: 0px; border-right: 0px; border-bottom: 1px solid red; border-left: 2px solid red; margin-top: 4px; margin-left: 1px; padding: 5px; }
+#sequence_sequence_creation { border-top: 0px; border-right: 0px; border-bottom: 1px solid red; border-left: 2px solid red; margin-top: 4px; margin-left: 7px; padding: 5px; }
+#sequence_sequence_lexigram { border-top: 0px; border-right: 0px; border-bottom: 1px solid red; border-left: 2px solid red; margin-top: 4px; margin-left: 4px; padding: 5px; }
+#sequence_sequence_singular { border-top: 0px; border-right: 0px; border-bottom: 1px solid red; border-left: 2px solid red; margin-top: 4px; margin-left: 8px; padding: 5px; }
+#sequence_sequence_text { border-top: 0px; border-right: 0px; border-bottom: 1px solid red; border-left: 2px solid red; margin-top: 4px; margin-left: 34px; padding: 5px; }
+#sequence_lense { border-top: 0px; border-right: 0px; border-bottom: 1px solid red; border-left: 2px solid red;  margin-top: 5px; margin-left: 79px; padding: 5px; }
 #sequencerOpen { position: relative; bottom: 21px; left: -50px; margin-bottom: 3px; margin-left: 45px; text-align: center; width: 460px; z-index: 13; }
 #sequencerClose { position: absolute; bottom: -24px; left: -30px; width: 117%; z-index: 16; }
 #sequencerFirst { border: 2px solid olive; margin-top: 10px; margin-bottom: 10px; margin-left: 10px; font-size: 85%; padding: 10px; width: 55%; }
@@ -46,7 +47,6 @@ pre { background: #eee; padding: 10px; font-size: 11px; }
 #sequencetext_submit { display: none; }
 #sequencetextnote { position: relative; top: -14px; margin-left: 15px; font-size: 80%; }
 #single { border: 1px solid red; margin-bottom: 7px; }
-#time { position: relative; top: -3px; font-size: 80%; margin-left: 1px; }
 .currentTime { border: 1px solid blue; margin-top: 0; margin-right: 10%; font-size: 140%; line-height: 150%; }
 .anagramEntry { border: 13px solid navy; border-left: 14px solid aqua; border-right: 14px solid aqua; padding-top: 8px; padding-left: 8px; }
 .anagramList ul li { background: #FFFDDA; line-height: 21px; margin: 1px; }

@@ -15,15 +15,15 @@
 
   <div class="field">
     <%= f.label :sequence_text %>    
-    <%= f.text_field :sequence_text, :readonly => true, :size => 40 %>
+    <%= f.text_field :sequence_text, :readonly => true, :size => 42 %>
   </div>
   <div class="field">
     <%= f.label :sequence_creation %>
-    <%= f.text_field :sequence_creation, :readOnly => true, :size => 35 %>
+    <%= f.text_field :sequence_creation, :readOnly => true, :size => 42 %>
   </div>
   <div class="field">
     <%= f.label :sequence_complete %>
-    <%= f.text_field :sequence_complete, :readOnly => true, :size => 30 %>
+    <%= f.text_field :sequence_complete, :readOnly => true, :size => 42 %>
   </div>
   <!--div class="field"-->
   <!--%= f.label :sequence_complete_reverse %><br /-->
@@ -31,19 +31,23 @@
   <!--/div-->
   <div class="field">
     <%= f.label :sequence_lexigram %>
-    <%= f.text_field :sequence_lexigram, :readOnly => true, :size => 26 %>
+    <%= f.text_field :sequence_lexigram, :readOnly => true, :size => 33 %>
   </div>
   <div class="field">
     <%= f.label :sequence_singular %>
     <%= f.text_field :sequence_singular, :readOnly => true, :size => 26 %>
   </div>
   <div class="field">
+    <%= f.label :lense %> ?    
+    <%= f.text_field :lense, :size => 40 %>
+  </div>
+  <div class="field">
     <%= f.label :description %>
-    <%= f.text_field :description, :size => 100 %>
+    <%= f.text_field :description, :size => 65 %>
   </div>
   <div class="field">
     <%= f.label :reference %>
-    <%= f.text_field :reference, :size => 100 %>
+    <%= f.text_field :reference, :size => 65 %>
   </div>
   <div class="field">
     <%= f.label :anagram %>
