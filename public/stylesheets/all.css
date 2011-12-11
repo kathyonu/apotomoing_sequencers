@@ -14,14 +14,24 @@ pre { background: #eee; padding: 10px; font-size: 11px; }
 #countQuotes { margin-left: 50px; margin-bottom: 3px; padding: 2px; }
 #countSequenceCreateds { margin-left: 50px; margin-bottom: 3px; padding: 2px; }
 #countSequences { margin-left: 50px; margin-bottom: 3px; padding: 2px; }
+#createspace    { margin-left: 16px; }
+#createspacer   { margin-left: 12px; }
+#createspacers  { margin-left: 5px; }
+#createspaces   { margin-left: 8px; }
+#createspacing  { margin-left: 14px; }
+#createspacings { margin-left: 10px; }
+#createspaceful { margin-left: 13px; }
 #currentTime { border: 6px solid red; padding: 6px; margin-top: 3px; margin-bottom: 3px; margin-left: 50px; font-size: 110%; line-height: 110%; }
 #date { font-weight: bold; line-height: 150%; margin-left: 5px; }
 #datepick { border: 14px solid navy; border-left: 14px solid aqua; border-right: 4px solid navy; position: relative; bottom: -47px; font-size: 75%; margin-left: 403px; padding: 4px; text-align: center; width: 175px; }
 #errorExplanation h2 { text-align: left; font-weight: bold; padding: 5px 5px 5px 15px; font-size: 12px; margin: -7px; margin-bottom: 0px; background: #c00; color: #fff; }
 #errorExplanation ul li { font-size: 12px; list-style: square; }
 #errorExplanation { width: 450px; border: 2px solid red; padding: 7px; padding-bottom: 0; margin-bottom: 20px; background: #f0f0f0; }
-#kathyonu { border-right: 78px solid purple; border-left: 78px solid purple; position: relative; top: -5px; left: 8px; padding-top: 3px; padding-bottom: 1px; margin-bottom: 1px;  text-align: center; width: 300px; z-index: 11; font-size: 80%; }
-#new_sequence_box { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
+#kathyonu { border-right: 78px solid purple; border-left: 78px solid purple; position: relative; top: -5px; left: -1px; padding-top: 3px; padding-bottom: 1px; margin-bottom: 1px;  text-align: center; width: 300px; z-index: 11; font-size: 80%; }
+#new_box_anagram  { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
+#new_box_sequence { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
+#new_entry_anagram  { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
+#new_entry_sequence  { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
 #notice { color: green; }
 #reset { background: #99CCFF; color: purple; font-size: 80%; margin-right: 10px; padding-right: 10px; text-align: right; }
 #sequenceCompleteHtml { border: 1px solid navy; width: 50%; margin-left: 4px; margin-right: 4px; padding-left: 8px; padding-bottom: 2px; }

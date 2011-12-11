@@ -1,3 +1,11 @@
+#new_box_anagram="New Entry"
+
+.new_entry_anagram
+  = form_tag "" do
+    = text_field_tag "sequencetext"
+
+    = submit_tag "Submit Sequence", :id => 'sequencetext_submit', :name => 'sequencetext_submit'
+
 .anagramWidgetDisplay
 
   = render 'form'
