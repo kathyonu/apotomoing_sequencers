@@ -6,8 +6,9 @@
 > In your browser, go to http://localhost:3000/sequences/new
 > After you enter your text into the entry box,
 > when you tab or click out of the entry box, the five sequences
-> will be generated and entered into the sequence form,
-> without page change, using javascript with jQuery.
+> are generated and entered into the sequence form,
+> without page change, using javascript with jQuery,
+> and our five sequencers written in Ruby.
 
 # Getting Started
 ## In your Terminal
@@ -22,12 +23,12 @@
 
 ### After your server fires up, go to your browser : 
 
-*	http://localhost:3000/sequences/new     <= five sequencers now processing with Ruby, via jQuery ajax calls.
+*	http://localhost:3000/sequences/new     <= five sequencers now processing with Ruby via jQuery ajax calls, now in use in production with over 12,000,000 rows in database.
 *       http://localhost:3000/                  <= root address, is not fully functioning yet.  Use the above address.
-> The sequences/new address will show the entire app's design in one table. 
+> The sequences/new address shows the entire application design and data in one table. 
 > The sequences table is a primitive setup allowing massive duplicates in the five sequences. 
 > The sequences table was added so you can see how the entire application can exist in one table. 
-> At this time, the widgets at root are not fully functioning, only the sequences/new address is fully working.
+> The widgets at root are not yet fully functioning, only the sequences/new address is fully working.
 
 ## Description:
 
@@ -84,7 +85,6 @@ If we use, *peace on earth good will all*, as the created phrase, then its seque
 5. sequence_singular : acdeghilnoprtw
 
 The application will prove useful to anyone who loves and works with words and has need to find or verify the sequences that creates any name word or phrase. 
-Those search methods will be added after we have the application fully working.
 
 ### Other sequencers we can add include :
 
