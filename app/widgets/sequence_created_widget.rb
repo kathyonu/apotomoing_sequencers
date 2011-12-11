@@ -16,7 +16,9 @@ class SequenceCreatedWidget < Apotomo::Widget
     render
   end
 
-  ### #TODO this needs to be converted for ajax to run, not apotomo
+  ### #TODO this needs to be converted for ajax to run, not apotomo : this note has been here a long time.
+  ### #update on todo : five sequencers now working on sequence_created widget via jQuery in almost-ready.js : 20111211 
+  ### #TODO these methods below are not being used by the system (or are they as widget's accessors) and i believe can now be deleted as the sequencerings are being done by the js.erb files in app/views/_text_sequenced.js.erb etc
   def sequence_text(evt)
     anagram_text_entry = evt[:anagram_text]
     @sequence_text = anagram_text_entry.to_textual.de_comma.strip

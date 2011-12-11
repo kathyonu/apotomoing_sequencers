@@ -5,10 +5,11 @@ module Text
 
   puts "Text Module has included the Textual module"  # for use in console
 
+  attr_accessor :anagram_text
   attr_accessor :sequencetext
   attr_accessor :text_sequence
   attr_accessor :text_sequenced
-    
+
   def text_sequenced
     @text_sequenced = text_sequencer(sequencetext)
   end
