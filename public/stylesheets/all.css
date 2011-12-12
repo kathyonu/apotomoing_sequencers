@@ -101,6 +101,7 @@ pre { background: #eee; padding: 10px; font-size: 11px; }
 .noteSequenceCreated { background: #F9C8D8; margin-top: 10px; margin-left: 10px; }
 .quoteText { border-top: 17px solid teal; border-right: 12px solid teal; border-bottom: 3px solid teal; border-left: 40px solid teal; margin-left: 30px; margin-right: 10px; padding-top: 2px; padding-bottom: 2px; padding-left: 15px; font-style: italic; text-align: left; }
 .sequenceCreatedWidgetDisplay { background: #FFFDDA; border-top: 5px solid purple; border-right: 11px solid purple; border-bottom: 5px solid purple; border-left: 11px solid purple; margin-right: 10px; margin-bottom: 15px; margin-left: 10px; z-index: 12; }
+.sequenceEdit > form > input#sequencetext { margin-bottom: 11px; margin-left: 2px; padding-left: 5px; border-bottom: 4px solid #000; border-left: 3px solid #000; line-height: 120%; font-size: 110%; width: 430px; }
 .sequencerWidgetDisplay { background: white; border-top: 5px solid purple; border-right: 11px solid purple; border-bottom: 5px solid purple; border-left: 11px solid purple; font-size: 90%; margin-left: 14px; margin-right: 14px; margin-bottom: 5px; padding: 10px; width: 80%; z-index: 21; }
 .sequencesubmit { border: 2px solid yellow; background: yellow; color: black; font-size: 130%; padding-left: 45px; }
 .small { font-size: 75%; }

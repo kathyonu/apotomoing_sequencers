@@ -21,7 +21,7 @@ $j(document).ready(  function() {
     }
   });
   
-// FOCUSIN on input#SEQUENCETEXT
+// FOCUSIN on '.new_entry_sequence form input#sequencetext'
 $j(document).ready(  function() {
     $j('.new_entry_sequence form input#sequencetext').bind(
       'focusin',function(event) {    
@@ -38,29 +38,30 @@ $j(document).ready(  function() {
         'focusout',function(event) {
           if (this.value !== '') {
             if (this.value !== "Enter data, then tab out") {
-              var $jnewsequence = document.getElementById('sequencetext');
               var $jsequencetext = $j('.new_entry_sequence form input#sequencetext').serialize();
+              var $jnewsequence = document.getElementById('sequencetext');
               var $jsequenceSubmit = document.getElementById('sequence_submit');
               $jnewsequence.form.onsubmit = function() { return false; };
               $jsequenceSubmit.form.submit = function() { return false; };
               var $jtext_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/text_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_text").val($jtext_return_value);
                 $j("input#sequence_sequence_text").val($jtext_return_value);
-                
               var $jlexi_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/lexigram_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_lexigram").val($jlexi_return_value);
                 $j("input#sequence_sequence_lexigram").val($jlexi_return_value);
-
               var $jcreation_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/creation_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_creation").val($jcreation_return_value);
                 $j("input#sequence_sequence_creation").val($jcreation_return_value);
-
               var $jcomplete_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/complete_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_complete").val($jcomplete_return_value);
                 $j("input#sequence_sequence_complete").val($jcomplete_return_value);
-
               var $jsingular_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/singular_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_singular").val($jsingular_return_value);
                 $j("input#sequence_sequence_singular").val($jsingular_return_value);
                 $j('input#sequence_lense').focus();
             }
@@ -78,6 +79,67 @@ $j(document).ready(  function() {
     });
   });
     
+// FOCUSIN on '.new_edit form input#sequencetext'
+$j(document).ready(  function() {
+    $j('.sequence_edit form input#sequencetext').bind(
+      'focusin',function(event) {    
+        if ($j('.sequence_edit form input#sequencetext').val() === "Enter data, then tab out") {
+        $j('.sequence_edit form input#sequencetext').val("");
+      }
+      else  if ($j('.sequence_edit form input#sequencetext').val() === "Please Enter Your Data") {
+        $j('.sequence_edit form input#sequencetext').val("");
+      }
+      else
+      {
+      $j('.sequence_edit form input#sequencetext').focus();    }    }    )
+      .bind(
+        'focusout',function(event) {
+          if (this.value !== '') {
+            if (this.value !== "Enter data, then tab out") {
+              var $jsequencetext = $j('.sequence_edit form input#sequencetext').serialize();
+              var $jnewsequence = document.getElementById('sequencetext');
+              var $jsequenceSubmit = document.getElementById('sequence_submit');
+              $jnewsequence.form.onsubmit = function() { return false; };
+              $jsequenceSubmit.form.submit = function() { return false; };
+              var $jtext_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/text_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_text").val($jtext_return_value);
+                $j("input#sequence_sequence_text").val($jtext_return_value);
+                
+              var $jlexi_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/lexigram_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_lexigram").val($jlexi_return_value);
+                $j("input#sequence_sequence_lexigram").val($jlexi_return_value);
+
+              var $jcreation_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/creation_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_creation").val($jcreation_return_value);
+                $j("input#sequence_sequence_creation").val($jcreation_return_value);
+
+              var $jcomplete_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/complete_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_complete").val($jcomplete_return_value);
+                $j("input#sequence_sequence_complete").val($jcomplete_return_value);
+
+              var $jsingular_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/singular_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                $j("input#sequence_singular").val($jsingular_return_value);
+                $j("input#sequence_sequence_singular").val($jsingular_return_value);
+                $j('input#sequence_lense').focus();
+            }
+          }
+          else
+          {
+            $j('.sequence_edit form input#sequencetext').val('Please Enter Your Data');
+//            $j('input#sequence_text').val("");
+  //          $j('input#sequence_creation').val("");
+    //        $j('input#sequence_complete').val("");
+      //      $j('input#sequence_lexigram').val("");
+        //    $j('input#sequence_singular').val("");
+          //  $j('input#sequence_lense').val("");
+          }
+    });
+  });
 
 $j(document).ready(  function() {
        $j('input#anagramListOpen').click(

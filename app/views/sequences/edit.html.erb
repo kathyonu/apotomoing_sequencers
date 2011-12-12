@@ -1,6 +1,13 @@
+<div class="links">
+  <%= link_to 'To Root', :root %> | 
+  <%= link_to 'Show This Sequence', @sequence %> |
+  <%= link_to 'All Sequences', sequences_path %> |
+  <%= link_to 'New Sequence', new_sequence_path %>
+</div>
+
 <h1>Editing Sequence</h1>
 
-<div class="field">
+<div class="sequence_edit">
   <%= form_tag "" do %>
   <%= text_field_tag "sequencetext" %><br />
   <span id="sequencetextnote">Enter data, then tab out</span>
