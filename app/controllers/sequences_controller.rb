@@ -54,7 +54,7 @@ class SequencesController < ApplicationController
     @sequence = Sequence.new(params[:sequence])
     respond_to do |format|
       if @sequence.save
-        format.html { redirect_to(@sequence, :id => @sequence.id, :notice => "Your entry was successfully created to the database as ..") }       # THIS WORKS
+        format.html { redirect_to(@sequence, :id => @sequence.id, :notice => "Your entry was successfully created to the database as ..") }
         format.xml  { render :xml => @sequence, :status => :created, :location => @sequence }
       else
         format.html { render :action => "new" }

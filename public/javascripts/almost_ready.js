@@ -6,6 +6,7 @@ $j(document).ready(  function() {    $j('#anagram form input#anagramsubmit').hid
 
 $j(document).ready(  function() {    $j('input#sequencetext_submit').hide();    });
 
+// flashes and sets the text for the user entry box in widgets/anagram/display.html.haml
 $j(document).ready(  function() {
     var $jabba = $j('.new_entry_sequence form input#sequencetext').val();
     if ($jabba === "") {
@@ -222,46 +223,8 @@ $j(document).ready(  function() {
        );
        });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// FOCUSIN on #anagram form input#anagram_text
+// FOCUSIN on .new_entry_anagram > form > input#sequencetext
+// FOCUSOUT generates the five sequences to sequence_created widget form, and the anagram_text to the anagram widget form.
 $j(document).ready(  function() {
     $j(".new_entry_anagram > form > input#sequencetext").bind(
       'focusin',function(event) {    
