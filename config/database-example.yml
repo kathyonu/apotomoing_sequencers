@@ -1,38 +1,25 @@
-# mysql
-defaults: &defaults
-  adapter: mysql
-  encoding: utf8
-  username: root or username      # change 
-  password: "your password"       # change
-  socket: /tmp/mysql.sock
-  pool: 5
- #host: localhost
-  host: 127.0.0.1          # one or the other will work
-
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
 development:
   adapter: sqlite3
-  encoding: utf8
-  username: root or username      # change 
-  password: "your password"       # change
- #socket: /tmp/mysql.sock         # uncomment if you use mysql adapter
+  database: db/development.sqlite3
   pool: 5
- #host: localhost
-  host: 127.0.0.1          # one or the other will work 
-  reconnect: false
-  database: sequencers_development
   timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  reconnect: false
-  database: sequencers_test
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
   timeout: 5000
-  <<: *defaults
 
 production:
-  reconnect: false
-  database: sequencers_production
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
   timeout: 5000
-  <<: *defaults
