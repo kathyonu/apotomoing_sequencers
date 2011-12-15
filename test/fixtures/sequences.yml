@@ -7,12 +7,13 @@ one:
   sequence_complete: enootw
   sequence_lexigram: enotw
   sequence_singular: enotw
+  sequence_lense: twoone
   description: testing
   reference: tester
   anagram: true
   name: false
   phrase: false
-  sexualities: false
+  research: false
   external: false
   internal: false
 
@@ -23,11 +24,12 @@ two:
   sequence_complete: enooot
   sequence_lexigram: enoot
   sequence_singular: enot
+  sequence_lense: onetwo
   description: test
-  reference: sequences-yml
+  reference: sequencesyml
   anagram: true
   name: false
   phrase: false
-  sexualities: false
+  research: false
   external: false
   internal: false
