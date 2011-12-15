@@ -70,8 +70,8 @@ module Mysqldataprocessinginternals
       sexualities = 0
       external = 0
       internal = 1
-      created_at = "2011-11-29 11:11:00"
-      line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\n"
+      created_at = "2011-12-12 12:12:00"
+      line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{created_at}\n"
       queue << line
       break unless line
       consumer.transfer queue
@@ -83,12 +83,13 @@ module Mysqldataprocessinginternals
     after_break
   end
 
-    # after_break is used at end of fiber method doing_internal_lines to end process, and save the file addended to
-	# to load the data produced by the fiber above use these commands in mysql console :
-	# in Terminal $ cd ./desideratus/apotomoing_sequencers
-	#    $ mysql
+
+    # after_break is used at end of fiber method doing_anagram_lines to end process, and save the file addended to
+    # to load the data produced by the fiber above use these commands in mysql console :
+    # in Terminal $ cd ./desideratus/apotomoing_sequencers
+    #    $ mysql
     #    mysql> use sequencers_production
-	#    mysql> LOAD DATA LOCAL INFILE './tmp/database_dones/done_internals/insert_internals_lines-mysql-singular-sorted-uniqued-01.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at);
+    #    mysql> LOAD DATA LOCAL INFILE './tmp/database_dones/done_internals/insert_internals_lines-mysql-01.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, sequence_lense, description, reference, anagram, name, phrase, research, external, internal, created_at);
   def after_break
     open("./tmp/database_dones/done_internals/insert_internals_lines-mysql-singular-sorted-uniqued-01.txt", "r") do |f| 
    #open("./tmp/database_dones/done_internals/insert_internals_lines-mysql-01.txt", "r") do |f| 
@@ -113,15 +114,16 @@ module Mysqldataprocessinginternals
       sequence_complete = sequence_creation.split(//).sort.join('').strip unless nil
       sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
       sequence_singular = sequence_complete.squeeze unless nil
+      sequence_lense = ''
       description = "internal search"
       reference = searched.to_s.strip
       anagram = 0
       name = 0
       phrase = 0
-      sexualities = 0
+      research = 0
       external = 0
       internal = 1
-      puts "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}\n"
+      puts "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{Time.now}\n"
       end
       end
     end
@@ -141,7 +143,7 @@ module Mysqldataprocessinginternals
       IO.foreach("./tmp/database_dones/insert_internals_lines-mysql-01.txt") do |line| 
         queue = ""
         puts queue
-        internal_searched, internal_creation, internal_complete, internal_lexigram, internal_singular, description, reference, anagram, name, phrase, sexualities, internal, external, created_at = line.split("\t")
+        internal_searched, internal_creation, internal_complete, internal_lexigram, internal_singular, description, reference, anagram, name, phrase, research, internal, external, created_at = line.split("\t")
         sequence_text = internal_searched.to_textual.de_comma unless nil
         reference = reference.to_s.strip
         line = "#{sequence_text}\t#{reference}\n"
@@ -164,6 +166,12 @@ module Mysqldataprocessinginternals
     end
   end
 
+  def
+    a = File.readlines("./tmp/database_doings/doing_internals/insert_internals_lines-mysql-01.txt")
+	sorted = a.sort do |x,y| x.downcase <=> y.downcase end   
+    uniqued = sorted.uniq
+  end
+  
   # simple output of lines of a file 
   def do_it_lines
     open(file_name).each {|x| p x; }

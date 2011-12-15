@@ -97,6 +97,7 @@ module Mysqldataprocessinganagrams
         sequence_complete = sequence_creation.split(//).sort.join('').strip unless nil
         sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
         sequence_singular = sequence_complete.squeeze unless nil
+		sequence_lense = ''
         description = "English"
         reference = "word list"
         anagram = 1
@@ -105,8 +106,8 @@ module Mysqldataprocessinganagrams
         sexualities = 0
         external = 0
         internal = 0
-        created_at = "2011-11-23 10:00:00"
-        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\n"
+        created_at = "2011-12-12 12:12:00"
+        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\n"
         queue << line
         break unless line
         consumer.transfer queue
@@ -123,7 +124,7 @@ module Mysqldataprocessinganagrams
     # in Terminal $ cd ./desideratus/apotomoing_sequencers
     #    $ mysql
     #    mysql> use sequencers_production
-    #    mysql> LOAD DATA LOCAL INFILE './tmp/insert_anagrams_hash.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at);
+    #    mysql> LOAD DATA LOCAL INFILE './tmp/insert_anagrams_hash.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, research, external, internal, created_at);
   def after_break
     open("./tmp/databse_dones/insert_anagrams_lines-mysql-01.txt", "r") do |f| 
     g = f.read
