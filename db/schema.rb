@@ -48,17 +48,17 @@ ActiveRecord::Schema.define(:version => 20111206002442) do
     t.string   "sequence_complete"
     t.string   "sequence_lexigram"
     t.string   "sequence_singular"
+    t.string   "sequence_lense"
     t.string   "description"
     t.string   "reference"
     t.boolean  "anagram"
     t.boolean  "name"
     t.boolean  "phrase"
-    t.boolean  "sexualities"
+    t.boolean  "research"
     t.boolean  "external"
     t.boolean  "internal"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "lense",             :limit => 75
   end
 
 end
