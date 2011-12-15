@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 module Mysqldataprocessingsexualities
  
- #include ApplicationHelper  # uncomment for use in conole
+ #include ApplicationHelper  # uncomment for use in console
   include Histogram
   include Textual
   include Lexigram
@@ -100,6 +100,7 @@ module Mysqldataprocessingsexualities
     # file_name = ("tmp/insert_sexual_lines-02.txt")
   def process_sex_line
     file_name = "../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt"
+   #file_name = "../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt"
     open(file_name) do |f|
       f.each do |line|
         sequence_text = line.to_textual.de_comma   
@@ -115,7 +116,7 @@ module Mysqldataprocessingsexualities
         sexualities = 1
         external = 0
         internal = 0
-        p "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}"
+        p "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{Time.now}"
       end
     end
   end
@@ -178,7 +179,39 @@ module Mysqldataprocessingsexualities
     after_break
   end
 
-
+    # doing_extract_data_less_156 processes the file line by line, 
+    # extracting only those lines with a line.length of 156 characters or less, processing it into another file
+  def doing_extract_data_less_156
+    consumer = Fiber.new do |producer, queue|
+      f = open("./tmp/database_doings/doing_researches/extracted_linesai_less-156.txt", "a") do |f| 
+         loop do
+          queue = producer.transfer(consumer, queue)
+          puts f << queue
+          queue.clear
+        end
+        raise StopIteration
+      end
+    end
+    producer = Fiber.new do |consumer, queue|
+      IO.foreach("./tmp/mega_files/995mb_sexual_lines/unique_sexual_linesai") do |line| 
+        queue = ""
+        puts queue
+        extracted_data = line.to_textual.de_comma
+        if extracted_data.length > 156
+          puts "line greater than 156 characters, not used"
+        end
+        if extracted_data.length <= 156 
+          queue << "#{extracted_data}\n"
+        end
+        break unless line
+        consumer.transfer queue
+        queue.clear
+      end
+      raise StopIteration
+    end  
+    consumer.transfer(producer, [])
+    after_break
+  end
 
     # needs to be tested : 20111116
     # this method sorts and uniques any sized file
@@ -211,11 +244,6 @@ module Mysqldataprocessingsexualities
     consumer.transfer(producer, [])
     after_break
   end
-
-
-
-
-
 
     # this method reads file in one gulp then runs the sort and then the uniq on it
     # this method outputs to screen

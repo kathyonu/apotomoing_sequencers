@@ -23,17 +23,13 @@ module Mysqldataprocessingexternals
 	# in Terminal $ cd ./desideratus/apotomoing_sequencers
 	#    $ mysql
     #    mysql> use sequencers_production
-	#    mysql> LOAD DATA LOCAL INFILE './tmp/insert_externals.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at);
+    #    mysql> LOAD DATA LOCAL INFILE './tmp/database_doings/doing_externals/insert_externals_hash_sorted.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, sequence_lense, description, reference, anagram, name, phrase, research, external, internal, created_at);
   def after_break
-   #open("./tmp/insert_externals_hash.txt", "r") do |f|
-    open("./tmp/database_dones/insert_externals_lines_mysql-01.txt", "r") do |f| 
-   #open("./tmp/database_dones/insert_externals_sorted.txt", "r") do |f| 
+    open("./tmp/database_doings/doing_externals/insert_externals_hash.txt", "r") do |f| 
     g = f.read
-   #puts g    # uncommenting this line line causes each line of data to show on your screen as it is output to the file
     f.close
-   #exit(puts "Processing is complete >> ./tmp/insert_externals_hash.txt << is closed, console has been exited")
-   #exit(puts "Processing is complete >> ./tmp/database_dones/insert_externals.txt << is closed, console has been exited")
-    exit(puts "Processing is complete >> ./tmp/database_dones/insert_externals_sorted.txt << is closed, console has been exited")
+    end
+   exit(puts "Processing is complete >> ./tmp/database_doings/doing_externals/insert_externals_hash.txt  is closed, console has been exited")
   end
 
     # this methods takes the file line by line, splitting the line into textdata tab datestring
@@ -41,9 +37,8 @@ module Mysqldataprocessingexternals
     # then, the output file can be properly sorted
   def doing_textuals_on_raw_hashes
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/insert_externals_hash.txt", "a") do |f| 
+      f = open("./tmp/database_doings/doing_externals/insert_externals_hash.txt", "a") do |f| 
          loop do
-          queue = producer.transfer(consumer, queue)
           queue = producer.transfer(consumer, queue)
           puts f << queue
           queue.clear
@@ -52,18 +47,17 @@ module Mysqldataprocessingexternals
       end
     end
     producer = Fiber.new do |consumer, queue|
-     #IO.foreach("./tmp/insert_sexual_lines-03.txt") do |line| 
-      IO.foreach("./tmp/insert_externals.txt") do |line| 
+      IO.foreach("./tmp/2011_externals_searches.txt") do |line| 
         queue = ""
         puts queue
-      external_searched, searched = line.split("\t")
-      sequence_text = external_searched.to_textual.de_comma unless nil
-      reference = searched.to_s.strip
-      line = "#{sequence_text}\t#{reference}\n"
-      queue << line
+        external_searched, searched = line.split("\t")
+        sequence_text = external_searched.to_textual.de_comma unless nil
+        reference = searched.to_s.strip
+        line = "#{sequence_text}\t#{reference}\n"
+        queue << line
         break unless line
-      consumer.transfer queue
-      queue.clear
+        consumer.transfer queue
+        queue.clear
       end
       raise StopIteration
     end  
@@ -124,8 +118,8 @@ module Mysqldataprocessingexternals
 	#### see the after_break method below for mysql load instructions
   def doing_external_lines
     consumer = Fiber.new do |producer, queue|
-     #f = open("./tmp/insert_externals_hash.txt", "a") do |f| 
-      f = open("./tmp/database_dones/insert_internals_lines-mysql-01.txt", "a") do |f| 
+      f = open("./tmp/database_doings/doing_externals/insert_externals_hash.txt", "a") do |f| 
+     #f = open("./tmp/database_dones/insert_externals_lines-mysql-01.txt", "a") do |f| 
         loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -150,11 +144,11 @@ module Mysqldataprocessingexternals
         anagram = 0
         name = 0
         phrase = 0
-        sexualities = 0
+        research = 0
         external = 1
         internal = 0
-        created_at = "2011-11-23 10:00:00"
-        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\n"
+        created_at = "2011-12-12 12:12:00"
+        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{created_at}\n"
         queue << line
 		break unless line
         consumer.transfer queue
@@ -184,10 +178,11 @@ module Mysqldataprocessingexternals
       anagram = 0
       name = 0
       phrase = 0
-      sexualities = 0
+      research = 0
       external = 1
       internal = 0
-      puts "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}\n"
+      created_at = "2011-12-12 12:12:00"
+      puts "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\n"
       end
       end
     end
