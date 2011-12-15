@@ -28,10 +28,10 @@ pre { background: #eee; padding: 10px; font-size: 11px; }
 #errorExplanation ul li { font-size: 12px; list-style: square; }
 #errorExplanation { width: 450px; border: 2px solid red; padding: 7px; padding-bottom: 0; margin-bottom: 20px; background: #f0f0f0; }
 #kathyonu { border-right: 78px solid purple; border-left: 78px solid purple; position: relative; top: -5px; left: -1px; padding-top: 3px; padding-bottom: 1px; margin-bottom: 1px;  text-align: center; width: 300px; z-index: 11; font-size: 80%; }
-#new_box_anagram  { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
-#new_box_sequence { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
-#new_entry_anagram  { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
-#new_entry_sequence  { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
+#newBoxAnagram  { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
+#newBoxSequence { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
+#newEntryAnagram  { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
+#newEntrySequence  { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
 #notice { color: green; }
 #reset { background: #99CCFF; color: purple; font-size: 80%; margin-right: 10px; padding-right: 10px; text-align: right; }
 #sequenceCompleteHtml { border: 1px solid navy; width: 50%; margin-left: 4px; margin-right: 4px; padding-left: 8px; padding-bottom: 2px; }
