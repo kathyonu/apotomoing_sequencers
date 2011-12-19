@@ -63,20 +63,31 @@ $j(document).ready(  function() {
               $jsequenceSubmit.form.submit = function() { return false; };
               var $jtext_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/text_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j("input#sequence_sequence_text").val($jtext_return_value);
-              var $jlexi_return_value = $j.ajax({
-                type: "GET",    url: "http://localhost:3000/sequences/lexigram_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j("input#sequence_sequence_lexigram").val($jlexi_return_value);
+              $j("input#sequence_sequence_text").val($jtext_return_value);
               var $jcreation_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/creation_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j("input#sequence_sequence_creation").val($jcreation_return_value);
+              $j("input#sequence_sequence_creation").val($jcreation_return_value);
               var $jcomplete_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/complete_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j("input#sequence_sequence_complete").val($jcomplete_return_value);
+              $j("input#sequence_sequence_complete").val($jcomplete_return_value);
+              var $jlexi_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/lexigram_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+              $j("input#sequence_sequence_lexigram").val($jlexi_return_value);
               var $jsingular_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/singular_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j("input#sequence_sequence_singular").val($jsingular_return_value);
-                $j('input#sequence_sequence_lense').focus();
+              $j("input#sequence_sequence_singular").val($jsingular_return_value);
+              var $jletters_text_count  = $jtext_return_value.length;
+              $j('#count_text').append($jletters_text_count);
+              var $jletters_creation_count  = $jcreation_return_value.length;
+              $j('#count_creation').append($jletters_creation_count);
+
+              var $jletters_complete_count  = $jcomplete_return_value.length;
+              $j('#count_complete').append($jletters_complete_count);
+              var $jletters_lexi_count  = $jlexi_return_value.length;
+              $j('#count_lexigram').append($jletters_lexi_count);
+              var $jletters_singular_count  = $jsingular_return_value.length;
+              $j('#count_singular').append($jletters_singular_count);
+              $j('input#sequence_sequence_lense').focus();
               }
             }
           }
