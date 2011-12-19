@@ -509,14 +509,14 @@ module Textual
     foo.gsub!(/((\s*1,?111,?747\.?\s*)|(\s*1111747\s*))/, " one million one hundred and eleven thousand seven hundred and forty seven ")
 
     foo.gsub!(/(\$\s?1,?000,?000\.?00)|(\$\s?1,?000,?000)/, " one million dollars ")
-    foo.gsub!(/(\$\s?900,?000(\.?00)?)|(\$\s?900,?000)/, " nine hundred thousand dollars ")
-    foo.gsub!(/(\$\s?800,?000(\.?00)?)|(\$\s?800,?000)/, " eight hundred thousand dollars ")
-    foo.gsub!(/(\$\s?700,?000(\.?00)?)|(\$\s?700,?000)/, " seven hundred thousand dollars ")
-    foo.gsub!(/(\$\s?600,?000(\.?00)?)|(\$\s?600,?000)/, " six hundred thousand dollars ")
-    foo.gsub!(/(\$\s?500,?000(\.?00)?)|(\$\s?500,?000)/, " five hundred thousand dollars ")
-    foo.gsub!(/(\$\s?400,?000(\.?00)?)|(\$\s?400,?000)/, " four hundred thousand dollars ")
-    foo.gsub!(/(\$\s?300,?000(\.?00)?)|(\$\s?300,?000)/, " three hundred thousand dollars ")
-    foo.gsub!(/(\$\s?200,?000(\.?00)?)|(\$\s?200,?000)/, " two hundred thousand dollars ")
+    foo.gsub!(/(\$\s?900,?000(\.00)?)|(\$\s?900,?000)/, " nine hundred thousand dollars ")
+    foo.gsub!(/(\$\s?800,?000(\.00)?)|(\$\s?800,?000)/, " eight hundred thousand dollars ")
+    foo.gsub!(/(\$\s?700,?000(\.00)?)|(\$\s?700,?000)/, " seven hundred thousand dollars ")
+    foo.gsub!(/(\$\s?600,?000(\.00)?)|(\$\s?600,?000)/, " six hundred thousand dollars ")
+    foo.gsub!(/(\$\s?500,?000(\.00)?)|(\$\s?500,?000)/, " five hundred thousand dollars ")
+    foo.gsub!(/(\$\s?400,?000(\.00)?)|(\$\s?400,?000)/, " four hundred thousand dollars ")
+    foo.gsub!(/(\$\s?300,?000(\.00)?)|(\$\s?300,?000)/, " three hundred thousand dollars ")
+    foo.gsub!(/(\$\s?200,?000(\.00)?)|(\$\s?200,?000)/, " two hundred thousand dollars ")
     foo.gsub!(/(\$\s?180,?000\.00)|(\$\s?180,?000)/, " one hundred eighty thousand dollars ")           # pristine template
     foo.gsub!(/(\$\s?179,?000\.00)|(\$\s?179,?000)/, " one hundred seventy nine thousand dollars ")     # pristine template 
     foo.gsub!(/(\$\s?178,?000\.00)|(\$\s?178,?000)/, " one hundred seventy eight thousand dollars ")    # pristine template 
@@ -528,21 +528,21 @@ module Textual
     foo.gsub!(/(\$\s?172,?000\.00)|(\$\s?172,?000)/, " one hundred seventy two thousand dollars ")      # pristine template 
     foo.gsub!(/(\$\s?171,?000\.00)|(\$\s?171,?000)/, " one hundred seventy one thousand dollars ")      # pristine template : test this one against the next one, with 11170000 
     foo.gsub!(/(\$\s?170,?000\.00)|(\$\s?170,?000)/, " one hundred seventy thousand dollars ")          # pristine template : test this one against the next one, with 11170000 
-    foo.gsub!(/(\$\s?100,?000(\.?00)?)|(\$\s?100,?000)/, " one hundred thousand dollars ")
+    foo.gsub!(/(\$\s?100,?000(\.00)?)|(\$\s?100,?000)/, " one hundred thousand dollars ")
 
-    foo.gsub!(/(\$\s?158,?235(\.?00)?)|(\$\s?158,?235\.?)/, " one hundred fifty eight thousand two hundred and thirty five dollars ")
-    foo.gsub!(/(\s+158,?235(\.?00)?\s+)|(\s+158,?235\s+)/, " one hundred fifty eight thousand two hundred and thirty five ")
+    foo.gsub!(/(\$\s?158,?235(\.00)?)|(\$\s?158,?235\.?)/, " one hundred fifty eight thousand two hundred and thirty five dollars ")
+    foo.gsub!(/(\s+158,?235(\.00)?\s+)|(\s+158,?235\s+)/, " one hundred fifty eight thousand two hundred and thirty five ")
     foo.gsub!(/(\s+158,?235\.?\s?)|(158,?235)/, " one hundred fifty eight thousand two hundred and thirty five ")
 
-    foo.gsub!(/(\$\s?111,?747(\.?00)?)/, " one hundred and eleven thousand seven hundred and forty seven dollars ")
-    foo.gsub!(/(\s+111,?747(\.?00)?)/, " one hundred and eleven thousand, seven hundred and forty seven ")
+    foo.gsub!(/(\$\s?111,?747(\.00)?)/, " one hundred and eleven thousand seven hundred and forty seven dollars ")
+    foo.gsub!(/(\s+111,?747(\.00)?)/, " one hundred and eleven thousand, seven hundred and forty seven ")
 
-    foo.gsub!(/(\$\s?100,?000(\.?00)?)|(\$\s?100,?000\.?)/, " one hundred thousand dollars ")
-    foo.gsub!(/(\s+100,?000(\.?00)?\s+)|(\s+100,?000\s+)/, " one hundred thousand ")
+    foo.gsub!(/(\$\s?100,?000(\.00)?)|(\$\s?100,?000\.?)/, " one hundred thousand dollars ")
+    foo.gsub!(/(\s+100,?000(\.00)?\s+)|(\s+100,?000\s+)/, " one hundred thousand ")
     foo.gsub!(/(\s+100,?000\.?\s?)|(100,?000)/, " one hundred thousand ")
 
-    foo.gsub!(/(\$\s?100,?001(\.?00)?)|(\$\s?100,?001\.?)/, " one hundred thousand and one dollars ")
-    foo.gsub!(/(\s+100,?001(\.?00)?\s+)|(\s+100,?001\s+)/, " one hundred thousand and one ")
+    foo.gsub!(/(\$\s?100,?001(\.00)?)|(\$\s?100,?001\.?)/, " one hundred thousand and one dollars ")
+    foo.gsub!(/(\s+100,?001(\.00)?\s+)|(\s+100,?001\s+)/, " one hundred thousand and one ")
     foo.gsub!(/(\s+100,?001\.?\s?)|(100,?001)/, " one hundred thousand and one ")
 
     foo.gsub!(/(\$\s?(90,?000\.?00?))|(\$\s?90,?000)/, " ninety thousand dollars ")
@@ -553,17 +553,15 @@ module Textual
     foo.gsub!(/(\$\s?(50,?000\.?00?))|(\$\s?50,?000)/, " fifty thousand dollars ")
     foo.gsub!(/(\$\s?(40,?000\.?00?))|(\$\s?40,?000)/, " forty thousand dollars ")
     foo.gsub!(/(\s+45,?616\s)/, " forty five thousand six hundred and sixteen ")
-    foo.gsub!(/(\$\s?30,?000(\.?00)?)|(\$\s?30,?000)/, " thirty thousand dollars ")
-    foo.gsub!(/(\$\s?20,?000(\.?00)?)|(\$\s?20,?000)/, " twenty thousand dollars ")
-	foo.gsub!(/(\$\s?17,?000(\.?00)?)/, " seventeen thousand dollars ")
-    foo.gsub!(/(\$\s?11,?747(\.?00)?)/, " eleven thousand seven hundred and forty seven dollars ")
-    foo.gsub!(/(\s?11,?747(\.?00)?)/, " eleven thousand, seven hundred and forty seven ")
-    foo.gsub!(/(\$\s?10,?00(\.?00)?)/, " ten thousand dollars ")
-    foo.gsub!(/(\s?10,?00(\.?00)?)/, " ten thousand ")
-    foo.gsub!(/(\$\s?1,?700(\.?00)?)/, " seventeen hundred dollars ")
-    foo.gsub!(/(\s?1,?700(\.?00)?)/, " seventeen hundred ")
-    foo.gsub!(/(\$\s?1,?747(\.?00)?)/, " seventeen hundred and forty seven dollars ")
-    foo.gsub!(/(\s?1,?747(\.?00)?)/, " seventeen hundred and forty seven ")
+    foo.gsub!(/(\$\s?30,?000(\.00)?)|(\$\s?30,?000)/, " thirty thousand dollars ")
+    foo.gsub!(/(\$\s?20,?000(\.00)?)|(\$\s?20,?000)/, " twenty thousand dollars ")
+	foo.gsub!(/(\$\s?17,?000(\.00)?)/, " seventeen thousand dollars ")
+    foo.gsub!(/(\$\s?11,?747(\.00)?)/, " eleven thousand seven hundred and forty seven dollars ")
+    foo.gsub!(/(\s?11,?747(\.00)?)/, " eleven thousand, seven hundred and forty seven ")
+    foo.gsub!(/(\$\s?1,?700(\.00)?)/, " seventeen hundred dollars ")
+    foo.gsub!(/(\s?1,?700(\.00)?)/, " seventeen hundred ")
+    foo.gsub!(/(\$\s?1,?747(\.00)?)/, " seventeen hundred and forty seven dollars ")
+    foo.gsub!(/(\s?1,?747(\.00)?)/, " seventeen hundred and forty seven ")
     foo.gsub!(/\$\s?1,?700\.90/, " seventeen hundred dollars and ninety cents ")
     foo.gsub!(/\$\s?1,?700\.80/, " seventeen hundred dollars and eighty cents ")
     foo.gsub!(/\$\s?1,?700\.70/, " seventeen hundred dollars and seventy cents ")
@@ -575,23 +573,21 @@ module Textual
     foo.gsub!(/\$\s?1,?700\.20/, " seventeen hundred dollars and twenty cents ")
     foo.gsub!(/\$\s?1,?700\.10/, " seventeen hundred dollars and ten cents ")
     foo.gsub!(/\$\s?1,?700\.05/, " seventeen hundred dollars and five cents ")
-    foo.gsub!(/(\$\s?10,?000(\.?00)?)/, " ten thousand dollars")                        # pristine 
-    foo.gsub!(/(\s?10,?000(\.?00)?)/, " ten thousand ")                                 # pristine 
-
-    foo.gsub!(/(\$\s?9,?000(\.?00)?)/, " nine thousand dollars")                         # pristine 
-    foo.gsub!(/(\s?9,?000(\.?00)?)/, " nine thousand ")                                  # pristine 
-
-    foo.gsub!(/(\$\s?6,?310(\.?00)?)/, " six thousand three hundred and ten dollars")   # pristine template
-    foo.gsub!(/(\$\s?6,?000(\.?00)?)/, " six thousand dollars")                         # pristine template
-    foo.gsub!(/(\s+6,?310(\.?00)?\s+)/, " six thousand three hundred and ten ")          # pristine template
-    foo.gsub!(/(\s+6,?000(\.?00)?\s+)/, " six thousand ")                                # pristine template
-    foo.gsub!(/(\$\s?5,?000(\.?00)?)/, " five thousand dollars")                       # pristine template
-    foo.gsub!(/(\s+5,?000(\.?00)?)/, " five thousand ")                                 # pristine template
-    foo.gsub!(/(\$4,?000(\.?00)?)/, " four thousand dollars ")
-    foo.gsub!(/(\$1,?200(\.?00)?)/, " twelve hundred dollars ")
-    foo.gsub!(/(\$2,?000(\.?00)?)/, " two thousand dollars ")
-    foo.gsub!(/(\$1,?000(\.?00)?)/, " one thousand dollars ")
-    foo.gsub!(/(\$100(\.?00)?)/, " one hundred dollars ")
+    foo.gsub!(/(\$\s?10,?000(\.00)?)/, " ten thousand dollars ")
+    foo.gsub!(/(\s?10,?000(\.00)?)/, " ten thousand ")                                 # pristine 
+    foo.gsub!(/(\$\s?9,?000(\.00)?)/, " nine thousand dollars")                         # pristine 
+    foo.gsub!(/(\s?9,?000(\.00)?)/, " nine thousand ")                                  # pristine 
+    foo.gsub!(/(\$\s?6,?310(\.00)?)/, " six thousand three hundred and ten dollars")   # pristine template
+    foo.gsub!(/(\$\s?6,?000(\.00)?)/, " six thousand dollars")                         # pristine template
+    foo.gsub!(/(\s+6,?310(\.00)?\s+)/, " six thousand three hundred and ten ")          # pristine template
+    foo.gsub!(/(\s+6,?000(\.00)?\s+)/, " six thousand ")                                # pristine template
+    foo.gsub!(/(\$\s?5,?000(\.00)?)/, " five thousand dollars")                       # pristine template
+    foo.gsub!(/(\s+5,?000(\.00)?)/, " five thousand ")                                 # pristine template
+    foo.gsub!(/(\$4,?000(\.00)?)/, " four thousand dollars ")
+    foo.gsub!(/(\$1,?200(\.00)?)/, " twelve hundred dollars ")
+    foo.gsub!(/(\$2,?000(\.00)?)/, " two thousand dollars ")
+    foo.gsub!(/(\$1,?000(\.00)?)/, " one thousand dollars ")
+    foo.gsub!(/(\$100(\.00)?)/, " one hundred dollars ")
 
     foo.gsub!(/((\s(ch)\.?\s(26)\s?))/, " chapter twenty six ")
     foo.gsub!(/((\s(ch)\.?\s(25)\s?))/, " chapter twenty five ")
@@ -1004,9 +1000,9 @@ module Textual
     foo.gsub!(/(1,?000,?000(\.00)?)/, " one million ")
     foo.gsub!(/\$\s?559,?602\.90/, " five hundred and fifty nine thousand six hundred two dollars and ninety cents ")
     foo.gsub!(/559,?602\.90/, " five hundred and fifty nine thousand six hundred two and ninety cents ")
-    foo.gsub!(/(\$\s?162,?667(\.?00)?)/, " one hundred sixty two thousand six hundred sixty seven dollars ")
+    foo.gsub!(/(\$\s?162,?667(\.00)?)/, " one hundred sixty two thousand six hundred sixty seven dollars ")
     foo.gsub!(/(\$\s?162,?667\s+)/, " one hundred sixty two thousand six hundred sixty seven dollars ")
-    foo.gsub!(/(\s+162,?667(\.?00)?\s+)/, " one hundred sixty two thousand six hundred sixty seven ")
+    foo.gsub!(/(\s+162,?667(\.00)?\s+)/, " one hundred sixty two thousand six hundred sixty seven ")
     foo.gsub!(/(\s+162,?667\s+)/, " one hundred sixty two thousand six hundred sixty seven ")
     foo.gsub!(/162,?667\s?/, " one hundred sixty two thousand six hundred sixty seven ")
     foo.gsub!(/112,?483/, " one hundred and twelve thousand four hundred eighty three ")
@@ -1429,14 +1425,14 @@ module Textual
     foo.gsub!(/\s+1,?000s/, " one thousands ")
     foo.gsub!(/\s+1,?000\s/, " one thousand ")
 
-    foo.gsub!(/(\$\s?120(\.?00)?)/, " one hundred twenty dollars ")
+    foo.gsub!(/(\$\s?120(\.00)?)/, " one hundred twenty dollars ")
     foo.gsub!(/(\$120\.?\s+)/, " one hundred twenty dollars ")
-    foo.gsub!(/(\s+120(\.?00)?)/, " one hundred twenty ")
+    foo.gsub!(/(\s+120(\.00)?)/, " one hundred twenty ")
     foo.gsub!(/(\s?120\.?\s+)/, " one hundred twenty ")
 
-    foo.gsub!(/(\$\s?100(\.?00)?)/, " one hundred dollars ")
+    foo.gsub!(/(\$\s?100(\.00)?)/, " one hundred dollars ")
     foo.gsub!(/(\$100\.?\s+)/, " one hundred dollars ")
-    foo.gsub!(/(\s+100(\.?00)?)/, " one hundred ")
+    foo.gsub!(/(\s+100(\.00)?)/, " one hundred ")
     foo.gsub!(/(\s?100\.?\s+)/, " one hundred ")
 
     foo.gsub!(/\$55\.55/, " fifty five dollars and fifty five cents")
@@ -5265,6 +5261,13 @@ module Textual
     foo.gsub!(/(\s*\.44)/, " forty four ")
     foo.gsub!(/(\s*\.22)/, " twenty two ")
     foo.gsub!(/(\s+\.357)/, " three fifty seven ")
+    foo.gsub!(/\s+2014\s+/, " twenty fourteen ")
+    foo.gsub!(/\s+2013\s+/, " twenty thirteen ")
+    foo.gsub!(/\s+2012\s+/, " twenty twelve ")
+    foo.gsub!(/\s+2011\s+/, " twenty eleven ")
+    foo.gsub!(/\s+2010\s+/, " twenty ten ")
+    foo.gsub!(/\s+2,?000\s+/, " two thousand ")
+    foo.gsub!(/\s+1,?000\s+/, " one thousand ")
 
     foo.gsub!(/1,?001/, " one thousand and one ")
     foo.gsub!(/1,?000/, " one thousand ")

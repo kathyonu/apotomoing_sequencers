@@ -213,6 +213,51 @@ module Mysqldataprocessingsexualities
     after_break
   end
 
+    # extract_lines_with_5_vowels does exactly what is says, lines with four vowels present will not be extracted
+  def extract_lines_with_5_vowels
+    patterna = /a/
+    patterne = /e/
+    patterni = /e/
+    patterno = /o/
+    patternu = /u/
+    consumer = Fiber.new do |producer, queue|
+      f = open("./tmp/database_doings/doing_researches/extracted_lineai_all-vowels.txt", "a") do |f| 
+         loop do
+          queue = producer.transfer(consumer, queue)
+          puts f << queue
+          queue.clear
+        end
+        raise StopIteration
+      end
+    end
+    producer = Fiber.new do |consumer, queue|
+      IO.foreach("./tmp/mega_files/995mb_sexual_lines/unique_sexual_linesai") do |line|
+        queue = ""
+        puts queue
+        a = line.to_textual.de_comma
+        if aa = patterna.match(a)
+          if ee = patterne.match(a)
+            if ii = patterni.match(a)
+              if oo = patterno.match(a)
+                if uu = patternu.match(a)
+                  line = a
+                  queue << line
+                  puts "#{line}"
+                  break unless line
+                  consumer.transfer queue
+                  queue.clear
+                end
+              end
+            end
+          end
+        end  
+      end
+      raise StopIteration
+    end  
+    consumer.transfer(producer, [])
+    after_break
+  end  
+  
     # needs to be tested : 20111116
     # this method sorts and uniques any sized file
 	# processing the result into a second file
@@ -282,5 +327,27 @@ module Mysqldataprocessingsexualities
   def list_it(string)                                          # string = "this is a 5 worder"
     string.to_textual.scan(/[\w'']+/)                          # => ["this", "is", "a", "five", "worder"]
   end                                                          # a tiny example of the power of the to_textual
+
+  def extract_words_with_five_vowels
+    patterna = /a/
+    patterne = /e/
+    patterni = /e/
+    patterno = /o/
+    patternu = /u/
+    lines = ["abba", "obba", "ebbe", "ibbi", "bouter", "aboutisness"]
+    while a = lines.shift
+      if aa = patterna.match(a)
+        if ee = patterni.match(a)
+          if ii = patterni.match(a)
+            if oo = patterno.match(a)
+              if uu = patternu.match(a)
+                puts a
+              end
+            end
+          end
+        end
+      end
+    end
+  end
 
 end
