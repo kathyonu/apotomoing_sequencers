@@ -1,5 +1,9 @@
 ApotomoingSequencers::Application.routes.draw do
 
+  get "lexigrams/list"
+
+  get "lexigrams/display"
+
   get "singulars/index"
 
   get "singulars/display"

@@ -1,0 +1,37 @@
+<div class="links">
+  <%= link_to 'To Root', :root %> | 
+  <%= link_to 'New Sequence', new_sequence_path %> | 
+  <%= link_to 'Search Singular', :controller => :singulars, :action => :index %> | 
+  <%= 'Search Lexigram' %>
+</div>
+
+<h2>Lexigram sequence search results</h2>
+
+  <%= "your processed entry  ::: " + @sequencetextdecommaed %><br />
+  <%= "its lexigram sequence ::: " + @lexigram_sequence %><br />
+  <%= "total matches found :::: " + @lexigrams_count %><br /><br /> 
+
+<div id="lexigramsresult">
+  <table>
+    <tr>
+      <th>Text Entries</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @sequences.each do |sequence| %>
+      <tr>
+        <td><%= sequence.sequence_text %></td>
+        <td><%= link_to 'Show', sequence %></td>
+        <td><%= link_to 'Edit', edit_sequence_path(sequence) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="links">
+  <%= link_to 'To Root', :root %> | 
+  <%= link_to 'New Sequence', new_sequence_path(@sequence) %> | 
+  <%= link_to 'Search Singular', :controller => :singulars, :action => :index %> |
+  <%= 'Search Lexigram' %>
+</div>
