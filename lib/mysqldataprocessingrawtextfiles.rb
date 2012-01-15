@@ -1,35 +1,26 @@
 #!/usr/bin/env ruby -w
-module Mysqldataprocessingresearches
+module Mysqldataprocessingrawtextfiles
  
- #include ApplicationHelper  # uncomment for use in console / remove in production
+  include ApplicationHelper  # uncomment for use in console / remove in production
   include Histogram
-  include Textual
   include Lexigram
+  include Textualfile
 
   require 'fiber'
 
 # USAGE : the require statement in console :
-# enter   > require "./lib/mysqldataprocessingresearches.rb"
-# enter   > doing_research_lines
+# enter   > require "./lib/mysqldataprocessingrawtextfiles.rb"
+# enter   > doing_raw_text_file
 ########    ^^^^^^^^^^^^^^^^^^ that command runs that named fiber shown below
 
-    # file_name allows you to name the file that conatains your data to be processed, using any method below that calls for it
-  def file_name
-    file_name = ("./tmp/database_doings/doing_research/insert_research_lines-03.txt")
-   #file_name = ("../../Documents/20110731-research.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hash-015.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hashlines-015.txt")
-  end
 
-    # after_break is used at end of fiber method doing_research_lines to end process, and save the file addended to.
+    # after_break is used at end of fiber method doing_raw_text_file to end process, and save the file addended to.
 	# to load the data produced by this fiber method  ^^^^^^^^^^  use these commands in mysql console :
 	# in Terminal $ cd ./desideratus/apotomoing_sequencers
 	#             $ mysql
     #             mysql> use sequencers_production            ## or developent
-	#             mysql> LOAD DATA LOCAL INFILE './tmp/database-master/26/26-hashed.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, sequence_lense, description, reference, anagram, name, phrase, research, external, internal, created_at);
+	#             mysql> LOAD DATA LOCAL INFILE './tmp/database_doings/doing_uniques/uniques_done.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, research, external, internal, created_at);
   def after_break
-   #open(file_name, "r") do |f| 
     open("./tmp/database_doings/doing_uniques/uniques_done.txt", "r") do |f| 
     g = f.read
     f.close
@@ -41,9 +32,9 @@ module Mysqldataprocessingresearches
 	# this method processes lines in a file, line by line
 	## outputing the processed data into another file
 	### ready for entry into the database using the mysql LOAD command
-  def doing_research_lines
+  def doing_raw_text_file
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/database-master/26/26-hashed.txt", "a") do |f| 
+      f = open("./tmp/database_doings/doing_uniques/uniques_done.txt", "a") do |f| 
          loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -53,7 +44,7 @@ module Mysqldataprocessingresearches
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/database-master/26/master_researches-26.txt") do |line|
+      IO.foreach("./tmp/database_doings/doing_uniques/uniques_todo.txt") do |line|
         queue = ""
         puts queue
         sequence_text = line.to_textual.de_comma
@@ -83,46 +74,21 @@ module Mysqldataprocessingresearches
     after_break
   end
 
-
-    # the above evolved from the below
-	# the above outputs data to another file
-	# the below outsputs data to screen
-
-
-    # SOLID GOLD CODE : do not change : 20111111
-    # generates all sequences         : 20111111
-	# now including the lexigram      : 20111111
-    # file_name = ("tmp/masters/text1.txt") 
-    # file_name = ("tmp/masters/text2.txt")
-  def process_research_line
-    file_name = "./tmp/database-master/26/master_researches-26.txt"
-   #file_name = "../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt" : reads file in another app called consummates
-    open(file_name) do |f|
-      f.each do |line|
-        sequence_text = line.to_textual.de_comma   
-        sequence_creation = line.to_textual.de_comma.de_space
-        sequence_complete = line.to_textual.de_comma.split(//).sort.join('').strip unless nil
-        sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
-        sequence_singular = sequence_complete.squeeze
-        sequence_lense = ""
-        description = "research"
-        reference = "literoti"
-        anagram = 0
-        name = 0
-        phrase = 0
-        research = 1
-        external = 0
-        internal = 0
-        created_at = "2011-12-21 12:12:00"
-        p "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{created_at}\n"
-      end
-    end
-  end
-
-    # this method processes the result into a second file
-  def doing_researches_file_decomma
+    # fiber 
+	# this method first reads the input file and downcase sorts it, 
+	## then uniques it, then puts it into @megatdata_unique variable
+	### then processes that variable line by line, 
+	#### then verifying the data is not already in the database, 
+	##### then outputing the processed data into another file
+	###### ready for entry into the database using the mysql LOAD command
+  def doing_raw_file_to_verified_unique_researches  # adjustable line length filter
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/database_doings/doing_uniques/uniques_todo.txt", "a") do |f| 
+      a = File.readlines("./tmp/database_doings/doing_uniques/uniques_todo.txt")
+      @megadata = a.sort do |x,y|
+        x.downcase <=> y.downcase
+      end
+      @megadata_unique = @megadata.uniq
+      f = open("./tmp/database_doings/doing_uniques/uniques_done.txt", "a") do |f| 
          loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -132,15 +98,37 @@ module Mysqldataprocessingresearches
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/insert_researches.txt") do |line| 
+     #IO.foreach("./tmp/database_doings/doing_uniques/uniques_todo.txt") do |line|
         queue = ""
         puts queue
-       #sequence_text = line.to_textual
-        sequence_text = line.to_textual.de_comma
-        queue << "#{sequence_text}\n"
-        break unless line
-        consumer.transfer queue
-        queue.clear
+        @megadata_unique.each do |line|
+          sequence_text = line.to_textual.de_comma
+          if sequence_text.length > 50             # adjustable
+            puts "line ignored as over 50 characters"
+          elsif Sequence.find_by_sequence_text(sequence_text)
+            puts "line ignored as it is already in database : " + "#{sequence_text}"
+          else
+            sequence_creation = sequence_text.de_space unless nil
+            sequence_complete = sequence_text.split(//).sort.join('').strip unless nil
+            sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
+            sequence_singular = sequence_complete.squeeze unless nil
+            description = "research"
+            reference = "literoti"
+            anagram = 0
+            name = 0
+            phrase = 0
+            research = 1
+            external = 0
+            internal = 0
+            created_at = "2011-12-21 12:12:00"
+           #line = "#{sequence_text}\n"
+            line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{created_at}\n"
+            queue << line
+            break unless line
+            consumer.transfer queue
+            queue.clear
+          end
+        end
       end
       raise StopIteration
     end  
@@ -148,103 +136,7 @@ module Mysqldataprocessingresearches
     after_break
   end
 
-    # doing_extract_data processes the hash line by line, extracting only the sequence_text, processing it into another file
-  def doing_extract_data
-    consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/mega_files/320mb_research_lines/extracted_data.txt", "a") do |f| 
-         loop do
-          queue = producer.transfer(consumer, queue)
-          puts f << queue
-          queue.clear
-        end
-        raise StopIteration
-      end
-    end
-    producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/mega_files/320mb_research_lines/insert_research_lines.txt") do |line| 
-        queue = ""
-        puts queue
-        sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, research, external, internal, created_at = line.split("\t")
-        extracted_data = sequence_text.to_textual
-        queue << "#{extracted_data}\n"
-        break unless line
-        consumer.transfer queue
-        queue.clear
-      end
-      raise StopIteration
-    end  
-    consumer.transfer(producer, [])
-    after_break
-  end
 
-    # doing_extract_data_less_156 processes the file line by line, 
-    # extracting only those lines with a line.length of 156 characters or less, processing it into another file
-  def doing_extract_data_less_156
-    consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/database_doings/doing_researches/extracted_linesai_less-156.txt", "a") do |f| 
-         loop do
-          queue = producer.transfer(consumer, queue)
-          puts f << queue
-          queue.clear
-        end
-        raise StopIteration
-      end
-    end
-    producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/mega_files/995mb_research_lines/unique_research_linesai") do |line| 
-        queue = ""
-        puts queue
-        extracted_data = line.to_textual.de_comma
-        if extracted_data.length > 156
-          puts "line greater than 156 characters, not used"
-        end
-        if extracted_data.length <= 156 
-          queue << "#{extracted_data}\n"
-        end
-        break unless line
-        consumer.transfer queue
-        queue.clear
-      end
-      raise StopIteration
-    end  
-    consumer.transfer(producer, [])
-    after_break
-  end
-
-#marker     doing_extract_words_with_less_than_five_vowels
-  
-    # this method sorts and uniques any sized file
-	# processing the result into a second file
-  def doing_researches_file_sort_and_unique
-    a = File.readlines("./tmp/insert_researches.txt")
-    @megadata = a.sort do |x,y|
-     #x.downcase <=> y.downcase
-      x.length <=> y.length
-    end
-    @megadata_unique = @megadata.uniq
-    consumer = Fiber.new do |producer, queue|
-      f = open("insert_researches_hashed-uniques-ready-for-mysql-entry.txt", "a") do |f| 
-        loop do
-          queue = producer.transfer(consumer, queue)
-          puts f << queue
-          queue.clear
-        end
-        raise StopIteration
-      end
-    end
-    producer = Fiber.new do |consumer, queue|
-      queue = ""
-      puts queue
-     #@megadata_unique.each do |line|          # each line, line by line, using the fiber 
-      queue << puts "#{@megadata_unique}"      # the entire gulp in one shot
-      break unless @megadata_uniq
-      consumer.transfer queue
-      queue.clear
-      raise StopIteration
-    end  
-    consumer.transfer(producer, [])
-    after_break
-  end
 
     # this method reads file in one gulp then runs the sort and then the uniq on it
     # this method outputs to screen

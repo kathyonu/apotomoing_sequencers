@@ -17,15 +17,11 @@ module Singular
   def singular_sequencer(sequencetext)
     @sequencetext = sequencetext
     @sequencetext.extend Textual
-    # puts "at line 20 sequencetext is tainted ? " + sequencetext.tainted?.to_s  # => :false
     @sequencetextualed = @sequencetext.to_textual
     @sequencetextualed.extend Textual
-    # puts "at line 22 the result of sequencetext.to_textual : " + "#{@sequencetextualed}"
 	@sequencetextdecommaed = @sequencetextualed.de_comma
 	@sequencetextdecommaed.extend Textual
-	# puts "at line 25 the result of sequencetext.to_textual.de_comma : " + "#{@sequencetextdecommaed}"
 	@sequencetextdespaced = @sequencetextualed.de_comma.gsub(/\s+/, "")
-    # puts "at line 29 the @ characterscount : @sequencetextualed.split(//).length : " + "#{@characterscount}"
     @singular_sequence = ""
 	@singular_sequence = @sequencetextualed.de_comma.split(//).sort().join.strip.squeeze
     if (@singular_sequence.to_s) == ("") then

@@ -37,73 +37,7 @@ $j(document).ready(  function() {
       $j('.new_entry_anagram form input#sequencetext').focus();
     }
   });
-
-// FOCUSIN on '.new_entry_sequence form input#sequencetext'
-$j(document).ready(  function() {
-    $j('.new_entry_sequence form input#sequencetext').bind(
-      'focusin',function(event) {    
-        if ($j('.new_entry_sequence form input#sequencetext').val() === "Enter data, then tab out") {
-        $j('.new_entry_sequence form input#sequencetext').val("");
-      }
-      else  if ($j('.new_entry_sequence form input#sequencetext').val() === "Please Enter Your Data") {
-        $j('.new_entry_sequence form input#sequencetext').val("");
-      }
-      else
-      {
-      $j('.new_entry_sequence form input#sequencetext').focus();    }    }    )
-      .bind(
-        'focusout',function(event) {
-          if (this.value !== '') {
-            if (this.value !== "Enter data, then tab out") {
-              if (this.value !== "Please Enter Your Data") {
-              var $jsequencetext = $j('.new_entry_sequence form input#sequencetext').serialize();
-              var $jnewsequence = document.getElementById('sequencetext');
-              var $jsequenceSubmit = document.getElementById('sequence_submit');
-              $jnewsequence.form.onsubmit = function() { return false; };
-              $jsequenceSubmit.form.submit = function() { return false; };
-              var $jtext_return_value = $j.ajax({
-                type: "GET",    url: "http://localhost:3000/sequences/text_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-              $j("input#sequence_sequence_text").val($jtext_return_value);
-              var $jcreation_return_value = $j.ajax({
-                type: "GET",    url: "http://localhost:3000/sequences/creation_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-              $j("input#sequence_sequence_creation").val($jcreation_return_value);
-              var $jcomplete_return_value = $j.ajax({
-                type: "GET",    url: "http://localhost:3000/sequences/complete_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-              $j("input#sequence_sequence_complete").val($jcomplete_return_value);
-              var $jlexi_return_value = $j.ajax({
-                type: "GET",    url: "http://localhost:3000/sequences/lexigram_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-              $j("input#sequence_sequence_lexigram").val($jlexi_return_value);
-              var $jsingular_return_value = $j.ajax({
-                type: "GET",    url: "http://localhost:3000/sequences/singular_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-              $j("input#sequence_sequence_singular").val($jsingular_return_value);
-              var $jletters_text_count  = $jtext_return_value.length;
-              $j('#count_text').append($jletters_text_count);
-              var $jletters_creation_count  = $jcreation_return_value.length;
-              $j('#count_creation').append($jletters_creation_count);
-
-              var $jletters_complete_count  = $jcomplete_return_value.length;
-              $j('#count_complete').append($jletters_complete_count);
-              var $jletters_lexi_count  = $jlexi_return_value.length;
-              $j('#count_lexigram').append($jletters_lexi_count);
-              var $jletters_singular_count  = $jsingular_return_value.length;
-              $j('#count_singular').append($jletters_singular_count);
-              $j('input#sequence_sequence_lense').focus();
-              }
-            }
-          }
-          else
-          {
-            $j('.new_sequence form input#sequencetext').val('Please Enter Your Data');
-            $j('.new_sequence form input#sequence_sequence_text').val("");
-            $j('.new_sequence form input#sequence_sequence_creation').val("");
-            $j('.new_sequence form input#sequence_sequence_complete').val("");
-            $j('.new_sequence form input#sequence_sequence_lexigram').val("");
-            $j('.new_sequence form input#sequence_sequence_singular').val("");
-            $j('.new_sequence form input#sequence_sequence_lense').val("");
-          }
-    });
-  });
-
+  
 $j(document).ready(
   $j('.new_entry_sequence form input#sequence_submit').bind(
    'submit',function(event) {
@@ -139,7 +73,72 @@ $j(document).ready(
     }
   })
 );
-    
+
+// FOCUSIN on '.new_entry_sequence form input#sequencetext'
+$j(document).ready(  function() {
+    $j('.new_entry_sequence form input#sequencetext').bind(
+      'focusin',function(event) {    
+        if (this.value === "Enter data, then tab out") {
+        $j('.new_entry_sequence form input#sequencetext').val("");
+      }
+      else  if (this.value === "Please Enter Your Data") {
+        $j('.new_entry_sequence form input#sequencetext').val("");
+      }
+      else
+      {
+      $j('.new_entry_sequence form input#sequencetext').focus();    }    }    )
+      .bind(
+        'focusout',function(event) {
+          if (this.value !== '') {
+            if (this.value !== "Enter data, then tab out") {
+              if (this.value !== "Please Enter Your Data") {
+              var $jsequencetext = $j('.new_entry_sequence form input#sequencetext').serialize();
+              var $jnewsequence = document.getElementById('sequencetext');
+              var $jsequenceSubmit = document.getElementById('sequence_submit');
+              $jnewsequence.form.onsubmit = function() { return false; };
+              $jsequenceSubmit.form.submit = function() { return false; };
+              var $jtext_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/text_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+              $j("input#sequence_sequence_text").val($jtext_return_value);
+              var $jcreation_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/creation_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+              $j("input#sequence_sequence_creation").val($jcreation_return_value);
+              var $jcomplete_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/complete_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+              $j("input#sequence_sequence_complete").val($jcomplete_return_value);
+              var $jlexi_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/lexigram_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+              $j("input#sequence_sequence_lexigram").val($jlexi_return_value);
+              var $jsingular_return_value = $j.ajax({
+                type: "GET",    url: "http://localhost:3000/sequences/singular_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+              $j("input#sequence_sequence_singular").val($jsingular_return_value);
+              var $jletters_text_count = $jtext_return_value.length;
+              $j('#count_text').text($jletters_text_count);
+              var $jletters_creation_count = $jcreation_return_value.length;
+              $j('#count_creation').text($jletters_creation_count);
+              var $jletters_complete_count = $jcomplete_return_value.length;
+              $j('#count_complete').text($jletters_complete_count);
+              var $jletters_lexi_count = $jlexi_return_value.length;
+              $j('#count_lexigram').text($jletters_lexi_count);
+              var $jletters_singular_count = $jsingular_return_value.length;
+              $j('#count_singular').text($jletters_singular_count);
+              $j('input#sequence_sequence_lense').focus();
+              }
+            }
+          }
+          else
+          {
+            $j('input#sequencetext').val('Please Enter Your Data');
+            $j('input#sequence_sequence_text').val("");
+            $j('input#sequence_sequence_creation').val("");
+            $j('input#sequence_sequence_complete').val("");
+            $j('input#sequence_sequence_lexigram').val("");
+            $j('input#sequence_sequence_singular').val("");
+            $j('input#sequence_sequence_lense').val("");
+          }
+    });
+  });
+
 // FOCUSIN on '.new_edit form input#sequencetext'
 $j(document).ready(  function() {
     $j('.sequence_edit form input#sequencetext').bind(
@@ -363,3 +362,10 @@ $j(document).ready(  function() {
           }
     });
   });
+  
+$j(document).ready(  function() {
+    $j('#search_sequence_singulars form input#sequencetext').val("Enter your data, then tab out");
+    $j('#singular_result').hide();
+    $j('#singular_results').hide();
+  });
+  

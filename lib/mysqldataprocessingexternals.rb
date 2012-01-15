@@ -25,11 +25,11 @@ module Mysqldataprocessingexternals
     #    mysql> use sequencers_production
     #    mysql> LOAD DATA LOCAL INFILE './tmp/database_doings/doing_externals/insert_externals_hash_sorted.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, sequence_lense, description, reference, anagram, name, phrase, research, external, internal, created_at);
   def after_break
-    open("./tmp/database_doings/doing_externals/insert_externals_hash.txt", "r") do |f| 
+    open("./tmp/database_doings/doing_externals/insert_externals.txt", "r") do |f| 
     g = f.read
     f.close
+    exit(puts "Processing is complete >> ./tmp/database_doings/doing_externals/insert_externals.txt << is closed, console has been exited")
     end
-   exit(puts "Processing is complete >> ./tmp/database_doings/doing_externals/insert_externals_hash.txt  is closed, console has been exited")
   end
 
     # this methods takes the file line by line, splitting the line into textdata tab datestring
@@ -37,8 +37,8 @@ module Mysqldataprocessingexternals
     # then, the output file can be properly sorted
   def doing_textuals_on_raw_hashes
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/database_doings/doing_externals/insert_externals_hash.txt", "a") do |f| 
-         loop do
+      f = open("./tmp/database_doings/doing_externals/insert_externals.txt", "a") do |f| 
+        loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
           queue.clear
@@ -47,13 +47,25 @@ module Mysqldataprocessingexternals
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/2011_externals_searches.txt") do |line| 
+      IO.foreach("./tmp/database_doings/doing_externals/2011_external_searches.txt") do |line|
         queue = ""
         puts queue
         external_searched, searched = line.split("\t")
         sequence_text = external_searched.to_textual.de_comma unless nil
+        sequence_creation = sequence_text.de_space unless nil
+        sequence_complete = sequence_text.split(//).sort.join('').strip unless nil
+        sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
+        sequence_singular = sequence_complete.squeeze unless nil
+        a = sequence_text.split(//).sort.join.strip.squeeze unless nil
+        description = "#{a.count('aeiou')}".to_textual + " voweled" 
         reference = searched.to_s.strip
-        line = "#{sequence_text}\t#{reference}\n"
+        anagram = 0
+        name = 0
+        phrase = 0
+        research = 0
+        external = 1
+        internal = 0
+        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\n"
         queue << line
         break unless line
         consumer.transfer queue

@@ -40,8 +40,7 @@ module Mysqldataprocessingmethods
     string.downcase.scan(/[\w'']+/)                            # => ["this", "is", "a", "five", "worder"]
   end
 
-
-    # sorts the file, using downcase
+  # sorts the file, using downcase
   def sorting_file
     a = File.readlines(file_name)
     a.sort do |x,y|

@@ -25,12 +25,14 @@ module Mysqldataprocessinglenses
     #    mysql> use sequencers_production
 	#    mysql> LOAD DATA LOCAL INFILE './tmp/database_doings/doing_lenses/lense_lines_hashed.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at, lense);
   def after_break
-    open("./tmp/database_doings/doing_lenses/lense_lines_hashed.txt", "r") do |f| 
-    g = f.read
-    f.close
-    exit(puts "Processing is complete >> ./tmp/database_doings/doing_lenses/lense_lines_hashed.txt << is closed, console has been exited")
+    f = open("./tmp/database_doings/doing_lenses/lenses_sorted.txt", "r") do |f| 
+      g = f.read
+      f.close
+      puts "processing EXIT command"
     end
+    exit(puts "Processing is complete >> ./tmp/database_doings/doing_lenses/lenses_sorted.txt << is closed, console has been exited")
   end
+
 
     # fiber 
 	# this method processes lines in a file, line by line
@@ -78,43 +80,10 @@ module Mysqldataprocessinglenses
     after_break
   end
 
-
-    # the above evolved from the below
-    # the above outputs data to another file
-    # the below outsputs data to screen
-
-
-    # SOLID GOLD CODE : do not change : 20111111
-    # generates all sequences         : 20111111
-    # now including the lexigram      : 20111111
-    # file_name = ("tmp/insert_sexual_lines-01.txt") 
-    # file_name = ("tmp/insert_sexual_lines-02.txt")
-  def process_sex_line
-    file_name = "../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt"
-    open(file_name) do |f|
-      f.each do |line|
-        sequence_text = line.to_textual.de_comma   
-        sequence_creation = line.to_textual.de_comma.de_space
-        sequence_complete = line.to_textual.de_comma.split(//).sort.join('').strip unless nil
-        sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
-        sequence_singular = sequence_complete.squeeze
-        description = "sexual materials"
-        reference = "literotica"
-        anagram = 0
-        name = 0
-        phrase = 0
-        sexualities = 1
-        external = 0
-        internal = 0
-        p "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}"
-      end
-    end
-  end
-
-    # this method processes the result into a second file
-  def doing_sexualities_file_decomma
+    # this method processes lines from one file with String#to_textual, sending the result into a second file
+  def doing_researches_file_decomma
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/database_doings/doing_sexualities/mysql_history_001.txt", "a") do |f| 
+      f = open("./tmp/database_doings/doing_researches/file.txt", "a") do |f| 
          loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -124,7 +93,7 @@ module Mysqldataprocessinglenses
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/database_doings/doing_sexualities/sexualities_sorted.txt") do |line| 
+      IO.foreach("./tmp/database_doings/doing_researches/file.txt") do |line| 
         queue = ""
         puts queue
        #sequence_text = line.to_textual.de_comma
@@ -143,7 +112,7 @@ module Mysqldataprocessinglenses
     # doing_extract_data processes the hash line by line, extracting only the sequence_text, processing it into another file
   def doing_extract_data
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/mega_files/320mb_sexual_lines/extracted_data.txt", "a") do |f| 
+      f = open("./tmp/input-file.txt", "a") do |f| 
          loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -153,7 +122,7 @@ module Mysqldataprocessinglenses
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/mega_files/320mb_sexual_lines/insert_sexual_lines.txt") do |line| 
+      IO.foreach("./tmp/output-file.txt") do |line| 
         queue = ""
         puts queue
         sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at = line.split("\t")
@@ -170,17 +139,46 @@ module Mysqldataprocessinglenses
   end
 
 
-
+  def doing_textuals_on_raw_hashes
+    consumer = Fiber.new do |producer, queue|
+      f = open("./tmp/database_doings/doing_lenses/lenses_sorted.txt", "a") do |f| 
+         loop do
+          queue = producer.transfer(consumer, queue)
+          puts f << queue
+          queue.clear
+        end
+        raise StopIteration
+      end
+    end
+    producer = Fiber.new do |consumer, queue|
+      IO.foreach("./tmp/database_doings/doing_lenses/lenses_line_lense.txt") do |line| 
+        queue = ""
+        puts queue
+        external_searched, searched = line.split("\t")
+        sequence_text = external_searched.to_textual.de_comma unless nil
+        reference = searched.to_s.strip
+        line = "#{sequence_text}\t#{reference}\n"
+        queue << line
+        break unless line
+        consumer.transfer queue
+        queue.clear
+      end
+      raise StopIteration
+    end  
+    consumer.transfer(producer, [])
+    after_break
+  end
+  
     # needs to be tested : 20111116
     # this method sorts and uniques any sized file
     # processing the result into a second file
-  def doing_sexualities_file_sort_and_unique
-    a = File.readlines("./tmp/database_doings/doing_sexualities/sexualities_sorted.txt")
+  def doing_researches_file_sort_and_unique
+    a = File.readlines("./tmp/database_doings/doing_researches/researches_sorted.txt")
     @megadeta = a.sort do |x,y|
       x.downcase <=> y.downcase
     end
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/database_doings/doing_sexualities/mysql_history_001.txt", "a") do |f| 
+      f = open("./tmp/database_doings/doing_researches/mysql_history_001.txt", "a") do |f| 
         loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -205,7 +203,7 @@ module Mysqldataprocessinglenses
 
     # this method reads file in one gulp then runs the sort and then the uniq on it
     # this method outputs to screen
-    # if you have a large file, use the fiber method : doing_sexualities_file_sort_and_unique
+    # if you have a large file, use the fiber method : doing_researches_file_sort_and_unique
   def array_to_unique
     a = File.readlines("./tmp/insert_externals.txt")
    #a = File.readlines("./tmp/insert_internals.txt")

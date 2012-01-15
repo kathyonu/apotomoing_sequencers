@@ -1,8 +1,11 @@
 #!/usr/bin/env ruby -w
-module Textual
+module Textualfile
+
+# module Textual is used in processing the five sequences in the app, it does not create new lines.
+# module Textualfile : is used to process files of text, and it creates new lines.
 
 ## uncomment this puts below, for use in console to show when it is loaded. do not use in production
-  puts "Textual Module is loaded"
+  puts "Textualfile Module is loaded"
 
 ### this module is still being developed
 ## for usage instructions and examples see : app/doc/README_for_method-to_textual.txt
@@ -211,38 +214,38 @@ module Textual
 #    foo.gsub!(/((\s+(mm)\''s)\s)/, " millimeters ")
 #    foo.gsub!(/((\s+(mm)\.)\s?)/, " millimeter ")
 #    foo.gsub!(/(\s+(mm)\s?)/, " millimeter ")
-    foo.gsub!(/((\B(kms)\.?)\s?)/, " kilometers ")
-    foo.gsub!(/((\B(km)\.)\s)/, " kilometer ")
-    foo.gsub!(/((\B(km)\''s)\s)/, " kilometers ")
-    foo.gsub!(/((\B(km)\.)\s?)/, " kilometer ")
-    foo.gsub!(/((\B(km))\s)/, " kilometer ")
-    foo.gsub!(/(\Bkm,\s)/, " kilometer, ")
-    foo.gsub!(/((\B(km))\.?)$/, " kilometer")
+    foo.gsub!(/((\b(kms)\.?)\s?)/, " kilometers ")
+    foo.gsub!(/((\b(km)\.)\s)/, " kilometer ")
+    foo.gsub!(/((\b(km)\''s)\s)/, " kilometers ")
+    foo.gsub!(/((\b(km)\.)\s?)/, " kilometer ")
+    foo.gsub!(/((\b(km))\s)/, " kilometer ")
+    foo.gsub!(/(\bkm,\s)/, " kilometer, ")
+    foo.gsub!(/((\b(km))\.?)$/, " kilometer")
     foo.gsub!(/((\s+(kms)\.?)\s)/, " kilometers ")
     foo.gsub!(/((\s+(km)\.?)\s)/, " kilometers ")
     foo.gsub!(/((\s+(km)\''s)\s)/, " kilometers ")
     foo.gsub!(/((\s+(km)\.)\s?)/, " kilometer ")
     foo.gsub!(/(\s+(km)\s+)/, " kilometer ")
-    foo.gsub!(/((\B(cms)\.?)\s?)/, " centimeters ")              # could also be content management system
-    foo.gsub!(/((\B(cm)\.)\s)/, " centimeter ")
-    foo.gsub!(/((\B(cm)\''s)\s)/, " centimeters ")
-    foo.gsub!(/((\B(cm)\.)\s?)/, " centimeter ")
-    foo.gsub!(/((\B(cm))\s)/, " centimeter ")
-    foo.gsub!(/(\Bcm,\s)/, " centimeter, ")
-    foo.gsub!(/((\B(cm))\.?)$/, " centimeter")
+    foo.gsub!(/((\b(cms)\.?)\s?)/, " centimeters ")              # could also be content management system
+    foo.gsub!(/((\b(cm)\.)\s)/, " centimeter ")
+    foo.gsub!(/((\b(cm)\''s)\s)/, " centimeters ")
+    foo.gsub!(/((\b(cm)\.)\s?)/, " centimeter ")
+    foo.gsub!(/((\b(cm))\s)/, " centimeter ")
+    foo.gsub!(/(\bcm,\s)/, " centimeter, ")
+    foo.gsub!(/((\b(cm))\.?)$/, " centimeter")
     foo.gsub!(/((\s+(cms)\.?)\s)/, " centimeters ")
     foo.gsub!(/((\s+(cm)\.)\s)/, " centimeter ")
     foo.gsub!(/((\s+(cm)\''s)\s)/, " centimeters ")
     foo.gsub!(/((\s+(cm)\.)\s?)/, " centimeter ")
     foo.gsub!(/(\s+cm\s+)/, " centimeter ")
-    foo.gsub!(/(\Bkgs\.?\s?)/, " kilograms ")
-    foo.gsub!(/(\Bkg\.\s)/, " kilogram ")
-    foo.gsub!(/(\Bkg\''s\s)/, " kilograms ")
-    foo.gsub!(/(\Bkg\.\s?)/, " kilogram ")
-    foo.gsub!(/(\Bkg\s)/, " kilogram ")
-    foo.gsub!(/(\Bkg\.\s)/, " kilogram ")
-    foo.gsub!(/(\Bkg,\s)/, " kilogram, ")
-    foo.gsub!(/(\Bkg\.?)$/, " kilogram")
+    foo.gsub!(/(\bkgs\.?\s?)/, " kilograms ")
+    foo.gsub!(/(\bkg\.\s)/, " kilogram ")
+    foo.gsub!(/(\bkg\''s\s)/, " kilograms ")
+    foo.gsub!(/(\bkg\.\s?)/, " kilogram ")
+    foo.gsub!(/(\bkg\s)/, " kilogram ")
+    foo.gsub!(/(\bkg\.\s)/, " kilogram ")
+    foo.gsub!(/(\bkg,\s)/, " kilogram, ")
+    foo.gsub!(/(\bkg\.?)$/, " kilogram")
     foo.gsub!(/(\s+kgs\.\s)/, " kilograms ")
     foo.gsub!(/(\s+kg\.\s)/, " kilogram ")
     foo.gsub!(/(\s+kg,\s)/, " kilogram ")
@@ -6462,12 +6465,12 @@ module Textual
   end
   
   class String
-    self.extend Textual
+    self.extend Textualfile
   end
   
   class Sequencetext
-    include Textual
+    include Textualfile
   end
 
 end
-$Textual = Textual
+$Textualfile = Textualfile

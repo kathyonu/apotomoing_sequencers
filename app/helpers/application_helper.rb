@@ -1,6 +1,7 @@
 module ApplicationHelper
 
   include Singular
+  include Searchsingular
   include Text
   include Creation
   include Complete
@@ -8,8 +9,8 @@ module ApplicationHelper
   include Textual
   include Lexigram
   
+  puts "included searchsingular module"
   puts "included singular, text, creation, complete, histogram, textual and lexigram modules, in that order using application/helper" # console use
-
   puts "application helper has been loaded directly by application controller" # console use
 
   ### usage :

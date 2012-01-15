@@ -166,7 +166,7 @@ module Lexigram
             @lexigram_sequence = @lexigram_hash_holder2.collect do | k, v | "#{k}" * v end.sort.join.strip
           end
           if (@lexigram_sequence.to_s) == ("") then
-            @lexigram_sequence = "no letters remain after processing the lexigram_sequence of oyur three word entry, please try again"
+            @lexigram_sequence = "no letters remain after processing your entry"
           else
             @lexigram_sequence
           end

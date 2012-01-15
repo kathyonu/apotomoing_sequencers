@@ -2,7 +2,9 @@
   <%= link_to 'To Root', :root %> | 
   <%= link_to 'Edit', edit_sequence_path(@sequence) %> |
   <%= link_to 'Show All Sequences', sequences_path %> |
-  <%= link_to 'New Sequence', new_sequence_path %>
+  <%= link_to 'New Sequence', new_sequence_path %> | 
+  <%= link_to 'Search Singular', :controller => :singulars, :action => :display %>
+
 </div>
 
 <p id="notice"><%= notice %></p>
@@ -86,5 +88,6 @@
   <%= link_to 'To Root', :root %> | 
   <%= link_to 'Edit', edit_sequence_path(@sequence) %> |
   <%= link_to 'Show All Sequences', sequences_path %> |
-  <%= link_to 'New Sequence', new_sequence_path %>
+  <%= link_to 'New Sequence', new_sequence_path %> | 
+  <%= link_to 'Search Singular', :controller => :singulars, :action => :display %>
 </div>

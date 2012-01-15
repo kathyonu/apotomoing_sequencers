@@ -1,15 +1,18 @@
 class SequencesController < ApplicationController
   include ApplicationHelper
   
+  include Textual
+
   attr_accessor :sequencetext
   attr_accessor :text_sequenced
   attr_accessor :creation_sequenced
   attr_accessor :complete_sequenced
   attr_accessor :lexigram_sequenced
   attr_accessor :singular_sequenced
-  
+# attr_accessor :singular_sequences
+    
   respond_to :html, :js
-  
+
   # GET /sequences
   # GET /sequences.xml
   def index

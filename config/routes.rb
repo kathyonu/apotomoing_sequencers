@@ -1,5 +1,9 @@
 ApotomoingSequencers::Application.routes.draw do
 
+  get "singulars/index"
+
+  get "singulars/display"
+
   match 'sequence_createds/text_sequenced' => "sequence_createds#_text_sequenced"
 
   match 'sequence_createds/creation_sequenced' => "sequence_createds#_creation_sequenced"
@@ -19,8 +23,7 @@ ApotomoingSequencers::Application.routes.draw do
   match 'sequences/lexigram_sequenced' => "sequences#_lexigram_sequenced"
 
   match 'sequences/singular_sequenced' => "sequences#_singular_sequenced"
- 
-
+  
   resources :sequences
 
   resources :sequencetexts

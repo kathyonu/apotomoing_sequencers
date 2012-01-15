@@ -1,0 +1,21 @@
+<div class="links">
+  <%= link_to 'To Root', :root %> | 
+  <%= link_to 'New Sequence', new_sequence_path(@sequence) %> |
+  <%= 'Search Singular' %>
+</div>
+
+<div class="sequence_search_singulars">
+  <div id="search_sequence_singulars">Your Search
+    <%= form_tag 'index', :action => 'index', :method => 'get' do %>
+    <%= text_field_tag "sequencetext" %>
+ 
+    <%= submit_tag "Search Singular", :id => 'singulars_search_submit', :name => 'singulars_search_submit' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="links">
+  <%= link_to 'To Root', :root %> | 
+  <%= link_to 'New Sequence', new_sequence_path(@sequence) %> |
+  <%= 'Search Singular' %>
+</div>

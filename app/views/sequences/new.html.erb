@@ -1,10 +1,8 @@
-<!-- this file is affected by lexidisplay.js -->
-
 <div class="links">
   <%= link_to 'To Root', :root %> | 
-  <%= link_to 'Show All Sequences', sequences_path %>
+  <%= link_to 'Show All Sequences', sequences_path %> | 
+  <%= link_to 'Search Singular', :controller => :singulars, :action => :display %>
 </div>
-
 
 <div id="new_box_sequence">New Entry
   <div class="new_entry_sequence">
@@ -16,13 +14,12 @@
   </div>
 </div>
 
-<div class="newSearch" id="search_singular" name="placeholder"> </div>
-
 <div class="newSequence">
   <%= render 'form' %>
 </div>
 
 <div class="links">
   <%= link_to 'To Root', :root %> | 
-  <%= link_to 'Show All Sequences', sequences_path %>
+  <%= link_to 'Show All Sequences', sequences_path %> |
+  <%= link_to 'Search Singular', :controller => :singulars, :action => :display %>
 </div>
