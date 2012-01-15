@@ -2,18 +2,18 @@
   <%= link_to 'Root', :root %> | 
   <%= link_to 'New Sequence', new_sequence_path(@sequence) %> |
   <%= link_to 'Singulars', :controller => :singulars, :action => :display %> | 
-  <%= 'Lexigrams' %> | 
-  <%= link_to 'Completes', :controller => :completes, :action => :display %> | 
+  <%= link_to 'Lexigrams', :controller => :lexigrams, :action => :display %> |
+  <%= 'Complete' %> | 
   <%= link_to 'Creations', :controller => :creations, :action => :display %> | 
   <%= link_to 'Texts', :controller => :texts, :action => :display %>
 </div>
 
-<div class="sequence_search_lexigrams">
-  <div id="search_sequence_lexigrams">Your Search
+<div class="sequence_search_completes">
+  <div id="search_sequence_completes">Your Search
     <%= form_tag 'list', :action => 'list', :method => 'get' do %>
     <%= text_field_tag "sequencetext" %>
  
-    <%= submit_tag "Search Lexigram", :id => 'lexigrams_search_submit', :name => 'lexigrams_search_submit' %>
+    <%= submit_tag "Search Complete", :id => 'completes_search_submit', :name => 'completes_search_submit' %>
     <% end %>
   </div>
 </div>
@@ -22,8 +22,8 @@
   <%= link_to 'To Root', :root %> | 
   <%= link_to 'New Sequence', new_sequence_path(@sequence) %> |
   <%= link_to 'Singulars', :controller => :singulars, :action => :display %> | 
-  <%= 'Lexigrams' %> | 
-  <%= link_to 'Completes', :controller => :completes, :action => :display %> | 
+  <%= link_to 'Lexigrams', :controller => :lexigrams, :action => :display %> |
+  <%= 'Complete' %> | 
   <%= link_to 'Creations', :controller => :creations, :action => :display %> | 
   <%= link_to 'Texts', :controller => :texts, :action => :display %>
-</div></div>
+</div>

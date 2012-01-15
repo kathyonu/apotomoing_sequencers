@@ -3,6 +3,9 @@ module ApplicationHelper
   include Singular
   include Searchsingular
   include Searchlexigram
+  include Searchcomplete
+  include Searchcreation
+  include Searchtext
   include Text
   include Creation
   include Complete

@@ -65,7 +65,11 @@ pre { background: #eee; padding: 10px; font-size: 11px; }
 #sequencetext_submit { display: none; }
 #sequencetextnote { position: relative; top: -14px; margin-left: 15px; font-size: 80%; }
 #single { border: 1px solid red; margin-bottom: 7px; }
-#singularesult table { border: 2px solid red; font-size: 1em; margin-bottom: 10px; padding: .5em; }
+#resultcomplete table { border: 2px solid red; font-size: 1em; margin-bottom: 10px; padding: .5em; }
+#resultcreation table { border: 2px solid red; font-size: 1em; margin-bottom: 10px; padding: .5em; }
+#resultlexigram table { border: 2px solid red; font-size: 1em; margin-bottom: 10px; padding: .5em; }
+#resultsingular table { border: 2px solid red; font-size: 1em; margin-bottom: 10px; padding: .5em; }
+#resulttext table { border: 2px solid red; font-size: 1em; margin-bottom: 10px; padding: .5em; }
 #singularResult { display: none; }
 #singularResults { display: none; }
 #singulars { border: 1px solid blue;  }

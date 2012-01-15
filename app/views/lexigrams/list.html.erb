@@ -1,8 +1,11 @@
 <div class="links">
-  <%= link_to 'To Root', :root %> | 
-  <%= link_to 'New Sequence', new_sequence_path %> | 
-  <%= link_to 'Search Singular', :controller => :singulars, :action => :index %> | 
-  <%= 'Search Lexigram' %>
+  <%= link_to 'Root', :root %> | 
+  <%= link_to 'All Sequences', sequences_path %> | 
+  <%= link_to 'Singulars', :controller => :singulars, :action => :display %> | 
+  <%= link_to 'Lexigrams', :controller => :lexigrams, :action => :display %> | 
+  <%= link_to 'Completes', :controller => :completes, :action => :display %> | 
+  <%= link_to 'Creations', :controller => :creations, :action => :display %> | 
+  <%= link_to 'Texts', :controller => :texts, :action => :display %>
 </div>
 
 <h2>Lexigram sequence search results</h2>
@@ -11,10 +14,10 @@
   <%= "its lexigram sequence ::: " + @lexigram_sequence %><br />
   <%= "total matches found :::: " + @lexigrams_count %><br /><br /> 
 
-<div id="lexigramsresult">
+<div id="resultlexigram">
   <table>
     <tr>
-      <th>Text Entries</th>
+      <th>Lexigram Matches</th>
       <th></th>
       <th></th>
     </tr>
@@ -30,8 +33,11 @@
 </div>
 
 <div class="links">
-  <%= link_to 'To Root', :root %> | 
-  <%= link_to 'New Sequence', new_sequence_path(@sequence) %> | 
-  <%= link_to 'Search Singular', :controller => :singulars, :action => :index %> |
-  <%= 'Search Lexigram' %>
+  <%= link_to 'Root', :root %> | 
+  <%= link_to 'All Sequences', sequences_path %> | 
+  <%= link_to 'Singulars', :controller => :singulars, :action => :index %> | 
+  <%= link_to 'Lexigrams', :controller => :lexigrams, :action => :display %> | 
+  <%= link_to 'Completes', :controller => :completes, :action => :display %> | 
+  <%= link_to 'Creations', :controller => :creations, :action => :display %> | 
+  <%= link_to 'Texts', :controller => :texts, :action => :display %>
 </div>

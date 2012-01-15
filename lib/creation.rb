@@ -30,7 +30,7 @@ module Creation
     @creation_sequence = @sequencetextdespaced
     # puts "at line 35 the @ creation_sequence variable is : " + "#{@creation_sequence}"
     if (@creation_sequence.to_s) == ("") then
-      @creation_sequence = "no letters remain after processing the creation_sequence of your entry, please try again"
+      @creation_sequence = "no letters remain after processing"
     else
       @creation_sequence
     end

@@ -1,5 +1,17 @@
 ApotomoingSequencers::Application.routes.draw do
 
+  get "texts/list"
+
+  get "texts/display"
+
+  get "creations/list"
+
+  get "creations/display"
+
+  get "completes/list"
+
+  get "completes/display"
+
   get "lexigrams/list"
 
   get "lexigrams/display"

@@ -1,19 +1,23 @@
 <div class="links">
-  <%= link_to 'To Root', :root %> | 
-  <%= link_to 'New Sequence', new_sequence_path %> | 
-  <%= link_to 'Search Singular', :controller => :singulars, :action => :display %>
+  <%= link_to 'Root', :root %> | 
+  <%= link_to 'All Sequences', sequences_path %> | 
+  <%= link_to 'Singulars', :controller => :singulars, :action => :index %> | 
+  <%= link_to 'Lexigrams', :controller => :lexigrams, :action => :display %> | 
+  <%= link_to 'Completes', :controller => :completes, :action => :display %> | 
+  <%= link_to 'Creations', :controller => :creations, :action => :display %> | 
+  <%= link_to 'Texts', :controller => :texts, :action => :display %>
 </div>
 
-<h2>singular sequence search results</h2>
+<h2>Singular sequence search results</h2>
 
   <%= "your processed entry  ::: " + @sequencetextdecommaed %><br />
   <%= "its singular sequence ::: " + @singular_sequence %><br />
   <%= "total matches found :::: " + @singulars_count %><br /><br /> 
 
-<div id="singulars">
+<div id="resultsingular">
   <table>
     <tr>
-      <th>Text Entries</th>
+      <th>Singular Matches</th>
       <th></th>
       <th></th>
     </tr>
@@ -29,7 +33,11 @@
 </div>
 
 <div class="links">
-  <%= link_to 'To Root', :root %> | 
-  <%= link_to 'New Sequence', new_sequence_path(@sequence) %> | 
-  <%= link_to 'Search Singular', :controller => :singulars, :action => :display %>
+  <%= link_to 'Root', :root %> | 
+  <%= link_to 'All Sequences', sequences_path %> | 
+  <%= link_to 'Singulars', :controller => :singulars, :action => :index %> | 
+  <%= link_to 'Lexigrams', :controller => :lexigrams, :action => :display %> | 
+  <%= link_to 'Completes', :controller => :completes, :action => :display %> | 
+  <%= link_to 'Creations', :controller => :creations, :action => :display %> | 
+  <%= link_to 'Texts', :controller => :texts, :action => :display %>
 </div>

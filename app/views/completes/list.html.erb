@@ -8,23 +8,33 @@
   <%= link_to 'Texts', :controller => :texts, :action => :display %>
 </div>
 
-<div id="new_box_sequence">New Entry
-  <div class="new_entry_sequence">
-    <%= form_tag "" do %>
-    <%= text_field_tag "sequencetext" %>
+<h2>Complete sequence search results</h2>
 
-    <%= submit_tag "Submit Sequence", :id => 'sequencetext_submit', :name => 'sequencetext_submit' %> <!--hidden by jquery-->
+  <%= "your processed entry ::: " + @sequencetextdecommaed %><br />
+  <%= "its complete sequence :: " + @complete_sequence %><br />
+  <%= "total matches found ::::: " + @completes_count %><br /><br /> 
+
+<div id="resultcomplete">
+  <table>
+    <tr>
+      <th>Complete Matches</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @sequences.each do |sequence| %>
+      <tr>
+        <td><%= sequence.sequence_text %></td>
+        <td><%= link_to 'Show', sequence %></td>
+        <td><%= link_to 'Edit', edit_sequence_path(sequence) %></td>
+      </tr>
     <% end %>
-  </div>
-</div>
-
-<div class="newSequence">
-  <%= render 'form' %>
+  </table>
 </div>
 
 <div class="links">
-  <%= link_to 'To Root', :root %> | 
-  <%= link_to 'Show All Sequences', sequences_path %> |
+  <%= link_to 'Root', :root %> | 
+  <%= link_to 'All Sequences', sequences_path %> | 
   <%= link_to 'Singulars', :controller => :singulars, :action => :display %> | 
   <%= link_to 'Lexigrams', :controller => :lexigrams, :action => :display %> | 
   <%= link_to 'Completes', :controller => :completes, :action => :display %> | 
