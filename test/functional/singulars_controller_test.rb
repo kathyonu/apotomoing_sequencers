@@ -2,6 +2,7 @@ require 'test_helper'
 
 class SingularsControllerTest < ActionController::TestCase
   setup do
+    @sequencetext = "test"
     @sequences = sequences(:one)
   end
 

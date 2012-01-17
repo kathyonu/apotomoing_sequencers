@@ -9,7 +9,7 @@ class SequencesController < ApplicationController
   attr_accessor :complete_sequenced
   attr_accessor :lexigram_sequenced
   attr_accessor :singular_sequenced
-# attr_accessor :singular_sequences
+  attr_accessor :singulars_count
     
   respond_to :html, :js
 

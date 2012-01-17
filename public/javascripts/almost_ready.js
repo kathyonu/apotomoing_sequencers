@@ -122,7 +122,15 @@ $j(document).ready(  function() {
               $j('#count_lexigram').text($jletters_lexi_count);
               var $jletters_singular_count = $jsingular_return_value.length;
               $j('#count_singular').text($jletters_singular_count);
-              $j('input#sequence_sequence_lense').focus();
+              var singlesequencesing = $j("#sequence_sequence_singular").val();
+              if (singlesequencesing !== "") {
+                var $jsingularscount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/singulars_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
+                } }).responseText;
+                $jsingularcount = "s - " + $jsingularscount
+                $j('#singulars').show();
+                $j('#singulars').text($jsingularcount);
+                $j('input#sequence_sequence_lense').focus();
+              }
               }
             }
           }
@@ -135,6 +143,8 @@ $j(document).ready(  function() {
             $j('input#sequence_sequence_lexigram').val("");
             $j('input#sequence_sequence_singular').val("");
             $j('input#sequence_sequence_lense').val("");
+            $j('#singulars').val("");
+            $j('#singulars').hide();
           }
     });
   });
@@ -364,8 +374,10 @@ $j(document).ready(  function() {
   });
   
 $j(document).ready(  function() {
-    $j('#search_sequence_singulars form input#sequencetext').val("Enter your data, then tab out");
-    $j('#singular_result').hide();
-    $j('#singular_results').hide();
+    $j('#search_sequence_singulars form input#sequencetext').val("Enter your data");
+    $j('#search_sequence_lexigrams form input#sequencetext').val("Enter your data");
+    $j('#search_sequence_completes form input#sequencetext').val("Enter your data");
+    $j('#search_sequence_creations form input#sequencetext').val("Enter your data");
+    $j('#search_sequence_texts form input#sequencetext').val("Enter your data");
   });
-  
+

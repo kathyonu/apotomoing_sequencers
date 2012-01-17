@@ -32,7 +32,7 @@ pre { background: #eee; padding: 10px; font-size: 11px; }
 #errorExplanation h2 { text-align: left; font-weight: bold; padding: 5px 5px 5px 15px; font-size: 12px; margin: -7px; margin-bottom: 0px; background: #c00; color: #fff; }
 #errorExplanation ul li { font-size: 12px; list-style: square; }
 #errorExplanation { width: 450px; border: 2px solid red; padding: 7px; padding-bottom: 0; margin-bottom: 20px; background: #f0f0f0; }
-#kathyonu { border-right: 78px solid purple; border-left: 78px solid purple; position: relative; top: -10px; left: 13px; padding-top: 3px; padding-bottom: 1px; margin-bottom: 1px;  text-align: center; width: 289px; z-index: 11; font-size: 80%; }
+#kathyonu { border-right: 78px solid purple; border-left: 78px solid purple; position: relative; top: -8px; left: 5px; padding-top: 4px; padding-bottom: 1px; margin-bottom: 1px;  text-align: center; width: 285px; z-index: 11; font-size: 80%; }
 #newBoxAnagram  { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
 #newBoxSequence { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
 #newEntryAnagram  { font-size: 110%; margin-top: -5px; margin-bottom: 9px; margin-left: 2px; }
@@ -72,7 +72,7 @@ pre { background: #eee; padding: 10px; font-size: 11px; }
 #resulttext table { border: 2px solid red; font-size: 1em; margin-bottom: 10px; padding: .5em; }
 #singularResult { display: none; }
 #singularResults { display: none; }
-#singulars { border: 1px solid blue;  }
+#singulars { border-bottom: 1px solid blue; }
 .currentTime { border: 1px solid blue; margin-top: 0; margin-right: 10%; font-size: 140%; line-height: 150%; }
 .anagramEntry { border: 13px solid navy; border-left: 14px solid aqua; border-right: 14px solid aqua; padding-top: 8px; padding-left: 8px; }
 .anagramList ul li { background: #FFFDDA; line-height: 21px; margin: 1px; }

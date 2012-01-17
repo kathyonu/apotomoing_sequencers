@@ -42,7 +42,7 @@ module Searchsingular
     @sequencetextdespaced.extend Textual
 	@singular_sequence = @sequencetextdespaced.split(//).sort().join.squeeze.strip
     if (@singular_sequence) == ("") then
-      @singular_sequences = ["no letters remain after processing"]
+      @sequences = ["no letters remain after processing"]
     else
       @sequences = Sequence.find_all_by_sequence_singular(@singular_sequence)  # Array
      end
