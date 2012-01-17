@@ -129,7 +129,6 @@ $j(document).ready(  function() {
                 $jsingularcount = "s - " + $jsingularscount
                 $j('#countsingulars').show();
                 $j('#countsingulars').text($jsingularcount);
-                $j('input#sequence_sequence_lense').focus();
               }
               var lexigramsequencesing = $j("#sequence_sequence_lexigram").val();
               if (lexigramsequencesing !== "") {
@@ -138,6 +137,14 @@ $j(document).ready(  function() {
                 $jlexigramcount = "s - " + $jlexigramscount
                 $j('#countlexigrams').show();
                 $j('#countlexigrams').text($jlexigramcount);
+              }
+              var completesequencesing = $j("#sequence_sequence_complete").val();
+              if (completesequencesing !== "") {
+                var $jcompletescount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/completes_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
+                } }).responseText;
+                $jcompletecount = "s - " + $jcompletescount
+                $j('#countcompletes').show();
+                $j('#countcompletes').text($jcompletecount);
                 $j('input#sequence_sequence_lense').focus();
               }
               }

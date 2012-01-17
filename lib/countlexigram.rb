@@ -7,8 +7,8 @@ module Countlexigram
   attr_accessor :sequencetext
   attr_accessor :lexigrams_count
 
-  # this module method generates the lexigram sequence from the user entry, calling on lexigram_searcher(sequencetext) in lib/singjular.rb
-  # which then searches the sequence_lexigram column in the database, at which point the lexgigram_count variable is assigned the count : 20120116
+  # this module method generates the lexigram sequence from the user entry, calling on lexigram_searcher(sequencetext) in lib/lexigram.rb
+  # which then searches the sequence_lexigram column in the database, at which point the lexigram_count variable is assigned the count : 20120116
 
   puts "Countlexigram Module has been included"  # for use in console or server real time reporting of usage
   
