@@ -127,8 +127,17 @@ $j(document).ready(  function() {
                 var $jsingularscount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/singulars_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
                 } }).responseText;
                 $jsingularcount = "s - " + $jsingularscount
-                $j('#singulars').show();
-                $j('#singulars').text($jsingularcount);
+                $j('#countsingulars').show();
+                $j('#countsingulars').text($jsingularcount);
+                $j('input#sequence_sequence_lense').focus();
+              }
+              var lexigramsequencesing = $j("#sequence_sequence_lexigram").val();
+              if (lexigramsequencesing !== "") {
+                var $jlexigramscount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/lexigrams_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
+                } }).responseText;
+                $jlexigramcount = "s - " + $jlexigramscount
+                $j('#countlexigrams').show();
+                $j('#countlexigrams').text($jlexigramcount);
                 $j('input#sequence_sequence_lense').focus();
               }
               }

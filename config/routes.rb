@@ -41,6 +41,8 @@ ApotomoingSequencers::Application.routes.draw do
   match 'sequences/singular_sequenced' => "sequences#_singular_sequenced"
 
   match 'sequences/singulars_count' => "sequences#_singulars_count"
+
+  match 'sequences/lexigrams_count' => "sequences#_lexigrams_count"
   
   resources :sequences
 

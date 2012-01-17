@@ -1,5 +1,6 @@
 module ApplicationHelper
 
+  include Countlexigram
   include Countsingular
   include Singular
   include Searchsingular
