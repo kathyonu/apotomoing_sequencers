@@ -45,6 +45,8 @@ ApotomoingSequencers::Application.routes.draw do
   match 'sequences/lexigrams_count' => "sequences#_lexigrams_count"
 
   match 'sequences/completes_count' => "sequences#_completes_count"
+
+  match 'sequences/creations_count' => "sequences#_creations_count"
   
   resources :sequences
 

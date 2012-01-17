@@ -145,6 +145,14 @@ $j(document).ready(  function() {
                 $jcompletecount = "s - " + $jcompletescount
                 $j('#countcompletes').show();
                 $j('#countcompletes').text($jcompletecount);
+              }
+              var creationsequencesing = $j("#sequence_sequence_creation").val();
+              if (creationsequencesing !== "") {
+                var $jcreationscount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/creations_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
+                } }).responseText;
+                $jcreationcount = "s - " + $jcreationscount
+                $j('#countcreations').show();
+                $j('#countcreations').text($jcreationcount);
                 $j('input#sequence_sequence_lense').focus();
               }
               }
