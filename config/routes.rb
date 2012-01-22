@@ -47,6 +47,8 @@ ApotomoingSequencers::Application.routes.draw do
   match 'sequences/completes_count' => "sequences#_completes_count"
 
   match 'sequences/creations_count' => "sequences#_creations_count"
+
+  match 'sequences/texts_count' => "sequences#_texts_count"
   
   resources :sequences
 

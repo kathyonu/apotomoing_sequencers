@@ -153,6 +153,14 @@ $j(document).ready(  function() {
                 $jcreationcount = "s - " + $jcreationscount
                 $j('#countcreations').show();
                 $j('#countcreations').text($jcreationcount);
+              }
+              var textsequencesing = $j("#sequence_sequence_text").val();
+              if (textsequencesing !== "") {
+                var $jtextscount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/texts_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
+                } }).responseText;
+                $jtextcount = "s - " + $jtextscount
+                $j('#counttexts').show();
+                $j('#counttexts').text($jtextcount);
                 $j('input#sequence_sequence_lense').focus();
               }
               }
@@ -169,6 +177,10 @@ $j(document).ready(  function() {
             $j('input#sequence_sequence_lense').val("");
             $j('#singulars').val("");
             $j('#singulars').hide();
+            $j('#lexigrams').hide();
+            $j('#completes').hide();
+            $j('#creatoins').hide();
+            $j('#tests').hide();
           }
     });
   });
@@ -192,29 +204,29 @@ $j(document).ready(  function() {
             if (this.value !== "Enter data, then tab out") {
               var $jsequencetext = $j('.sequence_edit form input#sequencetext').serialize();
               var $jnewsequence = document.getElementById('sequencetext');
-              var $jsequenceSubmit = document.getElementById('sequence_submit');
+              var $jsequenceSubmit = document.getElementById('sequencetext_submit');
               $jnewsequence.form.onsubmit = function() { return false; };
-              $jsequenceSubmit.form.submit = function() { return false; };
+              $jsequenceSubmit.form.onsubmit = function() { return false; };
               var $jtext_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/text_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j(".sequence_edit form input#sequence_sequence_text").val($jtext_return_value);
+                $j('input#sequence_sequence_text').val($jtext_return_value);
                 
               var $jlexi_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/lexigram_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j(".sequence_edit form input#sequence_sequence_lexigram").val($jlexi_return_value);
+                $j('input#sequence_sequence_lexigram').val($jlexi_return_value);
 
               var $jcreation_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/creation_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j(".sequence_edit form input#sequence_sequence_creation").val($jcreation_return_value);
+                $j('input#sequence_sequence_creation').val($jcreation_return_value);
 
               var $jcomplete_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/complete_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j(".sequence_edit form input#sequence_sequence_complete").val($jcomplete_return_value);
+                $j('input#sequence_sequence_complete').val($jcomplete_return_value);
 
               var $jsingular_return_value = $j.ajax({
                 type: "GET",    url: "http://localhost:3000/sequences/singular_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                $j(".sequence_edit form input#sequence_sequence_singular").val($jsingular_return_value);
-                $j('.sequence_edit form input#sequence_sequence_lense').focus();
+                $j('input#sequence_sequence_singular').val($jsingular_return_value);
+                $j('form input#sequence_sequence_lense').focus();
             }
           }
           else
