@@ -123,6 +123,7 @@ $j(document).ready(  function() {
               var $jletters_singular_count = $jsingular_return_value.length;
               $j('#count_singular').text($jletters_singular_count);
               var singlesequencesing = $j("#sequence_sequence_singular").val();
+              }
               if (singlesequencesing !== "") {
                 var $jsingularscount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/singulars_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
                 } }).responseText;
@@ -130,6 +131,28 @@ $j(document).ready(  function() {
                 $j('#countsingulars').show();
                 $j('#countsingulars').text($jsingularcount);
               }
+              if ($jsingularscount == 0) {
+                $jlexigramscount = 0
+                $jcompletescount = 0
+                $jcreationscount = 0
+                $jtextscount = 0
+                $jsingularcount = "s - " + $jsingularscount
+                $jlexigramcount = "s - " + $jlexigramscount
+                $jcompletecount = "s - " + $jcompletescount
+                $jcreationcount = "s - " + $jcreationscount
+                $jtextcount = "s - " + $jtextscount
+                $j('#countlexigrams').show();
+                $j('#countlexigrams').text($jlexigramcount);
+                $j('#countcompletes').show();
+                $j('#countcompletes').text($jcompletecount);
+                $j('#countcreations').show();
+                $j('#countcreations').text($jcreationcount);
+                $j('#counttexts').show();
+                $j('#counttexts').text($jtextcount);
+                $j('#sequence_sequence_lense').focus();
+              }
+              else
+              {
               var lexigramsequencesing = $j("#sequence_sequence_lexigram").val();
               if (lexigramsequencesing !== "") {
                 var $jlexigramscount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/lexigrams_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
