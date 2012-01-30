@@ -1,4 +1,4 @@
-## Welcome to Ruby on Rails using Apotomo on Cells.
+## Welcome to Ruby on Rails using Apotomo and Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
 ### Note: This is the 1st push of the mysql branch.
@@ -7,7 +7,9 @@
 > After you enter your text into the entry box,
 > when you tab or click out of the entry box, the five sequences
 > are generated and entered into the sequence form,
-> without page change, using javascript with jQuery,
+> next the character counts are shown at the right, 
+> next the database matches are shown on the left, 
+> all without page change, using javascript with jQuery,
 > and our five sequencers written in Ruby.
 
 # Getting Started
@@ -23,11 +25,11 @@
 
 ### After your server fires up, go to your browser : 
 
-*	http://localhost:3000/sequences/new     <= five sequencers now processing with Ruby via jQuery ajax calls, now in use in production with over 12,000,000 rows in database.
+*	http://localhost:3000/sequences/new     <= five sequencers now processing with Ruby via jQuery ajax calls, now in use in production with over 4,000,000 rows in database.
 *       http://localhost:3000/                  <= root address, is not fully functioning yet.  Use the above address.
 > The sequences/new address shows the entire application design and data in one table. 
 > The sequences table is a primitive setup allowing massive duplicates in the five sequences. 
-> The sequences table was added so you can see how the entire application can exist in one table. 
+> The sequences table was added so you can see how the entire application exists in one table. 
 > The widgets at root are not yet fully functioning, only the sequences/new address is fully working.
 
 ## Description:
@@ -43,11 +45,9 @@ Currently, we are writing this app using the Snow Leopard iMac with :
 ### [cells](http://cells.rubyforge.org/ "Cells 3.6.7")
 ### [sqlite3](http://www.sqlite.org/quickstart.html "SQLite")
 ### [mysql2](http://rubygems.org/gems/mysql2 "mysql2")
-Our in-house app is now using mysql2 in production and development.
+Our in-house app is now using mysql in production and development.
 ### [jQuery](http://jquery.com/ "jQuery")
 jQuery empowers the five sequencers with asynchronous processing, calling on Ruby to process the String.to_textual regular expressions.
-#### See : app/public/javascript/lexidisplay.js     : affects app/views/sequences/new and /_form
-#### See : app/public/javascript/sequencessubmit.js : affects app/views/sequences/new and /_form
 
 ## apotomoing_sequencers
 As a name, it comes from two stories of creation:

@@ -45,7 +45,7 @@ module Searchanagrams
     if (@singular_sequence) == ("") then
       @sequences = ["no letters remain after processing"]
     else
-      @sequences = Sequence.find_all_by_sequence_singular(@singular_sequence)  # Array
+      @sequences = Sequence.find_all_by_sequence_singular(@singular_sequence)
 #     still working on the code below : 20120129 : which will replace the one line above
 #      @motherset = @singular_sequence.split(//).to_set
 #      loop do
