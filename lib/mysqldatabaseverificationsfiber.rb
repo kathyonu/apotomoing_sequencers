@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby -w
 module Mysqldatabaseverificationsfiber
 
+# Note : These methods are not used in the app.
+#      : I use these lib/mysqldatabase* files hold the methods i use to process text files via console
+
   include ApplicationHelper  # uncomment for use in console / remove in production
   include Histogram
   include Textual

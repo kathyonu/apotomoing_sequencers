@@ -9,19 +9,13 @@ module Mysqldataprocessinginternals
   require 'fiber'
 
 # USAGE : the require statement in console, then the method command
-##      > require "./lib/mysql_data_processing_internals.rb"
+##      > require "./lib/mysqldataprocessinginternals.rb"
 ###     > doing_internal_lines
 #### that command runs the fiber shown below
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below that calls for it
   def file_name
     file_name = ("tmp/database_dones/dones_internals/insert_internals-01.txt")
-   #file_name = ("tmp/insert_internals_hash.txt")
-   #file_name = ("tmp/insert_sexual_lines.txt")
-   #file_name = ("../../Documents/20110731-research.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hash-015.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hashlines-015.txt")
   end
 
     # reads file in one gulp then runs the sort and then the uniq on it.
@@ -67,7 +61,7 @@ module Mysqldataprocessinginternals
       anagram = 0
       name = 0
       phrase = 0
-      sexualities = 0
+      research = 0
       external = 0
       internal = 1
       created_at = "2011-12-12 12:12:00"
@@ -92,9 +86,7 @@ module Mysqldataprocessinginternals
     #    mysql> LOAD DATA LOCAL INFILE './tmp/database_dones/done_internals/insert_internals_lines-mysql-01.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, sequence_lense, description, reference, anagram, name, phrase, research, external, internal, created_at);
   def after_break
     open("./tmp/database_dones/done_internals/insert_internals_lines-mysql-singular-sorted-uniqued-01.txt", "r") do |f| 
-   #open("./tmp/database_dones/done_internals/insert_internals_lines-mysql-01.txt", "r") do |f| 
     g = f.read
-   #puts g    # uncommenting this line line causes each line of data to show on your screen as it is output to the file
     f.close
    end
     exit(puts "Processing is complete >> ./tmp/database_dones/insert_internals_lines-mysql-01.txt << is closed, console has been exited")

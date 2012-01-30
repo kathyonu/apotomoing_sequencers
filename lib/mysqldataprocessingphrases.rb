@@ -10,10 +10,9 @@ module Mysqldataprocessingphrases
 
 # USAGE : the require statement in console :
 ##      > require "./lib/mysqldataprocessingphrases.rb"
-###     > doing_phrases
-#### that command runs the fiber shown below
+###     > doing_phrase commands below
 
-    # file_name allows you to name the file that contains your data to be processed, using any method below that calls for it
+   # file_name allows you to name the file that contains your data to be processed, using any method below that calls for it
   def file_name
     file_name = ("./tmp/database_doings/doing_phrases/insert_phrase_lines.txt")
   end

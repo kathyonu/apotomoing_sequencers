@@ -9,8 +9,8 @@ module Mysqldataprocessinglenses
   require 'fiber'
 
 # USAGE : the require statement in console :
-##      > require "./lib/mysql_data_processing_lenses.rb"
-###     > doing_sexual_lines
+##      > require "./lib/mysqldataprocessinglenses.rb"
+###     > doing_lense_lines
 #### that command runs the fiber shown below
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below that calls for it
@@ -18,12 +18,13 @@ module Mysqldataprocessinglenses
     file_name = ("./tmp/database_doings/doing_lenses/lenses_sorted.txt")
   end
 
-    # after_break is used at end of fiber method doing_sexual_lines to end process, and save the file addended to
+    # after_break is used at end of fiber method doing_lense_lines to end process, and save the file addended to
 	# to load the data produced by the fiber above use these commands in mysql console :
-	# in Terminal $ cd ./desideratus/apotomoing_sequencers
+	# in Terminal
+	#    $ cd ./desideratus/apotomoing_sequencers
 	#    $ mysql
     #    mysql> use sequencers_production
-	#    mysql> LOAD DATA LOCAL INFILE './tmp/database_doings/doing_lenses/lense_lines_hashed.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at, lense);
+	#    mysql> LOAD DATA LOCAL INFILE './tmp/database_doings/doing_lenses/lense_lines_hashed.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, sequence_lense, description, reference, anagram, name, phrase, research, external, internal, created_at);
   def after_break
     f = open("./tmp/database_doings/doing_lenses/lenses_sorted.txt", "r") do |f| 
       g = f.read
@@ -58,17 +59,17 @@ module Mysqldataprocessinglenses
         sequence_complete = sequence_text.split(//).sort.join('').strip unless nil
         sequence_lexigram = lexigram_sequencer(line.to_textual.de_comma) unless nil
         sequence_singular = sequence_complete.squeeze unless nil
+        sequence_lense = lexigram_sequencer(reference) unless nil
         description = "americans star art"
         reference = "americans"
         anagram = 0
         name = 0
         phrase = 1
-        sexualities = 0
+        research = 0
         external = 0
         internal = 0
         created_at = "2011-12-12 12:12:11"
-        lense = lexigram_sequencer(reference) unless nil
-        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\t#{lense}\n"
+        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{created_at}\n"
         queue << line
         break unless line
         consumer.transfer queue
@@ -125,7 +126,7 @@ module Mysqldataprocessinglenses
       IO.foreach("./tmp/output-file.txt") do |line| 
         queue = ""
         puts queue
-        sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, sexualities, external, internal, created_at = line.split("\t")
+        sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, research, external, internal, created_at = line.split("\t")
         extracted_data = sequence_text.to_textual
         queue << "#{extracted_data}\n"
         break unless line

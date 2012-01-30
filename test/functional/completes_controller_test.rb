@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class CompletesControllerTest < ActionController::TestCase
+  setup do
+    sequencetext = "test"
+    @sequences = sequences(:one)
+  end
+
   test "should get list" do
     get :list
     assert_response :success

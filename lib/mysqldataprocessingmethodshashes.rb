@@ -5,7 +5,7 @@
 
 # in Terminal, after running > rails console, enter this require statement
 #\   $ rails c -s           :: abbreviation for $ rails console -sandbox
-##\  > require "./lib/mysql_data_processing_methods_hashes.rb"
+##\  > require "./lib/mysqldataprocessingmethodshashes.rb"
 ###\ for any fibering methods to work, you must require the Fiber library, as shown below.
 ####\ this file is under development, not all methods work yet .. use with care.
 
@@ -16,22 +16,7 @@
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below
   def file_name
-   #file_name = ("tmp/insert_anagrams.txt")
-   #file_name = ("tmp/insert_externals.txt")
-   #file_name = ("tmp/insert_internals.txt")
-    file_name = ("tmp/insert_internals_hash.txt")           # 
-   #file_name = ("tmp/insert_lexigramings_lines.txt")       # .gitignore
-   #file_name = ("tmp/insert_nameings_lines.txt")           # .gitignore
-   #file_name = ("tmp/insert_nameings_meanings_lines.txt")	#  .gitignore
-   #file_name = ("tmp/insert_quotes_lines.txt")
-   #file_name = ("tmp/insert_research_lines.txt")           #  .gitignore
-   #file_name = ("tmp/insert_sexual_lines.txt")             #  .gitignore
-   #file_name = ("tmp/insert_words_list_lines.txt") 
-   #file_name = ("tmp/insert_words_sword_lines.txt")        #  .gitignore
-   #file_name = ("../../Documents/20110731-research.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hash-015.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hashlines-015.txt")
+    file_name = ("tmp/insert_internals_hash.txt")
   end
 
   def count_frequency(word_list)

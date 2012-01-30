@@ -9,7 +9,7 @@ module Mysqldataprocessingexternals
   require 'fiber'
 
 # USAGE : the require statement in console, then the method command
-##      > require "./lib/mysql_data_processing_externals.rb"
+##      > require "./lib/mysqldataprocessingexternals.rb"
 ###     > doing_external_lines
 #### that command runs the fiber shown below
 
@@ -23,7 +23,7 @@ module Mysqldataprocessingexternals
 	# in Terminal $ cd ./desideratus/apotomoing_sequencers
 	#    $ mysql
     #    mysql> use sequencers_production
-    #    mysql> LOAD DATA LOCAL INFILE './tmp/database_doings/doing_externals/insert_externals_hash_sorted.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, sequence_lense, description, reference, anagram, name, phrase, research, external, internal, created_at);
+    #    mysql> LOAD DATA LOCAL INFILE './tmp/database_doings/doing_externals/insert_externals_hash_sorted.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, research, external, internal, created_at);
   def after_break
     open("./tmp/database_doings/doing_externals/insert_externals.txt", "r") do |f| 
     g = f.read
@@ -194,7 +194,7 @@ module Mysqldataprocessingexternals
       external = 1
       internal = 0
       created_at = "2011-12-12 12:12:00"
-      puts "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\n"
+      puts "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{created_at}\n"
       end
       end
     end
@@ -248,7 +248,7 @@ module Mysqldataprocessingexternals
       IO.foreach("./tmp/database_dones/insert_externals_hash_sorted.txt") do |line| 
         queue = ""
         puts queue
-        external_searched, external_creation, external_complete, external_lexigram, external_singular, description, reference, anagram, name, phrase, sexualities, internal, external, created_at = line.split("\t")
+        external_searched, external_creation, external_complete, external_lexigram, external_singular, description, reference, anagram, name, phrase, research, internal, external, created_at = line.split("\t")
         sequence_text = external_searched.to_textual.de_comma unless nil
         reference = reference.to_s.strip
         line = "#{sequence_text}\t#{reference}\n"

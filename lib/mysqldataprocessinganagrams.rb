@@ -16,11 +16,6 @@ module Mysqldataprocessinganagrams
     # file_name allows you to name the file that conatains your data to be processed, using any method below that calls for it
   def file_name
     file_name = ("tmp/insert_anagrams.txt")
-   #file_name = ("tmp/insert_sexual_lines.txt")
-   #file_name = ("../../Documents/20110731-research.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hash-015.txt")
-   #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hashlines-015.txt")
   end
 
     # reads file in one gulp then runs the sort and then the uniq on it.
@@ -97,17 +92,16 @@ module Mysqldataprocessinganagrams
         sequence_complete = sequence_creation.split(//).sort.join('').strip unless nil
         sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
         sequence_singular = sequence_complete.squeeze unless nil
-		sequence_lense = ''
         description = "English"
         reference = "word list"
         anagram = 1
         name = 0
         phrase = 0
-        sexualities = 0
+        research = 0
         external = 0
         internal = 0
         created_at = "2011-12-12 12:12:00"
-        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{created_at}\n"
+        line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{created_at}\n"
         queue << line
         break unless line
         consumer.transfer queue
@@ -152,10 +146,11 @@ module Mysqldataprocessinganagrams
         anagram = 1
         name = 0
         phrase = 0
-        sexualities = 0
+        research = 0
         external = 0
         internal = 0
-        puts "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}\n"
+        created_at = "2011-12-12 12:12:00"
+        puts "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{created_at}\n"
       end
     end
   end

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TextsControllerTest < ActionController::TestCase
   setup do
-    @sequencetext = "test"
+    sequencetext = "test"
     @sequences = sequences(:one)
   end
 

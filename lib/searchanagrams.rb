@@ -22,7 +22,7 @@ module Searchanagrams
 # attr_accessor :anagrams_count : future use
     
   def anagramsearch_searched(sequencetext)
-    @anagramsearch_searched = singular_searcher(sequencetext)
+    @anagramsearch_searched = anagramsearch_searcher(sequencetext)
   end
 
   def anagramsearch_searcher(sequencetext)
@@ -33,15 +33,15 @@ module Searchanagrams
     @sequences = []
     @singular_sequence = ""
     @singular_sequences = []
-    @sequencetext = sequencetext
-    @sequencetext.extend Textual
-    @sequencetextualed = @sequencetext.to_textual
-    @sequencetextualed.extend Textual
-    @sequencetextdecommaed = @sequencetextualed.de_comma
-    @sequencetextdecommaed.extend Textual
-    @sequencetextdespaced = @sequencetextdecommaed.de_space
-    @sequencetextdespaced.extend Textual
-    @singular_sequence = @sequencetextdespaced.split(//).sort().join.squeeze.strip
+    @sequencetext = sequencetext unless nil
+    @sequencetext.extend Textual unless nil
+    @sequencetextualed = @sequencetext.to_textual unless nil
+    @sequencetextualed.extend Textual unless nil
+    @sequencetextdecommaed = @sequencetextualed.de_comma unless nil
+    @sequencetextdecommaed.extend Textual unless nil
+    @sequencetextdespaced = @sequencetextdecommaed.de_space unless nil
+    @sequencetextdespaced.extend Textual unless nil
+    @singular_sequence = @sequencetextdespaced.split(//).sort().join.squeeze.strip unless nil
     if (@singular_sequence) == ("") then
       @sequences = ["no letters remain after processing"]
     else

@@ -12,7 +12,6 @@ module Textualfibers
 ## through the String#to_textual method, and
 ### through the five sequencers using the ie. lexigram_sequencer(sequencetext)
 #### through the mysql pre-processing for entry into database
-##### example : "./lib/mysql_data_processing_sexualities.rb" : adult only material
 ###### example : "./lib/mysql_data_processing_anagrams.rb"   : our English words table, the English lexicon of words, sequenced
 ###### example : "./lib/mysql_data_processing_names.rb"      : our English names table, the English lexicon of names, 
 ###### example : "./lib/mysql_data_processing_phrases.rb"    : our English phrases table, say it in English ? it is a phrase
@@ -32,9 +31,6 @@ module Textualfibers
 # rails <3.1
 
 # the method named  lexigram_sequencer(sequencetext) has been moved to : lib/lexigram.rb
-# the method bamed  process_sex_line has been moved to                 : lib/mysql_data_processing_sexualities.rb
-# the fiber named   doing_sexual_lines, has been moved to              : lib/mysql_data_processing_sexualities.rb
-# the method named  process_internals_hash                             : lib/mysql_data_processing_internals.rb
 
     # file_name method allows you to name the file that conatains your data to be processed, using any appropriate method below
   def file_name
@@ -43,7 +39,6 @@ module Textualfibers
    #file_name = ("./tmp/insert_internals_hash.txt")
    #file_name = ("lib/anagrams/anagrams_table_data.txt")
    #file_name = ("tmp/insert_anagrams.txt")
-   #file_name = ("tmp/insert_sexual_lines.txt")
    #file_name = ("tmp/insert_word_list.txt")
    #file_name = ("../../Documents/20110421-research_textualed.txt")
    #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready-015.txt")
@@ -60,7 +55,7 @@ module Textualfibers
   # using file_name as its data source, this working code will produce full text from lines of data and their sequences.
   # last valid use of this code was converting both the key and the value to text, then joining them as one 'keyvalue'
   # the key held the words used in millions of sentences, the value gave the number of times the words is used in 184,405 lines of phrases.
-  #def process_sexual_sequences
+  #def process_research_sequences
   #  namesplit = []
   # #open("tmp/insert_internals_hash.txt") do |f|
   #  open(file_name) do |f|
@@ -560,8 +555,8 @@ module Textualfibers
     producer = Fiber.new do |consumer, queue|
       queue = "firststring"
       puts queue
-      open("./tmp/insert_sexual_lines.txt", "r") do |f|
-     #open("./tmp/insert_sexual_lines-02.txt", "r") do |f|
+      open("./tmp/insert_research_lines.txt", "r") do |f|
+     #open("./tmp/insert_research_lines-02.txt", "r") do |f|
      #open("./lib/databasers/fibered_files_input.txt", "r") do |f|
         f.each do |line|
           sequence_text = line.to_textual.de_comma   
@@ -569,15 +564,15 @@ module Textualfibers
           sequence_complete = sequence_text.to_textual.de_comma.split(//).sort.join('').strip unless nil
           sequence_lexigram = lexigram_sequencer(sequence_text) unless nil
           sequence_singular = sequence_complete.squeeze
-          description = "sexual materials"
-          reference = "literotica"
+          description = "research materials"
+          reference = "net"
           anagram = 0
           name = 0
           phrase = 0
-          sexualities = 1
+          research = 1
           external = 0
           internal = 0
-          queue = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{sexualities}\t#{external}\t#{internal}\t#{Time.now}"
+          queue = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{Time.now}"
           break unless f
           consumer.transfer queue
           queue.clear
