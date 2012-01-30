@@ -88,7 +88,7 @@ module Lexigram
     sentence = @sequencetextdecommaed.strip
     @words = sentence.split(/\W/)
     if @wordscounter === 0
-      "no letters remain after processing the lexigram_sequence of your entry, please try again"
+      "no letters remain after processing"
     elsif @wordscounter === 1
       @worda = @words.shift
       @wordscounter -= 1
@@ -101,7 +101,7 @@ module Lexigram
       @lexigram_letters = @lexigram_letters_array.join
       @lexigram_sequence = @lexigram_letters.split(//).sort.join.strip
       if (@lexigram_sequence.to_s) == ("") then
-        @lexigram_sequence = "no letters remain after processing the lexigram_sequence of your one word entry, please try again"
+        @lexigram_sequence = "no letters remain after processing"
       else
         @lexigram_sequence
       end
@@ -126,7 +126,7 @@ module Lexigram
         @lexigram_sequence = ""
         @lexigram_sequence = @lexigram_array.split(//).sort.join.strip
         if (@lexigram_sequence.to_s) == ("") then
-          @lexigram_sequence = "no letters remain after processing the lexigram_sequence of your two word entry, please try again"
+          @lexigram_sequence = "no letters remain after processing"
         else
           @lexigram_sequence
         end  
@@ -166,7 +166,7 @@ module Lexigram
             @lexigram_sequence = @lexigram_hash_holder2.collect do | k, v | "#{k}" * v end.sort.join.strip
           end
           if (@lexigram_sequence.to_s) == ("") then
-            @lexigram_sequence = "no letters remain after processing your entry"
+            @lexigram_sequence = "no letters remain after processing"
           else
             @lexigram_sequence
           end

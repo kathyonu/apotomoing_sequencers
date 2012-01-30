@@ -4,7 +4,7 @@ class SingularsController < ApplicationController
    attr_accessor :singulars_count
 
     # GET /singulars
-  def index
+  def list
     @sequences = self.singular_searcher(params[:sequencetext])
     @singulars_count = "#{@sequences.count.to_s}"
   end

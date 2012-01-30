@@ -29,7 +29,7 @@ module Complete
     @complete_sequence = ""
     @complete_sequence = @sequencetextdecommaed.split(//).sort().join.strip
     if (@complete_sequence.to_s) == ("") then
-      @complete_sequence = "no letters remain after processing the compete_sequence of your entry, please try again"
+      @complete_sequence = "no letters remain after processing"
     else
       @complete_sequence
     end

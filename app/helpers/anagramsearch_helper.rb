@@ -1,0 +1,2 @@
+module AnagramsearchHelper
+end

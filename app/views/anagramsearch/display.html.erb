@@ -1,25 +1,25 @@
 <div class="links">
   <%= link_to 'Root', :root %> | 
-  <%= link_to 'All Sequences', sequences_path %> |
+  <%= link_to 'All Sequences', sequences_path %> | 
   <%= link_to 'New Sequence', new_sequence_path(@sequence) %>
 </div>
 
-<div class="sequence_search_creations">
-  <div id="search_sequence_creations"><span>Search the Creation Sequence of Your Entry</span>
+<div class="sequence_anagramsearch">
+  <div id="search_anagramsearch"><span>Search for Anagrams of Your Entry</span>
     <%= form_tag 'list', :action => 'list', :method => 'get' do %>
     <%= text_field_tag "sequencetext" %>
  
-    <%= submit_tag "Search creation", :id => 'creations_search_submit', :name => 'creations_search_submit' %>
+    <%= submit_tag "Search anagrams temporarily provides the same answer as TEXTS", :id => 'anagramsearch_submit', :name => 'anagramsearch_submit' %>
     <% end %>
   </div>
 </div>
 
 <div class="links">
   <%= link_to 'Root', :root %> | 
-  <%= link_to 'Anagramsearch', :controller => :anagramsearch, :action => :display %> | 
+  <%= 'Anagramsearch' %> | 
   <%= link_to 'Singulars', :controller => :singulars, :action => :display %> | 
   <%= link_to 'Lexigrams', :controller => :lexigrams, :action => :display %> |
   <%= link_to 'Completes', :controller => :completes, :action => :display %> | 
-  <%= 'Creation' %> | 
+  <%= link_to 'Creations', :controller => :creations, :action => :display %> | 
   <%= link_to 'Texts', :controller => :texts, :action => :display %>
 </div>

@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby -w
-module Text
+module Anagramsearch
  
   include Textual
 
-  puts "Text Module has included the Textual module"  # for use in console
+  puts "Anagramsearch Module has included the Textual module"  # for use in console
 
   attr_accessor :sequencetext
   attr_accessor :text_sequence
@@ -14,7 +14,7 @@ module Text
   end
 
   ### complete_sequencer(sequencetext) generates the sequence_complete from any sequencetext entered, and its letter-count
-  def text_sequencer(sequencetext)
+  def anagramsearch_sequencer(sequencetext)
     @sequencetext = sequencetext
 	@sequencetext.extend Textual
     @text_sequence = ""
@@ -31,7 +31,7 @@ module Text
 	@text_sequence = @sequencetextualed.de_comma
     #puts "at line 32 the @ text_sequence variable is : " + @text_sequence
     if (@text_sequence.to_s) == ("") then
-      @text_sequence = "no letters remain after processing"
+      @text_sequence = "no letters remain after processing, please try again"
     else
 	  @text_sequence
 	end
@@ -46,4 +46,4 @@ module Text
   end
   
 end
-$Text = Text
+$Anagramsearch = Anagramsearch

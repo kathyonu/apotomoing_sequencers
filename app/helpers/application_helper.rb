@@ -1,11 +1,13 @@
 module ApplicationHelper
 
+  include Anagramsearch
   include Counttext
   include Countcreation
   include Countcomplete
   include Countlexigram
   include Countsingular
   include Singular
+  include Searchanagrams
   include Searchsingular
   include Searchlexigram
   include Searchcomplete
@@ -18,7 +20,8 @@ module ApplicationHelper
   include Textual
   include Lexigram
   
-  puts "included searchsingular and searchlexigram modules"
+  puts "included anagramsearch module"
+  puts "included searchanagrams, searchsingular, searchlexigram, searchcomplete, searchcreation and searchtext modules"
   puts "included singular, text, creation, complete, histogram, textual and lexigram modules, in that order using application/helper" # console use
   puts "application helper has been loaded directly by application controller" # console use
 

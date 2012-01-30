@@ -1,5 +1,9 @@
 ApotomoingSequencers::Application.routes.draw do
 
+  get "anagramsearch/display"
+
+  get "anagramsearch/list"
+
   get "texts/list"
 
   get "texts/display"
@@ -16,7 +20,7 @@ ApotomoingSequencers::Application.routes.draw do
 
   get "lexigrams/display"
 
-  get "singulars/index"
+  get "singulars/list"
 
   get "singulars/display"
 

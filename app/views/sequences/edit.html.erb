@@ -1,9 +1,8 @@
 <div class="links">
   <%= link_to 'To Root', :root %> | 
-  <%= link_to 'Show This Sequence', @sequence %> |
-  <%= link_to 'All Sequences', sequences_path %> |
-  <%= link_to 'New Sequence', new_sequence_path %> | 
-  <%= link_to 'Search Singular', :controller => :singulars, :action => :display %>
+  <%= link_to 'Show This Sequence', @sequence %> | 
+  <%= link_to 'All Sequences', sequences_path %> | 
+  <%= link_to 'New Sequence', new_sequence_path %> 
 </div>
 
 <h1>Editing Sequence</h1>
@@ -23,8 +22,10 @@
 
 <div class="links">
   <%= link_to 'To Root', :root %> | 
-  <%= link_to 'Show This Sequence', @sequence %> |
-  <%= link_to 'All Sequences', sequences_path %> |
-  <%= link_to 'New Sequence', new_sequence_path %> | 
-  <%= link_to 'Search Singular', :controller => :singulars, :action => :display %>
+  <%= link_to 'Anagramsearch', :controller => :anagramsearch, :action => :display %> | 
+  <%= link_to 'Singulars', :controller => :singulars, :action => :display %> | 
+  <%= link_to 'Lexigrams', :controller => :lexigrams, :action => :display %> | 
+  <%= link_to 'Completes', :controller => :completes, :action => :display %> | 
+  <%= link_to 'Creations', :controller => :creations, :action => :display %> | 
+  <%= link_to 'Texts', :controller => :texts, :action => :display %>
 </div>

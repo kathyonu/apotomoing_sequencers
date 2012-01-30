@@ -7,7 +7,7 @@ class SingularsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :list
     assert_response :success
     assert_not_nil assigns(:sequences)
   end
