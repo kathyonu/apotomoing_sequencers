@@ -28,6 +28,7 @@ module Textualfile
   
   def to_textual
     foo = self.downcase
+    foo.gsub!(/,/, ", ")                                # , : replaces the comma with a comma space,so as to allow processing of such an errors as a comma,with no space following it : otherwise, the spaceless comma is not processed
     foo.gsub!(/%/, " percent ")                         # % : replaces the percent sign with the text
    #foo.gsub!(//, " ")                                  #TODO replaces a period between letters with a space
     foo.gsub!(/(\Ba\.m\.$)/, " am")                     # a.m.  < replaces that with : am, at the end of the line

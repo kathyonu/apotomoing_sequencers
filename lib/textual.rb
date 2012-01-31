@@ -4,12 +4,10 @@ module Textual
 ## uncomment this puts below, for use in console to show when it is loaded. do not use in production
   puts "Textual Module is loaded"
 
-### this module is still being developed
+### this module is still being developed : author will i am at goodworksonearth.org : 20120130
 ## for usage instructions and examples see : app/doc/README_for_method-to_textual.txt
-# 20111002 : those instructions may be out of date at this point, due to changes in other codes
-# 20111207 : all expressions that return the \n are being changed to that does not occur
-## example :: a .. z becomes a\nz !      ::: that is no longer true, all the line breaks have been removed
-### to process a file and produce the newline breaks, use lib/textual-file.rb
+## because the data being process is limited in length, there are no line breaks created in this processing of the user entry.
+### to process a file that produce the newline breaks, use lib/textualfile.rb
 
     # de_comma should be used only after the String#to_textual method, so as to process numbers properly first.  
   def de_comma                        # in console :  
@@ -28,6 +26,7 @@ module Textual
   
   def to_textual
     foo = self.downcase
+    foo.gsub!(/,/, ", ")                                # , : replaces the comma with a comma space,so as to allow processing of such an errors as a comma,with no space following it : otherwise, the spaceless comma is not processed
     foo.gsub!(/%/, " percent ")                         # % : replaces the percent sign with the text
    #foo.gsub!(/\B\.\B/, " ")                            #TODO replaces a period between letters with a space : move this below the number processings
     foo.gsub!(/(\Ba\.m\.$)/, " am")                     # a.m.  < replaces that with : am, at the end of the line

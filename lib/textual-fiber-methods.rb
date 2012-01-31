@@ -6,6 +6,7 @@
 ##    $ rails c -s     : this will run the console in the sandbox, all changes will be rolled back on exit.
 ## Run this require statement in the console.
 ##    require "./lib/textual-fiber-methods.rb"
+## to see fibers in use, see the lib/mysqldata*.rb files
 
 include IRB
 include Textual

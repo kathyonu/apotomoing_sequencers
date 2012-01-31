@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -w
 
-##  AN ORIGNIAL MASTER, DO NOT CHANGE ONE IOTA.
+##  Note to Self : AN ORIGNIAL MASTER, DO NOT CHANGE ONE IOTA.
 ##  FILE NAME : /desideratus/apotomoing_sequencers/app/lib/textual-fiber-quotes.rb
 ##  mysqlbranch : 20110805 : printed 201111111111psteug
 ## Run in Terminal in your app directory :
@@ -8,14 +8,11 @@
 ## Run this require statement in the console : 
 ##     require "./lib/textual-fiber-quotes.rb"
 
-  include Histogram
   include Textual
-  include Lexigram
 
   require './lib/sequencerings/textualfibers.rb'
-  require 'fiber'
 
-puts "textual-fiber-quotes.rb loaded"
+  puts "textual-fiber-quotes.rb loaded"
 
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below
