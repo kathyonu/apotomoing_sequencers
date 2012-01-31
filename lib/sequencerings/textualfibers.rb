@@ -1,7 +1,11 @@
 #!/usr/bin/env ruby -w
 module Textualfibers
  
- #include ApplicationHelper  # uncomment for use in conole
+# this file's methods are not used in the program : i used this for storing methods
+# please see the /lib/mysqldatabase***.rb files for the most evolved fibers
+
+ 
+# include ApplicationHelper  # uncomment for use in conole
   include Histogram
   include Textual
   include Lexigram
@@ -48,7 +52,7 @@ module Textualfibers
    #file_name = ("../consummates/lib/databasers/mysql_database_safe_lines/mysql_database_ready_hashlines_sorted_values-015.txt")
   end
   
-  # for the working code see app/public/javascripts/lexidisplay.js  : 20110929
+  # for the working code see app/public/javascripts/all.js amd almost_ready.js
   ## i leave this here for my own historical reasons : 20111113
   ###
   #### 20110819 below CODE IS NOT WORKING

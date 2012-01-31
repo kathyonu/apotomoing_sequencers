@@ -4,6 +4,8 @@ module Textualfile
 # module Textual is used in processing the five sequences in the app, it does not create new lines.
 # module Textualfile : is used to process files of text, and it creates new lines.
 
+# this file's methods are not used in the program : i used this for storing methods for use in console
+
 ## uncomment this puts below, for use in console to show when it is loaded. do not use in production
   puts "Textualfile Module is loaded"
 

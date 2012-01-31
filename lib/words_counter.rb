@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby -w
 
+# this file's methods are not used in the program : i used this for storing methods
+# please see the /lib/mysqldatabase***.rb files for the most evolved fibers
+
 # ruby-1.9.2-p0 
 # rails = 3.0.10
 

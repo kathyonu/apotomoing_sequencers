@@ -1,10 +1,9 @@
-this data also allows us to test the String#to_textual method in various ways, and change the tests easily.
+this data allows us to test the String#to_textual method in various ways, and change the tests easily.
 feel free to replace this with your data.
 a word.
 a day.
 allows all.
 to be learnt.
-in the console
 instructions for use :
 commands in the console
   $ rails c -s

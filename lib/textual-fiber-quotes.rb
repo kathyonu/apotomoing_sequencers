@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby -w
 
+# this file's methods are not used in the program : i used this for storing methods
+# please see the /lib/mysqldatabase***.rb files for the most evolved fibers
+
 ##  Note to Self : AN ORIGNIAL MASTER, DO NOT CHANGE ONE IOTA.
 ##  FILE NAME : /desideratus/apotomoing_sequencers/app/lib/textual-fiber-quotes.rb
 ##  mysqlbranch : 20110805 : printed 201111111111psteug

@@ -6,12 +6,11 @@ module Lexigram
 
   puts "Lexigram Module has included Histogram and Textual modules" # for use in console
 
-#  attr_accessor :anagram_text
   attr_accessor :sequencetext
   attr_accessor :lexigram_sequence
   attr_accessor :lexigram_sequenced
   
-  # calling lexigram_sequenced returns the @lexigram_sequence
+    # calling lexigram_sequenced returns the @lexigram_sequence
   def lexigram_sequenced
     @lexigram_sequenced = lexigram_sequencer(sequencetext)
    #@lexigram_sequenced = lexigram_sequencer(sequencetext|anagram_text)
@@ -33,7 +32,7 @@ module Lexigram
     # > lexigram_sequenced
     #  => "ddeeeffhilnorsttuvwxyz"
 	
-  ### lexigram_sequencer(sequencetext) generates the sequence_lexigram from any sequencetext entered
+    # lexigram_sequencer(sequencetext) generates the sequence_lexigram from any sequencetext entered
   def lexigram_sequencer(sequencetext)
     @sequencetext = sequencetext
     @sequencetext.extend Textual
