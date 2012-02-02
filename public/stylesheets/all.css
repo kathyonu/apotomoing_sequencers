@@ -128,6 +128,7 @@ pre { background: #eee; padding: 10px; font-size: 11px; }
 .small { font-size: 75%; }
 .strong { font-weight: bold; }
 .submitsequence { border: 2px solid red; background: yellow; color: black; font-size: 110%; }
+.thecounts { font-size: 80%; }
 .textFound { border: 4px dotted yellow; }
 .tmpButtons { bottom: 5px; right: 5px; }
 

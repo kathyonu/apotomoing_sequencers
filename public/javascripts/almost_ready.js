@@ -95,6 +95,7 @@ $j(document).ready(  function() {
               var $jsequencetext = $j('.new_entry_sequence form input#sequencetext').serialize();
               var $jnewsequence = document.getElementById('sequencetext');
               var $jsequenceSubmit = document.getElementById('sequence_submit');
+              $j('.thecounts').hide();
               $jnewsequence.form.onsubmit = function() { return false; };
               $jsequenceSubmit.form.submit = function() { return false; };
               var $jtext_return_value = $j.ajax({
