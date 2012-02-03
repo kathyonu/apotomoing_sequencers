@@ -7,6 +7,5 @@ mysql/*
 tmp/**/*
 tmp/*
 config/database.yml
-public/javascripts/archives-js/*
 doc/api
 doc/app
