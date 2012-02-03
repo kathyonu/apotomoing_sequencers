@@ -1,4 +1,3 @@
-
 jQuery.noConflict();
 var $j = jQuery;
 
@@ -441,3 +440,43 @@ $j(document).ready(  function() {
     $j('#search_sequence_texts form input#sequencetext').val("Enter your data");
   });
 
+// FOCUSIN on '#search_sequence_singulars form input#sequencetext'
+$j(document).ready(  function() {
+  $j('#search_sequence_singulars form input#sequencetext').bind(
+    'focusin',function(event) {    
+      $j('#search_sequence_singulars form input#sequencetext').val("")
+    })
+  });
+
+// FOCUSIN on '#search_sequence_lexigrams form input#sequencetext'
+$j(document).ready(  function() {
+  $j('#search_sequence_lexigrams form input#sequencetext').bind(
+    'focusin',function(event) {    
+      $j('#search_sequence_lexigrams form input#sequencetext').val("")
+    })
+  });
+
+// FOCUSIN on '#search_sequence_completes form input#sequencetext'
+$j(document).ready(  function() {
+  $j('#search_sequence_completes form input#sequencetext').bind(
+    'focusin',function(event) {    
+      $j('#search_sequence_completes form input#sequencetext').val("")
+    })
+  });
+
+// FOCUSIN on '#search_sequence_creations form input#sequencetext'
+$j(document).ready(  function() {
+  $j('#search_sequence_creations form input#sequencetext').bind(
+    'focusin',function(event) {    
+      $j('#search_sequence_creations form input#sequencetext').val("")
+    })
+  });
+
+// FOCUSIN on '#search_sequence_texts form input#sequencetext'
+$j(document).ready(  function() {
+  $j('#search_sequence_texts form input#sequencetext').bind(
+    'focusin',function(event) {    
+      $j('#search_sequence_texts form input#sequencetext').val("")
+    })
+  });
+     
