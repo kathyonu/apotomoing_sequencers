@@ -21,12 +21,14 @@
         Adjust that file as necessary to your needs, then run ..
 	$ bundle install
 	$ rake db
-	$ rails s
+	$ rails s			# to run the development server
+or	$ rails s -e production		# to run the production server
+
 
 ### After your server fires up, go to your browser : 
 
-*	http://localhost:3000/sequences/new     <= five sequencers now processing with Ruby via jQuery ajax calls, now in use in production with over 4,000,000 rows in database.
-*       http://localhost:3000/                  <= root address, is not fully functioning yet.  Use the above address.
+*	http://localhost:3000/sequences/new
+*       http://localhost:3000/ this root address is not fully functioning yet, so please use the above address.
 > The sequences/new address shows the entire application design and data in one table. 
 > The sequences table is a primitive setup allowing massive duplicates in the five sequences. 
 > The sequences table was added so you can see how the entire application exists in one table. 
@@ -97,8 +99,8 @@ The application will prove useful to anyone who loves and works with words and h
 
 > An anagrams generator is available now at [Wordsmith AnagramGenerator](http://www.wordsmith.org/ "Wordsmith.org AnagramGenerator")
 
-> #### This application is Copyright Will I Am at goodworksonearth.org, held in trust.
+> #### This application is Copyright Will I Am, held in trust at goodworksonearth.org.
 > #### You are free to use this application, and make changes to it for your own use, provided this copyright notice remains intact.  
 > #### kathyonu is my pen name, a Perfect Anagram of THANK YOU.
 > #### Ruby, Ruby on Rails, Apotomo and Cells are all registered to their owners, their copyrights protected.
-> #### A good place to begin learning Apotomo and Cells [Peter's Guide](http://apotomo.de/peters-guide-1.1/introduction.html "Peter's Guide")
+> #### At this time a good place to begin learning Apotomo and Cells [Peter's Guide](http://apotomo.de/peters-guide-1.1/introduction.html "Peter's Guide")
