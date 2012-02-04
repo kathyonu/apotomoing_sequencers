@@ -1,6 +1,7 @@
-# mysql2 in development and production
-# remember to create the two mysql databases
 # to use Sqlite3 copy the database-example.yml file, paste it here replacing this below
+# this is setup to use mysql2 in development and production
+# remember to create the two mysql databases, development and production
+# change 'your_password' to your setting
 
 development:
   reconnect: false
