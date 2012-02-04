@@ -3,6 +3,7 @@
 **/.DS_Store
 log/*.log
 log/.gitignore
+config/database.yml
 mysql/*
 tmp/**/*
 tmp/*
