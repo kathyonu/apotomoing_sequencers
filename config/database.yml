@@ -7,7 +7,7 @@ development:
   adapter: mysql2
   encoding: utf8
   username: root
-  password: "a_leap_too"
+  password: "your_password"
   socket: /tmp/mysql.sock
   pool: 5
   host: localhost
@@ -22,7 +22,7 @@ test:
   adapter: sqlite3
   encoding: utf8
   username: root
-  password: "a_leap_too"
+  password: "your_password"
  #socket: /tmp/mysql.sock
   pool: 5
   host: localhost
@@ -32,7 +32,7 @@ production:
   adapter: mysql2
   encoding: utf8
   username: root
-  password: "a_leap_too"
+  password: "your_password"
   reconnect: false
   database: sequencers_production
   timeout: 5000
