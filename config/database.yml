@@ -1,5 +1,6 @@
 # mysql2 in development and production
-# remember to create the three databases
+# remember to create the two mysql databases
+# to use Sqlite3 copy the database-example.yml file, paste it here replacing this below
 
 development:
   reconnect: false

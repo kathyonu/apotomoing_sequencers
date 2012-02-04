@@ -1,7 +1,7 @@
 ## Welcome to Ruby on Rails using Apotomo and Cells.
 * github.com/kathyonu/apotomoing_sequencers
 
-### Note: This is the 1st push of the mysql branch.
+### Note: 
 > After you run the Getting Started instructions below, 
 > In your browser, go to http://localhost:3000/sequences/new
 > After you enter your text into the entry box,
@@ -17,12 +17,12 @@
 
 	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
 	$ cd ./apotomoing_sequencers
-	Copy the config/database-example.yml file as config/database.yml
-        Adjust that file as necessary to your needs, then run ..
+	  Copy the config/database-example.yml file as config/database.yml if you want to use Sqlie3.
+	  Adjust that file as necessary to your needs, then run ..
 	$ bundle install
 	$ rake db
 	$ rails s			# to run the development server
-or	$ rails s -e production		# to run the production server
+	$ rails s -e production		# to run the production server
 
 
 ### After your server fires up, go to your browser : 
