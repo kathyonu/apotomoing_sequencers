@@ -1,45 +1,31 @@
-# to use Sqlite3 copy the database-example.yml file, paste it here replacing this below
-# this is setup to use mysql2 in development and production
-# remember to create the two mysql databases, development and production
-# change 'your_password' to your setting
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+# 
+# To use mysql database, see database-example.yml
 
 development:
-  reconnect: false
-  database: sequencers_development
-  timeout: 5000
-  adapter: mysql2
-  encoding: utf8
-  username: root
+  adapter: sqlite3
   password: "your_password"
-  socket: /tmp/mysql.sock
+  database: db/development.sqlite3
   pool: 5
-  host: localhost
- #host: 127.0.0.1:3000
+  timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  database: sequencers_test
-  timeout: 5000
   adapter: sqlite3
-  encoding: utf8
-  username: root
   password: "your_password"
- #socket: /tmp/mysql.sock
+  database: db/test.sqlite3
   pool: 5
-  host: localhost
- #host: 127.0.0.1:3000
+  timeout: 5000
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  username: root
+  adapter: sqlite3
   password: "your_password"
-  reconnect: false
-  database: sequencers_production
-  timeout: 5000
-  socket: /tmp/mysql.sock
+  database: db/production.sqlite3
   pool: 5
-  host: localhost
- #host: 127.0.0.1:3000
+  timeout: 5000

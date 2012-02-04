@@ -1,25 +1,42 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
+# mysql2 in development and production
+
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
+  reconnect: false
+  database: sequencers_development
   timeout: 5000
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password: "your_password"
+  socket: /tmp/mysql.sock
+  pool: 5
+  host: localhost
+ #host: 127.0.0.1:3000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
+  database: sequencers_test
   timeout: 5000
+  adapter: sqlite3
+  encoding: utf8
+  username: root
+  password: "your_password"
+ #socket: /tmp/mysql.sock
+  pool: 5
+  host: localhost
+ #host: 127.0.0.1:3000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password: "your_password"
+  reconnect: false
+  database: sequencers_production
   timeout: 5000
+  socket: /tmp/mysql.sock
+  pool: 5
+  host: localhost
+ #host: 127.0.0.1:3000
