@@ -1,4 +1,5 @@
 # mysql2 in development and production
+# remember to create the two mysql databases, development and production
 
 development:
   reconnect: false
