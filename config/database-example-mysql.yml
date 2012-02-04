@@ -1,5 +1,5 @@
 # mysql2 in development and production
-
+# remember to add the two mysql databases, development and production
 development:
   reconnect: false
   database: sequencers_development

@@ -3,6 +3,9 @@
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
+#
+# To use mysql as your database, see config/database-example-mysql.yml
+
 development:
   adapter: sqlite3
   database: db/development.sqlite3
