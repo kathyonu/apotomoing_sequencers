@@ -21,7 +21,8 @@
 	  For Sqlite3 database, save the config/database-example-sqlite3.yml file as config/database.yml.
 	  Adjust that file as necessary to your needs.
           Now open the Gemfile, and comment out mysql2, and uncomment Sqlite3 if you want Sqlite3 as your database.
-          If you choose to use mysql, remember to create the three databases : sequencers_development, sequencers_production, sequencers_test.
+          [If you choose to use mysql, remember to create the three databases : 
+          sequencers_development, sequencers_production, sequencers_test]
           Next run ..
 	$ bundle install
 	$ rake db:create
