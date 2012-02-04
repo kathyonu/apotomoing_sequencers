@@ -17,9 +17,9 @@
 
 	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
 	$ cd ./apotomoing_sequencers
-	  For mysql database, save the config/database-example-mysql.yml file as config/database.yml, adjust parameters as needed.
-           Create the three mysql databases : sequencers_development, sequencers_production, sequencers_test.
-	  For Sqlite3 database, save the config/database-example-sqlite3.yml file as config/database.yml, adjust parameters as needed.
+	  For mysql database, save the config/database-example-mysql.yml file as config/database.yml
+          Create the three mysql databases : sequencers_development, sequencers_production, sequencers_test.
+	  For Sqlite3 database, save the config/database-example-sqlite3.yml file as config/database.yml.
           For Sqlite3 database, open the Gemfile, and comment out mysql2, and uncomment Sqlite3.
           Next run ..
 	$ bundle install
