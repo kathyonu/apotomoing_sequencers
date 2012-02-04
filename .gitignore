@@ -1,6 +1,7 @@
 .bundle
 .DS_Store
 **/.DS_Store
+config/database.yml
 log/*.log
 log/.gitignore
 mysql/*
