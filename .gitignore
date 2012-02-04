@@ -6,6 +6,5 @@ log/.gitignore
 mysql/*
 tmp/**/*
 tmp/*
-config/database.yml
 doc/api
 doc/app
