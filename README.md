@@ -17,7 +17,8 @@
 
 	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
 	$ cd ./apotomoing_sequencers
-	  Copy the config/database-example.yml file as config/database.yml if you want to use Sqlie3.
+	  For mysql database, save the config/database-example-mysql.yml file as config/database.yml.
+	  For Sqlite3 database, save the config/database-example-sqlite3.yml file as config/database.yml.
 	  Adjust that file as necessary to your needs, then run ..
 	$ bundle install
 	$ rake db
