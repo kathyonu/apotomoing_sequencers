@@ -17,23 +17,21 @@
 
 	$ git clone git://github.com/kathyonu/apotomoing_sequencers.git
 	$ cd ./apotomoing_sequencers
-	  For mysql database, save the config/database-example-mysql.yml file as config/database.yml.
-	  For Sqlite3 database, save the config/database-example-sqlite3.yml file as config/database.yml.
-	  Adjust that file as necessary to your needs.
-          Now open the Gemfile, and comment out mysql2, and uncomment Sqlite3 if you want Sqlite3 as your database.
-          [If you choose to use mysql, remember to create the three databases : 
-          sequencers_development, sequencers_production, sequencers_test]
+	  For mysql database, save the config/database-example-mysql.yml file as config/database.yml, adjust parameters as needed.
+           Create the three mysql databases : sequencers_development, sequencers_production, sequencers_test.
+	  For Sqlite3 database, save the config/database-example-sqlite3.yml file as config/database.yml, adjust parameters as needed.
+          For Sqlite3 database, open the Gemfile, and comment out mysql2, and uncomment Sqlite3.
           Next run ..
 	$ bundle install
-	$ rake db:create
+        $ rake db:migrate               # or the next command
+	$ rake db:migrate:reset         # sets up the database anew
 	$ rails s			# to run the development server
-	$ rails s -e production		# to run the production server
-
 
 ### After your server fires up, go to your browser : 
 
 *	http://localhost:3000/sequences/new
 *       http://localhost:3000/ this root address is not fully functioning yet, so please use the above address.
+
 > The sequences/new address shows the entire application design and data in one table. 
 > The sequences table is a primitive setup allowing massive duplicates in the five sequences. 
 > The sequences table was added so you can see how the entire application exists in one table. 
