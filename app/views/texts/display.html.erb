@@ -5,6 +5,7 @@
 </div>
 
 <div class="sequence_search_texts">
+  <div id="spinner"></div>
   <div id="search_sequence_texts"><span>Search the Text Sequence of Your Entry</span>
     <%= form_tag 'list', :action => 'list', :method => 'get' do %>
     <%= text_field_tag "sequencetext" %>
