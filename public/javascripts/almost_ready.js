@@ -71,16 +71,6 @@ $j(document).ready(
   })
 );
 
-// sets up the spinner on every ajax action
-$j.ajaxSetup({
-  beforeSend : function() {
-    $j("#spinner").activity(true);
-    },
-  complete : function() {
-    $j("#spinner").activity(false);         
-    }
-  });
-
 // FOCUSIN on .new_entry_sequence form input#sequencetext
 $j(document).ready(  function() {
     $j('.new_entry_sequence form input#sequencetext').bind(
@@ -101,6 +91,7 @@ $j(document).ready(  function() {
                 if (this.value !== "Please Enter Your Data") {
                   $j('.thecounts').hide();
                   $j('input#sequencetext').blur();
+$j("#spinner").activity({outside: true, align: 'left', segments: 1});
                   var $jsequencetext = $j('.new_entry_sequence form input#sequencetext').serialize();
                   var $jnewsequence = document.getElementById('sequencetext');
                   var $jsequenceSubmit = document.getElementById('sequence_submit');
@@ -108,19 +99,29 @@ $j(document).ready(  function() {
                   $jsequenceSubmit.form.submit = function() { return false; };
                   var $jtext_return_value = $j.ajax({
                     type: "GET",    url: "http://localhost:3000/sequences/text_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                  $j("#spinner").activity(false);         
                   $j("input#sequence_sequence_text").val($jtext_return_value);
+$j("#spinner").activity({outside: true, align: 'left', segments: 2});
                   var $jcreation_return_value = $j.ajax({
                     type: "GET",    url: "http://localhost:3000/sequences/creation_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                  $j("#spinner").activity(false);         
                   $j("input#sequence_sequence_creation").val($jcreation_return_value);
+$j("#spinner").activity({outside: true, align: 'left', segments: 3});
                   var $jcomplete_return_value = $j.ajax({
                     type: "GET",    url: "http://localhost:3000/sequences/complete_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                  $j("#spinner").activity(false);         
                   $j("input#sequence_sequence_complete").val($jcomplete_return_value);
+$j("#spinner").activity({outside: true, align: 'left', segments: 4});
                   var $jlexi_return_value = $j.ajax({
                     type: "GET",    url: "http://localhost:3000/sequences/lexigram_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                  $j("#spinner").activity(false);         
                   $j("input#sequence_sequence_lexigram").val($jlexi_return_value);
+$j("#spinner").activity({outside: true, align: 'left', segments: 5});
                   var $jsingular_return_value = $j.ajax({
                     type: "GET",    url: "http://localhost:3000/sequences/singular_sequenced",    data: $jsequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
+                  $j("#spinner").activity(false);         
                   $j("input#sequence_sequence_singular").val($jsingular_return_value);
+$j("#spinner").activity({outside: true, align: 'left', segments: 4});
                   var $jletters_text_count = $jtext_return_value.length;
                   $j('#count_text').text($jletters_text_count);
                   var $jletters_creation_count = $jcreation_return_value.length;
@@ -132,16 +133,20 @@ $j(document).ready(  function() {
                   var $jletters_singular_count = $jsingular_return_value.length;
                   $j('#count_singular').text($jletters_singular_count);
                   var singlesequencesing = $j("#sequence_sequence_singular").val();
+                  $j("#spinner").activity(false);         
                   }
                   if (singlesequencesing !== "") {
+$j("#spinner").activity({outside: true, align: 'left', segments: 4});
                     var $jsingularscount = $j.ajax({
                       type: "GET", url: "http://localhost:3000/sequences/singulars_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
                       } }).responseText;
                     $jsingularcount = "s - " + $jsingularscount
                     $j('#countsingulars').show();
                     $j('#countsingulars').text($jsingularcount);
+                    $j("#spinner").activity(false);
                   }
                   if ($jsingularscount == 0) {
+$j("#spinner").activity({outside: true, align: 'left', segments: 4});
                     var $jlexigramscount = 0
                     var $jcompletescount = 0
                     var $jcreationscount = 0
@@ -159,35 +164,43 @@ $j(document).ready(  function() {
                     $j('#countcreations').text($jcreationcount);
                     $j('#counttexts').show();
                     $j('#counttexts').text($jtextcount);
+                    $j("#spinner").activity(false);
                     $j('#sequence_sequence_lense').focus();
                   }
                   else
                   {
                   var lexigramsequencesing = $j("#sequence_sequence_lexigram").val();
+$j("#spinner").activity({outside: true, align: 'left', segments: 3});
                   if (lexigramsequencesing !== "") {
                     var $jlexigramscount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/lexigrams_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
                     } }).responseText;
                     $jlexigramcount = "s - " + $jlexigramscount
                     $j('#countlexigrams').show();
                     $j('#countlexigrams').text($jlexigramcount);
+                    $j("#spinner").activity(false);
                   }
                   var completesequencesing = $j("#sequence_sequence_complete").val();
+$j("#spinner").activity({outside: true, align: 'left', segments: 4});
                   if (completesequencesing !== "") {
                     var $jcompletescount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/completes_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
                     } }).responseText;
                     $jcompletecount = "s - " + $jcompletescount
                     $j('#countcompletes').show();
                     $j('#countcompletes').text($jcompletecount);
+                    $j("#spinner").activity(false);
                   }
                   var creationsequencesing = $j("#sequence_sequence_creation").val();
+$j("#spinner").activity({outside: true, align: 'left', segments: 5});
                   if (creationsequencesing !== "") {
                     var $jcreationscount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/creations_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
                     } }).responseText;
                     $jcreationcount = "s - " + $jcreationscount
                     $j('#countcreations').show();
                     $j('#countcreations').text($jcreationcount);
+                    $j("#spinner").activity(false);
                   }
                   var textsequencesing = $j("#sequence_sequence_text").val();
+$j("#spinner").activity({outside: true, align: 'left', segments: 6});
                   if (textsequencesing !== "") {
                     var $jtextscount = $j.ajax({  type: "GET", url: "http://localhost:3000/sequences/texts_count", data: $jsequencetext, async: false, dataType: 'script', success: function(data) {
                     } }).responseText;
@@ -195,12 +208,15 @@ $j(document).ready(  function() {
                     $j('#counttexts').show();
                     $j('#counttexts').text($jtextcount);
                     $j('input#sequence_sequence_lense').focus();
+                    $j("#spinner").activity(false);
                   }
                   }
             }
+            $j("#spinner").activity(false);         
           }
           else
           {
+            $j("#spinner").activity(false);         
             $j('input#sequencetext').val('Please Enter Your Data');
             $j('input#sequence_sequence_text').val("");
             $j('input#sequence_sequence_creation').val("");
@@ -213,6 +229,11 @@ $j(document).ready(  function() {
             $j('#completes').hide();
             $j('#creations').hide();
             $j('#texts').hide();
+            $j('#countsingulars').hide();
+            $j('#countlexigrams').hide();
+            $j('#countcompletes').hide();
+            $j('#countcreations').hide();
+            $j('#counttexts').hide();
           }
     });
   });

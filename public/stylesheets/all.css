@@ -7,12 +7,12 @@ div.field, div.actions { margin-bottom: 10px; }
 form#sequences > input#submit { display: none; }
 input#sequencetext { margin-bottom: 11px; margin-left: 2px; padding-left: 5px; border-bottom: 4px solid #000; border-left: 3px solid #000; line-height: 120%; font-size: 110%; width: 430px; }
 pre { background: #eee; padding: 10px; font-size: 11px; }
-#anagramListClose { position: relative; top: -275px; margin-left: -26px; width: 66%; }
+#anagramListClose { position: relative; top: -275px; margin-left: -26px; width: 64%; }
 #anagramListDisplay { display: none; position: relative; top: 2px; left: -10px; padding-top: 1px; width: 180%; }
 #anagramListOpen { position: relative; top: 18px; left: 18px; width: 91%; }
 #countAnagrams { margin-left: 50px; margin-bottom: 3px; padding: 2px; }
 #countQuotes { margin-left: 50px; margin-bottom: 3px; padding: 2px; }
-#countSequenceCreateds { margin-left: 50px; margin-bottom: 3px; padding: 2px; }
+#countSequenceCreateds { margin-left: -275px; margin-bottom: 3px; padding: 2px; }
 #countSequences { margin-left: 50px; margin-bottom: 3px; padding: 2px; }
 #count_singular { font-size: 70%; margin-left: 5px; padding-left: 5px; border-left: 3px solid #000; }
 #count_lexigram { font-size: 70%; margin-left: 5px; padding-left: 5px; border-left: 3px solid #000; }
