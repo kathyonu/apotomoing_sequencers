@@ -8,7 +8,7 @@ gem "ruby_core_source", "~> 0.1.5"
 
 gem "mysql2", "<0.3"
 
-# gem "sqlite3-ruby", "1.2.5", :require => "sqlite3"
+gem "sqlite3-ruby", "1.2.5", :require => "sqlite3"
 
 gem "activerecord-mysql2spatial-adapter", ">= 0"
 
