@@ -62,6 +62,7 @@ module Textual
     foo.gsub!(/(^ps\.\s+)/, "ps ")                        # ps.  < replaces that with : ps at beginning of line
     foo.gsub!(/(^ps:\s+)/, "ps ")                         # ps:  < replaces that with : ps at beginning of line
     foo.gsub!(/(^ps;\s+)/, "ps ")                         # ps;  < replaces that with : ps at beginning of line
+    foo.gsub!(/(\sg\.p\.a\.\s)/, " grade point average ")  # g.p.a. < replaces g.p.a. with grade point average
     foo.gsub!(/\sww\s?ii(,\s)/, " world war two, ")        # wwII < replaces that with : world war two
     foo.gsub!(/\sww\s?ii(\s?\.?,?\??)/, " world war two ") # wwII < replaces that with : world war two
     foo.gsub!(/\sww\s?i(,\s)/, " world war one, ")         # ww1  < replaces that with : world war one

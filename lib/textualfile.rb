@@ -65,14 +65,15 @@ module Textualfile
     foo.gsub!(/(^p\.s\.\s+)/, "ps ")                      # p.s.  < replaces that with : ps at beginning of line
     foo.gsub!(/(^ps\.\s+)/, "ps ")                        # ps.  < replaces that with : ps at beginning of line
     foo.gsub!(/(^ps:\s+)/, "ps ")                         # ps:  < replaces that with : ps at beginning of line
-    foo.gsub!(/(^ps;\s+)/, "ps ")                         # ps;  < replaces that with : ps at beginning of line
-    foo.gsub!(/\sww\s?ii(,\s)/, " world war two, ")        # wwII < replaces that with : world war two
+    foo.gsub!(/(^ps;\s+)/, "ps ")                          # ps;   < replaces that with : ps at beginning of line
+    foo.gsub!(/(\sg\.p\.a\.\s)/, " grade point average ")  # g.p.a. < replaces g.p.a. with grade point average
+    foo.gsub!(/\sww\s?ii(,\s)/, " world war two, ")        # wwII  < replaces that with : world war two
     foo.gsub!(/\sww\s?ii(\s?\.?,?\??)/, " world war two ") # wwII < replaces that with : world war two
     foo.gsub!(/\sww\s?i(,\s)/, " world war one, ")         # ww1  < replaces that with : world war one
     foo.gsub!(/\sww\s?i(\s?\.?,?\??)/, " world war one ")  # ww1  < replaces that with : world war one
-    foo.gsub!(/((\s?(p)\.(s)\.)\s+)/, " ps ")              # p.s.  < replaces that with : ps
-    foo.gsub!(/((\s+(i)\.(d)\.)\s+)/, " identification ")  # i.d.  < replaces that with : identification
-    foo.gsub!(/((\s+(i)\.(d)\.)$)/, " identification")     # i.d.  < replaces that with : identification at end of line
+    foo.gsub!(/((\s?(p)\.(s)\.)\s+)/, " ps ")              # p.s. < replaces that with : ps
+    foo.gsub!(/((\s+(i)\.(d)\.)\s+)/, " identification ")  # i.d. < replaces that with : identification
+    foo.gsub!(/((\s+(i)\.(d)\.)$)/, " identification")     # i.d. < replaces that with : identification at end of line
     foo.gsub!(/(^xo\.\s+)/, "executive officer ")         # xo.   < replaces that with : executive officer, at beginning of line
     foo.gsub!(/(\s+xo\s+)/, " executive officer ")        # xo.   < replaces that with : executive officer
     foo.gsub!(/(\s+xo,\s+)/, " executive officer, ")      # xo.   < replaces that with : executive officer,
@@ -80,9 +81,9 @@ module Textualfile
     foo.gsub!(/(^lt\.\s+)/, "lieutenant ")                # lt.   < replaces that with : lieutenant, at beginning of line
     foo.gsub!(/(\s+lt\.\s+)/, " lieutenant ")             # lt.   < replaces that with : lieutenant
     foo.gsub!(/(\s+lt\.$)/, " lieutenant")                # lt.   < replaces that with : lieutenant, at end of line.
-    foo.gsub!(/(^sgt\.\s+)/, "sargeant ")                 # sgt.   < replaces that with : sargeant, at beginning of line
-    foo.gsub!(/(\s+sgt\.\s+)/, " sargeant ")              # sgt.   < replaces that with : sargeant
-    foo.gsub!(/(\s+sgt\.$)/, " sargeant")                 # sgt.   < replaces that with : sargeant, at end of line.
+    foo.gsub!(/(^sgt\.\s+)/, "sargeant ")                 # sgt.  < replaces that with : sargeant, at beginning of line
+    foo.gsub!(/(\s+sgt\.\s+)/, " sargeant ")              # sgt.  < replaces that with : sargeant
+    foo.gsub!(/(\s+sgt\.$)/, " sargeant")                 # sgt.  < replaces that with : sargeant, at end of line.
     foo.gsub!(/(\s+etc\.$)/, " etcetera ")
     foo.gsub!(/(\s+(etc\.,)\s)/, " etcetera, ")
     foo.gsub!(/(\s+(etc,)\s)/, " etcetera, ")

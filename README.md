@@ -29,13 +29,16 @@
 
 ### After your server fires up, go to your browser : 
 
-*	http://localhost:3000/sequences/new
-*       http://localhost:3000/ this root address is not fully functioning yet, so please use the above address.
+*	http://localhost:3000/  : will display the sequences generated from  any text entry. does not affect the database.
+*       http://localhost:3000/sequences/new  : to affect the database, begin here.
 
 > The sequences/new address shows the entire application design and data in one table. 
 > The sequences table is a primitive setup allowing massive duplicates in the five sequences. 
-> The sequences table was added so you can see how the entire application exists in one table. 
-> The widgets at root are not yet fully functioning, only the sequences/new address is fully working.
+> The sequences table was added so we and you can see how the entire application exists in one table. 
+> The further development of this application has now begun as of March 2012.
+> No further development of this application apotoming_sequences is anticipated,
+> due to development of our prelaunch site : 
+### [sequencer_prelaunch](https://github.com/kathyonu/sequencer_prelaunch "Sequencer Prelaunch")
 
 ## Description:
 
@@ -43,7 +46,9 @@ The essence of apotomoing_sequencers is to process any textual matter that conta
 
 The regular expressions file empowering the String#to_textual method is here : lib/textual.rb
 
-Currently, we are writing this app using the Snow Leopard iMac with : 
+The app works Using: Ruby-1.9.2-p290 and Rails 3.0.10
+
+Currently, we wrote this app using the Snow Leopard iMac with : 
 ### [ruby](http://rubyforge.org/ "Ruby 1.9.2p0 2010-08-18 revision 29036 [x86_64-darwin10]")
 ### [rails](http://rubyforge.org/projects/rails/ "Rails 3.0.5, up through Rails 3.0.10")
 ### [apotomo](http://apotomo.de/ "Apotomo 1.2.0")
@@ -100,10 +105,10 @@ The application will prove useful to anyone who loves and works with words and h
 * anagrams, full or partial
 * perfect anagrams - meanings wise, these are a leap beyond the full anagrams offered at wordsmith.org and other anagram generators.
 
-> An anagrams generator is available now at [Wordsmith AnagramGenerator](http://www.wordsmith.org/ "Wordsmith.org AnagramGenerator")
+### An anagrams generator is available now at [Wordsmith AnagramGenerator](http://www.wordsmith.org/ "Wordsmith.org AnagramGenerator")
 
-> #### This application is Copyright Will I Am, held in trust at goodworksonearth.org.
-> #### You are free to use this application, and make changes to it for your own use, provided this copyright notice remains intact.  
-> #### kathyonu is my pen name, a Perfect Anagram of THANK YOU.
-> #### Ruby, Ruby on Rails, Apotomo and Cells are all registered to their owners, their copyrights protected.
-> #### At this time a good place to begin learning Apotomo and Cells [Peter's Guide](http://apotomo.de/peters-guide-1.1/introduction.html "Peter's Guide")
+> This application is Copyright Will I Am, held in trust at goodworksonearth.org.
+> You are free to use this application, and make changes to it for your own use, provided this copyright notice remains intact.  
+> kathyonu is my pen name, a Perfect Anagram of THANK YOU.
+> Ruby, Ruby on Rails, Apotomo and Cells are all registered to their owners, their copyrights protected.
+> At this time a good place to begin learning Apotomo and Cells [Peter's Guide](http://apotomo.de/peters-guide-1.1/introduction.html "Peter's Guide")
