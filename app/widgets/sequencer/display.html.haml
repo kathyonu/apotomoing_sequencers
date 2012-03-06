@@ -6,19 +6,13 @@
   .linksInfoRoot= "To Root < You are here " 
   .linksGroup
     .linkTo= link_to 'Anagrams', :controller => :anagrams, :action => :new
+    #countAnagrams= "#{Anagram.count}"
     .linkTo= link_to 'Quotes', :controller => :quotes, :action => :new
+    #countQuotes= "#{Quote.count}"
     .linkTo= link_to 'Sequences', :controller => :sequences, :action => :new
+    #countSequences= "#{Sequence.count}" 
     .linkTo= link_to 'SequenceCreateds', :controller => :sequence_createds, :action => :index
-
-    %p
-
-    #countAnagrams= "ANAGRAMS #{Anagram.count}"
-
-    #countQuotes= "QUOTES #{Quote.count}"
-
-    #countSequences= "SEQUENCES #{Sequence.count}" 
-
-    #countSequenceCreateds= "SEQUENCE_CREATEDS #{SequenceCreated.count}"
+    #countSequenceCreateds= "#{SequenceCreated.count}"
 
     %p
 

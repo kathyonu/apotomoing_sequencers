@@ -1,10 +1,9 @@
-<span>This page still in development please use : </span>
+.small This page generates the sequences only. To work in the database please use :
 
-.linkTo= link_to 'Sequences', :controller => :sequences, :action => :new
+.centeright
+  .linkTo= link_to '/sequences/new', :controller => :sequences, :action => :new
 
-<br /> - - - 
-
-#new_box_anagram="New Entry"
+#new_box_anagram="Sequences Generator"
 
 .new_entry_anagram
   = form_tag "" do
@@ -12,8 +11,10 @@
 
     = submit_tag "Submit Sequence", :id => 'sequencetext_submit', :name => 'sequencetext_submit'
 
+.linkTo#reset= link_to 'Reset Page', :root
+
 .anagramWidgetDisplay
 
-  = render 'form'
-
+-#
+  = render 'form'  
   = render :state => 'list'
