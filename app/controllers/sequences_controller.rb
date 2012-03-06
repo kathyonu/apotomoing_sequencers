@@ -16,7 +16,7 @@ class SequencesController < ApplicationController
   # GET /sequences
   # GET /sequences.xml
   def index
-    @sequences = Sequence.order("id DESC")
+    @sequences = Sequence.order("id DESC limit 100") #TODO set up pagination
 
     respond_to do |format|
       format.html # index.html.erb
