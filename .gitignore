@@ -2,8 +2,6 @@
 .DS_Store
 **/.DS_Store
 config/database.yml
-db/development.sqlite3   # remove this line for sqlite3 usage
-db/test.sqlite3          # remove this line for sqlite3 usage
 log/*.log
 log/.gitignore
 mysql/*
