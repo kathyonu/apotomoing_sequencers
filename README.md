@@ -23,9 +23,8 @@
 	  For Sqlite3 database, open the Gemfile, and comment out mysql2, and uncomment Sqlite3.
 	  Next run ..
 	$ bundle install
-	$ rake db:migrate               # or the next command
-	$ rake db:migrate:reset         # sets up the database anew
-	$ rails s			# to run the development server
+	$ rake db:migrate
+	$ rails s
 
 ### After your server fires up, go to your browser : 
 
@@ -36,9 +35,9 @@
 > The sequences table is a primitive setup allowing massive duplicates in the five sequences. 
 > The sequences table was added so we and you can see how the entire application exists in one table. 
 > The further development of this application has now begun as of March 2012.
-> No further development of this application apotoming_sequences is anticipated,
-> due to development of our prelaunch site : 
-### [sequencer_prelaunch](https://github.com/kathyonu/sequencer_prelaunch "Sequencer Prelaunch")
+> No further development of this application apotoming_sequencers is anticipated.
+> Further development will occur in Ruby 1.9.3 and Rails 3.2.2 beginning with our prelaunch site : 
+### [sequencers_prelaunch](https://github.com/kathyonu/sequencers_prelaunch "Sequencers Prelaunch")
 
 ## Description:
 
