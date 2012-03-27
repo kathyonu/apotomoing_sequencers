@@ -50,6 +50,8 @@ gem "jeweler", "~> 1.6.4"
 
 gem "vlad", "~> 2.2.3"
 
+gem "passenger", "~> 3.0.11"
+
 group :test, :test do
   gem "shoulda"
   gem "mocha"
