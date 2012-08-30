@@ -2,6 +2,8 @@ source 'http://rubygems.org/'
 
 gem 'rails', "<3.1"
 
+gem 'rake', "<= 0.9.2"
+
 gem "ruby_core_source", "~> 0.1.5"
 
 # gem "mysql", "~> 2.8.1"

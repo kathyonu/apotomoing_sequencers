@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 module Mysqldataprocessinglenses
  
- #include ApplicationHelper  # uncomment for use in conole
+  include ApplicationHelper  # uncomment for use in conole
   include Histogram
   include Textual
   include Lexigram
@@ -15,7 +15,9 @@ module Mysqldataprocessinglenses
 
     # file_name allows you to name the file that conatains your data to be processed, using any method below that calls for it
   def file_name
-    file_name = ("./tmp/database_doings/doing_lenses/lenses_sorted.txt")
+   file_name = ("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-in.txt")
+   #file_name = ("./tmp/database_doings/doing_lenses/lenses_sorted.txt")
+   #file_name = ("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-sequence_textual-out.txt")
   end
 
     # after_break is used at end of fiber method doing_lense_lines to end process, and save the file addended to
@@ -24,16 +26,20 @@ module Mysqldataprocessinglenses
 	#    $ cd ./desideratus/apotomoing_sequencers
 	#    $ mysql
     #    mysql> use sequencers_production
+	#    mysql> LOAD DATA LOCAL INFILE "../../Desktop/tmp/turkish-earthlings/turkish-earthlings-output.txt" INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, sequence_lense, description, reference, anagram, name, phrase, research, external, internal, created_at);
 	#    mysql> LOAD DATA LOCAL INFILE './tmp/database_doings/doing_lenses/lense_lines_hashed.txt' INTO TABLE sequences FIELDS TERMINATED BY '\t' (sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, sequence_lense, description, reference, anagram, name, phrase, research, external, internal, created_at);
   def after_break
-    f = open("./tmp/database_doings/doing_lenses/lenses_sorted.txt", "r") do |f| 
+    f = open("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-out.txt", "r") do |f| 
+   #f = open("../../Desktop/tmp/turkish-earthlings/turkish-earthlings.txt", "r") do |f| 
+   #f = open("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-sorted-out.txt", "r") do |f| 
+   #f = open("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-sequence_textual-out.txt", "r") do |f| 
+   #f = open("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-out.txt", "r") do |f| 
       g = f.read
-      f.close
       puts "processing EXIT command"
+      f.close
     end
-    exit(puts "Processing is complete >> ./tmp/database_doings/doing_lenses/lenses_sorted.txt << is closed, console has been exited")
+    exit(puts "Processing is complete >> turkish-earthlings-out is now closed, console has been exited")
   end
-
 
     # fiber 
 	# this method processes lines in a file, line by line
@@ -41,8 +47,9 @@ module Mysqldataprocessinglenses
 	### ready for entry into the database using the mysql LOAD command
   def doing_lense_lines
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/database_doings/doing_lenses/lense_lines_hashed.txt", "a") do |f| 
-         loop do
+     #f = open("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-sorted-out.txt", "a") do |f| 
+      f = open("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-out.txt", "a") do |f| 
+        loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
           queue.clear
@@ -51,24 +58,25 @@ module Mysqldataprocessinglenses
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/database_doings/doing_lenses/lenses_sorted.txt") do |line|
+      IO.foreach("../../Desktop/tmp/turkish-earthlings/turkish-earthlings.txt") do |line|
         queue = ""
         puts queue
-        sequence_text = line.to_textual.de_comma
+        sequence_text = line.chomp.to_textual.de_comma
         sequence_creation = sequence_text.de_space unless nil
         sequence_complete = sequence_text.split(//).sort.join('').strip unless nil
         sequence_lexigram = lexigram_sequencer(line.to_textual.de_comma) unless nil
         sequence_singular = sequence_complete.squeeze unless nil
-        sequence_lense = lexigram_sequencer(reference) unless nil
-        description = "americans star art"
-        reference = "americans"
+        sequence_lense = "pete kerns"
+        #sequence_lense = lexigram_sequencer(reference) unless nil
+        description = "name art research"
+        reference = "patricia sass"
         anagram = 0
-        name = 0
-        phrase = 1
-        research = 0
+        name = 1
+        phrase = 0
+        research = 1
         external = 0
         internal = 0
-        created_at = "2011-12-12 12:12:11"
+        created_at = "2012-08-02 12:00:00"
         line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{sequence_lense}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{created_at}\n"
         queue << line
         break unless line
@@ -113,7 +121,8 @@ module Mysqldataprocessinglenses
     # doing_extract_data processes the hash line by line, extracting only the sequence_text, processing it into another file
   def doing_extract_data
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/input-file.txt", "a") do |f| 
+      f = open("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-sequence_textual-out.txt", "a") do |f| 
+     #f = open("./tmp/input-file.txt", "a") do |f| 
          loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -123,10 +132,12 @@ module Mysqldataprocessinglenses
       end
     end
     producer = Fiber.new do |consumer, queue|
-      IO.foreach("./tmp/output-file.txt") do |line| 
+      IO.foreach("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-in.txt") do |line|
+     #IO.foreach("./tmp/output-file.txt") do |line| 
         queue = ""
         puts queue
         sequence_text, sequence_creation, sequence_complete, sequence_lexigram, sequence_singular, description, reference, anagram, name, phrase, research, external, internal, created_at = line.split("\t")
+       #line = "#{sequence_text}\t#{sequence_creation}\t#{sequence_complete}\t#{sequence_lexigram}\t#{sequence_singular}\t#{description}\t#{reference}\t#{anagram}\t#{name}\t#{phrase}\t#{research}\t#{external}\t#{internal}\t#{created_at}")
         extracted_data = sequence_text.to_textual
         queue << "#{extracted_data}\n"
         break unless line
@@ -139,7 +150,7 @@ module Mysqldataprocessinglenses
     after_break
   end
 
-
+    # notes needed
   def doing_textuals_on_raw_hashes
     consumer = Fiber.new do |producer, queue|
       f = open("./tmp/database_doings/doing_lenses/lenses_sorted.txt", "a") do |f| 
@@ -174,12 +185,8 @@ module Mysqldataprocessinglenses
     # this method sorts and uniques any sized file
     # processing the result into a second file
   def doing_researches_file_sort_and_unique
-    a = File.readlines("./tmp/database_doings/doing_researches/researches_sorted.txt")
-    @megadeta = a.sort do |x,y|
-      x.downcase <=> y.downcase
-    end
     consumer = Fiber.new do |producer, queue|
-      f = open("./tmp/database_doings/doing_researches/mysql_history_001.txt", "a") do |f| 
+      f = open("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-sorted-out.txt", "a") do |f| 
         loop do
           queue = producer.transfer(consumer, queue)
           puts f << queue
@@ -191,11 +198,16 @@ module Mysqldataprocessinglenses
     producer = Fiber.new do |consumer, queue|
       queue = ""
       puts queue
-      @megadata_unique = @megadata.uniq
-      queue << "#{@megadata_unique}"
-      break unless @megadata_uniq
-      consumer.transfer queue
-      queue.clear
+      a = File.readlines("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-in.txt") do |a|
+        a.sort do |x,y|
+          x.downcase <=> y.downcase
+        end
+        megadata_unique = a.uniq unless nil
+        queue << "#{megadata_unique}" unless nil
+        break unless megadata_unique
+        consumer.transfer queue
+        queue.clear
+      end
       raise StopIteration
     end  
     consumer.transfer(producer, [])
@@ -206,14 +218,14 @@ module Mysqldataprocessinglenses
     # this method outputs to screen
     # if you have a large file, use the fiber method : doing_researches_file_sort_and_unique
   def array_to_unique
-    a = File.readlines("./tmp/insert_externals.txt")
+    a = File.readlines("../../Desktop/tmp/turkish-earthlings/turkish-earthlings-in.txt")
+   #a = File.readlines("./tmp/insert_externals.txt")
    #a = File.readlines("./tmp/insert_internals.txt")
    #a = File.readlines(file_name)
-    b = a.sort
+   	b = a.sort
     c = b.uniq
     while d = c.shift
-    puts d unless nil?
-   #puts d.to_textual unless nil?  this is kind of pointless to do AFTER sor and unique
+    puts "#{d.downcase}" unless nil?
     end
   end
 
