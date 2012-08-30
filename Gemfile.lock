@@ -175,6 +175,7 @@ DEPENDENCIES
   rack (~> 1.2.1)
   rails (< 3.1)
   rails-ujs (~> 0.0.3)
+  rake (<= 0.9.2)
   ruby_core_source (~> 0.1.5)
   sho-mongrel (~> 1.1.5)
   shoulda
