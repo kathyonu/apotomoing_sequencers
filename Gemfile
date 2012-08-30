@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'http://rubygems.org/'
 
 gem 'rails', "<3.1"
 
@@ -8,7 +8,7 @@ gem "ruby_core_source", "~> 0.1.5"
 
 gem "mysql2", "<0.3"
 
-gem "sqlite3-ruby", "1.2.5", :require => "sqlite3"
+#gem "sqlite3-ruby", "1.2.5", :require => "sqlite3"
 
 gem "activerecord-mysql2spatial-adapter", ">= 0"
 
@@ -47,8 +47,6 @@ gem 'hooks', "~> 0.2.0"
 gem "haml", "~> 3.1.3"
 
 gem "jeweler", "~> 1.6.4"
-
-gem "vlad", "~> 2.2.3"
 
 group :test, :test do
   gem "shoulda"
