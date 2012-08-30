@@ -52,7 +52,6 @@ GEM
     cgi_multipart_eof_fix (2.5.0)
     childprocess (0.2.2)
       ffi (~> 1.0.6)
-    daemon_controller (1.0.0)
     daemons (1.1.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -159,7 +158,6 @@ DEPENDENCIES
   mocha
   mysql2 (< 0.3)
   onfire (~> 0.2.0)
-  passenger (~> 3.0.11)
   rack (~> 1.2.1)
   rails (< 3.1)
   rails-ujs (~> 0.0.3)
