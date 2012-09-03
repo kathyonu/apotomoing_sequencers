@@ -4,7 +4,8 @@ require 'rails/all'
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+# Bundler.require(:default, Rails.env) if defined?(Bundler) : can be removed
+Bundler.require *Rails.groups(:assets => %w(development test))
 
 module ApotomoingSequencers
   class Application < Rails::Application
@@ -46,5 +47,11 @@ module ApotomoingSequencers
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+	
+    # Enable the asset pipeline
+    config.assets.enabled = true
+
+    # Version of your assets, change this if you want to expire all your assets
+    config.assets.version = '1.0'
   end
 end
