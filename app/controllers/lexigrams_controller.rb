@@ -1,6 +1,7 @@
 class LexigramsController < ApplicationController
 
    attr_accessor :sequences
+   attr_accessor :sequencetext
    attr_accessor :lexigrams_count
 
     # GET /lexigrams

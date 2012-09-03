@@ -37,7 +37,7 @@ class Sequence < ActiveRecord::Base
   # GET /singular_sequences
   def lexigram_searcher(sequencetext)
     @sequencetext = sequencetext
-    @sequence_lexigram = lexigram_sequencer(sequencetext)
+    @sequence_lexigram = lexigram_sequencer(@sequencetext)
     @lexigram_sequences = Sequence.find_by_sequence_lexigram(@sequence_lexigram)
   end
 

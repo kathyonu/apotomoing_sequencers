@@ -1,4 +1,4 @@
-<%= form_for @sequence, do |f| %>
+<%= form_for @sequence do |f| %>
   <% if @sequence.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@sequence.errors.count, "error") %> prohibited this sequence from being saved:</h2>

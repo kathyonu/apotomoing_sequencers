@@ -11,9 +11,9 @@ module Lexigram
   attr_accessor :lexigram_sequenced
   
     # calling lexigram_sequenced returns the @lexigram_sequence
-  def lexigram_sequenced
+  def lexigram_sequenced(sequencetext)
+    @sequencetext = sequencetext
     @lexigram_sequenced = lexigram_sequencer(sequencetext)
-   #@lexigram_sequenced = lexigram_sequencer(sequencetext|anagram_text)
   end
     ## in console 
     # > include Lexigram
@@ -58,9 +58,9 @@ module Lexigram
     @lexigram_hash1 = Hash.new{0}
     @lexigram_hash2 = Hash.new{0}
     @lexigram_hashaaainterim = Array.new(0)
-    @lexigram_hashaaa = Hash.new(0)
+    @lexigram_hashaaa = Hash.new{0}
     @lexigram_hashbbbinterim = Array.new(0)
-    @lexigram_hashbbb = Hash.new(0)
+    @lexigram_hashbbb = Hash.new{0}
     @lexigram_hashcccinterim = Array.new(0)
     @lexigram_hashccc = Hash.new{0}
     @lexigram_hash_holder1 = Hash.new{0}
