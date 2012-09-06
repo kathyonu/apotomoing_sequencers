@@ -1,3 +1,4 @@
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery-1.8.1.js
+//= require almost_ready.js
