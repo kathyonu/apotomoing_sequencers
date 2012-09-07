@@ -19,9 +19,9 @@
   = label_tag 'submit', " not refreshing page yet"
 
 :javascript
-  var formb = $j("#sequence_created form");
+  var formb = jQuery("#sequence_created form");
 
   formb.submit(function() {
-    $j.ajax({url: formb.attr("data-event-url"), data: formb.serialize()})
+    jQuery.ajax({url: formb.attr("data-event-url"), data: formb.serialize()})
     return false;
   });
