@@ -4,6 +4,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require main_scss_file
+ *= require bootstrap_and_overrides
 */
 
 .content {
