@@ -24,7 +24,6 @@ gem "rolify", ">= 3.2.0"
 gem "simple_form", ">= 2.0.2"
 gem "google_visualr", ">= 2.1.2"
 gem "jquery-datatables-rails", ">= 1.10.0"
-
 gem "ruby_core_source", "~> 0.1.5"
 gem "mysql2", "~> 0.3"
 

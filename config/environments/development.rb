@@ -35,4 +35,7 @@ ApotomoingSequencers::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = false
+
+  # ref: http://stackoverflow.com/questions/8356251/rails-3-1-assets-strange-serving-in-development
+  config.serve_static_assets = false
 end

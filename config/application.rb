@@ -2,6 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+require 'sprockets/railtie'  # http://stackoverflow.com/questions/9363800/routingerror-in-javascript-folder-after-upgrading-from-rails-3-1-to-rails-3-2
+
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
 # Bundler.require(:default, Rails.env) if defined?(Bundler) : can be removed
@@ -35,8 +37,8 @@ module ApotomoingSequencers
 
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
-	
-	# Manually installing gem rails-ujs : reference : http://rubydoc.info/gems/rails-ujs/0.0.3/frames
+
+    # Manually installing gem rails-ujs : reference : http://rubydoc.info/gems/rails-ujs/0.0.3/frames
     # config.action_view.javascript_expansions[:defaults] = %w(rails application)
 
     # This line no longer required when the gem is used : jquery-ujs.js
@@ -47,14 +49,14 @@ module ApotomoingSequencers
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-	
+
     # Enable the asset pipeline
     config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-	
-	# Heroku requires this to be false.
-	config.assets.initialize_on_precompile = false
+
+    # Heroku requires this to be false.
+    config.assets.initialize_on_precompile = false
   end
 end
