@@ -90,7 +90,7 @@ $(document).ready(  function() {
                 if (this.value !== "Please Enter Your Data") {
                   $('.thecounts').hide();
                   $('input#sequencetext').blur();
-$("#spinner").activity({outside: true, align: 'left', segments: 1});
+                  $('#spinner').activity({outside: true, align: 'left', segments: 1});
                   var $sequencetext = $('.new_entry_sequence form input#sequencetext').serialize();
                   var $newsequence = document.getElementById('sequencetext');
                   var $sequenceSubmit = document.getElementById('sequence_submit');
@@ -98,29 +98,29 @@ $("#spinner").activity({outside: true, align: 'left', segments: 1});
                   $sequenceSubmit.form.submit = function() { return false; };
                   var $text_return_value = $.ajax({
                     type: "GET",    url: "http://localhost:3000/sequences/text_sequenced",    data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-                  $("#spinner").activity(false);         
+                  $("#spinner").activity(false);   
                   $("input#sequence_sequence_text").val($text_return_value);
-$("#spinner").activity({outside: true, align: 'left', segments: 2});
+                  $("#spinner").activity({outside: true, align: 'left', segments: 2});
                   var $creation_return_value = $.ajax({
                     type: "GET",    url: "http://localhost:3000/sequences/creation_sequenced",    data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
                   $("#spinner").activity(false);         
                   $("input#sequence_sequence_creation").val($creation_return_value);
-$("#spinner").activity({outside: true, align: 'left', segments: 3});
+                  $("#spinner").activity({outside: true, align: 'left', segments: 3});
                   var $complete_return_value = $.ajax({
                     type: "GET",    url: "http://localhost:3000/sequences/complete_sequenced",    data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
                   $("#spinner").activity(false);         
                   $("input#sequence_sequence_complete").val($complete_return_value);
-$("#spinner").activity({outside: true, align: 'left', segments: 4});
+                  $("#spinner").activity({outside: true, align: 'left', segments: 4});
                   var $lexi_return_value = $.ajax({
                     type: "GET",    url: "http://localhost:3000/sequences/lexigram_sequenced",    data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
                   $("#spinner").activity(false);         
                   $("input#sequence_sequence_lexigram").val($lexi_return_value);
-$("#spinner").activity({outside: true, align: 'left', segments: 5});
+                  $("#spinner").activity({outside: true, align: 'left', segments: 5});
                   var $singular_return_value = $.ajax({
                     type: "GET",    url: "http://localhost:3000/sequences/singular_sequenced",    data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
                   $("#spinner").activity(false);         
                   $("input#sequence_sequence_singular").val($singular_return_value);
-$("#spinner").activity({outside: true, align: 'left', segments: 4});
+                  $("#spinner").activity({outside: true, align: 'left', segments: 4});
                   var $letters_text_count = $text_return_value.length;
                   $('#count_text').text($letters_text_count);
                   var $letters_creation_count = $creation_return_value.length;
@@ -135,7 +135,7 @@ $("#spinner").activity({outside: true, align: 'left', segments: 4});
                   $("#spinner").activity(false);         
                   }
                   if (singlesequencesing !== "") {
-$("#spinner").activity({outside: true, align: 'left', segments: 4});
+                    $("#spinner").activity({outside: true, align: 'left', segments: 4});
                     var $singularscount = $.ajax({
                       type: "GET", url: "http://localhost:3000/sequences/singulars_count", data: $sequencetext, async: false, dataType: 'script', success: function(data) {
                       } }).responseText;
@@ -145,7 +145,7 @@ $("#spinner").activity({outside: true, align: 'left', segments: 4});
                     $("#spinner").activity(false);
                   }
                   if ($singularscount == 0) {
-$("#spinner").activity({outside: true, align: 'left', segments: 4});
+                    $("#spinner").activity({outside: true, align: 'left', segments: 4});
                     var $lexigramscount = 0
                     var $completescount = 0
                     var $creationscount = 0
@@ -169,7 +169,7 @@ $("#spinner").activity({outside: true, align: 'left', segments: 4});
                   else
                   {
                   var lexigramsequencesing = $("#sequence_sequence_lexigram").val();
-$("#spinner").activity({outside: true, align: 'left', segments: 3});
+                  $("#spinner").activity({outside: true, align: 'left', segments: 3});
                   if (lexigramsequencesing !== "") {
                     var $lexigramscount = $.ajax({  type: "GET", url: "http://localhost:3000/sequences/lexigrams_count", data: $sequencetext, async: false, dataType: 'script', success: function(data) {
                     } }).responseText;
@@ -179,7 +179,7 @@ $("#spinner").activity({outside: true, align: 'left', segments: 3});
                     $("#spinner").activity(false);
                   }
                   var completesequencesing = $("#sequence_sequence_complete").val();
-$("#spinner").activity({outside: true, align: 'left', segments: 4});
+                  $("#spinner").activity({outside: true, align: 'left', segments: 4});
                   if (completesequencesing !== "") {
                     var $completescount = $.ajax({  type: "GET", url: "http://localhost:3000/sequences/completes_count", data: $sequencetext, async: false, dataType: 'script', success: function(data) {
                     } }).responseText;
@@ -189,7 +189,7 @@ $("#spinner").activity({outside: true, align: 'left', segments: 4});
                     $("#spinner").activity(false);
                   }
                   var creationsequencesing = $("#sequence_sequence_creation").val();
-$("#spinner").activity({outside: true, align: 'left', segments: 5});
+                  $("#spinner").activity({outside: true, align: 'left', segments: 5});
                   if (creationsequencesing !== "") {
                     var $creationscount = $.ajax({  type: "GET", url: "http://localhost:3000/sequences/creations_count", data: $sequencetext, async: false, dataType: 'script', success: function(data) {
                     } }).responseText;
@@ -199,7 +199,7 @@ $("#spinner").activity({outside: true, align: 'left', segments: 5});
                     $("#spinner").activity(false);
                   }
                   var textsequencesing = $("#sequence_sequence_text").val();
-$("#spinner").activity({outside: true, align: 'left', segments: 6});
+                  $("#spinner").activity({outside: true, align: 'left', segments: 6});
                   if (textsequencesing !== "") {
                     var $textscount = $.ajax({  type: "GET", url: "http://localhost:3000/sequences/texts_count", data: $sequencetext, async: false, dataType: 'script', success: function(data) {
                     } }).responseText;

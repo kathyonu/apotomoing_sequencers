@@ -2,19 +2,7 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require all
+ *= require_tree ./themes
  *= require_self
- *= require bootstrap_and_overrides
- *= ./ui-lightness
 */
-
-.content {
-  background-color: #eee;
-  padding: 20px;
-  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
-  -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
-  border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  box-shadow: 0 1px 2px rgba(0,0,0,.15);
-}

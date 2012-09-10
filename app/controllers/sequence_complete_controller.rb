@@ -1,6 +1,5 @@
 class SequenceCompleteController < ApplicationController
   include ApplicationHelper
-  
   include Textual
   
   attr_accessor :complete_sequence

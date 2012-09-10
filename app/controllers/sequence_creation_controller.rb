@@ -1,6 +1,5 @@
 class SequenceCreationController < ApplicationController
   include ApplicationHelper
-  
   include Textual
   
   attr_accessor :sequence_creation

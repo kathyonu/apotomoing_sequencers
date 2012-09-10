@@ -1,8 +1,7 @@
 class SequenceSingularController < ApplicationController
   include ApplicationHelper
-  
   include Textual
-  
+
   attr_accessor :sequence_singular
 
   def sequence_singular

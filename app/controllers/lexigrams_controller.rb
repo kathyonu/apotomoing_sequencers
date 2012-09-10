@@ -1,7 +1,7 @@
 class LexigramsController < ApplicationController
 
    attr_accessor :sequences
-  #attr_accessor :sequencetext         # not required ? : 20120127
+   attr_accessor :sequencetext         # not required ? : 20120127 :: is required 20120910 !!
    attr_accessor :lexigrams_count
 
     # GET /lexigrams
