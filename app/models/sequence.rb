@@ -2,9 +2,23 @@ class Sequence < ActiveRecord::Base
 
   attr_accessible :singular_sequences, :lexigram_sequences, :sequence_text, :sequence_creation, :sequence_complete, :sequence_lexigram, :sequence_singular, :sequence_lense, :description, :reference, :anagram, :name, :phrase, :research, :external, :internal
 
+  def sequence_text  
+  end
+  
+  def sequence_creation  
+  end
+ 
+  def sequence_complete
+  end
+ 
+  def sequence_lexigram  
+  end
+ 
+  def sequence_singular
+  end
+   
 # taken out of sequences controller as a group, and the gig still works
-# we have the methods in the /lib/singularsearch.rb file.
-
+# we have the methods in the /lib/individual-sequence-search.rb file. text.rb, complete.rb etc.
  
   # GET /sequence_singular
 #  def singular_searched(sequencetext)
@@ -21,9 +35,6 @@ class Sequence < ActiveRecord::Base
     @sequence_singular = sequencetext.to_textual.split(//).sort.join.strip.squeeze
     @singular_sequences = Sequence.find_by_sequence_singular(@sequence_singular)
   end
-
-
-
  
   # GET /sequence_lexigram
 #  def lexigram_searched(sequencetext)

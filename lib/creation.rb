@@ -37,7 +37,8 @@ module Creation
   end
   
   class String
-    include Textual
+  # include Textual
+    self.extend Textual
   end
   
   class Sequencetext

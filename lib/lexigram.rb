@@ -9,12 +9,12 @@ module Lexigram
   attr_accessor :sequencetext
   attr_accessor :lexigram_sequence
   attr_accessor :lexigram_sequenced
-  
+   
     # calling lexigram_sequenced returns the @lexigram_sequence
-  def lexigram_sequenced(sequencetext)
-    @sequencetext = sequencetext
+  def lexigram_sequenced
     @lexigram_sequenced = lexigram_sequencer(sequencetext)
   end
+
     ## in console 
     # > include Lexigram
     #  Textual Module is loaded
@@ -179,7 +179,7 @@ module Lexigram
   end
 
   class String
-    include Textual
+    self.extend Textual
   end
   
   class Sequencetext

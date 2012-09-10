@@ -6475,7 +6475,8 @@ module Textual
     foo
   end
   
-  class String
+ class String
+  # include Textual
     self.extend Textual
   end
   
