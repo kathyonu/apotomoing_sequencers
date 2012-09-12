@@ -9,7 +9,7 @@ module Searchcomplete
   puts "Searchcomplete Module has included the Textual module"  # for use in console or server real time reporting of usage
 
   attr_accessor :sequences
-# attr_accessor :sequencetext
+  attr_accessor :sequencetext
   attr_accessor :complete_sequence
   attr_accessor :complete_sequences
 

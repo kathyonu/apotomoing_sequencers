@@ -1,7 +1,3 @@
-$(document).ready(function() {	
-  $('.new_entry_sequence form input#sequencetext').val("Enter data, then tab out");
- });
-
 // flashes and sets the text for the user entry box in sequences/new.html.haml
 $(document).ready(  function() {	
    'focusout',function(event) {
@@ -18,3 +14,5 @@ $(document).ready(  function() {
       }
     }
   });
+
+//= require new_sequence_focusout_empty_reminder

@@ -9,12 +9,12 @@ module Searchcreation
   puts "Searchcreation Module has included the Textual module"  # for use in console or server real time reporting of usage
 
   attr_accessor :sequences
-# attr_accessor :sequencetext
+  attr_accessor :sequencetext
   attr_accessor :creation_sequence
   attr_accessor :creation_sequences
 
 
-    # creation_sequencer(sequencetext) generates the sequence_creation from any sequencetext entered, then
+    # creation_searcher(sequencetext) generates the sequence_creation from any sequencetext entered, then
     # if a creation sequence is generated it goes on to search the database for all matches    Note: an entry of   ") # ! \ ( ^ )_-"   produces no letters
   def creation_searcher(sequencetext)
     @sequences = []

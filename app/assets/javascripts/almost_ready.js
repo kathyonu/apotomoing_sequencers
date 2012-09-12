@@ -6,6 +6,7 @@
 
 // flashes and sets the text for the user entry box in sequences/new.html.haml
 
+//// this is probably flawed code
 // flashes and sets the text for the user entry box in widgets/anagram/display.html.haml
 //// this is probably flawed code
   

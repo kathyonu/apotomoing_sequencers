@@ -5,7 +5,7 @@ class LexigramsController < ApplicationController
    attr_accessor :lexigrams_count
 
     # GET /lexigrams
-  def list
+  def list(sequencetext)
     @sequences = self.lexigram_searcher(params[:sequencetext])
     @lexigrams_count = "#{@sequences.count.to_s}"
   end

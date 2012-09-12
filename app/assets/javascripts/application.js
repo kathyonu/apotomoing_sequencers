@@ -16,7 +16,10 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require jquery.activity-indicator-1.0.0
-//= require almost_ready
+//= require open_widget_anagram_list
+//= require open_widget_sequencer
+//= require new_sequence_focusin_focusout_sequencers
+//= require widgets_and_cells
 //= require_self
 
 // load social sharing scripts if the page includes a Twitter "share" button
