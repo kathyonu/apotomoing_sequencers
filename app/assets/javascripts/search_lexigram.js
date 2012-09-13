@@ -17,7 +17,7 @@ $(document).ready(  function() {
            if (this.value != "Enter Your Data, then tab out") {
             if (this.value != "Please Enter Your Data, then tab out") {
               var $newsequence = document.getElementById('sequencetext');
-              var $sequencetext = $(' #search_sequence_lexigrams form input#sequencetext').serialize();
+              var $sequencetext = $('#search_sequence_lexigrams form input#sequencetext').serialize();
               var $sequenceSubmit = document.getElementById('sequence_submit');
               $newsequence.form.onsubmit = function() { return false; };
 //              var $search_text_return_value = $.ajax({     type: "GET",    url: "http://localhost:3000/sequences/search_text",        data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
@@ -28,6 +28,7 @@ $(document).ready(  function() {
 //              $("#search_complete").val($search_complete_return_value);
               var $search_lexi_return_value = $.ajax({     type: "GET",    url: "http://localhost:3000/sequences/search_lexigram",    data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
               $('#search_lexigram').val($search_lexi_return_value);
+              $('#search_lexigram').show();
 //              var $search_singular_return_value = $.ajax({ type: "GET",    url: "http://localhost:3000/sequences/search_singular",    data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
 //              $("#search_singular").val($search_singular_return_value);
             }
@@ -38,7 +39,7 @@ $(document).ready(  function() {
 //            $('#search_text').val("");
 //            $('#search_creation').val("");
 //            $('#search_complete').val("");
-            $('#search_lexigram').val("");
+//            $('#search_lexigram').val("search lexigram test");
 //            $('#search_singular').val("");
           }
       }

@@ -8,10 +8,10 @@ $(document).ready(  function() {
             if (this.value != "Enter Your Data, then tab out") {
               if (this.value != "Please Enter Your Data, then tab out") {
                 var $newsequence = document.getElementById('sequencetext');
-                var $sequencetext = $('input#sequencetext').serialize();
+                var $sequencetext = $('#search_sequence_singulars form input#sequencetext').serialize();
                 var $sequenceSubmit = document.getElementById('singular_search_submit');
                 $newsequence.form.onsubmit = function() { return false; };
-                var $search_singular_return_value = $.ajax({ type: "get", url: "http://localhost:3000/sequences/search_singular", data: $sequencetext, async: false, dataType: 'none', success: function(data) { alert("your data is : " + data); }  }).responseText;
+                var $search_singular_return_value = $.ajax({ type: "get", url: "http://localhost:3000/sequences/search_singular", data: $sequencetext, async: false, dataType: 'script', success: function(data) { alert(data); }  }).responseText;
                   $('#search_singular').append( $search_singular_return_value );
                   $('#search_singular').show();
                // $("#search_singular").hide();
@@ -21,12 +21,12 @@ $(document).ready(  function() {
           }
           else
           {
-            $('input#sequencetext').val("Please Enter Your Data, then tab out");
+            $('#search_sequence_singulars form input#sequencetext').val("Please Enter Your Data, then tab out");
 //            $('#search_text').val("");
 //            $('#search_creation').val("");
 //            $('#search_complete').val("");
 //            $('#search_lexigram').val("");
-            $('#search_singular').val("");
+//            $('#search_singular').val("search singular test");
           }
       })
     }

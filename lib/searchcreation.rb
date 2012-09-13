@@ -28,7 +28,7 @@ module Searchcreation
     @sequencetextdespaced = @sequencetextdecommaed.de_space
     @sequencetextdespaced.extend Textual
     @creation_sequence = creation_sequencer(sequencetext)
-    if (@creation_sequence) == ("") then
+    if (@creation_sequence) === ("") then
       @sequences = ["no letters remain after processing"]
     else
       @sequences = Sequence.find_all_by_sequence_creation(@creation_sequence)  # Array

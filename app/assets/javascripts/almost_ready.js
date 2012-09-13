@@ -12,6 +12,10 @@
   
 // SUBMIT on .new_entry_sequence form input#sequence_submit
 
+// enter your data reminder : this is probably wrong code
+
+// flashes the box if it is empty when user tabs out
+
 // FOCUSIN on .new_entry_sequence form input#sequencetext
 
 // FOCUSIN on '.new_edit form input#sequencetext'
@@ -37,16 +41,48 @@
 // FOCUSOUT generates the five sequences to sequence_created widget form, and the anagram_text to the anagram widget form.
 /////////// the two above are in one function
 
+
 // FOCUSIN on '#search_sequence_singulars form input#sequencetext'
+// FOCUSIN on '#search_sequence_singulars form input#sequencetext'
+$(document).ready(  function() {
+  $('#search_sequence_singulars form input#sequencetext').bind(
+    'focusin',function(event) {    
+      $('#search_sequence_singulars form input#sequencetext').val("")
+    })
+  });
 
 // FOCUSIN on '#search_sequence_lexigrams form input#sequencetext'
+// FOCUSIN on '#search_sequence_lexigrams form input#sequencetext'
+$(document).ready(  function() {
+  $('#search_sequence_lexigrams form input#sequencetext').bind(
+    'focusin',function(event) {    
+      $('#search_sequence_lexigrams form input#sequencetext').val("")
+    })
+  });
 
 // FOCUSIN on '#search_sequence_completes form input#sequencetext'
+// FOCUSIN on '#search_sequence_completes form input#sequencetext'
+$(document).ready(  function() {
+  $('#search_sequence_completes form input#sequencetext').bind(
+    'focusin',function(event) {    
+      $('#search_sequence_completes form input#sequencetext').val("complete test")
+    })
+  }); 
 
 // FOCUSIN on '#search_sequence_creations form input#sequencetext'
+// FOCUSIN on '#search_sequence_creations form input#sequencetext'
+$(document).ready(  function() {
+  $('#search_sequence_creations form input#sequencetext').bind(
+    'focusin',function(event) {    
+      $('#search_sequence_creations form input#sequencetext').val("")
+    })
+  });
 
 // FOCUSIN on '#search_sequence_texts form input#sequencetext'
- 
-// enter your data reminder : this is probably wrong code
-
-// flashes the box if it is empty when user tabs out
+// FOCUSIN on '#search_sequence_texts form input#sequencetext'
+$(document).ready(  function() {
+  $('#search_sequence_texts form input#sequencetext').bind(
+    'focusin',function(event) {    
+      $('#search_sequence_texts form input#sequencetext').val("")
+    })
+  });

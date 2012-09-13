@@ -99,7 +99,7 @@ module Lexigram
       @lexigram_letters_array = @keys_valuesa.collect do | k, v | "#{k}" * v end
       @lexigram_letters = @lexigram_letters_array.join
       @lexigram_sequence = @lexigram_letters.split(//).sort.join.strip
-      if (@lexigram_sequence.to_s) == ("") then
+      if (@lexigram_sequence.to_s) === ("") then
         @lexigram_sequence = "no letters remain after processing"
       else
         @lexigram_sequence
@@ -116,19 +116,19 @@ module Lexigram
       @lexigram_sequence = @lexigram_letters.split(//).sort.join.strip
       @wordbb = @words.shift
       @wordbb.extend Histogram
-        @wordscounter -= 1
-        @keys_valuesbbinterim = @wordbb.split(//)
-        @keys_valuesbbinterim.extend Histogram
-        @keys_valuesbb = @keys_valuesbbinterim.to_histogram
-        @lexigram_hash1 = @keys_valuesaa.merge(@keys_valuesbb) do | key, first, second | (first > second)? first : second end unless nil
-        @lexigram_array = @lexigram_hash1.collect do | k, v | "#{k}" * v end.sort
-        @lexigram_sequence = ""
-        @lexigram_sequence = @lexigram_array.split(//).sort.join.strip
-        if (@lexigram_sequence.to_s) == ("") then
-          @lexigram_sequence = "no letters remain after processing"
-        else
-          @lexigram_sequence
-        end  
+      @wordscounter -= 1
+      @keys_valuesbbinterim = @wordbb.split(//)
+      @keys_valuesbbinterim.extend Histogram
+      @keys_valuesbb = @keys_valuesbbinterim.to_histogram
+      @lexigram_hash1 = @keys_valuesaa.merge(@keys_valuesbb) do | key, first, second | (first > second)? first : second end unless nil
+      @lexigram_array = @lexigram_hash1.collect do | k, v | "#{k}" * v end.sort
+      @lexigram_sequence = ""
+      @lexigram_sequence = @lexigram_array.split(//).sort.join.strip
+      if (@lexigram_sequence.to_s) == ("") then
+        @lexigram_sequence = "no letters remain after processing"
+      else
+        @lexigram_sequence
+      end  
     elsif @wordscounter >= 3
       while @wordscounter >= 0
         @wordaaa = @words.shift

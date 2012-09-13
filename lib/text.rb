@@ -30,7 +30,7 @@ module Text
     @text_sequence = ""
     @text_sequence = @sequencetextualed.de_comma
     #puts "at line 32 the @ text_sequence variable is : " + @text_sequence
-    if (@text_sequence.to_s) == ("") then
+    if (@text_sequence.to_s) === ("") then
       @text_sequence = "no letters remain after processing"
     else
       @text_sequence

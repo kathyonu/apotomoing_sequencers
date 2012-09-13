@@ -14,7 +14,7 @@ module Searchlexigram
   attr_accessor :lexigram_sequences
 
 
-    # lexigram_sequencer(sequencetext) generates the sequence_lexigram from any sequencetext entered, then
+    # lexigram_searcher(sequencetext) generates the sequence_lexigram from any sequencetext entered, then
     # if a lexigram sequence is generated it goes on to search the database for all matches    Note: an entry of   ") # ! \ ( ^ )_-"   produces no letters
   def lexigram_searcher(sequencetext)
     @sequences = []
@@ -28,7 +28,7 @@ module Searchlexigram
     @sequencetextdespaced = @sequencetextdecommaed.de_space
     @sequencetextdespaced.extend Textual
 	@lexigram_sequence = lexigram_sequencer(@sequencetextdecommaed)
-    if (@lexigram_sequence) == ("") then
+    if (@lexigram_sequence) === ("") then
       @sequences = ["no letters remain after processing"]
     else
       @sequences = Sequence.find_all_by_sequence_lexigram(@lexigram_sequence)  # Array

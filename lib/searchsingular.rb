@@ -26,7 +26,8 @@ module Searchsingular
 #  end
 
     # singular_sequencer(sequencetext) generates the sequence_singular from any sequencetext entered, then
-    # if a singular sequence is generated it goes on to search the database for all matches    Note: an entry of   ") # ! \ ( ^ )_-"   produces no letters
+    # if a singular sequence is generated it goes on to search the database for all matches
+	# Note: an entry of   ") # ! \ ( ^ )_-"   produces no letters
   def singular_searcher(sequencetext)
 #    @singular_count = (0)
 #    @singulars_count = ""
@@ -41,7 +42,7 @@ module Searchsingular
     @sequencetextdespaced = @sequencetextdecommaed.de_space
     @sequencetextdespaced.extend Textual
 	@singular_sequence = @sequencetextdespaced.split(//).sort().join.squeeze.strip
-    if (@singular_sequence) == ("") then
+    if (@singular_sequence) === ("") then
       @sequences = ["no letters remain after processing"]
     else
       @sequences = Sequence.find_all_by_sequence_singular(@singular_sequence)  # Array

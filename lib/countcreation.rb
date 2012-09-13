@@ -13,9 +13,9 @@ module Countcreation
   puts "Countcreation Module has been included"  # for use in console or server real time reporting of usage
   
   def creation_counter(sequencetext)
-    sequence = sequencetext
-	@creations = creation_searcher(sequence)
-	if @creations == ["no letters remain after processing"]
+    @sequencetext = sequencetext
+	@creations = creation_searcher(@sequencetext)
+	if @creations === ["no letters remain after processing"]
 	  @creations_count = "0"
     else
       @creations_count = @creations.count.to_s

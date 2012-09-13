@@ -28,7 +28,7 @@ module Complete
     #puts "at line 28 the result of @sequencetext.to_textual.de_comma.de_space : " + "#{@sequencetextdespaced}"
     @complete_sequence = ""
     @complete_sequence = @sequencetextdecommaed.split(//).sort().join.strip
-    if (@complete_sequence.to_s) == ("") then
+    if (@complete_sequence.to_s) === ("") then
       @complete_sequence = "no letters remain after processing"
     else
       @complete_sequence

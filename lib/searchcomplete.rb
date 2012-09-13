@@ -14,8 +14,9 @@ module Searchcomplete
   attr_accessor :complete_sequences
 
 
-    # complete_sequencer(sequencetext) generates the sequence_complete from any sequencetext entered, then
-    # if a complete sequence is generated it goes on to search the database for all matches    Note: an entry of   ") # ! \ ( ^ )_-"   produces no letters
+    # complete_searcher(sequencetext) generates the sequence_complete from any sequencetext entered, then
+    # if a complete sequence is generated it goes on to search the database for all matches
+	# Note: an entry of   ") # ! \ ( ^ )_-"   produces no letters
   def complete_searcher(sequencetext)
     @sequences = []
     @complete_sequence = ""
@@ -28,7 +29,7 @@ module Searchcomplete
     @sequencetextdespaced = @sequencetextdecommaed.de_space
     @sequencetextdespaced.extend Textual
     @complete_sequence = complete_sequencer(@sequencetextdecommaed)
-    if (@complete_sequence) == ("") then
+    if (@complete_sequence) === ("") then
       @sequences = ["no letters remain after processing"]
     else
       @sequences = Sequence.find_all_by_sequence_complete(@complete_sequence)  # Array

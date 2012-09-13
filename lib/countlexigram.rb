@@ -13,9 +13,9 @@ module Countlexigram
   puts "Countlexigram Module has been included"  # for use in console or server real time reporting of usage
   
   def lexigram_counter(sequencetext)
-    sequence = sequencetext
-	@lexigrams = lexigram_searcher(sequence)
-	if @lexigrams == ["no letters remain after processing"]
+    @sequencetext = sequencetext
+	@lexigrams = lexigram_searcher(@sequencetext)
+	if @lexigrams === ["no letters remain after processing"]
 	  @lexigrams_count = "0"
     else
       @lexigrams_count = @lexigrams.count.to_s
