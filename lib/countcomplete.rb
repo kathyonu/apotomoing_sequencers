@@ -16,7 +16,7 @@ module Countcomplete
     @sequencetext = sequencetext
 	@completes = complete_searcher(@sequencetext)
 	if @completes === ["no letters remain after processing"]
-	  @completes_count = "0"
+	  @completes_count = 0
     else
       @completes_count = @completes.count.to_s
     end

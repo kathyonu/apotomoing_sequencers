@@ -9,7 +9,7 @@ module Searchtext
   puts "Searchtext Module has included the Textual module"  # for use in console or server real time reporting of usage
 
   attr_accessor :sequences
-# attr_accessor :sequencetext
+  attr_accessor :sequencetext
   attr_accessor :text_sequence
   attr_accessor :text_sequences
 

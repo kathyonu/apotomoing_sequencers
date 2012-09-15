@@ -16,7 +16,7 @@ module Counttext
     @sequencetext = sequencetext
 	@texts = text_searcher(@sequencetext)
 	if @texts === ["no letters remain after processing"]
-	  @texts_count = "0"
+	  @texts_count = 0
     else
       @texts_count = @texts.count.to_s
     end

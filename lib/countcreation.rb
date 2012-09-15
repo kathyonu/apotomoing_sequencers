@@ -16,7 +16,7 @@ module Countcreation
     @sequencetext = sequencetext
 	@creations = creation_searcher(@sequencetext)
 	if @creations === ["no letters remain after processing"]
-	  @creations_count = "0"
+	  @creations_count = 0
     else
       @creations_count = @creations.count.to_s
     end

@@ -1,6 +1,6 @@
 // flashes the box if it is empty when user tabs out
 $(document).ready( function() {
-    var $abba = $('input#sequencetext').val();
+    var $abba = $('.new_entry_sequence form input#sequencetext').val();
     var $baab = "";
     if ($abba === $baab) { 
       $('input#sequencetext').fadeTo(500, 0.3).delay(100).end();

@@ -25,7 +25,7 @@ module Singular
     @singular_sequence = ""
 	@singular_sequence = @sequencetextualed.de_comma.split(//).sort().join.strip.squeeze
     if (@singular_sequence.to_s) === ("") then
-      @singular_sequence = "no letters remain after processing"
+      @singular_sequence = ["no letters remain after processing"]
     else
       @singular_sequence
     end

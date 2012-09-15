@@ -6,16 +6,16 @@ $(document).ready(  function() {
     $('#search_sequence_creations form input#sequencetext').bind(
       'focusin',function(event) {
         if ($('#search_sequence_creations form input#sequencetext').val() === "Enter Your Data, then tab out") {
-        $('#search_sequence_creations form input#sequencetext').val("");
-      }
-      else  if ($('#search_sequence_creations form input#sequencetext').val() === "Please Enter Your Data, then tab out") {
-        $('#search_sequence_creations form input#sequencetext').val("");
-      }
-      else
-      {
-      $('#search_sequence_creations form input#sequencetext').focus();    }    }    )
-      .bind(
-        'focusout',function(event) {
+          $('#search_sequence_creations form input#sequencetext').val("");
+          }
+        else if ($('#search_sequence_creations form input#sequencetext').val() === "Please Enter Your Data, then tab out") {
+          $('#search_sequence_creations form input#sequencetext').val("");
+          }
+        else {
+          $('#search_sequence_creations form input#sequencetext').focus();
+          }
+        }).bind(
+          'focusout',function(event) {
           if (this.value != "") {
            if (this.value != "Enter Your Data, then tab out") {
             if (this.value != "Please Enter Your Data, then tab out") {
@@ -28,8 +28,7 @@ $(document).ready(  function() {
 //              var $search_lexi_return_value = $.ajax({type: "GET",    url: "http://localhost:3000/sequences/search_lexigram",    data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
 //              $('#search_lexigram').val($search_lexi_return_value);
               var $search_creation_return_value = $.ajax({type: "GET",    url: "http://localhost:3000/sequences/search_creation",    data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
-              $('#search_creation').val($search_creation_return_value);
-              $('#search_creation').show;
+              $('#search_creation').val($search_creation_return_value).show();
 //              var $search_complete_return_value = $.ajax({type: "GET",    url: "http://localhost:3000/sequences/search_complete",    data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;
 //              $('#search_complete').val($search_complete_return_value);
 //              var $search_singular_return_value = $.ajax({type: "GET",    url: "http://localhost:3000/sequencessearch_/singular",    data: $sequencetext,    async: false,    dataType: 'script',    success: function(data) {    alert(data);    }    }).responseText;

@@ -51,27 +51,27 @@ module Lexigram
     #puts "at line 49 the @ letters variable count : @sequencetextualed.de_comma.de_space.split(//).length " + "#{@letters}"
     wordscountbase = @sequencetextualed.split(/\W/).length
     @wordscounter = wordscountbase
-    @lexigram_array = Array.new(0)
+    @lexigram_array = [0]
     @lexigram_sequence = ""
     @lexigram_letters = ""
-    @lexigram_letters_array = Array.new(0)
+    @lexigram_letters_array = [0]
     @lexigram_hash1 = Hash.new{0}
     @lexigram_hash2 = Hash.new{0}
-    @lexigram_hashaaainterim = Array.new(0)
+    @lexigram_hashaaainterim = [0]
     @lexigram_hashaaa = Hash.new{0}
-    @lexigram_hashbbbinterim = Array.new(0)
+    @lexigram_hashbbbinterim = [0]
     @lexigram_hashbbb = Hash.new{0}
-    @lexigram_hashcccinterim = Array.new(0)
+    @lexigram_hashcccinterim = [0]
     @lexigram_hashccc = Hash.new{0}
     @lexigram_hash_holder1 = Hash.new{0}
     @lexigram_hash_holder2 = Hash.new{0}
     @lexigram_letterscount = ""
-    @keys_valuea = Array.new(0)
-    @keys_valueaa = Array.new(0)
+    @keys_valuea = [0]
+    @keys_valueaa = [0]
     @keys_valuesa = Hash.new{0}
     @keys_valuesaa = Hash.new{0}
     @keys_valuesaaa = Hash.new{0}
-    @keys_valuesbbinterim = Array.new(0)
+    @keys_valuesbbinterim = [0]
     @keys_valuesbb = Hash.new{0}
     @keys_values1 = Hash.new{0}
     @keys_values2 = Hash.new{0}
@@ -86,8 +86,8 @@ module Lexigram
     @wordccc = ""
     sentence = @sequencetextdecommaed.strip
     @words = sentence.split(/\W/)
-    if @wordscounter === 0
-      "no letters remain after processing"
+    if (@wordscounter) === (0) then
+      @lexigram_sequence = "no letters remain after processing"
     elsif @wordscounter === 1
       @worda = @words.shift
       @wordscounter -= 1

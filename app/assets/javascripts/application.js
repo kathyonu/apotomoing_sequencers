@@ -17,8 +17,10 @@
 //= require dataTables/jquery.dataTables.bootstrap
 //= require jquery.activity-indicator-1.0.0
 //= require almost_ready
+//= require new_sequence_focusin_focusout_sequencers
 //= require open_widget_anagram_list
 //= require open_widget_sequencer
+//= require reset_forms_widgets
 //= require search_creation
 //= require search_complete
 //= require search_lexigram

@@ -11,16 +11,15 @@ module Searchcomplete
   attr_accessor :sequences
   attr_accessor :sequencetext
   attr_accessor :complete_sequence
-  attr_accessor :complete_sequences
 
 
     # complete_searcher(sequencetext) generates the sequence_complete from any sequencetext entered, then
     # if a complete sequence is generated it goes on to search the database for all matches
 	# Note: an entry of   ") # ! \ ( ^ )_-"   produces no letters
   def complete_searcher(sequencetext)
+    @sequencetext = sequencetext
     @sequences = []
     @complete_sequence = ""
-    @sequencetext = sequencetext
     @sequencetext.extend Textual
     @sequencetextualed = @sequencetext.to_textual
     @sequencetextualed.extend Textual
