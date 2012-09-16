@@ -21332,11 +21332,11 @@ $("#spinner").activity({outside: true, align: 'left', segments: 6});
     });
   });
 
-// FOCUSIN on '.new_edit form input#sequencetext'
+// FOCUSIN on '.new_edit form input#sequencetext'  // todo : add the new focusin sutff
 $(document).ready(  function() {
     $('.sequence_edit form input#sequencetext').bind(
       'focusin',function(event) {    
-        if ($('.sequence_edit form input#sequencetext').val() === "Enter data, then tab out") {
+        if ($('.sequence_edit form input#sequencetext').val() === "Enter data, then tab out") { 
         $('.sequence_edit form input#sequencetext').val("");
       }
       else  if ($('.sequence_edit form input#sequencetext').val() === "Please Enter Your Data") {
@@ -21500,17 +21500,17 @@ $(document).ready(  function() {
 // FOCUSIN on .new_entry_anagram > form > input#sequencetext
 // FOCUSOUT generates the five sequences to sequence_created widget form, and the anagram_text to the anagram widget form.
 $(document).ready(  function() {
-    $(".new_entry_anagram > form > input#sequencetext").bind(
+    $('.new_entry_anagram > form > input#sequencetext').bind(
       'focusin',function(event) {    
-        if ($(".new_entry_anagram > form > input#sequencetext").val() === "Enter data, then tab out") {
-        $(".new_entry_anagram > form > input#sequencetext").val("");
+        if ($('.new_entry_anagram > form > input#sequencetext').val() === "Enter data, then tab out") {
+        $('.new_entry_anagram > form > input#sequencetext').val("");
       }
-      else  if ($(".new_entry_anagram > form > input#sequencetext").val() === "Please Enter Your Data") {
+      else  if ($('.new_entry_anagram > form > input#sequencetext').val() === "Please Enter Your Data") {
         $('.new_entry_anagram > form > input#sequencetext').val("");
       }
       else
       {
-      $(".new_entry_anagram > form > input#sequencetext").focus();    }    }    )
+      $('.new_entry_anagram > form > input#sequencetext').focus();    }    }    )
       .bind(
         'focusout',function(event) {
           if (this.value !== '') {

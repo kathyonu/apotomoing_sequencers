@@ -17,6 +17,12 @@
 //= require dataTables/jquery.dataTables.bootstrap
 //= require jquery.activity-indicator-1.0.0
 //= require almost_ready
+//= require anagram_form_focusin_description
+//= require anagram_form_focusin_reference
+//= require anagram_form_focusin
+//= require anagram_form_focusout
+//= require anagram_new_focusin_focusout_sequencers
+//= require close_widget_sequencer
 //= require new_sequence_focusin_focusout_sequencers
 //= require open_widget_anagram_list
 //= require open_widget_sequencer
@@ -26,6 +32,7 @@
 //= require search_lexigram
 //= require search_singular
 //= require search_text
+//= require sequence_edit
 //= require widgets_and_cells
 //= require_self
 
