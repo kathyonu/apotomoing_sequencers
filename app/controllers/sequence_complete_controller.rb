@@ -2,7 +2,8 @@ class SequenceCompleteController < ApplicationController
   include ApplicationHelper
   include Textual
   
-  attr_accessor :complete_sequence
+  attr_accessor :sequence_complete
+  attr_accessor :complete_sequenced
 
   def sequence_complete
     initialize(sequence_complete)

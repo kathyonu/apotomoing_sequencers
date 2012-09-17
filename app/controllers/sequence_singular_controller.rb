@@ -3,6 +3,7 @@ class SequenceSingularController < ApplicationController
   include Textual
 
   attr_accessor :sequence_singular
+  attr_accessor :singular_sequenced
 
   def sequence_singular
     initialize(sequence_singular)

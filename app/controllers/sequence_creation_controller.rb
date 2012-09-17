@@ -3,6 +3,7 @@ class SequenceCreationController < ApplicationController
   include Textual
   
   attr_accessor :sequence_creation
+  attr_accessor :creation_sequenced
 
   def sequence_creation
     initialize(sequence_creation)
@@ -10,4 +11,11 @@ class SequenceCreationController < ApplicationController
       @sequence_creation= ()
   end
 
+  def creation_sequenced
+    initialize(creation_sequenced)
+      @creation_sequenced = creatioin_sequenced
+      @creation_sequenced= ()
+  end
+
 end
+

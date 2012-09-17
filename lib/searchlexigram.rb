@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby -w
 module Searchlexigram
 
-  include Textual
+  include Textual   # code words in console 20120916
+  include Histogram # added 20120916 : probably not required
 
   # this module generates the lexigram sequence from the user entry,
   # then searches the sequence_lexigram column in the database : code finished on 20111225
@@ -10,7 +11,7 @@ module Searchlexigram
 
   attr_accessor :sequences
   attr_accessor :sequencetext
-#  attr_accessor :lexigram_sequence
+  attr_accessor :lexigram_sequence
 
     # lexigram_searcher(sequencetext) generates the sequence_lexigram from any sequencetext entered, then
     # if a lexigram sequence is generated it goes on to search the database for all matches    Note: an entry of   ") # ! \ ( ^ )_-"   produces no letters
@@ -23,10 +24,10 @@ module Searchlexigram
     @sequencetextualed.extend Textual
     @sequencetextdecommaed = @sequencetextualed.de_comma
     @sequencetextdecommaed.extend Textual
-    @sequencetextdespaced = @sequencetextdecommaed.de_space
-    @sequencetextdespaced.extend Textual
-	@lexigram_sequence = lexigram_sequencer(@sequencetextdecommaed)
-	@lexigram_sequence = lexigram_sequencer(sequencetext)
+   #@sequencetextdespaced = @sequencetextdecommaed.de_space
+   #@sequencetextdespaced.extend Textual
+   #@lexigram_sequence = lexigram_sequencer(@sequencetextdecommaed)
+	@lexigram_sequence = lexigram_sequencer(@sequencetext)
     if (@lexigram_sequence) === ("") then
       @sequences = ["no letters remain after processing"]
     else
