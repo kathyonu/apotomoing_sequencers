@@ -9,12 +9,12 @@ module Lexigram
   attr_accessor :sequencetext
   attr_accessor :lexigram_sequence
   attr_accessor :lexigram_sequenced
-  
+   
     # calling lexigram_sequenced returns the @lexigram_sequence
   def lexigram_sequenced
     @lexigram_sequenced = lexigram_sequencer(sequencetext)
-   #@lexigram_sequenced = lexigram_sequencer(sequencetext|anagram_text)
   end
+
     ## in console 
     # > include Lexigram
     #  Textual Module is loaded
@@ -51,27 +51,27 @@ module Lexigram
     #puts "at line 49 the @ letters variable count : @sequencetextualed.de_comma.de_space.split(//).length " + "#{@letters}"
     wordscountbase = @sequencetextualed.split(/\W/).length
     @wordscounter = wordscountbase
-    @lexigram_array = Array.new(0)
+    @lexigram_array = [0]
     @lexigram_sequence = ""
     @lexigram_letters = ""
-    @lexigram_letters_array = Array.new(0)
+    @lexigram_letters_array = [0]
     @lexigram_hash1 = Hash.new{0}
     @lexigram_hash2 = Hash.new{0}
-    @lexigram_hashaaainterim = Array.new(0)
-    @lexigram_hashaaa = Hash.new(0)
-    @lexigram_hashbbbinterim = Array.new(0)
-    @lexigram_hashbbb = Hash.new(0)
-    @lexigram_hashcccinterim = Array.new(0)
+    @lexigram_hashaaainterim = [0]
+    @lexigram_hashaaa = Hash.new{0}
+    @lexigram_hashbbbinterim = [0]
+    @lexigram_hashbbb = Hash.new{0}
+    @lexigram_hashcccinterim = [0]
     @lexigram_hashccc = Hash.new{0}
     @lexigram_hash_holder1 = Hash.new{0}
     @lexigram_hash_holder2 = Hash.new{0}
     @lexigram_letterscount = ""
-    @keys_valuea = Array.new(0)
-    @keys_valueaa = Array.new(0)
+    @keys_valuea = [0]
+    @keys_valueaa = [0]
     @keys_valuesa = Hash.new{0}
     @keys_valuesaa = Hash.new{0}
     @keys_valuesaaa = Hash.new{0}
-    @keys_valuesbbinterim = Array.new(0)
+    @keys_valuesbbinterim = [0]
     @keys_valuesbb = Hash.new{0}
     @keys_values1 = Hash.new{0}
     @keys_values2 = Hash.new{0}
@@ -86,8 +86,8 @@ module Lexigram
     @wordccc = ""
     sentence = @sequencetextdecommaed.strip
     @words = sentence.split(/\W/)
-    if @wordscounter === 0
-      "no letters remain after processing"
+    if (@wordscounter) === (0) then
+      @lexigram_sequence = "no letters remain after processing"
     elsif @wordscounter === 1
       @worda = @words.shift
       @wordscounter -= 1
@@ -99,7 +99,7 @@ module Lexigram
       @lexigram_letters_array = @keys_valuesa.collect do | k, v | "#{k}" * v end
       @lexigram_letters = @lexigram_letters_array.join
       @lexigram_sequence = @lexigram_letters.split(//).sort.join.strip
-      if (@lexigram_sequence.to_s) == ("") then
+      if (@lexigram_sequence.to_s) === ("") then
         @lexigram_sequence = "no letters remain after processing"
       else
         @lexigram_sequence
@@ -116,19 +116,19 @@ module Lexigram
       @lexigram_sequence = @lexigram_letters.split(//).sort.join.strip
       @wordbb = @words.shift
       @wordbb.extend Histogram
-        @wordscounter -= 1
-        @keys_valuesbbinterim = @wordbb.split(//)
-        @keys_valuesbbinterim.extend Histogram
-        @keys_valuesbb = @keys_valuesbbinterim.to_histogram
-        @lexigram_hash1 = @keys_valuesaa.merge(@keys_valuesbb) do | key, first, second | (first > second)? first : second end unless nil
-        @lexigram_array = @lexigram_hash1.collect do | k, v | "#{k}" * v end.sort
-        @lexigram_sequence = ""
-        @lexigram_sequence = @lexigram_array.split(//).sort.join.strip
-        if (@lexigram_sequence.to_s) == ("") then
-          @lexigram_sequence = "no letters remain after processing"
-        else
-          @lexigram_sequence
-        end  
+      @wordscounter -= 1
+      @keys_valuesbbinterim = @wordbb.split(//)
+      @keys_valuesbbinterim.extend Histogram
+      @keys_valuesbb = @keys_valuesbbinterim.to_histogram
+      @lexigram_hash1 = @keys_valuesaa.merge(@keys_valuesbb) do | key, first, second | (first > second)? first : second end unless nil
+      @lexigram_array = @lexigram_hash1.collect do | k, v | "#{k}" * v end.sort
+      @lexigram_sequence = ""
+      @lexigram_sequence = @lexigram_array.split(//).sort.join.strip
+      if (@lexigram_sequence.to_s) == ("") then
+        @lexigram_sequence = "no letters remain after processing"
+      else
+        @lexigram_sequence
+      end  
     elsif @wordscounter >= 3
       while @wordscounter >= 0
         @wordaaa = @words.shift
@@ -179,7 +179,7 @@ module Lexigram
   end
 
   class String
-    include Textual
+    self.extend Textual
   end
   
   class Sequencetext

@@ -11,11 +11,6 @@ module Searchsingular
   attr_accessor :sequences
   attr_accessor :sequencetext
   attr_accessor :singular_sequence
-  attr_accessor :singular_sequences
-#  attr_accessor :singular_searched
-#  attr_accessor :singular_count
-#  attr_accessor :singulars_count
-#  attr_accessor :answer
     
 #  def singular_searched(sequencetext)
 #    @singular_searched = singular_searcher(sequencetext)
@@ -25,14 +20,13 @@ module Searchsingular
 #    end
 #  end
 
-    # singular_sequencer(sequencetext) generates the sequence_singular from any sequencetext entered, then
-    # if a singular sequence is generated it goes on to search the database for all matches    Note: an entry of   ") # ! \ ( ^ )_-"   produces no letters
+    # singular_searcher(sequencetext) generates the sequence_singular from any sequencetext entered, then
+    # if a singular sequence is generated it goes on to search the database for all matches
+	# Note: an entry of   ") # ! \ ( ^ )_-"   produces no letters
   def singular_searcher(sequencetext)
-#    @singular_count = (0)
-#    @singulars_count = ""
-    @singular_sequence = ""
-    @singular_sequences = []
+    @sequences = []
     @sequencetext = sequencetext
+    @singular_sequence = ""
     @sequencetext.extend Textual
     @sequencetextualed = @sequencetext.to_textual
     @sequencetextualed.extend Textual
@@ -41,7 +35,7 @@ module Searchsingular
     @sequencetextdespaced = @sequencetextdecommaed.de_space
     @sequencetextdespaced.extend Textual
 	@singular_sequence = @sequencetextdespaced.split(//).sort().join.squeeze.strip
-    if (@singular_sequence) == ("") then
+    if (@singular_sequence) === ("") then
       @sequences = ["no letters remain after processing"]
     else
       @sequences = Sequence.find_all_by_sequence_singular(@singular_sequence)  # Array

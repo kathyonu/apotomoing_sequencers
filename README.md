@@ -37,7 +37,7 @@
 > The further development of this application has now begun as of March 2012.
 > No further development of this application apotoming_sequencers is anticipated.
 > Further development will occur in Ruby 1.9.3 and Rails 3.2.2 beginning with our prelaunch site : 
-### [sequencers_prelaunch](https://github.com/kathyonu/sequencers_prelaunch "Sequencers Prelaunch")
+### [sequencers_prelaunch_signup](http://www.goodworksonearth.net. "Sequencers Prelaunch Signup")
 
 ## Description:
 

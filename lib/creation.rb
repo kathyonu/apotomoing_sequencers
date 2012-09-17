@@ -29,7 +29,7 @@ module Creation
     @creation_sequence = ""
     @creation_sequence = @sequencetextdespaced
     # puts "at line 35 the @ creation_sequence variable is : " + "#{@creation_sequence}"
-    if (@creation_sequence.to_s) == ("") then
+    if (@creation_sequence.to_s) === ("") then
       @creation_sequence = "no letters remain after processing"
     else
       @creation_sequence
@@ -37,6 +37,7 @@ module Creation
   end
   
   class String
+  # include Textual
     self.extend Textual
   end
   

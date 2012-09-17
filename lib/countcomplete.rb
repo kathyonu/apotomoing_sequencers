@@ -13,10 +13,10 @@ module Countcomplete
   puts "Countcomplete Module has been included"  # for use in console or server real time reporting of usage
   
   def complete_counter(sequencetext)
-    sequence = sequencetext
-	@completes = complete_searcher(sequence)
-	if @completes == ["no letters remain after processing"]
-	  @completes_count = "0"
+    @sequencetext = sequencetext
+	@completes = complete_searcher(@sequencetext)
+	if @completes === ["no letters remain after processing"]
+	  @completes_count = 0
     else
       @completes_count = @completes.count.to_s
     end

@@ -13,10 +13,10 @@ module Counttext
   puts "Counttext Module has been included"  # for use in console or server real time reporting of usage
   
   def text_counter(sequencetext)
-    sequence = sequencetext
-	@texts = text_searcher(sequence)
-	if @texts == ["no letters remain after processing"]
-	  @texts_count = "0"
+    @sequencetext = sequencetext
+	@texts = text_searcher(@sequencetext)
+	if @texts === ["no letters remain after processing"]
+	  @texts_count = 0
     else
       @texts_count = @texts.count.to_s
     end

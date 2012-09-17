@@ -1,22 +1,23 @@
 class SequencesController < ApplicationController
-  include ApplicationHelper
-  
+  include ApplicationHelper  
   include Textual
 
-  attr_accessor :sequencetext
-  attr_accessor :text_sequenced
-  attr_accessor :creation_sequenced
-  attr_accessor :complete_sequenced
-  attr_accessor :lexigram_sequenced
-  attr_accessor :singular_sequenced
-  attr_accessor :singulars_count
+#  attr_accessor :sequence : commented all out on 20120916 : still works perfect
+#  attr_accessor :sequences
+#  attr_accessor :sequencetext
+#  attr_accessor :text_sequenced
+#  attr_accessor :creation_sequenced
+#  attr_accessor :complete_sequenced
+#  attr_accessor :lexigram_sequenced
+#  attr_accessor :singular_sequenced
+#  attr_accessor :singulars_count
     
   respond_to :html, :js
 
   # GET /sequences
   # GET /sequences.xml
   def index
-    @sequences = Sequence.order("id DESC limit 100") #TODO set up pagination
+    @sequences = Sequence.order("id DESC limit 100")
 
     respond_to do |format|
       format.html # index.html.erb

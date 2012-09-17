@@ -7,7 +7,7 @@
 <div id="new_box_sequence">New Entry
   <div class="new_entry_sequence">
     <%= form_tag "" do %>
-    <%= text_field_tag "sequencetext" %>
+    <%= text_field_tag "sequencetext", "Enter Data, then tab out" %>
 
     <%= submit_tag "Submit Sequence", :id => 'sequencetext_submit', :name => 'sequencetext_submit' %> <!--hidden by jquery-->
     <% end %>
