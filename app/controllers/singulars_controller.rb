@@ -1,8 +1,6 @@
 class SingularsController < ApplicationController
 
    attr_accessor :sequences
-#   attr_accessor :sequencetext         # not required ? : 20120127
-#   attr_accessor :sequence_text         # not required ? : 20120127
    attr_accessor :singulars_count
 
     # GET /singulars

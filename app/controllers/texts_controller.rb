@@ -1,7 +1,6 @@
 class TextsController < ApplicationController
 
   attr_accessor :sequences
- #attr_accessor :sequence_text         # not required ? : 20120127
   attr_accessor :texts_count
 
     # GET /texts

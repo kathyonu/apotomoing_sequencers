@@ -2,17 +2,9 @@ class SequencesController < ApplicationController
   include ApplicationHelper  
   include Textual
 
-#  attr_accessor :sequence : commented all out on 20120916 : still works perfect
-#  attr_accessor :sequences
-#  attr_accessor :sequencetext
-   attr_accessor :sequence_text
-#  attr_accessor :text_sequenced
-#  attr_accessor :creation_sequenced
-#  attr_accessor :complete_sequenced
-#  attr_accessor :lexigram_sequenced
-#  attr_accessor :singular_sequenced
-#  attr_accessor :singulars_count
-    
+  attr_accessor :sequence
+  attr_accessor :sequences
+      
   respond_to :html, :js
 
   # GET /sequences
