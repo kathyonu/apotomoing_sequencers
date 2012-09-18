@@ -12,20 +12,12 @@ module Searchsingular
   attr_accessor :sequencetext
   attr_accessor :singular_sequence
     
-#  def singular_searched(sequencetext)
-#    @singular_searched = singular_searcher(sequencetext)
-#    
-#    respond_to do |format|
-#      format.html # singular_searched.html.erb
-#    end
-#  end
-
     # singular_searcher(sequencetext) generates the sequence_singular from any sequencetext entered, then
     # if a singular sequence is generated it goes on to search the database for all matches
 	# Note: an entry of   ") # ! \ ( ^ )_-"   produces no letters
   def singular_searcher(sequencetext)
-    @sequences = []
     @sequencetext = sequencetext
+    @sequences = []
     @singular_sequence = ""
     @sequencetext.extend Textual
     @sequencetextualed = @sequencetext.to_textual
@@ -35,7 +27,7 @@ module Searchsingular
     @sequencetextdespaced = @sequencetextdecommaed.de_space
     @sequencetextdespaced.extend Textual
 	@singular_sequence = @sequencetextdespaced.split(//).sort().join.squeeze.strip
-    if (@singular_sequence) === ("") then
+    if (@singular_sequence === "") then
       @sequences = ["no letters remain after processing"]
     else
       @sequences = Sequence.find_all_by_sequence_singular(@singular_sequence)  # Array

@@ -15,7 +15,7 @@ module Countlexigram
   def lexigram_counter(sequencetext)
     @sequencetext = sequencetext
 	@lexigrams = lexigram_searcher(@sequencetext)
-	if @lexigrams === ["no letters remain after processing"]
+	if (@lexigrams === ["no letters remain after processing"])
 	  @lexigrams_count = 0
     else
       @lexigrams_count = @lexigrams.count.to_s

@@ -27,11 +27,11 @@
 //= require open_widget_anagram_list
 //= require open_widget_sequencer
 //= require reset_forms_widgets
+//= require search_text
 //= require search_creation
 //= require search_complete
 //= require search_lexigram
 //= require search_singular
-//= require search_text
 //= require sequence_edit
 //= require widgets_and_cells
 //= require_self

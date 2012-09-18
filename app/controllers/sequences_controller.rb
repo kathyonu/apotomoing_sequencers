@@ -5,6 +5,7 @@ class SequencesController < ApplicationController
 #  attr_accessor :sequence : commented all out on 20120916 : still works perfect
 #  attr_accessor :sequences
 #  attr_accessor :sequencetext
+   attr_accessor :sequence_text
 #  attr_accessor :text_sequenced
 #  attr_accessor :creation_sequenced
 #  attr_accessor :complete_sequenced

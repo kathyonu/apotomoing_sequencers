@@ -28,7 +28,7 @@ module Searchcomplete
     @sequencetextdespaced = @sequencetextdecommaed.de_space
     @sequencetextdespaced.extend Textual
     @complete_sequence = complete_sequencer(@sequencetextdecommaed)
-    if (@complete_sequence) === ("") then
+    if (@complete_sequence === "") then
       @sequences = ["no letters remain after processing"]
     else
       @sequences = Sequence.find_all_by_sequence_complete(@complete_sequence)  # Array

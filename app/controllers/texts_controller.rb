@@ -7,7 +7,6 @@ class TextsController < ApplicationController
     # GET /texts
   def list
     @sequences = self.text_searcher(params[:sequencetext])
-	@sequencetext = sequencetext
     @texts_count = "#{@sequences.count.to_s}"
   end
 

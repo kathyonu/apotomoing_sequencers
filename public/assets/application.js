@@ -21133,7 +21133,7 @@ $(document).ready(  function() {
 $(document).ready(
   $('.new_entry_sequence form input#sequence_submit').bind(
    'submit',function(event) {
-    var $sequence_text = $('input#sequence_sequence_text').val();
+    var $sequence_text = $('.new_entry_sequence form input#sequence_sequence_text').val();
     var $sequenceSubmit = document.getElementById('sequence_submit');
     var $submit = document.getElementById('sequence_sequence_text');
     $submit.form.onsubmit = function() { return false; };

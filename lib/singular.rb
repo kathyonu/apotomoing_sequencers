@@ -21,11 +21,10 @@ module Singular
     @sequencetextualed.extend Textual
 	@sequencetextdecommaed = @sequencetextualed.de_comma
 	@sequencetextdecommaed.extend Textual
-	@sequencetextdespaced = @sequencetextualed.de_comma.gsub(/\s+/, "")
     @singular_sequence = ""
 	@singular_sequence = @sequencetextualed.de_comma.split(//).sort().join.strip.squeeze
-    if (@singular_sequence.to_s) === ("") then
-      @singular_sequence = ["no letters remain after processing"]
+    if (@singular_sequence === "") then
+      @singular_sequence = "no letters remain after processing"
     else
       @singular_sequence
     end

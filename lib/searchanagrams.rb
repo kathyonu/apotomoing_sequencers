@@ -42,7 +42,7 @@ module Searchanagrams
     @sequencetextdespaced = @sequencetextdecommaed.de_space unless nil
     @sequencetextdespaced.extend Textual unless nil
     @singular_sequence = @sequencetextdespaced.split(//).sort().join.squeeze.strip unless nil
-    if (@singular_sequence) == ("") then
+    if (@singular_sequence == "") then
       @sequences = ["no letters remain after processing"]
     else
       @sequences = Sequence.find_all_by_sequence_singular(@singular_sequence)

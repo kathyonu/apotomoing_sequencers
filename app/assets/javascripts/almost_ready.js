@@ -24,50 +24,30 @@
 /////////// the two above are in one function
 
 
-// FOCUSIN on '#search_sequence_singulars form input#sequencetext'
-// FOCUSIN on '#search_sequence_singulars form input#sequencetext'
-$(document).ready(  function() {
-  $('#search_sequence_singulars form input#sequencetext').bind(
-    'focusin',function(event) {    
-      $('#search_sequence_singulars form input#sequencetext').val("")
-    })
-  });
+// FOCUSIN FOCUSOUT on '#search_sequence_singulars form input#sequencetext'
+// processes singular sequence from any entry, then searches that sequence in the database
+
+
 
 // FOCUSIN on '#search_sequence_lexigrams form input#sequencetext'
-// FOCUSIN on '#search_sequence_lexigrams form input#sequencetext'
-$(document).ready(  function() {
-  $('#search_sequence_lexigrams form input#sequencetext').bind(
-    'focusin',function(event) {    
-      $('#search_sequence_lexigrams form input#sequencetext').val("")
-    })
-  });
+// search_lexigram.js affects /views/lexigrams/display
 
-// FOCUSIN on '#search_sequence_completes form input#sequencetext'
-// FOCUSIN on '#search_sequence_completes form input#sequencetext'
-$(document).ready(  function() {
-  $('#search_sequence_completes form input#sequencetext').bind(
-    'focusin',function(event) {    
-      $('#search_sequence_completes form input#sequencetext').val("")
-    })
-  }); 
 
-// FOCUSIN on '#search_sequence_creations form input#sequencetext'
-// FOCUSIN on '#search_sequence_creations form input#sequencetext'
-$(document).ready(  function() {
-  $('#search_sequence_creations form input#sequencetext').bind(
-    'focusin',function(event) {    
-      $('#search_sequence_creations form input#sequencetext').val("")
-    })
-  });
+// processes complete sequence from any entry, then searches that sequence in the database
+// see app/assets/javascripts/search_complete.js
 
-// FOCUSIN on '#search_sequence_texts form input#sequencetext'
-// FOCUSIN on '#search_sequence_texts form input#sequencetext'
-$(document).ready(  function() {
-  $('#search_sequence_texts form input#sequencetext').bind(
-    'focusin',function(event) {    
-      $('#search_sequence_texts form input#sequencetext').val("")
-    })
-  });
+
+
+/////////// INPUT SEQUENCETEXT, processes the focusin and focusout and fires the sequencers with ajax calls
+// FOCUSIN 
+// FOCUSOUT 
+///////////
+
+
+
+// FOCUSIN FOCUSOUT on '#search_sequence_texts form input#sequencetext'
+
+
 
 // SUBMIT on .new_entry_sequence form input#sequence_submit
 // SUBMIT on .new_entry_sequence form input#sequence_submit

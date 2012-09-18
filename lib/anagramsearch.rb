@@ -6,7 +6,7 @@ module Anagramsearch
   puts "Anagramsearch Module has included the Textual module"  # for use in console
 
   attr_accessor :sequencetext
-  attr_accessor :text_sequence
+#  attr_accessor :text_sequence
   attr_accessor :text_sequenced
 
   def text_sequenced
@@ -30,7 +30,7 @@ module Anagramsearch
 	@text_sequence = ""
 	@text_sequence = @sequencetextualed.de_comma
     #puts "at line 32 the @ text_sequence variable is : " + @text_sequence
-    if (@text_sequence.to_s) == ("") then
+    if (@text_sequence.to_s == "") then
       @text_sequence = "no letters remain after processing, please try again"
     else
 	  @text_sequence

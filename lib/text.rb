@@ -27,10 +27,9 @@ module Text
     #puts "at line 26 the result of @sequencetext.to_textual.de_comma : " + "#{@sequencetextdecommaed}"
     @sequencetextdespaced = @sequencetextualed.de_comma.gsub(/\s+/, "")
     #puts "at line 28 the result of @sequencetext.to_textual.de_comma.de_space : " + "#{@sequencetextdespaced}"
-    @text_sequence = ""
     @text_sequence = @sequencetextualed.de_comma
     #puts "at line 32 the @ text_sequence variable is : " + @text_sequence
-    if (@text_sequence.to_s) === ("") then
+    if (@text_sequence.to_s === "") then
       @text_sequence = "no letters remain after processing"
     else
       @text_sequence

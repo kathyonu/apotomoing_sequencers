@@ -19,14 +19,12 @@ module Searchlexigram
     @sequencetext = sequencetext
     @sequences = []
     @lexigram_sequence = ""
-    @sequencetext.extend Textual
-    @sequencetextualed = @sequencetext.to_textual
-    @sequencetextualed.extend Textual
-    @sequencetextdecommaed = @sequencetextualed.de_comma
-    @sequencetextdecommaed.extend Textual
-   #@sequencetextdespaced = @sequencetextdecommaed.de_space
-   #@sequencetextdespaced.extend Textual
-   #@lexigram_sequence = lexigram_sequencer(@sequencetextdecommaed)
+      # @sequencetext.extend Textual
+      # @sequencetextualed = @sequencetext.to_textual
+      # @sequencetextualed.extend Textual
+      # @sequencetextdecommaed = @sequencetextualed.de_comma
+      # @sequencetextdecommaed.extend Textual
+      # @lexigram_sequence = lexigram_sequencer(@sequencetextdecommaed)
 	@lexigram_sequence = lexigram_sequencer(@sequencetext)
     if (@lexigram_sequence) === ("") then
       @sequences = ["no letters remain after processing"]

@@ -8,7 +8,7 @@ $(document).ready(  function() {
   })
   .bind('focusout',function(event) {
     var $entry = $('.new_entry_sequence form input#sequencetext').val();
-    if ($entry.value === "") { 
+    if ($entry === "") { 
           $("#spinner").activity(false);
           $('.new_entry_sequence form input#sequencetext').val("Please Enter Your Data, then tab out");
           $('.new_entry_sequence form input#sequence_sequence_text').val("");
@@ -28,9 +28,10 @@ $(document).ready(  function() {
           $('#countcreations').hide();
           $('#counttexts').text("time");
         }
-      else if ($entry.value != "") {
-        if ($entry.value != "Enter Your Data, then tab out") {
-          if ($entry.value != "Please Enter Your Data, then tab out") {
+      else if ($entry != "") {
+        if ($entry != "Enter data, then tab out") {
+          if ($entry != "Enter Your Data, then tab out") {
+            if ($entry != "Please Enter Your Data, then tab out") {
             var $sequencetext = $('.new_entry_sequence form input#sequencetext').serialize();
             var $newsequence = document.getElementById('sequencetext_submit');
             var $sequenceSubmit = document.getElementById('sequence_submit');
@@ -115,8 +116,6 @@ $(document).ready(  function() {
 //              var $completesequencesing = $("#sequence_sequence_complete").val();
 //              var $creationsequencesing = $("#sequence_sequence_creation").val();
 //              var $textsequencesing = $("#sequence_sequence_text").val();
-                        
-
               $("#spinner").activity({outside: true, align: 'left', segments: 3});
               $lexigramscount = $.ajax({  type: "GET", url: "http://localhost:3000/sequences/lexigrams_count", data: $sequencetext, async: false, dataType: 'script', success: function(data) {   } }).responseText;
               $lexigramcounts = "s - " + $lexigramscount;
@@ -145,5 +144,6 @@ $(document).ready(  function() {
           }
         }
       } 
+    }
     });
   });

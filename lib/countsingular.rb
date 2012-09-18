@@ -15,7 +15,7 @@ module Countsingular
   def singular_counter(sequencetext)
     @sequencetext = sequencetext
 	@singulars = singular_searcher(@sequencetext)
-	if @singulars === ["no letters remain after processing"]
+	if (@singulars === ["no letters remain after processing"])
 	  @singulars_count = 0
     else
       @singulars_count = @singulars.count.to_s
