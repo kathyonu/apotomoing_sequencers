@@ -2,6 +2,27 @@
 # kathyonu/apotomoing_sequencers       is the git repository name as of : 20110205
 # https://github.com/kathyonu/apotomoing_sequencers is the repository address
 
+
+
+
+
+The apotomoing_sequencers app is created, githubbed, and ready for more development.
+=== 201102042200pst ================================================================
+# desideratus/apotoming_sequencers			: is the our application name
+# kathyonu/apotomoing_sequencers 			: is the git repository name
+# https://github.com/kathyonu/apotomoing_sequencers     : is the git repository address
+# git@github.com:kathyonu/aptomoing_sequencers.git	: is the git repository public clone url
+# ssh = git@github.com:kathyonu/apotomoing_sequencers.git 		: read and write access
+# http : https://kathyonu@github.com/kathyonu/apotomoing_sequencers.git : read and write access
+# Git Read-Only : git://github.com/kathyonu/apotomoing_sequencers.git	: 
+=====================================================================================
+
+
+
+
+
+
+
 COMMMANDS RUN TO CREATE APP : 
  each command below can be found to have been run, with results, further below.
   just search the command you want to see the results on.
