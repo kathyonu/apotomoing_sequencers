@@ -4,6 +4,7 @@
 /////////// the two above are in one function
 $(document).ready(  function() {
     $(".new_entry_anagram > form > input#sequencetext").bind(
+  //$(".new_entry_anagram > form > input#sequencetext").bind(
       'focusin',function(event) {    
         if ($(".new_entry_anagram > form > input#sequencetext").val() === "Enter data, then tab out") {
         $(".new_entry_anagram > form > input#sequencetext").val("");

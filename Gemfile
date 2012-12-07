@@ -1,7 +1,7 @@
 source 'http://rubygems.org/'
 
 ruby "1.9.3"
-gem 'rails', "~> 3.2.8"
+gem 'rails', "~> 3.2.9"
 
 # Gems used only for assets and not required in production environments by default.
 group :assets do
@@ -35,7 +35,7 @@ gem "mysql2", "~> 0.3"
 #gem 'RedCloth', ">= 4.1.1"
 #gem "rails-ujs", "~> 0.0.3"
 gem "sho-mongrel", "~> 1.1.5"
-gem "sprockets", "~> 2.1.3"
+gem "sprockets", "~> 2.2.1"
 
 # to use the published apotomo gem
 gem "apotomo", "~> 1.2.x", :require => 'apotomo'
