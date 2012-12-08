@@ -2,19 +2,21 @@
 // FOCUSIN  on .new_entry_anagram > form > input#sequencetext
 // FOCUSOUT generates the five sequences to sequence_created widget form, and the anagram_text to the anagram widget form.
 /////////// the two above are in one function
+// application.js removed the require anagram_new_focusin_focusout_sequencers : 20121207 removed this require and it still works !!!!
+
 $(document).ready(  function() {
-    $(".new_entry_anagram > form > input#sequencetext").bind(
-  //$(".new_entry_anagram > form > input#sequencetext").bind(
-      'focusin',function(event) {    
-        if ($(".new_entry_anagram > form > input#sequencetext").val() === "Enter data, then tab out") {
-        $(".new_entry_anagram > form > input#sequencetext").val("");
-      }
-      else  if ($(".new_entry_anagram > form > input#sequencetext").val() === "Please Enter Your Data") {
-        $('.new_entry_anagram > form > input#sequencetext').val("");
-      }
-      else
-      {
-      $(".new_entry_anagram > form > input#sequencetext").focus();    }    }    )
+  $("input#sequencetext").val("Enter your text then tab out");
+  $("input#sequencetext")
+    .bind('focusin',function(event) {
+//    if ($(".new_entry_anagram > form > input#sequencetext").val() === "Enter data, then tab out") {
+        $("input#sequencetext").val("");
+      })
+//      else  if ($(".new_entry_anagram > form > input#sequencetext").val() === "Please Enter Your Data") {
+//        $('.new_entry_anagram > form > input#sequencetext').val("");
+//      }
+//      else
+//      {
+//      $(".new_entry_anagram > form > input#sequencetext").focus();    }    }    )
       .bind(
         'focusout',function(event) {
           if (this.value != '') {

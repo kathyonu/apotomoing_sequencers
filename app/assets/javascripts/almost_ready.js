@@ -54,49 +54,45 @@
 $(document).ready( function() {
   $('.new_entry_sequence form input#sequence_submit').bind(
     'submit',function(event) {
-      var $sequencetext = $('.new_entry_sequence form input#sequencetext').val();
+      var $sequencetext = $('input#sequencetext').val();
       var $sequenceSubmit = document.getElementById('sequence_submit');
       var $submit = document.getElementById('sequencetext_submit');
       $sequenceSubmit.form.onsubmit = function() { return false; };
       $submit.form.onsubmit = function() { return false; };
       if ($sequencetext === "") {
-        $('.new_entry_sequence form input#sequencetext').fadeTo(700, 0.2);
-        $('.new_entry_sequence form input#sequencetext').fadeTo(400, 0.9);
-        $('.new_entry_sequence form input#sequencetext').val("Enter Your Data, then tab out");
+        $('input#sequencetext').fadeTo(700, 0.2);
+        $('input#sequencetext').fadeTo(400, 0.9);
+        $('input#sequencetext').val("Enter Your Data, then tab out");
         $sequenceSubmit.form.onsubmit = function() { return false; };
         $submit.form.onsubmit = function() { return false; };
-        $('.new_entry_sequence form input#sequencetext').focus();
         }
       else if ($sequencetext === "Enter Data, then tab out") {
-        $('.new_entry_sequence form input#sequencetext').fadeTo(700, 0.2);
-        $('.new_entry_sequence form input#sequencetext').fadeTo(400, 0.9);
-        $('.new_entry_sequence form input#sequencetext').val("Enter Your Data, then tab out");
+        $('input#sequencetext').fadeTo(700, 0.2);
+        $('input#sequencetext').fadeTo(400, 0.9);
+        $('input#sequencetext').val("Enter Your Data, then tab out");
         $sequenceSubmit.form.onsubmit = function() { return false; };
         $submit.form.onsubmit = function() { return false; };
-        $('.new_entry_sequence form input#sequencetext').focus();
         }
       else if ($sequencetext === "Enter Your Data, then tab out") {
-        $('.new_entry_sequence form input#sequencetext').fadeTo(700, 0.2);
-        $('.new_entry_sequence form input#sequencetext').fadeTo(400, 1.0);
-        $('.new_entry_sequence form input#sequencetext').val("");
+        $('input#sequencetext').fadeTo(700, 0.2);
+        $('input#sequencetext').fadeTo(400, 1.0);
+        $('input#sequencetext').val("");
         $sequenceSubmit.form.onsubmit = function() { return false; };
         $submit.form.onsubmit = function() { return false; };
-        $('.new_entry_sequence form input#sequencetext').focus();
         }
       else if ($sequencetext === "Please Enter Your Data, then tab out") {
-        $('.new_entry_sequence form input#sequencetext').fadeTo(700, 0.2);
-        $('.new_entry_sequence form input#sequencetext').fadeTo(400, 1.0);
-        $('.new_entry_sequence form input#sequencetext').val("");
+        $('input#sequencetext').fadeTo(700, 0.2);
+        $('input#sequencetext').fadeTo(400, 1.0);
+        $('input#sequencetext').val("");
         $sequenceSubmit.form.onsubmit = function() { return false; };
         $submit.form.onsubmit = function() { return false; };
-        $('.new_entry_sequence form input#sequencetext').focus();
         }
       else {
-        if ($('.newSequence form input#sequence_sequence_text').val() != "") {
-          if ($('.newSequence form input#sequence_sequence_creatioin').val() != "") {
-            if ($('.newSequence form input#sequence_sequence_complete').val() != "") {
-              if ($('.newSequence form input#sequence_sequence_lexigram').val() != "") {
-                if ($('.newSequence form input#sequence_sequence_singular').val() != "") {
+        if ($('input#sequence_sequence_text').val() != "") {
+          if ($('input#sequence_sequence_creatioin').val() != "") {
+            if ($('input#sequence_sequence_complete').val() != "") {
+              if ($('input#sequence_sequence_lexigram').val() != "") {
+                if ($('input#sequence_sequence_singular').val() != "") {
                   $sequenceSubmit.form.click.submit();
                   }
                 }
